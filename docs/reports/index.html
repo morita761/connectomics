@@ -31,13 +31,15 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <body><div class="wrap">
 <nav><a href="../index.html">結果一覧</a></nav>
 <h1>報告書の一覧</h1>
-<p>results/ の Markdown 報告書を HTML にしたもの。全 15 件。</p>
+<p>results/ の Markdown 報告書を HTML にしたもの。全 16 件。</p>
 <div class="cards">
 <a class="card" href="shortlist_final.html"><b>3 個体でシナプス 0・接触が再現する組（shortlist_final.csv）</b><span>条件: hemibrain・male-cns・FlyWire の 3 個体すべてで両方向のシナプスが 0、
 かつ別個体でも 10 µm 以上の接触がある組。「上流出力 / 下流入力」は主な接触領域での個数。</span></a>
 <a class="card" href="benchmark.html"><b>Benchmark</b><span>n_neurons=80, seeds=[0, 1, 2], compartments=navis, overrides=[]</span></a>
 <a class="card" href="gmr_lexa_report.html"><b>GMR-LexA を候補ペアに照合した結果</b><span>2026-11-10。再現は python gmr_lexa_match.py。
 一覧は results/gmr_lexa_vfb.csv（VFB の注釈）と results/gmr_lexa_match.csv（論文の</span></a>
+<a class="card" href="coverage_report.html"><b>まだ探していない組はどこにあるか</b><span>2026-11-10。再現は python coverage.py。一覧は results/coverage.csv（型ごと）と
+results/coverage_roi.csv（領域ごと）。</span></a>
 <a class="card" href="plan_mushroom_body.html"><b>キノコ体の細胞どうしで強制シナプス形成を行う案</b><span>2026-11-10 の吟味。結論は 成立する。全脳を探すより候補が多く、質も上回る。
 19 組を 4 条件で判定して 4 組が残り、第一候補は MBON04 → PPL105。</span></a>
 <a class="card" href="lexa_catalog.html"><b>キノコ体以外の LexA ドライバー（神経とグリア）</b><span>2026-11-10 調査。構造化した一覧は data/lexa_lines_nonmb.csv（34 行）。</span></a>

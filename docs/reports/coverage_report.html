@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>まだ探していない組はどこにあるか</title><style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px}
+nav{font-size:.9rem;color:var(--sub);margin-bottom:18px}
+nav a{color:var(--acc);text-decoration:none}nav a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.35;border-bottom:2px solid var(--line);padding-bottom:.4em;margin-top:1.2em}
+h2{font-size:1.25rem;margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.05rem;margin-top:1.6em}
+a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600;white-space:nowrap}
+code{background:var(--code);padding:.15em .4em;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--code);color:var(--fg)}
+ul,ol{padding-left:1.4em}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:20px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--bg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc)}
+.card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+</style></head>
+<body><div class="wrap">
+<nav><a href="index.html">← 報告書の一覧</a> ／ <a href="../index.html">結果一覧</a></nav>
+<h1 id="_1">まだ探していない組はどこにあるか</h1>
+<p>2026-11-10。再現は <code>python coverage.py</code>。一覧は <code>results/coverage.csv</code>（型ごと）と
+<code>results/coverage_roi.csv</code>（領域ごと）。</p>
+<h2 id="0">0. 結論</h2>
+<p><strong>未探索の宝庫は「まだ見ていない領域」ではない。領域はすべて 1 度は見ている。
+取りこぼしているのは次の 3 つ。</strong></p>
+<table>
+<thead>
+<tr>
+<th>宝庫</th>
+<th>規模</th>
+<th>実験に使えるか</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① しきい値で落とした細胞</strong></td>
+<td>hemibrain の型の <strong>35%</strong>（1,985 型）</td>
+<td>✕ ほぼ使えない。ドライバーがあるのは 82 型だけ</td>
+</tr>
+<tr>
+<td><strong>② 領域をまたぐ組</strong></td>
+<td>ドライバーつきの型の組の <strong>93%</strong> が未評価</td>
+<td>◎ <strong>ここが本命</strong></td>
+</tr>
+<tr>
+<td><strong>③ 別のデータセット</strong></td>
+<td>MANC（腹髄）は手つかず</td>
+<td>○ 下行ニューロンの先</td>
+</tr>
+</tbody>
+</table>
+<p><strong>いちばん効くのは ②。</strong> これまでの探索は領域ごとにデータを取ったので、
+<strong>別々の領域データに入った 2 つの型は、たとえ接していても 1 度も比較されていない。</strong></p>
+<h2 id="1-hemibrain">1. hemibrain の網羅状況</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>型</th>
+<th>細胞</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Traced なもの全部</td>
+<td>5,620</td>
+<td>22,656</td>
+</tr>
+<tr>
+<td>これまでの探索に出てきた</td>
+<td>3,635</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>未探索</strong></td>
+<td><strong>1,985（35%）</strong></td>
+<td>6,746</td>
+</tr>
+</tbody>
+</table>
+<p>領域ごとの未探索（型の数が多い順）:</p>
+<table>
+<thead>
+<tr>
+<th>領域</th>
+<th>型</th>
+<th>未探索</th>
+<th>未探索率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SLP(R) 上外側前大脳</td>
+<td>810</td>
+<td><strong>487</strong></td>
+<td>60%</td>
+</tr>
+<tr>
+<td>SMP(R) 上内側前大脳</td>
+<td>654</td>
+<td><strong>292</strong></td>
+<td>45%</td>
+</tr>
+<tr>
+<td>PLP(R) 後外側前大脳</td>
+<td>436</td>
+<td><strong>232</strong></td>
+<td>53%</td>
+</tr>
+<tr>
+<td>AVLP(R) 前腹外側前大脳</td>
+<td>655</td>
+<td>215</td>
+<td>33%</td>
+</tr>
+<tr>
+<td>ICL(R) 下クランプ</td>
+<td>170</td>
+<td>96</td>
+<td>56%</td>
+</tr>
+<tr>
+<td>WED(R) 楔形領域</td>
+<td>203</td>
+<td>90</td>
+<td>44%</td>
+</tr>
+<tr>
+<td>SIP(R) 上中間前大脳</td>
+<td>126</td>
+<td>75</td>
+<td>60%</td>
+</tr>
+<tr>
+<td>SPS(R) 上後斜面</td>
+<td>213</td>
+<td>65</td>
+<td>31%</td>
+</tr>
+<tr>
+<td>IB 下橋</td>
+<td>148</td>
+<td>62</td>
+<td>42%</td>
+</tr>
+<tr>
+<td>LO(R) ロブラ</td>
+<td>94</td>
+<td>61</td>
+<td>65%</td>
+</tr>
+<tr>
+<td>SCL(R) 上クランプ</td>
+<td>91</td>
+<td>60</td>
+<td>66%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">なぜ取りこぼしたか — しきい値</h3>
+<p><strong>領域はすべて 1 度は取りに行っている。</strong> 落ちたのは取得時のしきい値のせい。</p>
+<table>
+<thead>
+<tr>
+<th>領域の取得</th>
+<th>その領域でのシナプス数の下限</th>
+<th>1 型あたりの細胞数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>smp（SMP・SIP・SLP）</td>
+<td><strong>800</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td>vlp（AVLP・PLP）</td>
+<td><strong>700</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td>cre（CRE・ATL・IB・SCL・ICL）</td>
+<td><strong>700</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td>ps（SPS・IPS・EPA・GNG）</td>
+<td>400</td>
+<td>2</td>
+</tr>
+<tr>
+<td>wed（WED・SAD・CAN）</td>
+<td>400</td>
+<td>2</td>
+</tr>
+<tr>
+<td>lal（LAL・VES・GOR）</td>
+<td>300</td>
+<td>3</td>
+</tr>
+<tr>
+<td>lh / al / vis</td>
+<td>200</td>
+<td>3</td>
+</tr>
+<tr>
+<td>cx（EB・FB・PB・NO）</td>
+<td>100</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p>SLP の未探索率が 60% と高いのは、<strong>SMP・SIP・SLP をまとめて「800 シナプス以上」で
+切ったから</strong>。SLP は小さな細胞が多いので、ここで大量に落ちている。</p>
+<h2 id="2">2. ただし、未探索の型はほとんど実験に使えない</h2>
+<p><strong>ここが肝心。</strong> 未探索 1,985 型のうち、</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ドライバーが 1 本でもある</td>
+<td><strong>82</strong></td>
+</tr>
+<tr>
+<td>特異性 1 以上のドライバーがある</td>
+<td><strong>69</strong></td>
+</tr>
+<tr>
+<td><strong>LexA がある</strong></td>
+<td><strong>0</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>未探索の型に LexA は 1 つも無い。</strong> つまり「しきい値を下げて拾い直す」だけでは、
+発現系が 2 つそろう組はほとんど増えない。</p>
+<p>未探索でドライバーがある型が多い領域:</p>
+<table>
+<thead>
+<tr>
+<th>領域</th>
+<th>未探索の型</th>
+<th>うちドライバーあり</th>
+<th>良いドライバー</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SMP(R)</td>
+<td>292</td>
+<td>21</td>
+<td>19</td>
+</tr>
+<tr>
+<td>SLP(R)</td>
+<td>487</td>
+<td>13</td>
+<td>10</td>
+</tr>
+<tr>
+<td>SIP(R)</td>
+<td>75</td>
+<td>8</td>
+<td>8</td>
+</tr>
+<tr>
+<td>AVLP(R)</td>
+<td>215</td>
+<td>7</td>
+<td>5</td>
+</tr>
+<tr>
+<td>LH(R)</td>
+<td>54</td>
+<td>5</td>
+<td>4</td>
+</tr>
+<tr>
+<td>PLP(R)</td>
+<td>232</td>
+<td>5</td>
+<td>2</td>
+</tr>
+<tr>
+<td>WED(R)</td>
+<td>90</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td>ICL(R)</td>
+<td>96</td>
+<td>4</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>SMP・SIP・SLP の 3 領域だけで、ドライバーつきの未探索が 37 型。</strong>
+しかもここは MBON04 の候補が出た領域でもある。やるならここ。</p>
+<h2 id="3">3. 本命は「領域をまたぐ組」</h2>
+<p>特異性 1 以上のドライバーがある型は <strong>362</strong>（hemibrain にあるのは <strong>323</strong>）。
+この 323 型だけで考えうる向きつきの組は <strong>104,006</strong>。
+そのうち、これまでの探索で 1 度でも評価された組は <strong>7,609（7.3%）</strong> しかない。</p>
+<pre><code>ドライバーつきの型どうしの組    104,006
+  これまでに評価した組            7,609  （7.3%）
+  未評価                         96,397  （92.7%）
+</code></pre>
+<p><strong>なぜこうなるか</strong>: 探索を領域ごとに行ったので、
+「SMP のデータ」に入った型と「LAL のデータ」に入った型は、
+<strong>実際には接していても 1 度も比較されていない</strong>。
+MBON04 → FB4N が見つかったのは、たまたま両方が SMP のデータに入っていたから。</p>
+<h3 id="_3">どうするか</h3>
+<p><strong>領域で区切るのをやめ、ドライバーがある 323 型だけを 1 つのデータセットにして、
+全組を一度に評価する。</strong></p>
+<ul>
+<li>細胞数は数千のオーダー（KC など細胞数の多い型を除けばさらに減る）。
+  これまでの領域データ（1 つ 200〜800 MB）より小さく収まる見込み。</li>
+<li>接触の計算はペア数に効くが、近接判定は KD-tree なので
+  「接する可能性のある組」だけに絞られる。</li>
+<li><strong>この 1 回で、ドライバーがある型どうしの組を網羅できる。</strong></li>
+</ul>
+<pre><code>python fetch_data.py neuprint --types &lt;323 型&gt; --dataset hemibrain:v1.2.1 \
+    --out data/hemibrain_drivers.pkl --max-per-type 4
+./run_screen.sh drivers
+</code></pre>
+<p>型の一覧は <code>results/coverage.csv</code> の <code>good_driver</code> 列が True の行。</p>
+<h2 id="4">4. 別のデータセット</h2>
+<table>
+<thead>
+<tr>
+<th>データセット</th>
+<th>中身</th>
+<th>Traced な型</th>
+<th>細胞</th>
+<th>状況</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hemibrain:v1.2.1</td>
+<td>雌・右半球</td>
+<td>5,620</td>
+<td>22,656</td>
+<td>探索の母体として使用</td>
+</tr>
+<tr>
+<td><strong>male-cns:v1.0</strong></td>
+<td>雄・全中枢神経系（脳＋視葉＋腹髄）</td>
+<td><strong>11,751</strong></td>
+<td><strong>162,517</strong></td>
+<td><strong>照合にしか使っていない</strong></td>
+</tr>
+<tr>
+<td><strong>manc:v1.2.3</strong></td>
+<td>腹髄のみ</td>
+<td><strong>4,081</strong></td>
+<td><strong>23,546</strong></td>
+<td><strong>完全に手つかず</strong></td>
+</tr>
+<tr>
+<td>FlyWire 783</td>
+<td>雌・全脳（両半球）</td>
+<td>—</td>
+<td>約 13 万</td>
+<td><strong>照合にしか使っていない</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>male-CNS は細胞数が hemibrain の 7 倍ある。</strong> 視葉と腹髄を含むので、
+hemibrain には無い回路がそのまま未探索として残っている。
+MANC だけでも hemibrain と同じ規模（型 4,081・細胞 23,546）がある。</p>
+<ul>
+<li><strong>MANC（腹髄）</strong> は下行ニューロンの先にある運動回路。
+  行動の読み出しが直接とれるので、読み出しの弱さという本プロジェクトの
+  弱点を埋められる可能性がある。ただしドライバーの整備状況は未調査。</li>
+<li><strong>FlyWire を母体にする</strong> と左半球・両側性の細胞が入る。
+  hemibrain は右半球だけなので、対側に投射する細胞の接触を取りこぼしている。</li>
+<li><strong>male-cns を母体にする</strong> と雌雄差のある回路に触れる。</li>
+</ul>
+<h2 id="5">5. やる順番（有望な順）</h2>
+<ol>
+<li><strong>ドライバーがある 323 型を 1 つにまとめて全組を評価</strong>（上記 3 節）。
+   領域の区切りを外すだけで、未評価の 92.7% に手が届く。いちばん費用対効果が高い。</li>
+<li><strong>SMP・SIP・SLP を低いしきい値で取り直す</strong>（800 → 200）。
+   ドライバーつきの未探索 37 型が入る。候補が出た実績のある領域でもある。</li>
+<li><strong>MANC（腹髄）の下調べ</strong> — 型の数とドライバーの整備状況を見てから決める。</li>
+<li>FlyWire / male-cns を母体にした探索。計算量が大きいので最後。</li>
+</ol>
+<p><strong>いずれにせよ、増えるのは「シナプス 0 の組」であって「使える組」ではない。</strong>
+これまでの絞り込みで効いた制約は一貫して<strong>ドライバー、とくに LexA</strong> だった。
+<code>results/hemidriver_lexa_report.md</code> のヘミドライバー変換のほうが、
+候補を増やす手段としては確度が高い。</p>
+</div></body></html>
