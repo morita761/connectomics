@@ -31,7 +31,7 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <body><div class="wrap">
 <nav><a href="../index.html">結果一覧</a></nav>
 <h1>報告書の一覧</h1>
-<p>results/ の Markdown 報告書を HTML にしたもの。全 16 件。</p>
+<p>results/ の Markdown 報告書を HTML にしたもの。全 18 件。</p>
 <div class="cards">
 <a class="card" href="shortlist_final.html"><b>3 個体でシナプス 0・接触が再現する組（shortlist_final.csv）</b><span>条件: hemibrain・male-cns・FlyWire の 3 個体すべてで両方向のシナプスが 0、
 かつ別個体でも 10 µm 以上の接触がある組。「上流出力 / 下流入力」は主な接触領域での個数。</span></a>
@@ -48,10 +48,14 @@ results/coverage_roi.csv（領域ごと）。</span></a>
 <a class="card" href="refs_top_pairs.html"><b>上位候補ペアの細胞について、行動実験を行っている論文</b><span>2026-11-10 作成。lit_search.py で Europe PMC を検索し、
 オープンアクセス論文は本文全体、それ以外は要旨を対象に
 「細胞名・系統名」「操作（光遺伝学・活動阻害など）」「行動（学習・選好</span></a>
+<a class="card" href="gal4only_candidates.html"><b>両方 GAL4 しかない組のうち、行動・生理の意味があるもの</b><span>2026-11-10。対象は results/shortlist_final.csv で
+「上流にも下流にも split-GAL4 はあるが、どちらにも LexA が無い」32 組。
+そのうち別個体でも接触が再現し、上流</span></a>
 <a class="card" href="candidate_ExR2_LAL098.html"><b>候補の検討: ExR2 ↔ LAL098</b><span>2026-11-10。ヘミドライバーの照合で救えた 5 組のうち、別個体での接触が最も良かった組を詰めた。</span></a>
 <a class="card" href="shortlist.html"><b>強制シナプス形成に向けた最終候補（shortlist.py）</b><span>条件: 合計シナプス 0 個以下。「接触の再現」は別個体の各半球で 10 µm 以上の接触があること。
 シナプス数は hemibrain の順/逆と、照合できた各個体の両方向の合計。</span></a>
 <a class="card" href="em_links_ExR2_LAL098.html"><b>接触部位の 3D と EM（hemibrain v1.2, 8 nm 等方）</b><span>色は 赤 = 1 つ目のタイプ / 水色 = 2 つ目。3D はメッシュ（実際の膜の形）。</span></a>
+<a class="card" href="em_links_gal4only.html"><b>接触部位の 3D と EM（hemibrain v1.2, 8 nm 等方）</b><span>色は 赤 = 1 つ目のタイプ / 水色 = 2 つ目。3D はメッシュ（実際の膜の形）。</span></a>
 <a class="card" href="em_links_MBON04_PPL105.html"><b>接触部位の 3D と EM（hemibrain v1.2, 8 nm 等方）</b><span>色は 赤 = 1 つ目のタイプ / 水色 = 2 つ目。3D はメッシュ（実際の膜の形）。</span></a>
 <a class="card" href="em_links_MBON04_FB4N.html"><b>接触部位の EM リンク（hemibrain v1.2 / 8 nm 等方）</b><span>体ID: MBON04_L 613079053 / MBON04_R 487925063 / FB4N_R 673746277 / MBON26_R 895441451</span></a>
 <a class="card" href="candidate_MBON04_FB4N.html"><b>本命候補: MBON04 → FB4N</b><span>人工分子でシナプスを強制形成させる実験の第一候補。2026-11-10 時点の調査をまとめる。</span></a>

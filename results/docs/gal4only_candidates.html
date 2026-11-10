@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>両方 GAL4 しかない組のうち、行動・生理の意味があるもの</title><style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px}
+nav{font-size:.9rem;color:var(--sub);margin-bottom:18px}
+nav a{color:var(--acc);text-decoration:none}nav a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.35;border-bottom:2px solid var(--line);padding-bottom:.4em;margin-top:1.2em}
+h2{font-size:1.25rem;margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.05rem;margin-top:1.6em}
+a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600;white-space:nowrap}
+code{background:var(--code);padding:.15em .4em;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--code);color:var(--fg)}
+ul,ol{padding-left:1.4em}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:20px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--bg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc)}
+.card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+</style></head>
+<body><div class="wrap">
+<nav><a href="index.html">← 報告書の一覧</a> ／ <a href="../index.html">結果一覧</a></nav>
+<h1 id="gal4">両方 GAL4 しかない組のうち、行動・生理の意味があるもの</h1>
+<p>2026-11-10。対象は <code>results/shortlist_final.csv</code> で
+「上流にも下流にも split-GAL4 はあるが、どちらにも LexA が無い」<strong>32 組</strong>。
+そのうち別個体でも接触が再現し、上流もその領域で出力している <strong>9 組</strong>を詳しく見た。</p>
+<h2 id="0">0. 結論</h2>
+<p><strong>上位 3 組は、これまでの本命（MBON04 ↔ PPL105、MBON04 → FB4N）より
+行動の読み出しがはっきりしている。</strong></p>
+<p>（順位は 5 節の EM を通したあとのもの）</p>
+<table>
+<thead>
+<tr>
+<th>順位</th>
+<th>組</th>
+<th>読み出し</th>
+<th>なぜ意味があるか</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>AVLP478 → DNp06</strong></td>
+<td>熱回避のナビゲーション</td>
+<td>下行ニューロンに抑制を 1 本足す。<strong>同じ AVLP の仲間は 8,666 シナプスを送っているのに、AVLP478 だけ 0</strong>。膜の密着は対照と同等。LexA の当てもある</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>MBON30 → oviIN</strong></td>
+<td><strong>産卵数（数えられる）</strong></td>
+<td>記憶・価数の出力を、産卵回路で唯一の抑制ハブにつなぐ。LexA の当てもある</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>MBON21 → FB4X</strong></td>
+<td>（FB4X の行動は未報告）</td>
+<td><strong>膜の密着が、結合している対照の 10 倍</strong>。読み出しだけが弱い</td>
+</tr>
+<tr>
+<td>✕</td>
+<td>~~PLP022 → DNp10~~</td>
+<td>前肢のリーチング・翅のはばたき</td>
+<td>読み出しは良いが <strong>EM で落ちた</strong>（対照の 1/30）</td>
+</tr>
+<tr>
+<td>5</td>
+<td>PS161 → DNa04</td>
+<td>飛翔中の操舵</td>
+<td><strong>同じ PS の仲間は 6,795 シナプスを送っているのに PS161 だけ 0</strong></td>
+</tr>
+<tr>
+<td>6</td>
+<td>VES012 → DNb05</td>
+<td>（DNb05 の行動は未報告）</td>
+<td>下行ニューロンだが機能が未記載</td>
+</tr>
+<tr>
+<td>7</td>
+<td>DL4_adPN → LHPV6c1</td>
+<td>生来の匂い行動</td>
+<td>外側角は Dolan 2019 の行動スクリーンの枠組みが使える</td>
+</tr>
+<tr>
+<td>8</td>
+<td>MBON31 → SMP503</td>
+<td>—</td>
+<td>SMP503 の素性が不明。GABA 受容体も 8.3% と薄い</td>
+</tr>
+<tr>
+<td>✕</td>
+<td>~~ExR2 → LAL098~~</td>
+<td>覚醒・移動</td>
+<td><strong>EM で落ちた</strong>（対照の 1/6〜1/10。<code>results/candidate_ExR2_LAL098.md</code>）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>下行ニューロン（DN）を下流に持つ組が有利</strong>なのは、
+DN の活動変化がそのまま特定の運動として出るから。
+本プロジェクトの弱点（FB4N や LAL098 に行動実験の前例が無い）を正面から埋められる。</p>
+<h2 id="1">1. 一覧</h2>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>接触</th>
+<th>別個体</th>
+<th>主領域</th>
+<th>上流出力 / 下流入力</th>
+<th>伝達物質</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON31 → SMP503</td>
+<td>152 µm</td>
+<td>25〜55 µm</td>
+<td>SMP(R)</td>
+<td>244 / 2,281</td>
+<td>GABA → 不明</td>
+</tr>
+<tr>
+<td>VES012 → DNb05</td>
+<td>145 µm</td>
+<td>35〜62 µm</td>
+<td>VES(R)</td>
+<td>221 / 909</td>
+<td>ACh → ACh</td>
+</tr>
+<tr>
+<td><strong>MBON30 → oviIN</strong></td>
+<td><strong>142 µm</strong></td>
+<td><strong>36〜68 µm</strong></td>
+<td>CRE(R)</td>
+<td><strong>738 / 3,715</strong></td>
+<td>グルタミン酸 → GABA</td>
+</tr>
+<tr>
+<td>MBON21 → FB4X</td>
+<td>133 µm</td>
+<td>36〜63 µm</td>
+<td>CRE(R)</td>
+<td>555 / 1,279</td>
+<td>ACh → グルタミン酸</td>
+</tr>
+<tr>
+<td>ExR2 → LAL098</td>
+<td>103 µm</td>
+<td>47〜77 µm</td>
+<td>LAL(R)</td>
+<td>144 / 2,353</td>
+<td>ドーパミン → GABA</td>
+</tr>
+<tr>
+<td><strong>AVLP478 → DNp06</strong></td>
+<td><strong>95 µm</strong></td>
+<td>28〜39 µm</td>
+<td>AVLP(R)</td>
+<td><strong>1,667 / 3,169</strong></td>
+<td>GABA → ACh</td>
+</tr>
+<tr>
+<td>PS161 → DNa04</td>
+<td>62 µm</td>
+<td>10〜21 µm</td>
+<td>SPS(R)</td>
+<td>188 / 3,946</td>
+<td>ACh → ACh</td>
+</tr>
+<tr>
+<td><strong>PLP022 → DNp10</strong></td>
+<td><strong>51 µm</strong></td>
+<td>30〜51 µm</td>
+<td>PLP(R)</td>
+<td>493 / 896</td>
+<td>GABA → ACh</td>
+</tr>
+<tr>
+<td>DL4_adPN → LHPV6c1</td>
+<td>41 µm</td>
+<td>27〜37 µm</td>
+<td>LH(R)</td>
+<td>917 / 925</td>
+<td>ACh → ACh</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2">2. 受容体はあるか、同じ仲間は結合しているか</h2>
+<p>下流が「その伝達物質をすでに受けているか」と、
+「同じ接頭辞の仲間からどれだけ入力を受けているか」を male-CNS で数えた。
+後者が大きいほど「その場所で結合できないわけではない」と言える。</p>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>下流の入力の総数</th>
+<th>上流と同じ伝達物質の割合</th>
+<th>同じ仲間からの入力</th>
+<th>判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AVLP478 → DNp06</strong></td>
+<td>41,753</td>
+<td>GABA <strong>21.2%</strong></td>
+<td><strong>AVLP* から 8,666</strong></td>
+<td><strong>◎ 最良</strong></td>
+</tr>
+<tr>
+<td><strong>PS161 → DNa04</strong></td>
+<td>17,294</td>
+<td>ACh 55.7%</td>
+<td><strong>PS* から 6,795</strong></td>
+<td><strong>◎</strong></td>
+</tr>
+<tr>
+<td><strong>PLP022 → DNp10</strong></td>
+<td>21,235</td>
+<td>GABA <strong>24.5%</strong></td>
+<td>PLP* から 1,645</td>
+<td>○</td>
+</tr>
+<tr>
+<td>MBON30 → oviIN</td>
+<td>52,915</td>
+<td>グルタミン酸 <strong>12.0%</strong></td>
+<td>MBON* から 171</td>
+<td>△</td>
+</tr>
+<tr>
+<td>VES012 → DNb05</td>
+<td>34,753</td>
+<td>ACh 69.8%</td>
+<td>VES* から 669</td>
+<td>△</td>
+</tr>
+<tr>
+<td>MBON21 → FB4X</td>
+<td>8,622</td>
+<td>ACh 62.6%</td>
+<td>MBON* から 307（<strong>MBON30 → FB4X が 259</strong>）</td>
+<td>○</td>
+</tr>
+<tr>
+<td>DL4_adPN → LHPV6c1</td>
+<td>6,456</td>
+<td>ACh 54.3%</td>
+<td>DL* から 121（兄弟の DA4l_adPN が 281）</td>
+<td>○</td>
+</tr>
+<tr>
+<td>MBON31 → SMP503</td>
+<td>9,772</td>
+<td>GABA 8.3%</td>
+<td>MBON* から 117</td>
+<td>✕</td>
+</tr>
+</tbody>
+</table>
+<p><strong>AVLP478 → DNp06 が際立っている。</strong> DNp06 は AVLP の細胞から 8,666 シナプスを受けており、
+GABA 入力も 21.2% ある。<strong>受け皿も機構もそろっているのに、AVLP478 からだけ 0。</strong>
+PS161 → DNa04 も同じ構図（PS* から 6,795 あるのに PS161 からは 0）。</p>
+<h2 id="3">3. 行動の読み出し</h2>
+<h3 id="avlp478-dnp06">AVLP478 → DNp06</h3>
+<ul>
+<li><strong>DNp06</strong> の抑制は熱回避のナビゲーションに影響する。
+  Jouandet GC, et al. (2023) Rapid threat assessment in the Drosophila thermosensory system.
+  <em>Nat Commun</em> <a href="https://doi.org/10.1038/s41467-023-42864-5">10.1038/s41467-023-42864-5</a>
+  — 熱回避で、温度受容の TLHON の下流として DNp06 を遺伝的に抑えたときの
+  ナビゲーションの表現型を調べている。</li>
+<li>新しくできるのは <strong>GABA（抑制）→ DN</strong> なので、「逃避・回避の出にくさ」として読める。</li>
+<li>DNp06 の主な入力は LPLC1 (2,773)、LPLC2 (1,719)、LC4 (1,152) という<strong>ルーミング検出の視覚投射ニューロン</strong>。
+  つまり DNp06 は視覚的な接近刺激に対する回避の出口にあたる。</li>
+</ul>
+<h3 id="mbon30-oviin">MBON30 → oviIN</h3>
+<ul>
+<li><strong>oviIN は産卵回路で唯一の抑制ニューロン</strong>。pC1 から oviDN と oviEN への
+  フィードフォワード抑制を担い、<strong>産卵の開始を止める側</strong>にいる。
+  Wang F, et al. (2020) Neural circuitry linking mating and egg laying in Drosophila females.
+  <em>Nature</em> <a href="https://doi.org/10.1038/s41586-020-2055-9">10.1038/s41586-020-2055-9</a></li>
+<li>oviIN は複数回路の統合ハブとされ、すべての oviDN サブタイプに前シナプスを持つ。
+  Weber-Langstaff RA, et al. (2025) The oviposition inhibitory neuron is a potential hub of
+  multi-circuit integration in the Drosophila brain. <em>eNeuro</em>
+  <a href="https://doi.org/10.1523/ENEURO.0123-25.2025">10.1523/ENEURO.0123-25.2025</a></li>
+<li><strong>MBON30</strong> は記憶・価数の出力で、行動実験の前例が 6 本ある
+  （Aso 2014 eLife 04580、Sitaraman 2015、Jacob 2021 Curr Biol ほか）。</li>
+<li><strong>読み出しは産卵数</strong>。数えられる・時間分解能がとれる・個体あたりのサンプルが多い、という点で
+  本プロジェクトで最も扱いやすい指標。
+  <strong>「学習した匂いの価数が産卵の判断に影響するか」</strong>を、シナプスを 1 本足して問うことになる。</li>
+<li>弱点: oviIN が MBON から受ける入力は全体で 171 シナプスしかない。
+  「その場所で MBON と結合できる」という対照が弱い。</li>
+</ul>
+<h3 id="plp022-dnp10">PLP022 → DNp10</h3>
+<ul>
+<li><strong>DNp10</strong> の活性化は前肢のリーチングと翅のはばたきを誘導する。
+  Cande J, Namiki S, Qiu J, Korff W, Card GM, Shaevitz JW, Stern DL, Berman GJ (2018)
+  Optogenetic dissection of descending behavioral control in Drosophila. <em>eLife</em> 7:e34275
+  <a href="https://doi.org/10.7554/eLife.34275">10.7554/eLife.34275</a></li>
+<li>DNp10 は正面から接近する速い暗い物体によく応答する。
+  Ache JM, et al. (2019) State-dependent decoupling of sensory and motor circuits under anesthesia.
+  <em>Nat Neurosci</em> <a href="https://doi.org/10.1038/s41593-019-0413-4">10.1038/s41593-019-0413-4</a></li>
+<li>新しくできるのは <strong>GABA → DN</strong>。ルーミングに対する反応の出にくさとして読める。</li>
+</ul>
+<h3 id="ps161-dna04">PS161 → DNa04</h3>
+<ul>
+<li><strong>DNa04</strong> は中心複合体から方向の情報を受け、飛翔中の操舵に関わるとされる
+  （MANC のコネクトーム解析）。読み出しは旋回・角速度。</li>
+<li>接触は 62 µm、別個体で 10〜21 µm と上位 3 組より短い。</li>
+</ul>
+<h3 id="dl4_adpn-lhpv6c1">DL4_adPN → LHPV6c1</h3>
+<ul>
+<li>外側角は生来の匂い行動の中枢で、Dolan MJ, et al. (2019)
+  <em>eLife</em> <a href="https://doi.org/10.7554/eLife.43079">10.7554/eLife.43079</a> が
+  82 の LH 細胞型に対する split-GAL4 と行動スクリーンを整備している。
+  LHPV6c1 個別の行動データは見つからなかった。</li>
+</ul>
+<h3 id="_1">読み出しが立たないもの</h3>
+<ul>
+<li><strong>DNb05</strong>: 視覚の糸球体と嗅覚の糸球体の両方に投射する珍しい DN だが、行動の報告は無い。</li>
+<li><strong>FB4X</strong>: 論文 3 本のみ、行動実験の記述なし。</li>
+<li><strong>SMP503</strong>: 論文 1 本のみ。素性が不明。</li>
+</ul>
+<h2 id="4-lexa">4. LexA の当て</h2>
+<p>発現系が 2 つにならないのがこの 32 組の共通の弱点。
+ヘミドライバー断片まで降りると、上位のうち 3 組に当てがある
+（<code>results/hemidriver_lexa_report.md</code>）。</p>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>LexA にする側</th>
+<th>断片</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AVLP478 → DNp06</strong></td>
+<td>下流 DNp06</td>
+<td><strong>VT019018-LexA</strong></td>
+<td>SS02256 と SS01047 という<strong>独立な 2 系統が同じ断片を AD 側に持つ</strong></td>
+</tr>
+<tr>
+<td><strong>MBON30 → oviIN</strong></td>
+<td>下流 oviIN</td>
+<td><strong>VT026347-LexA</strong></td>
+<td>SS65423 の AD 側</td>
+</tr>
+<tr>
+<td>MBON21 → FB4X</td>
+<td>上流 MBON21</td>
+<td><strong>GMR11C07-LexA</strong></td>
+<td>SS81353 の DBD 側。PAM10 も標識する（PAM10 ↔ FB4X は 0 で確認済み）</td>
+</tr>
+<tr>
+<td>DL4_adPN → LHPV6c1</td>
+<td>上流 DL4_adPN</td>
+<td><strong>VT033006-LexA</strong></td>
+<td>SS10228 と SS32214 が共有</td>
+</tr>
+<tr>
+<td>PLP022 → DNp10</td>
+<td>—</td>
+<td>無し</td>
+<td>SS01049 と SS01580 が VT031084 を共有するが LexA 版が無い</td>
+</tr>
+<tr>
+<td>PS161 → DNa04</td>
+<td>—</td>
+<td>無し</td>
+<td>SS02384 = GMR47D05 ∩ VT047755</td>
+</tr>
+<tr>
+<td>VES012 → DNb05</td>
+<td>—</td>
+<td>無し</td>
+<td>SS01051 = VT028198 ∩ VT019391</td>
+</tr>
+<tr>
+<td>MBON31 → SMP503</td>
+<td>—</td>
+<td>無し</td>
+<td>SS01239 と SS32246 が GMR13F04 を共有するが LexA 版が無い</td>
+</tr>
+</tbody>
+</table>
+<p><strong>AVLP478 → DNp06 と MBON30 → oviIN は、読み出しと LexA の当ての両方がそろう。</strong></p>
+<h2 id="5-em-1">5. 膜の密着（EM）— ここで 1 組落ちる</h2>
+<p>hemibrain のセグメンテーション（8 nm 等方）を 320×320×160 voxel 切り出し、
+<strong>同じ下流に実際に結合している細胞を対照に置いて</strong>数えた。</p>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>最接近の隙間</th>
+<th>直接隣接</th>
+<th>間に何も無い</th>
+<th>膜の頂点 &lt;50 nm</th>
+<th>対照との比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AVLP478 → DNp06</strong>（0 シナプス）</td>
+<td>45 nm</td>
+<td><strong>4,915</strong></td>
+<td>64%</td>
+<td>8</td>
+<td><strong>0.90</strong></td>
+</tr>
+<tr>
+<td>└ 対照 LPLC1 → DNp06（714 シナプス）</td>
+<td>45 nm</td>
+<td>5,483</td>
+<td>57%</td>
+<td>3</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>MBON21 → FB4X</strong>（0 シナプス）</td>
+<td><strong>0 nm</strong></td>
+<td><strong>4,119</strong></td>
+<td>59%（別の点で 80%）</td>
+<td>11</td>
+<td><strong>10.0</strong></td>
+</tr>
+<tr>
+<td>└ 対照 MBON30 → FB4X（178 シナプス）</td>
+<td>0 nm</td>
+<td>410</td>
+<td>27%</td>
+<td>29</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>MBON30 → oviIN</strong>（0 シナプス）</td>
+<td><strong>0 nm</strong></td>
+<td><strong>2,148</strong></td>
+<td>58%</td>
+<td>17</td>
+<td><strong>0.65</strong></td>
+</tr>
+<tr>
+<td>└ 対照 SMP052 → oviIN（614 シナプス）</td>
+<td>0 nm</td>
+<td>3,293</td>
+<td>66%</td>
+<td>116</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>PLP022 → DNp10</strong>（0 シナプス）</td>
+<td>45 nm</td>
+<td><strong>339</strong></td>
+<td>57%</td>
+<td>7</td>
+<td><strong>0.03</strong></td>
+</tr>
+<tr>
+<td>└ 対照 PS088 → DNp10（188 シナプス）</td>
+<td>0 nm</td>
+<td>10,750</td>
+<td>72%</td>
+<td>37</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>判定</strong></p>
+<ul>
+<li><strong>AVLP478 → DNp06 ◎</strong> — 714 シナプスある対照とほぼ同じだけ密着している。</li>
+<li><strong>MBON21 → FB4X ◎</strong> — <strong>結合している対照より 10 倍密着している</strong>。
+  MBON30 は FB4X に 178 シナプス作っているのに密着は 410 voxel / 27% しかなく、
+  MBON21 は 0 シナプスなのに 4,119 voxel / 59%。接触の質では MBON21 のほうが上。</li>
+<li><strong>MBON30 → oviIN ○</strong> — 対照の 65%。採用した他の候補（MBON04 → FB4N は 2,080）と同水準。</li>
+<li><strong>PLP022 → DNp10 ✕</strong> — 対照の 1/30。ExR2 → LAL098 と同じ落ち方。
+  骨格の接触 51 µm は、膜の近さを表していなかった。</li>
+</ul>
+<p><strong>EM を通すと順位が変わる。</strong> 接触の長さでは MBON30 → oviIN（142 µm）が上だったが、
+膜の密着では AVLP478 → DNp06 と MBON21 → FB4X のほうが確か。</p>
+<h3 id="em-neuroglancer">EM の neuroglancer リンク</h3>
+<p><code>results/em_links_gal4only.md</code>（対照を含む 6 本）。</p>
+<h2 id="6">6. 次にやること</h2>
+<ol>
+<li><strong>AVLP478 → DNp06 を本命として詰める</strong>。読み出し（熱回避のナビゲーション）、
+   特異性（AVLP* から 8,666 あるのに 0）、膜の密着（対照と同等）、
+   LexA の当て（VT019018、独立な 2 系統が共有）のすべてがそろう。</li>
+<li><strong>VT019018-LexA と VT026347-LexA の標識細胞を FlyLight の画像で確定する</strong>。
+   断片 1 つでは U（または D）が広がるので、U × D の混同を取り直す必要がある。</li>
+<li>MBON30 → oviIN は産卵という独立した読み出しなので、
+   キノコ体案（学習課題）と並行して進められる。</li>
+<li>残り 5 組（PS161 → DNa04、VES012 → DNb05、DL4_adPN → LHPV6c1、
+   MBON31 → SMP503、PLP022 → DNp10）は LexA の当てが無いか読み出しが弱い。
+   split-GAL4 → split-LexA の変換を前提にするなら PS161 → DNa04 が次点。</li>
+</ol>
+<h2 id="_2">使ったデータ</h2>
+<ul>
+<li>候補: <code>results/shortlist_final.csv</code>（両方 GAL4 のみ 32 組）</li>
+<li>伝達物質・入力の内訳: neuPrint male-cns:v1.0</li>
+<li>接触・接触領域: hemibrain:v1.2.1、別個体は male-cns:v1.0</li>
+<li>ヘミドライバー: <code>results/hemidriver_lexa.csv</code></li>
+<li>文献: <code>results/literature/</code>（<code>lit_search.py</code>）と、個別に当たった論文</li>
+</ul>
+</div></body></html>
