@@ -14,6 +14,7 @@
 | 中心複合体 | ER3a_d → FB4L | 104 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 11µm, male-cns R 22µm | SS04710〈GAL4〉[特異性1] / SS04710〈GAL4〉 | SS48802〈GAL4〉[特異性2] / SS61133〈GAL4〉[特異性2] |
 | 側方付属葉 | ExR2 → LAL098 | 103 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 47µm, male-cns R 77µm | SS58826〈GAL4〉[特異性2] / SS59679〈GAL4〉[特異性2] | SS49882〈GAL4〉(+VES019)[特異性2] / SS49882〈GAL4〉(+VES019)[特異性1] |
 | 腹外側前大脳 | AVLP478 → DNp06 | 95 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 39µm, male-cns R 28µm | SS01181〈GAL4〉(+MBON11)[特異性0] | SS02256〈GAL4〉[特異性2] / SS01047〈GAL4〉[特異性1] |
+| キノコ体の中だけ | MBON04 → PPL105 | 93 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 38µm, male-cns R 33µm | SS67728〈GAL4〉[特異性2] / SS67755〈GAL4〉[特異性2] | MB059B〈GAL4〉[特異性1] / MB320B〈GAL4〉(+PPL101)[特異性1] |
 | キノコ体 / LexA 12 型を軸に再探索 / キノコ体の中だけ | PPL105 → MBON04 | 83 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 24µm, male-cns R 14µm | MB059B〈GAL4〉[特異性1] / MB320B〈GAL4〉(+PPL101)[特異性1] | SS67728〈GAL4〉[特異性2] / SS67755〈GAL4〉[特異性2] |
 | 後斜面 | PS161 → DNa04 | 62 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 10µm, male-cns R 21µm | SS22505〈GAL4〉(+PS159)[特異性1] | SS02384〈GAL4〉(+DNa10)[特異性1] |
 | 腹外側前大脳 | PLP022 → DNp10 | 51 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 30µm, male-cns R 51µm | SS73660〈GAL4〉(+PLP015,WEDPN2B?)[特異性2] | SS01049〈GAL4〉[特異性2] / SS01580〈GAL4〉[特異性2] |
@@ -135,23 +136,22 @@
 | 側方付属葉 | AOTU042 → DNp17 | 107 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 0µm, male-cns R 0µm | SS85999〈GAL4〉[特異性1] | SS02553〈GAL4〉[特異性0] |
 | 中心複合体 | ExR2 → FB6M | 105 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 4µm, male-cns R 49µm | SS58826〈GAL4〉[特異性2] / SS59679〈GAL4〉[特異性2] | SS49931〈GAL4〉[特異性2] / SS72731〈GAL4〉[特異性2] |
 | 側方付属葉 | LAL072 → DNa01 | 97 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 7µm, male-cns R 0µm | SS49386〈GAL4〉[特異性2] | SS00731〈GAL4〉[特異性1] / SS00731〈GAL4〉[特異性0] |
-| キノコ体の中だけ | MBON15-like → MBON04 | 95 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | 未確認 | MB257C〈GAL4〉(+MBON19)[特異性1] / MB540B〈GAL4〉(+MBON18)[特異性1] | SS67728〈GAL4〉[特異性2] / SS67755〈GAL4〉[特異性2] |
+| キノコ体の中だけ | MBON15-like → MBON04 | 95 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 9µm, male-cns R 8µm | MB257C〈GAL4〉(+MBON19)[特異性1] / MB540B〈GAL4〉(+MBON18)[特異性1] | SS67728〈GAL4〉[特異性2] / SS67755〈GAL4〉[特異性2] |
 | キノコ体の中だけ | MBON21 → MBON03 | 94 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | 未確認 | SS46348〈GAL4〉[特異性2] / SS81353〈GAL4〉[特異性2] | SS01127〈GAL4〉[特異性2] / SS01143〈GAL4〉[特異性2] |
-| キノコ体の中だけ | MBON04 → PPL105 | 93 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | 未確認 | SS67728〈GAL4〉[特異性2] / SS67755〈GAL4〉[特異性2] | MB059B〈GAL4〉[特異性1] / MB320B〈GAL4〉(+PPL101)[特異性1] |
 | キノコ体の中だけ | PPL106 → PPL103 | 92 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 10µm, male-cns R 14µm | SL86050〈LexA〉[特異性2] / SL86062〈LexA〉[特異性2] | MB302B〈GAL4〉[特異性2] / MB302B〈GAL4〉[特異性0] |
 | 側方付属葉 | LAL098 → DNb01 | 82 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 4µm, male-cns R 2µm | SS49882〈GAL4〉(+VES019)[特異性2] / SS49882〈GAL4〉(+VES019)[特異性1] | SS02383〈GAL4〉[特異性2] / SS02542〈GAL4〉[特異性1] |
 | キノコ体の中だけ | MBON03 → MBON21 | 78 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | 未確認 | SS01127〈GAL4〉[特異性2] / SS01143〈GAL4〉[特異性2] | SS46348〈GAL4〉[特異性2] / SS81353〈GAL4〉[特異性2] |
 | 後斜面 | PS124 → DNb01 | 68 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 3µm, male-cns R 15µm | SS67678〈GAL4〉[特異性2] / SS66732〈GAL4〉[特異性0] | SS02383〈GAL4〉[特異性2] / SS02542〈GAL4〉[特異性1] |
 | キノコ体の中だけ | MBON21 → PPL106 | 60 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 13µm, male-cns R 4µm | SS46348〈GAL4〉[特異性2] / SS81353〈GAL4〉[特異性2] | SL86050〈LexA〉[特異性2] / SL86062〈LexA〉[特異性2] |
-| キノコ体の中だけ | PPL106 → MBON17 | 55 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | 未確認 | SL86050〈LexA〉[特異性2] / SL86062〈LexA〉[特異性2] | SS01298〈GAL4〉(+MBON16)[特異性2] / SS01397〈GAL4〉(+MBON16)[特異性2] |
-| キノコ体の中だけ | MBON04 → MBON20 | 50 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | 未確認 | SS67728〈GAL4〉[特異性2] / SS67755〈GAL4〉[特異性2] | SS67741〈GAL4〉[特異性2] / SS95118〈GAL4〉[特異性2] |
+| キノコ体の中だけ | PPL106 → MBON17 | 55 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 8µm, male-cns R 3µm | SL86050〈LexA〉[特異性2] / SL86062〈LexA〉[特異性2] | SS01298〈GAL4〉(+MBON16)[特異性2] / SS01397〈GAL4〉(+MBON16)[特異性2] |
+| キノコ体の中だけ | MBON04 → MBON20 | 50 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 0µm, male-cns R 0µm | SS67728〈GAL4〉[特異性2] / SS67755〈GAL4〉[特異性2] | SS67741〈GAL4〉[特異性2] / SS95118〈GAL4〉[特異性2] |
 | キノコ体の中だけ | MBON11 → MBON33 | 41 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 9µm, male-cns R 6µm | SL86058〈LexA〉[特異性2] / SS01359〈GAL4〉[特異性1] | SS75199〈GAL4〉[特異性1] / SS75200〈GAL4〉[特異性1] |
 | キノコ体の中だけ | MBON33 → MBON11 | 38 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 12µm, male-cns R 4µm | SS75199〈GAL4〉[特異性1] / SS75200〈GAL4〉[特異性1] | SL86058〈LexA〉[特異性2] / SS01359〈GAL4〉[特異性1] |
 | 側方付属葉 | ExR6 → DNb01 | 34 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 10µm, male-cns R 5µm | SS53617〈GAL4〉[特異性2] / SS53617〈GAL4〉 | SS02383〈GAL4〉[特異性2] / SS02542〈GAL4〉[特異性1] |
 | キノコ体の中だけ | PPL103 → MBON07 | 30 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 3µm, male-cns R 4µm | MB302B〈GAL4〉[特異性2] / MB302B〈GAL4〉[特異性0] | MB319B〈GAL4〉[特異性2] / MB319C〈GAL4〉[特異性2] |
 | キノコ体の中だけ | PPL101 → MBON01 | 28 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 3µm, male-cns R 0µm | SL86067〈LexA〉[特異性2] / MB503B〈GAL4〉[特異性1] | SS01308〈GAL4〉[特異性2] / SL86047〈LexA〉[特異性2] |
-| キノコ体の中だけ | MBON20 → MBON04 | 28 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | 未確認 | SS67741〈GAL4〉[特異性2] / SS95118〈GAL4〉[特異性2] | SS67728〈GAL4〉[特異性2] / SS67755〈GAL4〉[特異性2] |
-| キノコ体の中だけ | MBON01 → PPL104 | 26 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | 未確認 | SS01308〈GAL4〉[特異性2] / SL86047〈LexA〉[特異性2] | MB568B〈GAL4〉(+PPL105)[特異性0] / MB099C〈GAL4〉(+PPL103,PPL105,PPL106)[特異性2] |
+| キノコ体の中だけ | MBON20 → MBON04 | 28 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 0µm, male-cns R 0µm | SS67741〈GAL4〉[特異性2] / SS95118〈GAL4〉[特異性2] | SS67728〈GAL4〉[特異性2] / SS67755〈GAL4〉[特異性2] |
+| キノコ体の中だけ | MBON01 → PPL104 | 26 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 5µm, male-cns R 7µm | SS01308〈GAL4〉[特異性2] / SL86047〈LexA〉[特異性2] | MB568B〈GAL4〉(+PPL105)[特異性0] / MB099C〈GAL4〉(+PPL103,PPL105,PPL106)[特異性2] |
 | キノコ体の中だけ | MBON33 → PPL106 | 24 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 2µm, male-cns R 12µm | SS75199〈GAL4〉[特異性1] / SS75200〈GAL4〉[特異性1] | SL86050〈LexA〉[特異性2] / SL86062〈LexA〉[特異性2] |
 | キノコ体の中だけ | PPL106 → MBON21 | 22 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 2µm, male-cns R 1µm | SL86050〈LexA〉[特異性2] / SL86062〈LexA〉[特異性2] | SS46348〈GAL4〉[特異性2] / SS81353〈GAL4〉[特異性2] |
 | 側方付属葉 | VES031 → DNp17 | 369 µm | 0 | flywire:783(合計 0/0), male-cns:v1.0(合計 0/0) | male-cns L 0µm, male-cns R 0µm | - | SS02553〈GAL4〉[特異性0] |

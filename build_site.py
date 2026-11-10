@@ -227,18 +227,56 @@ def region_label(stem: str) -> tuple[str, str]:
 
 
 def find_3d(t1: str, t2: str) -> list[tuple[str, str]]:
-    """最終候補ページから張る 3D のリンク（results/zero_3d と cross_3d を探す）。"""
+    """最終候補ページから張る 3D のリンク（results/zero_3d と cross_3d を探す）。
+
+    3D のファイル名は作ったときの向きで決まるので、t1_t2 と t2_t1 の両方を探す。
+    同じ 2 細胞なら向きが逆でも中身は同じ（接触点と両方のスケルトン）。
+    """
     seen, out = set(), []
     for d in (RESULTS / "zero_3d", RESULTS / "cross_3d"):
         if not d.exists():
             continue
-        for f in sorted(d.glob(f"*{t1}_{t2}*.html")):
-            who = "hemibrain" if f.stem.startswith("hemibrain") else (
-                "male-cns" if "male" in f.stem else "別個体")
-            if who in seen:  # 同じ個体の 3D は 1 つだけ
-                continue
-            seen.add(who)
-            out.append((f"{d.name}/{f.name}", f"{who} の 3D"))
+        for pat in (f"*{t1}_{t2}*.html", f"*{t2}_{t1}*.html"):
+            for f in sorted(d.glob(pat)):
+                who = "hemibrain" if f.stem.startswith("hemibrain") else (
+                    "male-cns" if "male" in f.stem else "別個体")
+                if who in seen:  # 同じ個体の 3D は 1 つだけ
+                    continue
+                seen.add(who)
+                out.append((f"{d.name}/{f.name}", f"{who} の 3D"))
+    return out
+
+
+def find_docs(t1: str, t2: str) -> list[tuple[str, str]]:
+    """その組について書いた報告書・EM リンク集（results/docs/ の HTML）。
+
+    build_docs.py が results/*.md を results/docs/*.html にしてある前提。
+    publish_site.py で公開するときは docs/ -> reports/ に読み替える。
+    """
+    out = []
+    for a, b in ((t1, t2), (t2, t1)):
+        for stem, label in ((f"candidate_{a}_{b}", "検討"), (f"em_links_{a}_{b}", "EM")):
+            f = RESULTS / "docs" / f"{stem}.html"
+            if f.exists() and (f"docs/{stem}.html", label) not in out:
+                out.append((f"docs/{stem}.html", label))
+    return out
+
+
+def em_gap_of() -> dict[tuple[str, str], tuple[int, int]]:
+    """EM で測った膜の密着（results/em_gap/summary.csv）を組ごとに 1 つにまとめる。
+
+    1 組につき測定点が複数あるので、最もよく接している点を代表にする。
+    """
+    f = RESULTS / "em_gap" / "summary.csv"
+    if not f.exists():
+        return {}
+    d = pd.read_csv(f)
+    out: dict[tuple[str, str], tuple[int, int]] = {}
+    for r in d.itertuples(index=False):
+        k = (str(r.t1), str(r.t2))
+        v = (int(r.touch_voxels), int(r.direct_pct))
+        if k not in out or v[0] > out[k][0]:
+            out[k] = v
     return out
 
 
@@ -284,10 +322,16 @@ def build_shortlist_page() -> dict | None:
     d["ok_active"] = d.ok_active.fillna(False).astype(bool)
     d["both_drivers"] = d.both_drivers.fillna(False).astype(bool)
     rank = {g: i for i, (g, _) in enumerate(GRADES)}
+    EM = em_gap_of()
     rows = []
     for r in d.itertuples(index=False):
         g, why = grade_of(r)
         links = " ".join(f'<a href="{html.escape(u)}">{html.escape(lab)}</a>' for u, lab in find_3d(r.t1, r.t2))
+        docs = " ".join(f'<a class="rep" href="{html.escape(u)}">{html.escape(lab)}</a>'
+                        for u, lab in find_docs(r.t1, r.t2))
+        g_em = EM.get((r.t1, r.t2)) or EM.get((r.t2, r.t1))
+        em_txt = f"{g_em[0]:,} / {g_em[1]}%" if g_em else ""
+        em_n = g_em[0] if g_em else -1
         def cell(gal4, lexa):
             parts = []
             for val, label, cls in ((gal4, "GAL4", ""), (lexa, "LexA", ' class="lexa"')):
@@ -320,7 +364,8 @@ def build_shortlist_page() -> dict | None:
             "sysnote": ("上流 GAL4 + 下流 LexA" if getattr(r, "two_systems", False)
                         else ("両方 GAL4 のみ" if r.both_drivers else "ドライバー不足")),
             "readout": r.readout if isinstance(r.readout, str) and r.readout != "-" else "",
-            "links": links,
+            "links": links + ("  " if links and docs else "") + docs,
+            "em": em_txt, "em_n": em_n,
         })
     rows.sort(key=lambda x: (x["_g"], -x["contact"]))
     legend = "".join(f'<li><b>{html.escape(g)}</b> … {t}</li>' for g, t in GRADES)
@@ -439,7 +484,8 @@ select,input{font:inherit;padding:4px 6px;border:1px solid var(--line);border-ra
 <th data-k="contact" class="num">接触 元 → 別個体</th>
 <th data-k="syn" class="num">シナプス<br><span class="sub">3 個体合計</span></th>
 <th data-k="pre_out" class="num">上流出力 / 下流入力</th>
-<th data-k="comp">比較（同じ下流へ）</th><th data-k="up">上流ドライバー</th><th data-k="down">下流ドライバー</th><th>3D</th>
+<th data-k="em_n" class="num">膜の密着<br><span class="sub">EM・直接隣接 / 割合</span></th>
+<th data-k="comp">比較（同じ下流へ）</th><th data-k="up">上流ドライバー</th><th data-k="down">下流ドライバー</th><th>3D・報告書</th>
 </tr></thead><tbody></tbody></table></div>
 <script>
 const ROWS = __ROWS__;
@@ -466,6 +512,7 @@ function view(){
     <td class="num">${r.contact_txt}<div class="sub">${r.cross_contact}</div></td>
     <td class="num">${r.syn}<div class="sub">${r.datasets}</div></td>
     <td class="num">${r.active}</td>
+    <td class="num">${r.em || '<span class="sub">未測定</span>'}</td>
     <td>${r.comp}</td>
     <td class="${r.up === '—' ? 'drv no' : 'drv'}">${r.up}</td>
     <td class="${r.down === '—' ? 'drv no' : 'drv'}">${r.down}

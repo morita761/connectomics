@@ -103,10 +103,18 @@ def main():
         if (RESULTS / d).exists():
             total += copy(RESULTS / d, SITE / d)
     for f in ("shortlist.html", "shortlist_final.csv", "mb_final19.csv",
-              "gmr_lexa_match.csv", "em_gap/summary.csv"):
+              "gmr_lexa_match.csv", "hemidriver_lexa.csv", "em_gap/summary.csv"):
         src = RESULTS / f
         if src.exists():
             total += copy(src, SITE / f)
+    # 最終候補ページから報告書へのリンクは results/docs/ を指しているので、
+    # 公開先の docs/reports/ に読み替える
+    sl = SITE / "shortlist.html"
+    if sl.exists():
+        t = sl.read_text(encoding="utf-8")
+        # 行データは JSON として埋め込まれていて引用符が \" になっているので、両方の形を直す
+        t = t.replace('href="docs/', 'href="reports/').replace('href=\\"docs/', 'href=\\"reports/')
+        sl.write_text(t, encoding="utf-8")
     if (ROOT / "data" / "lexa_lines_nonmb.csv").exists():
         total += copy(ROOT / "data" / "lexa_lines_nonmb.csv", SITE / "lexa_lines_nonmb.csv")
     if args.with_datasets:

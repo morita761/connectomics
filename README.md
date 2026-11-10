@@ -869,6 +869,27 @@ DL4_adPN → LHPV6c1（VT033006-LexA）。
 ただし断片 1 つが標識する細胞の全体（U / D の中身）は未確定なので、
 混同の判定は FlyLight の画像か NeuronBridge の逆引きで取り直す必要がある。
 
+## 最終候補のページ（results/shortlist.html）
+
+`python shortlist.py --max-total 0 && python build_docs.py && python build_site.py` で作る。
+3 個体すべてで両方向のシナプスが 0 だった 306 組を 1 つの表にして、判定・接触・膜の密着・
+ドライバー・3D・報告書へのリンクを並べる。列はクリックで並べ替えられる。
+
+| 列 | 中身 |
+|---|---|
+| 判定 | ◎ 発現系が 2 つそろう／○ 両方 GAL4／△ 片側のみ／要注意 上流がそこで出力していない |
+| 接触 元 → 別個体 | hemibrain の接触と、別個体の左右それぞれでの接触 |
+| 上流出力 / 下流入力 | 主な接触領域にある上流のシナプス前部位と下流の後部位の数 |
+| **膜の密着** | EM のセグメンテーションで数えた直接隣接ボクセルと、間に何も無い表面点の割合（`em_gap_check.py`） |
+| 3D・報告書 | 骨格の 3D（hemibrain と別個体）、その組について書いた報告書と EM リンク集 |
+
+3D のファイル名は作ったときの向きで決まるので、`t1_t2` と `t2_t1` の両方を探してリンクする。
+別個体の 3D は `python cross_3d.py --data data/male_cns_top.pkl --pair MBON04 PPL105 …` で作る。
+
+**注意**: `shortlist.py` は各領域の `results/` を読み直して `shortlist_final.csv` を作る。
+新しく接触や接触領域を測ったら、**必ず `shortlist.py` を流し直す**こと。
+流し忘れると、測ったはずの組が「接触未確認」のまま表に出る。
+
 ## サイトと公開
 
 - `python build_docs.py` — `results/*.md` を HTML に変換（`results/docs/`）。
