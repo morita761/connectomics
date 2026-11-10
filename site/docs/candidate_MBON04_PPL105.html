@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>本命候補: MBON04 ↔ PPL105（キノコ体案）</title><style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px}
+nav{font-size:.9rem;color:var(--sub);margin-bottom:18px}
+nav a{color:var(--acc);text-decoration:none}nav a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.35;border-bottom:2px solid var(--line);padding-bottom:.4em;margin-top:1.2em}
+h2{font-size:1.25rem;margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.05rem;margin-top:1.6em}
+a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600;white-space:nowrap}
+code{background:var(--code);padding:.15em .4em;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--code);color:var(--fg)}
+ul,ol{padding-left:1.4em}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:20px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--bg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc)}
+.card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+</style></head>
+<body><div class="wrap">
+<nav><a href="index.html">← 報告書の一覧</a> ／ <a href="../index.html">結果一覧</a></nav>
+<h1 id="mbon04-ppl105">本命候補: MBON04 ↔ PPL105（キノコ体案）</h1>
+<p>キノコ体の細胞どうしで人工分子によるシナプス強制形成を行うときの第一候補。2026-11-10 時点の調査をまとめる。</p>
+<ul>
+<li><strong>MBON04</strong> = MBON-β'2mp_bilateral（キノコ体 β'2 区画の出力ニューロン、左右 1 個ずつ、グルタミン酸）</li>
+<li><strong>PPL105</strong> = PPL1-α'2α2（α'2/α2 区画に投射するドーパミンニューロン、左右 1 個ずつ）</li>
+<li><strong>接触</strong> hemibrain で 92.6 µm（MBON04 → PPL105 の向き）/ 82.9 µm（逆向き）</li>
+<li><strong>別個体（male-CNS）</strong> 左右両半球で 32.9 / 37.8 µm — この調査全体で最も再現性が高い</li>
+<li><strong>シナプス</strong> 3 個体・両方向すべて 0</li>
+</ul>
+<p><strong>この組の最大の特徴は、同じ 2 細胞で両方向とも条件を満たすこと。</strong>
+向きを変えた対照実験を同一の細胞対で組める候補は、全探索でここだけだった。</p>
+<h2 id="1">1. なぜこの組か（「機械は揃っているのに、この相手だけ結合しない」）</h2>
+<p>PPL105 は MBON と盛んに結合しており、MBON04 は DAN と盛んに結合している。
+それでも <strong>MBON04 と PPL105 のあいだだけが 0</strong> である。</p>
+<h3 id="mbon-ppl105">MBON → PPL105 の向き</h3>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>接触</th>
+<th>シナプス</th>
+<th>1 µm あたり</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBON04 → PPL105</strong></td>
+<td>92.6 µm</td>
+<td><strong>0</strong></td>
+<td><strong>0.000</strong></td>
+</tr>
+<tr>
+<td>MBON06 → PPL105</td>
+<td>563.9 µm</td>
+<td>102</td>
+<td>0.181</td>
+</tr>
+<tr>
+<td>MBON15-like → PPL105</td>
+<td>357.7 µm</td>
+<td>27</td>
+<td>0.075</td>
+</tr>
+<tr>
+<td>MBON11 → PPL105</td>
+<td>350.6 µm</td>
+<td>19</td>
+<td>0.054</td>
+</tr>
+<tr>
+<td>MBON18 → PPL105</td>
+<td>1824.7 µm</td>
+<td>17</td>
+<td>0.009</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ppl105-mbon">PPL105 → MBON の向き</h3>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>接触</th>
+<th>シナプス</th>
+<th>1 µm あたり</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PPL105 → MBON04</strong></td>
+<td>82.9 µm</td>
+<td><strong>0</strong></td>
+<td><strong>0.000</strong></td>
+</tr>
+<tr>
+<td>PPL105 → MBON13</td>
+<td>2803.5 µm</td>
+<td>609</td>
+<td>0.217</td>
+</tr>
+<tr>
+<td>PPL105 → MBON18</td>
+<td>3904.2 µm</td>
+<td>449</td>
+<td>0.115</td>
+</tr>
+<tr>
+<td>PPL105 → MBON19</td>
+<td>2737.9 µm</td>
+<td>167</td>
+<td>0.061</td>
+</tr>
+</tbody>
+</table>
+<p>PPL105 は MBON 全般に <strong>1,685 シナプス / 13 タイプ</strong>を出し、MBON から <strong>194 シナプス / 8 タイプ</strong>を受けている
+（hemibrain）。MBON04 はその両方のリストに入っていない。</p>
+<h3 id="ppl107">決定的な対照: PPL107 は同じ細胞と両方向で結合している</h3>
+<p>PPL107 は PPL105 と<strong>同じ PPL1 クラスター・同じ細胞体繊維（PDL05）</strong>のドーパミンニューロンである。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>hemibrain</th>
+<th>male-CNS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON04 → PPL107</td>
+<td><strong>739</strong></td>
+<td><strong>671</strong></td>
+</tr>
+<tr>
+<td>PPL107 → MBON04</td>
+<td><strong>450</strong></td>
+<td><strong>265</strong></td>
+</tr>
+<tr>
+<td>MBON04 → PPL105</td>
+<td><strong>0</strong></td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td>PPL105 → MBON04</td>
+<td><strong>0</strong></td>
+<td><strong>0</strong></td>
+</tr>
+</tbody>
+</table>
+<p>MBON04 が DAN 全般に出す出力は 1,230 シナプス / 20 タイプ、DAN 全般から受ける入力は
+4,673 シナプス / 26 タイプ（hemibrain）。<strong>「MBON04 が PPL1 の DAN と結合できない」わけではない。</strong>
+欠落はこの 1 組に限られる。</p>
+<p>強制形成が成功したときの目標値は、近接から計算した期待値で
+<strong>MBON04 → PPL105 が 2.8 シナプス、PPL105 → MBON04 が 6.5 シナプス</strong>。
+PPL105 → MBON04 の向きは統計的にも有意な欠落（Poisson 検定 p = 0.0015）。</p>
+<h2 id="2">2. 伝達物質がかみ合う（両方向とも受容体がある）</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>伝達物質</th>
+<th>根拠</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON04</td>
+<td><strong>グルタミン酸</strong></td>
+<td>male-CNS の consensusNt（予測も一致）</td>
+</tr>
+<tr>
+<td>PPL105</td>
+<td><strong>ドーパミン</strong></td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<p>重要なのは、<strong>どちらの細胞も相手の伝達物質の入力をすでに受けていること</strong>（male-CNS）。</p>
+<table>
+<thead>
+<tr>
+<th>受け手</th>
+<th>入力の総数</th>
+<th>内訳</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PPL105</strong></td>
+<td>17,272</td>
+<td>アセチルコリン 83.3% / <strong>グルタミン酸 10.1%（約 1,740 シナプス）</strong> / ドーパミン 3.0% / GABA 2.7%</td>
+</tr>
+<tr>
+<td><strong>MBON04</strong></td>
+<td>20,894</td>
+<td>アセチルコリン 56.8% / グルタミン酸 19.6% / GABA 10.3% / <strong>ドーパミン 9.8%（約 2,050 シナプス）</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>PPL105 のグルタミン酸入力は LHMB1 (292)、SMP086 (242)、SLP103 (193) など。
+  → グルタミン酸受容体がある状態なので、MBON04 → PPL105 の新生シナプスは機能しうる。</li>
+<li>MBON04 のドーパミン入力は PAM05 (727)、PAM06 (677)、PPL107 (265) など。
+  → ドーパミン受容体がある状態なので、PPL105 → MBON04 の新生シナプスも機能しうる。</li>
+</ul>
+<p>ハエのグルタミン酸作動性 MBON は GluClα を介して<strong>抑制性</strong>に働くことが多い。
+MBON04 → PPL105 は「DAN を抑える」入力、PPL105 → MBON04 は「MBON の出力を調節する」入力になると予想される。</p>
+<h2 id="3">3. 接触部位は「軸索終末 × 樹状突起」</h2>
+<h3 id="hemibrainmbon04-ppl105">細胞ごとの接触（hemibrain、MBON04 → PPL105 の向き）</h3>
+<table>
+<thead>
+<tr>
+<th>上流</th>
+<th>下流</th>
+<th>接触</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON04_R (487925063)</td>
+<td>PPL105_R (5813019513)</td>
+<td><strong>56.7 µm</strong></td>
+</tr>
+<tr>
+<td>MBON04_L (613079053)</td>
+<td>PPL105_L (642516892)</td>
+<td>23.0 µm</td>
+</tr>
+<tr>
+<td>MBON04_L</td>
+<td>PPL105_R</td>
+<td>12.8 µm</td>
+</tr>
+<tr>
+<td>MBON04_R</td>
+<td>PPL105_L</td>
+<td>1.9 µm</td>
+</tr>
+</tbody>
+</table>
+<p><strong>4 通りの細胞の組み合わせすべてで接触している。</strong> MBON04 が左右両方に投射する bilateral な細胞なので、
+同側・対側の両方で出会う。同一個体の中でも 4 回再現していることになる。</p>
+<h3 id="_1">領域の内訳</h3>
+<pre><code>接触の場所         SIP(R) 97%, SMP(R) 2%, CRE(R) 1%
+MBON04 の出力      SIP(R) 53%, SMP(R) 27%, CRE(R) 19%, SLP(R) 1%
+PPL105 の入力      a2(R) 35%, a'2(R) 24%, SIP(R) 20%, SMP(R) 14%
+PPL105 の出力      a2(R) 45%, a'2(R) 35%, SIP(R) 9%, a'1(R) 6%
+主領域 SIP(R) での数   MBON04 の出力部位 538 / PPL105 の入力部位 1,380
+</code></pre>
+<p>接触は <strong>SIP(R)</strong> で起きている。MBON04 の軸索終末域の最大の領域（53%）であり、
+PPL105 が樹状突起入力を受ける 3 番目の領域（20%、1,380 の後シナプス部位）でもある。
+<strong>両者が「出す側」「受ける側」として機能している場所で接している。</strong> 通り道が偶然重なっただけではない。</p>
+<p>なお接触はキノコ体のローブの<strong>外</strong>（SIP）である。MBON の軸索と DAN の樹状突起が出会う場所は
+構造上ローブの外なので、MBON ↔ DAN の組はすべてこうなる。</p>
+<h2 id="4-2">4. ドライバー（発現系が 2 つそろう）</h2>
+<table>
+<thead>
+<tr>
+<th>役割</th>
+<th>系統</th>
+<th>発現系</th>
+<th>標識する型</th>
+<th>特異性</th>
+<th>出典</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON04 側</td>
+<td><strong>SL86063</strong></td>
+<td>split-LexA</td>
+<td>MBON01, MBON03, MBON04</td>
+<td>2（理想）</td>
+<td>Shuai 2024 eLife 94168</td>
+</tr>
+<tr>
+<td>PPL105 側</td>
+<td><strong>SS48817</strong></td>
+<td>split-GAL4</td>
+<td>FB2A, PPL105</td>
+<td>1</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>PPL105 側（代替）</td>
+<td>MB059B</td>
+<td>split-GAL4</td>
+<td>PPL105 (+ PPL103 が確率的)</td>
+<td>1</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<p>MBON04 を単独で標識する split-GAL4（SS67728 / SS67755）はいちばんきれいだが、
+それを使うと PPL105 側に GAL4 を回せない。PPL105 に LexA が無いので、<strong>MBON04 側を LexA にする</strong>構成しかない。
+上流を MBON04、下流を PPL105 にする場合も逆向きの場合も、系統の組み合わせは同じ。</p>
+<h3 id="u-d-0">混同の確認（U × D がすべて 0 か）</h3>
+<p>上流ドライバーが標識する型の集合を U、下流ドライバーの集合を D としたとき、
+<strong>U × D の全組が 0</strong> でなければ基準値が 0 にならない。</p>
+<p>U = {MBON01, MBON03, MBON04}。</p>
+<table>
+<thead>
+<tr>
+<th>D の中身</th>
+<th>hemibrain</th>
+<th>male-CNS</th>
+<th>判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PPL105（目標）</td>
+<td>0 / 0 / 0</td>
+<td>0 / <strong>3</strong> / 0</td>
+<td>ほぼ 0</td>
+</tr>
+<tr>
+<td><strong>FB2A</strong>（SS48817 の相方）</td>
+<td><strong>0 / 0 / 0</strong></td>
+<td><strong>0 / 0 / 0</strong></td>
+<td><strong>完全に 0</strong></td>
+</tr>
+<tr>
+<td>PPL103（MB059B の確率的な相方）</td>
+<td>2 / 3 / 0</td>
+<td><strong>17</strong> / 0 / 0</td>
+<td>要注意</td>
+</tr>
+</tbody>
+</table>
+<p>（数字は MBON01 / MBON03 / MBON04 の順。両方向の合計）</p>
+<p><strong>SS48817 を使うのが正解。</strong> FB2A は MBON01・MBON03・MBON04 のいずれとも 2 個体で完全に 0 なので、
+U × D が全部 0 になる。MB059B は PPL105 単独に見えるが、PPL103 に確率的な発現があり
+（Shuai 2024 の記載）、MBON01 → PPL103 が male-CNS で 17 シナプスある。これは基準値を汚す。</p>
+<p>逆向き（PPL105 → MBON04）に使う場合も同じ系統で、U と D が入れ替わるだけなので同じ結論。</p>
+<h2 id="5-em">5. EM で確認した: 膜は直接向かい合っていて、グリアは挟まっていない</h2>
+<p>「接触」は骨格どうしが 1 µm 以内という近接判定なので、隙間にグリアの突起が入っている可能性が残る。
+hemibrain のセグメンテーション（8 nm 等方、全ボクセルに物体 ID が付く）を
+320×320×160 voxel 切り出して実体を数えた。</p>
+<table>
+<thead>
+<tr>
+<th>部位</th>
+<th>直接隣接するボクセル</th>
+<th>間に何も無い表面点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBON04 → PPL105（0 シナプス）</strong></td>
+<td><strong>6,140</strong></td>
+<td><strong>70%</strong></td>
+</tr>
+<tr>
+<td><strong>PPL105 → MBON04（0 シナプス）</strong></td>
+<td><strong>6,180</strong></td>
+<td><strong>68%</strong></td>
+</tr>
+<tr>
+<td>MBON04 → PPL107（739 シナプスある対照）</td>
+<td>7,871</td>
+<td>63%</td>
+</tr>
+<tr>
+<td>MBON04 → PPL107（対照、別の測定点）</td>
+<td>6,017</td>
+<td>69%</td>
+</tr>
+<tr>
+<td>PPL107 → MBON04（450 シナプスある対照）</td>
+<td>4,512</td>
+<td>83%</td>
+</tr>
+<tr>
+<td>PPL107 → MBON04（対照、別の測定点）</td>
+<td>4,285</td>
+<td>83%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>シナプスが 0 の組と、同じ細胞で 739 シナプスある組が、膜の密着度では区別できない。</strong>
+これは全脳の本命 MBON04 → FB4N（2,080 voxel / 56%）より明確な結果である。</p>
+<p>膜（メッシュ）どうしの距離も測った: 50 nm 以内の頂点 5、100 nm 以内 20、200 nm 以内 143、500 nm 以内 575。
+対照の MBON04 ↔ PPL107 は 50 nm 以内 126、100 nm 以内 673 で、対照のほうが広い面で近接しているが、
+最接近部では両者とも隙間 0 nm（直接隣接）である。</p>
+<h3 id="_2">間に入っていた物体</h3>
+<p>最良の測定点（voxel 16838, 26628, 11118）で、A と B のあいだに挟まっていた物体:</p>
+<table>
+<thead>
+<tr>
+<th>物体 ID</th>
+<th>正体</th>
+<th>切り出し内の体積</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>796500184</td>
+<td>neuPrint に未登録の断片</td>
+<td>0.044 µm³</td>
+</tr>
+<tr>
+<td>5813021535</td>
+<td><strong>SLP230</strong>（トレース済みの普通のニューロン、pre 2060 / post 3504）</td>
+<td>0.037 µm³</td>
+</tr>
+<tr>
+<td>796500068</td>
+<td>未登録の断片</td>
+<td>0.019 µm³</td>
+</tr>
+<tr>
+<td>796500193</td>
+<td>未登録の断片</td>
+<td>0.004 µm³</td>
+</tr>
+<tr>
+<td>796500221</td>
+<td>未登録の断片</td>
+<td>0.002 µm³</td>
+</tr>
+<tr>
+<td>796841381</td>
+<td>未登録の断片</td>
+<td>0.002 µm³</td>
+</tr>
+</tbody>
+</table>
+<p>逆向きの測定点では CRE105（トレース済み、pre 492 / post 1995）などが現れた。
+<strong>名前の付いた普通のニューロンか、0.002〜0.044 µm³ の微小断片だけ。</strong>
+グリアのような膜の鞘があれば、正体不明の大きな物体として現れるはずだが、それが無い。</p>
+<p><strong>結論: 結合が無いのは物理的な隔たりのせいではなく、分子的な理由である。</strong></p>
+<h2 id="6">6. 同じ動物の中に対照が置ける</h2>
+<p>強制形成の効果を測るとき、同じ脳の中に「変わってはいけない結合」が必要になる。
+この組は対照の質が特に高い。</p>
+<table>
+<thead>
+<tr>
+<th>対照</th>
+<th>シナプス</th>
+<th>性質</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBON04 → PPL107</strong></td>
+<td>739</td>
+<td><strong>下流だけ違う。上流は同じ細胞・同じドライバー</strong></td>
+</tr>
+<tr>
+<td><strong>PPL107 → MBON04</strong></td>
+<td>450</td>
+<td><strong>上流だけ違う。下流は同じ細胞・同じドライバー</strong></td>
+</tr>
+<tr>
+<td>PPL105 → MBON13</td>
+<td>609</td>
+<td>上流は同じ細胞。下流だけ違う</td>
+</tr>
+<tr>
+<td>MBON06 → PPL105</td>
+<td>102</td>
+<td>下流は同じ細胞。上流だけ違う</td>
+</tr>
+</tbody>
+</table>
+<p>PPL107 は PPL105 と同じクラスターなので、<strong>同じ種類の細胞・同じ場所・同じ伝達物質</strong>でありながら
+片方は結合し片方は 0 という、理想的な内部対照になる。
+染色・検出効率の個体差の正規化にも使える。</p>
+<h2 id="7">7. 読み出し</h2>
+<ul>
+<li>下流が DAN なので、<strong>キノコ体の学習課題がそのまま使える</strong>。
+  PPL105 (PPL1-α'2α2) は α'2/α2 区画のドーパミン入力で、嫌悪記憶の形成・保持の文脈で
+  繰り返し扱われてきた区画である。</li>
+<li>PPL105 → MBON04 の向きが成立すると、PPL105 が MBON04（β'2mp）の出力を直接調節する
+  経路が新しくできる。MBON04 は PAM05/PAM06 から強いドーパミン入力を受けており
+  （727 / 677 シナプス）、そこに別区画の DAN からの入力が加わる構成になる。</li>
+<li>MBON04 → PPL105 の向きが成立すると、β'2 の出力が α'2/α2 の DAN を抑える
+  フィードバック経路が増える。MBON → DAN のフィードバックは記憶の更新・消去に
+  関わると考えられている回路なので、1 本足す意味がある。</li>
+<li>行動の読み出しは T 迷路の嗜好指数（Preference Index）と、
+  光遺伝学で DAN を駆動したときの PI の変化。既に設計済みの PAM / PPL1 の
+  競合実験（条件 A: 嫌悪、B: 報酬、C: 両方 → PI ≈ 0）が陽性対照として使える。</li>
+</ul>
+<p>文献の裏付けは <code>results/literature/summary.md</code> と <code>results/refs_top_pairs.md</code> を参照。</p>
+<h2 id="8-3d-em">8. 3D と EM</h2>
+<table>
+<thead>
+<tr>
+<th>中身</th>
+<th>場所</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>骨格（接触点が赤・回転できる）</td>
+<td><code>results/zero_3d/hemibrain_PPL105_MBON04.html</code></td>
+</tr>
+<tr>
+<td>メッシュ（実際の膜）と EM 断面の neuroglancer リンク</td>
+<td><code>results/em_links_MBON04_PPL105.md</code></td>
+</tr>
+<tr>
+<td>対照 MBON04 ↔ PPL107 の EM リンク</td>
+<td>同上（同じファイルに 4 本）</td>
+</tr>
+</tbody>
+</table>
+<p>リンクは <code>em_links.py</code> で summary.csv から再生成できる:</p>
+<pre><code>python em_links.py --pairs MBON04:PPL105 PPL105:MBON04 MBON04:PPL107 PPL107:MBON04 \
+    --out results/em_links_MBON04_PPL105.md
+</code></pre>
+<h2 id="9-mbon04-fb4n">9. 全脳の本命 MBON04 → FB4N との比較</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MBON04 ↔ PPL105</th>
+<th>MBON04 → FB4N</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>接触（hemibrain）</td>
+<td>92.6 µm</td>
+<td>108.9 µm</td>
+</tr>
+<tr>
+<td>別個体での接触</td>
+<td><strong>32.9 / 37.8 µm</strong></td>
+<td>10.4 / 29.3 µm</td>
+</tr>
+<tr>
+<td>膜の直接隣接</td>
+<td><strong>6,140 / 70%</strong></td>
+<td>2,080 / 56%</td>
+</tr>
+<tr>
+<td>対照（実シナプス）との比較</td>
+<td><strong>同等</strong>（対照 6,017〜7,871）</td>
+<td>同等（対照 2,968）</td>
+</tr>
+<tr>
+<td>主領域での上流の出力部位</td>
+<td><strong>538</strong></td>
+<td>308</td>
+</tr>
+<tr>
+<td>両方向が候補になる</td>
+<td><strong>はい</strong></td>
+<td>いいえ</td>
+</tr>
+<tr>
+<td>同じクラスターの細胞が対照になる</td>
+<td><strong>はい（PPL107）</strong></td>
+<td>はい（MBON26・MBON27）</td>
+</tr>
+<tr>
+<td>行動の読み出し</td>
+<td>DAN なので既存の学習課題が使える</td>
+<td>FB4N 自体の行動実験は文献に無い（PFL3 経由で 2 シナプス）</td>
+</tr>
+<tr>
+<td>上流 LexA</td>
+<td>SL86063</td>
+<td>SL86063（<strong>共通</strong>）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>データの質ではこちらが上回る。</strong> 上流が同じ MBON04 なので、
+両方を進める場合は<strong>同じ LexA 系統 SL86063 を共有できる</strong>（交配の手間が半分になる）。</p>
+<h2 id="10">10. 残っている確認事項</h2>
+<ol>
+<li>SS48817 の FB2A 側の発現が、使う効果器で問題にならないか（FB2A は扇状体 2 層の接線ニューロン）。</li>
+<li>MB059B を使う場合、PPL103 への確率的発現を実際の標本で確認して除外できるか。</li>
+<li>導入する分子の向き（どちらを前側・後側にするか）。両方向が候補なので、
+   同じ 2 細胞で向きを入れ替えた 2 系統を作れる。</li>
+<li>グルタミン酸受容体のサブタイプ（GluClα か）と、ドーパミン受容体（Dop1R1/Dop1R2）を
+   踏まえた生理の読み出し設計。</li>
+</ol>
+<h2 id="_3">使ったデータ</h2>
+<ul>
+<li>hemibrain:v1.2.1（雌・右半球）/ FlyWire 783（雌・全脳）/ male-CNS:v1.0（雄・全中枢神経系）</li>
+<li>MBON04: bodyId 487925063 (R), 613079053 (L) — hemibrain / 525780 (R), 530875 (L) — male-CNS</li>
+<li>PPL105: bodyId 5813019513 (R), 642516892 (L) — hemibrain / 14225 (R), 512326 (L) — male-CNS</li>
+<li>PPL107（対照）: bodyId 859265651 (R), 424918786 (L) — hemibrain / 14705 (R), 519616 (L) — male-CNS</li>
+<li>EM の測定点: voxel (16838, 26628, 11118) — hemibrain v1.2 segmentation, 8 nm 等方</li>
+</ul>
+</div></body></html>

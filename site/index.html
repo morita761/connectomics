@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>近接するがシナプスを作らないニューロンの探索</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.7}
+.wrap{max-width:900px;margin:0 auto;padding:28px 16px 80px}
+h1{font-size:1.7rem;margin-bottom:.2em}
+.lead{color:var(--sub);margin-top:0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:24px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:16px;text-decoration:none;color:var(--fg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc);font-size:1.05rem}
+.card span{display:block;color:var(--sub);font-size:.88rem;margin-top:6px}
+.hero{grid-column:1/-1;background:var(--code)}
+ul{color:var(--sub);font-size:.92rem}
+code{background:var(--code);padding:.15em .4em;border-radius:4px}
+</style></head><body><div class="wrap">
+<h1>近接するがシナプスを作らないニューロンの探索</h1>
+<p class="lead">ショウジョウバエのコネクトーム 3 個体（hemibrain・FlyWire・male-CNS）から、
+膜は接しているのにシナプスが 0 の細胞の組を探し、人工分子でシナプスを強制形成させる標的を選ぶ。</p>
+<div class="cards">
+<a class="card hero" href="docs/index.html"><b>◇ 報告書（13 件）</b><span>候補の検討・ドライバー・EM・文献のまとめ</span></a>
+<a class="card" href="docs/candidate_MBON04_PPL105.html"><b>本命: MBON04 ↔ PPL105</b><span>キノコ体案の第一候補。両方向が候補になる</span></a>
+<a class="card" href="docs/candidate_MBON04_FB4N.html"><b>本命: MBON04 → FB4N</b><span>全脳探索の第一候補</span></a>
+<a class="card" href="shortlist.html"><b>★ 最終候補の一覧</b><span>3 個体で確かめた組</span></a>
+<a class="card" href="docs/em_links_MBON04_PPL105.html"><b>EM と 3D のリンク</b><span>neuroglancer で膜の接触を見る ／ 3D 25 件</span></a>
+<a class="card" href="docs/lexa_catalog.html"><b>LexA ドライバーの棚卸し</b><span>キノコ体以外・神経とグリア</span></a>
+</div>
+<h2>公開していないもの</h2>
+<ul>
+<li>骨格・メッシュのデータ（<code>data/</code>、約 5.4 GB）</li>
+<li>データセット別ページの全ペア 3D（<code>results/&lt;データ名&gt;/3d/</code>、約 3.5 GB）</li>
+</ul>
+<p class="lead">どちらも <code>fetch_data.py</code> と <code>run_all.py</code> で作り直せる。</p>
+</div></body></html>

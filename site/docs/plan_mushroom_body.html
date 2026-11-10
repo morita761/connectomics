@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>キノコ体の細胞どうしで強制シナプス形成を行う案</title><style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px}
+nav{font-size:.9rem;color:var(--sub);margin-bottom:18px}
+nav a{color:var(--acc);text-decoration:none}nav a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.35;border-bottom:2px solid var(--line);padding-bottom:.4em;margin-top:1.2em}
+h2{font-size:1.25rem;margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.05rem;margin-top:1.6em}
+a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600;white-space:nowrap}
+code{background:var(--code);padding:.15em .4em;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--code);color:var(--fg)}
+ul,ol{padding-left:1.4em}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:20px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--bg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc)}
+.card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+</style></head>
+<body><div class="wrap">
+<nav><a href="index.html">← 報告書の一覧</a> ／ <a href="../index.html">結果一覧</a></nav>
+<h1 id="_1">キノコ体の細胞どうしで強制シナプス形成を行う案</h1>
+<p>2026-11-10 の吟味。結論は <strong>成立する。全脳を探すより候補が多く、質も上回る</strong>。
+19 組を 4 条件で判定して 4 組が残り、第一候補は <strong>MBON04 → PPL105</strong>。</p>
+<p>※ 「キノコ体の細胞どうし」であって「キノコ体のローブの中で」ではない。
+残った組の接触はすべて SIP・SMP・SLP で起きている（6 節・8 節）。</p>
+<h2 id="1">1. なぜキノコ体に限るのか</h2>
+<p>上流と下流に別々の人工分子を入れるには、独立した発現系が 2 つ要る（GAL4 と LexA）。
+集めた 4,045 系統のうち <strong>LexA は 20 系統・12 型しかなく、その 12 型はすべてキノコ体の細胞</strong>だった。</p>
+<pre><code>MBON01 MBON03 MBON04 MBON07 MBON11 MBON12 PAM11 PPL101 PPL106 SLP400 SMP108 SMP348
+</code></pre>
+<p>全脳を探すと、見つかる組の大半は相手がキノコ体の外なので LexA が無く、実験にならない。
+探索をキノコ体の中に閉じれば、上流も下流もこの 12 型から選べる。</p>
+<blockquote>
+<p><strong>補足（2026-11-10 追記）</strong>: この「20 系統・12 型」は<strong>「1 つの細胞型だけを狙える split-LexA」</strong>に
+限った数である。範囲を広げると、キノコ体の外にも LexA は存在する
+（GMR-LexA 約 1,400 系統、VT-LexA、遺伝子ノックイン LexA、グリアの repo/alrm/wrapper-LexA など)。
+ただしどれも 1 断片が数個〜数十の細胞型を標識するので、本実験の
+「U × D のすべての組が 0」という条件を満たすかは系統ごとに画像で確認する必要がある。
+また Shuai 2024 は <strong>split-GAL4 → split-LexA の変換を 34 系統で試して 22 系統成功</strong>しており、
+このボトルネックは「作れば解ける」種類の制約である。
+詳細は <code>results/lexa_catalog.md</code> と <code>data/lexa_lines_nonmb.csv</code>。
+<strong>つまりキノコ体に限るのは「現存系統だけで考えたときの最短経路」であって、原理的な制約ではない。</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>探索範囲</th>
+<th>3 個体でゼロの組</th>
+<th>2 つの発現系がそろう組</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全脳 10 領域</td>
+<td>285</td>
+<td><strong>2</strong></td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>392（hemibrain）</td>
+<td><strong>12</strong>（下表）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2">2. 絞り込みの経過</h2>
+<pre><code>キノコ体内部で接触 20 µm 以上・両方向ゼロ ……………… 392 組
+  → 2 つの発現系がそろう ………………………………… 53 組
+  → FlyWire でもゼロ ……………………………………… 43 組
+  → 型単位で数え直してもゼロ …………………………… 37 組
+  → male-CNS でもゼロ …………………………………… 22 組
+  → ドライバーの混同が無害（下記）…………………… 19 組
+</code></pre>
+<p><strong>型単位の数え直しは必須</strong>だった。キノコ体のデータは細胞を間引いて取得しているので、
+間引いた細胞でゼロでも型全体ではゼロでない組が 6 つ混ざっていた
+（PAM07↔MBON01、MBON01↔PAM14、PAM11↔PAM05）。</p>
+<p><strong>ドライバーの混同の判定</strong>も必須だった。多くの系統は目的の細胞以外も標識する。
+正しい基準はこうである:</p>
+<blockquote>
+<p>上流のドライバーが標識する型の集合を <strong>U</strong>、下流のが標識する集合を <strong>D</strong> とすると、
+<strong>U × D のすべての組み合わせ</strong>が 0 でなければならない。</p>
+</blockquote>
+<p>上流側の分子は U の全細胞に、下流側の分子は D の全細胞に乗るので、
+U のどれかから D のどれかへ既存のシナプスがあれば基準値が 0 でなくなる。
+逆に <strong>U どうし・D どうしの既存結合は読み出しに混ざらない</strong>（前側と後側の分子が揃わない）。</p>
+<p>この基準で 22 組を調べると、<strong>使えないのは 3 組だけ</strong>だった。</p>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>問題</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON21 → MBON03</td>
+<td>一緒に標識される MBON04 へ MBON21 が 383 シナプス</td>
+</tr>
+<tr>
+<td>MBON04 → MBON15-like</td>
+<td>一緒に標識される MBON03 から MBON15-like へ 182 シナプス</td>
+</tr>
+<tr>
+<td>MBON03 → MBON21</td>
+<td>一緒に標識される MBON01 から MBON21 へ 29 シナプス</td>
+</tr>
+</tbody>
+</table>
+<p>一時期「1 型しか標識しない系統だけ」という厳しすぎる条件で 12 組に絞っていたが、
+それだと <code>SL86063</code>（MBON01・03・04）を使う組がすべて落ちてしまう。
+たとえば <strong>PPL105 → MBON04</strong> は、U={PPL105} × D={MBON01, MBON03, MBON04} の
+3 通りを調べて既存シナプスは合計 1 本（male-CNS の PPL105 → MBON03）で、実質無害である。</p>
+<h2 id="3">3. 候補の一覧</h2>
+<p>19 組すべてを 4 つの条件で判定した表は 7 節にある。伝達物質は
+Glu = グルタミン酸（抑制性）、GABA = 抑制性、ACh = 興奮性、DA = ドーパミン。</p>
+<p>主な細胞の区画と伝達物質:</p>
+<table>
+<thead>
+<tr>
+<th>型</th>
+<th>区画</th>
+<th>伝達物質</th>
+<th></th>
+<th>型</th>
+<th>区画</th>
+<th>伝達物質</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON01</td>
+<td>γ5β'2a</td>
+<td>Glu</td>
+<td></td>
+<td>MBON31</td>
+<td>α'1a</td>
+<td>GABA</td>
+</tr>
+<tr>
+<td>MBON02</td>
+<td>β2β'2a</td>
+<td>Glu</td>
+<td></td>
+<td>MBON33</td>
+<td>γ2γ3</td>
+<td>ACh</td>
+</tr>
+<tr>
+<td>MBON04</td>
+<td>β'2mp</td>
+<td>Glu</td>
+<td></td>
+<td>PPL101</td>
+<td>γ1pedc</td>
+<td>DA</td>
+</tr>
+<tr>
+<td>MBON07</td>
+<td>α1</td>
+<td>Glu</td>
+<td></td>
+<td>PPL103</td>
+<td>γ2α'1</td>
+<td>DA</td>
+</tr>
+<tr>
+<td>MBON11</td>
+<td>γ1pedc&gt;α/β</td>
+<td>GABA</td>
+<td></td>
+<td>PPL105</td>
+<td>—</td>
+<td>DA</td>
+</tr>
+<tr>
+<td>MBON21</td>
+<td>γ4γ5</td>
+<td>ACh</td>
+<td></td>
+<td>PPL106</td>
+<td>α3</td>
+<td>DA</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>PAM11</td>
+<td>α1</td>
+<td>DA</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>PAM12</td>
+<td>γ3</td>
+<td>DA</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4">4. 「機械は揃っているのに、この相手にだけ作っていない」</h2>
+<p>第一候補 <strong>MBON04 ↔ PPL105</strong> は、両方向ともこの性質を満たす。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>既存の結合</th>
+<th>この相手には</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON04 の DAN への出力</td>
+<td>1,228 シナプス / 18 タイプ（同じ PPL1 群の <strong>PPL107 に 739</strong>）</td>
+<td>PPL105 には <strong>0</strong></td>
+</tr>
+<tr>
+<td>PPL105 が受ける MBON 入力</td>
+<td>194 シナプス / 8 タイプ（MBON06 107 など）</td>
+<td>MBON04 からは <strong>0</strong></td>
+</tr>
+<tr>
+<td>PPL105 の MBON への出力</td>
+<td>1,685 シナプス / 13 タイプ（MBON13 609 など）</td>
+<td>MBON04 には <strong>0</strong></td>
+</tr>
+<tr>
+<td>MBON04 が受ける DAN 入力</td>
+<td>4,672 シナプス / 25 タイプ（<strong>PPL107 から 450</strong>）</td>
+<td>PPL105 からは <strong>0</strong></td>
+</tr>
+</tbody>
+</table>
+<p>とくに <strong>PPL107 は PPL105 と同じ PPL1 クラスターの細胞で、MBON04 と両方向に結合している</strong>。
+「その場所で DAN と MBON04 が結合できない」わけではなく、PPL105 とだけ作っていない。</p>
+<p>他の 3 組も同じ性質を持つ。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>既存の結合</th>
+<th>この相手には</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON07 の DAN への出力</td>
+<td>78 シナプス / 3 タイプ（PAM11 に 75）</td>
+<td>PPL106 には <strong>0</strong></td>
+</tr>
+<tr>
+<td>PPL106 が受ける MBON 入力</td>
+<td>259 シナプス / 13 タイプ</td>
+<td>MBON07 からは <strong>0</strong></td>
+</tr>
+<tr>
+<td>MBON31 の DAN への出力</td>
+<td>—</td>
+<td>PAM11 には <strong>0</strong>（α'1 の MBON はすべて 0〜2）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-kc-mbon">5. できないこと: KC → MBON</h2>
+<p>キノコ体で最も「記憶を書き込む」操作らしいのは KC（記憶を蓄える細胞）→ MBON を繋ぐことだが、
+これは現状では無理。</p>
+<p><strong>KC のドライバーはクラス単位（αβ・α'β'・γ）でしか無く、EM の亜型を撃ち分けられない。</strong>
+クラスごと標識すると、結合している兄弟亜型が混ざって基準値がゼロでなくなる。</p>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>本人</th>
+<th>クラス全体</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KCg-m → MBON33</td>
+<td>467</td>
+<td>γ 全体 1,482</td>
+</tr>
+<tr>
+<td>KCa'b'-ap1 → MBON22</td>
+<td>17</td>
+<td>α'β' 全体 51</td>
+</tr>
+<tr>
+<td>KCab-p → MBON13</td>
+<td>0</td>
+<td><strong>αβ 全体も 0</strong></td>
+</tr>
+</tbody>
+</table>
+<p>唯一クラス全体でゼロなのは KCab-p → MBON13 だが、これは別個体での接触再現に失敗している。</p>
+<h2 id="6">6. 注意点</h2>
+<ol>
+<li><strong>DAN → MBON は解釈が弱い。</strong> キノコ体でのドーパミンの正規の作用点は KC の前シナプス終末
+   （DopR / DAMB）であって、MBON への直接シナプスではない。直接の DAN→MBON シナプスは
+   存在するが機能的役割の確立度が低く、「PAM/PPL1 同時照射と等価」とは言いにくい。</li>
+<li><strong>MBON31 → PAM11 は既に機能的に繋がっている可能性がある。</strong> MBON-α'1 → PAM-α1 は
+   報酬の長期記憶のループとして報告がある（Ichinose 2015）。コネクトームで直接シナプスを
+   調べると α'1 の MBON はすべて PAM-α1 と 0〜2 で、報告されたループは間接的なものらしい。
+   データとしては矛盾しないが、既に機能的に結合している回路に線を足すことになるので、
+   表現型をこの操作に帰属させにくい。避けるのが無難。</li>
+<li><strong>残った 4 組はすべて SIP・SMP・SLP での接触</strong>で、キノコ体のローブの中ではない
+   （8 節末尾）。MBON の軸索と DAN の樹状突起が出会うのはローブの外なので、
+   MBON → DAN の組は構造上そうなる。</li>
+</ol>
+<h2 id="7-19-4">7. 19 組を 4 つの条件で判定した結果</h2>
+<p>すべての組を同じ条件で測り直した（欠損なし）。条件は次の 4 つ。</p>
+<ol>
+<li><strong>膜の密着</strong> — 最接近点でセグメンテーションを 8 nm 等方で切り出し、
+   A と B のボクセルが直接隣接する数と、間に何も無い表面点の割合（<code>em_gap_check.py</code>）</li>
+<li><strong>別個体での接触</strong> — male-CNS の左右両半球での接触長</li>
+<li><strong>接触領域での活動</strong> — その領域で上流が出力し、下流が入力を受けているか</li>
+<li><strong>ドライバーの混同</strong> — U × D のすべての組の既存シナプス数</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>判定</th>
+<th>組</th>
+<th>接触</th>
+<th>別個体</th>
+<th>膜（直接隣接 / 割合）</th>
+<th>主領域</th>
+<th>上流出力 / 下流入力</th>
+<th>混同</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>◎</td>
+<td>MBON31 → PAM11</td>
+<td>25 µm</td>
+<td>18〜23 µm</td>
+<td>7,375 / 77%</td>
+<td>SMP(R)</td>
+<td>244 / 248</td>
+<td>0</td>
+</tr>
+<tr>
+<td>◎</td>
+<td>MBON07 → PPL106</td>
+<td>37 µm</td>
+<td>19〜19 µm</td>
+<td>6,333 / 72%</td>
+<td>SLP(R)</td>
+<td>400 / 321</td>
+<td>0</td>
+</tr>
+<tr>
+<td>◎</td>
+<td>PPL105 → MBON04</td>
+<td>83 µm</td>
+<td>14〜24 µm</td>
+<td>6,180 / 68%</td>
+<td>SIP(R)</td>
+<td>139 / 1173</td>
+<td>1</td>
+</tr>
+<tr>
+<td>◎</td>
+<td>MBON04 → PPL105</td>
+<td>93 µm</td>
+<td>33〜38 µm</td>
+<td>6,140 / 70%</td>
+<td>SIP(R)</td>
+<td>538 / 1380</td>
+<td>3</td>
+</tr>
+<tr>
+<td>✕ 別個体</td>
+<td>PPL101 → MBON01</td>
+<td>28 µm</td>
+<td>0〜3 µm</td>
+<td>7,677 / 81%</td>
+<td>other</td>
+<td>0 / 0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>✕ 別個体</td>
+<td>MBON33 → PPL106</td>
+<td>24 µm</td>
+<td>2〜12 µm</td>
+<td>5,236 / 72%</td>
+<td>SMP(R)</td>
+<td>189 / 1716</td>
+<td>0</td>
+</tr>
+<tr>
+<td>✕ 別個体</td>
+<td>MBON33 → MBON11</td>
+<td>38 µm</td>
+<td>4〜12 µm</td>
+<td>3,143 / 78%</td>
+<td>g1(R)</td>
+<td>6 / 15305</td>
+<td>0</td>
+</tr>
+<tr>
+<td>✕ 上流出力</td>
+<td>MBON11 → MBON33</td>
+<td>41 µm</td>
+<td>6〜9 µm</td>
+<td>3,095 / 70%</td>
+<td>g1(R)</td>
+<td>95 / 63</td>
+<td>0</td>
+</tr>
+<tr>
+<td>✕ 別個体</td>
+<td>MBON20 → MBON04</td>
+<td>28 µm</td>
+<td>0〜0 µm</td>
+<td>2,274 / 70%</td>
+<td>CRE(R)</td>
+<td>28 / 3819</td>
+<td>2</td>
+</tr>
+<tr>
+<td>✕ 別個体</td>
+<td>PPL106 → MBON17</td>
+<td>55 µm</td>
+<td>3〜8 µm</td>
+<td>2,271 / 58%</td>
+<td>a'3(R)</td>
+<td>3 / 3273</td>
+<td>1</td>
+</tr>
+<tr>
+<td>✕ 別個体</td>
+<td>PPL103 → MBON07</td>
+<td>30 µm</td>
+<td>3〜4 µm</td>
+<td>1,983 / 55%</td>
+<td>a1(R)</td>
+<td>4 / 14549</td>
+<td>0</td>
+</tr>
+<tr>
+<td>✕ 上流出力</td>
+<td>PPL106 → PAM12</td>
+<td>137 µm</td>
+<td>14〜25 µm</td>
+<td>1,892 / 65%</td>
+<td>SMP(R)</td>
+<td>94 / 308</td>
+<td>0</td>
+</tr>
+<tr>
+<td>✕ 上流出力</td>
+<td>MBON15-like → MBON04</td>
+<td>95 µm</td>
+<td>8〜9 µm</td>
+<td>1,796 / 73%</td>
+<td>CRE(R)</td>
+<td>51 / 3819</td>
+<td>3</td>
+</tr>
+<tr>
+<td>✕ 別個体</td>
+<td>MBON21 → PPL106</td>
+<td>60 µm</td>
+<td>4〜13 µm</td>
+<td>1,678 / 74%</td>
+<td>SMP(R)</td>
+<td>58 / 1716</td>
+<td>0</td>
+</tr>
+<tr>
+<td>✕ 別個体</td>
+<td>PPL106 → MBON21</td>
+<td>22 µm</td>
+<td>1〜2 µm</td>
+<td>1,665 / 83%</td>
+<td>CRE(R)</td>
+<td>7 / 1325</td>
+<td>0</td>
+</tr>
+<tr>
+<td>✕ 上流出力</td>
+<td>PPL106 → PPL103</td>
+<td>92 µm</td>
+<td>10〜14 µm</td>
+<td>1,273 / 74%</td>
+<td>SMP(R)</td>
+<td>94 / 1971</td>
+<td>0</td>
+</tr>
+<tr>
+<td>✕ 別個体</td>
+<td>MBON04 → MBON20</td>
+<td>50 µm</td>
+<td>0〜0 µm</td>
+<td>1,083 / 69%</td>
+<td>CRE(R)</td>
+<td>480 / 1523</td>
+<td>0</td>
+</tr>
+<tr>
+<td>✕ 膜</td>
+<td>MBON02 → PPL106</td>
+<td>25 µm</td>
+<td>19〜25 µm</td>
+<td>289 / 18%</td>
+<td>SIP(R)</td>
+<td>694 / 837</td>
+<td>0</td>
+</tr>
+<tr>
+<td>✕ 膜</td>
+<td>MBON01 → PPL104</td>
+<td>26 µm</td>
+<td>5〜7 µm</td>
+<td>0 / 0%</td>
+<td>SMP(R)</td>
+<td>1813 / 290</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>比較の基準: 本物のシナプスがある部位（MBON26 → FB4N）は <strong>2,968 voxel / 62%</strong>。</p>
+<h3 id="_2">この表から分かったこと</h3>
+<ul>
+<li><strong>膜の密着だけでは決まらない。</strong> PPL101 → MBON01 は密着が 1 位（7,677 voxel / 81%）
+  なのに、接触領域が ROI 一覧の外で上流の出力も下流の入力も 0。
+  神経束を並走しているだけの密着で、別個体でも再現しない。</li>
+<li><strong>接触長だけでも決まらない。</strong> PPL106 → PAM12 は接触 137 µm と最長で別個体でも
+  14〜25 µm 再現するが、その領域での上流の出力が 94 しかない。</li>
+<li><strong>4 つの条件はどれも別の失敗モードを捕まえている。</strong> 15 組が落ちた理由は
+  「膜」2 組、「別個体」9 組、「上流の出力」4 組とばらけている。</li>
+</ul>
+<h2 id="8-4">8. 結論: 残った 4 組</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MBON04 → PPL105</th>
+<th>PPL105 → MBON04</th>
+<th>MBON07 → PPL106</th>
+<th>MBON31 → PAM11</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>向き</td>
+<td>MBON → DAN</td>
+<td>DAN → MBON</td>
+<td>MBON → DAN</td>
+<td>MBON → DAN</td>
+</tr>
+<tr>
+<td>接触</td>
+<td><strong>93 µm</strong></td>
+<td>83 µm</td>
+<td>37 µm</td>
+<td>25 µm</td>
+</tr>
+<tr>
+<td>別個体</td>
+<td><strong>33〜38 µm</strong></td>
+<td>14〜24 µm</td>
+<td>19 µm</td>
+<td>18〜23 µm</td>
+</tr>
+<tr>
+<td>膜</td>
+<td>6,140 / 70%</td>
+<td>6,180 / 68%</td>
+<td>6,333 / 72%</td>
+<td><strong>7,375 / 77%</strong></td>
+</tr>
+<tr>
+<td>上流出力</td>
+<td><strong>538</strong></td>
+<td>139</td>
+<td>400</td>
+<td>244</td>
+</tr>
+<tr>
+<td>下流入力</td>
+<td>1,380</td>
+<td>1,173</td>
+<td>321</td>
+<td>248</td>
+</tr>
+<tr>
+<td>混同</td>
+<td>3</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>注意点</td>
+<td>—</td>
+<td>上流出力が少なめ</td>
+<td>—</td>
+<td>Ichinose 2015 のループと重なる</td>
+</tr>
+</tbody>
+</table>
+<p><strong>第一候補は MBON04 → PPL105。</strong> 接触の長さ、別個体での再現（このプロジェクト全体で最高）、
+上流の出力のどれでも最良か最良に近い。膜の密着も本物のシナプス部位を上回る。
+MBON04 はグルタミン酸作動性（抑制性）、PPL105 はドーパミン作動性。
+MBON → DAN のフィードバックは記憶の再評価・消去を駆動する回路として報告があり
+（Felsenberg 2018）、解釈の土台がある。</p>
+<p>同じ 2 細胞の逆向き <strong>PPL105 → MBON04</strong>（全脳の探索でも ◎ だった組）も条件を満たすので、
+<strong>向きを変えた対照実験を同じ細胞対で組める</strong>のが強み。</p>
+<p>詳細な検討は <strong><code>results/candidate_MBON04_PPL105.md</code></strong>（特異性・伝達物質・接触形状・
+ドライバーの混同・EM・対照・読み出し）。EM と 3D のリンクは <code>results/em_links_MBON04_PPL105.md</code>。</p>
+<h3 id="mbon07-ppl106-2026-11-10">ただしドライバーの質では MBON07 → PPL106 が勝つ（2026-11-10 追記）</h3>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>上流の系統</th>
+<th>下流の系統</th>
+<th>U × D の組数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON04 → PPL105</td>
+<td>SL86063（LexA、MBON01+03+04 を標識）</td>
+<td>SS48817（GAL4、FB2A+PPL105）</td>
+<td>6 組（最大 3 シナプス・実質 0）</td>
+</tr>
+<tr>
+<td><strong>MBON07 → PPL106</strong></td>
+<td><strong>MB319B（GAL4、MBON07 のみ・特異性 2）</strong></td>
+<td><strong>SL86062（LexA、PPL106 のみ・特異性 2）</strong></td>
+<td><strong>1 組だけ</strong></td>
+</tr>
+</tbody>
+</table>
+<p>MBON07 → PPL106 は<strong>両方が単一タイプ・特異性 2 の系統</strong>で、混同の心配が原理的に無い。
+接触の長さ（37 µm）と別個体での再現（19 µm）では MBON04 ↔ PPL105 に劣るが、
+膜の密着は同等（6,333 / 72%）で、行動の読み出しも両細胞に前例がある
+（MBON07: Ichinose 2015、Tsao 2018 / PPL106: Takemura 2017、Jacob 2021）。
+<strong>「きれいな遺伝学を優先するなら MBON07 → PPL106、接触の確かさを優先するなら MBON04 ↔ PPL105」</strong>
+という整理になる。文献は <code>results/refs_top_pairs.md</code>。</p>
+<h3 id="_3">接触の場所について</h3>
+<p>MBON04 ↔ PPL105 の接触は <strong>SIP（上前大脳）で 95〜97%</strong> であり、キノコ体のローブの中ではない。
+MBON の軸索と DAN の樹状突起が出会うのはローブの外なので、MBON → DAN の組は構造上そうなる。
+「キノコ体の細胞どうし」ではあるが「キノコ体の中で」ではない点に注意。
+ローブの中で接触している組（MBON11 ↔ MBON33 の γ1、PPL103 → MBON07 の α1、
+PPL106 → MBON17 の α'3）は、いずれも他の条件で落ちた。</p>
+<h2 id="9-mbon04-fb4n">9. 全脳の本命（MBON04 → FB4N）との比較</h2>
+<p>同じ MBON04 が上流になる 2 案を並べる。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MBON04 → FB4N（全脳案）</th>
+<th>MBON04 → PPL105（キノコ体案）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>下流</td>
+<td>扇状体 4 層の接線ニューロン</td>
+<td>PPL1 クラスターの DAN</td>
+</tr>
+<tr>
+<td>接触（hemibrain）</td>
+<td>109 µm</td>
+<td><strong>93 µm</strong></td>
+</tr>
+<tr>
+<td>別個体での接触</td>
+<td>10〜29 µm</td>
+<td><strong>33〜38 µm</strong></td>
+</tr>
+<tr>
+<td>膜の密着</td>
+<td>2,080 voxel / 56%</td>
+<td><strong>6,140 voxel / 70%</strong></td>
+</tr>
+<tr>
+<td>接触領域</td>
+<td>SMP、上流出力 308 / 下流入力 1,968</td>
+<td>SIP、上流出力 <strong>538</strong> / 下流入力 1,380</td>
+</tr>
+<tr>
+<td>ドライバーの混同</td>
+<td>U×D すべて 0</td>
+<td>既存 3 シナプス</td>
+</tr>
+<tr>
+<td>伝達物質</td>
+<td>Glu → Glu（FB4N は Glu 入力を 24% 受ける）</td>
+<td>Glu → DA</td>
+</tr>
+<tr>
+<td>行動の読み出し</td>
+<td>FB4N は文献に無い。PFL3 まで 2 シナプス</td>
+<td>嗅覚条件づけの PI がそのまま使える</td>
+</tr>
+<tr>
+<td>解釈の土台</td>
+<td>MBON → 扇状体（ナビゲーション）</td>
+<td>MBON → DAN（記憶の再評価・消去）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>データの質ではキノコ体案（MBON04 → PPL105）が上回る。</strong> 別個体での接触再現が 3 倍以上、
+膜の密着が 3 倍、接触領域での上流の出力も多い。
+行動の読み出しが確立している点でも有利。</p>
+<p>全脳案の利点は、下流が扇状体という別系統の回路なので「キノコ体の中の話」に閉じないこと。
+両方を進めるなら、上流が同じ MBON04 なので <strong>同じ LexA 系統（<code>SL86063</code>）を共有できる</strong>。</p>
+<h2 id="_4">再現方法</h2>
+<pre><code class="language-bash"># 膜の密着を EM で確かめる（最接近点を求め、間にある物体を数える）
+.venv/Scripts/python.exe em_gap_check.py --pairs results/mb_em_targets.csv
+</code></pre>
+<pre><code class="language-bash"># キノコ体内部の両方向ゼロ組を列挙（results/mb_zero_all_dir.csv）
+# → ドライバー照合 → FlyWire → 型単位の検算 → male-CNS → 接触の再現
+.venv/Scripts/python.exe flywire_check.py --pairs results/mb_two_cand.csv --tag mb_two \
+  --min-expected 0.5 --data data/hemibrain_mb_all.pkl
+.venv/Scripts/python.exe validate_cross.py --data data/hemibrain_mb_all.pkl --tag mb_two \
+  --pairs results/mb_two/zero2_cand.csv --pairs-as-source --min-expected 0.5 --datasets male-cns:v1.0
+.venv/Scripts/python.exe validate_cross.py --data data/hemibrain_mb_all.pkl --tag mb_two \
+  --stage contact --pairs results/mb_clean_pairs.csv --datasets male-cns:v1.0 --max-total 0
+</code></pre>
+<p>出力: <code>results/mb_report_table.csv</code>（この報告書の表）、<code>results/mb_final.csv</code>、<code>results/mb_clean.csv</code>。</p>
+</div></body></html>

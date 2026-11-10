@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>報告書の一覧</title><style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px}
+nav{font-size:.9rem;color:var(--sub);margin-bottom:18px}
+nav a{color:var(--acc);text-decoration:none}nav a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.35;border-bottom:2px solid var(--line);padding-bottom:.4em;margin-top:1.2em}
+h2{font-size:1.25rem;margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.05rem;margin-top:1.6em}
+a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600;white-space:nowrap}
+code{background:var(--code);padding:.15em .4em;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--code);color:var(--fg)}
+ul,ol{padding-left:1.4em}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:20px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--bg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc)}
+.card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+</style></head>
+<body><div class="wrap">
+<nav><a href="../index.html">結果一覧</a></nav>
+<h1>報告書の一覧</h1>
+<p>results/ の Markdown 報告書を HTML にしたもの。全 13 件。</p>
+<div class="cards">
+<a class="card" href="shortlist_final.html"><b>3 個体でシナプス 0・接触が再現する組（shortlist_final.csv）</b><span>条件: hemibrain・male-cns・FlyWire の 3 個体すべてで両方向のシナプスが 0、
+かつ別個体でも 10 µm 以上の接触がある組。「上流出力 / 下流入力」は主な接触領域での個数。</span></a>
+<a class="card" href="benchmark.html"><b>Benchmark</b><span>n_neurons=80, seeds=[0, 1, 2], compartments=navis, overrides=[]</span></a>
+<a class="card" href="gmr_lexa_report.html"><b>GMR-LexA を候補ペアに照合した結果</b><span>2026-11-10。再現は python gmr_lexa_match.py。
+一覧は results/gmr_lexa_vfb.csv（VFB の注釈）と results/gmr_lexa_match.csv（論文の</span></a>
+<a class="card" href="plan_mushroom_body.html"><b>キノコ体の細胞どうしで強制シナプス形成を行う案</b><span>2026-11-10 の吟味。結論は 成立する。全脳を探すより候補が多く、質も上回る。
+19 組を 4 条件で判定して 4 組が残り、第一候補は MBON04 → PPL105。</span></a>
+<a class="card" href="lexa_catalog.html"><b>キノコ体以外の LexA ドライバー（神経とグリア）</b><span>2026-11-10 調査。構造化した一覧は data/lexa_lines_nonmb.csv（34 行）。</span></a>
+<a class="card" href="em_links_mushroom_body.html"><b>キノコ体案の 3D と EM（hemibrain v1.2, 8 nm 等方）</b><span>色は 赤 = 上流 / 水色 = 下流。3D はメッシュ（実際の膜の形）。</span></a>
+<a class="card" href="hemidriver_lexa_report.html"><b>ヘミドライバー断片の LexA 版を使って、落ちた組を救う</b><span>2026-11-10。再現は python hemidriver_lexa.py。一覧は results/hemidriver_lexa.csv。</span></a>
+<a class="card" href="refs_top_pairs.html"><b>上位候補ペアの細胞について、行動実験を行っている論文</b><span>2026-11-10 作成。lit_search.py で Europe PMC を検索し、
+オープンアクセス論文は本文全体、それ以外は要旨を対象に
+「細胞名・系統名」「操作（光遺伝学・活動阻害など）」「行動（学習・選好</span></a>
+<a class="card" href="shortlist.html"><b>強制シナプス形成に向けた最終候補（shortlist.py）</b><span>条件: 合計シナプス 0 個以下。「接触の再現」は別個体の各半球で 10 µm 以上の接触があること。
+シナプス数は hemibrain の順/逆と、照合できた各個体の両方向の合計。</span></a>
+<a class="card" href="em_links_MBON04_PPL105.html"><b>接触部位の 3D と EM（hemibrain v1.2, 8 nm 等方）</b><span>色は 赤 = 1 つ目のタイプ / 水色 = 2 つ目。3D はメッシュ（実際の膜の形）。</span></a>
+<a class="card" href="em_links_MBON04_FB4N.html"><b>接触部位の EM リンク（hemibrain v1.2 / 8 nm 等方）</b><span>体ID: MBON04_L 613079053 / MBON04_R 487925063 / FB4N_R 673746277 / MBON26_R 895441451</span></a>
+<a class="card" href="candidate_MBON04_FB4N.html"><b>本命候補: MBON04 → FB4N</b><span>人工分子でシナプスを強制形成させる実験の第一候補。2026-11-10 時点の調査をまとめる。</span></a>
+<a class="card" href="candidate_MBON04_PPL105.html"><b>本命候補: MBON04 ↔ PPL105（キノコ体案）</b><span>キノコ体の細胞どうしで人工分子によるシナプス強制形成を行うときの第一候補。2026-11-10 時点の調査をまとめる。</span></a>
+</div>
+</div></body></html>

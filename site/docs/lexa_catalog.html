@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>キノコ体以外の LexA ドライバー（神経とグリア）</title><style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px}
+nav{font-size:.9rem;color:var(--sub);margin-bottom:18px}
+nav a{color:var(--acc);text-decoration:none}nav a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.35;border-bottom:2px solid var(--line);padding-bottom:.4em;margin-top:1.2em}
+h2{font-size:1.25rem;margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.05rem;margin-top:1.6em}
+a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600;white-space:nowrap}
+code{background:var(--code);padding:.15em .4em;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--code);color:var(--fg)}
+ul,ol{padding-left:1.4em}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:20px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--bg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc)}
+.card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+</style></head>
+<body><div class="wrap">
+<nav><a href="index.html">← 報告書の一覧</a> ／ <a href="../index.html">結果一覧</a></nav>
+<h1 id="lexa">キノコ体以外の LexA ドライバー（神経とグリア）</h1>
+<p>2026-11-10 調査。構造化した一覧は <code>data/lexa_lines_nonmb.csv</code>（34 行）。</p>
+<h2 id="0">0. 結論を先に</h2>
+<p>これまで「LexA 系統は 20 本・12 タイプしかなく、すべてキノコ体」としていたが、
+これは <strong>「1 つの細胞型だけを狙える split-LexA」に限った話</strong>だった。範囲を広げると状況が変わる。</p>
+<table>
+<thead>
+<tr>
+<th>種類</th>
+<th>規模</th>
+<th>特異性</th>
+<th>この実験に使えるか</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>split-LexA</strong>（細胞型特異）</td>
+<td>20 本 / 12 タイプ</td>
+<td>◎ 1 細胞型</td>
+<td><strong>そのまま使える</strong>。ただし全部キノコ体</td>
+</tr>
+<tr>
+<td><strong>GMR-LexA</strong>（Rubin, エンハンサー断片）</td>
+<td><strong>約 1,400 本</strong></td>
+<td>△ 断片ごとに数個〜数十の細胞型</td>
+<td>混同（U × D）の確認が必須</td>
+</tr>
+<tr>
+<td><strong>VT-LexA</strong>（Vienna Tiles）</td>
+<td>数千本のうち LexA 版</td>
+<td>△ 同上</td>
+<td>同上</td>
+</tr>
+<tr>
+<td><strong>遺伝子ノックイン LexA</strong></td>
+<td>数十遺伝子</td>
+<td>✕ クラス単位（全グリア・全ドーパミンなど）</td>
+<td>単独では広すぎる</td>
+</tr>
+<tr>
+<td><strong>StanEx エンハンサートラップ</strong></td>
+<td>約 100 本＋後続数百</td>
+<td>△ 脳以外が中心</td>
+<td>脳の候補には向かない</td>
+</tr>
+</tbody>
+</table>
+<p><strong>キノコ体の外に出るなら、「細胞型特異な LexA が無い」のではなく
+「細胞型特異性が落ちる LexA しか無い」というのが正確な状況。</strong>
+GMR-LexA 約 1,400 本は、断片が標識する細胞型の集合 U（または D）を FlyLight の画像で確定できれば、
+U × D がすべて 0 かどうかを今のパイプラインで判定できる。これは次の探索の現実的な出口になる。</p>
+<h2 id="1-lexa">1. グリアの LexA</h2>
+<p>グリアはコネクトームに登録されていないので「シナプス 0 の相手」としては使えないが、
+<strong>接触部位にグリアを介入させる／除く操作の道具</strong>としては使える。</p>
+<table>
+<thead>
+<tr>
+<th>系統</th>
+<th>構築</th>
+<th>標的</th>
+<th>備考</th>
+<th>出典</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>repo-LexA</strong></td>
+<td>P{repo-LexA-GAD}, M{repo-LG.B}, M{repo-LHG.B}</td>
+<td><strong>全グリア</strong></td>
+<td>repo は全グリアのマーカー（中央線グリアを除く）。FlyBase に pan-glial と明記</td>
+<td>FlyBase <a href="https://flybase.org/reports/FBal0221468.html">FBal0221468</a></td>
+</tr>
+<tr>
+<td><strong>repo-T2A-LexA-GAD</strong></td>
+<td>ノックイン</td>
+<td>全グリア</td>
+<td>GAL4 版で出る腸・肛門板の余計な発現が LexA 版では出ない</td>
+<td>Zirin 2024 <a href="https://elifesciences.org/reviewed-preprints/94073v1">eLife 94073</a></td>
+</tr>
+<tr>
+<td><strong>alrm-LexA</strong></td>
+<td>P{alrm(-FRT)lexA::GAD} (FBtp0098149), P{alrm-LexA::GAD.S}, M{alrm-LG.B}, M{alrm-LHG.B}</td>
+<td><strong>アストロサイト様グリア</strong></td>
+<td>alrm はグリアの中でアストロサイトだけを標識する（repo-GAL80 で抑制される）</td>
+<td>FlyBase <a href="https://flybase.org/reports/FBtp0098149">FBtp0098149</a>, <a href="https://flybase.org/reports/FBto0000153">FBto0000153</a></td>
+</tr>
+<tr>
+<td>alrm(FRT.GAL4)lexA::GAD</td>
+<td>P{alrm(FRT.GAL4)lexA::GAD} (FBtp0098148)</td>
+<td>アストロサイト</td>
+<td>FRT で挟んだ GAL4 を FLP で切り出すと LexA になる。モザイク解析向き</td>
+<td>FlyBase <a href="https://flybase.org/reports/FBtp0098148">FBtp0098148</a></td>
+</tr>
+<tr>
+<td><strong>wrapper-LexA</strong></td>
+<td>P{wrapper-lexA::GAD.932i}</td>
+<td>コルテックスグリア・中央線グリア</td>
+<td>wrapper は細胞体を包むグリアのマーカー</td>
+<td>FlyBase <a href="https://flybase.org/reports/FBto0000153">FBto0000153</a></td>
+</tr>
+<tr>
+<td><strong>R86E01-LexA</strong></td>
+<td>P{R86E01-lexA::GADfl}</td>
+<td>アストロサイト（視葉）、ラミナの上皮グリア</td>
+<td>エンハンサー断片。GMR コレクション由来</td>
+<td>glia atlas 2023 <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3002328">PLOS Biol</a></td>
+</tr>
+<tr>
+<td><strong>R85G01-LexA</strong></td>
+<td>P{R85G01-lexA::GADfl} (attP40)</td>
+<td>ペリニューリアルグリア</td>
+<td>メデュラ・ロブラ・ロブラプレートで形態が均一</td>
+<td>同上</td>
+</tr>
+<tr>
+<td><strong>R83E12-LexA</strong></td>
+<td>BDSC <strong>54288</strong></td>
+<td>エンシーシンググリア</td>
+<td>「ensheathing glia に特異的に見える」と記載。<strong>在庫番号が判明している唯一のグリア LexA</strong></td>
+<td>Nat Commun 2021 <a href="https://www.nature.com/articles/s41467-021-26462-x">βH-Spectrin</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意点</strong>: alrm-LexA は FlyBase 上で紐づく系統が 0 なので、構築はあるが
+配布系統が無い可能性がある。実際に取り寄せられるのは R83E12-LexA (BDSC 54288) と repo-LexA が確実。
+アストロサイト LexA が必要なら、2026 年の Cell Reports Methods の論文が
+「LexA&gt;LexAop では効率が足りず split-GAL4&gt;UAS に置き換えた」と報告しているので、
+効率の点でも事前検討が必要。</p>
+<h2 id="2-lexa">2. 神経の LexA（キノコ体以外）</h2>
+<h3 id="2-1">2-1. 細胞型・サブタイプが絞れるもの</h3>
+<table>
+<thead>
+<tr>
+<th>系統</th>
+<th>標的</th>
+<th>細胞数</th>
+<th>出典</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Or82a-LexA</strong></td>
+<td>単一の嗅覚受容ニューロン型（糸球体 1 つ）</td>
+<td>数十</td>
+<td>FlyBase <a href="https://flybase.org/reports/FBto0000153">FBto0000153</a></td>
+</tr>
+<tr>
+<td><strong>Rh3 / Rh4 / Rh5 / Rh6-LexA</strong></td>
+<td>光受容細胞 R7/R8 のサブタイプ</td>
+<td>—</td>
+<td>同上</td>
+</tr>
+<tr>
+<td><strong>SIFa-LexA</strong></td>
+<td>SIFamide ニューロン</td>
+<td><strong>4 個</strong></td>
+<td>同上</td>
+</tr>
+<tr>
+<td><strong>Ilp2-LexA</strong></td>
+<td>インスリン産生細胞（IPC）</td>
+<td>約 14 個</td>
+<td>同上, Zirin 2024</td>
+</tr>
+<tr>
+<td><strong>GH146-LexA</strong></td>
+<td>嗅覚投射ニューロン</td>
+<td>約 90 個</td>
+<td>FlyBase <a href="https://flybase.org/reports/FBal0244422.html">FBal0244422</a>, BDSC 606260</td>
+</tr>
+<tr>
+<td><strong>eve(CQ2)-LexA</strong></td>
+<td>腹髄の CQ ニューロン</td>
+<td>—</td>
+<td>FlyBase FBto0000153</td>
+</tr>
+<tr>
+<td><strong>Gr43a / Gr66a split-LexA</strong></td>
+<td>糖受容 / 苦味受容ニューロン</td>
+<td>—</td>
+<td>Shuai 2024 <a href="https://elifesciences.org/articles/94168">eLife 94168</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Gr43a / Gr66a split-LexA は、キノコ体以外で唯一の split-LexA</strong>。
+Shuai 2024 は split-GAL4 を split-LexA に変換する試みを 34 系統で行い 22 系統が成功しており、
+<strong>同じ変換を他の split-GAL4 に適用できる</strong>ことを示している。これが最も有望な拡張手段。</p>
+<h3 id="2-2">2-2. クラス単位（単独では広すぎる）</h3>
+<table>
+<thead>
+<tr>
+<th>系統</th>
+<th>標的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>elav-LexA</strong></td>
+<td>全神経</td>
+</tr>
+<tr>
+<td><strong>ple-LexA</strong></td>
+<td>ドーパミンニューロン全般（ple = pale = チロシン水酸化酵素）。<strong>PPL105 を含む</strong></td>
+</tr>
+<tr>
+<td><strong>ChAT-LexA</strong></td>
+<td>コリン作動性ニューロン全般</td>
+</tr>
+<tr>
+<td><strong>Orco-LexA</strong> (= Or83b-LexA)</td>
+<td>嗅覚受容ニューロン全般</td>
+</tr>
+<tr>
+<td><strong>cry-LexA</strong></td>
+<td>概日時計ニューロン</td>
+</tr>
+<tr>
+<td><strong>NPF-LexA</strong></td>
+<td>NPF 作動性ニューロン</td>
+</tr>
+<tr>
+<td><strong>ppk-LexA</strong></td>
+<td>多樹状突起性感覚ニューロン（末梢）</td>
+</tr>
+<tr>
+<td><strong>tubP-LexA / Act5C-LexA</strong></td>
+<td>ユビキタス（対照・効果器の試験用）</td>
+</tr>
+</tbody>
+</table>
+<p>Chemoconnectome（Deng 2019 Neuron）は伝達物質・神経ペプチド・受容体の遺伝子を
+網羅的にノックインしており、<strong>10 遺伝子で LexA 版</strong>がある。GAL4 版とほぼ同じパターンになる。</p>
+<h2 id="3">3. 大規模コレクション</h2>
+<table>
+<thead>
+<tr>
+<th>コレクション</th>
+<th>規模</th>
+<th>活性化因子</th>
+<th>挿入部位</th>
+<th>出典</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GMR-LexA</strong>（Rubin）</td>
+<td><strong>約 1,400 本</strong></td>
+<td>lexA::GAD / lexA-p65</td>
+<td>ほぼ attP40 (25C7, 2L)</td>
+<td>Pfeiffer 2010 Genetics 186:735; <a href="https://bdsc.indiana.edu/stocks/lexa/lexa_janelia.html">BDSC Janelia lexA</a></td>
+</tr>
+<tr>
+<td><strong>VT-LexA</strong>（Vienna Tiles）</td>
+<td>VT 18,000 本のうち LexA 版</td>
+<td>lexA::GAD</td>
+<td>—</td>
+<td>Tirian &amp; Dickson 2017 <a href="https://www.biorxiv.org/content/10.1101/198648v1.full">bioRxiv 198648</a></td>
+</tr>
+<tr>
+<td><strong>StanEx LexA</strong> エンハンサートラップ</td>
+<td>約 100 本（2016）＋数百本（2019・2023）</td>
+<td>LHG</td>
+<td>P 因子の転移、挿入をマッピング済み</td>
+<td>Kockel 2016 G3 6:3017 <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5068927">PMC5068927</a>; Kockel 2019 G3 9:2097</td>
+</tr>
+<tr>
+<td><strong>T2A-LexA-GAD ノックイン</strong></td>
+<td>da, elav, <strong>repo</strong>, nub, btl, hh, dpp, CG9458, CG17560 ほか</td>
+<td>LexA-GAD</td>
+<td>内在遺伝子の 5' コード領域直後</td>
+<td>Zirin 2024 <a href="https://elifesciences.org/reviewed-preprints/94073v1">eLife 94073</a></td>
+</tr>
+<tr>
+<td><strong>Chemoconnectome (CCT)</strong></td>
+<td>伝達物質・ペプチド・受容体。10 遺伝子で LexA 版</td>
+<td>LexA</td>
+<td>ノックイン</td>
+<td>Deng 2019 <a href="https://www.cell.com/neuron/fulltext/S0896-6273(19)30072-8">Neuron 101:876</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>GMR-LexA の設計上の利点</strong>: LexA は attP40（2L）、GAL4 は attP2（3L）に入っているので、
+同じ個体で組み合わせたときに transvection（染色体間の干渉）が起きにくい。
+GAL4 + LexA を 1 匹に入れる前提で作られたコレクションである。</p>
+<p><strong>GMR/VT の限界</strong>: どちらも脳のエンハンサー断片なので、非神経の標的には向かない。
+また 1 断片が数個〜数十の細胞型を標識するため、本実験の
+「U × D のすべての組が 0」という条件を満たすかは系統ごとに画像で確認するしかない。</p>
+<h2 id="4-3">4. 発現系を 3 つにする選択肢</h2>
+<p>LexA が足りないという制約そのものを外す手もある。</p>
+<table>
+<thead>
+<tr>
+<th>手段</th>
+<th>内容</th>
+<th>出典</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>UAS-LexA-GAD</strong></td>
+<td>GAL4 の下流で LexA を発現させる。既存の split-GAL4 を「LexAop を駆動する系統」に変えられる。ただし GAL4 はその細胞に占有されるので、もう一方の細胞には第 3 の系が必要</td>
+<td>FlyBase FBto0000153</td>
+</tr>
+<tr>
+<td><strong>T2A-QF2-T2A-LexA-GAD 二重ドライバー</strong></td>
+<td>1 つのノックインで QF2 と LexA-GAD を同時発現。GAL4 を空けたまま 2 系統を使える</td>
+<td>Zirin 2024 eLife 94073（hh・dpp で実証）</td>
+</tr>
+<tr>
+<td><strong>split-GAL4 → split-LexA 変換</strong></td>
+<td>DNA 結合ドメインを GAL4 から LexA に差し替える。34 系統試して 22 系統成功</td>
+<td>Shuai 2024 eLife 94168</td>
+</tr>
+<tr>
+<td><strong>split-QF2</strong></td>
+<td>GAL4 / LexA に加えて QF/QUAS を使う</td>
+<td>Zirin 2024 ほか</td>
+</tr>
+</tbody>
+</table>
+<p><strong>この実験に最も効きそうなのは「split-GAL4 → split-LexA 変換」</strong>。
+成功率 22/34（65%）という実績があり、既にある細胞型特異な split-GAL4
+（本プロジェクトで集めた 4,045 系統 / 2,266 タイプ）のどれでも候補にできる。
+つまり <strong>LexA のボトルネックは「作れば解ける」種類の制約</strong>であって、
+現存系統だけで考えると候補をキノコ体に閉じ込めてしまう。</p>
+<h2 id="5">5. 次にやること（提案）</h2>
+<ol>
+<li>GMR-LexA 約 1,400 本について、FlyLight の発現画像から標識細胞型の集合を取り、
+   既存の候補ペアの下流側に当てはまるものを探す。</li>
+<li>全脳探索で「両方に split-GAL4 があるが LexA が無い」ために落ちた 14 組
+   （<code>results/shortlist_final.csv</code>）を、split-LexA への変換を前提に再評価する。</li>
+<li>グリアを介入させる実験を組むなら、まず R83E12-LexA (BDSC 54288, エンシーシンググリア) と
+   repo-LexA を確保する。接触部位（SIP など）にどのグリアが来るかは
+   EM の切り出しで確認できる（<code>em_gap_check.py</code> の「間にあった物体」）。</li>
+</ol>
+<h2 id="_1">参考文献</h2>
+<ul>
+<li>Pfeiffer BD, Ngo TT, Hibbard KL, Murphy C, Jenett A, Truman JW, Rubin GM (2010)
+  Refinement of tools for targeted gene expression in Drosophila. <em>Genetics</em> 186:735–755.
+  doi:10.1534/genetics.110.119917 — GMR-LexA コレクションの元論文。LexA は GAL4 より活性が弱いと報告。</li>
+<li>Tirian L, Dickson BJ (2017) The VT GAL4, LexA, and split-GAL4 driver line collections
+  for targeted expression in the Drosophila nervous system. <em>bioRxiv</em> 198648.
+  doi:10.1101/198648</li>
+<li>Kockel L, et al. (2016) A Drosophila LexA enhancer-trap resource for developmental biology
+  and neuroendocrine research. <em>G3</em> 6:3017–3026. doi:10.1534/g3.116.031229</li>
+<li>Kockel L, et al. (2019) An interscholastic network to generate LexA enhancer trap lines
+  in Drosophila. <em>G3</em> 9:2097–2106. doi:10.1534/g3.119.400105</li>
+<li>Kockel L, et al. (2023) Generation of LexA enhancer-trap lines in Drosophila by an
+  international scholastic network. <em>G3</em>. PMC10468311</li>
+<li>Zirin J, Jusiak B, Lopes R, Ewen-Campen B, Bosch JA, Risbeck A, Forman C, Villalta C,
+  Hu Y, Perrimon N (2024) Expanding the Drosophila toolkit for dual control of gene
+  expression. <em>eLife</em> 94073. doi:10.7554/eLife.94073 — repo を含む T2A-LexA-GAD ノックイン。</li>
+<li>Deng B, et al. (2019) Chemoconnectomics: mapping chemical transmission in Drosophila.
+  <em>Neuron</em> 101:876–893. doi:10.1016/j.neuron.2019.01.045</li>
+<li>Shuai Y, et al. (2024) Driver lines for studying associative learning in Drosophila.
+  <em>eLife</em> 94168. doi:10.7554/eLife.94168 — split-LexA 20 本（キノコ体）＋ Gr43a/Gr66a。
+  split-GAL4 → split-LexA 変換の成功率 22/34。</li>
+<li>Kremer MC, Jung C, Batelli S, Rubin GM, Gaul U (2017) The glia of the adult Drosophila
+  nervous system. <em>Glia</em> 65:606–638. doi:10.1002/glia.23115</li>
+<li>Drosophila glial cell atlas (2023) <em>PLOS Biology</em> 21:e3002328.
+  doi:10.1371/journal.pbio.3002328 — R86E01-LexA（アストロサイト）、R85G01-LexA（ペリニューリアル）。</li>
+<li>Nature Communications (2021) Drosophila βHeavy-Spectrin is required in polarized
+  ensheathing glia. doi:10.1038/s41467-021-26462-x — R83E12-LexA (BDSC 54288)。</li>
+<li>FlyBase lexA::GAD 実験ツール一覧: https://flybase.org/reports/FBto0000153
+  （構築 200 件超、挿入 619 件。LexA 系統を網羅的に探すならここが起点）</li>
+<li>BDSC Janelia lexA 在庫: https://bdsc.indiana.edu/stocks/lexa/lexa_janelia.html
+  （対照系統 77691 = 制御配列なしの lexA-p65、attP40）</li>
+</ul>
+</div></body></html>

@@ -1,0 +1,22 @@
+# 大きすぎて GitHub に載らないもの（fetch_data.py / run_all.py で作り直せる）
+data/
+.venv/
+__pycache__/
+*.pyc
+
+# データセット別の全ペア 3D（合計 3.5 GB）
+results/*/3d/
+
+# 解析の中間生成物（必要なら個別に許可する）
+results/*/approach_*.csv
+results/*/type_pairs_*.csv
+results/*/candidates_ranked.csv
+results/*/cross_*.csv
+results/*/driver_*.csv
+results/*/inspect_*.csv
+results/*/index.html
+
+# ノートブック・エディタ
+.ipynb_checkpoints/
+.vscode/
+.idea/

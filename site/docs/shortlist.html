@@ -1,0 +1,3112 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>強制シナプス形成に向けた最終候補（shortlist.py）</title><style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px}
+nav{font-size:.9rem;color:var(--sub);margin-bottom:18px}
+nav a{color:var(--acc);text-decoration:none}nav a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.35;border-bottom:2px solid var(--line);padding-bottom:.4em;margin-top:1.2em}
+h2{font-size:1.25rem;margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.05rem;margin-top:1.6em}
+a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600;white-space:nowrap}
+code{background:var(--code);padding:.15em .4em;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--code);color:var(--fg)}
+ul,ol{padding-left:1.4em}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:20px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--bg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc)}
+.card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+</style></head>
+<body><div class="wrap">
+<nav><a href="index.html">← 報告書の一覧</a> ／ <a href="../index.html">結果一覧</a></nav>
+<h1 id="shortlistpy">強制シナプス形成に向けた最終候補（shortlist.py）</h1>
+<p>条件: 合計シナプス 0 個以下。「接触の再現」は別個体の各半球で 10 µm 以上の接触があること。
+シナプス数は hemibrain の順/逆と、照合できた各個体の両方向の合計。</p>
+<table>
+<thead>
+<tr>
+<th>領域</th>
+<th>上流 → 下流</th>
+<th>hemibrain 接触</th>
+<th>シナプス合計</th>
+<th>照合した個体</th>
+<th>別個体の接触</th>
+<th>上流ドライバー</th>
+<th>下流ドライバー</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上前大脳 / クランプ</td>
+<td>MBON31 → SMP503</td>
+<td>152 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 55µm, male-cns R 25µm</td>
+<td>SS52050〈GAL4〉[特異性2] / SS80896〈GAL4〉[特異性2]</td>
+<td>SS32246〈GAL4〉[特異性1] / SS01239〈GAL4〉(+MBON11)[特異性0]</td>
+</tr>
+<tr>
+<td>側方付属葉 / 楔形領域</td>
+<td>VES012 → DNb05</td>
+<td>145 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 35µm, male-cns R 62µm</td>
+<td>SS50738〈GAL4〉[特異性2]</td>
+<td>SS01051〈GAL4〉[特異性2] / SS01051〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>クランプ</td>
+<td>MBON30 → oviIN</td>
+<td>142 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 68µm, male-cns R 36µm</td>
+<td>SS76094〈GAL4〉[特異性2]</td>
+<td>SS65422〈GAL4〉[特異性1] / SS65423〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>PPL106 → PAM12</td>
+<td>137 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 25µm, male-cns R 14µm</td>
+<td>SL86050〈LexA〉[特異性2] / SL86062〈LexA〉[特異性2]</td>
+<td>MB443B〈GAL4〉[特異性2] / MB029B〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>クランプ</td>
+<td>MBON21 → FB4X</td>
+<td>133 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 63µm, male-cns R 36µm</td>
+<td>SS46348〈GAL4〉[特異性2] / SS81353〈GAL4〉[特異性2]</td>
+<td>SS70711〈GAL4〉[特異性1] / SS70711〈GAL4〉</td>
+</tr>
+<tr>
+<td>上前大脳 / LexA 12 型を軸に再探索</td>
+<td>MBON04 → FB4N</td>
+<td>109 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 29µm, male-cns R 10µm</td>
+<td>SS67728〈GAL4〉[特異性2] / SS67755〈GAL4〉[特異性2]</td>
+<td>SS66004〈GAL4〉[特異性1] / SS95185〈GAL4〉</td>
+</tr>
+<tr>
+<td>中心複合体</td>
+<td>ER3a_d → FB4L</td>
+<td>104 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 11µm, male-cns R 22µm</td>
+<td>SS04710〈GAL4〉[特異性1] / SS04710〈GAL4〉</td>
+<td>SS48802〈GAL4〉[特異性2] / SS61133〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>ExR2 → LAL098</td>
+<td>103 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 47µm, male-cns R 77µm</td>
+<td>SS58826〈GAL4〉[特異性2] / SS59679〈GAL4〉[特異性2]</td>
+<td>SS49882〈GAL4〉(+VES019)[特異性2] / SS49882〈GAL4〉(+VES019)[特異性1]</td>
+</tr>
+<tr>
+<td>腹外側前大脳</td>
+<td>AVLP478 → DNp06</td>
+<td>95 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 39µm, male-cns R 28µm</td>
+<td>SS01181〈GAL4〉(+MBON11)[特異性0]</td>
+<td>SS02256〈GAL4〉[特異性2] / SS01047〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>キノコ体 / LexA 12 型を軸に再探索 / キノコ体の中だけ</td>
+<td>PPL105 → MBON04</td>
+<td>83 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 24µm, male-cns R 14µm</td>
+<td>MB059B〈GAL4〉[特異性1] / MB320B〈GAL4〉(+PPL101)[特異性1]</td>
+<td>SS67728〈GAL4〉[特異性2] / SS67755〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS161 → DNa04</td>
+<td>62 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 10µm, male-cns R 21µm</td>
+<td>SS22505〈GAL4〉(+PS159)[特異性1]</td>
+<td>SS02384〈GAL4〉(+DNa10)[特異性1]</td>
+</tr>
+<tr>
+<td>腹外側前大脳</td>
+<td>PLP022 → DNp10</td>
+<td>51 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 30µm, male-cns R 51µm</td>
+<td>SS73660〈GAL4〉(+PLP015,WEDPN2B?)[特異性2]</td>
+<td>SS01049〈GAL4〉[特異性2] / SS01580〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>キノコ体</td>
+<td>DL4_adPN → LHPV6c1</td>
+<td>41 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 27µm, male-cns R 37µm</td>
+<td>SS10228〈GAL4〉(+VA1d_adPN)[特異性1] / SS32214〈GAL4〉(+VA1d_adPN)[特異性0]</td>
+<td>LH2220〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>MBON07 → PPL106</td>
+<td>37 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 19µm, male-cns R 19µm</td>
+<td>MB319B〈GAL4〉[特異性2] / MB319C〈GAL4〉[特異性2]</td>
+<td>SL86050〈LexA〉[特異性2] / SL86062〈LexA〉[特異性2]</td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>MBON31 → PAM11</td>
+<td>25 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 23µm, male-cns R 18µm</td>
+<td>SS52050〈GAL4〉[特異性2] / SS80896〈GAL4〉[特異性2]</td>
+<td>SL86059〈LexA〉[特異性2] / SL86053〈LexA〉[特異性2]</td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>MBON02 → PPL106</td>
+<td>25 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 19µm, male-cns R 25µm</td>
+<td>MB517B〈GAL4〉[特異性2] / SS01337〈GAL4〉[特異性1]</td>
+<td>SL86050〈LexA〉[特異性2] / SL86062〈LexA〉[特異性2]</td>
+</tr>
+<tr>
+<td>上前大脳 / クランプ</td>
+<td>MBON31 → SMP077</td>
+<td>258 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 120µm, male-cns R 61µm</td>
+<td>SS52050〈GAL4〉[特異性2] / SS80896〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳 / クランプ</td>
+<td>MBON35 → ATL006</td>
+<td>211 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 104µm, male-cns R 70µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>LAL016 → PS233</td>
+<td>174 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 66µm, male-cns R 81µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS137 → DNa05</td>
+<td>167 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 34µm, male-cns R 95µm</td>
+<td>-</td>
+<td>SS95335〈GAL4〉[特異性2] / SS02536〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>LHPV5l1 → SMP237</td>
+<td>165 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 36µm, male-cns R 59µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>LAL099 → PLP245</td>
+<td>153 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 91µm, male-cns R 69µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>LHCENT3 → SLP209</td>
+<td>152 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 82µm, male-cns R 96µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>LHCENT2 → SMP353</td>
+<td>151 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 55µm, male-cns R 40µm</td>
+<td>-</td>
+<td>SS81072〈GAL4〉[特異性2] / SS81071〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>クランプ</td>
+<td>MBON31 → LHCENT8</td>
+<td>148 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 120µm, male-cns R 125µm</td>
+<td>SS52050〈GAL4〉[特異性2] / SS80896〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳 / クランプ</td>
+<td>MBON32 → SMP156</td>
+<td>145 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 84µm, male-cns R 56µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>LHPV5e2 → SMP337</td>
+<td>141 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 25µm, male-cns R 18µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS156 → DNp19</td>
+<td>140 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 86µm, male-cns R 54µm</td>
+<td>-</td>
+<td>SS81965〈GAL4〉[特異性2] / SS12653〈GAL4〉(+DNp15)[特異性1]</td>
+</tr>
+<tr>
+<td>上前大脳 / クランプ / LexA 12 型を軸に再探索</td>
+<td>MBON01 → CRE050</td>
+<td>139 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 18µm, male-cns R 19µm</td>
+<td>SS01308〈GAL4〉[特異性2] / SL86047〈LexA〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>LHPV6m1 → SMP527</td>
+<td>133 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 75µm, male-cns R 95µm</td>
+<td>-</td>
+<td>SS32144〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>MBON33 → SMP199</td>
+<td>132 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 70µm, male-cns R 69µm</td>
+<td>SS75199〈GAL4〉[特異性1] / SS75200〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>クランプ</td>
+<td>MBON21 → LHPV5e3</td>
+<td>128 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 46µm, male-cns R 39µm</td>
+<td>SS46348〈GAL4〉[特異性2] / SS81353〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳 / クランプ</td>
+<td>MBON33 → SMP156</td>
+<td>126 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 113µm, male-cns R 55µm</td>
+<td>SS75199〈GAL4〉[特異性1] / SS75200〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>LHAV2o1 → SLP011</td>
+<td>124 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 46µm, male-cns R 42µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>LHCENT9 → CRE011</td>
+<td>122 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 30µm, male-cns R 39µm</td>
+<td>-</td>
+<td>SS45245〈GAL4〉[特異性2] / SS45222〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>CRE041 → DNb01</td>
+<td>121 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 68µm, male-cns R 41µm</td>
+<td>-</td>
+<td>SS02383〈GAL4〉[特異性2] / SS02542〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>上前大脳 / クランプ</td>
+<td>MBON27 → CRE077</td>
+<td>121 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 60µm, male-cns R 44µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>LHAV3a1_c → SLP458</td>
+<td>120 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 50µm, male-cns R 37µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>LAL159 → DNa01</td>
+<td>119 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 22µm, male-cns R 27µm</td>
+<td>-</td>
+<td>SS00731〈GAL4〉[特異性1] / SS00731〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>上前大脳 / クランプ / LexA 12 型を軸に再探索</td>
+<td>MBON01 → CRE022</td>
+<td>117 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 36µm, male-cns R 13µm</td>
+<td>SS01308〈GAL4〉[特異性2] / SL86047〈LexA〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>MBON33 → SMP272</td>
+<td>116 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 51µm, male-cns R 58µm</td>
+<td>SS75199〈GAL4〉[特異性1] / SS75200〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>クランプ</td>
+<td>MBON21 → ATL017</td>
+<td>115 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 35µm, male-cns R 29µm</td>
+<td>SS46348〈GAL4〉[特異性2] / SS81353〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>MBON31 → CRE069</td>
+<td>112 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 87µm, male-cns R 47µm</td>
+<td>SS52050〈GAL4〉[特異性2] / SS80896〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉 / 楔形領域</td>
+<td>LAL142 → DNa03</td>
+<td>112 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 75µm, male-cns R 34µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>LHCENT3 → CRE045</td>
+<td>111 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 81µm, male-cns R 77µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>MBON26 → SMP180</td>
+<td>110 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 26µm, male-cns R 24µm</td>
+<td>SS80958〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳 / クランプ</td>
+<td>MBON35 → AL-MBDL1</td>
+<td>107 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 34µm, male-cns R 34µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>SMP085 → DNp32</td>
+<td>105 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 39µm, male-cns R 49µm</td>
+<td>-</td>
+<td>SS02394〈GAL4〉[特異性1] / SS02394〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>LAL045 → DNb01</td>
+<td>97 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 21µm, male-cns R 16µm</td>
+<td>-</td>
+<td>SS02383〈GAL4〉[特異性2] / SS02542〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_vPNml87 → LHAV2m1</td>
+<td>96 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 41µm, male-cns R 48µm</td>
+<td>SS00587〈GAL4〉[特異性1] / SS00586〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_vPNml86 → LHPD3a5</td>
+<td>93 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 16µm, male-cns R 47µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>ExR3 → LAL195</td>
+<td>89 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 34µm, male-cns R 46µm</td>
+<td>SS16969〈GAL4〉[特異性1] / SS82798〈GAL4〉</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳 / LexA 12 型を軸に再探索</td>
+<td>MBON04 → SIP067</td>
+<td>88 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 30µm, male-cns R 51µm</td>
+<td>SS67728〈GAL4〉[特異性2] / SS67755〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>クランプ</td>
+<td>MBON31 → CRE072</td>
+<td>88 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 64µm, male-cns R 23µm</td>
+<td>SS52050〈GAL4〉[特異性2] / SS80896〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>LAL099 → AOTU049</td>
+<td>86 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 70µm, male-cns R 31µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>クランプ</td>
+<td>MBON27 → ATL027</td>
+<td>85 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 41µm, male-cns R 26µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>LAL109 → DNa02</td>
+<td>85 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 66µm, male-cns R 64µm</td>
+<td>-</td>
+<td>SS00730〈GAL4〉[特異性1] / SS00730〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>MBON26 → SMP049</td>
+<td>80 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 20µm, male-cns R 21µm</td>
+<td>SS80958〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>クランプ</td>
+<td>MBON29 → CRE022</td>
+<td>80 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 22µm, male-cns R 30µm</td>
+<td>SS67662〈GAL4〉[特異性2] / SS77450〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>MBON26 → SIP069</td>
+<td>79 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 22µm, male-cns R 37µm</td>
+<td>SS80958〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>IB058 → DNp27</td>
+<td>79 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 10µm, male-cns R 17µm</td>
+<td>-</td>
+<td>SS01876〈GAL4〉[特異性2] / MB202B〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>LAL018 → PS140</td>
+<td>78 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 32µm, male-cns R 17µm</td>
+<td>-</td>
+<td>SS72289〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>MBON32 → SMP054</td>
+<td>78 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 26µm, male-cns R 33µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>クランプ</td>
+<td>MBON29 → CRE004</td>
+<td>76 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 17µm, male-cns R 21µm</td>
+<td>SS67662〈GAL4〉[特異性2] / SS77450〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>DC2_adPN → LHAV5a8</td>
+<td>73 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 29µm, male-cns R 36µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面 / 腹外側前大脳</td>
+<td>PLP208 → DNp05</td>
+<td>72 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 45µm, male-cns R 51µm</td>
+<td>-</td>
+<td>SS00865〈GAL4〉[特異性2] / SS00865〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>腹外側前大脳</td>
+<td>AVLP432 → DNp42</td>
+<td>71 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 45µm, male-cns R 68µm</td>
+<td>-</td>
+<td>SS57807〈GAL4〉[特異性2] / SS57049〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>WEDPN4 → LHPV9b1</td>
+<td>70 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 17µm, male-cns R 12µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>クランプ</td>
+<td>MBON33 → SMP504</td>
+<td>70 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 57µm, male-cns R 24µm</td>
+<td>SS75199〈GAL4〉[特異性1] / SS75200〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>クランプ</td>
+<td>MBON26 → SMP156</td>
+<td>68 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 15µm, male-cns R 20µm</td>
+<td>SS80958〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>IB092 → DNp49</td>
+<td>67 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 35µm, male-cns R 37µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>クランプ / LexA 12 型を軸に再探索</td>
+<td>MBON01 → SMP053</td>
+<td>66 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 17µm, male-cns R 27µm</td>
+<td>SS01308〈GAL4〉[特異性2] / SL86047〈LexA〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>クランプ</td>
+<td>MBON32 → LHCENT5</td>
+<td>66 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 48µm, male-cns R 37µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>クランプ</td>
+<td>MBON27 → ATL017</td>
+<td>64 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 13µm, male-cns R 29µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>LAL155 → DNa01</td>
+<td>64 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 14µm, male-cns R 11µm</td>
+<td>-</td>
+<td>SS00731〈GAL4〉[特異性1] / SS00731〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_l2PNl22 → LHAV3e1</td>
+<td>63 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 31µm, male-cns R 41µm</td>
+<td>SS32193〈GAL4〉[特異性2] / SS32191〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_imPNl92 → LHAV2k8</td>
+<td>63 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 36µm, male-cns R 31µm</td>
+<td>SS01097〈GAL4〉[特異性0] / SS01092〈GAL4〉(+SLP374)[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>MBON33 → CRE102</td>
+<td>63 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 53µm, male-cns R 32µm</td>
+<td>SS75199〈GAL4〉[特異性1] / SS75200〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>腹外側前大脳</td>
+<td>CL065 → DNp06</td>
+<td>58 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 18µm, male-cns R 21µm</td>
+<td>-</td>
+<td>SS02256〈GAL4〉[特異性2] / SS01047〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>V_l2PN → LHAV3h1</td>
+<td>58 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 47µm, male-cns R 48µm</td>
+<td>SS01336〈GAL4〉[特異性1] / SS02076〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>VES013 → DNp27</td>
+<td>55 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 24µm, male-cns R 28µm</td>
+<td>-</td>
+<td>SS01876〈GAL4〉[特異性2] / MB202B〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>側方付属葉 / 楔形領域</td>
+<td>VES030 → DNb05</td>
+<td>55 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 13µm, male-cns R 35µm</td>
+<td>-</td>
+<td>SS01051〈GAL4〉[特異性2] / SS01051〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_vPNml55 → LHPD5d1</td>
+<td>54 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 20µm, male-cns R 28µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS060 → DNb03</td>
+<td>54 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 38µm, male-cns R 34µm</td>
+<td>-</td>
+<td>SS02370〈GAL4〉[特異性2] / SS02370〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>VES018 → DNa02</td>
+<td>54 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 20µm, male-cns R 15µm</td>
+<td>-</td>
+<td>SS00730〈GAL4〉[特異性1] / SS00730〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>視覚</td>
+<td>LT79 → AVLP372</td>
+<td>54 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 50µm, male-cns R 44µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_lvPNm39 → LHAD1c3</td>
+<td>54 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 49µm, male-cns R 30µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>LAL163 → DNa01</td>
+<td>53 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 12µm, male-cns R 16µm</td>
+<td>-</td>
+<td>SS00731〈GAL4〉[特異性1] / SS00731〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_l2PNl22 → LHPV4m1</td>
+<td>53 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 17µm, male-cns R 25µm</td>
+<td>SS32193〈GAL4〉[特異性2] / SS32191〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>DM4_vPN → LHAV4a2</td>
+<td>53 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 13µm, male-cns R 38µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>LAL142 → DNb01</td>
+<td>52 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 23µm, male-cns R 17µm</td>
+<td>-</td>
+<td>SS02383〈GAL4〉[特異性2] / SS02542〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_vPNml65 → LHCENT4</td>
+<td>52 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 28µm, male-cns R 42µm</td>
+<td>SS10947〈GAL4〉(+M_vPNml64,M_vPNml68)[特異性2] / SS01832〈GAL4〉(+M_vPNml63,M_vPNml64)[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_lvPNm39 → LHPD5c1</td>
+<td>51 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 16µm, male-cns R 30µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面 / 腹外側前大脳</td>
+<td>PVLP022 → DNp07</td>
+<td>51 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 11µm, male-cns R 35µm</td>
+<td>-</td>
+<td>SS02276〈GAL4〉[特異性2] / SS02612〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS065 → DNb02</td>
+<td>51 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 22µm, male-cns R 17µm</td>
+<td>-</td>
+<td>SS01060〈GAL4〉[特異性2] / SS01060〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>V_l2PN → LHAD3e1_a</td>
+<td>50 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 42µm, male-cns R 39µm</td>
+<td>SS01336〈GAL4〉[特異性1] / SS02076〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>DM4_vPN → LHPV4a8</td>
+<td>50 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 41µm, male-cns R 40µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>腹外側前大脳</td>
+<td>CL263 → DNp10</td>
+<td>49 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 43µm, male-cns R 48µm</td>
+<td>-</td>
+<td>SS01049〈GAL4〉[特異性2] / SS01580〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>DM3_vPN → LHAV4j1</td>
+<td>49 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 25µm, male-cns R 28µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>腹外側前大脳</td>
+<td>PLP130 → DNp27</td>
+<td>49 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 29µm, male-cns R 24µm</td>
+<td>-</td>
+<td>SS01876〈GAL4〉[特異性2] / MB202B〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>VP1m_l2PN → LHPV4j3</td>
+<td>48 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 46µm, male-cns R 24µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_l2PNm15 → LHPD5d1</td>
+<td>48 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 17µm, male-cns R 14µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>SIP022 → DNb01</td>
+<td>47 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 26µm, male-cns R 12µm</td>
+<td>-</td>
+<td>SS02383〈GAL4〉[特異性2] / SS02542〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>VA1d_vPN → LHAV2g2_b</td>
+<td>47 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 13µm, male-cns R 28µm</td>
+<td>SS34963〈GAL4〉[特異性1] / SS01114〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>VES001 → DNp10</td>
+<td>46 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 24µm, male-cns R 16µm</td>
+<td>-</td>
+<td>SS01049〈GAL4〉[特異性2] / SS01580〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_l2PNl22 → LHAV2g1</td>
+<td>46 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 24µm, male-cns R 37µm</td>
+<td>SS32193〈GAL4〉[特異性2] / SS32191〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_vPNml79 → LHAV4g14</td>
+<td>45 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 21µm, male-cns R 24µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>CRE004 → DNa02</td>
+<td>45 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 36µm, male-cns R 18µm</td>
+<td>-</td>
+<td>SS00730〈GAL4〉[特異性1] / SS00730〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>DC1_adPN → LHPD4d1</td>
+<td>45 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 18µm, male-cns R 25µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>MBON35 → DNa02</td>
+<td>45 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 20µm, male-cns R 32µm</td>
+<td>-</td>
+<td>SS00730〈GAL4〉[特異性1] / SS00730〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>VA2_adPN → LHPD5b1</td>
+<td>44 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 15µm, male-cns R 26µm</td>
+<td>-</td>
+<td>SS24617〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>楔形領域</td>
+<td>LAL142 → DNa02</td>
+<td>44 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 33µm, male-cns R 20µm</td>
+<td>-</td>
+<td>SS00730〈GAL4〉[特異性1] / SS00730〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS137 → DNb03</td>
+<td>44 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 30µm, male-cns R 20µm</td>
+<td>-</td>
+<td>SS02370〈GAL4〉[特異性2] / SS02370〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>視覚</td>
+<td>LT34 → AOTU035</td>
+<td>44 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 38µm, male-cns R 18µm</td>
+<td>SS80350〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_l2PNl21 → LHPV1c2</td>
+<td>44 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 27µm, male-cns R 57µm</td>
+<td>SS32192〈GAL4〉(+M_l2PNl22)[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS106 → DNp49</td>
+<td>44 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 42µm, male-cns R 17µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_vPNml86 → LHAD1c3</td>
+<td>43 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 33µm, male-cns R 38µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>V_l2PN → LHPV4g2</td>
+<td>43 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 28µm, male-cns R 36µm</td>
+<td>SS01336〈GAL4〉[特異性1] / SS02076〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>VA1d_vPN → LHAD1f2</td>
+<td>42 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 30µm, male-cns R 62µm</td>
+<td>SS34963〈GAL4〉[特異性1] / SS01114〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>視覚</td>
+<td>LT75 → AVLP464</td>
+<td>41 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 23µm, male-cns R 21µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>キノコ体</td>
+<td>VP2_adPN → LHCENT5</td>
+<td>35 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 24µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>キノコ体</td>
+<td>M_adPNm4 → LHAV3f1</td>
+<td>31 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 11µm, male-cns R 19µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>キノコ体</td>
+<td>DA4l_adPN → LHPV6g1</td>
+<td>29 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 11µm, male-cns R 14µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>中心複合体</td>
+<td>FB6L → PFL2</td>
+<td>238 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 14µm, male-cns R 0µm</td>
+<td>SS95206〈GAL4〉 / SS95750〈GAL4〉</td>
+<td>SS82331〈GAL4〉[特異性2] / SS82329〈GAL4〉</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>LAL119 → DNb01</td>
+<td>218 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 5µm, male-cns R 10µm</td>
+<td>SS50337〈GAL4〉[特異性2]</td>
+<td>SS02383〈GAL4〉[特異性2] / SS02542〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>中心複合体</td>
+<td>FB6L → PFL3</td>
+<td>196 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 10µm, male-cns R 3µm</td>
+<td>SS95206〈GAL4〉 / SS95750〈GAL4〉</td>
+<td>SS82335〈GAL4〉 / SS60291〈GAL4〉</td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>MBON04 → MBON15-like</td>
+<td>107 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>未確認</td>
+<td>SS67728〈GAL4〉[特異性2] / SS67755〈GAL4〉[特異性2]</td>
+<td>MB257C〈GAL4〉(+MBON19)[特異性1] / MB540B〈GAL4〉(+MBON18)[特異性1]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>AOTU042 → DNp17</td>
+<td>107 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 0µm, male-cns R 0µm</td>
+<td>SS85999〈GAL4〉[特異性1]</td>
+<td>SS02553〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>中心複合体</td>
+<td>ExR2 → FB6M</td>
+<td>105 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 4µm, male-cns R 49µm</td>
+<td>SS58826〈GAL4〉[特異性2] / SS59679〈GAL4〉[特異性2]</td>
+<td>SS49931〈GAL4〉[特異性2] / SS72731〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>LAL072 → DNa01</td>
+<td>97 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 7µm, male-cns R 0µm</td>
+<td>SS49386〈GAL4〉[特異性2]</td>
+<td>SS00731〈GAL4〉[特異性1] / SS00731〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>MBON15-like → MBON04</td>
+<td>95 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>未確認</td>
+<td>MB257C〈GAL4〉(+MBON19)[特異性1] / MB540B〈GAL4〉(+MBON18)[特異性1]</td>
+<td>SS67728〈GAL4〉[特異性2] / SS67755〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>MBON21 → MBON03</td>
+<td>94 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>未確認</td>
+<td>SS46348〈GAL4〉[特異性2] / SS81353〈GAL4〉[特異性2]</td>
+<td>SS01127〈GAL4〉[特異性2] / SS01143〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>MBON04 → PPL105</td>
+<td>93 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>未確認</td>
+<td>SS67728〈GAL4〉[特異性2] / SS67755〈GAL4〉[特異性2]</td>
+<td>MB059B〈GAL4〉[特異性1] / MB320B〈GAL4〉(+PPL101)[特異性1]</td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>PPL106 → PPL103</td>
+<td>92 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 10µm, male-cns R 14µm</td>
+<td>SL86050〈LexA〉[特異性2] / SL86062〈LexA〉[特異性2]</td>
+<td>MB302B〈GAL4〉[特異性2] / MB302B〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>LAL098 → DNb01</td>
+<td>82 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 4µm, male-cns R 2µm</td>
+<td>SS49882〈GAL4〉(+VES019)[特異性2] / SS49882〈GAL4〉(+VES019)[特異性1]</td>
+<td>SS02383〈GAL4〉[特異性2] / SS02542〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>MBON03 → MBON21</td>
+<td>78 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>未確認</td>
+<td>SS01127〈GAL4〉[特異性2] / SS01143〈GAL4〉[特異性2]</td>
+<td>SS46348〈GAL4〉[特異性2] / SS81353〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS124 → DNb01</td>
+<td>68 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 3µm, male-cns R 15µm</td>
+<td>SS67678〈GAL4〉[特異性2] / SS66732〈GAL4〉[特異性0]</td>
+<td>SS02383〈GAL4〉[特異性2] / SS02542〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>MBON21 → PPL106</td>
+<td>60 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 13µm, male-cns R 4µm</td>
+<td>SS46348〈GAL4〉[特異性2] / SS81353〈GAL4〉[特異性2]</td>
+<td>SL86050〈LexA〉[特異性2] / SL86062〈LexA〉[特異性2]</td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>PPL106 → MBON17</td>
+<td>55 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>未確認</td>
+<td>SL86050〈LexA〉[特異性2] / SL86062〈LexA〉[特異性2]</td>
+<td>SS01298〈GAL4〉(+MBON16)[特異性2] / SS01397〈GAL4〉(+MBON16)[特異性2]</td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>MBON04 → MBON20</td>
+<td>50 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>未確認</td>
+<td>SS67728〈GAL4〉[特異性2] / SS67755〈GAL4〉[特異性2]</td>
+<td>SS67741〈GAL4〉[特異性2] / SS95118〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>MBON11 → MBON33</td>
+<td>41 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 9µm, male-cns R 6µm</td>
+<td>SL86058〈LexA〉[特異性2] / SS01359〈GAL4〉[特異性1]</td>
+<td>SS75199〈GAL4〉[特異性1] / SS75200〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>MBON33 → MBON11</td>
+<td>38 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 12µm, male-cns R 4µm</td>
+<td>SS75199〈GAL4〉[特異性1] / SS75200〈GAL4〉[特異性1]</td>
+<td>SL86058〈LexA〉[特異性2] / SS01359〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>ExR6 → DNb01</td>
+<td>34 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 10µm, male-cns R 5µm</td>
+<td>SS53617〈GAL4〉[特異性2] / SS53617〈GAL4〉</td>
+<td>SS02383〈GAL4〉[特異性2] / SS02542〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>PPL103 → MBON07</td>
+<td>30 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 3µm, male-cns R 4µm</td>
+<td>MB302B〈GAL4〉[特異性2] / MB302B〈GAL4〉[特異性0]</td>
+<td>MB319B〈GAL4〉[特異性2] / MB319C〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>PPL101 → MBON01</td>
+<td>28 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 3µm, male-cns R 0µm</td>
+<td>SL86067〈LexA〉[特異性2] / MB503B〈GAL4〉[特異性1]</td>
+<td>SS01308〈GAL4〉[特異性2] / SL86047〈LexA〉[特異性2]</td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>MBON20 → MBON04</td>
+<td>28 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>未確認</td>
+<td>SS67741〈GAL4〉[特異性2] / SS95118〈GAL4〉[特異性2]</td>
+<td>SS67728〈GAL4〉[特異性2] / SS67755〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>MBON01 → PPL104</td>
+<td>26 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>未確認</td>
+<td>SS01308〈GAL4〉[特異性2] / SL86047〈LexA〉[特異性2]</td>
+<td>MB568B〈GAL4〉(+PPL105)[特異性0] / MB099C〈GAL4〉(+PPL103,PPL105,PPL106)[特異性2]</td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>MBON33 → PPL106</td>
+<td>24 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 2µm, male-cns R 12µm</td>
+<td>SS75199〈GAL4〉[特異性1] / SS75200〈GAL4〉[特異性1]</td>
+<td>SL86050〈LexA〉[特異性2] / SL86062〈LexA〉[特異性2]</td>
+</tr>
+<tr>
+<td>キノコ体の中だけ</td>
+<td>PPL106 → MBON21</td>
+<td>22 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 2µm, male-cns R 1µm</td>
+<td>SL86050〈LexA〉[特異性2] / SL86062〈LexA〉[特異性2]</td>
+<td>SS46348〈GAL4〉[特異性2] / SS81353〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>VES031 → DNp17</td>
+<td>369 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 0µm, male-cns R 0µm</td>
+<td>-</td>
+<td>SS02553〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>クランプ</td>
+<td>MBON05 → CRE072</td>
+<td>173 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 2µm, male-cns R 0µm</td>
+<td>SS01188〈GAL4〉[特異性2] / SS01297〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>SAD036 → DNp17</td>
+<td>138 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 0µm, male-cns R 0µm</td>
+<td>-</td>
+<td>SS02553〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>MBON06 → CRE024</td>
+<td>133 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 9µm, male-cns R 21µm</td>
+<td>SS01224〈GAL4〉[特異性1] / MB482C〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>クランプ</td>
+<td>MBON26 → SMP031</td>
+<td>124 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns R 6µm</td>
+<td>SS80958〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>触角葉</td>
+<td>DA4m_adPN → ALBN1</td>
+<td>116 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>nan</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉 / 後斜面</td>
+<td>LAL194 → DNa08</td>
+<td>116 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 2µm, male-cns R 18µm</td>
+<td>-</td>
+<td>SS02393〈GAL4〉[特異性2] / SS02393〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS248 → DNb01</td>
+<td>107 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 4µm, male-cns R 32µm</td>
+<td>-</td>
+<td>SS02383〈GAL4〉[特異性2] / SS02542〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>ER6 → LAL152</td>
+<td>104 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 8µm, male-cns R 14µm</td>
+<td>SS58833〈GAL4〉[特異性2] / SS58833〈GAL4〉</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>VES003 → DNp17</td>
+<td>99 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 0µm, male-cns R 0µm</td>
+<td>-</td>
+<td>SS02553〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>キノコ体</td>
+<td>PAM13 → MBON32</td>
+<td>91 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 13µm, male-cns R 8µm</td>
+<td>MB023B〈GAL4〉[特異性1] / MB055B〈GAL4〉(+PAM14)[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉 / 後斜面</td>
+<td>PS013 → DNp17</td>
+<td>91 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 2µm, male-cns R 4µm</td>
+<td>-</td>
+<td>SS02553〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>FB1C → LAL048</td>
+<td>85 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 0µm, male-cns R 0µm</td>
+<td>SS63879〈GAL4〉[特異性2] / SS63927〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_vPNml86 → LHPV1c1</td>
+<td>81 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 8µm, male-cns R 70µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>DA4m_adPN → LHPV4a11</td>
+<td>75 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 6µm, male-cns R 10µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>クランプ / LexA 12 型を軸に再探索</td>
+<td>MBON04 → LAL175</td>
+<td>74 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 6µm, male-cns R 11µm</td>
+<td>SS67728〈GAL4〉[特異性2] / SS67755〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉 / 後斜面</td>
+<td>PS049 → DNp17</td>
+<td>74 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 0µm, male-cns R 0µm</td>
+<td>-</td>
+<td>SS02553〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS137 → DNa01</td>
+<td>71 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 6µm, male-cns R 4µm</td>
+<td>-</td>
+<td>SS00731〈GAL4〉[特異性1] / SS00731〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>VES034_b → DNb05</td>
+<td>71 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 9µm, male-cns R 8µm</td>
+<td>-</td>
+<td>SS01051〈GAL4〉[特異性2] / SS01051〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>キノコ体</td>
+<td>PPL102 → MBON24</td>
+<td>70 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 3µm, male-cns R 3µm</td>
+<td>SS01252〈GAL4〉(+MBON03,MBON04)[特異性0]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉 / 後斜面</td>
+<td>VES056 → DNp17</td>
+<td>69 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 1µm, male-cns R 0µm</td>
+<td>-</td>
+<td>SS02553〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_vPNml86 → LHAV2m1</td>
+<td>66 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 4µm, male-cns R 19µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>VES033 → DNp17</td>
+<td>63 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 0µm, male-cns R 0µm</td>
+<td>-</td>
+<td>SS02553〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>キノコ体</td>
+<td>KCab-p → MBON13</td>
+<td>62 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 1µm, male-cns R 4µm</td>
+<td>-</td>
+<td>MB019B〈GAL4〉[特異性2] / MB037B〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>側方付属葉 / 楔形領域</td>
+<td>VES025 → DNb05</td>
+<td>62 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 9µm, male-cns R 13µm</td>
+<td>-</td>
+<td>SS01051〈GAL4〉[特異性2] / SS01051〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>LAL110 → DNa01</td>
+<td>60 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 7µm, male-cns R 3µm</td>
+<td>-</td>
+<td>SS00731〈GAL4〉[特異性1] / SS00731〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>キノコ体 / 外側角</td>
+<td>DA4m_adPN → LHPV9b1</td>
+<td>57 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 14µm, male-cns R 7µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>VES011 → DNp17</td>
+<td>56 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 0µm, male-cns R 0µm</td>
+<td>-</td>
+<td>SS02553〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>VES018 → DNp17</td>
+<td>56 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 0µm, male-cns R 0µm</td>
+<td>-</td>
+<td>SS02553〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS126 → DNa09</td>
+<td>56 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 0µm, male-cns R 0µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_vPNml86 → LHPV6c1</td>
+<td>53 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 7µm, male-cns R 30µm</td>
+<td>-</td>
+<td>LH2220〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>視覚</td>
+<td>LT73 → LHAV2b3</td>
+<td>51 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 10µm, male-cns R 29µm</td>
+<td>SS80378〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>PS185 → DNp17</td>
+<td>51 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 0µm, male-cns R 0µm</td>
+<td>-</td>
+<td>SS02553〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>LAL021 → DNp17</td>
+<td>50 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 0µm, male-cns R 0µm</td>
+<td>-</td>
+<td>SS02553〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>腹外側前大脳</td>
+<td>PVLP121 → DNp06</td>
+<td>50 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 4µm, male-cns R 7µm</td>
+<td>-</td>
+<td>SS02256〈GAL4〉[特異性2] / SS01047〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>VES050 → DNp17</td>
+<td>48 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 0µm, male-cns R 0µm</td>
+<td>-</td>
+<td>SS02553〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS127 → DNp17</td>
+<td>48 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 0µm, male-cns R 0µm</td>
+<td>-</td>
+<td>SS02553〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>VES047 → DNa02</td>
+<td>48 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 25µm, male-cns R 4µm</td>
+<td>-</td>
+<td>SS00730〈GAL4〉[特異性1] / SS00730〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS126 → DNa04</td>
+<td>47 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 0µm, male-cns R 0µm</td>
+<td>-</td>
+<td>SS02384〈GAL4〉(+DNa10)[特異性1]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>DA1_vPN → LHAV2k8</td>
+<td>46 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 15µm, male-cns R 10µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>DA4m_adPN → LHPV2d1</td>
+<td>45 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 14µm, male-cns R 6µm</td>
+<td>-</td>
+<td>LH1925〈GAL4〉[特異性2] / LH1899〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS010 → DNp17</td>
+<td>45 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 0µm, male-cns R 0µm</td>
+<td>-</td>
+<td>SS02553〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>VS → PS262</td>
+<td>44 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 0µm, male-cns R 0µm</td>
+<td>SS04438〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉 / 後斜面</td>
+<td>VES064 → DNp17</td>
+<td>44 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 0µm, male-cns R 0µm</td>
+<td>-</td>
+<td>SS02553〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>VES070 → DNa01</td>
+<td>44 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 0µm, male-cns R 0µm</td>
+<td>-</td>
+<td>SS00731〈GAL4〉[特異性1] / SS00731〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>VA1v_vPN → LHAV2k12_b</td>
+<td>43 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 5µm, male-cns R 4µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>VL1_vPN → LHAD2d1</td>
+<td>43 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 6µm, male-cns R 15µm</td>
+<td>SS86025〈GAL4〉[特異性2] / SS34947〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>PS214 → DNp17</td>
+<td>42 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 11µm, male-cns R 0µm</td>
+<td>-</td>
+<td>SS02553〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>楔形領域</td>
+<td>CRE074 → DNb05</td>
+<td>37 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 6µm, male-cns R 17µm</td>
+<td>-</td>
+<td>SS01051〈GAL4〉[特異性2] / SS01051〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>キノコ体</td>
+<td>M_adPNm4 → LHPV10b1</td>
+<td>35 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 0µm, male-cns R 1µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>キノコ体</td>
+<td>V_ilPN → LHPV6c1</td>
+<td>32 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 14µm, male-cns R 9µm</td>
+<td>-</td>
+<td>LH2220〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>VS → PS239</td>
+<td>30 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 0µm, male-cns R 0µm</td>
+<td>SS04438〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>腹外側前大脳</td>
+<td>LT62 → PVLP094</td>
+<td>27 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 15µm, male-cns R 3µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>腹外側前大脳</td>
+<td>LT83 → DNp06</td>
+<td>21 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 16µm, male-cns R 9µm</td>
+<td>-</td>
+<td>SS02256〈GAL4〉[特異性2] / SS01047〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>HSS → PS234</td>
+<td>16 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 7µm, male-cns R 4µm</td>
+<td>SS22522〈GAL4〉(+HSE,HSN)[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>キノコ体</td>
+<td>VP1m_l2PN → KCg-s2</td>
+<td>15 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 2µm, male-cns R 1µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>HSS → PS233</td>
+<td>14 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 6µm, male-cns R 4µm</td>
+<td>SS22522〈GAL4〉(+HSE,HSN)[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>キノコ体</td>
+<td>VP1d_il2PN → KCg-s2</td>
+<td>11 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 2µm, male-cns R 4µm</td>
+<td>SS01104〈GAL4〉[特異性1] / SS01103〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>キノコ体</td>
+<td>VP2_adPN → KCg-s1</td>
+<td>11 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0), male-cns:v1.0(合計 0/0)</td>
+<td>male-cns L 2µm</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳 / クランプ</td>
+<td>PPL102 → CL138</td>
+<td>218 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS01252〈GAL4〉(+MBON03,MBON04)[特異性0]</td>
+<td>SS88586〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>FB5V → AOTU042</td>
+<td>184 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS88825〈GAL4〉 / SS88827〈GAL4〉</td>
+<td>SS85999〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>VP1m+_lvPN → MB-C1</td>
+<td>96 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS33915〈GAL4〉[特異性2]</td>
+<td>MB380C〈GAL4〉[特異性2] / LH2449〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>CL033 → DNp31</td>
+<td>68 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS47816〈GAL4〉[特異性2]</td>
+<td>SS95362〈GAL4〉[特異性2] / SS95510〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>CL033 → DNp17</td>
+<td>63 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS47816〈GAL4〉[特異性2]</td>
+<td>SS02553〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS263 → DNp16</td>
+<td>56 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS35837〈GAL4〉[特異性1]</td>
+<td>SS00735〈GAL4〉[特異性1] / SS00735〈GAL4〉</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PLP030 → DNp15</td>
+<td>53 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS32832〈GAL4〉[特異性1]</td>
+<td>SS01556〈GAL4〉[特異性1] / SS01556〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>楔形領域 / 後斜面 / 腹外側前大脳</td>
+<td>PLP030 → DNp31</td>
+<td>49 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS32832〈GAL4〉[特異性1]</td>
+<td>SS95362〈GAL4〉[特異性2] / SS95510〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>CL033 → DNp13</td>
+<td>47 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS47816〈GAL4〉[特異性2]</td>
+<td>SS61089〈GAL4〉[特異性2] / SS61090〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>CL033 → DNb05</td>
+<td>47 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS47816〈GAL4〉[特異性2]</td>
+<td>SS01051〈GAL4〉[特異性2] / SS01051〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>側方付属葉</td>
+<td>CL033 → DNa08</td>
+<td>46 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS47816〈GAL4〉[特異性2]</td>
+<td>SS02393〈GAL4〉[特異性2] / SS02393〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>側方付属葉 / 後斜面</td>
+<td>PS196 → DNa02</td>
+<td>44 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS48753〈GAL4〉[特異性2]</td>
+<td>SS00730〈GAL4〉[特異性1] / SS00730〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>楔形領域</td>
+<td>OA-VUMa1 → DNp19</td>
+<td>36 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS48831〈GAL4〉[特異性0] / SS48816〈GAL4〉(+OA-VUMa7)[特異性0]</td>
+<td>SS81965〈GAL4〉[特異性2] / SS12653〈GAL4〉(+DNp15)[特異性1]</td>
+</tr>
+<tr>
+<td>触角葉</td>
+<td>VL1_ilPN → M_lv2PN9t49</td>
+<td>224 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>nan</td>
+<td>MB546B〈GAL4〉[特異性2] / MB567B〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>触角葉</td>
+<td>v2LN36 → SIFa</td>
+<td>191 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>nan</td>
+<td>-</td>
+<td>MB015B〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>LAL127 → PS039</td>
+<td>166 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>LHPV5e1 → SMP399</td>
+<td>157 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉 / 後斜面</td>
+<td>PS271 → DNa02</td>
+<td>155 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>SS00730〈GAL4〉[特異性1] / SS00730〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>後斜面 / 腹外側前大脳</td>
+<td>PLP195 → DNp07</td>
+<td>151 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>SS02276〈GAL4〉[特異性2] / SS02612〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>触角葉</td>
+<td>M_lvPNm41 → M_lv2PN9t49</td>
+<td>147 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>nan</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>LHPD5b1 → SMP585</td>
+<td>145 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS24617〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>触角葉</td>
+<td>VP5+VP3_l2PN → M_l2PNm14</td>
+<td>142 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>nan</td>
+<td>SS32229〈GAL4〉[特異性2] / MB559C〈GAL4〉(+VP5+_l2PN,VP5+VP2_l2PN)[特異性0]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>LAL081 → VES026</td>
+<td>140 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>LAL099 → PS015</td>
+<td>136 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>触角葉</td>
+<td>M_vPNml64 → M_lv2PN9t49</td>
+<td>133 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>nan</td>
+<td>SS01823〈GAL4〉[特異性1] / SS10947〈GAL4〉(+M_vPNml65,M_vPNml68)[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>触角葉</td>
+<td>VP5+VP2_l2PN → M_l2PNl23</td>
+<td>132 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>nan</td>
+<td>MB559C〈GAL4〉(+VP5+_l2PN,VP5+VP3_l2PN)[特異性0]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳 / クランプ</td>
+<td>MBON32 → IB112</td>
+<td>123 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>SS81529〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>LHAV1e1 → SMP029</td>
+<td>120 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>SS35966〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS275 → DNb01</td>
+<td>116 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>SS02383〈GAL4〉[特異性2] / SS02542〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>上前大脳</td>
+<td>LHCENT9 → pC1b</td>
+<td>113 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>LAL141 → PS212</td>
+<td>107 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面 / クランプ</td>
+<td>PS293 → DNp31</td>
+<td>105 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>SS95362〈GAL4〉[特異性2] / SS95510〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>LAL099 → PS064</td>
+<td>102 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉 / 後斜面</td>
+<td>VES042 → DNp17</td>
+<td>101 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>SS02553〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS136 → DNb02</td>
+<td>98 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>SS01060〈GAL4〉[特異性2] / SS01060〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>腹外側前大脳</td>
+<td>LHAV4i2 → DNp32</td>
+<td>97 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>SS02394〈GAL4〉[特異性1] / SS02394〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>LAL099 → VES026</td>
+<td>93 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>上前大脳 / LexA 12 型を軸に再探索</td>
+<td>MBON04 → PAL02</td>
+<td>92 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS67728〈GAL4〉[特異性2] / SS67755〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>側方付属葉 / 後斜面</td>
+<td>PS196 → DNa03</td>
+<td>92 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS48753〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>VC3m_lvPN → LHAV2m1</td>
+<td>89 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>DM3_adPN → LHPD3a3_c</td>
+<td>85 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>LAL046 → PS064</td>
+<td>85 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>LAL010 → PS163</td>
+<td>82 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>キノコ体 / 外側角</td>
+<td>VP1m+_lvPN → LHCENT8</td>
+<td>78 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS33915〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>VP1m+_lvPN → LHPV4a11</td>
+<td>78 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS33915〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS054 → DNp16</td>
+<td>78 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>SS00735〈GAL4〉[特異性1] / SS00735〈GAL4〉</td>
+</tr>
+<tr>
+<td>腹外側前大脳</td>
+<td>PLP070 → DNp27</td>
+<td>78 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>SS01876〈GAL4〉[特異性2] / MB202B〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>VP1m+_lvPN → LHPV1c2</td>
+<td>77 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS33915〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>VP1d+VP4_l2PN1 → LHPV4a2</td>
+<td>76 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>LH542〈GAL4〉(+LHPV4a1,LHPV4a3,LHPV4a4,LHPV4a5)[特異性2] / LH1475〈GAL4〉(+LHPV4a1,LHPV4a3,LHPV4a4,LHPV4a5)[特異性2]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>VP1m+_lvPN → LHAV2m1</td>
+<td>76 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS33915〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>5-HTPMPV03 → DNp16/17</td>
+<td>76 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>キノコ体 / 外側角</td>
+<td>VP1m+_lvPN → LHPV6g1</td>
+<td>74 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS33915〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面 / 腹外側前大脳</td>
+<td>IB006 → DNb05</td>
+<td>71 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>SS01051〈GAL4〉[特異性2] / SS01051〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>キノコ体</td>
+<td>VP1m+VP5_ilPN → LHPD5a1</td>
+<td>68 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS32190〈GAL4〉[特異性0] / SS01100〈GAL4〉(+VP1d_il2PN)[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS213 → DNp16</td>
+<td>58 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>SS00735〈GAL4〉[特異性1] / SS00735〈GAL4〉</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>CL033 → DNp49</td>
+<td>58 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS47816〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS117 → DNp19</td>
+<td>54 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>SS81965〈GAL4〉[特異性2] / SS12653〈GAL4〉(+DNp15)[特異性1]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_vPNml64 → LHPV3b1_b</td>
+<td>52 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS01823〈GAL4〉[特異性1] / SS10947〈GAL4〉(+M_vPNml65,M_vPNml68)[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_vPNml58 → LHAV4a5</td>
+<td>52 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS01202〈GAL4〉(+M_vPNml56)[特異性2] / SS01202〈GAL4〉(+M_vPNml56)[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS239 → DNp16</td>
+<td>51 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>SS00735〈GAL4〉[特異性1] / SS00735〈GAL4〉</td>
+</tr>
+<tr>
+<td>腹外側前大脳</td>
+<td>PLP146 → DNp27</td>
+<td>51 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>SS01876〈GAL4〉[特異性2] / MB202B〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_vPNml50 → LHAD1b2_a</td>
+<td>50 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS018 → DNp07</td>
+<td>50 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>SS02276〈GAL4〉[特異性2] / SS02612〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>IB029 → DNp16/17</td>
+<td>49 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>VP1d+VP4_l2PN1 → LHAV3q1</td>
+<td>49 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS277 → DNp19</td>
+<td>49 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>SS81965〈GAL4〉[特異性2] / SS12653〈GAL4〉(+DNp15)[特異性1]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_vPNml85 → LHAV6a8</td>
+<td>49 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS01108〈GAL4〉(+VA1d_vPN,M_vPNml88,M_vPNml89)[特異性2] / SS01108〈GAL4〉(+VA1d_vPN,M_vPNml88,M_vPNml89)[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PLP242 → DNa09</td>
+<td>48 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_vPNml58 → LHCENT1</td>
+<td>47 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS01202〈GAL4〉(+M_vPNml56)[特異性2] / SS01202〈GAL4〉(+M_vPNml56)[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>IB039 → DNp49</td>
+<td>47 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>VA1d_vPN → LHAD1b2_c</td>
+<td>47 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS34963〈GAL4〉[特異性1] / SS01114〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_vPNml85 → LHAD1a3</td>
+<td>45 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS01108〈GAL4〉(+VA1d_vPN,M_vPNml88,M_vPNml89)[特異性2] / SS01108〈GAL4〉(+VA1d_vPN,M_vPNml88,M_vPNml89)[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>VP1m+_lvPN → LHPV4b5</td>
+<td>45 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS33915〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>IB006 → DNp26</td>
+<td>45 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>SS01553〈GAL4〉[特異性2] / SS01553〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PLP195 → DNa02</td>
+<td>45 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>SS00730〈GAL4〉[特異性1] / SS00730〈GAL4〉[特異性0]</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>V_l2PN → LHAV3e3</td>
+<td>44 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS01336〈GAL4〉[特異性1] / SS02076〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>DP1m_adPN → LHAV2k3</td>
+<td>44 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>後斜面</td>
+<td>PS212 → DNp16/17</td>
+<td>43 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>外側角</td>
+<td>M_l2PNl22 → LHAD1b2_a</td>
+<td>42 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS32193〈GAL4〉[特異性2] / SS32191〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>キノコ体</td>
+<td>VC3m_lvPN → LHPV10b1</td>
+<td>41 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>視覚</td>
+<td>LT34 → LAL026</td>
+<td>40 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS80350〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>触角葉</td>
+<td>ORN_V → TRN_VP2</td>
+<td>39 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>nan</td>
+<td>SS00525〈GAL4〉[特異性2] / SS00525〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>触角葉</td>
+<td>ORN_VC3l → M_vPNml87</td>
+<td>39 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>nan</td>
+<td>-</td>
+<td>SS00587〈GAL4〉[特異性1] / SS00586〈GAL4〉[特異性1]</td>
+</tr>
+<tr>
+<td>触角葉</td>
+<td>ORN_VM5v → M_vPNml77</td>
+<td>38 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>nan</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>楔形領域</td>
+<td>SAD016 → DNp11</td>
+<td>36 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>SS49051〈GAL4〉[特異性2] / SS02891〈GAL4〉[特異性2]</td>
+</tr>
+<tr>
+<td>キノコ体</td>
+<td>VP2+_adPN → LHPV8d1</td>
+<td>32 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>触角葉</td>
+<td>ORN_VA5 → M_vPNml50</td>
+<td>31 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>nan</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>触角葉</td>
+<td>ORN_VA6 → M_vPNml50</td>
+<td>31 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>nan</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>キノコ体</td>
+<td>VC3l_adPN → LHPV10b1</td>
+<td>29 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS01119〈GAL4〉[特異性1] / SS34061〈GAL4〉[特異性1]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>触角葉</td>
+<td>ORN_VC3l → M_adPNm3</td>
+<td>27 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>nan</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>腹外側前大脳</td>
+<td>LT36 → PS155</td>
+<td>27 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>触角葉</td>
+<td>ORN_VM7d → M_vPNml50</td>
+<td>24 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>nan</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>触角葉</td>
+<td>ORN_VA7m → VA2_adPN</td>
+<td>23 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>nan</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>キノコ体</td>
+<td>VP2+_adPN → KCg-s1</td>
+<td>23 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>触角葉</td>
+<td>ORN_VM5v → M_imPNl92</td>
+<td>20 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>nan</td>
+<td>-</td>
+<td>SS01097〈GAL4〉[特異性0] / SS01092〈GAL4〉(+SLP374)[特異性1]</td>
+</tr>
+<tr>
+<td>キノコ体</td>
+<td>VP1m+VP5_ilPN → KCg-s1</td>
+<td>11 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS32190〈GAL4〉[特異性0] / SS01100〈GAL4〉(+VP1d_il2PN)[特異性2]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>キノコ体</td>
+<td>VP1d+VP4_l2PN1 → KCg-s3</td>
+<td>11 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>キノコ体</td>
+<td>VP1m+_lvPN → KCg-d</td>
+<td>10 µm</td>
+<td>0</td>
+<td>flywire:783(合計 0/0)</td>
+<td>未確認</td>
+<td>SS33915〈GAL4〉[特異性2]</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div></body></html>
