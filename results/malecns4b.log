@@ -1,0 +1,29 @@
+########## ps 18:18
+         PS212 → DNp16/17       （（タイプ名なし））
+         PS030 → DNp07          元 0/0 | male-cns:v1.0 合計 6/1
+         PS138 → DNp27          元 0/0 | male-cns:v1.0 合計 1/5
+        PLP019 → DNp05          元 0/0 | male-cns:v1.0 合計 1/0
+        LAL018 → PS140          元 0/0 | male-cns:v1.0 合計 0/0  ★
+109 組を確認（照合できたのは 73 組）、合計 0 の組 32 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_ps\cross_male_cns_v1_0.csv
+########## smp 21:25
+        MBON26 → SIP069         元 0/0 | male-cns:v1.0 合計 0/0  ★
+        MBON32 → SMP048         元 0/0 | male-cns:v1.0 合計 1/1
+        SMP085 → DNp32          元 0/0 | male-cns:v1.0 合計 0/0  ★
+       LHCENT9 → pC1b           （（タイプ名なし））
+        MBON32 → SMP054         元 0/0 | male-cns:v1.0 合計 0/0  ★
+83 組を確認（照合できたのは 76 組）、合計 0 の組 30 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_smp\cross_male_cns_v1_0.csv
+########## lal 21:42
+        VES070 → DNa01          元 0/0 | male-cns:v1.0 合計 0/0  ★
+         PS196 → DNa02          （（タイプ名なし））
+        LAL022 → DNa02          元 0/0 | male-cns:v1.0 合計 0/1
+        LAL021 → DNp17          元 0/0 | male-cns:v1.0 合計 0/0  ★
+         PS214 → DNp17          元 0/0 | male-cns:v1.0 合計 0/0  ★
+80 組を確認（照合できたのは 72 組）、合計 0 の組 43 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_lal\cross_male_cns_v1_0.csv
+########## wed 21:53
+        LAL142 → DNa02          元 0/0 | male-cns:v1.0 合計 0/0  ★
+        WED106 → DNb05          元 0/0 | male-cns:v1.0 合計 2/0
+        CRE074 → DNb05          元 0/0 | male-cns:v1.0 合計 0/0  ★
+      OA-VUMa1 → DNp19          （（タイプ名なし））
+        SAD016 → DNp11          （（タイプ名なし））
+16 組を確認（照合できたのは 13 組）、合計 0 の組 6 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_wed\cross_male_cns_v1_0.csv
+########## done 21:56

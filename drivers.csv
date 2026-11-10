@@ -1,0 +1,25 @@
+type,driver,system,expression,status,source
+MBON01,MB011B,split-GAL4,"MBON01 + MBON03 + MBON04（γ5・β'2 に樹状突起をもつグルタミン酸作動性 MBON）。MBON01 だけではない",確認済み,https://elifesciences.org/articles/90523
+MBON01,SS01308,split-GAL4,"MBON-γ5β'2a（+ VNC）。LM 1 個、特異性 2、主要ドライバー",確認済み,https://elifesciences.org/articles/94168
+MBON01,MB210B,split-GAL4,MBON-γ5β'2a は一部のみ（β'2mp・β2β'2a の方が強い）,要確認,https://pmc.ncbi.nlm.nih.gov/articles/PMC7877909/table/keyresource
+KCg-m,MB009B,split-GAL4,γ KC 用として使われている（γ main だけか、γd も含むかは未確認）,要確認,https://elifesciences.org/articles/04577
+MBON04,MB011B,split-GAL4,MBON01 + MBON03 + MBON04（MBON04 だけではない）,確認済み,https://elifesciences.org/articles/90523
+MBON33,SS75200,split-GAL4,MBON33 用として記載（食道付近に hemibrain 外の枝も写る）,確認済み,https://elifesciences.org/articles/90523/figures
+MBON33,SS77383,split-GAL4,MBON33 用として記載,確認済み,https://elifesciences.org/articles/90523/figures
+MBON29,（線名未確認）,split-GAL4,Rubin & Aso 2023 に MBON29 用の 2 系統があると記載。線名は図の画像内で未確認,要確認,https://elifesciences.org/articles/90523
+PAM01_a,MB315C,split-GAL4,PAM-γ5 のうち下交連を通る 8 個/半球。PAM01 のどのサブタイプ（a/b、fb/nc など）に当たるかは未確認,要確認,https://pubmed.ncbi.nlm.nih.gov/32619479/
+PAM01_b,MB315C,split-GAL4,PAM-γ5 のうち下交連を通る 8 個/半球。PAM01 のどのサブタイプ（a/b、fb/nc など）に当たるかは未確認,要確認,https://pubmed.ncbi.nlm.nih.gov/32619479/
+PAM01_b,MB315B,split-GAL4,PAM-γ5 を比較的きれいに標識するとの記載（サブタイプ不明）,要確認,https://www.nature.com/articles/s41598-021-99531-2
+APL,VT043924-GAL4,GAL4,FlyBase で別名 APL-Gal4。VT 系統なので他の細胞にも発現しうる,確認済み,https://flybase.org/reports/FBtp0105273
+MBON01,SL86047,split-LexA,"MBON-γ5β'2a のみ（LM 1 個、特異性 2 = 理想、主要ドライバー）。VT050240-AD + R27G01-LexADBD",確認済み,https://elifesciences.org/articles/94168
+MBON01,SL86046,split-LexA,"MBON-γ5β'2a（+ MBON-β'2mp_bilateral が少し）。LM 1–2 個、特異性 2",確認済み,https://elifesciences.org/articles/94168
+MBON01,SL86063,split-LexA,"MBON01 + MBON03 + MBON04（LM 3 個、特異性 2）",確認済み,https://elifesciences.org/articles/94168
+MBON04,SL86063,split-LexA,"MBON01 + MBON03 + MBON04（MBON04 だけではない）",確認済み,https://elifesciences.org/articles/94168
+MBON04,SS01125,split-GAL4,"MBON01 + MBON03 + MBON04",確認済み,https://elifesciences.org/articles/94168
+PAM07,MB197B,split-GAL4,"PAM-γ1γ2>γ4（LM 1–2 個、発現は疎、特異性 1、主要ドライバー）。hemibrain PAM07 の一部だけの可能性",確認済み,https://elifesciences.org/articles/94168
+PAM01_a,MB313B,split-GAL4,"PAM-γ5（LM 4–6 個、特異性 2）。PAM01 のどのサブタイプかは表に記載なし",確認済み,https://elifesciences.org/articles/94168
+PAM01_b,MB313B,split-GAL4,"PAM-γ5（LM 4–6 個、特異性 2）。PAM01 のどのサブタイプかは表に記載なし",確認済み,https://elifesciences.org/articles/94168
+PAM01_b,MB064B,split-GAL4,"PAM-γ5 + ほか（LM 約 8 個、特異性 1）",確認済み,https://elifesciences.org/articles/94168
+PAM02,MB106C,split-GAL4,"PAM-γ5 + β'2a（β'2a が強い）。比較対照（MBON01 に結合する DAN）向け",確認済み,https://elifesciences.org/articles/94168
+PAM05,MB103B,split-GAL4,"PAM-β'2p（LM 3–6 個、主要ドライバー）。比較対照（MBON04 に結合する DAN）向け",確認済み,https://elifesciences.org/articles/94168
+PAM08_e,MB518C,split-GAL4,"PAM08 + PAM11（PAM-γ4、α1。発現弱い）",確認済み,https://elifesciences.org/articles/94168

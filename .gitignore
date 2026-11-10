@@ -20,3 +20,10 @@ results/*/index.html
 .ipynb_checkpoints/
 .vscode/
 .idea/
+
+# 公開用サイトは docs/ に置く（publish_site.py が生成。GitHub Pages のフォルダは / か /docs のみ）
+# docs/ は追跡する。間違えて site/ を作ったときのために:
+site/
+
+# 解析の中間生成物（大きいので除外。run_all.py で作り直せる）
+results/*/consensus.csv

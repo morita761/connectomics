@@ -1,0 +1,12 @@
+# 必須（全アプローチ + 合成ベンチマーク）
+numpy>=2.0
+scipy>=1.11
+pandas>=2.0
+# 軸索/樹状突起の分割（C, D）、hemibrain メッシュ
+navis>=1.10
+# 実データ
+neuprint-python>=0.6
+trimesh>=4.0
+# FlyWire を使う場合のみ（依存が重いので任意）
+# fafbseg>=3.0
+rtree

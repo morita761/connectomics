@@ -1,0 +1,12 @@
+########## vlp 順位付け 22:58
+598 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_vlp\candidates_ranked.csv
+########## vlp FlyWire 22:58
+294 組（照合できたのは 270 組）、合計 0 の組 35 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_vlp\cross_flywire_783.csv
+hemibrain + FlyWire でゼロ: 35
+########## vlp male-CNS 22:59
+         CL263 → DNp10          元 0/0 | male-cns:v1.0 合計 0/0  ★
+35 組を確認（照合できたのは 28 組）、合計 0 の組 11 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_vlp\cross_male_cns_v1_0.csv
+3 個体すべてでゼロ: 11
+########## vlp 接触領域 23:04
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_vlp\inspect_output.csv
+########## vlp done 23:06

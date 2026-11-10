@@ -1,0 +1,4 @@
+type,year,title,authors,journal,doi,pmid,pmcid,source,mentions,behavior_sentences,lines_found,evidence
+FB4X,2021,A connectome of the &lt;i&gt;Drosophila&lt;/i&gt; central complex reveals network motifs suitable for flexible navigation and context-dependent action selection.,"Hulse BK, Haberkern H, Franconville R, Turner-Evans D, Takemura SY, Wolff T, Noo",eLife,10.7554/elife.66039,34696823,PMC9477501,full text,0,0,,
+FB4X,2020,A connectome and analysis of the adult &lt;i&gt;Drosophila&lt;/i&gt; central brain.,"Scheffer LK, Xu CS, Januszewski M, Lu Z, Takemura SY, Hayworth KJ, Huang GB, Shi",eLife,10.7554/elife.57443,32880371,PMC7546738,abstract,0,0,,
+FB4X,2020,The connectome of the adult Drosophila mushroom body provides insights into function.,"Li F, Lindsey JW, Marin EC, Otto N, Dreher M, Dempsey G, Stark I, Bates AS, Plei",eLife,10.7554/elife.62576,33315010,PMC7909955,abstract,0,0,,

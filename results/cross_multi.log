@@ -1,0 +1,778 @@
+########## mb_all
+
+----- male-cns:v1.0
+    VP1m+_lvPN → KCg-t          元 0/1 | male-cns:v1.0 （タイプ名なし）
+     VP2+_adPN → KCg-s2         元 0/0 | male-cns:v1.0 （タイプ名なし）
+     DL2v_adPN → OA-VUMa2       元 0/13 | male-cns:v1.0 （タイプ名なし）
+    VP1m+_lvPN → KCg-s4         元 0/0 | male-cns:v1.0 （タイプ名なし）
+    VP1m+_lvPN → KCa'b'-ap1     元 0/0 | male-cns:v1.0 （タイプ名なし）
+     VP2+_adPN → KCab-p         元 0/0 | male-cns:v1.0 （タイプ名なし）
+     M_l2PNm16 → LHCENT8        元 0/0 | male-cns:v1.0 L:1/0 R:0/0
+        PPL201 → MBON04         元 0/1 | male-cns:v1.0 L:0/3 R:0/1
+    VP1m+_lvPN → PPL202         元 0/9 | male-cns:v1.0 （タイプ名なし）
+     DA4m_adPN → KCg-t          元 0/0 | male-cns:v1.0 （タイプ名なし）
+       PAM15_b → MBON04         元 0/0 | male-cns:v1.0 （タイプ名なし）
+         PAM13 → MBON12         元 0/7 | male-cns:v1.0 L:1/3 R:2/3
+     VP2+_adPN → KCa'b'-ap1     元 0/0 | male-cns:v1.0 （タイプ名なし）
+    VP1m+_lvPN → LHPV6c1        元 0/0 | male-cns:v1.0 （タイプ名なし）
+         PAM07 → MBON01         元 0/0 | male-cns:v1.0 L:0/1 R:7/4
+       DM1_lPN → LHPV10b1       元 0/0 | male-cns:v1.0 L:2/0 R:0/1
+ VP1m+VP5_ilPN → KCg-s4         元 0/0 | male-cns:v1.0 （タイプ名なし）
+    VP1m+_lvPN → KCab-p         元 0/0 | male-cns:v1.0 （タイプ名なし）
+       DM5_lPN → LHCENT2        元 0/9 | male-cns:v1.0 L:7/6 R:0/2
+       DM5_lPN → LHPD5c1        元 0/18 | male-cns:v1.0 L:1/14 R:0/17
+      DC2_adPN → LHPD5c1        元 0/21 | male-cns:v1.0 L:3/10 R:1/4
+       VA4_lPN → LHMB1          元 0/8 | male-cns:v1.0 L:1/9 R:20/13
+       PAM15_b → MBON09         元 0/54 | male-cns:v1.0 （タイプ名なし）
+        PPL101 → MBON27         元 0/2 | male-cns:v1.0 L:0/0 R:0/1
+     DA4m_adPN → LHPV6g1        元 0/0 | male-cns:v1.0 L:1/0 R:0/0
+     VP2+_adPN → KCg-s1         元 0/0 | male-cns:v1.0 （タイプ名なし）
+    VP1m+_lvPN → LHCENT8        元 0/0 | male-cns:v1.0 （タイプ名なし）
+     VC3m_lvPN → LHPV4j2        元 0/5 | male-cns:v1.0 （タイプ名なし）
+    VP1m+_lvPN → KCg-m          元 0/1 | male-cns:v1.0 （タイプ名なし）
+    VP1m+_lvPN → LHPV8d1        元 0/0 | male-cns:v1.0 （タイプ名なし）
+       VA4_lPN → LHPD5c1        元 0/8 | male-cns:v1.0 L:3/13 R:5/9
+    VP1m+_lvPN → LHPV6g1        元 0/0 | male-cns:v1.0 （タイプ名なし）
+      DC3_adPN → LHCENT2        元 0/2 | male-cns:v1.0 L:2/2 R:9/5
+      VP2_adPN → KCg-s4         元 0/0 | male-cns:v1.0 L:2/0
+VP1d+VP4_l2PN1 → KCg-t          元 0/0 | male-cns:v1.0 （タイプ名なし）
+ VP1m+VP5_ilPN → LHPD5a1        元 0/0 | male-cns:v1.0 （タイプ名なし）
+      VL1_ilPN → LHAV3e2        元 0/0 | male-cns:v1.0 L:0/0 R:2/0
+    VP1m+_lvPN → APL            元 0/0 | male-cns:v1.0 （タイプ名なし）
+        PPL106 → MBON24         元 0/7 | male-cns:v1.0 L:0/1 R:0/2
+       PAM06_b → MBON11         元 0/4 | male-cns:v1.0 （タイプ名なし）
+       DM2_lPN → LHMB1          元 0/2 | male-cns:v1.0 L:1/2 R:5/4
+        KCab-p → MBON13         元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+ VP1m+VP5_ilPN → LHPV2a1_e      元 0/7 | male-cns:v1.0 （タイプ名なし）
+       DM2_lPN → LHCENT4        元 0/1 | male-cns:v1.0 L:6/5 R:0/1
+     DL2d_adPN → KCg-m          元 0/1 | male-cns:v1.0 L:2138/65 R:1903/58
+       DA2_lPN → LHAV3e7        元 0/0 | male-cns:v1.0 （タイプ名なし）
+     DA4m_adPN → LHPV9b1        元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+     VP2+_adPN → KCg-s3         元 0/0 | male-cns:v1.0 （タイプ名なし）
+     DA4l_adPN → LHPD5c1        元 0/19 | male-cns:v1.0 L:1/11 R:2/15
+VP1d+VP4_l2PN1 → LHPV10b1       元 0/0 | male-cns:v1.0 （タイプ名なし）
+    VP1m+_lvPN → LHPV3c1        元 0/0 | male-cns:v1.0 （タイプ名なし）
+      DL4_adPN → LHAV3f1        元 0/18 | male-cns:v1.0 L:2/22 R:4/23
+VP1d+VP4_l2PN1 → LHPV2a1_e      元 0/6 | male-cns:v1.0 （タイプ名なし）
+      DL4_adPN → OA-VUMa2       元 0/1 | male-cns:v1.0 （タイプ名なし）
+     DA4m_adPN → LHPV10b1       元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+    VP1m+_lvPN → LHPD5d1        元 0/0 | male-cns:v1.0 （タイプ名なし）
+      VL1_ilPN → LHCENT8        元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+      DM3_adPN → LHCENT8        元 0/2 | male-cns:v1.0 L:2/7 R:2/4
+         PAM05 → MBON30         元 0/0 | male-cns:v1.0 L:1/0 R:1/0
+    KCa'b'-ap1 → MBON22         元 0/0 | male-cns:v1.0 L:9/3 R:13/1
+      DC3_adPN → KCg-t          元 0/0 | male-cns:v1.0 （タイプ名なし）
+      OA-VUMa2 → LHPV3c1        元 0/1 | male-cns:v1.0 （タイプ名なし）
+       PAM08_b → MBON06         元 0/0 | male-cns:v1.0 （タイプ名なし）
+       DM1_lPN → KCg-t          元 0/1 | male-cns:v1.0 （タイプ名なし）
+     DA4l_adPN → LHPV4j2        元 0/0 | male-cns:v1.0 L:0/0 R:1/0
+       PAM15_a → MBON02         元 0/0 | male-cns:v1.0 （タイプ名なし）
+     VP1m_l2PN → KCg-s2         元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+    VP1m+_lvPN → LHAV3e2        元 0/0 | male-cns:v1.0 （タイプ名なし）
+       VA5_lPN → LHPV6c1        元 0/1 | male-cns:v1.0 L:0/0 R:5/0
+    KCa'b'-ap2 → MBON22         元 0/0 | male-cns:v1.0 L:9/10 R:44/6
+       DA1_lPN → LHCENT4        元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+        PPL106 → MBON19         元 0/6 | male-cns:v1.0 L:2/5 R:0/10
+     M_l2PNm16 → KCg-s3         元 0/0 | male-cns:v1.0 L:1/0 R:0/0
+      DC1_adPN → LHAV2d1        元 0/0 | male-cns:v1.0 L:0/0 R:3/0
+       DA1_lPN → LHCENT2        元 0/0 | male-cns:v1.0 L:0/0 R:1/2
+      DL4_adPN → LHCENT8        元 0/5 | male-cns:v1.0 L:0/12 R:1/4
+     VP2+_adPN → LHPV2a1_e      元 0/4 | male-cns:v1.0 （タイプ名なし）
+      M_adPNm4 → KCab-s         元 0/0 | male-cns:v1.0 L:23/2 R:81/3
+      VA6_adPN → LHPV4j2        元 0/2 | male-cns:v1.0 L:0/0 R:2/0
+      DC1_adPN → LHPV6g1        元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+80 組を確認（照合できたのは 41 組）、合計 0 の組 7 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_mb_all\cross_male_cns_v1_0.csv
+
+----- optic-lobe:v1.1
+    VP1m+_lvPN → KCg-t          元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+     VP2+_adPN → KCg-s2         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     DL2v_adPN → OA-VUMa2       元 0/13 | optic-lobe:v1.1 （タイプ名なし）
+    VP1m+_lvPN → KCg-s4         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+    VP1m+_lvPN → KCa'b'-ap1     元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     VP2+_adPN → KCab-p         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_l2PNm16 → LHCENT8        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+        PPL201 → MBON04         元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+    VP1m+_lvPN → PPL202         元 0/9 | optic-lobe:v1.1 （タイプ名なし）
+     DA4m_adPN → KCg-t          元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       PAM15_b → MBON04         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+         PAM13 → MBON12         元 0/7 | optic-lobe:v1.1 （タイプ名なし）
+     VP2+_adPN → KCa'b'-ap1     元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+    VP1m+_lvPN → LHPV6c1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+         PAM07 → MBON01         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       DM1_lPN → LHPV10b1       元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+ VP1m+VP5_ilPN → KCg-s4         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+    VP1m+_lvPN → KCab-p         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       DM5_lPN → LHCENT2        元 0/9 | optic-lobe:v1.1 （タイプ名なし）
+       DM5_lPN → LHPD5c1        元 0/18 | optic-lobe:v1.1 （タイプ名なし）
+      DC2_adPN → LHPD5c1        元 0/21 | optic-lobe:v1.1 （タイプ名なし）
+       VA4_lPN → LHMB1          元 0/8 | optic-lobe:v1.1 （タイプ名なし）
+       PAM15_b → MBON09         元 0/54 | optic-lobe:v1.1 （タイプ名なし）
+        PPL101 → MBON27         元 0/2 | optic-lobe:v1.1 （タイプ名なし）
+     DA4m_adPN → LHPV6g1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     VP2+_adPN → KCg-s1         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+    VP1m+_lvPN → LHCENT8        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     VC3m_lvPN → LHPV4j2        元 0/5 | optic-lobe:v1.1 （タイプ名なし）
+    VP1m+_lvPN → KCg-m          元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+    VP1m+_lvPN → LHPV8d1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       VA4_lPN → LHPD5c1        元 0/8 | optic-lobe:v1.1 （タイプ名なし）
+    VP1m+_lvPN → LHPV6g1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+      DC3_adPN → LHCENT2        元 0/2 | optic-lobe:v1.1 （タイプ名なし）
+      VP2_adPN → KCg-s4         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+VP1d+VP4_l2PN1 → KCg-t          元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+ VP1m+VP5_ilPN → LHPD5a1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+      VL1_ilPN → LHAV3e2        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+    VP1m+_lvPN → APL            元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+        PPL106 → MBON24         元 0/7 | optic-lobe:v1.1 （タイプ名なし）
+       PAM06_b → MBON11         元 0/4 | optic-lobe:v1.1 （タイプ名なし）
+       DM2_lPN → LHMB1          元 0/2 | optic-lobe:v1.1 （タイプ名なし）
+        KCab-p → MBON13         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+ VP1m+VP5_ilPN → LHPV2a1_e      元 0/7 | optic-lobe:v1.1 （タイプ名なし）
+       DM2_lPN → LHCENT4        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+     DL2d_adPN → KCg-m          元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+       DA2_lPN → LHAV3e7        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     DA4m_adPN → LHPV9b1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     VP2+_adPN → KCg-s3         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     DA4l_adPN → LHPD5c1        元 0/19 | optic-lobe:v1.1 （タイプ名なし）
+VP1d+VP4_l2PN1 → LHPV10b1       元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+    VP1m+_lvPN → LHPV3c1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+      DL4_adPN → LHAV3f1        元 0/18 | optic-lobe:v1.1 （タイプ名なし）
+VP1d+VP4_l2PN1 → LHPV2a1_e      元 0/6 | optic-lobe:v1.1 （タイプ名なし）
+      DL4_adPN → OA-VUMa2       元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+     DA4m_adPN → LHPV10b1       元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+    VP1m+_lvPN → LHPD5d1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+      VL1_ilPN → LHCENT8        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+      DM3_adPN → LHCENT8        元 0/2 | optic-lobe:v1.1 （タイプ名なし）
+         PAM05 → MBON30         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+    KCa'b'-ap1 → MBON22         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+      DC3_adPN → KCg-t          元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+      OA-VUMa2 → LHPV3c1        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+       PAM08_b → MBON06         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       DM1_lPN → KCg-t          元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+     DA4l_adPN → LHPV4j2        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       PAM15_a → MBON02         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     VP1m_l2PN → KCg-s2         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+    VP1m+_lvPN → LHAV3e2        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       VA5_lPN → LHPV6c1        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+    KCa'b'-ap2 → MBON22         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       DA1_lPN → LHCENT4        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+        PPL106 → MBON19         元 0/6 | optic-lobe:v1.1 （タイプ名なし）
+     M_l2PNm16 → KCg-s3         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+      DC1_adPN → LHAV2d1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       DA1_lPN → LHCENT2        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+      DL4_adPN → LHCENT8        元 0/5 | optic-lobe:v1.1 （タイプ名なし）
+     VP2+_adPN → LHPV2a1_e      元 0/4 | optic-lobe:v1.1 （タイプ名なし）
+      M_adPNm4 → KCab-s         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+      VA6_adPN → LHPV4j2        元 0/2 | optic-lobe:v1.1 （タイプ名なし）
+      DC1_adPN → LHPV6g1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+80 組を確認（照合できたのは 0 組）、合計 0 の組 0 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_mb_all\cross_optic_lobe_v1_1.csv
+########## lh
+
+----- male-cns:v1.0
+        WEDPN4 → LHCENT8        元 0/7 | male-cns:v1.0 L:6/8 R:1/10
+     M_smPN6t2 → LHPV2a1_d      元 0/5 | male-cns:v1.0 L:0/0 R:0/0
+     M_l2PNl22 → LHPV2a1_e      元 0/40 | male-cns:v1.0 L:1/35 R:1/3
+       LHCENT9 → DNp32          元 0/5 | male-cns:v1.0 L:0/1 R:1/1
+       DA1_vPN → LHAV4c1_a      元 0/0 | male-cns:v1.0 （タイプ名なし）
+     DL2v_adPN → OA-VUMa2       元 0/13 | male-cns:v1.0 （タイプ名なし）
+       VL1_vPN → LHAV2b3        元 0/0 | male-cns:v1.0 L:2/0 R:0/0
+     M_vPNml70 → LHPV6a10       元 0/0 | male-cns:v1.0 （タイプ名なし）
+     M_vPNml83 → LHCENT12       元 0/1 | male-cns:v1.0 （タイプ名なし）
+      VA3_adPN → CSD            元 0/5 | male-cns:v1.0 L:0/0 R:0/0
+    VP1m+_lvPN → LHAD4a1        元 0/55 | male-cns:v1.0 （タイプ名なし）
+       DM2_lPN → LHAV4a7        元 0/0 | male-cns:v1.0 L:2/3 R:14/5
+     M_vPNml70 → LHAV3g1        元 0/0 | male-cns:v1.0 （タイプ名なし）
+       VC1_lPN → LHPV4a11       元 0/1 | male-cns:v1.0 L:0/3 R:1/0
+     M_l2PNl22 → LHAV2k8        元 0/0 | male-cns:v1.0 L:1/0 R:0/0
+       LHCENT9 → SLP057         元 0/0 | male-cns:v1.0 L:1/2 R:0/0
+     M_vPNml79 → LHPV12a1       元 0/9 | male-cns:v1.0 L:1/4 R:1/4
+       WEDPN2B → LHAD2b1        元 0/17 | male-cns:v1.0 （タイプ名なし）
+      VL2a_vPN → LHPV2a1_d      元 0/0 | male-cns:v1.0 L:1/3 R:0/1
+     M_vPNml63 → LHAV2b1        元 0/0 | male-cns:v1.0 L:2/0 R:4/0
+        WEDPN4 → LHPV3b1_b      元 0/3 | male-cns:v1.0 L:0/10 R:0/4
+     VC3m_lvPN → LHAV4g13       元 0/7 | male-cns:v1.0 （タイプ名なし）
+       LHCENT3 → SLP057         元 0/1 | male-cns:v1.0 L:0/3 R:0/0
+      DM4_adPN → LHAV4a7        元 0/1 | male-cns:v1.0 L:12/11 R:18/20
+       DA1_lPN → OA-VUMa2       元 0/6 | male-cns:v1.0 （タイプ名なし）
+     M_vPNml85 → LHAV7a1_b      元 0/1 | male-cns:v1.0 （タイプ名なし）
+        V_l2PN → LHPD4c1        元 0/0 | male-cns:v1.0 L:0/0 R:0/2
+     M_vPNml63 → LHPV2a1_c      元 0/16 | male-cns:v1.0 L:1/23 R:12/33
+       DA1_vPN → LHAV2a2        元 0/0 | male-cns:v1.0 L:0/1 R:1/0
+       DM2_lPN → LHAV7a3_b      元 0/1 | male-cns:v1.0 （タイプ名なし）
+     M_smPN6t2 → LHPV2a1_c      元 0/7 | male-cns:v1.0 L:0/0 R:0/0
+       VA5_lPN → LHPV4a11       元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+       VL1_vPN → LHAV1a3        元 0/1 | male-cns:v1.0 L:0/0 R:0/0
+    VP1m+_lvPN → LHAD1b2_d      元 0/1 | male-cns:v1.0 （タイプ名なし）
+        WEDPN4 → LHCENT3        元 0/0 | male-cns:v1.0 L:5/1 R:1/0
+       VL1_vPN → LHPV2a1_d      元 0/0 | male-cns:v1.0 L:0/0 R:1/0
+     M_vPNml86 → LHPD3a2_b      元 0/3 | male-cns:v1.0 L:0/6 R:3/34
+     M_vPNml79 → LHAV4d1        元 0/0 | male-cns:v1.0 L:3/0 R:1/0
+      DM3_adPN → LHAV3b6_a      元 0/0 | male-cns:v1.0 （タイプ名なし）
+     M_l2PNl22 → LHAD2b1        元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+      DL4_adPN → LHAV3g1        元 0/8 | male-cns:v1.0 L:2/8 R:4/7
+     M_smPN6t2 → LHPD2a6        元 0/1 | male-cns:v1.0 L:0/0 R:0/0
+       VA5_lPN → LHPD3a5        元 0/4 | male-cns:v1.0 L:2/1 R:1/4
+     DP1l_adPN → LHPV4a9_a      元 0/13 | male-cns:v1.0 （タイプ名なし）
+       LHAV2m1 → CSD            元 0/3 | male-cns:v1.0 L:0/0 R:0/3
+     M_smPN6t2 → LHPV12a1       元 0/1 | male-cns:v1.0 L:0/0 R:0/0
+     VC3m_lvPN → LHPV4a2        元 0/0 | male-cns:v1.0 （タイプ名なし）
+        V_l2PN → LHPV6g1        元 0/0 | male-cns:v1.0 L:0/0 R:0/1
+        V_l2PN → LHAV2d1        元 0/0 | male-cns:v1.0 L:4/0 R:2/1
+     VC3l_adPN → CSD            元 0/4 | male-cns:v1.0 （タイプ名なし）
+       LHPD3a5 → CSD            元 0/9 | male-cns:v1.0 L:0/0 R:0/3
+      VA1d_vPN → LHPV4i1        元 0/1 | male-cns:v1.0 L:0/2 R:0/0
+     LHAV4a3_b → OA-VUMa2       元 0/17 | male-cns:v1.0 （タイプ名なし）
+     M_vPNml87 → LHAV4a3_a      元 0/0 | male-cns:v1.0 （タイプ名なし）
+        WEDPN4 → LHPV2a3        元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+     M_vPNml86 → LHAV4g9        元 0/0 | male-cns:v1.0 （タイプ名なし）
+       VL1_vPN → LHAV4a2        元 0/2 | male-cns:v1.0 L:2/0 R:1/1
+      VL1_ilPN → LHPV2a1_b      元 0/4 | male-cns:v1.0 （タイプ名なし）
+     M_vPNml65 → LHPV3b1_b      元 0/1 | male-cns:v1.0 L:2/2 R:3/4
+      VC4_adPN → LHPD4d1        元 0/6 | male-cns:v1.0 L:0/13 R:10/13
+     M_vPNml70 → LHPV4b4        元 0/0 | male-cns:v1.0 （タイプ名なし）
+     M_vPNml70 → LHPV1c1        元 0/0 | male-cns:v1.0 （タイプ名なし）
+     M_l2PNl21 → LHPV10b1       元 0/1 | male-cns:v1.0 L:0/0 R:0/2
+        WEDPN4 → LHPV2a1_b      元 0/1 | male-cns:v1.0 （タイプ名なし）
+        WEDPN4 → LHAD2d1        元 0/1 | male-cns:v1.0 L:0/1 R:0/1
+     M_smPN6t2 → LHPV2a3        元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+    VP1m+_lvPN → LHAD2b1        元 0/2 | male-cns:v1.0 （タイプ名なし）
+     M_smPN6t2 → LHPV4j2        元 0/1 | male-cns:v1.0 L:0/0 R:0/0
+    VP1m+_lvPN → LHPV6c1        元 0/0 | male-cns:v1.0 （タイプ名なし）
+        WEDPN4 → LHCENT10       元 0/1 | male-cns:v1.0 L:1/1 R:0/2
+     M_smPN6t2 → LHAV7a7        元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+     M_l2PNm15 → LHPV6k2        元 0/0 | male-cns:v1.0 L:1/1 R:4/1
+       LHPV2g1 → mALB3          元 0/3 | male-cns:v1.0 L:0/0 R:0/0
+       LHPV4a1 → mALB3          元 0/27 | male-cns:v1.0 L:0/0 R:0/0
+     M_vPNml65 → LHAV1a1        元 0/1 | male-cns:v1.0 L:0/0 R:1/1
+     M_vPNml85 → LHAV6a3_a      元 0/0 | male-cns:v1.0 （タイプ名なし）
+     M_vPNml85 → LHAV5b2        元 0/0 | male-cns:v1.0 （タイプ名なし）
+       LHAD1g1 → SLP262         元 0/0 | male-cns:v1.0 （タイプ名なし）
+     M_vPNml86 → LHAV2n1        元 0/1 | male-cns:v1.0 L:0/0 R:1/0
+      VL2a_vPN → LHPV2a1_c      元 0/3 | male-cns:v1.0 L:0/1 R:5/2
+     M_vPNml70 → LHPV12a1       元 0/1 | male-cns:v1.0 （タイプ名なし）
+     VA1v_adPN → LHAV2m1        元 0/0 | male-cns:v1.0 L:1/1 R:1/1
+       LHPV4j2 → OA-VUMa2       元 0/7 | male-cns:v1.0 （タイプ名なし）
+     M_vPNml87 → LHAV2m1        元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+       WEDPN2B → LHPV3b1_b      元 0/3 | male-cns:v1.0 （タイプ名なし）
+     M_smPN6t2 → LHPD2a3        元 0/1 | male-cns:v1.0 （タイプ名なし）
+     M_vPNml87 → LHAV4a7        元 0/0 | male-cns:v1.0 L:0/0 R:2/0
+      VM3_adPN → CSD            元 0/5 | male-cns:v1.0 L:0/2 R:0/0
+       DM1_lPN → LHPV10b1       元 0/0 | male-cns:v1.0 L:2/0 R:0/1
+     M_vPNml85 → LHPD2a1        元 0/0 | male-cns:v1.0 （タイプ名なし）
+        WEDPN4 → LHPV2i1        元 0/0 | male-cns:v1.0 L:1/2 R:0/0
+       VA5_lPN → LHAD4a1        元 0/27 | male-cns:v1.0 L:2/18 R:0/8
+     VA7l_adPN → LHPV4i1        元 0/5 | male-cns:v1.0 L:0/9 R:0/7
+      DM3_adPN → LHAV6a3_a      元 0/0 | male-cns:v1.0 （タイプ名なし）
+       DA1_vPN → LHPD5d1        元 0/0 | male-cns:v1.0 L:0/1 R:0/2
+       VA4_lPN → LHAV6a3_a      元 0/1 | male-cns:v1.0 （タイプ名なし）
+     M_vPNml71 → LHAV2m1        元 0/0 | male-cns:v1.0 （タイプ名なし）
+     M_vPNml86 → LHPD3a5        元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+     M_vPNml83 → LHPV4a10_a     元 0/0 | male-cns:v1.0 （タイプ名なし）
+     M_vPNml79 → LHAV3a1_c      元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+       VL1_vPN → LHAD1g1        元 0/1 | male-cns:v1.0 L:0/0 R:2/1
+     M_vPNml86 → CSD            元 0/3 | male-cns:v1.0 L:0/0 R:0/2
+       DM5_lPN → LHCENT2        元 0/9 | male-cns:v1.0 L:7/6 R:0/2
+       DM5_lPN → LHPD5c1        元 0/18 | male-cns:v1.0 L:1/14 R:0/17
+        V_l2PN → LHAV3f1        元 0/13 | male-cns:v1.0 L:1/25 R:5/26
+     M_vPNml70 → LHPV6a11_b     元 0/0 | male-cns:v1.0 （タイプ名なし）
+        V_l2PN → LHPD4a1        元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+      DL4_adPN → LHPV4b2        元 0/8 | male-cns:v1.0 L:1/21 R:0/22
+        WEDPN4 → mALB1          元 0/2 | male-cns:v1.0 L:0/0 R:0/0
+       WEDPN2B → LHCENT4        元 0/0 | male-cns:v1.0 （タイプ名なし）
+     DP1m_adPN → LHAV4g4_a      元 0/21 | male-cns:v1.0 （タイプ名なし）
+      DC2_adPN → LHPD5c1        元 0/21 | male-cns:v1.0 L:3/10 R:1/4
+       WEDPN2B → LHCENT8        元 0/0 | male-cns:v1.0 （タイプ名なし）
+       VA4_lPN → LHMB1          元 0/8 | male-cns:v1.0 L:1/9 R:20/13
+     M_imPNl92 → LHAV2b4        元 0/0 | male-cns:v1.0 L:3/0 R:2/0
+       DL3_lPN → LHAV4b4        元 0/3 | male-cns:v1.0 L:2/0 R:3/1
+       DM5_lPN → LHPD3a3_c      元 0/0 | male-cns:v1.0 （タイプ名なし）
+     M_vPNml85 → LHAV2k4        元 0/0 | male-cns:v1.0 （タイプ名なし）
+       DM4_vPN → LHAV4g9        元 0/1 | male-cns:v1.0 （タイプ名なし）
+        V_l2PN → LHAV6f2        元 0/0 | male-cns:v1.0 （タイプ名なし）
+     M_vPNml79 → LHAV3g1        元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+     M_smPN6t2 → LHPV2a1_b      元 0/0 | male-cns:v1.0 （タイプ名なし）
+     VC3m_lvPN → LHAV2m1        元 0/0 | male-cns:v1.0 （タイプ名なし）
+       DM2_lPN → LHAV6b2_a      元 0/0 | male-cns:v1.0 （タイプ名なし）
+     M_vPNml79 → LHPV1c1        元 0/0 | male-cns:v1.0 L:0/0 R:2/0
+     M_vPNml70 → LHPD3b3        元 0/0 | male-cns:v1.0 （タイプ名なし）
+       DM5_lPN → LHAV4g13       元 0/2 | male-cns:v1.0 L:1/1 R:2/0
+     M_spPN4t9 → CSD            元 0/5 | male-cns:v1.0 L:0/0 R:0/0
+       LHPV2g1 → PLP096         元 0/3 | male-cns:v1.0 L:0/0 R:1/0
+        V_l2PN → LHPD2a2        元 0/0 | male-cns:v1.0 L:0/0 R:4/0
+        WEDPN4 → LHPV2a1_a      元 0/17 | male-cns:v1.0 L:1/27 R:0/25
+     M_vPNml85 → LHPV4a7_d      元 0/0 | male-cns:v1.0 （タイプ名なし）
+     DP1m_adPN → LHAV4b1_a      元 0/8 | male-cns:v1.0 （タイプ名なし）
+     DA4m_adPN → LHPV6g1        元 0/0 | male-cns:v1.0 L:1/0 R:0/0
+     LHAV4a3_a → OA-VUMa2       元 0/16 | male-cns:v1.0 （タイプ名なし）
+     M_vPNml79 → LHAV2g3        元 0/0 | male-cns:v1.0 L:0/0 R:1/0
+     M_vPNml86 → LHPV4a10_b     元 0/9 | male-cns:v1.0 （タイプ名なし）
+     M_vPNml86 → LHPV4i5        元 0/5 | male-cns:v1.0 （タイプ名なし）
+     M_vPNml87 → LHPD4d2_b      元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+     DA4m_adPN → LHPV4j4        元 0/4 | male-cns:v1.0 L:1/9 R:1/4
+     M_l2PNl22 → LHAV2b4        元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+      DC2_adPN → LHAV3e4_a      元 0/0 | male-cns:v1.0 L:1/0 R:2/0
+      DM3_adPN → LHPD3a3_c      元 0/0 | male-cns:v1.0 （タイプ名なし）
+     M_vPNml85 → LHAV4g5        元 0/1 | male-cns:v1.0 （タイプ名なし）
+       VC2_lPN → LHPV5h2        元 0/0 | male-cns:v1.0 （タイプ名なし）
+      VA7m_lPN → LHAV2b3        元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+       WEDPN2B → LHPV2i2        元 0/15 | male-cns:v1.0 （タイプ名なし）
+     VA1d_adPN → LHPD2a2        元 0/0 | male-cns:v1.0 L:3/1 R:7/1
+     DA4l_adPN → LHPV4b4        元 0/1 | male-cns:v1.0 L:1/12 R:1/9
+     DA4m_adPN → LHPD3a5        元 0/4 | male-cns:v1.0 L:2/5 R:1/2
+150 組を確認（照合できたのは 92 組）、合計 0 の組 13 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_lh\cross_male_cns_v1_0.csv
+
+----- optic-lobe:v1.1
+        WEDPN4 → LHCENT8        元 0/7 | optic-lobe:v1.1 （タイプ名なし）
+     M_smPN6t2 → LHPV2a1_d      元 0/5 | optic-lobe:v1.1 （タイプ名なし）
+     M_l2PNl22 → LHPV2a1_e      元 0/40 | optic-lobe:v1.1 （タイプ名なし）
+       LHCENT9 → DNp32          元 0/5 | optic-lobe:v1.1 （タイプ名なし）
+       DA1_vPN → LHAV4c1_a      元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     DL2v_adPN → OA-VUMa2       元 0/13 | optic-lobe:v1.1 （タイプ名なし）
+       VL1_vPN → LHAV2b3        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml70 → LHPV6a10       元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml83 → LHCENT12       元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+      VA3_adPN → CSD            元 0/5 | optic-lobe:v1.1 （タイプ名なし）
+    VP1m+_lvPN → LHAD4a1        元 0/55 | optic-lobe:v1.1 （タイプ名なし）
+       DM2_lPN → LHAV4a7        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml70 → LHAV3g1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       VC1_lPN → LHPV4a11       元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+     M_l2PNl22 → LHAV2k8        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       LHCENT9 → SLP057         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml79 → LHPV12a1       元 0/9 | optic-lobe:v1.1 （タイプ名なし）
+       WEDPN2B → LHAD2b1        元 0/17 | optic-lobe:v1.1 （タイプ名なし）
+      VL2a_vPN → LHPV2a1_d      元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml63 → LHAV2b1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+        WEDPN4 → LHPV3b1_b      元 0/3 | optic-lobe:v1.1 （タイプ名なし）
+     VC3m_lvPN → LHAV4g13       元 0/7 | optic-lobe:v1.1 （タイプ名なし）
+       LHCENT3 → SLP057         元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+      DM4_adPN → LHAV4a7        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+       DA1_lPN → OA-VUMa2       元 0/6 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml85 → LHAV7a1_b      元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+        V_l2PN → LHPD4c1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml63 → LHPV2a1_c      元 0/16 | optic-lobe:v1.1 （タイプ名なし）
+       DA1_vPN → LHAV2a2        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       DM2_lPN → LHAV7a3_b      元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+     M_smPN6t2 → LHPV2a1_c      元 0/7 | optic-lobe:v1.1 （タイプ名なし）
+       VA5_lPN → LHPV4a11       元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       VL1_vPN → LHAV1a3        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+    VP1m+_lvPN → LHAD1b2_d      元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+        WEDPN4 → LHCENT3        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       VL1_vPN → LHPV2a1_d      元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml86 → LHPD3a2_b      元 0/3 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml79 → LHAV4d1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+      DM3_adPN → LHAV3b6_a      元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_l2PNl22 → LHAD2b1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+      DL4_adPN → LHAV3g1        元 0/8 | optic-lobe:v1.1 （タイプ名なし）
+     M_smPN6t2 → LHPD2a6        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+       VA5_lPN → LHPD3a5        元 0/4 | optic-lobe:v1.1 （タイプ名なし）
+     DP1l_adPN → LHPV4a9_a      元 0/13 | optic-lobe:v1.1 （タイプ名なし）
+       LHAV2m1 → CSD            元 0/3 | optic-lobe:v1.1 （タイプ名なし）
+     M_smPN6t2 → LHPV12a1       元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+     VC3m_lvPN → LHPV4a2        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+        V_l2PN → LHPV6g1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+        V_l2PN → LHAV2d1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     VC3l_adPN → CSD            元 0/4 | optic-lobe:v1.1 （タイプ名なし）
+       LHPD3a5 → CSD            元 0/9 | optic-lobe:v1.1 （タイプ名なし）
+      VA1d_vPN → LHPV4i1        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+     LHAV4a3_b → OA-VUMa2       元 0/17 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml87 → LHAV4a3_a      元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+        WEDPN4 → LHPV2a3        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml86 → LHAV4g9        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       VL1_vPN → LHAV4a2        元 0/2 | optic-lobe:v1.1 （タイプ名なし）
+      VL1_ilPN → LHPV2a1_b      元 0/4 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml65 → LHPV3b1_b      元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+      VC4_adPN → LHPD4d1        元 0/6 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml70 → LHPV4b4        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml70 → LHPV1c1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_l2PNl21 → LHPV10b1       元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+        WEDPN4 → LHPV2a1_b      元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+        WEDPN4 → LHAD2d1        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+     M_smPN6t2 → LHPV2a3        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+    VP1m+_lvPN → LHAD2b1        元 0/2 | optic-lobe:v1.1 （タイプ名なし）
+     M_smPN6t2 → LHPV4j2        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+    VP1m+_lvPN → LHPV6c1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+        WEDPN4 → LHCENT10       元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+     M_smPN6t2 → LHAV7a7        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_l2PNm15 → LHPV6k2        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       LHPV2g1 → mALB3          元 0/3 | optic-lobe:v1.1 （タイプ名なし）
+       LHPV4a1 → mALB3          元 0/27 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml65 → LHAV1a1        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml85 → LHAV6a3_a      元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml85 → LHAV5b2        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       LHAD1g1 → SLP262         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml86 → LHAV2n1        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+      VL2a_vPN → LHPV2a1_c      元 0/3 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml70 → LHPV12a1       元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+     VA1v_adPN → LHAV2m1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       LHPV4j2 → OA-VUMa2       元 0/7 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml87 → LHAV2m1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       WEDPN2B → LHPV3b1_b      元 0/3 | optic-lobe:v1.1 （タイプ名なし）
+     M_smPN6t2 → LHPD2a3        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml87 → LHAV4a7        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+      VM3_adPN → CSD            元 0/5 | optic-lobe:v1.1 （タイプ名なし）
+       DM1_lPN → LHPV10b1       元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml85 → LHPD2a1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+        WEDPN4 → LHPV2i1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       VA5_lPN → LHAD4a1        元 0/27 | optic-lobe:v1.1 （タイプ名なし）
+     VA7l_adPN → LHPV4i1        元 0/5 | optic-lobe:v1.1 （タイプ名なし）
+      DM3_adPN → LHAV6a3_a      元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       DA1_vPN → LHPD5d1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       VA4_lPN → LHAV6a3_a      元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml71 → LHAV2m1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml86 → LHPD3a5        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml83 → LHPV4a10_a     元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml79 → LHAV3a1_c      元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       VL1_vPN → LHAD1g1        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml86 → CSD            元 0/3 | optic-lobe:v1.1 （タイプ名なし）
+       DM5_lPN → LHCENT2        元 0/9 | optic-lobe:v1.1 （タイプ名なし）
+       DM5_lPN → LHPD5c1        元 0/18 | optic-lobe:v1.1 （タイプ名なし）
+        V_l2PN → LHAV3f1        元 0/13 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml70 → LHPV6a11_b     元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+        V_l2PN → LHPD4a1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+      DL4_adPN → LHPV4b2        元 0/8 | optic-lobe:v1.1 （タイプ名なし）
+        WEDPN4 → mALB1          元 0/2 | optic-lobe:v1.1 （タイプ名なし）
+       WEDPN2B → LHCENT4        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     DP1m_adPN → LHAV4g4_a      元 0/21 | optic-lobe:v1.1 （タイプ名なし）
+      DC2_adPN → LHPD5c1        元 0/21 | optic-lobe:v1.1 （タイプ名なし）
+       WEDPN2B → LHCENT8        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       VA4_lPN → LHMB1          元 0/8 | optic-lobe:v1.1 （タイプ名なし）
+     M_imPNl92 → LHAV2b4        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       DL3_lPN → LHAV4b4        元 0/3 | optic-lobe:v1.1 （タイプ名なし）
+       DM5_lPN → LHPD3a3_c      元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml85 → LHAV2k4        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       DM4_vPN → LHAV4g9        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+        V_l2PN → LHAV6f2        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml79 → LHAV3g1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_smPN6t2 → LHPV2a1_b      元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     VC3m_lvPN → LHAV2m1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       DM2_lPN → LHAV6b2_a      元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml79 → LHPV1c1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml70 → LHPD3b3        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       DM5_lPN → LHAV4g13       元 0/2 | optic-lobe:v1.1 （タイプ名なし）
+     M_spPN4t9 → CSD            元 0/5 | optic-lobe:v1.1 （タイプ名なし）
+       LHPV2g1 → PLP096         元 0/3 | optic-lobe:v1.1 （タイプ名なし）
+        V_l2PN → LHPD2a2        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+        WEDPN4 → LHPV2a1_a      元 0/17 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml85 → LHPV4a7_d      元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     DP1m_adPN → LHAV4b1_a      元 0/8 | optic-lobe:v1.1 （タイプ名なし）
+     DA4m_adPN → LHPV6g1        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     LHAV4a3_a → OA-VUMa2       元 0/16 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml79 → LHAV2g3        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml86 → LHPV4a10_b     元 0/9 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml86 → LHPV4i5        元 0/5 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml87 → LHPD4d2_b      元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     DA4m_adPN → LHPV4j4        元 0/4 | optic-lobe:v1.1 （タイプ名なし）
+     M_l2PNl22 → LHAV2b4        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+      DC2_adPN → LHAV3e4_a      元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+      DM3_adPN → LHPD3a3_c      元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     M_vPNml85 → LHAV4g5        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+       VC2_lPN → LHPV5h2        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+      VA7m_lPN → LHAV2b3        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+       WEDPN2B → LHPV2i2        元 0/15 | optic-lobe:v1.1 （タイプ名なし）
+     VA1d_adPN → LHPD2a2        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+     DA4l_adPN → LHPV4b4        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+     DA4m_adPN → LHPD3a5        元 0/4 | optic-lobe:v1.1 （タイプ名なし）
+150 組を確認（照合できたのは 0 組）、合計 0 の組 0 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_lh\cross_optic_lobe_v1_1.csv
+########## cx
+
+----- male-cns:v1.0
+          PFNv → PFL2           元 0/2 | male-cns:v1.0 L:6/0 R:2/0
+          PFNv → PFL3           元 0/0 | male-cns:v1.0 L:3/0 R:1/0
+          FB5K → PFR_a          元 0/11 | male-cns:v1.0 L:0/10 R:0/5
+          ExR7 → hDeltaK        元 0/0 | male-cns:v1.0 L:15/0 R:4/0
+          ExR1 → PEG            元 0/36 | male-cns:v1.0 L:10/48 R:1/47
+          ExR3 → FC2B           元 0/0 | male-cns:v1.0 L:3/0 R:1/0
+          ExR7 → EPGt           元 0/8 | male-cns:v1.0 L:2/0 R:4/1
+          PFNv → PFL1           元 0/0 | male-cns:v1.0 L:2/1 R:4/3
+          PFGs → PFL1           元 0/0 | male-cns:v1.0 L:0/0 R:1/1
+           ER6 → PFR_a          元 0/2 | male-cns:v1.0 L:0/0 R:0/0
+        FB2F_a → PFL2           元 0/0 | male-cns:v1.0 L:0/0 R:5/0
+          FB4A → PFL2           元 0/0 | male-cns:v1.0 （タイプ名なし）
+          FB6L → PFL2           元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+           FS2 → PFR_b          元 0/8 | male-cns:v1.0 L:3/49 R:5/57
+          FB5I → PFR_b          元 0/1 | male-cns:v1.0 L:2/0 R:1/1
+          FB5P → PFL2           元 0/0 | male-cns:v1.0 L:8/0 R:8/0
+          ExR3 → FB8F_a         元 0/1 | male-cns:v1.0 L:0/0 R:0/0
+           ER6 → PFGs           元 0/2 | male-cns:v1.0 L:0/0 R:0/0
+          FB6J → PFL3           元 0/0 | male-cns:v1.0 L:0/0 R:1/0
+          FB6L → PFL3           元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+   PEN_b(PEN2) → PFL1           元 0/0 | male-cns:v1.0 L:2/0 R:0/0
+          FB6P → PFR_a          元 0/1 | male-cns:v1.0 L:2/3 R:1/8
+          ExR3 → FB5AA          元 0/1 | male-cns:v1.0 L:1/0 R:0/0
+          FB5T → PFR_b          元 0/0 | male-cns:v1.0 L:1/0 R:5/0
+           ER6 → hDeltaK        元 0/0 | male-cns:v1.0 L:4/0 R:7/0
+           ER6 → EPGt           元 0/4 | male-cns:v1.0 L:0/0 R:0/1
+          ExR5 → FB4K           元 0/4 | male-cns:v1.0 L:0/1 R:0/0
+          FB1A → PFL1           元 0/0 | male-cns:v1.0 L:0/1 R:1/0
+          FC1E → PFL2           元 0/0 | male-cns:v1.0 L:3/0 R:4/0
+          ExR3 → FB4C           元 0/1 | male-cns:v1.0 L:1/1 R:1/0
+           EPG → hDeltaK        元 0/0 | male-cns:v1.0 L:20/0 R:19/0
+          FC2A → PFL1           元 0/0 | male-cns:v1.0 L:3/0 R:0/3
+          ExR5 → FB5K           元 0/1 | male-cns:v1.0 L:1/0 R:0/0
+          FB6P → PFL3           元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+          FB2L → PFL1           元 0/0 | male-cns:v1.0 L:1/0 R:3/0
+          ExR3 → hDeltaD        元 0/1 | male-cns:v1.0 L:0/0 R:0/0
+          FB6P → PFL2           元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+          ExR5 → FB2L           元 0/1 | male-cns:v1.0 L:1/0 R:0/1
+          FC2C → PFR_b          元 0/2 | male-cns:v1.0 L:5/8 R:3/3
+          FB6N → PFL2           元 0/0 | male-cns:v1.0 L:3/0 R:1/0
+          FC1D → PFL2           元 0/0 | male-cns:v1.0 L:2/0 R:1/0
+          ExR3 → FB8E           元 0/0 | male-cns:v1.0 L:1/1 R:0/0
+          ExR6 → FB2K           元 0/0 | male-cns:v1.0 L:0/0 R:1/0
+          ExR3 → FB4B           元 0/0 | male-cns:v1.0 L:2/0 R:0/0
+          FB6W → PFL2           元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+          FB6W → PFL3           元 0/1 | male-cns:v1.0 L:1/0 R:3/0
+          ExR6 → LAL015         元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+          FB4B → PFL1           元 0/0 | male-cns:v1.0 L:0/0 R:0/0  ★
+48 組を確認（照合できたのは 47 組）、合計 0 の組 7 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_cx\cross_male_cns_v1_0.csv
+
+----- optic-lobe:v1.1
+          PFNv → PFL2           元 0/2 | optic-lobe:v1.1 （タイプ名なし）
+          PFNv → PFL3           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          FB5K → PFR_a          元 0/11 | optic-lobe:v1.1 （タイプ名なし）
+          ExR7 → hDeltaK        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          ExR1 → PEG            元 0/36 | optic-lobe:v1.1 （タイプ名なし）
+          ExR3 → FC2B           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          ExR7 → EPGt           元 0/8 | optic-lobe:v1.1 （タイプ名なし）
+          PFNv → PFL1           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          PFGs → PFL1           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+           ER6 → PFR_a          元 0/2 | optic-lobe:v1.1 （タイプ名なし）
+        FB2F_a → PFL2           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          FB4A → PFL2           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          FB6L → PFL2           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+           FS2 → PFR_b          元 0/8 | optic-lobe:v1.1 （タイプ名なし）
+          FB5I → PFR_b          元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+          FB5P → PFL2           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          ExR3 → FB8F_a         元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+           ER6 → PFGs           元 0/2 | optic-lobe:v1.1 （タイプ名なし）
+          FB6J → PFL3           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          FB6L → PFL3           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+   PEN_b(PEN2) → PFL1           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          FB6P → PFR_a          元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+          ExR3 → FB5AA          元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+          FB5T → PFR_b          元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+           ER6 → hDeltaK        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+           ER6 → EPGt           元 0/4 | optic-lobe:v1.1 （タイプ名なし）
+          ExR5 → FB4K           元 0/4 | optic-lobe:v1.1 （タイプ名なし）
+          FB1A → PFL1           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          FC1E → PFL2           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          ExR3 → FB4C           元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+           EPG → hDeltaK        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          FC2A → PFL1           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          ExR5 → FB5K           元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+          FB6P → PFL3           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          FB2L → PFL1           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          ExR3 → hDeltaD        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+          FB6P → PFL2           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          ExR5 → FB2L           元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+          FC2C → PFR_b          元 0/2 | optic-lobe:v1.1 （タイプ名なし）
+          FB6N → PFL2           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          FC1D → PFL2           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          ExR3 → FB8E           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          ExR6 → FB2K           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          ExR3 → FB4B           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          FB6W → PFL2           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          FB6W → PFL3           元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+          ExR6 → LAL015         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          FB4B → PFL1           元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+48 組を確認（照合できたのは 0 組）、合計 0 の組 0 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_cx\cross_optic_lobe_v1_1.csv
+########## vis
+
+----- male-cns:v1.0
+          LT52 → CL033          元 0/5 | male-cns:v1.0 （タイプ名なし）
+          LT52 → PLP244         元 0/8 | male-cns:v1.0 （タイプ名なし）
+          LT42 → CL033          元 0/6 | male-cns:v1.0 （タイプ名なし）
+          LT73 → PLP030         元 0/5 | male-cns:v1.0 （タイプ名なし）
+          LT42 → PLP031         元 0/16 | male-cns:v1.0 （タイプ名なし）
+          LT79 → PVLP101        元 0/0 | male-cns:v1.0 L:3/3 R:9/8
+          LT61 → AVLP282        元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT87 → AVLP088        元 0/0 | male-cns:v1.0 L:2/1 R:0/0
+          LT73 → PVLP133_c      元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT42 → PLP030         元 0/9 | male-cns:v1.0 （タイプ名なし）
+          LC21 → PVLP096        元 0/0 | male-cns:v1.0 L:831/46 R:1217/42
+         LT82a → PVLP120        元 0/0 | male-cns:v1.0 L:9/1 R:7/0
+          LT52 → PLP030         元 0/2 | male-cns:v1.0 （タイプ名なし）
+          LT83 → PVLP074        元 0/0 | male-cns:v1.0 L:3/0 R:1/0
+          LT52 → AOTU007        元 0/0 | male-cns:v1.0 L:34/1 R:20/0
+          LT83 → PVLP132        元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT61 → PVLP049        元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT83 → AVLP565        元 0/0 | male-cns:v1.0 L:4/1 R:3/1
+         LT82b → PVLP130        元 0/0 | male-cns:v1.0 L:1/0 R:0/0
+          LT62 → AVLP536        元 0/0 | male-cns:v1.0 L:0/1 R:2/0
+          LT79 → AVLP489        元 0/0 | male-cns:v1.0 L:0/2 R:0/4
+          LC16 → AVLP466        元 0/1 | male-cns:v1.0 （タイプ名なし）
+          LT79 → AVLP079        元 0/12 | male-cns:v1.0 L:1/42 R:5/37
+          LT11 → AVLP079        元 0/0 | male-cns:v1.0 L:1/1 R:3/0
+          LT61 → AVLP311_a      元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT83 → PLP017         元 0/1 | male-cns:v1.0 L:4/0 R:4/2
+          LT83 → AVLP311_b      元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT79 → PLP244         元 0/4 | male-cns:v1.0 （タイプ名なし）
+           LT1 → PVLP089        元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT11 → PVLP028        元 0/0 | male-cns:v1.0 L:0/0 R:1/3
+           LT1 → AVLP320        元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT73 → PVLP133_b      元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT79 → PLP115_b       元 0/1 | male-cns:v1.0 L:4/0 R:8/2
+          LC31 → PVLP150        元 0/2 | male-cns:v1.0 （タイプ名なし）
+          LT62 → AVLP435        元 0/0 | male-cns:v1.0 （タイプ名なし）
+          MC61 → TuBu10         元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT62 → PVLP097_b      元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT61 → PVLP002        元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT87 → PVLP007        元 0/0 | male-cns:v1.0 L:8/1 R:2/0
+          LT61 → PVLP064        元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT83 → AVLP153        元 0/0 | male-cns:v1.0 L:3/1 R:2/0
+           LT1 → AVLP591        元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT73 → CL033          元 0/5 | male-cns:v1.0 （タイプ名なし）
+          LT83 → PVLP017        元 0/0 | male-cns:v1.0 L:0/0 R:3/0
+          LT79 → PVLP121        元 0/0 | male-cns:v1.0 L:7/7 R:4/1
+          LT83 → PVLP073        元 0/1 | male-cns:v1.0 L:0/1 R:0/0
+          LT83 → AVLP409        元 0/0 | male-cns:v1.0 L:0/0 R:3/0
+          LT52 → AOTU059        元 0/0 | male-cns:v1.0 L:59/10 R:63/7
+          LT61 → AVLP124        元 0/1 | male-cns:v1.0 （タイプ名なし）
+          LT73 → PVLP089        元 0/0 | male-cns:v1.0 L:0/0 R:1/1
+          LT61 → PVLP067        元 0/0 | male-cns:v1.0 （タイプ名なし）
+           LT1 → PLP030         元 0/8 | male-cns:v1.0 （タイプ名なし）
+          LT52 → SMP151         元 0/0 | male-cns:v1.0 L:5/0 R:12/0
+          LC31 → AVLP370        元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT34 → AOTU011        元 0/0 | male-cns:v1.0 L:0/0 R:0/2
+          LT61 → AVLP119        元 0/0 | male-cns:v1.0 （タイプ名なし）
+           LT1 → PVLP087        元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT83 → PVLP085        元 0/0 | male-cns:v1.0 L:4/0 R:1/3
+          LT61 → PVLP126        元 0/1 | male-cns:v1.0 （タイプ名なし）
+          LT79 → AVLP080        元 0/1 | male-cns:v1.0 L:13/1 R:8/1
+          LT87 → AVLP435        元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT87 → AVLP016        元 0/0 | male-cns:v1.0 L:2/1 R:0/0
+          LT61 → AVLP152        元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT11 → AVLP272        元 0/1 | male-cns:v1.0 （タイプ名なし）
+           LT1 → 5-HTPLP01      元 0/2 | male-cns:v1.0 （タイプ名なし）
+          LC31 → PVLP130        元 0/0 | male-cns:v1.0 （タイプ名なし）
+         LT82b → PLP249         元 0/0 | male-cns:v1.0 L:0/1 R:0/0
+          LT52 → PLP031         元 0/3 | male-cns:v1.0 （タイプ名なし）
+          LT79 → PVLP008_a      元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT11 → PLP030         元 0/29 | male-cns:v1.0 （タイプ名なし）
+          LC31 → AVLP476        元 0/2 | male-cns:v1.0 （タイプ名なし）
+          LT79 → PVLP104        元 0/4 | male-cns:v1.0 L:14/16 R:22/17
+          LT79 → AVLP325_b      元 0/0 | male-cns:v1.0 L:0/0 R:1/0
+          LT87 → AVLP172        元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT55 → CL033          元 0/2 | male-cns:v1.0 （タイプ名なし）
+         LT82a → DNp09          元 0/9 | male-cns:v1.0 L:6/5 R:0/0
+          LT61 → mALB4          元 0/1 | male-cns:v1.0 （タイプ名なし）
+          LT83 → PVLP088        元 0/7 | male-cns:v1.0 L:1/4 R:1/2
+          LT79 → PVLP061        元 0/0 | male-cns:v1.0 L:2/1 R:3/3
+          LT73 → PLP208         元 0/0 | male-cns:v1.0 L:0/0 R:2/0
+          LT83 → PVLP121        元 0/0 | male-cns:v1.0 L:0/0 R:2/1
+           LC6 → PVLP058        元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT79 → PVLP074        元 0/0 | male-cns:v1.0 L:0/1 R:2/1
+          LT11 → PVLP049        元 0/0 | male-cns:v1.0 L:4/0 R:1/0
+          LT34 → CRE040         元 0/54 | male-cns:v1.0 L:2/45 R:0/39
+         LT82b → OA-VUMa1       元 0/1 | male-cns:v1.0 （タイプ名なし）
+          LT79 → AVLP232        元 0/0 | male-cns:v1.0 L:1/0 R:2/1
+          LT87 → PVLP074        元 0/0 | male-cns:v1.0 L:2/0 R:1/1
+          LC26 → PLP125         元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT52 → IB018          元 0/0 | male-cns:v1.0 L:2/16 R:4/2
+          LT73 → PVLP121        元 0/0 | male-cns:v1.0 L:1/1 R:1/0
+          LT62 → AVLP151        元 0/1 | male-cns:v1.0 （タイプ名なし）
+          LT79 → AVLP285        元 0/0 | male-cns:v1.0 L:5/0 R:22/0
+          LT62 → AVLP489        元 0/0 | male-cns:v1.0 L:6/0 R:1/0
+          LT80 → AVLP290        元 0/0 | male-cns:v1.0 （タイプ名なし）
+          LT79 → AVLP444        元 0/0 | male-cns:v1.0 L:2/1 R:1/2
+          LT79 → AVLP538        元 0/1 | male-cns:v1.0 L:0/3 R:1/2
+97 組を確認（照合できたのは 47 組）、合計 0 の組 0 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_vis\cross_male_cns_v1_0.csv
+
+----- optic-lobe:v1.1
+          LT52 → CL033          元 0/5 | optic-lobe:v1.1 （タイプ名なし）
+          LT52 → PLP244         元 0/8 | optic-lobe:v1.1 （タイプ名なし）
+          LT42 → CL033          元 0/6 | optic-lobe:v1.1 （タイプ名なし）
+          LT73 → PLP030         元 0/5 | optic-lobe:v1.1 （タイプ名なし）
+          LT42 → PLP031         元 0/16 | optic-lobe:v1.1 （タイプ名なし）
+          LT79 → PVLP101        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT61 → AVLP282        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT87 → AVLP088        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT73 → PVLP133_c      元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT42 → PLP030         元 0/9 | optic-lobe:v1.1 （タイプ名なし）
+          LC21 → PVLP096        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+         LT82a → PVLP120        元 0/0 | optic-lobe:v1.1 R:0/0  ★
+          LT52 → PLP030         元 0/2 | optic-lobe:v1.1 （タイプ名なし）
+          LT83 → PVLP074        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT52 → AOTU007        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT83 → PVLP132        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT61 → PVLP049        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT83 → AVLP565        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+         LT82b → PVLP130        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT62 → AVLP536        元 0/0 | optic-lobe:v1.1 R:0/0  ★
+          LT79 → AVLP489        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LC16 → AVLP466        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+          LT79 → AVLP079        元 0/12 | optic-lobe:v1.1 （タイプ名なし）
+          LT11 → AVLP079        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT61 → AVLP311_a      元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT83 → PLP017         元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+          LT83 → AVLP311_b      元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT79 → PLP244         元 0/4 | optic-lobe:v1.1 （タイプ名なし）
+           LT1 → PVLP089        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT11 → PVLP028        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+           LT1 → AVLP320        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT73 → PVLP133_b      元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT79 → PLP115_b       元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+          LC31 → PVLP150        元 0/2 | optic-lobe:v1.1 （タイプ名なし）
+          LT62 → AVLP435        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          MC61 → TuBu10         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT62 → PVLP097_b      元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT61 → PVLP002        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT87 → PVLP007        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT61 → PVLP064        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT83 → AVLP153        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+           LT1 → AVLP591        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT73 → CL033          元 0/5 | optic-lobe:v1.1 （タイプ名なし）
+          LT83 → PVLP017        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT79 → PVLP121        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT83 → PVLP073        元 0/1 | optic-lobe:v1.1 R:0/0
+          LT83 → AVLP409        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT52 → AOTU059        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT61 → AVLP124        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+          LT73 → PVLP089        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT61 → PVLP067        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+           LT1 → PLP030         元 0/8 | optic-lobe:v1.1 （タイプ名なし）
+          LT52 → SMP151         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LC31 → AVLP370        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT34 → AOTU011        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT61 → AVLP119        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+           LT1 → PVLP087        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT83 → PVLP085        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT61 → PVLP126        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+          LT79 → AVLP080        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+          LT87 → AVLP435        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT87 → AVLP016        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT61 → AVLP152        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT11 → AVLP272        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+           LT1 → 5-HTPLP01      元 0/2 | optic-lobe:v1.1 （タイプ名なし）
+          LC31 → PVLP130        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+         LT82b → PLP249         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT52 → PLP031         元 0/3 | optic-lobe:v1.1 （タイプ名なし）
+          LT79 → PVLP008_a      元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT11 → PLP030         元 0/29 | optic-lobe:v1.1 （タイプ名なし）
+          LC31 → AVLP476        元 0/2 | optic-lobe:v1.1 （タイプ名なし）
+          LT79 → PVLP104        元 0/4 | optic-lobe:v1.1 （タイプ名なし）
+          LT79 → AVLP325_b      元 0/0 | optic-lobe:v1.1 R:0/0  ★
+          LT87 → AVLP172        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT55 → CL033          元 0/2 | optic-lobe:v1.1 （タイプ名なし）
+         LT82a → DNp09          元 0/9 | optic-lobe:v1.1 （タイプ名なし）
+          LT61 → mALB4          元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+          LT83 → PVLP088        元 0/7 | optic-lobe:v1.1 （タイプ名なし）
+          LT79 → PVLP061        元 0/0 | optic-lobe:v1.1 R:0/0  ★
+          LT73 → PLP208         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT83 → PVLP121        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+           LC6 → PVLP058        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT79 → PVLP074        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT11 → PVLP049        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT34 → CRE040         元 0/54 | optic-lobe:v1.1 （タイプ名なし）
+         LT82b → OA-VUMa1       元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+          LT79 → AVLP232        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT87 → PVLP074        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LC26 → PLP125         元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT52 → IB018          元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT73 → PVLP121        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT62 → AVLP151        元 0/1 | optic-lobe:v1.1 （タイプ名なし）
+          LT79 → AVLP285        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT62 → AVLP489        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT80 → AVLP290        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT79 → AVLP444        元 0/0 | optic-lobe:v1.1 （タイプ名なし）
+          LT79 → AVLP538        元 0/1 | optic-lobe:v1.1 R:0/0
+97 組を確認（照合できたのは 6 組）、合計 0 の組 4 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_vis\cross_optic_lobe_v1_1.csv

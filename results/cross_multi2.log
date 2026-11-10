@@ -1,0 +1,115 @@
+########## mb_all conn
+      DL4_adPN → LHCENT8        （DL4_adPN の出力が見えない・LHCENT8 の入力が見えない）
+     VP2+_adPN → LHPV2a1_e      （（タイプ名なし））
+      M_adPNm4 → KCab-s         （（タイプ名なし））
+      VA6_adPN → LHPV4j2        （（タイプ名なし））
+      DC1_adPN → LHPV6g1        （（タイプ名なし））
+80 組を確認（照合できたのは 0 組）、合計 0 の組 0 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_mb_all\cross_optic_lobe_v1_1.csv
+########## lh conn
+      VA7m_lPN → LHAV2b3        （（タイプ名なし））
+       WEDPN2B → LHPV2i2        （WEDPN2B の出力が見えない・LHPV2i2 の入力が見えない）
+     VA1d_adPN → LHPD2a2        （（タイプ名なし））
+     DA4l_adPN → LHPV4b4        （（タイプ名なし））
+     DA4m_adPN → LHPD3a5        （（タイプ名なし））
+150 組を確認（照合できたのは 0 組）、合計 0 の組 0 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_lh\cross_optic_lobe_v1_1.csv
+########## cx conn
+          ExR3 → FB4B           （（タイプ名なし））
+          FB6W → PFL2           （（タイプ名なし））
+          FB6W → PFL3           （（タイプ名なし））
+          ExR6 → LAL015         （（タイプ名なし））
+          FB4B → PFL1           （（タイプ名なし））
+48 組を確認（照合できたのは 0 組）、合計 0 の組 0 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_cx\cross_optic_lobe_v1_1.csv
+########## vis conn
+          LT79 → AVLP285        （（タイプ名なし））
+          LT62 → AVLP489        （（タイプ名なし））
+          LT80 → AVLP290        （（タイプ名なし））
+          LT79 → AVLP444        （（タイプ名なし））
+          LT79 → AVLP538        （AVLP538 の入力が見えない）
+97 組を確認（照合できたのは 0 組）、合計 0 の組 0 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_vis\cross_optic_lobe_v1_1.csv
+########## cx contact
+
+----- male-cns:v1.0
+PFGs → PFL1 [male-cns:v1.0 L] 接触 90.2 µm（5 ペア）
+PFGs → PFL1 [male-cns:v1.0 R] 接触 55.5 µm（6 ペア）
+ExR3 → FB8F_a [male-cns:v1.0 L] 接触 30.7 µm（3 ペア）
+ExR3 → FB8F_a [male-cns:v1.0 R] 接触 40.7 µm（4 ペア）
+FB6L → PFL2 [male-cns:v1.0 L] 接触 13.9 µm（5 ペア）
+FB6L → PFL2 [male-cns:v1.0 R] 接触 0.0 µm（0 ペア）
+ExR3 → FB5AA [male-cns:v1.0 L] 接触 50.3 µm（1 ペア）
+ExR3 → FB5AA [male-cns:v1.0 R] 接触 86.7 µm（1 ペア）
+FB6J → PFL3 [male-cns:v1.0 L] 接触 10.9 µm（5 ペア）
+FB6J → PFL3 [male-cns:v1.0 R] 接触 0.4 µm（1 ペア）
+FB6L → PFL3 [male-cns:v1.0 L] 接触 9.9 µm（5 ペア）
+FB6L → PFL3 [male-cns:v1.0 R] 接触 2.7 µm（2 ペア）
+ExR3 → FB4B [male-cns:v1.0 L] 接触 77.1 µm（1 ペア）
+ExR3 → FB4B [male-cns:v1.0 R] 接触 61.2 µm（1 ペア）
+FB6P → PFL3 [male-cns:v1.0 L] 接触 2.6 µm（3 ペア）
+FB6P → PFL3 [male-cns:v1.0 R] 接触 19.7 µm（4 ペア）
+FB6P → PFL2 [male-cns:v1.0 L] 接触 25.7 µm（4 ペア）
+FB6P → PFL2 [male-cns:v1.0 R] 接触 9.9 µm（2 ペア）
+FB6W → PFL2 [male-cns:v1.0 L] 接触 30.2 µm（4 ペア）
+FB6W → PFL2 [male-cns:v1.0 R] 接触 22.4 µm（3 ペア）
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_cx\cross_male_cns_v1_0_contact.csv
+########## lh contact
+
+----- male-cns:v1.0
+VL1_vPN → LHAV2b3 [male-cns:v1.0 L] 接触 140.1 µm（3 ペア）
+VL1_vPN → LHAV2b3 [male-cns:v1.0 R] 接触 52.9 µm（2 ペア）
+WEDPN4 → mALB1 [male-cns:v1.0 L] 接触 0.0 µm（0 ペア）
+WEDPN4 → mALB1 [male-cns:v1.0 R] 接触 0.0 µm（0 ペア）
+M_l2PNl22 → LHAV2k8 [male-cns:v1.0 L] 接触 49.2 µm（1 ペア）
+M_l2PNl22 → LHAV2k8 [male-cns:v1.0 R] 接触 80.9 µm（1 ペア）
+V_l2PN → LHPD4c1 [male-cns:v1.0 L] 接触 106.9 µm（1 ペア）
+V_l2PN → LHPD4c1 [male-cns:v1.0 R] 接触 102.2 µm（1 ペア）
+DA1_vPN → LHAV2a2 [male-cns:v1.0 L] 接触 164.7 µm（4 ペア）
+DA1_vPN → LHAV2a2 [male-cns:v1.0 R] 接触 271.8 µm（4 ペア）
+VA5_lPN → LHPV4a11 [male-cns:v1.0 L] 接触 20.5 µm（3 ペア）
+VA5_lPN → LHPV4a11 [male-cns:v1.0 R] 接触 30.6 µm（3 ペア）
+VL1_vPN → LHAV1a3 [male-cns:v1.0 L] 接触 76.2 µm（4 ペア）
+VL1_vPN → LHAV1a3 [male-cns:v1.0 R] 接触 103.5 µm（4 ペア）
+VL1_vPN → LHPV2a1_d [male-cns:v1.0 L] 接触 66.5 µm（2 ペア）
+VL1_vPN → LHPV2a1_d [male-cns:v1.0 R] 接触 162.1 µm（3 ペア）
+M_l2PNl22 → LHAD2b1 [male-cns:v1.0 L] 接触 30.4 µm（1 ペア）
+M_l2PNl22 → LHAD2b1 [male-cns:v1.0 R] 接触 75.0 µm（1 ペア）
+M_smPN6t2 → LHPD2a6 [male-cns:v1.0 L] 接触 0.0 µm（0 ペア）
+M_smPN6t2 → LHPD2a6 [male-cns:v1.0 R] 接触 0.0 µm（0 ペア）
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_lh\cross_male_cns_v1_0_contact.csv
+########## mb_all contact
+
+----- male-cns:v1.0
+M_l2PNm16 → LHCENT8 [male-cns:v1.0 L] 接触 123.5 µm（4 ペア）
+M_l2PNm16 → LHCENT8 [male-cns:v1.0 R] 接触 116.2 µm（4 ペア）
+DA4m_adPN → LHPV6g1 [male-cns:v1.0 L] 接触 33.4 µm（1 ペア）
+DA4m_adPN → LHPV6g1 [male-cns:v1.0 R] 接触 34.7 µm（1 ペア）
+KCab-p → MBON13 [male-cns:v1.0 L] 接触 1.4 µm（2 ペア）
+KCab-p → MBON13 [male-cns:v1.0 R] 接触 3.8 µm（1 ペア）
+DA4m_adPN → LHPV9b1 [male-cns:v1.0 L] 接触 13.7 µm（1 ペア）
+DA4m_adPN → LHPV9b1 [male-cns:v1.0 R] 接触 6.5 µm（1 ペア）
+DA4m_adPN → LHPV10b1 [male-cns:v1.0 L] 接触 29.6 µm（1 ペア）
+DA4m_adPN → LHPV10b1 [male-cns:v1.0 R] 接触 13.2 µm（1 ペア）
+VL1_ilPN → LHCENT8 [male-cns:v1.0 L] 接触 15.7 µm（2 ペア）
+VL1_ilPN → LHCENT8 [male-cns:v1.0 R] 接触 14.4 µm（2 ペア）
+DA4l_adPN → LHPV4j2 [male-cns:v1.0 L] 接触 11.5 µm（1 ペア）
+DA4l_adPN → LHPV4j2 [male-cns:v1.0 R] 接触 30.2 µm（1 ペア）
+DA1_lPN → LHCENT4 [male-cns:v1.0 L] 接触 4.9 µm（3 ペア）
+DA1_lPN → LHCENT4 [male-cns:v1.0 R] 接触 18.4 µm（4 ペア）
+DC1_adPN → LHPV6g1 [male-cns:v1.0 L] 接触 6.5 µm（1 ペア）
+DC1_adPN → LHPV6g1 [male-cns:v1.0 R] 接触 18.7 µm（1 ペア）
+VP2_adPN → KCg-s4 [male-cns:v1.0 L] 接触 7.4 µm（1 ペア）
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_mb_all\cross_male_cns_v1_0_contact.csv
+########## vis contact
+
+----- male-cns:v1.0
+LT83 → PVLP073 [male-cns:v1.0 L] 接触 64.2 µm（2 ペア）
+LT83 → PVLP073 [male-cns:v1.0 R] 接触 116.0 µm（3 ペア）
+LT73 → PVLP089 [male-cns:v1.0 L] 接触 16.7 µm（1 ペア）
+LT73 → PVLP089 [male-cns:v1.0 R] 接触 85.3 µm（2 ペア）
+LT34 → AOTU011 [male-cns:v1.0 L] 接触 45.4 µm（2 ペア）
+LT34 → AOTU011 [male-cns:v1.0 R] 接触 27.0 µm（2 ペア）
+LT82b → PLP249 [male-cns:v1.0 L] 接触 41.8 µm（1 ペア）
+LT82b → PLP249 [male-cns:v1.0 R] 接触 67.2 µm（1 ペア）
+LT79 → AVLP325_b [male-cns:v1.0 L] 接触 9.1 µm（2 ペア）
+LT79 → AVLP325_b [male-cns:v1.0 R] 接触 50.1 µm（3 ペア）
+LT73 → PLP208 [male-cns:v1.0 L] 接触 17.6 µm（1 ペア）
+LT73 → PLP208 [male-cns:v1.0 R] 接触 58.0 µm（2 ペア）
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_vis\cross_male_cns_v1_0_contact.csv

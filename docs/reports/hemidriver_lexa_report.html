@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ヘミドライバー断片の LexA 版を使って、落ちた組を救う</title><style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px}
+nav{font-size:.9rem;color:var(--sub);margin-bottom:18px}
+nav a{color:var(--acc);text-decoration:none}nav a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.35;border-bottom:2px solid var(--line);padding-bottom:.4em;margin-top:1.2em}
+h2{font-size:1.25rem;margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.05rem;margin-top:1.6em}
+a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600;white-space:nowrap}
+code{background:var(--code);padding:.15em .4em;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--code);color:var(--fg)}
+ul,ol{padding-left:1.4em}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:20px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--bg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc)}
+.card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+</style></head>
+<body><div class="wrap">
+<nav><a href="index.html">← 報告書の一覧</a> ／ <a href="../index.html">結果一覧</a></nav>
+<h1 id="lexa">ヘミドライバー断片の LexA 版を使って、落ちた組を救う</h1>
+<p>2026-11-10。再現は <code>python hemidriver_lexa.py</code>。一覧は <code>results/hemidriver_lexa.csv</code>。</p>
+<h2 id="0">0. 結論</h2>
+<p><strong>9 組中 5 組が救える。</strong></p>
+<p>系統まるごとの GMR-LexA では 1 組も救えなかったが（<code>results/gmr_lexa_report.md</code>）、
+<strong>split-GAL4 を構成する 2 つの断片のうち片方に LexA 版があるか</strong>を見ると話が変わる。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>調べた split-GAL4</td>
+<td>69 系統（LexA が無くて落ちた 32 組のドライバー）</td>
+</tr>
+<tr>
+<td>ヘミドライバーが分かったもの</td>
+<td><strong>60 系統</strong></td>
+</tr>
+<tr>
+<td>片方の断片に LexA 版があるもの</td>
+<td><strong>7 系統</strong></td>
+</tr>
+<tr>
+<td>それで救える組</td>
+<td><strong>6 組</strong>（うち接触が再現し上流も出力している上位の組が <strong>5 組</strong>）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1">1. 考え方</h2>
+<p>split-GAL4 は 2 つのエンハンサー断片の<strong>積</strong>でできている。</p>
+<pre><code>SS49882 = VT045661-GAL4.DBD  ∩  VT039475-p65.AD
+          ↑ この断片に LexA 版（Ecol\lexA[VT045661]）がある
+</code></pre>
+<p>積の片側だけを使うと、標識する細胞は<strong>増える</strong>（特異性は落ちる）。
+しかし「LexA が無いので発現系が 2 つにならない」という壁は、それで外れる。
+元の split-GAL4 がその細胞を標識している以上、<strong>片側の断片も必ずその細胞を含む</strong>。</p>
+<h2 id="2-5">2. 救える 5 組</h2>
+<table>
+<thead>
+<tr>
+<th>判定</th>
+<th>組</th>
+<th>接触</th>
+<th>別個体</th>
+<th>LexA にする側</th>
+<th>使う断片</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>★</td>
+<td><strong>MBON30 → oviIN</strong></td>
+<td>142 µm</td>
+<td><strong>36〜68 µm</strong></td>
+<td>下流 oviIN（SS65423）</td>
+<td><strong>VT026347-LexA</strong>（AD 側）</td>
+</tr>
+<tr>
+<td>★</td>
+<td><strong>MBON21 → FB4X</strong></td>
+<td>133 µm</td>
+<td><strong>36〜63 µm</strong></td>
+<td>上流 MBON21（SS81353）</td>
+<td><strong>GMR11C07-LexA</strong>（DBD 側）</td>
+</tr>
+<tr>
+<td>△</td>
+<td><strong>ExR2 → LAL098</strong></td>
+<td>103 µm</td>
+<td><strong>47〜77 µm</strong></td>
+<td>下流 LAL098（SS49882）</td>
+<td><strong>VT045661-LexA</strong>（DBD 側）</td>
+</tr>
+<tr>
+<td>★</td>
+<td><strong>AVLP478 → DNp06</strong></td>
+<td>95 µm</td>
+<td>28〜39 µm</td>
+<td>下流 DNp06（SS02256 / SS01047）</td>
+<td><strong>VT019018-LexA</strong>（AD 側）</td>
+</tr>
+<tr>
+<td>★</td>
+<td><strong>DL4_adPN → LHPV6c1</strong></td>
+<td>41 µm</td>
+<td>27〜37 µm</td>
+<td>上流 DL4_adPN（SS10228 / SS32214）</td>
+<td><strong>VT033006-LexA</strong>（AD 側）</td>
+</tr>
+<tr>
+<td></td>
+<td>LAL098 → DNb01</td>
+<td>82 µm</td>
+<td>2〜4 µm</td>
+<td>上流 LAL098（SS49882）</td>
+<td>VT045661-LexA</td>
+</tr>
+</tbody>
+</table>
+<p>最後の 1 組（LAL098 → DNb01）は別個体での接触が 2〜4 µm しかないので落ちたまま。</p>
+<blockquote>
+<p><strong>【追記】ExR2 ↔ LAL098 は EM で落ちた。</strong> 膜の密着が、同じ ExR2 が 44 シナプスを作っている
+LAL184 との対照の 1/6〜1/10 しかない（直接隣接 1,348〜3,692 対 8,153、最接近の隙間 45 nm 対 0 nm）。
+接触の長さが再現しても、膜が接しているとは限らないという例。
+詳細と、向きを逆（LAL098 → ExR2）にしたほうが良い理由は <code>results/candidate_ExR2_LAL098.md</code>。
+<strong>残り 4 組も同じ EM の測定にかけてから順位をつけるべき。</strong></p>
+</blockquote>
+<p><strong>別個体での接触だけで見ると、上の 5 組のうち 3 組はこれまでの本命を上回る。</strong></p>
+<table>
+<thead>
+<tr>
+<th>候補</th>
+<th>別個体での接触</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ExR2 → LAL098</strong></td>
+<td><strong>47〜77 µm</strong></td>
+</tr>
+<tr>
+<td><strong>MBON30 → oviIN</strong></td>
+<td><strong>36〜68 µm</strong></td>
+</tr>
+<tr>
+<td><strong>MBON21 → FB4X</strong></td>
+<td><strong>36〜63 µm</strong></td>
+</tr>
+<tr>
+<td>MBON04 ↔ PPL105（キノコ体の第一候補）</td>
+<td>33〜38 µm</td>
+</tr>
+<tr>
+<td>MBON04 → FB4N（全脳の第一候補）</td>
+<td>10〜29 µm</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">断片の内訳</h3>
+<table>
+<thead>
+<tr>
+<th>split-GAL4</th>
+<th>標的</th>
+<th>構成</th>
+<th>LexA 版がある側</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SS65423</td>
+<td>oviIN</td>
+<td>VT026035(DBD) ∩ <strong>VT026347</strong>(AD)</td>
+<td>AD</td>
+</tr>
+<tr>
+<td>SS81353</td>
+<td>MBON21</td>
+<td><strong>GMR11C07</strong>(DBD) ∩ VT000877(AD)</td>
+<td>DBD</td>
+</tr>
+<tr>
+<td>SS49882</td>
+<td>LAL098</td>
+<td><strong>VT045661</strong>(DBD) ∩ VT039475(AD)</td>
+<td>DBD</td>
+</tr>
+<tr>
+<td>SS02256</td>
+<td>DNp06</td>
+<td>VT017411(DBD) ∩ <strong>VT019018</strong>(AD)</td>
+<td>AD</td>
+</tr>
+<tr>
+<td>SS01047</td>
+<td>DNp06</td>
+<td>VT017647(DBD) ∩ <strong>VT019018</strong>(AD)</td>
+<td>AD</td>
+</tr>
+<tr>
+<td>SS10228</td>
+<td>DL4_adPN</td>
+<td>GMR73F07(DBD) ∩ <strong>VT033006</strong>(AD)</td>
+<td>AD</td>
+</tr>
+<tr>
+<td>SS32214</td>
+<td>DL4_adPN</td>
+<td>GMR73F02(DBD) ∩ <strong>VT033006</strong>(AD)</td>
+<td>AD</td>
+</tr>
+</tbody>
+</table>
+<p>DNp06 は <strong>2 つの独立な split-GAL4（SS02256 と SS01047）が同じ VT019018 を AD 側に持つ</strong>。
+別々に作られた系統が同じ断片に行き着いているので、この断片が DNp06 を含むことの確かさは高い。
+DL4_adPN も同様に SS10228 と SS32214 が VT033006 を共有している。</p>
+<h2 id="3-u-d-0">3. 混同（U × D）は、分かる範囲ではすべて 0</h2>
+<p>断片だけを使うと標識する細胞の集合 U（または D）が広がるので、
+<strong>U × D のすべての組が 0</strong> という条件を取り直す必要がある。
+いま中身が分かっている分について neuPrint で数え直した。</p>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>hemibrain</th>
+<th>male-CNS</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON21 ↔ FB4X</td>
+<td>0 / 0</td>
+<td>0 / 0</td>
+<td>目標</td>
+</tr>
+<tr>
+<td><strong>PAM10 ↔ FB4X</strong></td>
+<td><strong>0 / 0</strong></td>
+<td><strong>0 / 0</strong></td>
+<td>GMR11C07 は PAM10 も標識する（VFB の注釈）</td>
+</tr>
+<tr>
+<td>MBON30 ↔ oviIN</td>
+<td>0 / 0</td>
+<td>0 / 0</td>
+<td>目標</td>
+</tr>
+<tr>
+<td>ExR2 ↔ LAL098</td>
+<td>0 / 0</td>
+<td>0 / 0</td>
+<td>目標</td>
+</tr>
+<tr>
+<td>AVLP478 ↔ DNp06</td>
+<td>0 / 0</td>
+<td>0 / 0</td>
+<td>目標</td>
+</tr>
+<tr>
+<td><strong>MBON11 ↔ DNp06</strong></td>
+<td><strong>0 / 0</strong></td>
+<td><strong>0 / 0</strong></td>
+<td>SS01181（AVLP478 の GAL4）は MBON11 も標識する</td>
+</tr>
+<tr>
+<td>DL4_adPN ↔ LHPV6c1</td>
+<td>0 / 0</td>
+<td>0 / 0</td>
+<td>目標</td>
+</tr>
+</tbody>
+</table>
+<p><strong>分かっている混同はすべて 0</strong>。ただし下の限界を読むこと。</p>
+<h2 id="4">4. 限界 — ここから先は画像を見ないと決まらない</h2>
+<p><strong>断片が標識する細胞の全体（U または D の中身）は、まだ分かっていない。</strong></p>
+<ul>
+<li>VFB に細胞型の注釈があるのは <strong>GMR11C07 だけ</strong>（PAM10）。
+  VT045661・VT033006・VT026347・VT019018 には注釈が無い。</li>
+<li>したがって上の「混同 0」は、<strong>分かっている相手に限った話</strong>である。
+  断片が他に何十という細胞型を標識していれば、その中に既存結合があるかもしれない。</li>
+</ul>
+<p>確かめるには FlyLight の発現画像を見て、標識細胞を数え上げるしかない。</p>
+<pre><code>http://flweb.janelia.org/cgi-bin/view_flew_imagery.cgi?line=VT045661
+http://flweb.janelia.org/cgi-bin/view_flew_imagery.cgi?line=VT019018
+http://flweb.janelia.org/cgi-bin/view_flew_imagery.cgi?line=VT026347
+http://flweb.janelia.org/cgi-bin/view_flew_imagery.cgi?line=VT033006
+http://flweb.janelia.org/cgi-bin/view_flew_imagery.cgi?line=R11C07
+</code></pre>
+<p>NeuronBridge なら hemibrain の骨格から光学画像を逆引きできるので、
+「この断片の発現に、どのコネクトームの細胞が含まれるか」を半自動で出せる。
+VFB にはコネクトームのニューロンと系統の発現パターンを結ぶ
+<code>has_similar_morphology_to_part_of</code> という関係があり（NBLAST の結果）、
+実際に DNb05 と SS01051 の発現パターンが結ばれている。<strong>これを使えば U の推定を自動化できる。</strong></p>
+<h2 id="5">5. 実務上の注意</h2>
+<ol>
+<li><strong>断片の LexA 版は活性が違うことがある</strong>。Pfeiffer 2010 は
+   「LexA は GAL4 より転写活性化因子として弱い」と報告している。
+   表記も <code>lexA::GAD</code> / <code>lexA::p65</code> / <code>lexA::VP16</code> と混在しており、強さが異なる。
+   今回見つかった 5 つは <code>Ecol\lexA[VT045661]</code>、<code>Ecol\lexA[p65.VT033006]</code>、
+   <code>Ecol\lexA[GAD.VT026347]</code>、<code>Ecol\lexA[GAD.VT019018]</code>、<code>Ecol\lexA[GMR11C07]</code> の形。</li>
+<li><strong>在庫の確認が必要</strong>。FlyBase に allele として登録があっても、
+   配布系統があるとは限らない。BDSC / VDRC に照会すること。</li>
+<li><strong>split-LexA への変換と比べる</strong>。断片 1 つの LexA は特異性が落ちるので、
+   Shuai 2024 の方法で split-GAL4 をそのまま split-LexA に変換するほうが
+   特異性は保てる（成功率 22/34）。<strong>断片の LexA は「今すぐ試せる」利点</strong>がある。</li>
+</ol>
+<h2 id="6">6. 使ったデータ</h2>
+<ul>
+<li>ヘミドライバーの構成: VirtualFlyBrain neo4j
+  <code>MATCH (n:Individual:Split)-[:INSTANCEOF]-&gt;(c)</code> — split-GAL4 の試料が属する
+  「P{A-GAL4.DBD} ∩ P{B-p65.AD} expression pattern」クラスから断片名を取る。</li>
+<li>LexA 版がある断片: VirtualFlyBrain solr の <code>Ecol\lexA[...]</code> allele 名 <strong>190 件</strong>
+  （<code>GMRxxxxx</code> / <code>VTxxxxxx</code>、<code>GAD.</code> <code>p65.</code> <code>DBD.</code> などの接頭辞を吸収）。</li>
+<li>候補ペア: <code>results/shortlist_final.csv</code></li>
+<li>混同の数え直し: neuPrint hemibrain:v1.2.1 / male-cns:v1.0</li>
+</ul>
+</div></body></html>

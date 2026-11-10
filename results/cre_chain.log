@@ -1,0 +1,12 @@
+########## cre rank 22:13
+935 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_cre\candidates_ranked.csv
+########## cre flywire 22:13
+457 組（照合できたのは 424 組）、合計 0 の組 76 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_cre\cross_flywire_783.csv
+hemibrain+FlyWire でゼロ: 76
+########## cre male-cns 22:13
+        MBON27 → ATL017         元 0/0 | male-cns:v1.0 合計 0/0  ★
+76 組を確認（照合できたのは 73 組）、合計 0 の組 26 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_cre\cross_male_cns_v1_0.csv
+3 個体すべてでゼロ: 26
+########## cre inspect 22:26
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_cre\inspect_output.csv
+########## done 22:29

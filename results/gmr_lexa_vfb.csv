@@ -1,0 +1,44 @@
+type,lexa_line,system,fbbt
+MBON03,R21D02,lexA,mushroom body output neuron 3
+MBON01,R21D02,lexA,mushroom body output neuron 1
+PAM13,R24E12,lexA,dopaminergic PAM neuron 13
+PAM14,R24E12,lexA,dopaminergic PAM neuron 14
+MBON05,R24E12,lexA,mushroom body output neuron 5
+PAM10,R11C07,lexA,dopaminergic PAM neuron 10
+MBON11,R12G04,lexA,mushroom body output neuron 11
+MBON01,R14C08,GAL4,mushroom body output neuron 1
+MBON03,R14C08,GAL4,mushroom body output neuron 3
+MBON04,R14C08,GAL4,mushroom body output neuron 4
+PAM05,R14C08,lexA,dopaminergic PAM neuron 5
+MBON03,R14C08,lexA,mushroom body output neuron 3
+PAM06,R14C08,lexA,dopaminergic PAM neuron 6
+MBON04,R14C08,lexA,mushroom body output neuron 4
+MBON01,R14C08,lexA,mushroom body output neuron 1
+MBON04,R15B01,GAL4,mushroom body output neuron 4
+MBON03,R15B01,GAL4,mushroom body output neuron 3
+MBON01,R15B01,GAL4,mushroom body output neuron 1
+MBON03,R15B01,lexA,mushroom body output neuron 3
+MBON01,R15B01,lexA,mushroom body output neuron 1
+MBON04,R15B01,lexA,mushroom body output neuron 4
+MBON01,R21D02,GAL4,mushroom body output neuron 1
+MBON03,R21D02,GAL4,mushroom body output neuron 3
+MBON02,R21D02,GAL4,mushroom body output neuron 2
+PAM14,R24E12,GAL4,dopaminergic PAM neuron 14
+PAM13,R24E12,GAL4,dopaminergic PAM neuron 13
+MBON05,R24E12,GAL4,mushroom body output neuron 5
+PAM02,R48B04,GAL4,dopaminergic PAM neuron 2
+PAM08,R48B04,GAL4,dopaminergic PAM neuron 8
+PAM01,R48B04,GAL4,dopaminergic PAM neuron 1
+PAM06,R48B04,GAL4,dopaminergic PAM neuron 6
+PAM05,R48B04,GAL4,dopaminergic PAM neuron 5
+PAM05,R48B04,lexA,dopaminergic PAM neuron 5
+PAM06,R48B04,lexA,dopaminergic PAM neuron 6
+PAM01,R48B04,lexA,dopaminergic PAM neuron 1
+PAM02,R48B04,lexA,dopaminergic PAM neuron 2
+PAM08,R48B04,lexA,dopaminergic PAM neuron 8
+PAM13,R58E02,GAL4,dopaminergic PAM neuron 13
+PAM14,R58E02,GAL4,dopaminergic PAM neuron 14
+PAM01,R58E02,lexA,dopaminergic PAM neuron 1
+PAM11,R71C03,lexA,dopaminergic PAM neuron 11
+MBON19,R71D08,GAL4,mushroom body output neuron 19
+PAM11,R72D01,lexA,dopaminergic PAM neuron 11

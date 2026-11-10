@@ -1,0 +1,37 @@
+########## smp 21:57
+MBON26 → SIP069 [male-cns:v1.0 L] 接触 21.9 µm（1 ペア）
+                                             [A
+MBON26 → SIP069 [male-cns:v1.0 R] 接触 36.7 µm（2 ペア）
+MBON32 → SMP054 [male-cns:v1.0 L] 接触 26.5 µm（1 ペア）
+MBON32 → SMP054 [male-cns:v1.0 R] 接触 33.5 µm（1 ペア）
+MBON33 → CRE102 [male-cns:v1.0 L] 接触 53.0 µm（1 ペア）
+MBON33 → CRE102 [male-cns:v1.0 R] 接触 31.9 µm（1 ペア）
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_smp\cross_male_cns_v1_0_contact.csv
+########## lal 22:14
+                                             [A
+PS214 → DNp17 [male-cns:v1.0 L] 接触 11.3 µm（1 ペア）
+                                             [A
+                                             [A
+PS214 → DNp17 [male-cns:v1.0 R] 接触 0.0 µm（0 ペア）
+ExR6 → DNb01 [male-cns:v1.0 L] 接触 10.0 µm（1 ペア）
+ExR6 → DNb01 [male-cns:v1.0 R] 接触 4.7 µm（1 ペア）
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_lal\cross_male_cns_v1_0_contact.csv
+########## wed 22:44
+VES025 → DNb05 [male-cns:v1.0 R] 接触 12.5 µm（1 ペア）
+VES030 → DNb05 [male-cns:v1.0 L] 接触 13.3 µm（1 ペア）
+VES030 → DNb05 [male-cns:v1.0 R] 接触 34.7 µm（1 ペア）
+LAL142 → DNa02 [male-cns:v1.0 L] 接触 33.3 µm（1 ペア）
+LAL142 → DNa02 [male-cns:v1.0 R] 接触 20.3 µm（1 ペア）
+CRE074 → DNb05 [male-cns:v1.0 L] 接触 5.9 µm（1 ペア）
+CRE074 → DNb05 [male-cns:v1.0 R] 接触 17.3 µm（1 ペア）
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_wed\cross_male_cns_v1_0_contact.csv
+########## ps 22:49
+VS → PS239 [male-cns:v1.0 R] 接触 0.0 µm（0 ペア）
+HSS → PS234 [male-cns:v1.0 L] 接触 7.1 µm（1 ペア）
+HSS → PS234 [male-cns:v1.0 R] 接触 4.1 µm（1 ペア）
+                                             [A
+HSS → PS233 [male-cns:v1.0 L] 接触 6.0 µm（2 ペア）
+                                             [A
+HSS → PS233 [male-cns:v1.0 R] 接触 3.7 µm（1 ペア）
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_ps\cross_male_cns_v1_0_contact.csv
+########## done 23:10

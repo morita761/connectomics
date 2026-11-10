@@ -1,0 +1,16 @@
+########## cx
+           PEG → PFR_a          元 0/0 | male-cns:v1.0 合計 23/55
+          FB4C → PFL3           元 0/0 | male-cns:v1.0 合計 1/0
+16 組を確認（照合できたのは 16 組）、合計 0 の組 4 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_cx\cross_male_cns_v1_0.csv
+########## mb_all
+     DA4l_adPN → LHPV6g1        元 0/0 | male-cns:v1.0 合計 0/0  ★
+     VC3l_adPN → LHPV10b1       （（タイプ名なし））
+28 組を確認（照合できたのは 18 組）、合計 0 の組 14 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_mb_all\cross_male_cns_v1_0.csv
+########## lh
+       VC1_lPN → LHAV2m1        元 0/0 | male-cns:v1.0 合計 0/1
+      VA1d_vPN → LHAD1f2        元 0/0 | male-cns:v1.0 合計 0/0  ★
+86 組を確認（照合できたのは 65 組）、合計 0 の組 36 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_lh\cross_male_cns_v1_0.csv
+########## vis
+          LT75 → AVLP464        元 0/0 | male-cns:v1.0 合計 0/0  ★
+          LT34 → LAL026         （（タイプ名なし））
+10 組を確認（照合できたのは 9 組）、合計 0 の組 4 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_vis\cross_male_cns_v1_0.csv

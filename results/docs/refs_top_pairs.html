@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>上位候補ペアの細胞について、行動実験を行っている論文</title><style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px}
+nav{font-size:.9rem;color:var(--sub);margin-bottom:18px}
+nav a{color:var(--acc);text-decoration:none}nav a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.35;border-bottom:2px solid var(--line);padding-bottom:.4em;margin-top:1.2em}
+h2{font-size:1.25rem;margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.05rem;margin-top:1.6em}
+a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600;white-space:nowrap}
+code{background:var(--code);padding:.15em .4em;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--code);color:var(--fg)}
+ul,ol{padding-left:1.4em}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:20px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--bg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc)}
+.card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+</style></head>
+<body><div class="wrap">
+<nav><a href="index.html">← 報告書の一覧</a> ／ <a href="../index.html">結果一覧</a></nav>
+<h1 id="_1">上位候補ペアの細胞について、行動実験を行っている論文</h1>
+<p>2026-11-10 作成。<code>lit_search.py</code> で Europe PMC を検索し、
+オープンアクセス論文は<strong>本文全体</strong>、それ以外は要旨を対象に
+「細胞名・系統名」「操作（光遺伝学・活動阻害など）」「行動（学習・選好など）」の
+3 つがそろう文を探した結果。生データは <code>results/literature/&lt;タイプ&gt;.csv</code>、
+根拠の文は <code>results/literature/summary.md</code>。</p>
+<pre><code>python lit_search.py PPL105 PPL106 MBON07 PAM11 MBON33 MBON04 MBON11 MBON31 FB4N --max-papers 200
+</code></pre>
+<p><strong>注意</strong>: 語の一致で拾っているので、最終的な判断は論文本体で確認すること。</p>
+<h2 id="0">0. 細胞ごとの収穫</h2>
+<table>
+<thead>
+<tr>
+<th>細胞</th>
+<th>候補ペアでの役割</th>
+<th>検索された論文</th>
+<th>行動実験の根拠がある論文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBON04</strong> (MBON-β'2mp_bilateral)</td>
+<td>第一候補の上流／下流</td>
+<td>64 本</td>
+<td><strong>10 本</strong></td>
+</tr>
+<tr>
+<td><strong>PPL105</strong> (PPL1-α'2α2)</td>
+<td>第一候補の下流／上流</td>
+<td>54 本</td>
+<td><strong>4 本</strong></td>
+</tr>
+<tr>
+<td><strong>PPL106</strong> (PPL1-α3)</td>
+<td>第2候補の下流</td>
+<td>49 本</td>
+<td><strong>4 本</strong></td>
+</tr>
+<tr>
+<td><strong>MBON07</strong> (MBON-α1)</td>
+<td>第2候補の上流</td>
+<td>36 本</td>
+<td><strong>5 本</strong></td>
+</tr>
+<tr>
+<td><strong>PAM11</strong> (PAM-α1)</td>
+<td>第3候補の下流</td>
+<td>46 本</td>
+<td><strong>3 本</strong></td>
+</tr>
+<tr>
+<td>MBON11 (MBON-γ1pedc)</td>
+<td>却下された組の上流</td>
+<td>107 本</td>
+<td>5 本</td>
+</tr>
+<tr>
+<td>MBON33 (MBON-γ2γ3)</td>
+<td>却下された組</td>
+<td>6 本</td>
+<td>1 本</td>
+</tr>
+<tr>
+<td><strong>MBON31</strong> (MBON-α'1a)</td>
+<td>第3候補の上流</td>
+<td>15 本</td>
+<td><strong>0 本</strong></td>
+</tr>
+<tr>
+<td><strong>FB4N</strong></td>
+<td>全脳本命の下流</td>
+<td>3 本</td>
+<td><strong>0 本</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>読み出しの観点では MBON04 ↔ PPL105 が最も恵まれている。</strong>
+両方の細胞に行動実験の前例があり、同じ論文（Tsao 2018、Aso 2016）が両方を扱っている。</p>
+<p><strong>MBON31 → PAM11 は上流側（MBON31）に行動実験の前例が無い。</strong> 15 本のうち
+行動の根拠がある論文は 0 本で、最も関連するのは Felsenberg 2017 Nature で 3 回言及されるだけ。
+下流の PAM11 には Ichinose 2015 eLife という決定的な論文があるので、
+読み出しは PAM11 側（報酬性長期記憶）に置くしかない。</p>
+<p><strong>FB4N（全脳本命の下流）は 3 本しかなく、すべて形態の記載。</strong> 行動の前例が無い点は変わらない。</p>
+<hr />
+<h2 id="1-mbon04-ppl105">1. MBON04 ↔ PPL105（第一候補）</h2>
+<h3 id="mbon04-mbon-2mp_bilateral">MBON04 = MBON-β'2mp_bilateral</h3>
+<table>
+<thead>
+<tr>
+<th>年</th>
+<th>著者</th>
+<th>論文</th>
+<th>誌</th>
+<th>DOI</th>
+<th>何をしたか</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2014</td>
+<td>Aso Y, et al.</td>
+<td>Mushroom body output neurons encode valence and guide memory-based action selection in Drosophila</td>
+<td>eLife</td>
+<td><a href="https://doi.org/10.7554/eLife.04580">10.7554/eLife.04580</a></td>
+<td><strong>MB011B</strong> で MBON-β'2mp_bilateral を含む 5 つのグルタミン酸作動性 MBON を CsChrimson で活性化し、忌避反応を定量。価数のマッピングの基礎論文</td>
+</tr>
+<tr>
+<td>2015</td>
+<td>Owald D, Felsenberg J, Talbot CB, Das G, Perisse E, Huetteroth W, Waddell S</td>
+<td>Activity of defined mushroom body output neurons underlies learned olfactory behavior in Drosophila</td>
+<td>Neuron</td>
+<td><a href="https://doi.org/10.1016/j.neuron.2015.03.025">10.1016/j.neuron.2015.03.025</a></td>
+<td>MBON-β'2mp を VT1211 / R21D02 で阻害し、報酬・忌避記憶の両方で成績低下を示した</td>
+</tr>
+<tr>
+<td>2015</td>
+<td>Sitaraman D, Aso Y, Rubin GM, Nitabach MN</td>
+<td>Control of sleep by dopaminergic inputs to the Drosophila mushroom body</td>
+<td>Front Neural Circuits</td>
+<td><a href="https://doi.org/10.3389/fncir.2015.00073">10.3389/fncir.2015.00073</a></td>
+<td>MBON-γ5β'2a/β'2mp/β'2mp_bilateral が覚醒を促し、生来の忌避を媒介することを光遺伝学で示した</td>
+</tr>
+<tr>
+<td>2018</td>
+<td>Tsao CH, Chen CC, Lin CH, Yang HY, Lin S</td>
+<td>Drosophila mushroom bodies integrate hunger and satiety signals to control innate food-seeking behavior</td>
+<td>eLife</td>
+<td><a href="https://doi.org/10.7554/eLife.35264">10.7554/eLife.35264</a></td>
+<td><strong>MBON04 と PPL105 の両方を扱う</strong>。β'2 の MBON と PPL1-α'2α2 を操作して酵母の探索行動を測定</td>
+</tr>
+<tr>
+<td>2018</td>
+<td>Al-Anzi B, Zinn K</td>
+<td>Identification and characterization of mushroom body neurons that regulate fat storage in Drosophila</td>
+<td>Neural Dev</td>
+<td><a href="https://doi.org/10.1186/s13064-018-0116-7">10.1186/s13064-018-0116-7</a></td>
+<td>MBON-β'2mp を含む MBON の阻害・過活性化で脂肪蓄積と摂食行動を測定</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>Hobin M, Dorfman K, Adel M, Rivera-Rodriguez EJ, Kuklin EA, Ma D, Griffith LC</td>
+<td>The Drosophila microRNA bantam regulates excitability in adult mushroom body output neurons to promote early night sleep</td>
+<td>iScience</td>
+<td><a href="https://doi.org/10.1016/j.isci.2022.104874">10.1016/j.isci.2022.104874</a></td>
+<td><strong>MB011B</strong> で γ5β'2a/β'2mp/β'2mp_bilateral の興奮性を操作し睡眠を測定。根拠文 12 本で最多</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>Zhou F, et al.</td>
+<td>Optimized design and in vivo application of optogenetically functionalized Drosophila dopamine receptors</td>
+<td>Nat Commun</td>
+<td><a href="https://doi.org/10.1038/s41467-023-43970-0">10.1038/s41467-023-43970-0</a></td>
+<td><strong>MB011B で optoDop1R2 を発現</strong>させ、摂食行動（sip 数）を測定。<strong>MBON04 にドーパミン受容体を導入した前例</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Zhou 2023 は特に重要</strong>: MBON04 を含む MBON に光操作できるドーパミン受容体を導入し、
+行動（摂食）で読み出した例である。PPL105 → MBON04 の向きで新しいドーパミンシナプスを作る本実験と、
+操作の対象と読み出しがそのまま重なる。</p>
+<h3 id="ppl105-ppl1-22-mb-v1">PPL105 = PPL1-α'2α2（= MB-V1）</h3>
+<table>
+<thead>
+<tr>
+<th>年</th>
+<th>著者</th>
+<th>論文</th>
+<th>誌</th>
+<th>DOI</th>
+<th>何をしたか</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2012</td>
+<td>Aso Y, Herb A, Ogueta M, Siwanowicz I, Templier T, Friedrich AB, Ito K, Scholz H</td>
+<td>Three dopamine pathways induce aversive odor memories with different stability</td>
+<td>PLoS Genet</td>
+<td><a href="https://doi.org/10.1371/journal.pgen.1002768">10.1371/journal.pgen.1002768</a></td>
+<td><strong>MB-V1（= PPL1-α'2α2）を含む 3 経路を切り分け</strong>、安定性の異なる嫌悪記憶を誘導することを示した。根拠文 9 本</td>
+</tr>
+<tr>
+<td>2016</td>
+<td>Aso Y, Rubin GM</td>
+<td>Dopaminergic neurons write and update memories with cell-type-specific rules</td>
+<td>eLife</td>
+<td><a href="https://doi.org/10.7554/eLife.16135">10.7554/eLife.16135</a></td>
+<td><strong>MB099C</strong>（PPL103+104+105+106）で CsChrimson 駆動し、嫌悪記憶の形成を区画ごとに比較。<strong>PPL105 と PPL106 の両方を扱う</strong></td>
+</tr>
+<tr>
+<td>2018</td>
+<td>Tsao CH, et al.</td>
+<td>（上記）</td>
+<td>eLife</td>
+<td><a href="https://doi.org/10.7554/eLife.35264">10.7554/eLife.35264</a></td>
+<td>PPL1-α'2α2 の人工活性化が酵母匂いの探索を促進。Aso 2016 の嫌悪記憶とは逆向きの効果</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>Jacob PF, Vargas-Gutierrez P, Okray Z, Vietti-Michelina S, Felsenberg J, Waddell S</td>
+<td>Prior experience conditionally inhibits the expression of new learning in Drosophila</td>
+<td>Curr Biol</td>
+<td><a href="https://doi.org/10.1016/j.cub.2021.05.056">10.1016/j.cub.2021.05.056</a></td>
+<td>PPL1-α'2α2 の阻害は pre-exposure 学習には不要と判定（除外の根拠として有用）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ppl105">関連（PPL105 の光遺伝学・イメージング）</h3>
+<ul>
+<li>Toshima N, et al. Individual dopaminergic neurons induce unique, yet overlapping combinations
+  of memory components. <em>eLife</em> — 個々の DAN が誘導する記憶成分の分解。</li>
+<li>Huang C, et al. (2018) Long-term optical brain imaging in live adult fruit flies.
+  <em>Nat Commun</em> <a href="https://doi.org/10.1038/s41467-018-02873-1">10.1038/s41467-018-02873-1</a>
+  — PPL1 を長期イメージングした例。新生シナプスの経時観察に使える手法。</li>
+</ul>
+<hr />
+<h2 id="2-mbon07-ppl1062">2. MBON07 → PPL106（第2候補）</h2>
+<h3 id="mbon07-mbon-1">MBON07 = MBON-α1</h3>
+<table>
+<thead>
+<tr>
+<th>年</th>
+<th>著者</th>
+<th>論文</th>
+<th>誌</th>
+<th>DOI</th>
+<th>何をしたか</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2015</td>
+<td>Ichinose T, Aso Y, Yamagata N, Abe A, Rubin GM, Tanimoto H</td>
+<td>Reward signal in a recurrent circuit drives appetitive long-term memory formation</td>
+<td>eLife</td>
+<td><a href="https://doi.org/10.7554/eLife.10719">10.7554/eLife.10719</a></td>
+<td><strong>MB323B で MBON-α1 を操作</strong>。活性化を匂いと対提示して 24 時間記憶を測定、試験時のみの阻害で条件付け接近が大きく損なわれる。<strong>MBON07 と PAM11 の両方を扱う決定的な論文</strong>。根拠文 8 本</td>
+</tr>
+<tr>
+<td>2018</td>
+<td>Tsao CH, et al.</td>
+<td>（上記）</td>
+<td>eLife</td>
+<td><a href="https://doi.org/10.7554/eLife.35264">10.7554/eLife.35264</a></td>
+<td><strong>MB310C</strong>（MBON-α1 特異的）で GABA-A 受容体をノックダウンし、酵母探索行動の減少を示した</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>Mohamed A, Malekou I, Sim T, O'Kane CJ, Maait Y, Scullion B, Masuda-Nakagawa LM</td>
+<td>Mushroom body output neurons MBON-a1/a2 define an odor intensity channel that regulates behavioral odor discrimination learning in larval Drosophila</td>
+<td>Front Physiol</td>
+<td><a href="https://doi.org/10.3389/fphys.2023.1111244">10.3389/fphys.2023.1111244</a></td>
+<td>幼虫の MBON-a1/a2 を CsChrimson で活性化し、匂い識別学習が損なわれることを示した。言及 117 回で最多</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>Davidson AM, Hige T</td>
+<td>Roles of feedback and feed-forward networks of dopamine subsystems</td>
+<td>Learn Mem</td>
+<td><a href="https://doi.org/10.1101/lm.053807.123">10.1101/lm.053807.123</a></td>
+<td>MBON-α1 の抑圧が SMP353/354 → SMP108 → PAM を介して二次条件づけに関わる回路を整理した総説</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>Nanami T, Yamada D, Someya M, Hige T, Kazama H, Kohno T</td>
+<td>A lightweight data-driven spiking neuronal network model of Drosophila olfactory nervous system</td>
+<td>Front Neurosci</td>
+<td><a href="https://doi.org/10.3389/fnins.2024.1384336">10.3389/fnins.2024.1384336</a></td>
+<td>MBON-α1 の活性化は上風走行を誘導しない（MBON-α3 とは異なる）という対照的な知見</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ppl106-ppl1-3">PPL106 = PPL1-α3</h3>
+<table>
+<thead>
+<tr>
+<th>年</th>
+<th>著者</th>
+<th>論文</th>
+<th>誌</th>
+<th>DOI</th>
+<th>何をしたか</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2016</td>
+<td>Aso Y, Rubin GM</td>
+<td>（上記）</td>
+<td>eLife</td>
+<td><a href="https://doi.org/10.7554/eLife.16135">10.7554/eLife.16135</a></td>
+<td>MB099C で PPL1-α3 を含む DAN を光駆動。根拠文 5 本</td>
+</tr>
+<tr>
+<td>2017</td>
+<td>Takemura SY, et al.</td>
+<td>A connectome of a learning and memory center in the adult Drosophila brain</td>
+<td>eLife</td>
+<td><a href="https://doi.org/10.7554/eLife.26975">10.7554/eLife.26975</a></td>
+<td><strong>PPL1-α3 単独の光遺伝学的活性化が、匂い提示なしで接近反応を生じる</strong>ことを示した</td>
+</tr>
+<tr>
+<td>2018</td>
+<td>Tsao CH, et al.</td>
+<td>（上記）</td>
+<td>eLife</td>
+<td><a href="https://doi.org/10.7554/eLife.35264">10.7554/eLife.35264</a></td>
+<td>PPL1-α3 の活性化が酵母匂い探索を促進</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>Jacob PF, et al.</td>
+<td>（上記）</td>
+<td>Curr Biol</td>
+<td><a href="https://doi.org/10.1016/j.cub.2021.05.056">10.1016/j.cub.2021.05.056</a></td>
+<td><strong>PPL1-α3 の阻害は pre-exposure 由来の忌避を接近に反転させる</strong>。PPL1-α3 だけの阻害では即時の電撃記憶は保たれる。根拠文 3 本</td>
+</tr>
+</tbody>
+</table>
+<p><strong>MBON07 → PPL106 の読み出しは明快</strong>: Ichinose 2015 の報酬性長期記憶（α1 区画のループ）と
+Jacob 2021 の pre-exposure 学習の反転が、どちらも 1 細胞型の操作で出ている。
+さらにこの組はドライバーが最もきれい（下記）。</p>
+<h3 id="_2">この組のドライバーは候補中で最良</h3>
+<table>
+<thead>
+<tr>
+<th>役割</th>
+<th>系統</th>
+<th>発現系</th>
+<th>標識する型</th>
+<th>特異性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上流 MBON07</td>
+<td><strong>MB319B</strong> / MB319C / MB323B</td>
+<td>split-GAL4</td>
+<td><strong>MBON07 のみ</strong></td>
+<td>2（理想）</td>
+</tr>
+<tr>
+<td>下流 PPL106</td>
+<td><strong>SL86062</strong> / SL86050</td>
+<td>split-LexA</td>
+<td><strong>PPL106 のみ</strong></td>
+<td>2（理想）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>両方が単一タイプの系統で特異性 2。</strong> U × D が 1 組だけになるので、混同の心配が原理的に無い。
+<code>results/mb_final19.csv</code> では別の組み合わせ（SL86055 + SS01246）で記録しているが、
+この組み合わせのほうが明らかに良い。MBON04 ↔ PPL105 は接触の長さと別個体での再現で勝るが、
+<strong>ドライバーの質ではこの組が勝つ</strong>。</p>
+<hr />
+<h2 id="3-mbon31-pam113">3. MBON31 → PAM11（第3候補）</h2>
+<h3 id="pam11-pam-1">PAM11 = PAM-α1</h3>
+<table>
+<thead>
+<tr>
+<th>年</th>
+<th>著者</th>
+<th>論文</th>
+<th>誌</th>
+<th>DOI</th>
+<th>何をしたか</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2015</td>
+<td>Ichinose T, et al.</td>
+<td>Reward signal in a recurrent circuit drives appetitive long-term memory formation</td>
+<td>eLife</td>
+<td><a href="https://doi.org/10.7554/eLife.10719">10.7554/eLife.10719</a></td>
+<td><strong>MB299B で PAM-α1 を阻害</strong>。条件づけ直後 1 時間の阻害で報酬性長期記憶が損なわれ、22 時間後の阻害では損なわれない</td>
+</tr>
+<tr>
+<td>2017</td>
+<td>Takemura SY, et al.</td>
+<td>（上記）</td>
+<td>eLife</td>
+<td><a href="https://doi.org/10.7554/eLife.26975">10.7554/eLife.26975</a></td>
+<td><strong>MB043C × CsChrimson</strong> で PAM-α1 を光駆動し、報酬性記憶の形成・想起時の効果を測定</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>Yamagata N, Imanishi Y, Wu H, Kondo S, Sano H, Tanimoto H</td>
+<td>Nutrient responding peptide hormone CCHamide-2 consolidates appetitive memory</td>
+<td>Front Behav Neurosci</td>
+<td><a href="https://doi.org/10.3389/fnbeh.2022.986064">10.3389/fnbeh.2022.986064</a></td>
+<td><strong>MB299B で PAM-α1 特異的に CCHa2-R をノックダウン</strong>し、長期記憶特異の障害を示した</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>Yamagata N, et al.</td>
+<td>Presynaptic inhibition of dopamine neurons controls optimistic bias</td>
+<td>eLife</td>
+<td><a href="https://doi.org/10.7554/eLife.64907">10.7554/eLife.64907</a></td>
+<td>PAM の前シナプス抑制。言及 11 回（行動の根拠文は未検出）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mbon31-mbon-1a">MBON31 = MBON-α'1a — 行動実験の前例が無い</h3>
+<p>15 本中、行動の根拠がある論文は 0 本。最も近いのは:</p>
+<ul>
+<li>Felsenberg J, Barnstedt O, Cognigni P, Lin S, Waddell S (2017)
+  Re-evaluation of learned information in Drosophila. <em>Nature</em> 544:240–244.
+  <a href="https://doi.org/10.1038/nature21716">10.1038/nature21716</a> — 言及 3 回。
+  記憶の再評価（extinction）の回路。MBON → DAN のフィードバックを扱う論文群の中核。</li>
+<li>Rubin GM, Aso Y (2024) New genetic tools for mushroom body output neurons in Drosophila.
+  <em>eLife</em> <a href="https://doi.org/10.7554/eLife.90523">10.7554/eLife.90523</a>
+  — MBON の新しい系統（MBON31 の系統 SS52050 / SS80896 の出所）。形態と系統の記載。</li>
+</ul>
+<p><strong>この組を進めるなら、読み出しは PAM11 側（報酬性長期記憶）に置く。</strong>
+MBON31 → PAM11 の新生シナプスが PAM-α1 の活動を変えれば、
+Ichinose 2015 の長期記憶課題で差が出ると予想できる。</p>
+<hr />
+<h2 id="4">4. 却下された組の細胞（参考）</h2>
+<h3 id="mbon11-mbon-1pedc-mvp2">MBON11 = MBON-γ1pedc&gt;α/β（= MVP2）— 文献は最も多い</h3>
+<p>107 本。行動の根拠がある論文 5 本。</p>
+<ul>
+<li>Aso Y, et al. (2014) <em>eLife</em> <a href="https://doi.org/10.7554/eLife.04580">10.7554/eLife.04580</a>
+  — MB085C / MB112C / MB262B で操作。言及 66 回。</li>
+<li>Tsao CH, et al. (2018) <em>eLife</em> <a href="https://doi.org/10.7554/eLife.35264">10.7554/eLife.35264</a>
+  — MB112C。GABA 作動性 MBON-γ1pedc&gt;αβ が β'2 の MBON と MBON-α1 を抑制して酵母探索を促す。</li>
+<li>Chouhan NS, Griffith LC, Haynes P, Sehgal A (2021) Availability of food determines the need
+  for sleep in memory consolidation. <em>Nature</em> <a href="https://doi.org/10.1038/s41586-021-03954-w">10.1038/s41586-021-03954-w</a>
+  — MB112C。</li>
+</ul>
+<p>MBON11 は道具も前例も最も充実しているが、接触が別個体で再現せず（4〜12 µm）、
+上流としての出力も γ1 で 95 しかないため候補から外れた。</p>
+<h3 id="mbon33-mbon-23">MBON33 = MBON-γ2γ3</h3>
+<ul>
+<li>Yamada D, Bushey D, Li F, et al. (2023) Hierarchical architecture of dopaminergic circuits
+  enables second-order conditioning in Drosophila. <em>eLife</em>
+  <a href="https://doi.org/10.7554/eLife.79042">10.7554/eLife.79042</a> — SS67221 で SMP108 を光駆動。</li>
+</ul>
+<hr />
+<h2 id="5">5. 陽性対照として使う記憶の競合実験（設計済み）</h2>
+<p>本実験の陽性対照（物理的なシナプス操作ではなく、既知の光遺伝学で同じ読み出しが動くことの確認）。</p>
+<ul>
+<li>Felsenberg J, Barnstedt O, Cognigni P, Lin S, Waddell S (2017)
+  Re-evaluation of learned information in Drosophila. <em>Nature</em> 544:240–244.
+  <a href="https://doi.org/10.1038/nature21716">10.1038/nature21716</a></li>
+<li>Felsenberg J, Jacob PF, Walker T, Barnstedt O, Edmondson-Stait AJ, Pleijzier MW,
+  Otto N, Schlegel P, Sharifi N, Perisse E, Smith CS, Lauritzen JS, Costa M, Jefferis GSXE,
+  Bock DD, Waddell S (2018) Integration of parallel opposing memories underlies memory
+  extinction. <em>Cell</em> 175:709–722. <a href="https://doi.org/10.1016/j.cell.2018.08.021">10.1016/j.cell.2018.08.021</a></li>
+<li>Perisse E, Owald D, Barnstedt O, Talbot CB, Huetteroth W, Waddell S (2016)
+  Aversive learning and appetitive motivation toggle feed-forward inhibition in the
+  Drosophila mushroom body. <em>Neuron</em> 90:1086–1099.
+  <a href="https://doi.org/10.1016/j.neuron.2016.04.034">10.1016/j.neuron.2016.04.034</a></li>
+</ul>
+<p>条件 A（嫌悪 DAN のみ、PI &lt; 0）／条件 B（報酬 DAN のみ、PI &gt; 0）／
+条件 C（両方同時、PI ≈ 0）を、CsChrimson で PAM と PPL1 を駆動して確認する設計。
+読み出しは Preference Index と、移動速度・旋回。</p>
+<hr />
+<h2 id="6">6. 再現方法</h2>
+<pre><code>python lit_search.py PPL105 PPL106 MBON07 PAM11 MBON33 MBON04 MBON11 MBON31 FB4N --max-papers 200
+</code></pre>
+<p>細胞型と論文上の名前・系統名の対応は <code>lit_search.py</code> の <code>TARGETS</code> にある。
+新しい細胞を追加するときは、neuPrint の instance 名
+（例 <code>PPL105(a'2a2)</code> → <code>PPL1-α'2α2</code>）と <code>data/driver_lines.csv</code> の
+Descriptive Cell Type 列から別名を作る。取得した本文は <code>data/literature_cache/</code> に残る。</p>
+</div></body></html>

@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GMR-LexA を候補ペアに照合した結果</title><style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px}
+nav{font-size:.9rem;color:var(--sub);margin-bottom:18px}
+nav a{color:var(--acc);text-decoration:none}nav a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.35;border-bottom:2px solid var(--line);padding-bottom:.4em;margin-top:1.2em}
+h2{font-size:1.25rem;margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.05rem;margin-top:1.6em}
+a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600;white-space:nowrap}
+code{background:var(--code);padding:.15em .4em;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--code);color:var(--fg)}
+ul,ol{padding-left:1.4em}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:20px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--bg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc)}
+.card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+</style></head>
+<body><div class="wrap">
+<nav><a href="index.html">← 報告書の一覧</a> ／ <a href="../index.html">結果一覧</a></nav>
+<h1 id="gmr-lexa">GMR-LexA を候補ペアに照合した結果</h1>
+<p>2026-11-10。再現は <code>python gmr_lexa_match.py</code>。
+一覧は <code>results/gmr_lexa_vfb.csv</code>（VFB の注釈）と <code>results/gmr_lexa_match.csv</code>（論文の共起）。</p>
+<h2 id="0">0. 結論</h2>
+<blockquote>
+<p><strong>【2026-11-10 追記】この報告書の結論は、系統まるごとの GMR-LexA についてのもの。
+その後ヘミドライバー断片まで降りて調べたところ、9 組中 5 組が救えることが分かった。
+→ <code>results/hemidriver_lexa_report.md</code> を先に読むこと。</strong></p>
+</blockquote>
+<p><strong>今ある GMR-LexA では、LexA が無くて落ちた 32 組のどれも救えない。</strong>
+キノコ体の細胞には GMR-LexA の代替が複数見つかったが、それらは既に split-LexA がある細胞ばかりで、
+新しい候補は増えなかった。</p>
+<table>
+<thead>
+<tr>
+<th>問い</th>
+<th>答え</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GMR-LexA は実在するか</td>
+<td><strong>150 系統</strong>を FlyBase / VirtualFlyBrain で確認（約 1,400 系統の一部）</td>
+</tr>
+<tr>
+<td>そのうち標識細胞が分かっているものは</td>
+<td><strong>286 の発現パターン</strong>に注釈あり。型に読み替えられたのは MBON・PAM の一部</td>
+</tr>
+<tr>
+<td>落ちた 32 組の細胞を標識する GMR-LexA はあるか</td>
+<td><strong>0 件</strong>。VFB の注釈にも論文本文にも出てこない</td>
+</tr>
+<tr>
+<td>キノコ体の候補に使えるものはあるか</td>
+<td><strong>ある</strong>（下表）。ただし既存の split-LexA の代替にとどまる</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1">1. 何を照合したか</h2>
+<p>これまでの探索で、<strong>「上流にも下流にも split-GAL4 はあるのに、どちらにも LexA が無いので
+発現系が 2 つにならない」という理由だけで落ちた組が 32 組</strong>あった。
+GMR-LexA（Rubin のエンハンサー断片 LexA、約 1,400 系統）が使えれば、この壁は外れるはずだった。</p>
+<p>照合の手順:</p>
+<ol>
+<li><strong>GMR-LexA が実在する系統名を確定する</strong> — FlyBase の allele 名 <code>Ecol\lexA[GMRxxxxx]</code> を
+   VirtualFlyBrain の solr から取得。<strong>150 系統</strong>（<code>data/gmr_lexa_lines.txt</code>）。</li>
+<li><strong>その系統が何を標識するかを調べる</strong> — VFB の neo4j に、
+   <code>P{GMRxxxxx-GAL4/lexA} expression pattern</code> に <code>part_of</code> でぶら下がる
+   Gen1 MCFO の単一細胞を問い合わせ、その細胞型（FlyBase 解剖学名）を取る。
+   LexA 版は GAL4 版と<strong>同じエンハンサー断片</strong>なので、GAL4 版の注釈も証拠として使える。</li>
+<li><strong>論文本文でも裏を取る</strong> — <code>data/literature_cache/</code> の全文を文単位で走査し、
+   「GMR-LexA が実在する R 系統名」と「細胞型の名前」が同じ文に出る組を拾う。</li>
+</ol>
+<h2 id="2-vfb">2. VFB の注釈で分かったこと</h2>
+<p>286 の発現パターンに 714 件の細胞注釈があり、そのうち hemibrain の型名に読み替えられた 43 件は次のとおり。
+<strong>太字は LexA 版が実在する系統。</strong></p>
+<table>
+<thead>
+<tr>
+<th>型</th>
+<th>標識する GMR 系統（LexA 版があるもの）</th>
+<th>既存の split-LexA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON01</td>
+<td><strong>R14C08, R15B01, R21D02</strong></td>
+<td>SL86047, SL86046</td>
+</tr>
+<tr>
+<td>MBON02</td>
+<td>R21D02（GAL4 のみ注釈）</td>
+<td>—</td>
+</tr>
+<tr>
+<td>MBON03</td>
+<td><strong>R14C08, R15B01, R21D02</strong></td>
+<td>SL86063 経由</td>
+</tr>
+<tr>
+<td><strong>MBON04</strong></td>
+<td><strong>R14C08, R15B01</strong></td>
+<td><strong>SL86063</strong></td>
+</tr>
+<tr>
+<td>MBON05</td>
+<td><strong>R24E12</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>MBON11</td>
+<td><strong>R12G04</strong></td>
+<td>SL86058</td>
+</tr>
+<tr>
+<td>MBON19</td>
+<td>R71D08</td>
+<td>—</td>
+</tr>
+<tr>
+<td>PAM01</td>
+<td><strong>R48B04, R58E02</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>PAM02</td>
+<td><strong>R48B04</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>PAM05</td>
+<td><strong>R14C08, R48B04</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>PAM06</td>
+<td><strong>R14C08, R48B04</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>PAM08</td>
+<td><strong>R48B04</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>PAM10</td>
+<td><strong>R11C07</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>PAM11</strong></td>
+<td><strong>R71C03, R72D01</strong></td>
+<td><strong>SL86065, SL86059, SL86053</strong></td>
+</tr>
+<tr>
+<td>PAM13</td>
+<td><strong>R24E12</strong>, R58E02</td>
+<td>—</td>
+</tr>
+<tr>
+<td>PAM14</td>
+<td><strong>R24E12</strong>, R58E02</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mbon04-r15b01-lexa">MBON04 の代替: R15B01-LexA</h3>
+<p><strong>R15B01-LexA は MBON01・MBON03・MBON04 を標識する。これは SL86063 とまったく同じ組み合わせ</strong>。
+split-LexA が手に入らないときの代替になるが、U の中身が同じなので混同の判定は変わらない。</p>
+<p><strong>R14C08-LexA は使いにくい</strong>。MBON01・MBON03・MBON04 に加えて <strong>PAM05・PAM06 も標識する</strong>。
+PAM05 → MBON04 は 1,513 シナプス、PAM06 → MBON04 は 1,749 シナプスあるので、
+U の中に強い既存結合が入り込む。下流が MBON04 側になる向きでは使えない。</p>
+<h3 id="pam11-r71c03-lexa-r72d01-lexa">PAM11 の代替: R71C03-LexA / R72D01-LexA</h3>
+<p>MBON31 → PAM11 の下流側は既に SL86059 / SL86053（特異性 2）があるので、
+GMR-LexA を使う理由はない。R72D01 は MBON07 とも同じ文献に出てくる（α1 区画）ので、
+<strong>MBON07 と PAM11 の両方を標識する恐れがあり、むしろ避けるべき</strong>。</p>
+<h3 id="2">論文本文での共起は 2 件、どちらも偽陽性</h3>
+<p>全文 365 本を文単位で走査して拾えたのは 2 件だけで、中身を読むと両方とも使えない。</p>
+<table>
+<thead>
+<tr>
+<th>拾った文</th>
+<th>判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「R58E02 と VT999036 の投射が γ4・γ5 で重なり、MBON21 の細胞に対応する」(PMC11611264)</td>
+<td><strong>✕ 標識ではない</strong>。R58E02 は PAM の系統で、MBON21 と同じ区画に<strong>投射が重なる</strong>と言っているだけ</td>
+</tr>
+<tr>
+<td>「R12G04-lexA, pJFRC216-13xLexAop2-… と PPL1-γ1pedc（マゼンタ）」(PMC4273436)</td>
+<td><strong>✕ 図の凡例</strong>。系統名と別の染色が同じ文に並んでいるだけ</td>
+</tr>
+</tbody>
+</table>
+<p>語の共起だけでは「その系統がその細胞を標識する」とは言えない例で、
+<strong>実質的な証拠は VFB の注釈のほうしかない</strong>。</p>
+<h2 id="3-32">3. 落ちた 32 組は救えなかった</h2>
+<p>落ちた 32 組に出てくる細胞型 49 種類について、VFB の注釈は <strong>0 件</strong>、
+論文本文の共起も上の 2 件（どちらも偽陽性）だけで、
+GMR-LexA との結びつきが見つからなかった。</p>
+<p>特に、別個体でも接触が再現し上流もその領域で出力している<strong>上位 9 組</strong>は次のとおりで、
+どれも LexA の当てが無いまま残る。</p>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>接触</th>
+<th>別個体（最小〜最大）</th>
+<th>主領域</th>
+<th>下流のドライバー</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON31 → SMP503</td>
+<td>152 µm</td>
+<td>25〜55 µm</td>
+<td>SMP(R)</td>
+<td>SS32246〈GAL4〉</td>
+</tr>
+<tr>
+<td>VES012 → DNb05</td>
+<td>145 µm</td>
+<td><strong>35〜62 µm</strong></td>
+<td>VES(R)</td>
+<td>SS01051〈GAL4〉</td>
+</tr>
+<tr>
+<td>MBON30 → oviIN</td>
+<td>142 µm</td>
+<td><strong>36〜68 µm</strong></td>
+<td>CRE(R)</td>
+<td>SS65422 / SS65423〈GAL4〉</td>
+</tr>
+<tr>
+<td>MBON21 → FB4X</td>
+<td>133 µm</td>
+<td><strong>36〜63 µm</strong></td>
+<td>CRE(R)</td>
+<td>SS70711〈GAL4〉</td>
+</tr>
+<tr>
+<td>ExR2 → LAL098</td>
+<td>103 µm</td>
+<td><strong>47〜77 µm</strong></td>
+<td>LAL(R)</td>
+<td>SS49882〈GAL4〉</td>
+</tr>
+<tr>
+<td>AVLP478 → DNp06</td>
+<td>95 µm</td>
+<td>28〜39 µm</td>
+<td>AVLP(R)</td>
+<td>SS02256 / SS01047〈GAL4〉</td>
+</tr>
+<tr>
+<td>PLP022 → DNp10</td>
+<td>51 µm</td>
+<td>30〜51 µm</td>
+<td>PLP(R)</td>
+<td>SS01049 / SS01580〈GAL4〉</td>
+</tr>
+<tr>
+<td>PS161 → DNa04</td>
+<td>62 µm</td>
+<td>10〜21 µm</td>
+<td>SPS(R)</td>
+<td>SS02384〈GAL4〉</td>
+</tr>
+<tr>
+<td>DL4_adPN → LHPV6c1</td>
+<td>41 µm</td>
+<td>27〜37 µm</td>
+<td>LH(R)</td>
+<td>LH2220〈GAL4〉</td>
+</tr>
+</tbody>
+</table>
+<p><strong>この 9 組は、別個体での接触だけ見れば全脳の本命 MBON04 → FB4N（10〜29 µm）を上回る。</strong>
+ExR2 → LAL098 の 47〜77 µm、MBON30 → oviIN の 36〜68 µm は、
+キノコ体の第一候補 MBON04 ↔ PPL105（33〜38 µm）より良い。
+<strong>発現系が 1 つ足りないという理由だけで落ちているのは、もったいない。</strong></p>
+<h2 id="4">4. なぜ見つからないのか（結果の読み方）</h2>
+<p><strong>「GMR-LexA が無い」とは言い切れない。「分かっていない」が正しい。</strong></p>
+<table>
+<thead>
+<tr>
+<th>限界</th>
+<th>中身</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>系統の網羅</td>
+<td>確認できた GMR-LexA は 150 系統。実際には<strong>約 1,400 系統</strong>ある</td>
+</tr>
+<tr>
+<td>注釈の網羅</td>
+<td>細胞型の注釈があるのは 286 の発現パターンだけ</td>
+</tr>
+<tr>
+<td>注釈の粒度</td>
+<td>FlyBase の解剖学名は粗い。「dopaminergic PPL1 neuron」止まりで PPL105 と PPL106 を区別しない</td>
+</tr>
+<tr>
+<td>型名の違い</td>
+<td>LAL098・DNb05・SMP503 などは hemibrain のコネクトーム由来の型名で、FlyBase の解剖学には対応する語が無い</td>
+</tr>
+</tbody>
+</table>
+<p>つまり <strong>「hemibrain の型名で呼ばれる細胞は、Gen1 の注釈体系に載っていない」</strong>のが
+見つからない主因であって、断片が標識していない証拠ではない。</p>
+<h2 id="5">5. 次にやるべきこと（有望な順）</h2>
+<h3 id="1-split-gal4-split-lexa">① split-GAL4 → split-LexA の変換（最有力）</h3>
+<p>落ちた 9 組は、<strong>下流に特異性の高い split-GAL4 が既にある</strong>。
+Shuai 2024 は split-GAL4 の DNA 結合ドメインを LexA に差し替える変換を
+<strong>34 系統試して 22 系統成功（65%）</strong>させている。
+変換すべき系統は下の 9 本（上の表の下流ドライバー）:</p>
+<pre><code>SS32246  SS01051  SS65422/SS65423  SS70711  SS49882
+SS02256/SS01047  SS01049/SS01580  SS02384  LH2220
+</code></pre>
+<p>変換は「作れば解ける」種類の作業で、照合で解決する問題ではない。</p>
+<h3 id="2-split-gal4-5">② split-GAL4 のヘミドライバー断片を調べる → <strong>実施済み。5 組が救えた</strong></h3>
+<p><code>python hemidriver_lexa.py</code> / <code>results/hemidriver_lexa_report.md</code>。
+以下は実施前の想定。</p>
+<p>split-GAL4 は 2 つのエンハンサー断片（AD 側と DBD 側）の積で作られている。
+例えば <code>SS49882 = Rxxxxx-p65ADZp ∩ VTxxxxxx-ZpGdbd</code> のような構成。
+<strong>その AD 側か DBD 側の断片に GMR-LexA 版があれば、その断片はその細胞を含む集合を標識する。</strong>
+特異性は split より落ちる（積ではなく片側だけになる）が、U を画像で確定できれば使える。
+Janelia の split-GAL4 の遺伝子型表（Meissner 2024 eLife 98405 の補足表）から
+ヘミドライバーを取り出し、<code>data/gmr_lexa_lines.txt</code> と突き合わせるのが次の一手。</p>
+<h3 id="3-flylight">③ FlyLight の画像で直接確認する</h3>
+<p>150 系統それぞれの発現画像を見て、候補の細胞が入っているかを判定する。
+VFB の各系統ページから FlyLight / Gen1 MCFO / NeuronBridge へのリンクがある。</p>
+<pre><code>http://flweb.janelia.org/cgi-bin/view_flew_imagery.cgi?line=R15B01
+https://gen1mcfo.janelia.org/cgi-bin/view_gen1mcfo_imagery.cgi?line=R15B01
+</code></pre>
+<p>NeuronBridge なら hemibrain の骨格から光学画像を検索できるので、
+<strong>「LAL098 に似た形の細胞を含む Gen1 系統」を逆引きできる</strong>。これが
+hemibrain 型名と Gen1 系統を結ぶ唯一の自動手段になりうる。</p>
+<h2 id="6">6. 使ったデータ</h2>
+<ul>
+<li>GMR-LexA の系統名: VirtualFlyBrain solr
+  <code>https://solr.virtualflybrain.org/solr/ontology/select?q=label:*lexA*GMR*</code>
+  → FlyBase の allele <code>Ecol\lexA[GMRxxxxx]</code> 150 件</li>
+<li>細胞型の注釈: VirtualFlyBrain neo4j <code>https://pdb.virtualflybrain.org/db/data/transaction/commit</code>
+  （Gen1 MCFO の単一細胞 → <code>part_of</code> → 発現パターン → <code>expresses</code> → 系統）</li>
+<li>論文本文: <code>data/literature_cache/</code>（Europe PMC のオープンアクセス全文）</li>
+<li>候補ペア: <code>results/shortlist_final.csv</code>（306 組）</li>
+</ul>
+</div></body></html>

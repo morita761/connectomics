@@ -1,0 +1,47 @@
+########## smp 13:27
+total 1094 neurons, 852 types
+approach_g_output_sites          494453 pairs  312005 flagged  1511.1s
+=== タイプの組: 出力部位→相手（有向）  237882 組、flagged 13277 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_smp\type_pairs_output.csv
+                  n  flagged  baseline_per_um
+     t1       t2    g1    g2  n_cells_1  n_cells_2  n_pairs_contact  n_pairs_connected  contact_total_um  synapses  expected  obs_over_exp  p_poisson  feedforward  memory  flagged
+13277 組を照合 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_smp\driver_matches.csv
+########## lal 14:53
+total 807 neurons, 597 types
+approach_g_output_sites          265322 pairs  162316 flagged  704.2s
+=== タイプの組: 出力部位→相手（有向）  120051 組、flagged 11523 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_lal\type_pairs_output.csv
+                 n  flagged  baseline_per_um
+     t1     t2    g1    g2  n_cells_1  n_cells_2  n_pairs_contact  n_pairs_connected  contact_total_um  synapses  expected  obs_over_exp  p_poisson  feedforward  memory  flagged
+11523 組を照合 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_lal\driver_matches.csv
+########## wed 15:32
+total 378 neurons, 284 types
+approach_g_output_sites           51418 pairs  31519 flagged  125.7s
+=== タイプの組: 出力部位→相手（有向）  23141 組、flagged 1790 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_wed\type_pairs_output.csv
+                n  flagged  baseline_per_um
+         t1       t2    g1    g2  n_cells_1  n_cells_2  n_pairs_contact  n_pairs_connected  contact_total_um  synapses  expected  obs_over_exp  p_poisson  feedforward  memory  flagged
+1790 組を照合 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_wed\driver_matches.csv
+########## ps 15:44
+total 548 neurons, 438 types
+approach_g_output_sites          127102 pairs  75608 flagged  305.9s
+=== タイプの組: 出力部位→相手（有向）  62239 組、flagged 5177 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_ps\type_pairs_output.csv
+                 n  flagged  baseline_per_um
+    t1     t2    g1    g2  n_cells_1  n_cells_2  n_pairs_contact  n_pairs_connected  contact_total_um  synapses  expected  obs_over_exp  p_poisson  feedforward  memory  flagged
+5177 組を照合 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_ps\driver_matches.csv
+########## cre 16:07
+total 717 neurons, 580 types
+Traceback (most recent call last):
+ConnectionResetError: [WinError 10054] 既存の接続はリモート ホストに強制的に切断されました。
+Traceback (most recent call last):
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, '既存の接続はリモート ホストに強制的に切断されました。', None, 10054, None))
+Traceback (most recent call last):
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, '既存の接続はリモート ホストに強制的に切断されました。', None, 10054, None))
+########## vlp 16:55
+total 875 neurons, 698 types
+Traceback (most recent call last):
+ConnectionAbortedError: [WinError 10053] 確立された接続がホスト コンピューターのソウトウェアによって中止されました。
+Traceback (most recent call last):
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionAbortedError(10053, '確立された接続がホスト コンピューターのソウトウェアによって中止されました。', None, 10053, None))
+Traceback (most recent call last):
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionAbortedError(10053, '確立された接続がホスト コンピューターのソウトウェアによって中止されました。', None, 10053, None))
+########## done 17:37

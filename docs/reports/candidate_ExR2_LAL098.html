@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>候補の検討: ExR2 ↔ LAL098</title><style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px}
+nav{font-size:.9rem;color:var(--sub);margin-bottom:18px}
+nav a{color:var(--acc);text-decoration:none}nav a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.35;border-bottom:2px solid var(--line);padding-bottom:.4em;margin-top:1.2em}
+h2{font-size:1.25rem;margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.05rem;margin-top:1.6em}
+a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600;white-space:nowrap}
+code{background:var(--code);padding:.15em .4em;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--code);color:var(--fg)}
+ul,ol{padding-left:1.4em}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:20px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--bg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc)}
+.card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+</style></head>
+<body><div class="wrap">
+<nav><a href="index.html">← 報告書の一覧</a> ／ <a href="../index.html">結果一覧</a></nav>
+<h1 id="exr2-lal098">候補の検討: ExR2 ↔ LAL098</h1>
+<p>2026-11-10。ヘミドライバーの照合で救えた 5 組のうち、別個体での接触が最も良かった組を詰めた。</p>
+<ul>
+<li><strong>ExR2</strong> = PPM3-EB-DAN/ring（楕円体に投射するドーパミンニューロン、左右 2 個ずつ）</li>
+<li><strong>LAL098</strong> = 側方付属葉のニューロン（<strong>GABA 作動性</strong>、左右 1 個ずつ）</li>
+<li><strong>接触</strong> hemibrain で 103 µm、<strong>別個体（male-CNS）で 47 / 77 µm</strong> — この調査全体で最高</li>
+<li><strong>シナプス</strong> 3 個体・両方向すべて 0</li>
+</ul>
+<h2 id="0">0. 結論を先に</h2>
+<p><strong>第一候補には推さない。膜の密着が、結合している対照に明らかに届かない。</strong></p>
+<p>ただし<strong>向きは逆（LAL098 → ExR2）のほうが良い</strong>ことが分かった。
+この向きなら上流が接触領域で 76% 出力し、下流に受容体もある。
+捨てるには惜しいので、条件付きの第 3 候補として残す。</p>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3 個体・両方向でシナプス 0</td>
+<td>◎</td>
+</tr>
+<tr>
+<td>別個体での接触の再現</td>
+<td><strong>◎ 47〜77 µm（全候補中で最高）</strong></td>
+</tr>
+<tr>
+<td>膜の密着（EM）</td>
+<td><strong>✕ 対照の 1/6〜1/10</strong></td>
+</tr>
+<tr>
+<td>上流がその領域で出力する</td>
+<td>◎ LAL098 → ExR2 の向きなら 76%／✕ 逆向きは 14%</td>
+</tr>
+<tr>
+<td>発現系が 2 つ</td>
+<td>△ ヘミドライバー断片（VT045661-LexA）が要る。中身は未確定</td>
+</tr>
+<tr>
+<td>混同（分かる範囲）</td>
+<td>◎ すべて 0</td>
+</tr>
+<tr>
+<td>行動の読み出し</td>
+<td>△ ExR2 は覚醒・移動で前例あり／LAL098 は文献なし</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-em">1. EM で測った膜の密着 — ここで落ちる</h2>
+<p>hemibrain のセグメンテーション（8 nm 等方）を 320×320×160 voxel 切り出して数えた。
+<strong>同じ ExR2 が 44 シナプスを作っている LAL184 を対照に置いた。</strong></p>
+<table>
+<thead>
+<tr>
+<th>部位</th>
+<th>最接近の隙間</th>
+<th>直接隣接するボクセル</th>
+<th>間に何も無い表面点</th>
+<th>膜の頂点 &lt;50 nm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ExR2 → LAL098（0 シナプス）</strong></td>
+<td><strong>45 nm</strong></td>
+<td>774 / 1,348</td>
+<td>65% / 59%</td>
+<td><strong>10</strong></td>
+</tr>
+<tr>
+<td><strong>LAL098 → ExR2（0 シナプス）</strong></td>
+<td><strong>45 nm</strong></td>
+<td>3,692 / 279</td>
+<td>61% / 30%</td>
+<td><strong>10</strong></td>
+</tr>
+<tr>
+<td><strong>ExR2 → LAL184（44 シナプスの対照）</strong></td>
+<td><strong>0 nm</strong></td>
+<td><strong>8,153 / 7,592</strong></td>
+<td><strong>72% / 83%</strong></td>
+<td><strong>81</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>対照は最接近部で隙間 0 nm（直接隣接）、密着ボクセルは 6〜10 倍、
+50 nm 以内の膜の頂点は 8 倍。</strong> 骨格ベースの「接触 103 µm」は、
+実際の膜の近さを過大評価していた。</p>
+<p>比較のために、これまでの候補を並べる。</p>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>直接隣接</th>
+<th>間に何も無い</th>
+<th>判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON31 → PAM11</td>
+<td>7,375</td>
+<td>77%</td>
+<td>◎ 採用</td>
+</tr>
+<tr>
+<td>MBON04 ↔ PPL105</td>
+<td>6,140 / 6,180</td>
+<td>70% / 68%</td>
+<td>◎ 採用</td>
+</tr>
+<tr>
+<td>MBON04 → FB4N</td>
+<td>2,080</td>
+<td>56%</td>
+<td>◎ 採用（全脳の本命）</td>
+</tr>
+<tr>
+<td><strong>LAL098 → ExR2</strong></td>
+<td><strong>3,692</strong></td>
+<td><strong>61%</strong></td>
+<td><strong>△ 中間</strong></td>
+</tr>
+<tr>
+<td><strong>ExR2 → LAL098</strong></td>
+<td><strong>1,348</strong></td>
+<td><strong>59%</strong></td>
+<td><strong>△ 中間</strong></td>
+</tr>
+<tr>
+<td>MBON02 → PPL106</td>
+<td>289</td>
+<td>18%</td>
+<td>✕ 却下</td>
+</tr>
+<tr>
+<td>MBON01 → PPL104</td>
+<td>0</td>
+<td>0%</td>
+<td>✕ 却下</td>
+</tr>
+</tbody>
+</table>
+<p>却下した 2 組よりは良いが、採用した組には届かない。<strong>中間</strong>である。</p>
+<h2 id="2">2. 向きは逆のほうが良い</h2>
+<p>当初は ExR2 → LAL098 の向きで拾われたが、調べると<strong>逆向きのほうが筋が通る</strong>。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ExR2 → LAL098</th>
+<th><strong>LAL098 → ExR2</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上流の出力が接触領域にある割合</td>
+<td><strong>14%</strong>（144 部位。主な出力は EB 65%）</td>
+<td><strong>76%</strong>（695/913 部位が LAL(R)）</td>
+</tr>
+<tr>
+<td>下流の入力が接触領域にある割合</td>
+<td>77%（2,353 部位）</td>
+<td>LAL(R) に 804 部位</td>
+</tr>
+<tr>
+<td>伝達物質</td>
+<td>ドーパミン → LAL098</td>
+<td><strong>GABA → ExR2</strong></td>
+</tr>
+<tr>
+<td>下流が既にその伝達物質を受けているか</td>
+<td><strong>✕ LAL098 の入力のうちドーパミンは 1.5%</strong></td>
+<td><strong>◎ ExR2 の入力のうち GABA は 19.7%（約 2,140 シナプス）</strong></td>
+</tr>
+<tr>
+<td>膜の密着</td>
+<td>1,348 / 59%</td>
+<td><strong>3,692 / 61%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>LAL098 → ExR2 なら、上流は確かにそこで出力していて、下流には GABA 受容体がある。</strong>
+ExR2 の GABA 入力は ER4m (700)、ER4d などの楕円体リングニューロンから来ている。</p>
+<p>ROI の内訳（hemibrain）:</p>
+<pre><code>LAL098_R  出力 LAL(R) 695（全 913 の 76%）, WED(R) 182, VMNP 36
+LAL098_R  入力 LAL(R) 2,353, WED(R) 359, VMNP 353
+ExR2_R    出力 EB 652, LX(R) 342, BU(R) 198   ← 主戦場は楕円体
+ExR2_R    入力 EB 1,515, LAL(R) 804
+接触の場所  LAL(R) 100%
+</code></pre>
+<h3 id="hemibrain">細胞ごとの接触（hemibrain）</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>接触</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ExR2 (1198330286) ↔ LAL098_R</td>
+<td>62.0 µm（逆向き 52.0 µm）</td>
+</tr>
+<tr>
+<td>ExR2 (1449247522) ↔ LAL098_R</td>
+<td>41.1 µm（逆向き 47.6 µm）</td>
+</tr>
+<tr>
+<td>ExR2 (787762461, 対側) ↔ LAL098_R</td>
+<td>1.2 µm</td>
+</tr>
+</tbody>
+</table>
+<p>同側の ExR2 2 個がどちらも 40〜60 µm 接している。<strong>同一個体で 2 回再現</strong>している。</p>
+<h2 id="3">3. 特異性の評価 — ここは弱い</h2>
+<p>「機械は揃っているのに、この相手だけ結合しない」と言えるかを調べた。<strong>言い切れない。</strong></p>
+<h3 id="exr2-lal">上流側: ExR2 は LAL のニューロンと結合できる</h3>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>接触</th>
+<th>シナプス</th>
+<th>1 µm あたり</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ExR2 → LAL184</td>
+<td>948 µm</td>
+<td>44</td>
+<td>0.046</td>
+</tr>
+<tr>
+<td>ExR2 → LAL202</td>
+<td>399 µm</td>
+<td>6</td>
+<td>0.015</td>
+</tr>
+<tr>
+<td>ExR2 → LAL085</td>
+<td>1001 µm</td>
+<td>3</td>
+<td>0.003</td>
+</tr>
+<tr>
+<td><strong>ExR2 → LAL098</strong></td>
+<td><strong>103 µm</strong></td>
+<td><strong>0</strong></td>
+<td><strong>0.000</strong></td>
+</tr>
+</tbody>
+</table>
+<p>ExR2 は LAL 全般に 152 シナプス / 41 タイプ（hemibrain）、288 シナプス / 58 タイプ（male-CNS）を出している。
+<strong>「ExR2 が LAL の細胞と結合できない」わけではない。</strong></p>
+<p>ただし<strong>結合の密度そのものが低い</strong>（最大でも 0.046/µm）。
+103 µm の接触に対して ExR2 自身の実績から期待されるのは <strong>0.3〜4.7 シナプス</strong>であって、
+解析の基準値 6.8 より小さい。<strong>0 であること自体が、それほど珍しくない。</strong>
+MBON04 → PPL105（92.6 µm で比較相手は 0.18/µm）とは事情が違う。</p>
+<h3 id="lal098-exr">下流側: LAL098 は ExR からほとんど入力を受けていない</h3>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>hemibrain</th>
+<th>male-CNS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ExR8 → LAL098</td>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ExR6 → LAL098</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>LAL098 → ExR6</td>
+<td>5</td>
+<td>17</td>
+</tr>
+<tr>
+<td><strong>ExR2 ↔ LAL098</strong></td>
+<td><strong>0 / 0</strong></td>
+<td><strong>0 / 0</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>「同じ場所の同じ種類の細胞は結合している」という対照が立たない。</strong>
+LAL098 と ExR 群の結合は全体に 0〜17 シナプスしかない。
+MBON04 ↔ PPL105 で PPL107 が 739/450 シナプスという強い対照になったのとは対照的。</p>
+<p>LAL098 の入力の内訳（male-CNS、計 6,599）: アセチルコリン 62.3% / グルタミン酸 17.2% /
+GABA 15.7% / <strong>ドーパミン 1.5%</strong>。主な入力は LAL124 (775, グルタミン酸)、LAL081 (437)、LAL170 (366)。</p>
+<h2 id="4">4. ドライバー</h2>
+<table>
+<thead>
+<tr>
+<th>役割</th>
+<th>系統</th>
+<th>発現系</th>
+<th>標識</th>
+<th>特異性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ExR2 側</td>
+<td><strong>SS58826</strong> / SS59679</td>
+<td>split-GAL4</td>
+<td>ExR2</td>
+<td>2（理想）</td>
+</tr>
+<tr>
+<td>LAL098 側</td>
+<td>SS49882</td>
+<td>split-GAL4</td>
+<td>LAL098 + VES019</td>
+<td>2 / 1</td>
+</tr>
+<tr>
+<td>LAL098 側（LexA 化）</td>
+<td><strong>VT045661-LexA</strong></td>
+<td>LexA</td>
+<td><strong>未確定</strong>（SS49882 の DBD 側断片）</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><code>SS49882 = VT045661-GAL4.DBD ∩ VT039475-p65.AD</code> で、
+<strong>DBD 側の VT045661 に LexA 版（<code>Ecol\lexA[VT045661]</code>）がある</strong>。
+断片だけを使うと標識細胞は増えるが、SS49882 が LAL098 を標識している以上、
+VT045661 も LAL098 を含む。</p>
+<h3 id="u-d-0">混同（U × D）— 分かる範囲ではすべて 0</h3>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>hemibrain</th>
+<th>male-CNS</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ExR2 ↔ LAL098</td>
+<td>0 / 0</td>
+<td>0 / 0</td>
+<td>目標</td>
+</tr>
+<tr>
+<td><strong>ExR2 ↔ VES019</strong></td>
+<td><strong>0 / 0</strong></td>
+<td><strong>0 / 0</strong></td>
+<td>SS49882 が VES019 も標識するため</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ただし VT045661 が他に何を標識するかは未確定。</strong> VFB に細胞型の注釈が無い。
+FlyLight の画像で数え上げる必要がある:
+<code>http://flweb.janelia.org/cgi-bin/view_flew_imagery.cgi?line=VT045661</code></p>
+<h2 id="5">5. 読み出し</h2>
+<ul>
+<li><strong>ExR2</strong> = PPM3-EB ドーパミンニューロン。<strong>覚醒・移動活性</strong>に関わる前例がある
+  （PPM3 の刺激で移動活性が上がる、R2 リングニューロンの Dop1R1 がエタノール誘発性の
+  過活動に必要、など）。概日リズムのピークやエタノール曝露に伴う覚醒を促すとされる。
+  ただし <strong>ExR2 単独を狙った行動実験は見つからなかった</strong>。</li>
+<li><strong>LAL098 は文献が無い。</strong> 側方付属葉は中心複合体から胸部の運動中枢へ信号を中継する領域で、
+  操舵・移動に関わるとされるが、LAL098 個別の報告は無い。</li>
+<li>読み出しを置くなら <strong>ExR2 側の覚醒・移動活性</strong>（活動量、睡眠、旋回）になる。
+  LAL098 → ExR2 の向きで GABA 入力が 1 本増えると、ExR2 の活動が下がる方向に働くはず。</li>
+</ul>
+<p><strong>キノコ体の候補（MBON04 ↔ PPL105）と比べると、読み出しの設計は明らかに苦しい。</strong></p>
+<h2 id="6-3d-em">6. 3D と EM</h2>
+<table>
+<thead>
+<tr>
+<th>中身</th>
+<th>場所</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>骨格（接触点が赤・回転できる）</td>
+<td><code>results/zero_3d/hemibrain_ExR2_LAL098.html</code></td>
+</tr>
+<tr>
+<td>対照 ExR2 → LAL184 の骨格</td>
+<td><code>results/zero_3d/hemibrain_ExR2_LAL184.html</code></td>
+</tr>
+<tr>
+<td>メッシュと EM 断面の neuroglancer リンク</td>
+<td><code>results/em_links_ExR2_LAL098.md</code>（対照を含む 3 本）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7">7. ほかの候補との比較</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ExR2 ↔ LAL098</th>
+<th>MBON04 ↔ PPL105</th>
+<th>MBON04 → FB4N</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>接触（hemibrain）</td>
+<td>103 µm</td>
+<td>93 µm</td>
+<td>109 µm</td>
+</tr>
+<tr>
+<td><strong>別個体での接触</strong></td>
+<td><strong>47〜77 µm</strong></td>
+<td>33〜38 µm</td>
+<td>10〜29 µm</td>
+</tr>
+<tr>
+<td>膜の直接隣接</td>
+<td><strong>3,692 / 61%</strong></td>
+<td>6,140 / 70%</td>
+<td>2,080 / 56%</td>
+</tr>
+<tr>
+<td>対照（実シナプス）との比</td>
+<td><strong>✕ 1/2〜1/10</strong></td>
+<td>◎ 同等</td>
+<td>◎ 同等</td>
+</tr>
+<tr>
+<td>上流の出力が接触領域にある割合</td>
+<td>76%（逆向き）</td>
+<td>53%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>結合が無いことの意外さ</td>
+<td>△ 期待 0.3〜4.7</td>
+<td>◎ 期待 2.8〜6.5、比較相手は 0.18/µm</td>
+<td>◎ 比較相手は 0.18/µm</td>
+</tr>
+<tr>
+<td>同じ群の細胞が対照になる</td>
+<td>✕ ExR→LAL098 は 0〜17</td>
+<td>◎ PPL107 が 739/450</td>
+<td>◎ MBON26 が 24</td>
+</tr>
+<tr>
+<td>ドライバー</td>
+<td>△ 断片 LexA、中身未確定</td>
+<td>◎ SL86063 + SS48817</td>
+<td>◎ SL86063 + SS66004</td>
+</tr>
+<tr>
+<td>行動の読み出し</td>
+<td>△ ExR2 の覚醒・移動</td>
+<td>◎ 学習課題がそのまま</td>
+<td>△ 文献なし</td>
+</tr>
+</tbody>
+</table>
+<p><strong>別個体での接触だけが突出していて、他はすべて劣る。</strong>
+「接触が再現する」は必要条件であって十分条件ではない、という例になった。</p>
+<h2 id="8">8. それでも残す理由と、次にやること</h2>
+<ol>
+<li><strong>LAL098 → ExR2 の向きは、上流の出力（76%）と下流の受容体（GABA 19.7%）がそろっている。</strong>
+   この 2 つは MBON04 ↔ PPL105 と同水準。</li>
+<li>膜の密着は中間値で、却下した組（289 voxel / 18%）よりは明らかに良い。
+   測定点を増やせば評価が変わる可能性がある（今は 1 組あたり 2 点）。</li>
+<li>VT045661 の標識細胞を確定すれば、混同の判定ができる。</li>
+</ol>
+<p><strong>次の一手</strong>は、救えた残り 4 組（MBON30 → oviIN、MBON21 → FB4X、AVLP478 → DNp06、
+DL4_adPN → LHPV6c1）を同じ EM の測定にかけること。
+<strong>膜の密着で足切りすれば、接触の長さに惑わされずに順位がつく。</strong>
+MBON30 → oviIN は接触 142 µm・別個体 36〜68 µm で、上流 MBON30 のドライバー SS76094 は特異性 2。</p>
+<h2 id="_1">使ったデータ</h2>
+<ul>
+<li>hemibrain:v1.2.1 / FlyWire 783 / male-cns:v1.0</li>
+<li>ExR2: bodyId 1198330286, 1449247522 (R), 787762461, 1136865339 (L) — hemibrain
+  / 38706, 515933 (R), 18156, 517512 (L) — male-CNS</li>
+<li>LAL098: bodyId 1728942250 (R) — hemibrain / 558854 (R), 519818 (L) — male-CNS</li>
+<li>LAL184（対照）: bodyId 1313594496 (R) — hemibrain</li>
+<li>EM の測定点: voxel (16844, 21702, 28650) ほか — hemibrain v1.2 segmentation</li>
+</ul>
+</div></body></html>

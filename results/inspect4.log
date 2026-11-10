@@ -1,0 +1,42 @@
+########## smp 21:57
+       LHCENT3 → CRE045       接触   111.1 µm  syn    0 / 期待    5.7 | 接触: SMP(R) 73%, CRE(R) 18%, SIP(R) 10% | 主領域で 上流出力 580 / 下流入力 760
+        MBON04 → SIP067       接触    88.1 µm  syn    0 / 期待    5.6 | 接触: SIP(R) 86%, SMP(R) 12%, SLP(R) 2%, other 0% | 主領域で 上流出力 538 / 下流入力 1013
+       LHAV2o1 → SLP011       接触   124.1 µm  syn    0 / 期待    5.5 | 接触: SLP(R) 96%, LH(R) 3%, SCL(R) 1% | 主領域で 上流出力 559 / 下流入力 1255
+     LHAV3a1_c → SLP458       接触   120.2 µm  syn    0 / 期待    5.3 | 接触: SLP(R) 100% | 主領域で 上流出力 625 / 下流入力 946
+        MBON33 → CRE102       接触    62.7 µm  syn    0 / 期待    5.1 | 接触: SMP(R) 54%, CRE(R) 44%, SIP(R) 2% | 主領域で 上流出力 189 / 下流入力 1927
+        MBON26 → SMP049       接触    80.0 µm  syn    0 / 期待    5.1 | 接触: CRE(R) 78%, SMP(R) 22% | 主領域で 上流出力 424 / 下流入力 421
+        MBON26 → SIP069       接触    79.1 µm  syn    0 / 期待    5.1 | 接触: SMP(R) 52%, CRE(R) 48% | 主領域で 上流出力 106 / 下流入力 240
+        SMP085 → DNp32        接触   104.5 µm  syn    0 / 期待    5.0 | 接触: SIP(R) 53%, SMP(R) 45%, SCL(R) 1%, other 1% | 主領域で 上流出力 48 / 下流入力 728
+        MBON32 → SMP054       接触    78.1 µm  syn    0 / 期待    5.0 | 接触: SMP(R) 100% | 主領域で 上流出力 135 / 下流入力 2257
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_smp\inspect_output.csv
+########## lal 22:00
+          FB1C → LAL048       接触    85.3 µm  syn    0 / 期待    5.6 | 接触: LAL(R) 75%, WED(R) 25% | 主領域で 上流出力 22 / 下流入力 538
+        CRE004 → DNa02        接触    45.2 µm  syn    0 / 期待    5.4 | 接触: VES(R) 53%, LAL(R) 47% | 主領域で 上流出力 57 / 下流入力 3247
+        LAL163 → DNa01        接触    53.4 µm  syn    0 / 期待    5.4 | 接触: VES(R) 48%, LAL(R) 41%, EPA(R) 11% | 主領域で 上流出力 47 / 下流入力 701
+        MBON35 → DNa02        接触    44.9 µm  syn    0 / 期待    5.4 | 接触: LAL(R) 97%, VES(R) 3% | 主領域で 上流出力 941 / 下流入力 4947
+        LAL142 → DNb01        接触    52.4 µm  syn    0 / 期待    5.3 | 接触: LAL(R) 100% | 主領域で 上流出力 741 / 下流入力 1272
+        VES064 → DNp17        接触    43.6 µm  syn    0 / 期待    5.2 | 接触: VES(R) 96%, LAL(R) 2%, WED(R) 2% | 主領域で 上流出力 515 / 下流入力 647
+        VES070 → DNa01        接触    43.6 µm  syn    0 / 期待    5.2 | 接触: LAL(R) 64%, VES(R) 36% | 主領域で 上流出力 445 / 下流入力 1096
+        LAL021 → DNp17        接触    50.4 µm  syn    0 / 期待    5.1 | 接触: SPS(R) 57%, VES(R) 36%, LAL(R) 7% | 主領域で 上流出力 21 / 下流入力 269
+         PS214 → DNp17        接触    42.4 µm  syn    0 / 期待    5.1 | 接触: VES(R) 79%, SPS(R) 17%, IPS(R) 4% | 主領域で 上流出力 248 / 下流入力 647
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_lal\inspect_output.csv
+########## wed 22:03
+        VES012 → DNb05        接触   144.7 µm  syn    0 / 期待   20.2 | 接触: VES(R) 39%, SAD 35%, SPS(R) 9%, WED(R) 8% | 主領域で 上流出力 221 / 下流入力 909
+        LAL142 → DNa03        接触   111.9 µm  syn    0 / 期待   15.6 | 接触: LAL(R) 100% | 主領域で 上流出力 741 / 下流入力 11219
+        VES025 → DNb05        接触    62.2 µm  syn    0 / 期待    8.7 | 接触: SAD 51%, VES(R) 41%, GNG 6%, WED(R) 3% | 主領域で 上流出力 53 / 下流入力 735
+        VES030 → DNb05        接触    54.8 µm  syn    0 / 期待    7.6 | 接触: VES(R) 38%, SAD 37%, AL(R) 10%, GNG 6% | 主領域で 上流出力 211 / 下流入力 909
+        LAL142 → DNa02        接触    44.1 µm  syn    0 / 期待    6.1 | 接触: LAL(R) 100% | 主領域で 上流出力 741 / 下流入力 4947
+        CRE074 → DNb05        接触    36.9 µm  syn    0 / 期待    5.2 | 接触: VES(R) 53%, SAD 26%, PLP(R) 8%, SPS(R) 7% | 主領域で 上流出力 34 / 下流入力 909
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_wed\inspect_output.csv
+########## ps 22:03
+         PS127 → DNp17        接触    47.9 µm  syn    0 / 期待    5.6 | 接触: VES(R) 67%, SPS(R) 33% | 主領域で 上流出力 47 / 下流入力 647
+         PS126 → DNa04        接触    47.0 µm  syn    0 / 期待    5.5 | 接触: SPS(R) 34%, IPS(R) 20%, EPA(R) 13%, PLP(R) 13% | 主領域で 上流出力 95 / 下流入力 3946
+        LAL099 → AOTU049      接触    86.0 µm  syn    0 / 期待    5.5 | 接触: SPS(R) 46%, VES(R) 41%, PLP(R) 11%, EPA(R) 2% | 主領域で 上流出力 137 / 下流入力 416
+        VES001 → DNp10        接触    46.1 µm  syn    0 / 期待    5.4 | 接触: ICL(R) 65%, SPS(R) 33%, IB 2% | 主領域で 上流出力 136 / 下流入力 1332
+         PS010 → DNp17        接触    44.8 µm  syn    0 / 期待    5.3 | 接触: LAL(R) 28%, VES(R) 26%, EPA(R) 25%, PLP(R) 21% | 主領域で 上流出力 111 / 下流入力 58
+         PS137 → DNb03        接触    43.8 µm  syn    0 / 期待    5.2 | 接触: GNG 74%, IPS(R) 26% | 主領域で 上流出力 208 / 下流入力 397
+        VES064 → DNp17        接触    43.6 µm  syn    0 / 期待    5.1 | 接触: VES(R) 96%, LAL(R) 2%, WED(R) 2% | 主領域で 上流出力 515 / 下流入力 647
+         PS106 → DNp49        接触    43.5 µm  syn    0 / 期待    5.1 | 接触: SPS(R) 69%, ICL(R) 31% | 主領域で 上流出力 409 / 下流入力 664
+        LAL018 → PS140        接触    78.3 µm  syn    0 / 期待    5.0 | 接触: SPS(R) 77%, VES(R) 16%, IPS(R) 7% | 主領域で 上流出力 316 / 下流入力 819
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_ps\inspect_output.csv
+########## done 22:05

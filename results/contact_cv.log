@@ -1,0 +1,15 @@
+########## cre 23:08
+MBON01 → SMP053 [male-cns:v1.0 R] 接触 26.9 µm（1 ペア）
+MBON32 → LHCENT5 [male-cns:v1.0 L] 接触 47.7 µm（1 ペア）
+MBON32 → LHCENT5 [male-cns:v1.0 R] 接触 37.1 µm（1 ペア）
+MBON27 → ATL017 [male-cns:v1.0 L] 接触 12.6 µm（1 ペア）
+MBON27 → ATL017 [male-cns:v1.0 R] 接触 29.1 µm（1 ペア）
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_cre\cross_male_cns_v1_0_contact.csv
+########## vlp 23:24
+PLP130 → DNp27 [male-cns:v1.0 R] 接触 23.7 µm（1 ペア）
+LT62 → PVLP094 [male-cns:v1.0 L] 接触 14.8 µm（1 ペア）
+LT62 → PVLP094 [male-cns:v1.0 R] 接触 3.4 µm（1 ペア）
+LT83 → DNp06 [male-cns:v1.0 L] 接触 15.9 µm（1 ペア）
+LT83 → DNp06 [male-cns:v1.0 R] 接触 9.5 µm（1 ペア）
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_vlp\cross_male_cns_v1_0_contact.csv
+########## done 23:31

@@ -1,0 +1,387 @@
+===== mb_all
+    VP1m+_lvPN → KCg-t        元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     VP2+_adPN → KCg-s2       元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     DL2v_adPN → OA-VUMa2     元: 0/13（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+    VP1m+_lvPN → KCg-s4       元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+    VP1m+_lvPN → KCa'b'-ap1   元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     VP2+_adPN → KCab-p       元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_l2PNm16 → LHCENT8      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 1/0
+        PPL201 → MBON04       元: 0/1（順/逆） | male-cns:v1.0: R 0/1, L 0/3
+    VP1m+_lvPN → PPL202       元: 0/9（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     DA4m_adPN → KCg-t        元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       PAM15_b → MBON04       元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+         PAM13 → MBON12       元: 0/7（順/逆） | male-cns:v1.0: R 2/3, L 1/3
+     VP2+_adPN → KCa'b'-ap1   元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+    VP1m+_lvPN → LHPV6c1      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+         PAM07 → MBON01       元: 0/0（順/逆） | male-cns:v1.0: R 7/4, L 0/1
+       DM1_lPN → LHPV10b1     元: 0/0（順/逆） | male-cns:v1.0: R 0/1, L 2/0
+ VP1m+VP5_ilPN → KCg-s4       元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+    VP1m+_lvPN → KCab-p       元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       DM5_lPN → LHCENT2      元: 0/9（順/逆） | male-cns:v1.0: R 0/2, L 7/6
+       DM5_lPN → LHPD5c1      元: 0/18（順/逆） | male-cns:v1.0: R 0/17, L 1/14
+      DC2_adPN → LHPD5c1      元: 0/21（順/逆） | male-cns:v1.0: R 1/4, L 3/10
+       VA4_lPN → LHMB1        元: 0/8（順/逆） | male-cns:v1.0: R 20/13, L 1/9
+       PAM15_b → MBON09       元: 0/54（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+        PPL101 → MBON27       元: 0/2（順/逆） | male-cns:v1.0: R 0/1, L 0/0
+     DA4m_adPN → LHPV6g1      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 1/0
+     VP2+_adPN → KCg-s1       元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+    VP1m+_lvPN → LHCENT8      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     VC3m_lvPN → LHPV4j2      元: 0/5（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+    VP1m+_lvPN → KCg-m        元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+    VP1m+_lvPN → LHPV8d1      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       VA4_lPN → LHPD5c1      元: 0/8（順/逆） | male-cns:v1.0: R 5/9, L 3/13
+    VP1m+_lvPN → LHPV6g1      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+      DC3_adPN → LHCENT2      元: 0/2（順/逆） | male-cns:v1.0: R 9/5, L 2/2
+      VP2_adPN → KCg-s4       元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L 2/0
+VP1d+VP4_l2PN1 → KCg-t        元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+ VP1m+VP5_ilPN → LHPD5a1      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+      VL1_ilPN → LHAV3e2      元: 0/0（順/逆） | male-cns:v1.0: R 2/0, L 0/0
+    VP1m+_lvPN → APL          元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+        PPL106 → MBON24       元: 0/7（順/逆） | male-cns:v1.0: R 0/2, L 0/1
+       PAM06_b → MBON11       元: 0/4（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       DM2_lPN → LHMB1        元: 0/2（順/逆） | male-cns:v1.0: R 5/4, L 1/2
+        KCab-p → MBON13       元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+ VP1m+VP5_ilPN → LHPV2a1_e    元: 0/7（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       DM2_lPN → LHCENT4      元: 0/1（順/逆） | male-cns:v1.0: R 0/1, L 6/5
+     DL2d_adPN → KCg-m        元: 0/1（順/逆） | male-cns:v1.0: R 1903/58, L 2138/65
+       DA2_lPN → LHAV3e7      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     DA4m_adPN → LHPV9b1      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+     VP2+_adPN → KCg-s3       元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     DA4l_adPN → LHPD5c1      元: 0/19（順/逆） | male-cns:v1.0: R 2/15, L 1/11
+VP1d+VP4_l2PN1 → LHPV10b1     元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+    VP1m+_lvPN → LHPV3c1      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+      DL4_adPN → LHAV3f1      元: 0/18（順/逆） | male-cns:v1.0: R 4/23, L 2/22
+VP1d+VP4_l2PN1 → LHPV2a1_e    元: 0/6（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+      DL4_adPN → OA-VUMa2     元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     DA4m_adPN → LHPV10b1     元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+    VP1m+_lvPN → LHPD5d1      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+      VL1_ilPN → LHCENT8      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+      DM3_adPN → LHCENT8      元: 0/2（順/逆） | male-cns:v1.0: R 2/4, L 2/7
+         PAM05 → MBON30       元: 0/0（順/逆） | male-cns:v1.0: R 1/0, L 1/0
+    KCa'b'-ap1 → MBON22       元: 0/0（順/逆） | male-cns:v1.0: R 13/1, L 9/3
+      DC3_adPN → KCg-t        元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+      OA-VUMa2 → LHPV3c1      元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       PAM08_b → MBON06       元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       DM1_lPN → KCg-t        元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     DA4l_adPN → LHPV4j2      元: 0/0（順/逆） | male-cns:v1.0: R 1/0, L 0/0
+       PAM15_a → MBON02       元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     VP1m_l2PN → KCg-s2       元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+    VP1m+_lvPN → LHAV3e2      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       VA5_lPN → LHPV6c1      元: 0/1（順/逆） | male-cns:v1.0: R 5/0, L 0/0
+    KCa'b'-ap2 → MBON22       元: 0/0（順/逆） | male-cns:v1.0: R 44/6, L 9/10
+       DA1_lPN → LHCENT4      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+        PPL106 → MBON19       元: 0/6（順/逆） | male-cns:v1.0: R 0/10, L 2/5
+     M_l2PNm16 → KCg-s3       元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 1/0
+      DC1_adPN → LHAV2d1      元: 0/0（順/逆） | male-cns:v1.0: R 3/0, L 0/0
+       DA1_lPN → LHCENT2      元: 0/0（順/逆） | male-cns:v1.0: R 1/2, L 0/0
+      DL4_adPN → LHCENT8      元: 0/5（順/逆） | male-cns:v1.0: R 1/4, L 0/12
+     VP2+_adPN → LHPV2a1_e    元: 0/4（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+      M_adPNm4 → KCab-s       元: 0/0（順/逆） | male-cns:v1.0: R 81/3, L 23/2
+      VA6_adPN → LHPV4j2      元: 0/2（順/逆） | male-cns:v1.0: R 2/0, L 0/0
+      DC1_adPN → LHPV6g1      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+
+80 組を確認、両方向・両データセットでシナプス 0 の組 7 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_mb_all\cross_male_cns_v1_0.csv
+===== lh
+        WEDPN4 → LHCENT8      元: 0/7（順/逆） | male-cns:v1.0: R 1/10, L 6/8
+     M_smPN6t2 → LHPV2a1_d    元: 0/5（順/逆） | male-cns:v1.0: R 0/0, L 0/0
+     M_l2PNl22 → LHPV2a1_e    元: 0/40（順/逆） | male-cns:v1.0: R 1/3, L 1/35
+       LHCENT9 → DNp32        元: 0/5（順/逆） | male-cns:v1.0: R 1/1, L 0/1
+       DA1_vPN → LHAV4c1_a    元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     DL2v_adPN → OA-VUMa2     元: 0/13（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       VL1_vPN → LHAV2b3      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 2/0
+     M_vPNml70 → LHPV6a10     元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_vPNml83 → LHCENT12     元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+      VA3_adPN → CSD          元: 0/5（順/逆） | male-cns:v1.0: R 0/0, L 0/0
+    VP1m+_lvPN → LHAD4a1      元: 0/55（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       DM2_lPN → LHAV4a7      元: 0/0（順/逆） | male-cns:v1.0: R 14/5, L 2/3
+     M_vPNml70 → LHAV3g1      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       VC1_lPN → LHPV4a11     元: 0/1（順/逆） | male-cns:v1.0: R 1/0, L 0/3
+     M_l2PNl22 → LHAV2k8      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 1/0
+       LHCENT9 → SLP057       元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 1/2
+     M_vPNml79 → LHPV12a1     元: 0/9（順/逆） | male-cns:v1.0: R 1/4, L 1/4
+       WEDPN2B → LHAD2b1      元: 0/17（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+      VL2a_vPN → LHPV2a1_d    元: 0/0（順/逆） | male-cns:v1.0: R 0/1, L 1/3
+     M_vPNml63 → LHAV2b1      元: 0/0（順/逆） | male-cns:v1.0: R 4/0, L 2/0
+        WEDPN4 → LHPV3b1_b    元: 0/3（順/逆） | male-cns:v1.0: R 0/4, L 0/10
+     VC3m_lvPN → LHAV4g13     元: 0/7（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       LHCENT3 → SLP057       元: 0/1（順/逆） | male-cns:v1.0: R 0/0, L 0/3
+      DM4_adPN → LHAV4a7      元: 0/1（順/逆） | male-cns:v1.0: R 18/20, L 12/11
+       DA1_lPN → OA-VUMa2     元: 0/6（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_vPNml85 → LHAV7a1_b    元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+        V_l2PN → LHPD4c1      元: 0/0（順/逆） | male-cns:v1.0: R 0/2, L 0/0
+     M_vPNml63 → LHPV2a1_c    元: 0/16（順/逆） | male-cns:v1.0: R 12/33, L 1/23
+       DA1_vPN → LHAV2a2      元: 0/0（順/逆） | male-cns:v1.0: R 1/0, L 0/1
+       DM2_lPN → LHAV7a3_b    元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_smPN6t2 → LHPV2a1_c    元: 0/7（順/逆） | male-cns:v1.0: R 0/0, L 0/0
+       VA5_lPN → LHPV4a11     元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+       VL1_vPN → LHAV1a3      元: 0/1（順/逆） | male-cns:v1.0: R 0/0, L 0/0
+    VP1m+_lvPN → LHAD1b2_d    元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+        WEDPN4 → LHCENT3      元: 0/0（順/逆） | male-cns:v1.0: R 1/0, L 5/1
+       VL1_vPN → LHPV2a1_d    元: 0/0（順/逆） | male-cns:v1.0: R 1/0, L 0/0
+     M_vPNml86 → LHPD3a2_b    元: 0/3（順/逆） | male-cns:v1.0: R 3/34, L 0/6
+     M_vPNml79 → LHAV4d1      元: 0/0（順/逆） | male-cns:v1.0: R 1/0, L 3/0
+      DM3_adPN → LHAV3b6_a    元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_l2PNl22 → LHAD2b1      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+      DL4_adPN → LHAV3g1      元: 0/8（順/逆） | male-cns:v1.0: R 4/7, L 2/8
+     M_smPN6t2 → LHPD2a6      元: 0/1（順/逆） | male-cns:v1.0: R 0/0, L 0/0
+       VA5_lPN → LHPD3a5      元: 0/4（順/逆） | male-cns:v1.0: R 1/4, L 2/1
+     DP1l_adPN → LHPV4a9_a    元: 0/13（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       LHAV2m1 → CSD          元: 0/3（順/逆） | male-cns:v1.0: R 0/3, L 0/0
+     M_smPN6t2 → LHPV12a1     元: 0/1（順/逆） | male-cns:v1.0: R 0/0, L 0/0
+     VC3m_lvPN → LHPV4a2      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+        V_l2PN → LHPV6g1      元: 0/0（順/逆） | male-cns:v1.0: R 0/1, L 0/0
+        V_l2PN → LHAV2d1      元: 0/0（順/逆） | male-cns:v1.0: R 2/1, L 4/0
+     VC3l_adPN → CSD          元: 0/4（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       LHPD3a5 → CSD          元: 0/9（順/逆） | male-cns:v1.0: R 0/3, L 0/0
+      VA1d_vPN → LHPV4i1      元: 0/1（順/逆） | male-cns:v1.0: R 0/0, L 0/2
+     LHAV4a3_b → OA-VUMa2     元: 0/17（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_vPNml87 → LHAV4a3_a    元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+        WEDPN4 → LHPV2a3      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+     M_vPNml86 → LHAV4g9      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       VL1_vPN → LHAV4a2      元: 0/2（順/逆） | male-cns:v1.0: R 1/1, L 2/0
+      VL1_ilPN → LHPV2a1_b    元: 0/4（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_vPNml65 → LHPV3b1_b    元: 0/1（順/逆） | male-cns:v1.0: R 3/4, L 2/2
+      VC4_adPN → LHPD4d1      元: 0/6（順/逆） | male-cns:v1.0: R 10/13, L 0/13
+     M_vPNml70 → LHPV4b4      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_vPNml70 → LHPV1c1      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_l2PNl21 → LHPV10b1     元: 0/1（順/逆） | male-cns:v1.0: R 0/2, L 0/0
+        WEDPN4 → LHPV2a1_b    元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+        WEDPN4 → LHAD2d1      元: 0/1（順/逆） | male-cns:v1.0: R 0/1, L 0/1
+     M_smPN6t2 → LHPV2a3      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+    VP1m+_lvPN → LHAD2b1      元: 0/2（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_smPN6t2 → LHPV4j2      元: 0/1（順/逆） | male-cns:v1.0: R 0/0, L 0/0
+    VP1m+_lvPN → LHPV6c1      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+        WEDPN4 → LHCENT10     元: 0/1（順/逆） | male-cns:v1.0: R 0/2, L 1/1
+     M_smPN6t2 → LHAV7a7      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+     M_l2PNm15 → LHPV6k2      元: 0/0（順/逆） | male-cns:v1.0: R 4/1, L 1/1
+       LHPV2g1 → mALB3        元: 0/3（順/逆） | male-cns:v1.0: R 0/0, L 0/0
+       LHPV4a1 → mALB3        元: 0/27（順/逆） | male-cns:v1.0: R 0/0, L 0/0
+     M_vPNml65 → LHAV1a1      元: 0/1（順/逆） | male-cns:v1.0: R 1/1, L 0/0
+     M_vPNml85 → LHAV6a3_a    元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_vPNml85 → LHAV5b2      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       LHAD1g1 → SLP262       元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_vPNml86 → LHAV2n1      元: 0/1（順/逆） | male-cns:v1.0: R 1/0, L 0/0
+      VL2a_vPN → LHPV2a1_c    元: 0/3（順/逆） | male-cns:v1.0: R 5/2, L 0/1
+     M_vPNml70 → LHPV12a1     元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     VA1v_adPN → LHAV2m1      元: 0/0（順/逆） | male-cns:v1.0: R 1/1, L 1/1
+       LHPV4j2 → OA-VUMa2     元: 0/7（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_vPNml87 → LHAV2m1      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+       WEDPN2B → LHPV3b1_b    元: 0/3（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_smPN6t2 → LHPD2a3      元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_vPNml87 → LHAV4a7      元: 0/0（順/逆） | male-cns:v1.0: R 2/0, L 0/0
+      VM3_adPN → CSD          元: 0/5（順/逆） | male-cns:v1.0: R 0/0, L 0/2
+       DM1_lPN → LHPV10b1     元: 0/0（順/逆） | male-cns:v1.0: R 0/1, L 2/0
+     M_vPNml85 → LHPD2a1      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+        WEDPN4 → LHPV2i1      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 1/2
+       VA5_lPN → LHAD4a1      元: 0/27（順/逆） | male-cns:v1.0: R 0/8, L 2/18
+     VA7l_adPN → LHPV4i1      元: 0/5（順/逆） | male-cns:v1.0: R 0/7, L 0/9
+      DM3_adPN → LHAV6a3_a    元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       DA1_vPN → LHPD5d1      元: 0/0（順/逆） | male-cns:v1.0: R 0/2, L 0/1
+       VA4_lPN → LHAV6a3_a    元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_vPNml71 → LHAV2m1      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_vPNml86 → LHPD3a5      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+     M_vPNml83 → LHPV4a10_a   元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_vPNml79 → LHAV3a1_c    元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+       VL1_vPN → LHAD1g1      元: 0/1（順/逆） | male-cns:v1.0: R 2/1, L 0/0
+     M_vPNml86 → CSD          元: 0/3（順/逆） | male-cns:v1.0: R 0/2, L 0/0
+       DM5_lPN → LHCENT2      元: 0/9（順/逆） | male-cns:v1.0: R 0/2, L 7/6
+       DM5_lPN → LHPD5c1      元: 0/18（順/逆） | male-cns:v1.0: R 0/17, L 1/14
+        V_l2PN → LHAV3f1      元: 0/13（順/逆） | male-cns:v1.0: R 5/26, L 1/25
+     M_vPNml70 → LHPV6a11_b   元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+        V_l2PN → LHPD4a1      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+      DL4_adPN → LHPV4b2      元: 0/8（順/逆） | male-cns:v1.0: R 0/22, L 1/21
+        WEDPN4 → mALB1        元: 0/2（順/逆） | male-cns:v1.0: R 0/0, L 0/0
+       WEDPN2B → LHCENT4      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     DP1m_adPN → LHAV4g4_a    元: 0/21（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+      DC2_adPN → LHPD5c1      元: 0/21（順/逆） | male-cns:v1.0: R 1/4, L 3/10
+       WEDPN2B → LHCENT8      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       VA4_lPN → LHMB1        元: 0/8（順/逆） | male-cns:v1.0: R 20/13, L 1/9
+     M_imPNl92 → LHAV2b4      元: 0/0（順/逆） | male-cns:v1.0: R 2/0, L 3/0
+       DL3_lPN → LHAV4b4      元: 0/3（順/逆） | male-cns:v1.0: R 3/1, L 2/0
+       DM5_lPN → LHPD3a3_c    元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_vPNml85 → LHAV2k4      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       DM4_vPN → LHAV4g9      元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+        V_l2PN → LHAV6f2      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_vPNml79 → LHAV3g1      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+     M_smPN6t2 → LHPV2a1_b    元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     VC3m_lvPN → LHAV2m1      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       DM2_lPN → LHAV6b2_a    元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_vPNml79 → LHPV1c1      元: 0/0（順/逆） | male-cns:v1.0: R 2/0, L 0/0
+     M_vPNml70 → LHPD3b3      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       DM5_lPN → LHAV4g13     元: 0/2（順/逆） | male-cns:v1.0: R 2/0, L 1/1
+     M_spPN4t9 → CSD          元: 0/5（順/逆） | male-cns:v1.0: R 0/0, L 0/0
+       LHPV2g1 → PLP096       元: 0/3（順/逆） | male-cns:v1.0: R 1/0, L 0/0
+        V_l2PN → LHPD2a2      元: 0/0（順/逆） | male-cns:v1.0: R 4/0, L 0/0
+        WEDPN4 → LHPV2a1_a    元: 0/17（順/逆） | male-cns:v1.0: R 0/25, L 1/27
+     M_vPNml85 → LHPV4a7_d    元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     DP1m_adPN → LHAV4b1_a    元: 0/8（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     DA4m_adPN → LHPV6g1      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 1/0
+     LHAV4a3_a → OA-VUMa2     元: 0/16（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_vPNml79 → LHAV2g3      元: 0/0（順/逆） | male-cns:v1.0: R 1/0, L 0/0
+     M_vPNml86 → LHPV4a10_b   元: 0/9（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_vPNml86 → LHPV4i5      元: 0/5（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_vPNml87 → LHPD4d2_b    元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+     DA4m_adPN → LHPV4j4      元: 0/4（順/逆） | male-cns:v1.0: R 1/4, L 1/9
+     M_l2PNl22 → LHAV2b4      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+      DC2_adPN → LHAV3e4_a    元: 0/0（順/逆） | male-cns:v1.0: R 2/0, L 1/0
+      DM3_adPN → LHPD3a3_c    元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     M_vPNml85 → LHAV4g5      元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+       VC2_lPN → LHPV5h2      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+      VA7m_lPN → LHAV2b3      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+       WEDPN2B → LHPV2i2      元: 0/15（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+     VA1d_adPN → LHPD2a2      元: 0/0（順/逆） | male-cns:v1.0: R 7/1, L 3/1
+     DA4l_adPN → LHPV4b4      元: 0/1（順/逆） | male-cns:v1.0: R 1/9, L 1/12
+     DA4m_adPN → LHPD3a5      元: 0/4（順/逆） | male-cns:v1.0: R 1/2, L 2/5
+
+150 組を確認、両方向・両データセットでシナプス 0 の組 13 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_lh\cross_male_cns_v1_0.csv
+===== cx
+          PFNv → PFL2         元: 0/2（順/逆） | male-cns:v1.0: R 2/0, L 6/0
+          PFNv → PFL3         元: 0/0（順/逆） | male-cns:v1.0: R 1/0, L 3/0
+          FB5K → PFR_a        元: 0/11（順/逆） | male-cns:v1.0: R 0/5, L 0/10
+          ExR7 → hDeltaK      元: 0/0（順/逆） | male-cns:v1.0: R 4/0, L 15/0
+          ExR1 → PEG          元: 0/36（順/逆） | male-cns:v1.0: R 1/47, L 10/48
+          ExR3 → FC2B         元: 0/0（順/逆） | male-cns:v1.0: R 1/0, L 3/0
+          ExR7 → EPGt         元: 0/8（順/逆） | male-cns:v1.0: R 4/1, L 2/0
+          PFNv → PFL1         元: 0/0（順/逆） | male-cns:v1.0: R 4/3, L 2/1
+          PFGs → PFL1         元: 0/0（順/逆） | male-cns:v1.0: R 1/1, L 0/0
+           ER6 → PFR_a        元: 0/2（順/逆） | male-cns:v1.0: R 0/0, L 0/0
+        FB2F_a → PFL2         元: 0/0（順/逆） | male-cns:v1.0: R 5/0, L 0/0
+          FB4A → PFL2         元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          FB6L → PFL2         元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+           FS2 → PFR_b        元: 0/8（順/逆） | male-cns:v1.0: R 5/57, L 3/49
+          FB5I → PFR_b        元: 0/1（順/逆） | male-cns:v1.0: R 1/1, L 2/0
+          FB5P → PFL2         元: 0/0（順/逆） | male-cns:v1.0: R 8/0, L 8/0
+          ExR3 → FB8F_a       元: 0/1（順/逆） | male-cns:v1.0: R 0/0, L 0/0
+           ER6 → PFGs         元: 0/2（順/逆） | male-cns:v1.0: R 0/0, L 0/0
+          FB6J → PFL3         元: 0/0（順/逆） | male-cns:v1.0: R 1/0, L 0/0
+          FB6L → PFL3         元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+   PEN_b(PEN2) → PFL1         元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 2/0
+          FB6P → PFR_a        元: 0/1（順/逆） | male-cns:v1.0: R 1/8, L 2/3
+          ExR3 → FB5AA        元: 0/1（順/逆） | male-cns:v1.0: R 0/0, L 1/0
+          FB5T → PFR_b        元: 0/0（順/逆） | male-cns:v1.0: R 5/0, L 1/0
+           ER6 → hDeltaK      元: 0/0（順/逆） | male-cns:v1.0: R 7/0, L 4/0
+           ER6 → EPGt         元: 0/4（順/逆） | male-cns:v1.0: R 0/1, L 0/0
+          ExR5 → FB4K         元: 0/4（順/逆） | male-cns:v1.0: R 0/0, L 0/1
+          FB1A → PFL1         元: 0/0（順/逆） | male-cns:v1.0: R 1/0, L 0/1
+          FC1E → PFL2         元: 0/0（順/逆） | male-cns:v1.0: R 4/0, L 3/0
+          ExR3 → FB4C         元: 0/1（順/逆） | male-cns:v1.0: R 1/0, L 1/1
+           EPG → hDeltaK      元: 0/0（順/逆） | male-cns:v1.0: R 19/0, L 20/0
+          FC2A → PFL1         元: 0/0（順/逆） | male-cns:v1.0: R 0/3, L 3/0
+          ExR5 → FB5K         元: 0/1（順/逆） | male-cns:v1.0: R 0/0, L 1/0
+          FB6P → PFL3         元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+          FB2L → PFL1         元: 0/0（順/逆） | male-cns:v1.0: R 3/0, L 1/0
+          ExR3 → hDeltaD      元: 0/1（順/逆） | male-cns:v1.0: R 0/0, L 0/0
+          FB6P → PFL2         元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+          ExR5 → FB2L         元: 0/1（順/逆） | male-cns:v1.0: R 0/1, L 1/0
+          FC2C → PFR_b        元: 0/2（順/逆） | male-cns:v1.0: R 3/3, L 5/8
+          FB6N → PFL2         元: 0/0（順/逆） | male-cns:v1.0: R 1/0, L 3/0
+          FC1D → PFL2         元: 0/0（順/逆） | male-cns:v1.0: R 1/0, L 2/0
+          ExR3 → FB8E         元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 1/1
+          ExR6 → FB2K         元: 0/0（順/逆） | male-cns:v1.0: R 1/0, L 0/0
+          ExR3 → FB4B         元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 2/0
+          FB6W → PFL2         元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+          FB6W → PFL3         元: 0/1（順/逆） | male-cns:v1.0: R 3/0, L 1/0
+          ExR6 → LAL015       元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+          FB4B → PFL1         元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/0  ★ 全部 0
+
+48 組を確認、両方向・両データセットでシナプス 0 の組 7 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_cx\cross_male_cns_v1_0.csv
+===== vis
+          LT52 → CL033        元: 0/5（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT52 → PLP244       元: 0/8（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT42 → CL033        元: 0/6（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT73 → PLP030       元: 0/5（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT42 → PLP031       元: 0/16（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT79 → PVLP101      元: 0/0（順/逆） | male-cns:v1.0: R 9/8, L 3/3
+          LT61 → AVLP282      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT87 → AVLP088      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 2/1
+          LT73 → PVLP133_c    元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT42 → PLP030       元: 0/9（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LC21 → PVLP096      元: 0/0（順/逆） | male-cns:v1.0: R 1217/42, L 831/46
+         LT82a → PVLP120      元: 0/0（順/逆） | male-cns:v1.0: R 7/0, L 9/1
+          LT52 → PLP030       元: 0/2（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT83 → PVLP074      元: 0/0（順/逆） | male-cns:v1.0: R 1/0, L 3/0
+          LT52 → AOTU007      元: 0/0（順/逆） | male-cns:v1.0: R 20/0, L 34/1
+          LT83 → PVLP132      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT61 → PVLP049      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT83 → AVLP565      元: 0/0（順/逆） | male-cns:v1.0: R 3/1, L 4/1
+         LT82b → PVLP130      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 1/0
+          LT62 → AVLP536      元: 0/0（順/逆） | male-cns:v1.0: R 2/0, L 0/1
+          LT79 → AVLP489      元: 0/0（順/逆） | male-cns:v1.0: R 0/4, L 0/2
+          LC16 → AVLP466      元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT79 → AVLP079      元: 0/12（順/逆） | male-cns:v1.0: R 5/37, L 1/42
+          LT11 → AVLP079      元: 0/0（順/逆） | male-cns:v1.0: R 3/0, L 1/1
+          LT61 → AVLP311_a    元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT83 → PLP017       元: 0/1（順/逆） | male-cns:v1.0: R 4/2, L 4/0
+          LT83 → AVLP311_b    元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT79 → PLP244       元: 0/4（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+           LT1 → PVLP089      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT11 → PVLP028      元: 0/0（順/逆） | male-cns:v1.0: R 1/3, L 0/0
+           LT1 → AVLP320      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT73 → PVLP133_b    元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT79 → PLP115_b     元: 0/1（順/逆） | male-cns:v1.0: R 8/2, L 4/0
+          LC31 → PVLP150      元: 0/2（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT62 → AVLP435      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          MC61 → TuBu10       元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT62 → PVLP097_b    元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT61 → PVLP002      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT87 → PVLP007      元: 0/0（順/逆） | male-cns:v1.0: R 2/0, L 8/1
+          LT61 → PVLP064      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT83 → AVLP153      元: 0/0（順/逆） | male-cns:v1.0: R 2/0, L 3/1
+           LT1 → AVLP591      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT73 → CL033        元: 0/5（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT83 → PVLP017      元: 0/0（順/逆） | male-cns:v1.0: R 3/0, L 0/0
+          LT79 → PVLP121      元: 0/0（順/逆） | male-cns:v1.0: R 4/1, L 7/7
+          LT83 → PVLP073      元: 0/1（順/逆） | male-cns:v1.0: R 0/0, L 0/1
+          LT83 → AVLP409      元: 0/0（順/逆） | male-cns:v1.0: R 3/0, L 0/0
+          LT52 → AOTU059      元: 0/0（順/逆） | male-cns:v1.0: R 63/7, L 59/10
+          LT61 → AVLP124      元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT73 → PVLP089      元: 0/0（順/逆） | male-cns:v1.0: R 1/1, L 0/0
+          LT61 → PVLP067      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+           LT1 → PLP030       元: 0/8（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT52 → SMP151       元: 0/0（順/逆） | male-cns:v1.0: R 12/0, L 5/0
+          LC31 → AVLP370      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT34 → AOTU011      元: 0/0（順/逆） | male-cns:v1.0: R 0/2, L 0/0
+          LT61 → AVLP119      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+           LT1 → PVLP087      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT83 → PVLP085      元: 0/0（順/逆） | male-cns:v1.0: R 1/3, L 4/0
+          LT61 → PVLP126      元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT79 → AVLP080      元: 0/1（順/逆） | male-cns:v1.0: R 8/1, L 13/1
+          LT87 → AVLP435      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT87 → AVLP016      元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 2/1
+          LT61 → AVLP152      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT11 → AVLP272      元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+           LT1 → 5-HTPLP01    元: 0/2（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LC31 → PVLP130      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+         LT82b → PLP249       元: 0/0（順/逆） | male-cns:v1.0: R 0/0, L 0/1
+          LT52 → PLP031       元: 0/3（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT79 → PVLP008_a    元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT11 → PLP030       元: 0/29（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LC31 → AVLP476      元: 0/2（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT79 → PVLP104      元: 0/4（順/逆） | male-cns:v1.0: R 22/17, L 14/16
+          LT79 → AVLP325_b    元: 0/0（順/逆） | male-cns:v1.0: R 1/0, L 0/0
+          LT87 → AVLP172      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT55 → CL033        元: 0/2（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+         LT82a → DNp09        元: 0/9（順/逆） | male-cns:v1.0: R 0/0, L 6/5
+          LT61 → mALB4        元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT83 → PVLP088      元: 0/7（順/逆） | male-cns:v1.0: R 1/2, L 1/4
+          LT79 → PVLP061      元: 0/0（順/逆） | male-cns:v1.0: R 3/3, L 2/1
+          LT73 → PLP208       元: 0/0（順/逆） | male-cns:v1.0: R 2/0, L 0/0
+          LT83 → PVLP121      元: 0/0（順/逆） | male-cns:v1.0: R 2/1, L 0/0
+           LC6 → PVLP058      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT79 → PVLP074      元: 0/0（順/逆） | male-cns:v1.0: R 2/1, L 0/1
+          LT11 → PVLP049      元: 0/0（順/逆） | male-cns:v1.0: R 1/0, L 4/0
+          LT34 → CRE040       元: 0/54（順/逆） | male-cns:v1.0: R 0/39, L 2/45
+         LT82b → OA-VUMa1     元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT79 → AVLP232      元: 0/0（順/逆） | male-cns:v1.0: R 2/1, L 1/0
+          LT87 → PVLP074      元: 0/0（順/逆） | male-cns:v1.0: R 1/1, L 2/0
+          LC26 → PLP125       元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT52 → IB018        元: 0/0（順/逆） | male-cns:v1.0: R 4/2, L 2/16
+          LT73 → PVLP121      元: 0/0（順/逆） | male-cns:v1.0: R 1/0, L 1/1
+          LT62 → AVLP151      元: 0/1（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT79 → AVLP285      元: 0/0（順/逆） | male-cns:v1.0: R 22/0, L 5/0
+          LT62 → AVLP489      元: 0/0（順/逆） | male-cns:v1.0: R 1/0, L 6/0
+          LT80 → AVLP290      元: 0/0（順/逆） | male-cns:v1.0: R -1/-1, L -1/-1
+          LT79 → AVLP444      元: 0/0（順/逆） | male-cns:v1.0: R 1/2, L 2/1
+          LT79 → AVLP538      元: 0/1（順/逆） | male-cns:v1.0: R 1/2, L 0/3
+
+97 組を確認、両方向・両データセットでシナプス 0 の組 0 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_vis\cross_male_cns_v1_0.csv

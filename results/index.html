@@ -1,0 +1,28 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>コネクトミクス結果一覧</title><style>
+:root{--bg:#f7f8fa;--fg:#1d2330;--muted:#5b6475;--card:#fff;--line:#e2e5ea;--accent:#2457c5;--good:#1a7f45;--warn:#a15c00;--chip:#eef2fb}
+@media (prefers-color-scheme:dark){:root{--bg:#14171c;--fg:#e6e9ef;--muted:#9aa3b2;--card:#1c2027;--line:#2d333d;--accent:#7aa2ff;--good:#5cc98a;--warn:#e0a650;--chip:#232a37}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.55 system-ui,-apple-system,"Segoe UI","Hiragino Sans","Yu Gothic UI",sans-serif}
+main{max-width:1280px;margin:0 auto;padding:24px 16px 64px}h1{font-size:22px;margin:0 0 4px}h2{font-size:17px;margin:28px 0 10px}
+a{color:var(--accent)}.muted{color:var(--muted)}.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin:12px 0;text-decoration:none;color:inherit}
+.card:hover{border-color:var(--accent)}.card h2{margin:0 0 6px}.card p{margin:4px 0}
+
+.card.hero{border-color:var(--accent);border-width:2px}.card.hero h2{color:var(--accent)}
+</style></head><body><main>
+<h1>「近いのに結合しない」ペア探索 — 結果一覧</h1>
+<p class="muted">上の「最終候補」が結論です。下は領域ごとの探索結果（元データ）で、絞り込み前の候補が入っています。</p>
+<a class="card hero" href="shortlist.html"><h2>★ 最終候補 — 3 個体で確かめた組（306 組）</h2><p>hemibrain・male-cns・FlyWire の <b>3 個体すべてで両方向のシナプスが 0</b> で、別個体でも接触が再現した組。<b>5 組</b>は両側にドライバーがある。</p><p class="muted">実験に進めるならここから選ぶ。下のデータセット別ページは探索の元データ。</p></a><a class="card hero" href="docs/index.html"><h2>◇ 報告書（12 件）</h2><p>候補の検討・ドライバー・文献のまとめ。results/*.md を HTML にしたもの（build_docs.py）。</p></a><a class="card" href="hemibrain_al/index.html"><h2>触角葉（AL）</h2><p class="muted">嗅覚の入口。ORN → 投射ニューロン → 局所介在ニューロン</p><p>566 ニューロン・アプローチ G<span class="sub"> （データ: hemibrain_al ／ neuprint_hemibrain_v1.2.1）</span></p><p><b>824</b> 組が全アプローチの上位 1% に一致 ／ 一覧 4124 組</p></a>
+<a class="card" href="hemibrain_cre/index.html"><h2>hemibrain_cre</h2><p class="muted"></p><p>717 ニューロン・アプローチ G<span class="sub"> （データ: hemibrain_cre ／ neuprint_hemibrain_v1.2.1）</span></p><p><b>1231</b> 組が全アプローチの上位 1% に一致 ／ 一覧 6159 組</p></a>
+<a class="card" href="hemibrain_cx/index.html"><h2>中心複合体（EB・FB・PB・NO）</h2><p class="muted">方向と航行。リング → 柱状 → 扇状体 → 出力</p><p>1018 ニューロン・アプローチ G<span class="sub"> （データ: hemibrain_cx ／ neuprint_hemibrain_v1.2.1）</span></p><p><b>1756</b> 組が全アプローチの上位 1% に一致 ／ 一覧 8782 組</p></a>
+<a class="card" href="hemibrain_lal/index.html"><h2>側方付属葉（LAL・VES・GOR）</h2><p class="muted">前運動。中心複合体 → 下行ニューロン</p><p>807 ニューロン・アプローチ G<span class="sub"> （データ: hemibrain_lal ／ neuprint_hemibrain_v1.2.1）</span></p><p><b>1633</b> 組が全アプローチの上位 1% に一致 ／ 一覧 8167 組</p></a>
+<a class="card" href="hemibrain_lh/index.html"><h2>外側角（LH）</h2><p class="muted">匂いの生得的な価値づけ。投射ニューロン → 外側角ニューロン</p><p>937 ニューロン・アプローチ G<span class="sub"> （データ: hemibrain_lh ／ neuprint_hemibrain_v1.2.1）</span></p><p><b>2919</b> 組が全アプローチの上位 1% に一致 ／ 一覧 14595 組</p></a>
+<a class="card" href="hemibrain_mb/index.html"><h2>キノコ体 KCg-m × MBON01</h2><p class="muted">最初の試験用。2 タイプだけ</p><p>592 ニューロン・アプローチ ABCDEFG<span class="sub"> （データ: hemibrain_mb ／ neuprint_hemibrain:v1.2.1）</span></p><p><b>3</b> 組が全アプローチの上位 1% に一致 ／ 一覧 16434 組</p></a>
+<a class="card" href="hemibrain_mb_all/index.html"><h2>キノコ体まわり 全タイプ</h2><p class="muted">記憶の中枢。KC・MBON・DAN・投射ニューロンなど</p><p>586 ニューロン・アプローチ AG<span class="sub"> （データ: hemibrain_mb_all ／ neuprint_hemibrain_v1.2.1）</span></p><p><b>205</b> 組が全アプローチの上位 1% に一致 ／ 一覧 5051 組</p></a>
+<a class="card" href="hemibrain_ps/index.html"><h2>hemibrain_ps</h2><p class="muted"></p><p>548 ニューロン・アプローチ G<span class="sub"> （データ: hemibrain_ps ／ neuprint_hemibrain_v1.2.1）</span></p><p><b>782</b> 組が全アプローチの上位 1% に一致 ／ 一覧 3912 組</p></a>
+<a class="card" href="hemibrain_smp/index.html"><h2>上前大脳（SMP・SIP・SLP）</h2><p class="muted">MBON の出力先。下行ニューロンや神経ペプチド細胞</p><p>1094 ニューロン・アプローチ G<span class="sub"> （データ: hemibrain_smp ／ neuprint_hemibrain_v1.2.1）</span></p><p><b>2907</b> 組が全アプローチの上位 1% に一致 ／ 一覧 14537 組</p></a>
+<a class="card" href="hemibrain_vis/index.html"><h2>視覚の投射先（AOTU・PVLP）</h2><p class="muted">視覚投射ニューロン（LC・LT）とその下流</p><p>979 ニューロン・アプローチ G<span class="sub"> （データ: hemibrain_vis ／ neuprint_hemibrain_v1.2.1）</span></p><p><b>2134</b> 組が全アプローチの上位 1% に一致 ／ 一覧 10674 組</p></a>
+<a class="card" href="hemibrain_vis_olf/index.html"><h2>視覚系 × 嗅覚系</h2><p class="muted">系をまたぐ接触の調査</p><p>652 ニューロン・アプローチ ABCDEF<span class="sub"> （データ: hemibrain_vis_olf ／ neuprint_hemibrain_v1.2.1）</span></p><p><b>0</b> 組が全アプローチの上位 1% に一致 ／ 一覧 4100 組</p></a>
+<a class="card" href="hemibrain_vlp/index.html"><h2>hemibrain_vlp</h2><p class="muted"></p><p>875 ニューロン・アプローチ G<span class="sub"> （データ: hemibrain_vlp ／ neuprint_hemibrain_v1.2.1）</span></p><p><b>1873</b> 組が全アプローチの上位 1% に一致 ／ 一覧 9366 組</p></a>
+<a class="card" href="hemibrain_wed/index.html"><h2>hemibrain_wed</h2><p class="muted"></p><p>378 ニューロン・アプローチ G<span class="sub"> （データ: hemibrain_wed ／ neuprint_hemibrain_v1.2.1）</span></p><p><b>302</b> 組が全アプローチの上位 1% に一致 ／ 一覧 1514 組</p></a>
+<a class="card" href="synthetic_n80_s0/index.html"><h2>合成データ（正解つき）</h2><p class="muted">手法の比較・検証用。実際の脳ではない</p><p>80 ニューロン・アプローチ ABCDEF<span class="sub"> （データ: synthetic_n80_s0 ／ synthetic_n80_s0）</span></p><p><b>1</b> 組が全アプローチの上位 1% に一致 ／ 一覧 124 組</p></a>
+</main></body></html>

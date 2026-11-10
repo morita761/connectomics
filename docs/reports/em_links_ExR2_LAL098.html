@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>接触部位の 3D と EM（hemibrain v1.2, 8 nm 等方）</title><style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px}
+nav{font-size:.9rem;color:var(--sub);margin-bottom:18px}
+nav a{color:var(--acc);text-decoration:none}nav a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.35;border-bottom:2px solid var(--line);padding-bottom:.4em;margin-top:1.2em}
+h2{font-size:1.25rem;margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.05rem;margin-top:1.6em}
+a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600;white-space:nowrap}
+code{background:var(--code);padding:.15em .4em;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--code);color:var(--fg)}
+ul,ol{padding-left:1.4em}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:20px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--bg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc)}
+.card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+</style></head>
+<body><div class="wrap">
+<nav><a href="index.html">← 報告書の一覧</a> ／ <a href="../index.html">結果一覧</a></nav>
+<h1 id="3d-emhemibrain-v12-8-nm">接触部位の 3D と EM（hemibrain v1.2, 8 nm 等方）</h1>
+<p>色は 赤 = 1 つ目のタイプ / 水色 = 2 つ目。3D はメッシュ（実際の膜の形）。</p>
+<h2 id="exr2-lal098-1348-voxel-59">ExR2（赤） → LAL098（水色）  直接隣接 1348 voxel / 間に何も無い表面点 59%</h2>
+<ul>
+<li>3D: https://neuroglancer-demo.appspot.com/#!%7B%22dimensions%22%3A%7B%22x%22%3A%5B8e-09%2C%22m%22%5D%2C%22y%22%3A%5B8e-09%2C%22m%22%5D%2C%22z%22%3A%5B8e-09%2C%22m%22%5D%7D%2C%22position%22%3A%5B16844%2C21702%2C28650%5D%2C%22crossSectionScale%22%3A0.55%2C%22projectionScale%22%3A22000%2C%22layers%22%3A%5B%7B%22type%22%3A%22segmentation%22%2C%22source%22%3A%22precomputed%3A%2F%2Fgs%3A%2F%2Fneuroglancer-janelia-flyem-hemibrain%2Fv1.2%2Fsegmentation%22%2C%22name%22%3A%22seg%22%2C%22segments%22%3A%5B%221198330286%22%2C%221728942250%22%5D%2C%22segmentColors%22%3A%7B%221198330286%22%3A%22%23ff3b30%22%2C%221728942250%22%3A%22%2300e5ff%22%7D%2C%22objectAlpha%22%3A1.0%7D%5D%2C%22layout%22%3A%223d%22%2C%22showSlices%22%3Afalse%2C%22selectedLayer%22%3A%7B%22layer%22%3A%22seg%22%7D%7D</li>
+<li>接触部位の EM: https://neuroglancer-demo.appspot.com/#!%7B%22dimensions%22%3A%7B%22x%22%3A%5B8e-09%2C%22m%22%5D%2C%22y%22%3A%5B8e-09%2C%22m%22%5D%2C%22z%22%3A%5B8e-09%2C%22m%22%5D%7D%2C%22position%22%3A%5B16844%2C21702%2C28650%5D%2C%22crossSectionScale%22%3A0.5%2C%22projectionScale%22%3A22000%2C%22layers%22%3A%5B%7B%22type%22%3A%22image%22%2C%22source%22%3A%22precomputed%3A%2F%2Fgs%3A%2F%2Fneuroglancer-janelia-flyem-hemibrain%2Femdata%2Fclahe_yz%2Fjpeg%22%2C%22name%22%3A%22EM%22%7D%2C%7B%22type%22%3A%22segmentation%22%2C%22source%22%3A%22precomputed%3A%2F%2Fgs%3A%2F%2Fneuroglancer-janelia-flyem-hemibrain%2Fv1.2%2Fsegmentation%22%2C%22name%22%3A%22seg%22%2C%22segments%22%3A%5B%221198330286%22%2C%221728942250%22%5D%2C%22segmentColors%22%3A%7B%221198330286%22%3A%22%23ff3b30%22%2C%221728942250%22%3A%22%2300e5ff%22%7D%2C%22objectAlpha%22%3A0.45%7D%5D%2C%22layout%22%3A%22xy-3d%22%2C%22showSlices%22%3Afalse%2C%22selectedLayer%22%3A%7B%22layer%22%3A%22seg%22%7D%7D</li>
+</ul>
+<h2 id="lal098-exr2-3692-voxel-61">LAL098（赤） → ExR2（水色）  直接隣接 3692 voxel / 間に何も無い表面点 61%</h2>
+<ul>
+<li>3D: https://neuroglancer-demo.appspot.com/#!%7B%22dimensions%22%3A%7B%22x%22%3A%5B8e-09%2C%22m%22%5D%2C%22y%22%3A%5B8e-09%2C%22m%22%5D%2C%22z%22%3A%5B8e-09%2C%22m%22%5D%7D%2C%22position%22%3A%5B17406%2C23268%2C27862%5D%2C%22crossSectionScale%22%3A0.55%2C%22projectionScale%22%3A22000%2C%22layers%22%3A%5B%7B%22type%22%3A%22segmentation%22%2C%22source%22%3A%22precomputed%3A%2F%2Fgs%3A%2F%2Fneuroglancer-janelia-flyem-hemibrain%2Fv1.2%2Fsegmentation%22%2C%22name%22%3A%22seg%22%2C%22segments%22%3A%5B%221728942250%22%2C%221198330286%22%5D%2C%22segmentColors%22%3A%7B%221728942250%22%3A%22%23ff3b30%22%2C%221198330286%22%3A%22%2300e5ff%22%7D%2C%22objectAlpha%22%3A1.0%7D%5D%2C%22layout%22%3A%223d%22%2C%22showSlices%22%3Afalse%2C%22selectedLayer%22%3A%7B%22layer%22%3A%22seg%22%7D%7D</li>
+<li>接触部位の EM: https://neuroglancer-demo.appspot.com/#!%7B%22dimensions%22%3A%7B%22x%22%3A%5B8e-09%2C%22m%22%5D%2C%22y%22%3A%5B8e-09%2C%22m%22%5D%2C%22z%22%3A%5B8e-09%2C%22m%22%5D%7D%2C%22position%22%3A%5B17406%2C23268%2C27862%5D%2C%22crossSectionScale%22%3A0.5%2C%22projectionScale%22%3A22000%2C%22layers%22%3A%5B%7B%22type%22%3A%22image%22%2C%22source%22%3A%22precomputed%3A%2F%2Fgs%3A%2F%2Fneuroglancer-janelia-flyem-hemibrain%2Femdata%2Fclahe_yz%2Fjpeg%22%2C%22name%22%3A%22EM%22%7D%2C%7B%22type%22%3A%22segmentation%22%2C%22source%22%3A%22precomputed%3A%2F%2Fgs%3A%2F%2Fneuroglancer-janelia-flyem-hemibrain%2Fv1.2%2Fsegmentation%22%2C%22name%22%3A%22seg%22%2C%22segments%22%3A%5B%221728942250%22%2C%221198330286%22%5D%2C%22segmentColors%22%3A%7B%221728942250%22%3A%22%23ff3b30%22%2C%221198330286%22%3A%22%2300e5ff%22%7D%2C%22objectAlpha%22%3A0.45%7D%5D%2C%22layout%22%3A%22xy-3d%22%2C%22showSlices%22%3Afalse%2C%22selectedLayer%22%3A%7B%22layer%22%3A%22seg%22%7D%7D</li>
+</ul>
+<h2 id="exr2-lal184-8153-voxel-72">ExR2（赤） → LAL184（水色）  直接隣接 8153 voxel / 間に何も無い表面点 72%</h2>
+<ul>
+<li>3D: https://neuroglancer-demo.appspot.com/#!%7B%22dimensions%22%3A%7B%22x%22%3A%5B8e-09%2C%22m%22%5D%2C%22y%22%3A%5B8e-09%2C%22m%22%5D%2C%22z%22%3A%5B8e-09%2C%22m%22%5D%7D%2C%22position%22%3A%5B15380%2C30408%2C23156%5D%2C%22crossSectionScale%22%3A0.55%2C%22projectionScale%22%3A22000%2C%22layers%22%3A%5B%7B%22type%22%3A%22segmentation%22%2C%22source%22%3A%22precomputed%3A%2F%2Fgs%3A%2F%2Fneuroglancer-janelia-flyem-hemibrain%2Fv1.2%2Fsegmentation%22%2C%22name%22%3A%22seg%22%2C%22segments%22%3A%5B%221198330286%22%2C%221313594496%22%5D%2C%22segmentColors%22%3A%7B%221198330286%22%3A%22%23ff3b30%22%2C%221313594496%22%3A%22%2300e5ff%22%7D%2C%22objectAlpha%22%3A1.0%7D%5D%2C%22layout%22%3A%223d%22%2C%22showSlices%22%3Afalse%2C%22selectedLayer%22%3A%7B%22layer%22%3A%22seg%22%7D%7D</li>
+<li>接触部位の EM: https://neuroglancer-demo.appspot.com/#!%7B%22dimensions%22%3A%7B%22x%22%3A%5B8e-09%2C%22m%22%5D%2C%22y%22%3A%5B8e-09%2C%22m%22%5D%2C%22z%22%3A%5B8e-09%2C%22m%22%5D%7D%2C%22position%22%3A%5B15380%2C30408%2C23156%5D%2C%22crossSectionScale%22%3A0.5%2C%22projectionScale%22%3A22000%2C%22layers%22%3A%5B%7B%22type%22%3A%22image%22%2C%22source%22%3A%22precomputed%3A%2F%2Fgs%3A%2F%2Fneuroglancer-janelia-flyem-hemibrain%2Femdata%2Fclahe_yz%2Fjpeg%22%2C%22name%22%3A%22EM%22%7D%2C%7B%22type%22%3A%22segmentation%22%2C%22source%22%3A%22precomputed%3A%2F%2Fgs%3A%2F%2Fneuroglancer-janelia-flyem-hemibrain%2Fv1.2%2Fsegmentation%22%2C%22name%22%3A%22seg%22%2C%22segments%22%3A%5B%221198330286%22%2C%221313594496%22%5D%2C%22segmentColors%22%3A%7B%221198330286%22%3A%22%23ff3b30%22%2C%221313594496%22%3A%22%2300e5ff%22%7D%2C%22objectAlpha%22%3A0.45%7D%5D%2C%22layout%22%3A%22xy-3d%22%2C%22showSlices%22%3Afalse%2C%22selectedLayer%22%3A%7B%22layer%22%3A%22seg%22%7D%7D</li>
+</ul>
+</div></body></html>

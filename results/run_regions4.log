@@ -1,0 +1,15 @@
+########## cre 17:37
+total 717 neurons, 580 types
+approach_g_output_sites          211130 pairs  135416 flagged  11256.8s
+=== タイプの組: 出力部位→相手（有向）  115219 組、flagged 9698 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_cre\type_pairs_output.csv
+                 n  flagged  baseline_per_um
+    t1       t2    g1    g2  n_cells_1  n_cells_2  n_pairs_contact  n_pairs_connected  contact_total_um  synapses  expected  obs_over_exp  p_poisson  feedforward  memory  flagged
+9698 組を照合 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_cre\driver_matches.csv
+########## vlp 21:28
+total 875 neurons, 698 types
+approach_g_output_sites          330545 pairs  219374 flagged  572.3s
+=== タイプの組: 出力部位→相手（有向）  169851 組、flagged 9451 組 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_vlp\type_pairs_output.csv
+                 n  flagged  baseline_per_um
+     t1         t2    g1    g2  n_cells_1  n_cells_2  n_pairs_contact  n_pairs_connected  contact_total_um  synapses  expected  obs_over_exp  p_poisson  feedforward  memory  flagged
+9451 組を照合 -> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_vlp\driver_matches.csv
+########## done 22:42

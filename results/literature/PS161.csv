@@ -1,0 +1,4 @@
+type,year,title,authors,journal,doi,pmid,pmcid,source,mentions,behavior_sentences,lines_found,evidence
+PS161,2021,In Situ Cell Signalling of the Hippo-YAP/TAZ Pathway in Reaction to Complex Dynamic Loading in an Intervertebral Disc Organ Culture.,"Croft AS, Roth Y, Oswald KAC, Ćorluka S, Bermudez-Lekerika P, Gantenbein B.",International journal of molecular sciences,10.3390/ijms222413641,34948441,PMC8707270,full text,1,0,,
+PS161,2020,RovC - a novel type of hexameric transcriptional activator promoting type VI secretion gene expression.,"Knittel V, Sadana P, Seekircher S, Stolle AS, Körner B, Volk M, Jeffries CM, Sve",PLoS pathogens,10.1371/journal.ppat.1008552,32966346,PMC7535981,full text,0,0,,
+PS161,2019,Abstract,,Brain and Neuroscience Advances,,,PMC8842476,abstract,0,0,,

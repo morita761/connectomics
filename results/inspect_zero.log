@@ -1,0 +1,47 @@
+########## lh
+     M_vPNml87 → LHAV2m1      接触    95.6 µm  syn    0 / 期待   11.4 | 接触: LH(R) 100% | 主領域で 上流出力 203 / 下流入力 1083
+     M_vPNml86 → LHPD3a5      接触    93.3 µm  syn    0 / 期待   11.1 | 接触: LH(R) 100% | 主領域で 上流出力 96 / 下流入力 255
+      DC2_adPN → LHAV5a8      接触    72.8 µm  syn    0 / 期待    8.7 | 接触: LH(R) 100% | 主領域で 上流出力 674 / 下流入力 263
+        WEDPN4 → LHPV9b1      接触    69.8 µm  syn    0 / 期待    8.3 | 接触: PLP(R) 45%, LH(R) 29%, SCL(R) 25%, SIP(R) 0% | 主領域で 上流出力 145 / 下流入力 274
+     M_l2PNl22 → LHAV3e1      接触    63.2 µm  syn    0 / 期待    7.5 | 接触: LH(R) 47%, PLP(R) 46%, SCL(R) 7% | 主領域で 上流出力 153 / 下流入力 355
+     M_imPNl92 → LHAV2k8      接触    63.2 µm  syn    0 / 期待    7.5 | 接触: LH(R) 90%, PLP(R) 10% | 主領域で 上流出力 341 / 下流入力 917
+        V_l2PN → LHAV3h1      接触    57.7 µm  syn    0 / 期待    6.9 | 接触: LH(R) 89%, SCL(R) 6%, AVLP(R) 5% | 主領域で 上流出力 789 / 下流入力 489
+     M_vPNml55 → LHPD5d1      接触    54.5 µm  syn    0 / 期待    6.5 | 接触: LH(R) 87%, SCL(R) 13% | 主領域で 上流出力 318 / 下流入力 487
+     M_lvPNm39 → LHAD1c3      接触    53.6 µm  syn    0 / 期待    6.4 | 接触: LH(R) 100% | 主領域で 上流出力 514 / 下流入力 306
+     M_l2PNl22 → LHPV4m1      接触    53.1 µm  syn    0 / 期待    6.3 | 接触: PLP(R) 34%, SCL(R) 30%, LH(R) 24%, SLP(R) 12% | 主領域で 上流出力 349 / 下流入力 270
+       DM4_vPN → LHAV4a2      接触    52.7 µm  syn    0 / 期待    6.3 | 接触: LH(R) 100% | 主領域で 上流出力 234 / 下流入力 1724
+     M_vPNml65 → LHCENT4      接触    52.2 µm  syn    0 / 期待    6.2 | 接触: LH(R) 84%, AVLP(R) 16% | 主領域で 上流出力 137 / 下流入力 1183
+     M_lvPNm39 → LHPD5c1      接触    50.8 µm  syn    0 / 期待    6.1 | 接触: LH(R) 100% | 主領域で 上流出力 514 / 下流入力 2208
+        V_l2PN → LHAD3e1_a    接触    50.1 µm  syn    0 / 期待    6.0 | 接触: LH(R) 100% | 主領域で 上流出力 789 / 下流入力 281
+       DM4_vPN → LHPV4a8      接触    49.6 µm  syn    0 / 期待    5.9 | 接触: LH(R) 100% | 主領域で 上流出力 173 / 下流入力 189
+       DM3_vPN → LHAV4j1      接触    49.2 µm  syn    0 / 期待    5.9 | 接触: LH(R) 100% | 主領域で 上流出力 137 / 下流入力 870
+     VP1m_l2PN → LHPV4j3      接触    48.1 µm  syn    0 / 期待    5.7 | 接触: LH(R) 77%, SLP(R) 12%, CA(R) 11%, other 1% | 主領域で 上流出力 778 / 下流入力 433
+     M_l2PNm15 → LHPD5d1      接触    47.9 µm  syn    0 / 期待    5.7 | 接触: LH(R) 38%, SCL(R) 33%, SLP(R) 21%, PLP(R) 8% | 主領域で 上流出力 165 / 下流入力 487
+      VA1d_vPN → LHAV2g2_b    接触    46.8 µm  syn    0 / 期待    5.6 | 接触: LH(R) 100% | 主領域で 上流出力 399 / 下流入力 381
+     M_l2PNl22 → LHAV2g1      接触    45.7 µm  syn    0 / 期待    5.5 | 接触: LH(R) 94%, SCL(R) 6% | 主領域で 上流出力 153 / 下流入力 320
+     M_vPNml79 → LHAV4g14     接触    45.5 µm  syn    0 / 期待    5.4 | 接触: LH(R) 100% | 主領域で 上流出力 300 / 下流入力 532
+      DC1_adPN → LHPD4d1      接触    45.0 µm  syn    0 / 期待    5.4 | 接触: LH(R) 100% | 主領域で 上流出力 1333 / 下流入力 1638
+      VA2_adPN → LHPD5b1      接触    44.1 µm  syn    0 / 期待    5.3 | 接触: LH(R) 100% | 主領域で 上流出力 1730 / 下流入力 359
+     M_l2PNl21 → LHPV1c2      接触    43.5 µm  syn    0 / 期待    5.2 | 接触: LH(R) 62%, SCL(R) 36%, SLP(R) 2% | 主領域で 上流出力 409 / 下流入力 378
+     M_vPNml86 → LHAD1c3      接触    43.4 µm  syn    0 / 期待    5.2 | 接触: LH(R) 100% | 主領域で 上流出力 125 / 下流入力 306
+        V_l2PN → LHPV4g2      接触    42.9 µm  syn    0 / 期待    5.1 | 接触: LH(R) 100% | 主領域で 上流出力 789 / 下流入力 215
+      VA1d_vPN → LHAD1f2      接触    42.0 µm  syn    0 / 期待    5.0 | 接触: LH(R) 100% | 主領域で 上流出力 399 / 下流入力 2236
+      DL4_adPN → LHPV6c1      接触    40.9 µm  syn    0 / 期待    4.9 | 接触: LH(R) 85%, SLP(R) 15% | 主領域で 上流出力 917 / 下流入力 925
+      VP2_adPN → LHCENT5      接触    35.5 µm  syn    0 / 期待    4.2 | 接触: CA(R) 48%, SCL(R) 26%, SLP(R) 18%, LH(R) 7% | 主領域で 上流出力 174 / 下流入力 279
+     DA4l_adPN → LHPV6g1      接触    29.1 µm  syn    0 / 期待    3.5 | 接触: LH(R) 74%, CA(R) 18%, SLP(R) 8% | 主領域で 上流出力 933 / 下流入力 518
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_lh\inspect_output.csv
+########## cx
+        ER3a_d → FB4L         接触   104.1 µm  syn    0 / 期待    5.8 | 接触: LAL(R) 98%, EB 2% | 主領域で 上流出力 6 / 下流入力 426
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_cx\inspect_output.csv
+########## mb_all
+        PPL105 → MBON04       接触    82.9 µm  syn    0 / 期待    6.5 | 接触: SIP(R) 95%, SMP(R) 5% | 主領域で 上流出力 139 / 下流入力 1173
+      DL4_adPN → LHPV6c1      接触    40.9 µm  syn    0 / 期待    7.2 | 接触: LH(R) 85%, SLP(R) 15% | 主領域で 上流出力 917 / 下流入力 925
+      VP2_adPN → LHCENT5      接触    35.5 µm  syn    0 / 期待    6.2 | 接触: CA(R) 48%, SCL(R) 26%, SLP(R) 18%, LH(R) 7% | 主領域で 上流出力 174 / 下流入力 279
+      M_adPNm4 → LHAV3f1      接触    30.5 µm  syn    0 / 期待    5.4 | 接触: LH(R) 100% | 主領域で 上流出力 73 / 下流入力 1906
+     DA4l_adPN → LHPV6g1      接触    29.1 µm  syn    0 / 期待    5.1 | 接触: LH(R) 74%, CA(R) 18%, SLP(R) 8% | 主領域で 上流出力 933 / 下流入力 518
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_mb_all\inspect_output.csv
+########## vis
+          LT79 → AVLP372      接触    54.0 µm  syn    0 / 期待    7.0 | 接触: AVLP(R) 89%, PVLP(R) 11% | 主領域で 上流出力 357 / 下流入力 723
+          LT34 → AOTU035      接触    43.8 µm  syn    0 / 期待    5.7 | 接触: SMP(R) 64%, SIP(R) 29%, AOTU(R) 4%, ICL(R) 2% | 主領域で 上流出力 22 / 下流入力 1555
+          LT75 → AVLP464      接触    40.6 µm  syn    0 / 期待    5.3 | 接触: ICL(R) 59%, PLP(R) 37%, PVLP(R) 4% | 主領域で 上流出力 128 / 下流入力 81
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_vis\inspect_output.csv

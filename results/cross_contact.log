@@ -1,0 +1,46 @@
+===== cx
+PFGs → PFL1 [R] 接触 55.5 µm （6 ペア） syn 1/1
+PFGs → PFL1 [L] 接触 90.2 µm （5 ペア） syn 0/0
+ExR3 → FB8F_a [R] 接触 40.7 µm （4 ペア） syn 0/0
+ExR3 → FB8F_a [L] 接触 30.7 µm （3 ペア） syn 0/0
+ER6 → PFGs [R] 接触 10.5 µm （3 ペア） syn 0/0
+ER6 → PFGs [L] 接触 20.5 µm （4 ペア） syn 0/0
+FB6L → PFL2 [R] 接触 0.0 µm （0 ペア） syn 0/0
+FB6L → PFL2 [L] 接触 13.9 µm （5 ペア） syn 0/0
+ExR3 → FB5AA [R] 接触 86.7 µm （1 ペア） syn 0/0
+ExR3 → FB5AA [L] 接触 50.3 µm （1 ペア） syn 1/0
+FB6J → PFL3 [R] 接触 0.4 µm （1 ペア） syn 1/0
+FB6J → PFL3 [L] 接触 10.9 µm （5 ペア） syn 0/0
+FB6L → PFL3 [R] 接触 2.7 µm （2 ペア） syn 0/0
+FB6L → PFL3 [L] 接触 9.9 µm （5 ペア） syn 0/0
+ExR5 → FB5K [R] 接触 28.7 µm （2 ペア） syn 0/0
+ExR5 → FB5K [L] 接触 63.8 µm （2 ペア） syn 1/0
+ER6 → PFR_a [R] 接触 4.7 µm （2 ペア） syn 0/0
+ER6 → PFR_a [L] 接触 0.0 µm （0 ペア） syn 0/0
+ExR3 → hDeltaD [R] 接触 25.5 µm （3 ペア） syn 0/0
+ExR3 → hDeltaD [L] 接触 22.2 µm （4 ペア） syn 0/0
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_cx\cross_male_cns_v1_0_contact.csv
+===== lh
+VL1_vPN → LHAV2b3 [R] 接触 52.9 µm （2 ペア） syn 0/0
+VL1_vPN → LHAV2b3 [L] 接触 140.1 µm （3 ペア） syn 2/0
+WEDPN4 → mALB1 [R] 接触 0.0 µm （0 ペア） syn 0/0
+WEDPN4 → mALB1 [L] 接触 0.0 µm （0 ペア） syn 0/0
+M_l2PNl22 → LHAV2k8 [R] 接触 80.9 µm （1 ペア） syn 0/0
+M_l2PNl22 → LHAV2k8 [L] 接触 49.2 µm （1 ペア） syn 1/0
+V_l2PN → LHPD4c1 [R] 接触 102.2 µm （1 ペア） syn 0/2
+V_l2PN → LHPD4c1 [L] 接触 106.9 µm （1 ペア） syn 0/0
+DA1_vPN → LHAV2a2 [R] 接触 271.8 µm （4 ペア） syn 1/0
+DA1_vPN → LHAV2a2 [L] 接触 164.7 µm （4 ペア） syn 0/1
+VA5_lPN → LHPV4a11 [R] 接触 30.6 µm （3 ペア） syn 0/0
+VA5_lPN → LHPV4a11 [L] 接触 20.5 µm （3 ペア） syn 0/0
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_lh\cross_male_cns_v1_0_contact.csv
+===== mb_all
+M_l2PNm16 → LHCENT8 [R] 接触 116.2 µm （4 ペア） syn 0/0
+M_l2PNm16 → LHCENT8 [L] 接触 123.5 µm （4 ペア） syn 1/0
+PAM05 → MBON30 [R] 接触 13.2 µm （3 ペア） syn 1/0
+PAM05 → MBON30 [L] 接触 7.3 µm （2 ペア） syn 1/0
+DA4m_adPN → LHPV6g1 [R] 接触 34.7 µm （1 ペア） syn 0/0
+DA4m_adPN → LHPV6g1 [L] 接触 33.4 µm （1 ペア） syn 1/0
+VL1_ilPN → LHAV3e2 [R] 接触 50.8 µm （2 ペア） syn 2/0
+VL1_ilPN → LHAV3e2 [L] 接触 43.1 µm （2 ペア） syn 0/0
+-> C:\Users\morit\Programs-repo\connectomics\results\hemibrain_mb_all\cross_male_cns_v1_0_contact.csv
