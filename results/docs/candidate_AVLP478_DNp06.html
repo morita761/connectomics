@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>候補の検討: AVLP478 → DNp06</title><style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px}
+nav{font-size:.9rem;color:var(--sub);margin-bottom:18px}
+nav a{color:var(--acc);text-decoration:none}nav a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.35;border-bottom:2px solid var(--line);padding-bottom:.4em;margin-top:1.2em}
+h2{font-size:1.25rem;margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.05rem;margin-top:1.6em}
+a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600;white-space:nowrap}
+code{background:var(--code);padding:.15em .4em;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--code);color:var(--fg)}
+ul,ol{padding-left:1.4em}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:20px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--bg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc)}
+.card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+</style></head>
+<body><div class="wrap">
+<nav><a href="index.html">← 報告書の一覧</a> ／ <a href="../index.html">結果一覧</a></nav>
+<h1 id="avlp478-dnp06">候補の検討: AVLP478 → DNp06</h1>
+<p>2026-11-10。「両方 GAL4 しかない」32 組のうち、行動の読み出しと膜の密着が
+いちばんそろっていた組（<code>results/gal4only_candidates.md</code>）を詰めた。</p>
+<ul>
+<li><strong>AVLP478</strong> = 前腹外側前大脳の <strong>GABA 作動性</strong>ニューロン（左右 1 個ずつ、細胞体繊維 PVL03）</li>
+<li><strong>DNp06</strong> = <strong>下行ニューロン</strong>（アセチルコリン、左右 1 個ずつ、PVL15）</li>
+<li><strong>接触</strong> hemibrain で 95.4 µm、別個体（male-CNS）の左右で 28 / 39 µm</li>
+<li><strong>シナプス</strong> 3 個体・両方向すべて 0（期待値 7.04、Poisson 検定 <strong>p = 0.00088</strong>）</li>
+</ul>
+<h2 id="0">0. 結論を先に</h2>
+<p><strong>行動の読み出しという一点で、これまでのどの候補より強い。</strong>
+下行ニューロンに抑制シナプスを 1 本足すので、効果がそのまま運動として出る。</p>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3 個体・両方向でシナプス 0</td>
+<td>◎</td>
+</tr>
+<tr>
+<td>別個体での接触の再現</td>
+<td>◎ 28〜39 µm</td>
+</tr>
+<tr>
+<td>膜の密着（EM）</td>
+<td><strong>◎ 714 シナプスある対照と同等</strong></td>
+</tr>
+<tr>
+<td>上流がその領域で出力する</td>
+<td><strong>◎ 出力の 90% が接触領域にある</strong></td>
+</tr>
+<tr>
+<td>下流に受容体があるか</td>
+<td>◎ GABA 入力 21.2%（8,841 シナプス）</td>
+</tr>
+<tr>
+<td>混同（U × D）</td>
+<td><strong>◎ 4 組すべて 2 個体で 0</strong></td>
+</tr>
+<tr>
+<td>発現系が 2 つ</td>
+<td>△ LexA が無い。変換か断片 LexA が要る</td>
+</tr>
+<tr>
+<td>行動の読み出し</td>
+<td><strong>◎ 熱回避のナビゲーション（Jouandet 2023）</strong></td>
+</tr>
+<tr>
+<td>上流が下行ニューロンと結合する実績</td>
+<td><strong>✕ ほとんど無い（後述）</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="1">1. なぜこの組か</h2>
+<h3 id="dnp06-avlp">DNp06 は AVLP の細胞から大量に入力を受けている</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>hemibrain</th>
+<th>male-CNS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AVLP* → DNp06 の合計</td>
+<td><strong>3,212 シナプス / 184 タイプ</strong></td>
+<td><strong>8,666 シナプス / 173 タイプ</strong></td>
+</tr>
+<tr>
+<td><strong>うち AVLP478 から</strong></td>
+<td><strong>0</strong></td>
+<td><strong>0</strong></td>
+</tr>
+</tbody>
+</table>
+<p>接触の長さで割った密度で並べると、AVLP478 だけが 0 になる。</p>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>接触</th>
+<th>シナプス</th>
+<th>1 µm あたり</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AVLP201 → DNp06</td>
+<td>322.9 µm</td>
+<td>112</td>
+<td>0.347</td>
+</tr>
+<tr>
+<td>AVLP435 → DNp06</td>
+<td>265.3 µm</td>
+<td>92</td>
+<td>0.347</td>
+</tr>
+<tr>
+<td>AVLP488 → DNp06</td>
+<td>302.3 µm</td>
+<td>101</td>
+<td>0.334</td>
+</tr>
+<tr>
+<td>AVLP542 → DNp06</td>
+<td>412.6 µm</td>
+<td>111</td>
+<td>0.269</td>
+</tr>
+<tr>
+<td>AVLP170 → DNp06</td>
+<td>374.3 µm</td>
+<td>91</td>
+<td>0.243</td>
+</tr>
+<tr>
+<td>AVLP076 → DNp06</td>
+<td>814.2 µm</td>
+<td>179</td>
+<td>0.220</td>
+</tr>
+<tr>
+<td>AVLP166 → DNp06</td>
+<td>349.7 µm</td>
+<td>60</td>
+<td>0.172</td>
+</tr>
+<tr>
+<td><strong>AVLP478 → DNp06</strong></td>
+<td><strong>95.4 µm</strong></td>
+<td><strong>0</strong></td>
+<td><strong>0.000</strong></td>
+</tr>
+</tbody>
+</table>
+<p>ほかの AVLP が 0.02〜0.35 シナプス/µm で結合しているので、95.4 µm の接触なら
+<strong>2〜33 シナプスできていておかしくない</strong>。解析の期待値は 7.04、Poisson 検定で <strong>p = 0.00088</strong>。
+統計的にも有意な欠落である。</p>
+<h3 id="_1">ただし正直に言うと、上流側の対照は弱い</h3>
+<p><strong>AVLP478 自身は、下行ニューロンとほとんど結合していない。</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>hemibrain</th>
+<th>male-CNS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AVLP478 → 下行ニューロン全般</td>
+<td><strong>7 シナプス / 5 タイプ</strong></td>
+<td><strong>105 シナプス / 20 タイプ</strong></td>
+</tr>
+</tbody>
+</table>
+<p>AVLP478 の主な出力先は AVLP082 (1,418)、AVLP001 (1,229)、AVLP079 (588) といった
+<strong>同じ AVLP の仲間</strong>であって、下行ニューロンではない。</p>
+<p>つまりこの組の欠落は、
+<strong>「DNp06 の側から見れば異常（184 タイプが結合しているのに 1 つだけ 0）」</strong>だが、
+<strong>「AVLP478 の側から見れば普通（もともと DN に出さない細胞）」</strong>である。
+強制形成が成功した場合、それは <strong>AVLP の局所介在ニューロン → 下行ニューロン</strong>という
+本来ほとんど存在しない種類の結合を作ることになる。
+これは弱点でもあり、<strong>この実験でしか作れない結合という意味では面白い点でもある</strong>。</p>
+<h2 id="2">2. 伝達物質がかみ合う</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>伝達物質</th>
+<th>根拠</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AVLP478</td>
+<td><strong>GABA</strong></td>
+<td>male-CNS の consensusNt（予測も一致）</td>
+</tr>
+<tr>
+<td>DNp06</td>
+<td>アセチルコリン</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DNp06 は入力の 21.2%（8,841 シナプス）を GABA から受けている</strong>（male-CNS、入力の総数 41,753）。
+GABA 受容体がある状態なので、新しくできたシナプスは機能しうる。</p>
+<p>DNp06 の主な入力:</p>
+<table>
+<thead>
+<tr>
+<th>相手</th>
+<th>シナプス</th>
+<th>正体</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LPLC1</td>
+<td>2,773</td>
+<td>ルーミング（接近刺激）検出の視覚投射ニューロン</td>
+</tr>
+<tr>
+<td>LPLC2</td>
+<td>1,719</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>PVLP123</td>
+<td>1,528</td>
+<td>腹外側前大脳</td>
+</tr>
+<tr>
+<td>LC4</td>
+<td>1,152</td>
+<td>ルーミング検出</td>
+</tr>
+<tr>
+<td>PVLP122</td>
+<td>1,018</td>
+<td>腹外側前大脳</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DNp06 は視覚的な接近刺激に対する回避の出口にあたる。</strong>
+そこに GABA を 1 本足すことになるので、「逃避・回避が出にくくなる」方向の変化を予想する。</p>
+<h2 id="3">3. 接触部位</h2>
+<h3 id="_2">細胞ごと</h3>
+<p>hemibrain では AVLP478_R (5813098368) と DNp06_R (5813023322) の 1 組だけが接している（95.4 µm）。
+hemibrain は右半球のみなので、左側は male-CNS で確認した（L 39 µm / R 28 µm）。</p>
+<h3 id="_3">領域の内訳</h3>
+<pre><code>接触の場所        AVLP(R) 74%, PVLP(R) 25%, WED(R) 1%
+AVLP478 の出力    AVLP(R) 1,667, PVLP(R) 153, ICL(R) 33     （全 1,859 のうち約 90% が AVLP(R)）
+AVLP478 の入力    AVLP(R) 6,324, PVLP(R) 557
+DNp06 の入力      PVLP(R) 5,546, AVLP(R) 3,169, PLP(R) 1,456, WED(R) 1,370
+DNp06 の出力      PVLP(R) 61, WED(R) 31, AVLP(R) 14         （脳内では受け手。出力は腹髄）
+</code></pre>
+<p><strong>AVLP478 は出力の 90% を接触領域で出している。</strong> これはこれまでの候補で最高
+（MBON04 ↔ PPL105 は 53%、ExR2 → LAL098 は 14%）。
+DNp06 側も AVLP(R) に 3,169 の後シナプス部位がある。
+<strong>両者が「出す側」「受ける側」として働いている場所で接している。</strong></p>
+<h2 id="4-em">4. EM で測った膜の密着</h2>
+<p><strong>同じ DNp06 に 714 シナプスを作っている LPLC1 を対照に置いた。</strong></p>
+<table>
+<thead>
+<tr>
+<th>部位</th>
+<th>最接近の隙間</th>
+<th>直接隣接するボクセル</th>
+<th>間に何も無い表面点</th>
+<th>膜の頂点 &lt;50 nm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AVLP478 → DNp06（0 シナプス）</strong></td>
+<td>45 nm</td>
+<td><strong>4,915</strong></td>
+<td><strong>64%</strong></td>
+<td><strong>8</strong></td>
+</tr>
+<tr>
+<td>AVLP478 → DNp06（別の測定点）</td>
+<td>0 nm</td>
+<td>0</td>
+<td>0%</td>
+<td>同上</td>
+</tr>
+<tr>
+<td><strong>LPLC1 → DNp06（714 シナプスの対照）</strong></td>
+<td>45 nm</td>
+<td><strong>5,483</strong></td>
+<td>57%</td>
+<td>3</td>
+</tr>
+<tr>
+<td>LPLC1 → DNp06（対照、別の測定点）</td>
+<td>45 nm</td>
+<td>1,609</td>
+<td>53%</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>結合している対照と同じ水準（比 0.90）。</strong> 50 nm 以内の膜の頂点はむしろ
+0 シナプスの組のほうが多い（8 対 3）。</p>
+<p>これまでの候補と並べると:</p>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>直接隣接</th>
+<th>対照との比</th>
+<th>判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AVLP478 → DNp06</strong></td>
+<td><strong>4,915 / 64%</strong></td>
+<td><strong>0.90</strong></td>
+<td><strong>◎</strong></td>
+</tr>
+<tr>
+<td>MBON04 ↔ PPL105</td>
+<td>6,140 / 70%</td>
+<td>0.78（対照 MBON04→PPL107）</td>
+<td>◎</td>
+</tr>
+<tr>
+<td>MBON04 → FB4N</td>
+<td>2,080 / 56%</td>
+<td>0.49（対照 MBON26→FB4N）</td>
+<td>◎</td>
+</tr>
+<tr>
+<td>ExR2 → LAL098</td>
+<td>1,348 / 59%</td>
+<td>0.17</td>
+<td>✕</td>
+</tr>
+<tr>
+<td>PLP022 → DNp10</td>
+<td>339 / 57%</td>
+<td>0.03</td>
+<td>✕</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">間に入っていた物体</h3>
+<p>最良の測定点（voxel 9820, 27782, 26654）で A と B のあいだにあったのは、
+<strong>すべて微小な断片</strong>だった。</p>
+<table>
+<thead>
+<tr>
+<th>物体 ID</th>
+<th>正体</th>
+<th>体積</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1852292528</td>
+<td>neuPrint に型の無い断片（pre 1 / post 6）</td>
+<td>0.003 µm³</td>
+</tr>
+<tr>
+<td>1883676240</td>
+<td>同上（pre 0 / post 1）</td>
+<td>0.000 µm³</td>
+</tr>
+<tr>
+<td>1914710537, 1883676546, 1914710589, 1914710622</td>
+<td>neuPrint に登録が無い（= 登録の下限より小さい断片）</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>グリアのような膜の鞘は無い。</strong> 結合が無いのは物理的な隔たりのせいではない。</p>
+<h2 id="5">5. ドライバー — ここが唯一の弱点</h2>
+<table>
+<thead>
+<tr>
+<th>役割</th>
+<th>系統</th>
+<th>発現系</th>
+<th>標識する型</th>
+<th>特異性</th>
+<th>構成</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上流 AVLP478</td>
+<td><strong>SS01181</strong></td>
+<td>split-GAL4</td>
+<td>MBON11, AVLP478（+MBON31, MBON32?）</td>
+<td><strong>0</strong></td>
+<td>VT049125(DBD) ∩ R52H01(AD)</td>
+</tr>
+<tr>
+<td>下流 DNp06</td>
+<td><strong>SS02256</strong></td>
+<td>split-GAL4</td>
+<td><strong>DNp06 のみ</strong></td>
+<td><strong>2</strong></td>
+<td>VT017411(DBD) ∩ <strong>VT019018</strong>(AD)</td>
+</tr>
+<tr>
+<td>下流 DNp06（代替）</td>
+<td>SS01047</td>
+<td>split-GAL4</td>
+<td>DNp06 のみ</td>
+<td>1</td>
+<td>VT017647(DBD) ∩ <strong>VT019018</strong>(AD)</td>
+</tr>
+<tr>
+<td>下流 DNp06（代替）</td>
+<td>SS02292</td>
+<td>split-GAL4</td>
+<td>DNp04, DNp06</td>
+<td>1</td>
+<td>VT017647(DBD) ∩ VT017411(AD)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>AVLP478 を標識する系統は SS01181 ただ 1 本で、特異性 0。</strong>
+MBON11 を一緒に標識し、Shuai 2024 の記載では MBON31・MBON32 も入る可能性がある。</p>
+<h3 id="u-d-0">混同の確認 — それでも U × D はすべて 0</h3>
+<p>U = {AVLP478, MBON11, MBON31, MBON32}、D = {DNp06} として両方向を数えた。</p>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>hemibrain</th>
+<th>male-CNS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AVLP478 ↔ DNp06</td>
+<td>0 / 0</td>
+<td>0 / 0</td>
+</tr>
+<tr>
+<td><strong>MBON11 ↔ DNp06</strong></td>
+<td><strong>0 / 0</strong></td>
+<td><strong>0 / 0</strong></td>
+</tr>
+<tr>
+<td><strong>MBON31 ↔ DNp06</strong></td>
+<td><strong>0 / 0</strong></td>
+<td><strong>0 / 0</strong></td>
+</tr>
+<tr>
+<td><strong>MBON32 ↔ DNp06</strong></td>
+<td><strong>0 / 0</strong></td>
+<td><strong>0 / 0</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>4 組すべてが 2 個体で完全に 0。</strong> SS01181 の特異性が低くても、
+<strong>この実験に関しては基準値が汚れない。</strong></p>
+<h3 id="lexa">どう LexA をそろえるか</h3>
+<p>2 つの道があり、<strong>前者を強く勧める</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>案</th>
+<th>構成</th>
+<th>U × D</th>
+<th>判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① SS02256 を split-LexA に変換</strong></td>
+<td>上流 SS01181-GAL4 ／ 下流 split-LexA(DNp06)</td>
+<td><strong>4 組。すべて 0 と確認済み</strong></td>
+<td><strong>◎</strong></td>
+</tr>
+<tr>
+<td>② VT019018-LexA をそのまま使う</td>
+<td>上流 SS01181-GAL4 ／ 下流 VT019018-LexA</td>
+<td>VT019018 が何を標識するか未確定</td>
+<td>△</td>
+</tr>
+</tbody>
+</table>
+<p>①は Shuai 2024 の変換法（34 系統中 22 系統成功）で SS02256 を split-LexA にするだけ。
+<strong>D が DNp06 単独のままなので、上の表で混同の判定が完結している。</strong>
+②は断片 1 つなので D が広がり、FlyLight の画像で中身を確定し直す必要がある。</p>
+<p>なお AVLP478 側を LexA にする道は無い。SS01181 の断片
+（VT049125・R52H01）にはどちらも LexA 版が存在しない。</p>
+<h2 id="6">6. 読み出し</h2>
+<h3 id="dnp06">DNp06 の行動</h3>
+<ul>
+<li><strong>熱回避のナビゲーション</strong>。
+  Jouandet GC, et al. (2023) Rapid threat assessment in the Drosophila thermosensory system.
+  <em>Nat Commun</em> 14:7067 <a href="https://doi.org/10.1038/s41467-023-42864-5">10.1038/s41467-023-42864-5</a>
+  — 温度受容の TLHON の下流として DNp06 を遺伝的に抑えると、熱回避の
+  ナビゲーションに表現型が出る。</li>
+<li><strong>ルーミングへの応答</strong>。DNp06 の最大の入力は LPLC1・LPLC2・LC4 という
+  接近刺激の検出器で、視覚的な回避・逃避の出口にあたる。</li>
+<li>下行ニューロンの一般論として、Cande J, et al. (2018) <em>eLife</em> 7:e34275
+  <a href="https://doi.org/10.7554/eLife.34275">10.7554/eLife.34275</a> が
+  個々の DN の光遺伝学的活性化で歩行中の行動がどう変わるかを体系的に測っている。
+  同じ枠組みがそのまま使える。</li>
+<li>形態と命名: Namiki S, et al. (2018) <em>eLife</em> 7:e34272
+  <a href="https://doi.org/10.7554/eLife.34272">10.7554/eLife.34272</a></li>
+</ul>
+<h3 id="_5">予想される向き</h3>
+<p>新しくできるのは <strong>GABA（抑制）→ 下行ニューロン</strong>。</p>
+<ul>
+<li>熱・接近刺激に対する<strong>回避の出にくさ</strong>として読める。</li>
+<li>読み出しは逃避の潜時・成功率、熱勾配でのナビゲーション、歩行の速度と旋回。</li>
+<li><strong>効果が運動として直接出るので、シナプス 1 本の影響を見るには最も素直な構成</strong>。
+  FB4N（行動の前例なし）や LAL098（文献なし）とは対照的。</li>
+</ul>
+<h3 id="_6">同じ動物の中に置ける対照</h3>
+<table>
+<thead>
+<tr>
+<th>対照</th>
+<th>シナプス</th>
+<th>性質</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LPLC1 → DNp06</td>
+<td>714</td>
+<td>下流は同じ細胞。上流だけ違う</td>
+</tr>
+<tr>
+<td>AVLP076 → DNp06</td>
+<td>179</td>
+<td>同上（AVLP の仲間で最大の接触 814 µm）</td>
+</tr>
+<tr>
+<td>AVLP478 → AVLP082</td>
+<td>1,418</td>
+<td>上流は同じ細胞。下流だけ違う</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-3d-em">7. 3D と EM</h2>
+<table>
+<thead>
+<tr>
+<th>中身</th>
+<th>場所</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>骨格（接触点が赤・回転できる）</td>
+<td><code>results/zero_3d/hemibrain_AVLP478_DNp06.html</code></td>
+</tr>
+<tr>
+<td>対照 LPLC1 → DNp06 の骨格</td>
+<td><code>results/zero_3d/hemibrain_LPLC1_DNp06.html</code></td>
+</tr>
+<tr>
+<td>別個体（male-CNS）左</td>
+<td><code>results/cross_3d/male-cns_v1_0_AVLP478_DNp06_L.html</code>（接触 83 µm）</td>
+</tr>
+<tr>
+<td>別個体（male-CNS）右</td>
+<td><code>results/cross_3d/male-cns_v1_0_AVLP478_DNp06_R.html</code>（接触 62 µm）</td>
+</tr>
+<tr>
+<td>メッシュと EM 断面の neuroglancer リンク</td>
+<td><code>results/em_links_AVLP478_DNp06.md</code>（対照を含む 2 本）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8">8. ほかの候補との比較</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>AVLP478 → DNp06</th>
+<th>MBON04 ↔ PPL105</th>
+<th>MBON04 → FB4N</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>接触（hemibrain）</td>
+<td>95 µm</td>
+<td>93 µm</td>
+<td>109 µm</td>
+</tr>
+<tr>
+<td>別個体での接触</td>
+<td>28〜39 µm</td>
+<td>33〜38 µm</td>
+<td>10〜29 µm</td>
+</tr>
+<tr>
+<td>膜の密着</td>
+<td>4,915 / 64%</td>
+<td>6,140 / 70%</td>
+<td>2,080 / 56%</td>
+</tr>
+<tr>
+<td>対照との比</td>
+<td><strong>0.90</strong></td>
+<td>0.78</td>
+<td>0.49</td>
+</tr>
+<tr>
+<td>上流の出力が接触領域にある割合</td>
+<td><strong>90%</strong></td>
+<td>53%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>下流が同じ伝達物質を受けている割合</td>
+<td>21.2%</td>
+<td>10.1%</td>
+<td>23.8%</td>
+</tr>
+<tr>
+<td>欠落の統計的な有意性</td>
+<td><strong>p = 0.00088</strong></td>
+<td>p = 0.0015（逆向き）</td>
+<td>—</td>
+</tr>
+<tr>
+<td>混同（U × D）</td>
+<td><strong>4 組すべて 0・確認済み</strong></td>
+<td>6 組・最大 3</td>
+<td>3 組すべて 0</td>
+</tr>
+<tr>
+<td><strong>行動の読み出し</strong></td>
+<td><strong>◎ 熱回避・逃避</strong></td>
+<td>○ 学習課題</td>
+<td>✕ 文献なし</td>
+</tr>
+<tr>
+<td>発現系</td>
+<td>△ 変換が要る</td>
+<td>◎ そろう</td>
+<td>◎ そろう</td>
+</tr>
+<tr>
+<td>上流が同種の結合を作る実績</td>
+<td><strong>✕ DN への出力は 7 シナプス</strong></td>
+<td>◎ PPL107 に 739</td>
+<td>◎ FB4C に 8</td>
+</tr>
+</tbody>
+</table>
+<p><strong>読み出しと膜の密着では最良。</strong> 足りないのは発現系（変換 1 回で解決）と、
+「上流がそもそも下行ニューロンに出力しない細胞である」という点。</p>
+<h2 id="9">9. 残っている確認事項</h2>
+<ol>
+<li><strong>SS02256 の split-LexA 化</strong>。Shuai 2024 の方法。成功率は 22/34。</li>
+<li>SS01181 が MBON31・MBON32 を本当に標識するかを標本で確認する
+   （コネクトーム上はどちらも DNp06 と 0 なので、標識していても基準値は汚れない）。</li>
+<li>AVLP478 が DN にほとんど出力しない細胞であることを踏まえ、
+   <strong>前側の分子を AVLP478 の軸索終末に届けられるか</strong>（AVLP478 の出力部位は
+   AVLP(R) に 1,667 あるので、場所の問題は無い）。</li>
+<li>導入する分子の向き。GABA 作動性 → 下行ニューロンなので、
+   抑制性シナプスとして機能させるには GABA-A（Rdl）の局在も見る。</li>
+</ol>
+<h2 id="_7">使ったデータ</h2>
+<ul>
+<li>hemibrain:v1.2.1 / FlyWire 783 / male-cns:v1.0</li>
+<li>AVLP478: bodyId 5813098368 (R) — hemibrain / 12161 (R), 10874 (L) — male-CNS</li>
+<li>DNp06: bodyId 5813023322 (R) — hemibrain / 10584 (R), 10228 (L) — male-CNS</li>
+<li>LPLC1（対照）: bodyId 5813047992 (R) — hemibrain</li>
+<li>EM の測定点: voxel (9820, 27782, 26654) — hemibrain v1.2 segmentation, 8 nm 等方</li>
+<li>ドライバー: Shuai 2024 eLife 94168（SS01181）、Namiki 2018 eLife 34272 と
+  Meissner 2024 eLife 98405（SS02256・SS01047・SS02292）</li>
+</ul>
+</div></body></html>
