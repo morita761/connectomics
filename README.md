@@ -869,6 +869,25 @@ DL4_adPN → LHPV6c1（VT033006-LexA）。
 ただし断片 1 つが標識する細胞の全体（U / D の中身）は未確定なので、
 混同の判定は FlyLight の画像か NeuronBridge の逆引きで取り直す必要がある。
 
+## 候補の検討（詳細な報告書）
+
+| 候補 | 報告書 | ひとこと |
+|---|---|---|
+| **MBON07 → PPL106** | `results/candidate_MBON07_PPL106.md` | **遺伝学が最もきれい。U × D が 1 組。膜は対照の 2.44 倍** |
+| **MBON31 → PAM11** | `results/candidate_MBON31_PAM11.md` | **膜の密着 7,375 voxel / 77% で全候補最高。U × D が 1 組** |
+| MBON04 ↔ PPL105 | `results/candidate_MBON04_PPL105.md` | 接触 93 µm・別個体 33〜38 µm。両方向が候補になる |
+| AVLP478 → DNp06 | `results/candidate_AVLP478_DNp06.md` | 下行ニューロン。行動の読み出しが直接とれる |
+| MBON04 → FB4N | `results/candidate_MBON04_FB4N.md` | 全脳探索の第一候補 |
+| ~~ExR2 → LAL098~~ | `results/candidate_ExR2_LAL098.md` | EM で却下（対照の 0.17） |
+
+まだ詰めていない候補は `results/remaining_candidates.md`、
+両方 GAL4 しかない組の評価は `results/gal4only_candidates.md`。
+
+**MBON07 → PPL106 と MBON31 → PAM11 は同時に進められる。**
+4 つの系統（MB319B・SL86062・SS52050・SL86059）はすべて別の細胞を狙うので交配は独立で、
+どちらも Ichinose 2015 の報酬性長期記憶という同じ課題で読める。
+MBON07 → PAM11（75 シナプス）が両方の内部対照になる。
+
 ## まだ探していない組はどこにあるか
 
 `results/coverage_report.md`（`python coverage.py` で再現）。

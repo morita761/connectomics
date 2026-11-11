@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>候補の検討: MBON07 → PPL106</title><style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px}
+nav{font-size:.9rem;color:var(--sub);margin-bottom:18px}
+nav a{color:var(--acc);text-decoration:none}nav a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.35;border-bottom:2px solid var(--line);padding-bottom:.4em;margin-top:1.2em}
+h2{font-size:1.25rem;margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.05rem;margin-top:1.6em}
+a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600;white-space:nowrap}
+code{background:var(--code);padding:.15em .4em;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--code);color:var(--fg)}
+ul,ol{padding-left:1.4em}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:20px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--bg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc)}
+.card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+</style></head>
+<body><div class="wrap">
+<nav><a href="index.html">← 報告書の一覧</a> ／ <a href="../index.html">結果一覧</a></nav>
+<h1 id="mbon07-ppl106">候補の検討: MBON07 → PPL106</h1>
+<p>2026-11-11。<strong>遺伝学がいちばんきれいな候補。</strong> 上流・下流とも単一タイプを
+特異性 2 で狙える系統があり、<strong>混同の組み合わせが 1 つしかない</strong>。
+並行して進める MBON31 → PAM11 は <code>results/candidate_MBON31_PAM11.md</code>。</p>
+<ul>
+<li><strong>MBON07</strong> = MBON-α1（<strong>グルタミン酸</strong>、左右 2 個ずつ）</li>
+<li><strong>PPL106</strong> = PPL1-α3（ドーパミン、左右 1 個ずつ）</li>
+<li><strong>接触</strong> hemibrain で 37.1 µm、別個体（male-CNS）の左右で 19 / 19 µm</li>
+<li><strong>シナプス</strong> 3 個体・両方向すべて 0</li>
+<li><strong>膜の密着 6,333 voxel / 72% — 結合している対照の 2.4 倍</strong></li>
+</ul>
+<h2 id="0">0. 要点</h2>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3 個体・両方向でシナプス 0</td>
+<td>◎</td>
+</tr>
+<tr>
+<td>別個体での接触の再現</td>
+<td>○ 19 µm（左右で同じ）</td>
+</tr>
+<tr>
+<td>膜の密着（EM）</td>
+<td><strong>◎ 対照の 2.44 倍</strong></td>
+</tr>
+<tr>
+<td>上流がその領域で出力する</td>
+<td>◎ 出力の 84% が SLP(R)</td>
+</tr>
+<tr>
+<td>下流に受容体があるか</td>
+<td>◎ グルタミン酸入力 11.6%（約 1,960 シナプス）</td>
+</tr>
+<tr>
+<td><strong>混同（U × D）</strong></td>
+<td><strong>◎ 1 組だけ。それが目標そのもの</strong></td>
+</tr>
+<tr>
+<td><strong>発現系が 2 つ</strong></td>
+<td><strong>◎ いま手に入る系統でそろう。変換不要</strong></td>
+</tr>
+<tr>
+<td>行動の読み出し</td>
+<td>◎ 上流・下流とも 1 細胞型の前例あり</td>
+</tr>
+<tr>
+<td>欠落の意外さ</td>
+<td>△ 接触 37 µm は短く、期待値は 1.14</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1">1. 遺伝学 — この候補の最大の長所</h2>
+<table>
+<thead>
+<tr>
+<th>役割</th>
+<th>系統</th>
+<th>発現系</th>
+<th>標識する型</th>
+<th>特異性</th>
+<th>出典</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上流 MBON07</td>
+<td><strong>MB319B</strong></td>
+<td>split-GAL4</td>
+<td><strong>MBON07 のみ</strong></td>
+<td><strong>2</strong></td>
+<td>Shuai 2024 eLife 94168</td>
+</tr>
+<tr>
+<td>上流（代替）</td>
+<td>MB319C / MB323B</td>
+<td>split-GAL4</td>
+<td>MBON07 のみ</td>
+<td>2</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>下流 PPL106</td>
+<td><strong>SL86062</strong></td>
+<td>split-LexA</td>
+<td><strong>PPL106 のみ</strong></td>
+<td><strong>2</strong></td>
+<td>同上</td>
+</tr>
+<tr>
+<td>下流（代替）</td>
+<td>SL86050</td>
+<td>split-LexA</td>
+<td>PPL106 のみ</td>
+<td>2</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<p><strong>U = {MBON07}、D = {PPL106}。U × D は 1 組で、それが目標そのもの。</strong>
+混同が原理的に存在しない。GAL4 は 3 本、LexA は 2 本から選べるので、
+発現が弱い・効果器との相性が悪いといった問題にも代替で対応できる。</p>
+<p>参考までに、ほかの候補の U × D:</p>
+<table>
+<thead>
+<tr>
+<th>候補</th>
+<th>U × D</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBON07 → PPL106</strong></td>
+<td><strong>1 組</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>MBON31 → PAM11</td>
+<td>1 組</td>
+<td>同時に進める相方</td>
+</tr>
+<tr>
+<td>MBON04 ↔ PPL105</td>
+<td>6 組</td>
+<td>SL86063 が MBON01・03・04 を標識</td>
+</tr>
+<tr>
+<td>AVLP478 → DNp06</td>
+<td>4 組</td>
+<td>さらに split-LexA への変換が必要</td>
+</tr>
+<tr>
+<td>MBON30 → oviIN</td>
+<td>未確定</td>
+<td>断片 LexA（VT026347）の中身が不明</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2">2. 特異性</h2>
+<h3 id="ppl106-13-mbon">PPL106 は 13 タイプの MBON から入力を受けている</h3>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>接触</th>
+<th>シナプス</th>
+<th>1 µm あたり</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON18 → PPL106</td>
+<td>64.2 µm</td>
+<td>17</td>
+<td>0.265</td>
+</tr>
+<tr>
+<td>MBON11 → PPL106</td>
+<td>394.7 µm</td>
+<td>62</td>
+<td>0.157</td>
+</tr>
+<tr>
+<td>MBON29 → PPL106</td>
+<td>646.9 µm</td>
+<td>40</td>
+<td>0.062</td>
+</tr>
+<tr>
+<td>MBON19 → PPL106</td>
+<td>121.1 µm</td>
+<td>6</td>
+<td>0.050</td>
+</tr>
+<tr>
+<td>MBON24 → PPL106</td>
+<td>256.1 µm</td>
+<td>7</td>
+<td>0.027</td>
+</tr>
+<tr>
+<td>MBON06 → PPL106</td>
+<td>703.4 µm</td>
+<td>16</td>
+<td>0.023</td>
+</tr>
+<tr>
+<td>MBON14 → PPL106</td>
+<td>5162.1 µm</td>
+<td>47</td>
+<td>0.009</td>
+</tr>
+<tr>
+<td><strong>MBON07 → PPL106</strong></td>
+<td><strong>37.1 µm</strong></td>
+<td><strong>0</strong></td>
+<td><strong>0.000</strong></td>
+</tr>
+</tbody>
+</table>
+<p>MBON 全般 → PPL106 は <strong>259 シナプス / 13 タイプ</strong>（hemibrain）、
+<strong>170 / 13</strong>（male-CNS）。MBON07 だけが 0。</p>
+<h3 id="mbon07-dan">MBON07 自身は DAN と結合できる</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>hemibrain</th>
+<th>male-CNS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBON07 → PAM11</strong></td>
+<td><strong>75</strong></td>
+<td><strong>74</strong></td>
+</tr>
+<tr>
+<td>MBON07 → PAM04</td>
+<td>—</td>
+<td>4</td>
+</tr>
+<tr>
+<td>MBON07 → PAM08</td>
+<td>—</td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>MBON07 → PPL106</strong></td>
+<td><strong>0</strong></td>
+<td><strong>0</strong></td>
+</tr>
+</tbody>
+</table>
+<p>MBON07 は PAM11 に 75 シナプスを作っている（α1 区画のループ、Ichinose 2015）。
+<strong>「MBON07 が DAN と結合できない」わけではない。</strong></p>
+<h3 id="_1">正直に言うと、欠落の意外さは中程度</h3>
+<p>接触が 37.1 µm と短く、解析の期待値は <strong>1.14 シナプス</strong>。
+MBON04 ↔ PPL105（92.6 µm、期待 2.8）や AVLP478 → DNp06（95.4 µm、期待 7.0、p = 0.00088）に比べると、
+<strong>「0 であること」自体の統計的な意外さは小さい</strong>。
+この候補の強みは欠落の珍しさではなく、<strong>遺伝学の清潔さと膜の密着</strong>にある。</p>
+<p>なお MBON04 → PPL106 は hemibrain で <strong>108.5 µm 接触して 0 シナプス</strong>、
+male-CNS でも 0 だった。これは絞り込みの過程で拾われていなかった組で、
+接触の長さではこちらが上。ただし MBON04 側の LexA（SL86063）は 3 タイプを標識するので、
+遺伝学は MBON07 のほうがきれい（<code>results/remaining_candidates.md</code> 参照）。</p>
+<h2 id="3">3. 伝達物質</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>伝達物質</th>
+<th>根拠</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON07</td>
+<td><strong>グルタミン酸</strong></td>
+<td>male-CNS の consensusNt</td>
+</tr>
+<tr>
+<td>PPL106</td>
+<td>ドーパミン</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<p>PPL106 の入力の内訳（male-CNS、計 16,913）:</p>
+<table>
+<thead>
+<tr>
+<th>伝達物質</th>
+<th>割合</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>アセチルコリン</td>
+<td>84.2%</td>
+</tr>
+<tr>
+<td><strong>グルタミン酸</strong></td>
+<td><strong>11.6%（約 1,960 シナプス）</strong></td>
+</tr>
+<tr>
+<td>GABA</td>
+<td>2.2%</td>
+</tr>
+<tr>
+<td>ドーパミン</td>
+<td>1.3%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>グルタミン酸受容体がある状態。</strong> ハエのグルタミン酸作動性 MBON は
+GluClα を介して抑制性に働くことが多いので、新しくできるのは
+「MBON-α1 が PPL1-α3 を抑える」入力になると予想される。</p>
+<h2 id="4">4. 接触部位</h2>
+<h3 id="hemibrain">細胞ごと（hemibrain）</h3>
+<table>
+<thead>
+<tr>
+<th>上流</th>
+<th>下流</th>
+<th>接触</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON07 (733036127)</td>
+<td>PPL106_R (331662710)</td>
+<td><strong>19.5 µm</strong></td>
+</tr>
+<tr>
+<td>MBON07 (1234386037)</td>
+<td>PPL106_R (331662710)</td>
+<td>17.7 µm</td>
+</tr>
+</tbody>
+</table>
+<p><strong>MBON07 は左右 2 個ずつあり、そのうち 2 細胞が同じ PPL106_R に接している。</strong>
+同一個体の中で 2 回再現していることになる。別個体（male-CNS）でも左右とも 19 µm。</p>
+<h3 id="_2">領域の内訳</h3>
+<pre><code>接触の場所        SLP(R) 70%, SIP(R) 30%
+MBON07 の出力     SLP(R) 84%, SMP(R) 9%, a1(R) 3%, SIP(R) 2%
+PPL106 の入力     a3(R) 59%, SMP(R) 23%, SIP(R) 11%, SLP(R) 4%
+主領域 SLP(R) での数   MBON07 の出力部位 400 / PPL106 の入力部位 321
+</code></pre>
+<p><strong>MBON07 は出力の 84% を SLP(R) で出していて、接触もそこで起きている。</strong>
+一方 PPL106 が SLP(R) で受ける入力は全体の 4%（321 部位）と少ない。
+PPL106 の入力の本体は α3 区画（59%）なので、<strong>接触部位は PPL106 にとって
+主戦場ではない</strong>。ここは MBON04 ↔ PPL105（下流の入力部位 1,380）に劣る。</p>
+<h2 id="5-em">5. EM で測った膜の密着</h2>
+<p><strong>同じ PPL106 に 319 シナプスを作っている SMP116 を対照に置いた。</strong></p>
+<table>
+<thead>
+<tr>
+<th>部位</th>
+<th>最接近の隙間</th>
+<th>直接隣接するボクセル</th>
+<th>間に何も無い表面点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBON07 → PPL106（0 シナプス）</strong></td>
+<td>45 nm</td>
+<td><strong>6,333</strong></td>
+<td><strong>72%</strong></td>
+</tr>
+<tr>
+<td>MBON07 → PPL106（別の測定点）</td>
+<td>45 nm</td>
+<td>1,623</td>
+<td>75%</td>
+</tr>
+<tr>
+<td>SMP116 → PPL106（319 シナプスの対照）</td>
+<td>0 nm</td>
+<td>2,594</td>
+<td>45%</td>
+</tr>
+<tr>
+<td>SMP116 → PPL106（対照、別の測定点）</td>
+<td>0 nm</td>
+<td>1,154</td>
+<td>44%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>結合している対照の 2.44 倍密着している。</strong> 間に何も無い表面点の割合も 72% 対 45%。</p>
+<h3 id="_3">間に入っていた物体</h3>
+<p>最良の測定点（voxel 16622, 26866, 8932）:</p>
+<table>
+<thead>
+<tr>
+<th>物体 ID</th>
+<th>正体</th>
+<th>体積</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5813083733</td>
+<td><strong>SIP026</strong>（トレース済みの普通のニューロン、pre 455 / post 1,962）</td>
+<td>1.291 µm³</td>
+</tr>
+<tr>
+<td>548562283</td>
+<td><strong>SIP009</strong>（同、pre 190 / post 575）</td>
+<td>0.404 µm³</td>
+</tr>
+<tr>
+<td>641661885, 641661887, 641661903, 641661924</td>
+<td>neuPrint に未登録（= 登録の下限より小さい断片）</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>名前の付いた普通のニューロンと微小断片だけ。グリアの鞘は無い。</strong></p>
+<h2 id="6">6. 読み出し — 上流・下流とも前例がある</h2>
+<h3 id="mbon07-mbon-1">MBON07 = MBON-α1</h3>
+<ul>
+<li>Ichinose T, Aso Y, Yamagata N, Abe A, Rubin GM, Tanimoto H (2015)
+  Reward signal in a recurrent circuit drives appetitive long-term memory formation.
+  <em>eLife</em> 4:e10719 <a href="https://doi.org/10.7554/eLife.10719">10.7554/eLife.10719</a>
+  — <strong>MB323B で MBON-α1 を操作</strong>。活性化を匂いと対提示して 24 時間記憶を測定。
+  試験時のみの阻害で条件付け接近が大きく損なわれる。
+  条件づけ直後 1 時間の阻害で報酬性長期記憶が損なわれる。</li>
+<li>Tsao CH, Chen CC, Lin CH, Yang HY, Lin S (2018) <em>eLife</em> 7:e35264
+  <a href="https://doi.org/10.7554/eLife.35264">10.7554/eLife.35264</a>
+  — <strong>MB310C（MBON-α1 特異的）</strong>で GABA-A 受容体をノックダウンし、
+  空腹時の酵母探索行動が減少。</li>
+<li>Mohamed A, et al. (2023) <em>Front Physiol</em> <a href="https://doi.org/10.3389/fphys.2023.1111244">10.3389/fphys.2023.1111244</a>
+  — 幼虫の MBON-a1/a2 を CsChrimson で活性化すると匂い識別学習が損なわれる。</li>
+</ul>
+<h3 id="ppl106-ppl1-3">PPL106 = PPL1-α3</h3>
+<ul>
+<li>Jacob PF, Vargas-Gutierrez P, Okray Z, Vietti-Michelina S, Felsenberg J, Waddell S (2021)
+  Prior experience conditionally inhibits the expression of new learning in Drosophila.
+  <em>Curr Biol</em> <a href="https://doi.org/10.1016/j.cub.2021.05.056">10.1016/j.cub.2021.05.056</a>
+  — <strong>PPL1-α3 の阻害は pre-exposure 由来の忌避を接近に反転させる</strong>。
+  PPL1-α3 だけの阻害では即時の電撃記憶は保たれる。</li>
+<li>Takemura SY, et al. (2017) <em>eLife</em> 6:e26975
+  <a href="https://doi.org/10.7554/eLife.26975">10.7554/eLife.26975</a>
+  — <strong>PPL1-α3 単独の光遺伝学的活性化が、匂い提示なしで接近反応を生じる</strong>。</li>
+<li>Aso Y, Rubin GM (2016) <em>eLife</em> 5:e16135 — MB099C で PPL1-α3 を含む DAN を光駆動。</li>
+</ul>
+<p><strong>1 細胞型を狙った行動実験が上流にも下流にもある。</strong> 読み出しは
+報酬性長期記憶（Ichinose 2015 の枠組み）と、pre-exposure 学習（Jacob 2021）。</p>
+<h2 id="7">7. 同じ動物の中に置ける対照</h2>
+<table>
+<thead>
+<tr>
+<th>対照</th>
+<th>シナプス</th>
+<th>性質</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBON07 → PAM11</strong></td>
+<td><strong>75</strong></td>
+<td><strong>上流は同じ細胞。下流だけ違う</strong></td>
+</tr>
+<tr>
+<td>MBON11 → PPL106</td>
+<td>62</td>
+<td>下流は同じ細胞。上流だけ違う</td>
+</tr>
+<tr>
+<td>MBON18 → PPL106</td>
+<td>17</td>
+<td>同上（1 µm あたりが最大）</td>
+</tr>
+<tr>
+<td>SMP116 → PPL106</td>
+<td>319</td>
+<td>EM の対照に使った組</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-3d-em">8. 3D と EM</h2>
+<table>
+<thead>
+<tr>
+<th>中身</th>
+<th>場所</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>骨格（接触点が赤・回転できる）</td>
+<td><code>results/zero_3d/hemibrain_MBON07_PPL106.html</code></td>
+</tr>
+<tr>
+<td>別個体（male-CNS）左 / 右</td>
+<td><code>results/cross_3d/male-cns_v1_0_MBON07_PPL106_{L,R}.html</code></td>
+</tr>
+<tr>
+<td>メッシュと EM 断面の neuroglancer リンク</td>
+<td><code>results/em_links_MBON07_PPL106.md</code>（対照 SMP116 を含む 2 本）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9">9. 残っている確認事項</h2>
+<ol>
+<li>PPL106 が接触部位（SLP(R)）で受ける入力は 321 部位と少ない。
+   <strong>前側の分子を MBON07 の軸索終末に置いたとき、PPL106 側に後側の分子が
+   十分に並ぶか</strong>は実験で確かめるしかない。</li>
+<li>グルタミン酸受容体のサブタイプ（GluClα か DmGluRA か）。</li>
+<li>MB319B・MB319C・MB323B のうちどれが効果器との相性が良いか。</li>
+</ol>
+<h2 id="_4">使ったデータ</h2>
+<ul>
+<li>hemibrain:v1.2.1 / FlyWire 783 / male-cns:v1.0</li>
+<li>MBON07: bodyId 733036127, 1234386037 — hemibrain / 12859, 515338 (R), 15626, 18603 (L) — male-CNS</li>
+<li>PPL106: bodyId 331662710 (R) — hemibrain / 529512 (R), 529516 (L) — male-CNS</li>
+<li>SMP116（対照）: bodyId 582101022 — hemibrain</li>
+<li>EM の測定点: voxel (16622, 26866, 8932) — hemibrain v1.2 segmentation, 8 nm 等方</li>
+</ul>
+</div></body></html>

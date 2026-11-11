@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>候補の検討: MBON31 → PAM11</title><style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px}
+nav{font-size:.9rem;color:var(--sub);margin-bottom:18px}
+nav a{color:var(--acc);text-decoration:none}nav a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.35;border-bottom:2px solid var(--line);padding-bottom:.4em;margin-top:1.2em}
+h2{font-size:1.25rem;margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.05rem;margin-top:1.6em}
+a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600;white-space:nowrap}
+code{background:var(--code);padding:.15em .4em;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--code);color:var(--fg)}
+ul,ol{padding-left:1.4em}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:20px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--bg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc)}
+.card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+</style></head>
+<body><div class="wrap">
+<nav><a href="index.html">← 報告書の一覧</a> ／ <a href="../index.html">結果一覧</a></nav>
+<h1 id="mbon31-pam11">候補の検討: MBON31 → PAM11</h1>
+<p>2026-11-11。<strong>膜の密着がプロジェクト全体で最高の候補。</strong>
+MBON07 → PPL106（<code>results/candidate_MBON07_PPL106.md</code>）と並行して進める想定。</p>
+<ul>
+<li><strong>MBON31</strong> = MBON-α'1a（<strong>GABA</strong>、左右 1 個ずつ）</li>
+<li><strong>PAM11</strong> = PAM-α1（ドーパミン、<strong>左右 7 個ずつ</strong>の集団）</li>
+<li><strong>接触</strong> hemibrain で 25.2 µm、別個体（male-CNS）の左右で 23 / 18 µm</li>
+<li><strong>シナプス</strong> 3 個体・両方向すべて 0</li>
+<li><strong>膜の密着 7,375 voxel / 77% — 全候補で最高、対照の 2.1 倍</strong></li>
+</ul>
+<h2 id="0">0. 要点</h2>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3 個体・両方向でシナプス 0</td>
+<td>◎</td>
+</tr>
+<tr>
+<td>別個体での接触の再現</td>
+<td>○ 18〜23 µm</td>
+</tr>
+<tr>
+<td>膜の密着（EM）</td>
+<td><strong>◎ 7,375 / 77%。全候補で最高、対照の 2.08 倍</strong></td>
+</tr>
+<tr>
+<td>上流がその領域で出力する</td>
+<td>△ 出力の 24% が SMP(R)（244 部位）</td>
+</tr>
+<tr>
+<td>下流に受容体があるか</td>
+<td>△ GABA 入力 4.2%（約 660 シナプス）</td>
+</tr>
+<tr>
+<td><strong>混同（U × D）</strong></td>
+<td><strong>◎ 1 組だけ</strong></td>
+</tr>
+<tr>
+<td><strong>発現系が 2 つ</strong></td>
+<td><strong>◎ いま手に入る系統でそろう。変換不要</strong></td>
+</tr>
+<tr>
+<td>行動の読み出し</td>
+<td>△ 下流（PAM11）のみ。<strong>MBON31 に前例が無い</strong></td>
+</tr>
+<tr>
+<td>欠落の意外さ</td>
+<td>△ 接触 25 µm は短く、期待値は 0.77</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1">1. 遺伝学</h2>
+<table>
+<thead>
+<tr>
+<th>役割</th>
+<th>系統</th>
+<th>発現系</th>
+<th>標識する型</th>
+<th>特異性</th>
+<th>構成</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上流 MBON31</td>
+<td><strong>SS52050</strong></td>
+<td>split-GAL4</td>
+<td><strong>MBON31 のみ</strong></td>
+<td><strong>2</strong></td>
+<td>VT057286 × VT008170</td>
+</tr>
+<tr>
+<td>上流（代替）</td>
+<td>SS80896</td>
+<td>split-GAL4</td>
+<td>MBON31 のみ</td>
+<td>2</td>
+<td>GMR93D10 × VT006866</td>
+</tr>
+<tr>
+<td>下流 PAM11</td>
+<td><strong>SL86059</strong></td>
+<td>split-LexA</td>
+<td><strong>PAM11 のみ</strong></td>
+<td><strong>2</strong></td>
+<td>Shuai 2024</td>
+</tr>
+<tr>
+<td>下流（代替）</td>
+<td>SL86053</td>
+<td>split-LexA</td>
+<td>PAM11 のみ</td>
+<td>2</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>下流（代替）</td>
+<td>SL86060</td>
+<td>split-LexA</td>
+<td>PAM11（+PAM05 が稀に）</td>
+<td>2</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<p><strong>U = {MBON31}、D = {PAM11}。U × D は 1 組だけ。</strong>
+MBON07 → PPL106 と同じく、混同が原理的に存在しない。</p>
+<h2 id="2">2. 特異性 — 両側から見て欠落している</h2>
+<h3 id="pam11-8-mbon">PAM11 は 8 タイプの MBON から入力を受けている</h3>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>接触</th>
+<th>シナプス</th>
+<th>1 µm あたり</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON06 → PAM11</td>
+<td>851.5 µm</td>
+<td>140</td>
+<td>0.164</td>
+</tr>
+<tr>
+<td>MBON11 → PAM11</td>
+<td>383.4 µm</td>
+<td>34</td>
+<td>0.089</td>
+</tr>
+<tr>
+<td>MBON14 → PAM11</td>
+<td>181.9 µm</td>
+<td>6</td>
+<td>0.033</td>
+</tr>
+<tr>
+<td>MBON07 → PAM11</td>
+<td>2311.7 µm</td>
+<td>44</td>
+<td>0.019</td>
+</tr>
+<tr>
+<td>MBON02 → PAM11</td>
+<td>94.3 µm</td>
+<td>1</td>
+<td>0.011</td>
+</tr>
+<tr>
+<td>MBON03 → PAM11</td>
+<td>376.9 µm</td>
+<td>2</td>
+<td>0.005</td>
+</tr>
+<tr>
+<td><strong>MBON31 → PAM11</strong></td>
+<td><strong>25.2 µm</strong></td>
+<td><strong>0</strong></td>
+<td><strong>0.000</strong></td>
+</tr>
+</tbody>
+</table>
+<p>male-CNS でも MBON06 279、MBON11 84、MBON07 74、MBON13 6、MBON20 5、
+MBON14 4、MBON10 2、MBON12 2 と続き、<strong>MBON31 は出てこない</strong>。</p>
+<h3 id="mbon31-17-dan">MBON31 は 17 タイプの DAN に出力している</h3>
+<table>
+<thead>
+<tr>
+<th>相手</th>
+<th>シナプス（male-CNS）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PAM06</td>
+<td>96</td>
+</tr>
+<tr>
+<td>PAM05</td>
+<td>69</td>
+</tr>
+<tr>
+<td>PAM08</td>
+<td>36</td>
+</tr>
+<tr>
+<td>PAM02</td>
+<td>21</td>
+</tr>
+<tr>
+<td>PPL103</td>
+<td>16</td>
+</tr>
+<tr>
+<td>PAM13</td>
+<td>10</td>
+</tr>
+<tr>
+<td>PAM01</td>
+<td>5</td>
+</tr>
+<tr>
+<td>PAM03</td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>PAM11</strong></td>
+<td><strong>0</strong></td>
+</tr>
+</tbody>
+</table>
+<p>MBON31 → DAN 全般は <strong>271 シナプス / 17 タイプ</strong>。<strong>PAM11 だけが 0。</strong></p>
+<p><strong>両側から見て欠落している</strong>点は MBON04 ↔ PPL105 と同じ構図で、
+MBON07 → PPL106（上流側の対照しか立たない）より強い。</p>
+<h3 id="_1">ただし期待値は小さい</h3>
+<p>接触 25.2 µm に対して解析の期待値は <strong>0.77 シナプス</strong>。
+MBON31 自身の DAN への結合密度も低いので、
+<strong>「0 であること」の統計的な意外さは小さい</strong>。この候補の強みは膜の密着と遺伝学。</p>
+<h2 id="3">3. 伝達物質</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>伝達物質</th>
+<th>根拠</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON31</td>
+<td><strong>GABA</strong></td>
+<td>male-CNS の consensusNt</td>
+</tr>
+<tr>
+<td>PAM11</td>
+<td>ドーパミン</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<p>PAM11 の入力の内訳（male-CNS、計 15,751）:</p>
+<table>
+<thead>
+<tr>
+<th>伝達物質</th>
+<th>割合</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>アセチルコリン</td>
+<td>82.7%</td>
+</tr>
+<tr>
+<td>グルタミン酸</td>
+<td>6.9%</td>
+</tr>
+<tr>
+<td>ドーパミン</td>
+<td>4.6%</td>
+</tr>
+<tr>
+<td><strong>GABA</strong></td>
+<td><strong>4.2%（約 660 シナプス）</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>GABA 受容体はあるが薄い。</strong> MBON04 ↔ PPL105（グルタミン酸 10.1%）や
+AVLP478 → DNp06（GABA 21.2%）に比べると弱い。
+新しくできるのは「MBON-α'1a が PAM-α1 を抑える」入力。</p>
+<h2 id="4">4. 接触部位</h2>
+<h3 id="hemibrain">細胞ごと（hemibrain）</h3>
+<table>
+<thead>
+<tr>
+<th>上流</th>
+<th>下流</th>
+<th>接触</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON31 (894020730)</td>
+<td>PAM11 (482762280)</td>
+<td>19.2 µm</td>
+</tr>
+</tbody>
+</table>
+<p>PAM11 は集団（male-CNS で左右 7 個ずつ）なので、
+25.2 µm は複数の PAM11 細胞への接触の合計。代表ペアが 19.2 µm。</p>
+<h3 id="_2">領域の内訳</h3>
+<pre><code>接触の場所        SMP(R) 80%, CRE(R) 20%
+MBON31 の出力     LAL(R) 44%, SMP(R) 24%, CRE(R) 21%, SIP(R) 5%
+PAM11 の入力      a1(R) 54%, SLP(R) 21%, SMP(R) 21%, SIP(R) 2%
+主領域 SMP(R) での数   MBON31 の出力部位 244 / PAM11 の入力部位 248
+</code></pre>
+<p><strong>ここが弱点。</strong> MBON31 の出力の本体は LAL(R)（44%）で、接触領域 SMP(R) には 24%（244 部位）。
+PAM11 の入力の本体も α1 区画（54%）で、SMP(R) は 21%（248 部位）。
+<strong>両者にとって接触部位は主戦場ではない。</strong>
+MBON04 ↔ PPL105（538 / 1,380）や AVLP478 → DNp06（1,667 / 3,169）に比べると一桁小さい。</p>
+<h2 id="5-em">5. EM で測った膜の密着 — 全候補で最高</h2>
+<p><strong>同じ PAM11 に 2,884 シナプスを作っている KCab-m を対照に置いた。</strong></p>
+<table>
+<thead>
+<tr>
+<th>部位</th>
+<th>最接近の隙間</th>
+<th>直接隣接するボクセル</th>
+<th>間に何も無い表面点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBON31 → PAM11（0 シナプス）</strong></td>
+<td>45 nm</td>
+<td><strong>7,375</strong></td>
+<td><strong>77%</strong></td>
+</tr>
+<tr>
+<td>MBON31 → PAM11（別の測定点）</td>
+<td>78 nm</td>
+<td>1,162</td>
+<td>64%</td>
+</tr>
+<tr>
+<td>KCab-m → PAM11（2,884 シナプスの対照）</td>
+<td>78 nm</td>
+<td>3,538</td>
+<td>70%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>7,375 voxel / 77% は、これまで測ったどの組より高い。</strong> 対照の 2.08 倍。</p>
+<p>全候補の比較:</p>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>直接隣接</th>
+<th>間に何も無い</th>
+<th>対照との比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBON31 → PAM11</strong></td>
+<td><strong>7,375</strong></td>
+<td><strong>77%</strong></td>
+<td><strong>2.08</strong></td>
+</tr>
+<tr>
+<td>MBON07 → PPL106</td>
+<td>6,333</td>
+<td>72%</td>
+<td>2.44</td>
+</tr>
+<tr>
+<td>MBON04 ↔ PPL105</td>
+<td>6,140</td>
+<td>70%</td>
+<td>0.78</td>
+</tr>
+<tr>
+<td>AVLP478 → DNp06</td>
+<td>4,915</td>
+<td>64%</td>
+<td>0.90</td>
+</tr>
+<tr>
+<td>MBON04 → FB4N</td>
+<td>2,080</td>
+<td>56%</td>
+<td>0.49</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">間に入っていた物体</h3>
+<p>最良の測定点（voxel 18140, 31130, 11978）:</p>
+<table>
+<thead>
+<tr>
+<th>物体 ID</th>
+<th>正体</th>
+<th>体積</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5813009766</td>
+<td><strong>SIP039</strong>（トレース済み、pre 220 / post 601）</td>
+<td>0.489 µm³</td>
+</tr>
+<tr>
+<td>641709938</td>
+<td><strong>SMP112</strong>（トレース済み、pre 283 / post 894）</td>
+<td>0.443 µm³</td>
+</tr>
+<tr>
+<td>830958771, 862334236, 861993037</td>
+<td>型の無い微小断片（post 1〜3）</td>
+<td>0.000 µm³</td>
+</tr>
+<tr>
+<td>862334311</td>
+<td>neuPrint に未登録</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>グリアの鞘は無い。</strong></p>
+<h2 id="6-mbon07-ppl106">6. 読み出し — ここが MBON07 → PPL106 に劣る</h2>
+<h3 id="pam11-pam-1">PAM11 = PAM-α1 には前例がある</h3>
+<ul>
+<li>Ichinose T, Aso Y, Yamagata N, Abe A, Rubin GM, Tanimoto H (2015)
+  <em>eLife</em> 4:e10719 <a href="https://doi.org/10.7554/eLife.10719">10.7554/eLife.10719</a>
+  — <strong>MB299B で PAM-α1 を阻害</strong>。条件づけ直後 1 時間の阻害で報酬性長期記憶が
+  損なわれ、22 時間後の阻害では損なわれない。</li>
+<li>Takemura SY, et al. (2017) <em>eLife</em> 6:e26975
+  <a href="https://doi.org/10.7554/eLife.26975">10.7554/eLife.26975</a>
+  — <strong>MB043C × CsChrimson</strong> で PAM-α1 を光駆動し、記憶想起時の効果を測定。</li>
+<li>Yamagata N, Imanishi Y, Wu H, Kondo S, Sano H, Tanimoto H (2022)
+  <em>Front Behav Neurosci</em> <a href="https://doi.org/10.3389/fnbeh.2022.986064">10.3389/fnbeh.2022.986064</a>
+  — MB299B で PAM-α1 特異的に CCHa2-R をノックダウンし、長期記憶特異の障害。</li>
+</ul>
+<h3 id="mbon31-mbon-1a">MBON31 = MBON-α'1a には前例が無い</h3>
+<p>論文 15 本を検索して、行動実験の根拠となる記述は <strong>0 本</strong>。
+最も近いのは Felsenberg J, et al. (2017) <em>Nature</em> 544:240
+<a href="https://doi.org/10.1038/nature21716">10.1038/nature21716</a> で 3 回言及されるだけ
+（記憶の再評価の文脈）。系統 SS52050 / SS80896 の出所は
+Rubin GM, Aso Y (2024) <em>eLife</em> <a href="https://doi.org/10.7554/eLife.90523">10.7554/eLife.90523</a>
+で、形態と系統の記載にとどまる。</p>
+<p><strong>読み出しは PAM11 側（報酬性長期記憶）に置くしかない。</strong>
+MBON31 → PAM11 の新生シナプスが PAM-α1 の活動を抑えれば、
+Ichinose 2015 の長期記憶課題で差が出ると予想できる。</p>
+<h2 id="7">7. 同じ動物の中に置ける対照</h2>
+<table>
+<thead>
+<tr>
+<th>対照</th>
+<th>シナプス</th>
+<th>性質</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBON07 → PAM11</strong></td>
+<td><strong>75</strong></td>
+<td>下流は同じ細胞。上流だけ違う。<strong>α1 区画のループ</strong></td>
+</tr>
+<tr>
+<td>MBON06 → PAM11</td>
+<td>140</td>
+<td>同上（1 µm あたりが最大 0.164）</td>
+</tr>
+<tr>
+<td>MBON31 → PAM06</td>
+<td>96</td>
+<td><strong>上流は同じ細胞。下流だけ違う</strong></td>
+</tr>
+<tr>
+<td>MBON31 → PAM05</td>
+<td>69</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table>
+<p><strong>上流・下流それぞれに「変わってはいけない結合」が置ける。</strong></p>
+<h2 id="8-3d-em">8. 3D と EM</h2>
+<table>
+<thead>
+<tr>
+<th>中身</th>
+<th>場所</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>骨格（接触点が赤・回転できる）</td>
+<td><code>results/zero_3d/hemibrain_MBON31_PAM11.html</code></td>
+</tr>
+<tr>
+<td>別個体（male-CNS）左 / 右</td>
+<td><code>results/cross_3d/male-cns_v1_0_MBON31_PAM11_{L,R}.html</code></td>
+</tr>
+<tr>
+<td>メッシュと EM 断面の neuroglancer リンク</td>
+<td><code>results/em_links_MBON31_PAM11.md</code>（対照 KCab-m を含む 2 本）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9-mbon07-ppl106">9. MBON07 → PPL106 と同時に進める</h2>
+<p>2 つを並行して進めるのは筋が良い。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MBON07 → PPL106</th>
+<th>MBON31 → PAM11</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>区画</td>
+<td>α1（上流）→ α3（下流）</td>
+<td>α'1（上流）→ α1（下流）</td>
+</tr>
+<tr>
+<td>伝達物質</td>
+<td>グルタミン酸 → ドーパミン</td>
+<td>GABA → ドーパミン</td>
+</tr>
+<tr>
+<td>上流の系統</td>
+<td>MB319B〈GAL4〉</td>
+<td>SS52050〈GAL4〉</td>
+</tr>
+<tr>
+<td>下流の系統</td>
+<td>SL86062〈LexA〉</td>
+<td>SL86059〈LexA〉</td>
+</tr>
+<tr>
+<td>U × D</td>
+<td>1 組</td>
+<td>1 組</td>
+</tr>
+<tr>
+<td>膜の密着</td>
+<td>6,333 / 72%（対照の 2.44 倍）</td>
+<td>7,375 / 77%（2.08 倍）</td>
+</tr>
+<tr>
+<td>行動の読み出し</td>
+<td>上流・下流とも前例あり</td>
+<td>下流のみ</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>交配は完全に独立</strong>。4 つの系統はすべて別の細胞を狙うので、
+  系統の取り合いが起きない。</li>
+<li><strong>読み出しの課題を共有できる</strong>。どちらも Ichinose 2015 の報酬性長期記憶で読める
+  （PPL106 は Jacob 2021 の pre-exposure 学習も使える）。
+  同じ装置・同じプロトコルで 2 組を並べられる。</li>
+<li><strong>互いが対照になる</strong>。MBON07 → PAM11（75 シナプス）は
+  MBON31 → PAM11 の対照であり、同時に MBON07 側の「変わってはいけない結合」でもある。
+  <strong>2 組を同じ個体群で走らせると、この 1 本の結合が両方の内部対照になる。</strong></li>
+</ul>
+<h2 id="10">10. 残っている確認事項</h2>
+<ol>
+<li><strong>接触部位が両者にとって主戦場でない</strong>（上流の出力 244 部位 / 下流の入力 248 部位）。
+   分子が十分に並ぶかは実験で確かめるしかない。</li>
+<li>PAM11 の GABA 入力が 4.2% と薄い。GABA-A（Rdl）の局在を見る。</li>
+<li>PAM11 は左右 7 個ずつの集団なので、<strong>どの PAM11 細胞と接しているか</strong>を
+   標本で確認する（hemibrain では 482762280 ほか複数と接触）。</li>
+<li>MBON31 の行動実験の前例が無い。SS52050 で CsChrimson を駆動したときの
+   ベースラインの行動を先に取っておくと、解釈がしやすい。</li>
+</ol>
+<h2 id="_4">使ったデータ</h2>
+<ul>
+<li>hemibrain:v1.2.1 / FlyWire 783 / male-cns:v1.0</li>
+<li>MBON31: bodyId 894020730 (R) — hemibrain / 11805 (R), 10816 (L) — male-CNS</li>
+<li>PAM11: bodyId 482762280 ほか — hemibrain / 114661, 137539, 139706, 215931, 224500,
+  238644, 319321 (R) ／ 119763, 138822, 145749, 147857, 157016, 204930, 520616 (L) — male-CNS</li>
+<li>KCab-m（対照）: bodyId 630381662 — hemibrain</li>
+<li>EM の測定点: voxel (18140, 31130, 11978) — hemibrain v1.2 segmentation, 8 nm 等方</li>
+</ul>
+</div></body></html>
