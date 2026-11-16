@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import argparse
 import html
+import re
 import shutil
 from pathlib import Path
 
@@ -31,6 +32,49 @@ from common.runner import ROOT
 RESULTS = ROOT / "results"
 SITE = ROOT / "docs"   # GitHub Pages が選べるフォルダは / か /docs だけ
 LIMIT_MB = 100  # GitHub の 1 ファイル上限
+
+# Google タグ（GTM-TV3RKNL4）。公開する HTML すべての <head> 直後に入れる。
+# 3D は plotly が書き出すので、テンプレートに書くのではなく公開時に差し込む。
+GTAG_ID = "GTM-TV3RKNL4"
+GTAG = """
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-TV3RKNL4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+"""
+
+
+def inject_gtag(site: Path) -> int:
+    """公開する HTML すべてに Google タグを入れる（二重に入れない）。"""
+    n = 0
+    for f in sorted(site.rglob("*.html")):
+        t = f.read_text(encoding="utf-8", errors="ignore")
+        if GTAG_ID in t:
+            continue
+        # charset の宣言は先頭 1024 バイト以内に要るので、あればその直後に入れる
+        m = re.search(r"<meta[^>]*charset[^>]*>", t, re.I)
+        if m:
+            t = t[:m.end()] + GTAG + t[m.end():]
+            f.write_text(t, encoding="utf-8")
+            n += 1
+            continue
+        i = t.lower().find("<head>")
+        if i < 0:  # <head> が無いページは <html> の直後に作る
+            j = t.lower().find("<html")
+            if j < 0:
+                print(f"  タグを入れられなかった（head も html も無い）: {f.name}")
+                continue
+            k = t.find(">", j) + 1
+            t = t[:k] + "<head>" + GTAG + "</head>" + t[k:]
+        else:
+            k = i + len("<head>")
+            t = t[:k] + GTAG + t[k:]
+        f.write_text(t, encoding="utf-8")
+        n += 1
+    return n
 
 
 def copy(src: Path, dst: Path) -> int:
@@ -139,6 +183,9 @@ def main():
     ]
     (SITE / ".nojekyll").write_text("", encoding="utf-8")  # Jekyll の処理を止める
     (SITE / "index.html").write_text(INDEX.format(cards="\n".join(cards)), encoding="utf-8")
+
+    n_tag = inject_gtag(SITE)
+    print(f"Google タグ（{GTAG_ID}）を {n_tag} ページに入れた")
 
     big = [f for f in SITE.rglob("*") if f.is_file() and f.stat().st_size > LIMIT_MB * 1e6]
     print(f"docs/ に {sum(1 for f in SITE.rglob('*') if f.is_file())} ファイル / "
