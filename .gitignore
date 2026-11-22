@@ -1,5 +1,11 @@
 # 大きすぎて GitHub に載らないもの（fetch_data.py / run_all.py で作り直せる）
-data/
+# （data/ そのものではなく中身を除外する。でないと下の !… が効かない）
+data/*
+# ドライバーの一覧と LexA のカタログは論文から手で起こしたもので作り直せないので追跡する
+!data/driver_lines*.csv
+!data/lexa_lines_nonmb.csv
+!data/gmr_lexa_lines.txt
+!data/vt_lexa_lines.txt
 .venv/
 __pycache__/
 *.pyc

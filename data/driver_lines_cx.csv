@@ -1,0 +1,594 @@
+line,system,em_types,n_types,n_cells_lm,specificity,primary,description,note,source
+SS52244,split-GAL4,PFNp+m,1,,,False,PBG2-9.s-FBl1.b-NO3P.b/PBG2-9.s-FBl1.b-NO3M.b     ,Minor VNC exp,https://elifesciences.org/articles/104764
+SS00191,split-GAL4,PFNp+m,1,,,False,nan,Minor VNC exp,https://elifesciences.org/articles/104764
+SS02255,split-GAL4,PFNa,1,,,False,PBG2-9.s-FBl2.b-NO3A.b     ,Rare VNC exp,https://elifesciences.org/articles/104764
+SS00043,split-GAL4,PFNa,1,,,False,nan,Minor VNC exp,https://elifesciences.org/articles/104764
+SS52669,split-GAL4,PFNd,1,,,False,PBG2-9.s-FBl3.b-NO2D.b     ,,https://elifesciences.org/articles/104764
+SS00078,split-GAL4,PFNd,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS52577,split-GAL4,PFNv,1,,,False,PBG2-9.s-FBl3.b-NO2V.b    ,,https://elifesciences.org/articles/104764
+SS53161,split-GAL4,PFNv,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS62862,split-GAL4,PEN_a(PEN1),1,,,False,PBG2-9.s-EBt.b-NO1.b,Plus NO2 ct; sparse VNC exp,https://elifesciences.org/articles/104764
+SS54295,split-GAL4,PEN_b(PEN2),1,,,False,nan,,https://elifesciences.org/articles/104764
+SS02232,split-GAL4,PEN_b(PEN2),1,,,False,nan,Some non-CX cts; sparse VNC exp,https://elifesciences.org/articles/104764
+SS02191,split-GAL4,PEG,1,,,False,PBG1-9.s-EBt.b-D/V GA.b    ,VNC exp,https://elifesciences.org/articles/104764
+SS27853,split-GAL4,PEG,1,,,False,nan,"Non-CX cts, VNC exp",https://elifesciences.org/articles/104764
+SS00090,split-GAL4,EPG,1,,,False,PBG1-8.b-EBw.s-D/V GA.b    ,,https://elifesciences.org/articles/104764
+SS00098,split-GAL4,EPG,1,,,False,nan,Sparse VNC exp,https://elifesciences.org/articles/104764
+SS02195,split-GAL4,PEcG,1,,,False,PBG1-9.s-EBc.b-D/V GA.b    ,Minor VNC exp,https://elifesciences.org/articles/104764
+SS56252,split-GAL4,PEcG,1,,,False,nan,Plus CX ct; minor VNC exp,https://elifesciences.org/articles/104764
+SS50576,split-GAL4,EPGt,1,,,False,PBG9.b-EB.P.s-GA-t.b   ,Some VNC exp,https://elifesciences.org/articles/104764
+SS02254,split-GAL4,EPGt,1,,,False,nan,Non-CX cts; VNC exp,https://elifesciences.org/articles/104764
+SS52547,split-GAL4,PFGs,1,,,False,PB.s-FBl6.b.l3.s-VGA-s.b      ,Some VNC exp,https://elifesciences.org/articles/104764
+SS77032,split-GAL4,PFGs,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS62596,split-GAL4,PFGs,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS20046,split-GAL4,PFGs,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS52590,split-GAL4,PFGs,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS02270,split-GAL4,PFR_a,1,,,False,"PBG1-8.s-FBl3,4,5.s.b-ROB.b    ",_a based on CB#; could be _a and _b if incomplete expression; OL exp,https://elifesciences.org/articles/104764
+SS02293,split-GAL4,PFR_a,1,,,False,nan,_a and _b based on CB#; minor VNC exp,https://elifesciences.org/articles/104764
+SS54549,split-GAL4,PFR_b,1,,,False,"PBG1-8.s-FBl3,4,5.s.b-ROB.b    ","_b based on CB#, though could be incomplete expression",https://elifesciences.org/articles/104764
+SS02293,split-GAL4,PFR_b,1,,,False,nan,_a and _b based on CB#; minor VNC exp,https://elifesciences.org/articles/104764
+SS100561,split-GAL4,PFL1;PFLC,2,,,False,PBG1-7.s-FBl2.s-LAL.b-CRE.b   ,†,https://elifesciences.org/articles/104764
+SS47735,split-GAL4,PFL1;PFLC,2,,,False,nan,†,https://elifesciences.org/articles/104764
+SS82329,split-GAL4,PFL2,1,,,False,"PB1-4FB1,2,4,5LAL ",Plus CX ct; some VNC exp;  †,https://elifesciences.org/articles/104764
+SS82331,split-GAL4,PFL2,1,,,False,nan,Plus CX ct; some VNC exp;  †,https://elifesciences.org/articles/104764
+SS60291,split-GAL4,PFL2,1,,,False,nan,LAL arbor indicates PFL2 or PFL3 or both;  †,https://elifesciences.org/articles/104764
+[SS82330],split-GAL4,PFL2,1,,,False,nan,Likely PFL2&3;  †,https://elifesciences.org/articles/104764
+SS82335,split-GAL4,PFL3,1,,,False,"PB1-7FB1,2,4,5LAL ",Can't rule out also PFL2; plus CX ct; minor VNC exp,https://elifesciences.org/articles/104764
+SS60291,split-GAL4,PFL3,1,,,False,nan,LAL arbor indicates PFL2 or PFL3 or both;  †,https://elifesciences.org/articles/104764
+[SS00135],split-GAL4,PFL3,1,,,False,nan,,https://elifesciences.org/articles/104764
+[SS82330],split-GAL4,PFL3,1,,,False,nan,Likely PFL2&3;  †,https://elifesciences.org/articles/104764
+SS52578,split-GAL4,LPsP,1,,,False,PB.b-LAL.s-PS.s   ,,https://elifesciences.org/articles/104764
+SS52684,split-GAL4,LPsP,1,,,False,nan,Minimal non-CX and VNC exp,https://elifesciences.org/articles/104764
+SS00118,split-GAL4,P6-8P9,1,,,False,PBG6-8.sG9.b  ,Sparse VNC exp,https://elifesciences.org/articles/104764
+SS00189,split-GAL4,P6-8P9,1,,,False,nan,Minimal non-CX and VNC exp,https://elifesciences.org/articles/104764
+SS52313,split-GAL4,Delta7,1,,,False,PB18.s-GxΔ7Gy.b/PB18.s-9i1i8c.b,,https://elifesciences.org/articles/104764
+SS52257,split-GAL4,Delta7,1,,,False,nan,Sparse VNC exp,https://elifesciences.org/articles/104764
+SS00153,split-GAL4,P1-9,1,,,False,PBG1/2-9.b-SPSi.s     ,Some VNC exp,https://elifesciences.org/articles/104764
+SS56247,split-GAL4,P1-9,1,,,False,nan,Sparse VNC exp,https://elifesciences.org/articles/104764
+SS04778,split-GAL4,IbSpsP,1,,,False,PBG2-9.b-IB.s.SPS.s,,https://elifesciences.org/articles/104764
+SS03951,split-GAL4,IbSpsP,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS46517,split-GAL4,GLNO,1,,,False,LAL.s-GAi.s-NO1i.b,,https://elifesciences.org/articles/104764
+SS47436,split-GAL4,GLNO,1,,,False,nan,Some non-CX exp,https://elifesciences.org/articles/104764
+SS47406,split-GAL4,LNOa,1,,,False,LAL.s-NO3Ai.b,,https://elifesciences.org/articles/104764
+SS63502,split-GAL4,LNOa,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS47432,split-GAL4,LNOa,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS47384,split-GAL4,LCNOpm,1,,,False,LAL.s-CREi.s-NO3P/Mi.b,,https://elifesciences.org/articles/104764
+SS47358,split-GAL4,LCNOpm,1,,,False,nan,"IS≠SS, alt is SS42273 (BJD_115C01_BB_21-x-GMR_83B02_XD_01)",https://elifesciences.org/articles/104764
+SS92647,split-GAL4,LCNOpm,1,,,False,nan,LCNOpm weak; plus FB4G;  †,https://elifesciences.org/articles/104764
+SS42273,split-GAL4,LCNOpm,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS46525,split-GAL4,LCNOp;LCNp,2,,,False,LAL.s-CREc.s-NO3Pc.b ,Occ weak exp in FB cell; variable exp in CNS and VNC,https://elifesciences.org/articles/104764
+SS46529,split-GAL4,LCNOp;LCNp,2,,,False,nan,Non-CX and minor VNC exp,https://elifesciences.org/articles/104764
+SS47398,split-GAL4,LNO1,1,,,False,LAL.s-NO1i.b,Some non-CX and VNC exp,https://elifesciences.org/articles/104764
+SS95213,split-GAL4,LNO1,1,,,False,nan,Minor non-CX and VNC exp;  †,https://elifesciences.org/articles/104764
+SS90977,split-GAL4,LNO2,1,,,False,nan,Minor VNC exp;  †,https://elifesciences.org/articles/104764
+SS83782,split-GAL4,LNO2,1,,,False,nan,Non-CX cts; some VNC exp;  †,https://elifesciences.org/articles/104764
+BJD_114D08,split-GAL4,LNO3,1,,,False,nan,GAL4 line; only line identified for LNO3,https://elifesciences.org/articles/104764
+SS50447,split-GAL4,vDeltaA_a,1,,,False,AB-FBl8 /AF,Rare v∆A_b in MCFO; sparse VNC exp,https://elifesciences.org/articles/104764
+SS02718,split-GAL4,vDeltaA_a,1,,,False,nan,Occasional v∆A_b in MCFO,https://elifesciences.org/articles/104764
+SS50419,split-GAL4,SAF,1,,,False,SLP-AB-FBl8,Variable non-CX exp; sparse VNC exp,https://elifesciences.org/articles/104764
+SS68681,split-GAL4,SAF,1,,,False,nan,Plus non-CX ct; minor VNC exp;  †,https://elifesciences.org/articles/104764
+SS68682,split-GAL4,SAF,1,,,False,nan,"_I5: FB1J; _I6: SAF, so likely both cts",https://elifesciences.org/articles/104764
+SS50502,split-GAL4,SA1_a,1,,,False,SLP.s-ABi.b,"SA1, SA2, SA3 are 3 forms of SLP-AB. SS50502 includes SA1, SA2, SA3",https://elifesciences.org/articles/104764
+SS50510,split-GAL4,SA1_b,1,,,False,SLP.s-ABi.b,"SS50510 includes SA1, SA2, SA3",https://elifesciences.org/articles/104764
+SS64464,split-GAL4,hDeltaA,1,,,False,FB4D5FB4 ,†,https://elifesciences.org/articles/104764
+SS82789,split-GAL4,hDeltaA,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS64527,split-GAL4,hDeltaB,1,,,False,"FB3,4vD5FB3,4v ",,https://elifesciences.org/articles/104764
+SS63915,split-GAL4,hDeltaB,1,,,False,nan,"CB # right, signature dorsal spurs for h∆B",https://elifesciences.org/articles/104764
+SS64521,split-GAL4,hDeltaB,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS96938,split-GAL4,hDeltaC,1,,,False,"FB2,6D7FB6 ",†,https://elifesciences.org/articles/104764
+SS102081,split-GAL4,hDeltaC,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS65202,split-GAL4,hDeltaD,1,,,False,"FB1,8D3FB8 ",†,https://elifesciences.org/articles/104764
+SS00045,split-GAL4,hDeltaD,1,,,False,nan,Minor VNC,https://elifesciences.org/articles/104764
+SS64505,split-GAL4,hDeltaD,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS90984,split-GAL4,hDeltaE,1,,,False,"FB1,7D3FB7 ",†,https://elifesciences.org/articles/104764
+SS54689,split-GAL4,hDeltaE,1,,,False,nan,Couple MCFO show off-target expression,https://elifesciences.org/articles/104764
+SS63121,split-GAL4,hDeltaF,1,,,False,"FB1,6d,7D2FB6,7 ",,https://elifesciences.org/articles/104764
+SS53683,split-GAL4,hDeltaF,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS54903,split-GAL4,hDeltaF,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS63959,split-GAL4,hDeltaF,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS00291,split-GAL4,hDeltaF,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS65888,split-GAL4,hDeltaG,1,,,False,"FB2,3,5d6vD3FB6v ",Also h∆H; minor non-CX; †,https://elifesciences.org/articles/104764
+SS85319,split-GAL4,hDeltaG,1,,,False,nan,Plus h∆ ct,https://elifesciences.org/articles/104764
+SS92512,split-GAL4,hDeltaH,1,,,False,"FB2d,4D3FB5 ",,https://elifesciences.org/articles/104764
+SS91776,split-GAL4,hDeltaH,1,,,False,nan,Some VNC exp,https://elifesciences.org/articles/104764
+SS65888,split-GAL4,hDeltaH,1,,,False,nan,Also h∆G minor non-CX; †,https://elifesciences.org/articles/104764
+SS60474,split-GAL4,hDeltaH,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS65342,split-GAL4,hDeltaI,1,,,False,"FB2,3,4,5D5FB4,5v ","Minor VNC; CB#, anatomy best fit h∆I; 1 image >fit h∆J",https://elifesciences.org/articles/104764
+SS60919,split-GAL4,hDeltaI,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS63547,split-GAL4,hDeltaI,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS91768,split-GAL4,hDeltaJ,1,,,False,"FB1,2,3,4D5FB4,5 ",Best fit though CB# ~half total; †,https://elifesciences.org/articles/104764
+SS63089,split-GAL4,hDeltaK,1,,,False,"EBFB3,4D5FB6 ",,https://elifesciences.org/articles/104764
+SS63158,split-GAL4,hDeltaK,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS54676,split-GAL4,hDeltaK,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS59410,split-GAL4,hDeltaK,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS59455,split-GAL4,hDeltaK,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS96918,split-GAL4,hDeltaL,1,,,False,"FB2,6D5FB6d ",†,https://elifesciences.org/articles/104764
+SS60415,split-GAL4,hDeltaL,1,,,False,nan,"non-CX, OL & VNC exp; †",https://elifesciences.org/articles/104764
+SS59766,split-GAL4,hDeltaM,1,,,False,"FB2,4D3FB5 ",,https://elifesciences.org/articles/104764
+SS65922,split-GAL4,hDeltaM,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS84332,split-GAL4,vDeltaA_b,1,,,False,FB1D0FB8 ,,https://elifesciences.org/articles/104764
+SS02718,split-GAL4,vDeltaA_b,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS84333,split-GAL4,vDeltaB,1,,,False,FB1D0FB7_1 ,†,https://elifesciences.org/articles/104764
+SS82796,split-GAL4,vDeltaB,1,,,False,nan,Minor non-CX and VNC exp,https://elifesciences.org/articles/104764
+SS00266,split-GAL4,vDeltaB,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS00268,split-GAL4,vDeltaC,1,,,False,FB1D0FB7_2 ,Plus non-CX ct,https://elifesciences.org/articles/104764
+SS02953,split-GAL4,vDeltaC,1,,,False,nan,Plus non-CX ct; VNC exp,https://elifesciences.org/articles/104764
+SS60482,split-GAL4,vDeltaD,1,,,False,FB1D0FB6 ,Plus v∆C?&v∆E?,https://elifesciences.org/articles/104764
+SS02951,split-GAL4,vDeltaD,1,,,False,nan,v∆D and v∆E; minor VNC exp,https://elifesciences.org/articles/104764
+SS02951,split-GAL4,vDeltaE,1,,,False,"FB1,2,3D0FB6v ",v∆D and v∆E; minor VNC exp,https://elifesciences.org/articles/104764
+SS82718,split-GAL4,vDeltaE,1,,,False,nan,v∆E best fit morph. and CB#; unlikely v∆F/G; plust non_CX ct; some VNC exp; †,https://elifesciences.org/articles/104764
+SS82784,split-GAL4,vDeltaF,1,,,False,"FB1,2,3D0FB5d ","Most likely v∆F+v∆G; plus non-CX, VNC exp",https://elifesciences.org/articles/104764
+SS60428,split-GAL4,vDeltaF,1,,,False,nan,"v∆F, v∆G,v∆J (B5 shows v∆F)",https://elifesciences.org/articles/104764
+SS82784,split-GAL4,vDeltaG,1,,,False,"FB1,2D0FB5d "," Most likely v∆F+v∆G; plus non-CX, VNC exp",https://elifesciences.org/articles/104764
+SS60428,split-GAL4,vDeltaG,1,,,False,nan," v∆F, v∆G,v∆J (B8 shows v∆G)",https://elifesciences.org/articles/104764
+SS84345,split-GAL4,vDeltaH,1,,,False,"FB1,2D0FB5 ","Most likely v∆H; OL, non-CX, VNC exp; †",https://elifesciences.org/articles/104764
+SS60493,split-GAL4,vDeltaH,1,,,False,nan,may not be v∆H; plus addl v∆ cts; some VNC exp,https://elifesciences.org/articles/104764
+SS82776,split-GAL4,vDeltaJ,1,,,False,FB1D0FB5v ,"Could be v∆J, v∆K, v∆L or v∆M; CB# favors v∆J ",https://elifesciences.org/articles/104764
+SS60428,split-GAL4,vDeltaJ,1,,,False,nan,"v∆F, v∆G,v∆J (B1 MCFO shows v∆J)",https://elifesciences.org/articles/104764
+SS60427,split-GAL4,vDeltaK,1,,,False,FB1vD0FB4d5v ,"CB# favors v∆K over v∆L; FBl4 arbor fits v∆K >v∆L,v∆M",https://elifesciences.org/articles/104764
+SS60750,split-GAL4,vDeltaK,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS82776,split-GAL4,vDeltaK,1,,,False,nan,"Could be v∆J, v∆K, v∆L or v∆M; CB# favors v∆J; † ",https://elifesciences.org/articles/104764
+SS84374,split-GAL4,vDeltaL,1,,,False,FB1vD0FB4 ,†,https://elifesciences.org/articles/104764
+SS84327,split-GAL4,vDeltaL,1,,,False,nan,Could be v∆M but CB# favors v∆L; †,https://elifesciences.org/articles/104764
+SS82776,split-GAL4,vDeltaL,1,,,False,nan,"Could be v∆J, v∆K, v∆L or v∆M; CB# favors v∆J; †",https://elifesciences.org/articles/104764
+SS00281,split-GAL4,vDeltaM,1,,,False,FB1vD0FB4 ,Ventral spurs match v∆M,https://elifesciences.org/articles/104764
+SS82776,split-GAL4,vDeltaM,1,,,False,nan,"Could be v∆J, v∆K, v∆L or v∆M; CB# favors v∆J; †",https://elifesciences.org/articles/104764
+SS60081,split-GAL4,FR1,1,,,False,FB2-5RUB ,,https://elifesciences.org/articles/104764
+SS60133,split-GAL4,FR1,1,,,False,nan,Some VNC exp.,https://elifesciences.org/articles/104764
+SS59801,split-GAL4,FC1,1,,,False,FB2CRE,At least 2 FC1 cts,https://elifesciences.org/articles/104764
+SS60159,split-GAL4,FC1,1,,,False,nan,Several FC1 cts,https://elifesciences.org/articles/104764
+SS64320,split-GAL4,FC1,1,,,False,nan,At least 2 FC1 cts,https://elifesciences.org/articles/104764
+SS64331,split-GAL4,FC1,1,,,False,nan,At least 2 FC1 cts,https://elifesciences.org/articles/104764
+SS59799,split-GAL4,FC1,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS64334,split-GAL4,FC1,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS60353,split-GAL4,FC1,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS60370,split-GAL4,FC1,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS60157,split-GAL4,FC1,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS64404,split-GAL4,FC1F,1,,,False,FB2CRE ,Better fit than FC1C given CB# ,https://elifesciences.org/articles/104764
+SS62856,split-GAL4,FC3,1,,,False,"FB2,3,5,6CRE ",,https://elifesciences.org/articles/104764
+SS64375,split-GAL4,FC3,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS64305,split-GAL4,FC3,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS02920,split-GAL4,FS1B,1,,,False,"FB2,5,SMPSMP ",Plus FB ct; some VNC exp,https://elifesciences.org/articles/104764
+SS02920,split-GAL4,FS2,1,,,False,"FB3,6SMP ",Plus FB ct; some VNC exp,https://elifesciences.org/articles/104764
+SS89746,split-GAL4,FS3,1,,,False,"FB1d,3,6,7SMP ",Some non-CX expression; minor stochastic VNC exp,https://elifesciences.org/articles/104764
+SS59689,split-GAL4,FB1A,1,,,False,"SMPSIPFB1,3 ","Similar to FB1F; 2 CB per hemis, so FB1A",https://elifesciences.org/articles/104764
+SS75852,split-GAL4,FB1A,1,,,False,nan,Some VNC exp,https://elifesciences.org/articles/104764
+SS60125,split-GAL4,FB1A,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS59695,split-GAL4,FB1B,1,,,False,SMPSLPFB1d ,FB not perfect match; †,https://elifesciences.org/articles/104764
+SS69833,split-GAL4,FB1B,1,,,False,nan,Minor VNC exp; †,https://elifesciences.org/articles/104764
+SS59684,split-GAL4,FB1B,1,,,False,nan,Plus FB1F,https://elifesciences.org/articles/104764
+SS63879,split-GAL4,FB1C,1,,,False,LALNOmFB1 ,,https://elifesciences.org/articles/104764
+SS63934,split-GAL4,FB1C,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS59709,split-GAL4,FB1D,1,,,False,SLPFB1d ,FB alignment not perfect;+FB1E_b? and weak FB dorsal tangential,https://elifesciences.org/articles/104764
+SS04782,split-GAL4,FB1D,1,,,False,nan,Plus CX & non-CX ct; VNC exp,https://elifesciences.org/articles/104764
+SS66112,split-GAL4,FB1E_a,1,,,False,SIPSMPFB1d,Plus ct; †,https://elifesciences.org/articles/104764
+SS62558,split-GAL4,FB1E_b,1,,,False,SLPSIPFB1d ,Best fit; plus ct,https://elifesciences.org/articles/104764
+SS59642,split-GAL4,FB1F,1,,,False,SMPSIPFB1d ,Plus non-CX ct; some VNC exp,https://elifesciences.org/articles/104764
+SS59684,split-GAL4,FB1F,1,,,False,nan,Plus FB1B,https://elifesciences.org/articles/104764
+SS66114,split-GAL4,FB1G,1,,,False,"SMPSIPFB1d,3",Plus 1 ct; some VNC exp; †,https://elifesciences.org/articles/104764
+SS65999,split-GAL4,FB1G,1,,,False,nan,Plus 1 ct; some VNC exp; †,https://elifesciences.org/articles/104764
+SS89812,split-GAL4,FB1H,1,,,False,"CRENO2,3FB1-4 ",Plus non-CX cts; some VNC exp; †,https://elifesciences.org/articles/104764
+SS89807,split-GAL4,FB1H,1,,,False,nan,Some non-CX; minor VNC,https://elifesciences.org/articles/104764
+SS63888,split-GAL4,FB1J,1,,,False,"SLPSIPFB1,7,8 ",Plus one CX cell; minor VNC exp; †,https://elifesciences.org/articles/104764
+SS63564,split-GAL4,FB1J,1,,,False,nan,Plus one CX cell,https://elifesciences.org/articles/104764
+SS68682,split-GAL4,FB1J,1,,,False,nan,"_I5: FB1J; _I6: SAF, so likely both cts",https://elifesciences.org/articles/104764
+SS65380,split-GAL4,FB2A,1,,,False,NOaLALFB2,,https://elifesciences.org/articles/104764
+SS70261,split-GAL4,FB2A,1,,,False,nan,Some VNC exp,https://elifesciences.org/articles/104764
+SS70302,split-GAL4,FB2A,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS49376,split-GAL4,FB2B_a,1,,,False,LALCREFB2_1 ,,https://elifesciences.org/articles/104764
+SS19425,split-GAL4,FB2B_a,1,,,False,nan,May be FB2B_a only (no _b); 2-4 CB/hemis,https://elifesciences.org/articles/104764
+SS62175,split-GAL4,FB2B_a,1,,,False,nan,FB2B_a &_b plus ct; occ minor VNC exp,https://elifesciences.org/articles/104764
+SS62182,split-GAL4,FB2B_a,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS57264,split-GAL4,FB2B_b,1,,,False,LALCREFB2_1 ,Occ weak exp in FB2B_a; predom _b,https://elifesciences.org/articles/104764
+SS62175,split-GAL4,FB2B_b,1,,,False,nan,FB2B_a &_b plus ct; occ minor VNC exp,https://elifesciences.org/articles/104764
+SS69732,split-GAL4,FB2C,1,,,False,SMPCREFB2_1 ,Plus non-CX cts; some VNC exp; †,https://elifesciences.org/articles/104764
+SS66080,split-GAL4,FB2C,1,,,False,nan,Plus non-CX cts; minor VNC exp; †,https://elifesciences.org/articles/104764
+SS66082,split-GAL4,FB2C,1,,,False,nan,Plus FB2L; †,https://elifesciences.org/articles/104764
+SS62473,split-GAL4,FB2C,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS69806,split-GAL4,FB2D,1,,,False,LALCREFB2_2 ,Minor VNC exp,https://elifesciences.org/articles/104764
+SS69695,split-GAL4,FB2D,1,,,False,nan,Some VNC exp; †,https://elifesciences.org/articles/104764
+SS95726,split-GAL4,FB2E,1,,,False,SCLSMPFB2 ,2/7 brains exp in FB2I_a; minor VNC exp,https://elifesciences.org/articles/104764
+SS61624,split-GAL4,FB2E,1,,,False,nan,Minor non-CX exp; †,https://elifesciences.org/articles/104764
+SS02916,split-GAL4,FB2F_a,1,,,False,SIPSMPFB2 ,Poss. FB2F_b; plus non-CX cts,https://elifesciences.org/articles/104764
+SS61703,split-GAL4,FB2F_a,1,,,False,nan,FB2F_a and FB2H best fits. FB2H_a/b v similar; some VNC,https://elifesciences.org/articles/104764
+SS94582,split-GAL4,FB2F_a,1,,,False,nan,"Plus FB2F_b,_c; non-CX ct, some VNC exp; †",https://elifesciences.org/articles/104764
+SS93973,split-GAL4,FB2F_a,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS94612,split-GAL4,FB2F_b,1,,,False,FB2F_b,Poss. FB2F_a; non-CX ct; some VNC exp,https://elifesciences.org/articles/104764
+SS94610,split-GAL4,FB2F_b,1,,,False,nan,Poss. +/- FB2F_a; non-CX ct; some VNC exp,https://elifesciences.org/articles/104764
+SS94582,split-GAL4,FB2F_b,1,,,False,nan,"Plus FB2F_a,_c; non-CX ct, some VNC exp; †",https://elifesciences.org/articles/104764
+SS94582,split-GAL4,FB2F_c,1,,,False,SIPSMPFB2 ,"Plus FB2F_a,_b; non-CX ct, some VNC exp; †",https://elifesciences.org/articles/104764
+SS94036,split-GAL4,FB2F_c,1,,,False,nan,Plus non-CX ct; †,https://elifesciences.org/articles/104764
+SS94458,split-GAL4,FB2G_a,1,,,False,SMPSIPFB2 ,V FB extends more V in LM than EM; some VNC exp; †,https://elifesciences.org/articles/104764
+SS94447,split-GAL4,FB2G_a,1,,,False,nan,"OL, VNC exp; †",https://elifesciences.org/articles/104764
+SS94479,split-GAL4,FB2G_b,1,,,False,SIPLALFB2,Maybe also weak FB2G_b; †,https://elifesciences.org/articles/104764
+SS94458,split-GAL4,FB2G_b,1,,,False,nan,V FB extends more V in LM than EM; some VNC exp; †,https://elifesciences.org/articles/104764
+SS94447,split-GAL4,FB2G_b,1,,,False,nan,"OL, VNC exp; †",https://elifesciences.org/articles/104764
+SS94597,split-GAL4,FB2H_a,1,,,False,SIPSCLFB2 ,"FB2H_a&b; addl CB, so +ct; minor VNC; †",https://elifesciences.org/articles/104764
+SS61884,split-GAL4,FB2H_a,1,,,False,nan,FB2Ha&b; maybe also FB2F; minor VNC; †,https://elifesciences.org/articles/104764
+SS60877,split-GAL4,FB2H_a,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS93973,split-GAL4,FB2H_a,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS94597,split-GAL4,FB2H_b,1,,,False,SIPSCLFB2 ,"FB2H_a&b; addl CB, so +ct; minor VNC; †",https://elifesciences.org/articles/104764
+SS61884,split-GAL4,FB2H_b,1,,,False,nan,FB2Ha&b; maybe also FB2F; minor VNC; †,https://elifesciences.org/articles/104764
+SS60877,split-GAL4,FB2H_b,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS94845,split-GAL4,FB2I_a,1,,,False,SMPATLFB2 ,†,https://elifesciences.org/articles/104764
+SS94830,split-GAL4,FB2I_a,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS94571,split-GAL4,FB2I_a,1,,,False,nan,Also FB2I_b; minor VNC; †,https://elifesciences.org/articles/104764
+SS75929,split-GAL4,FB2I_a,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS56319,split-GAL4,FB2I_a,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS56322,split-GAL4,FB2I_a,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS75918,split-GAL4,FB2I_b,1,,,False,SMPATLFB2 ,Plus non-CX ct and possibly FB2I_a; †,https://elifesciences.org/articles/104764
+SS94571,split-GAL4,FB2I_b,1,,,False,nan,Also FB2I_a; minor VNC; †,https://elifesciences.org/articles/104764
+SS56319,split-GAL4,FB2I_b,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS56322,split-GAL4,FB2I_b,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS60954,split-GAL4,FB2J,1,,,False,SMPPLPFB2 ,,https://elifesciences.org/articles/104764
+SS50368,split-GAL4,FB2J,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS93973,split-GAL4,FB2J,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS60877,split-GAL4,FB2J,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS59604,split-GAL4,FB2K,1,,,False,LALSMPFB2,plus non-CX cts,https://elifesciences.org/articles/104764
+SS75675,split-GAL4,FB2K,1,,,False,nan,FB2K+FB3C best fit; run MCFO; poss. more CX ct; minor VNC exp; †,https://elifesciences.org/articles/104764
+SS75672,split-GAL4,FB2L,1,,,False,SMPCREFB2_2 ,plus non-CX ct; †,https://elifesciences.org/articles/104764
+SS65906,split-GAL4,FB2L,1,,,False,nan,"plus CX ct, VNC exp",https://elifesciences.org/articles/104764
+SS66082,split-GAL4,FB2L,1,,,False,nan,Plus FB2C; †,https://elifesciences.org/articles/104764
+SS94007,split-GAL4,FB2M,1,,,False,SIPCREFB2 ,Plus non-CX ct; some VNC exp,https://elifesciences.org/articles/104764
+SS94879,split-GAL4,FB3A,1,,,False,LALNO2FB3 ,,https://elifesciences.org/articles/104764
+SS94817,split-GAL4,FB3A,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS61532,split-GAL4,FB3A,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS75661,split-GAL4,FB3B,1,,,False,EBCREFB3 ,B1 some EB exp; plus FB3C &  non-CX ct; some VNC exp,https://elifesciences.org/articles/104764
+SS75652,split-GAL4,FB3B,1,,,False,nan,Likely FB3B &3C,https://elifesciences.org/articles/104764
+SS65383,split-GAL4,FB3C,1,,,False,LALSMPFB3 ,,https://elifesciences.org/articles/104764
+SS75735,split-GAL4,FB3C,1,,,False,nan,Some VNC exp,https://elifesciences.org/articles/104764
+SS75661,split-GAL4,FB3C,1,,,False,nan,B1 some EB exp; plus non-CX ct; some VNC exp,https://elifesciences.org/articles/104764
+SS75941,split-GAL4,FB3C,1,,,False,nan,Plus FB3E,https://elifesciences.org/articles/104764
+SS75675,split-GAL4,FB3C,1,,,False,nan,FB2K+FB3C best fit; run MCFO; poss. more CX ct; minor VNC exp; †,https://elifesciences.org/articles/104764
+SS75731,split-GAL4,FB3C,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS62977,split-GAL4,FB3D,1,,,False,LALCREFB3 ,,https://elifesciences.org/articles/104764
+SS69881,split-GAL4,FB3D,1,,,False,nan,Minor non-CX exp; some VNC,https://elifesciences.org/articles/104764
+SS75732,split-GAL4,FB3E,1,,,False,SMPLALFB3 ,"Best fit, could just be FB3C; plus ct; minor VNC exp; †",https://elifesciences.org/articles/104764
+SS75941,split-GAL4,FB3E,1,,,False,nan,Plus FB3C,https://elifesciences.org/articles/104764
+SS66578,split-GAL4,FB4A,1,,,False,CRESMPFB4_1,,https://elifesciences.org/articles/104764
+SS87100,split-GAL4,FB4A,1,,,False,nan,Plus non-CX ct; †,https://elifesciences.org/articles/104764
+SS72322,split-GAL4,FB4A,1,,,False,nan,Likely FB5J + 4A since >1CB/hemis; †,https://elifesciences.org/articles/104764
+SS60112,split-GAL4,FB4B,1,,,False,NO2LALFB4,,https://elifesciences.org/articles/104764
+SS62952,split-GAL4,FB4B,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS94615,split-GAL4,FB4C,1,,,False,CRENO2FB4_1,Minor VNC exp,https://elifesciences.org/articles/104764
+SS94623,split-GAL4,FB4C,1,,,False,nan,Minor VNC exp; †,https://elifesciences.org/articles/104764
+SS75680,split-GAL4,FB4D,1,,,False,CRESMPFB4_2,Plus 1 CX ct; †,https://elifesciences.org/articles/104764
+SS66526,split-GAL4,FB4D,1,,,False,nan,"Plus 1 CX ct, see MCFO; plus 1 occ non-CX ct",https://elifesciences.org/articles/104764
+SS02752,split-GAL4,FB4D,1,,,False,nan,"4J in MCFO, rare; some VNC exp",https://elifesciences.org/articles/104764
+SS62506,split-GAL4,FB4E,1,,,False,CRELALFB4_1,EM morphologies vary,https://elifesciences.org/articles/104764
+SS66550,split-GAL4,FB4E,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS101002,split-GAL4,FB4G,1,,,False,CRELALFB4_3,One non-CX ct; minor VNC exp,https://elifesciences.org/articles/104764
+SS92647,split-GAL4,FB4G,1,,,False,nan,Weak LCNOpm; †,https://elifesciences.org/articles/104764
+SS61532,split-GAL4,FB4G,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS65885,split-GAL4,FB4H,1,,,False,CRELALFB4_4,2 CB; second may be FB4G?,https://elifesciences.org/articles/104764
+SS60118,split-GAL4,FB4H,1,,,False,nan,Plus CX ct,https://elifesciences.org/articles/104764
+SS02752,split-GAL4,FB4J,1,,,False,CRELALFB4_5,"plus FB4D; 4J in MCFO, rare; some VNC exp",https://elifesciences.org/articles/104764
+SS66662,split-GAL4,FB4J,1,,,False,nan,Non-CX cts; VNC exp; †,https://elifesciences.org/articles/104764
+SS66508,split-GAL4,FB4K,1,,,False,CRESMPFB4_3,,https://elifesciences.org/articles/104764
+SS66517,split-GAL4,FB4K,1,,,False,nan,plus 1 non-CX ct; some VNC exp; †,https://elifesciences.org/articles/104764
+SS61970,split-GAL4,FB4L,1,,,False,LALSIPFB4,,https://elifesciences.org/articles/104764
+SS61590,split-GAL4,FB4L,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS61133,split-GAL4,FB4L,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS61593,split-GAL4,FB4L,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS67580,split-GAL4,FB4M,1,,,False,CRENO2FB4_2,Some VNC exp,https://elifesciences.org/articles/104764
+SS67635,split-GAL4,FB4M,1,,,False,nan,"Plus non-CX ct; some VNC in IS; SS67636 also occasional CX ct, parents GMR_33E06_BB_04-x-BJD_114E01_AV_01, not on robot",https://elifesciences.org/articles/104764
+SS95185,split-GAL4,FB4N,1,,,False,SMPCREFB4,"Minor OL, VNC exp; †",https://elifesciences.org/articles/104764
+SS66004,split-GAL4,FB4N,1,,,False,nan,Some VNC exp; †,https://elifesciences.org/articles/104764
+SS61649,split-GAL4,FB4O,1,,,False,CRESMPFB4d,Poss. FB4R in background; †,https://elifesciences.org/articles/104764
+SS75876,split-GAL4,FB4O,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS66540,split-GAL4,FB4O,1,,,False,nan,IS is FB4Q_a; SS is FB4O &FB4R so likely all 3; †,https://elifesciences.org/articles/104764
+SS69197,split-GAL4,FB4O,1,,,False,nan,"FB4O, 4P, 4Q_a, 4Q_b; †",https://elifesciences.org/articles/104764
+SS91010,split-GAL4,FB4O,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS60320,split-GAL4,FB4P_a,1,,,False,CRESMPFB4_ 4 ,FB4P_a best fit; IS may be FB4O; possibly both cell types; †,https://elifesciences.org/articles/104764
+SS66620,split-GAL4,FB4P_a,1,,,False,nan,FB4P_a best fit (not_b); one brain in B stock is wrong pattern,https://elifesciences.org/articles/104764
+SS69197,split-GAL4,FB4P_a,1,,,False,nan,"FB4O, 4P(_a, _b or both), 4Q_a, 4Q_b; †",https://elifesciences.org/articles/104764
+SS67631,split-GAL4,FB4P_b,1,,,False,CRESMPFB4_ 4 ,Minor VNC exp; †,https://elifesciences.org/articles/104764
+SS60296,split-GAL4,FB4P_b,1,,,False,nan,"FB4P_b best fit, unlikely FB4P _a; †",https://elifesciences.org/articles/104764
+SS69197,split-GAL4,FB4P_b,1,,,False,nan,"FB4O, 4P(_a, _b or both), 4Q_a, 4Q_b; †",https://elifesciences.org/articles/104764
+SS60306,split-GAL4,FB4P_b,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS02828,split-GAL4,FB4Q_a,1,,,False,CRESMPFB4_5 ,"Plus FB4O, FB4P",https://elifesciences.org/articles/104764
+SS66540,split-GAL4,FB4Q_a,1,,,False,nan,IS is FB4Q_a; SS is FB4O &FB4R so likely all 3; †,https://elifesciences.org/articles/104764
+SS69197,split-GAL4,FB4Q_a,1,,,False,nan,"FB4O, 4P, 4Q_a, 4Q_b; †",https://elifesciences.org/articles/104764
+SS48762,split-GAL4,FB4Q_b,1,,,False,CRESMPFB4_5 ,Plus FB4R; †,https://elifesciences.org/articles/104764
+SS69197,split-GAL4,FB4Q_b,1,,,False,nan,"FB4O, 4P, 4Q_a, 4Q_b; †",https://elifesciences.org/articles/104764
+SS89767,split-GAL4,FB4R,1,,,False,CREFB4,Some VNC exp; †,https://elifesciences.org/articles/104764
+SS61450,split-GAL4,FB4R,1,,,False,nan,VNC exp,https://elifesciences.org/articles/104764
+SS66540,split-GAL4,FB4R,1,,,False,nan,IS is FB4Q_a; SS is FB4O &FB4R so likely all 3; †,https://elifesciences.org/articles/104764
+SS48762,split-GAL4,FB4R,1,,,False,nan,Plus FB4Q_b; †,https://elifesciences.org/articles/104764
+SS61448,split-GAL4,FB4R,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS62766,split-GAL4,FB4R,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS91010,split-GAL4,FB4R,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS70711,split-GAL4,FB4X,1,,,False,"CRESIPFB4,5 ",Likely FB4X; plus CX ct; VNC exp,https://elifesciences.org/articles/104764
+SS93987,split-GAL4,FB4Y,1,,,False,"EBCREFB4,5 ",Weak exp; †,https://elifesciences.org/articles/104764
+SS70895,split-GAL4,FB4Y,1,,,False,nan,Non-CX ct; VNC exp,https://elifesciences.org/articles/104764
+SS63390,split-GAL4,FB4Z,1,,,False,FB4d5v ,Some VNC exp; †,https://elifesciences.org/articles/104764
+SS95748,split-GAL4,FB4Z,1,,,False,nan,Minor OL and CB exp; some VNC exp,https://elifesciences.org/articles/104764
+SS69089,split-GAL4,FB4Z,1,,,False,nan,Plus FB5U best fits; some VNC exp,https://elifesciences.org/articles/104764
+SS69102,split-GAL4,FB5A,1,,,False,LALCREFB5 ,Minor VNC; †,https://elifesciences.org/articles/104764
+SS69074,split-GAL4,FB5A,1,,,False,nan,Minor OL exp; some VNC exp; †,https://elifesciences.org/articles/104764
+SS71548,split-GAL4,FB5AA,1,,,False,SMPCREFB5_10 ,Not certain FB5AA; plus CX cts; OL exp; †,https://elifesciences.org/articles/104764
+SS32244,split-GAL4,FB5AB,1,,,False,SIPCREFB5d ,,https://elifesciences.org/articles/104764
+SS87368,split-GAL4,FB5AB,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS67490,split-GAL4,FB5B,1,,,False,SMPSIPFB5d_1 ,,https://elifesciences.org/articles/104764
+SS92530,split-GAL4,FB5B,1,,,False,nan,Non-CX ct; minor VNC exp; †,https://elifesciences.org/articles/104764
+SS67498,split-GAL4,FB5B,1,,,False,nan,"FB5B,6R,6Y; likely all expressed; diff. cell types in diff brains",https://elifesciences.org/articles/104764
+SS95274,split-GAL4,FB5B,1,,,False,nan,Plus FB6Q; some VNC exp,https://elifesciences.org/articles/104764
+SS71449,split-GAL4,FB5C,1,,,False,SMPCREFB5_1 ,"Plus FB5H, poss. add'l ct?; †",https://elifesciences.org/articles/104764
+SS69105,split-GAL4,FB5C,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS71471,split-GAL4,FB5D,1,,,False,CRESMPFB5_1 ,"Plus CX, non-CX, VNC exp; †",https://elifesciences.org/articles/104764
+SS66648,split-GAL4,FB5D,1,,,False,nan,"Plus 5X, CX, OL, VNC exp; †",https://elifesciences.org/articles/104764
+SS71764,split-GAL4,FB5D,1,,,False,nan,"Plus 5T, non-CX, VNC exp",https://elifesciences.org/articles/104764
+SS71774,split-GAL4,FB5F,1,,,False,SMPCREFB5_2 ,Plus FB5Q (5F in MCFO); †,https://elifesciences.org/articles/104764
+SS71803,split-GAL4,FB5F,1,,,False,nan,"Plus CX ct (5X, 5Q)",https://elifesciences.org/articles/104764
+SS71790,split-GAL4,FB5F,1,,,False,nan,"Plus FB5Q , non-CX ct, VNC exp",https://elifesciences.org/articles/104764
+SS71748,split-GAL4,FB5G,1,,,False,"SMPSIPFB5,6 ",Likely FB5G; maybe another FB5 ct; VNC exp,https://elifesciences.org/articles/104764
+SS61697,split-GAL4,FB5G,1,,,False,nan,Likely FB5G; plus another FB5 ct; non-CX ct; †,https://elifesciences.org/articles/104764
+SS100552,split-GAL4,FB5H,1,,,False,CRESMPFB5_3 ,"Plus non-CX, OL, VNC exp; †",https://elifesciences.org/articles/104764
+SS71449,split-GAL4,FB5H,1,,,False,nan,"Plus FB5C, poss. add'l ct?; †",https://elifesciences.org/articles/104764
+SS72834,split-GAL4,FB5H,1,,,False,nan,Minor VNC exp,https://elifesciences.org/articles/104764
+SS100553,split-GAL4,FB5I,1,,,False,SMPCREFB5_3 ,Some VNC exp; †,https://elifesciences.org/articles/104764
+SS72322,split-GAL4,FB5J,1,,,False,SMPFB5 ,Likely FB5J + 4A since >1CB/hemis; †,https://elifesciences.org/articles/104764
+SS75848,split-GAL4,FB5K,1,,,False,CREFB5 ,Also FB6O; FB5L in IS; minor VNC exp; †,https://elifesciences.org/articles/104764
+SS70334,split-GAL4,FB5K,1,,,False,nan,Minor VNC exp,https://elifesciences.org/articles/104764
+SS70354,split-GAL4,FB5K,1,,,False,nan,Minor non-CX exp,https://elifesciences.org/articles/104764
+SS62184,split-GAL4,FB5K,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS75878,split-GAL4,FB5L,1,,,False,CRESMPFB5_4 ,,https://elifesciences.org/articles/104764
+SS70875,split-GAL4,FB5L,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS62184,split-GAL4,FB5L,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS61528,split-GAL4,FB5L,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS95675,split-GAL4,FB5M,1,,,False,CRESMPFB5_5 ,†,https://elifesciences.org/articles/104764
+SS69713,split-GAL4,FB5M,1,,,False,nan,"FB5M, 5N & 5W",https://elifesciences.org/articles/104764
+SS70949,split-GAL4,FB5N,1,,,False,SMPCREFB5_4 ,IS has extra FB ct,https://elifesciences.org/articles/104764
+SS70945,split-GAL4,FB5N,1,,,False,nan,Poss. 5W instead; need MCFO; †,https://elifesciences.org/articles/104764
+SS95675,split-GAL4,FB5N,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS69713,split-GAL4,FB5N,1,,,False,nan,"FB5M, 5N & 5W",https://elifesciences.org/articles/104764
+SS61471,split-GAL4,FB5O,1,,,False,SMPCREFB5_5 ,Weak; plus FB cts; VNC exp; †,https://elifesciences.org/articles/104764
+SS73005,split-GAL4,FB5O,1,,,False,nan,Plus FB6X +/- FB6W; some VNC exp,https://elifesciences.org/articles/104764
+SS71755,split-GAL4,FB5P,1,,,False,SMPCREFB5_6 ,"FB5P best fit, unlikely FB5O; some VNC; †",https://elifesciences.org/articles/104764
+SS71742,split-GAL4,FB5Q,1,,,False,SMPCREFB5d ,†,https://elifesciences.org/articles/104764
+SS71790,split-GAL4,FB5Q,1,,,False,nan,Plus FB5F (FB5Q in MCFO),https://elifesciences.org/articles/104764
+SS71803,split-GAL4,FB5Q,1,,,False,nan,"Plus CX ct (5X, 5Q)",https://elifesciences.org/articles/104764
+SS71774,split-GAL4,FB5Q,1,,,False,nan,"Plus FB5F, non-CX ct, VNC exp; †",https://elifesciences.org/articles/104764
+SS63351,split-GAL4,FB5R,1,,,False,FB5 ,"FB5R, 5S, 4Z, 6L",https://elifesciences.org/articles/104764
+SS69215,split-GAL4,FB5R,1,,,False,nan,"All or subset of: FB5R, 5S, 5U, 4Z; †",https://elifesciences.org/articles/104764
+SS95689,split-GAL4,FB5S,1,,,False,"FB5d,6v",Could be FB5U; some VNC exp; †,https://elifesciences.org/articles/104764
+SS63351,split-GAL4,FB5S,1,,,False,nan,"FB5R, 5S, 4Z, 6L",https://elifesciences.org/articles/104764
+SS71764,split-GAL4,FB5T,1,,,False,CRESMPFB5_6,"Plus 5D, non-CX, VNC exp",https://elifesciences.org/articles/104764
+SS71758,split-GAL4,FB5T,1,,,False,nan,"Plus non-CX, VNC exp; †",https://elifesciences.org/articles/104764
+SS61439,split-GAL4,FB5T,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS95689,split-GAL4,FB5U,1,,,False,FB5d,"FB5U better fit than FB5S; minor OL, some VNC exp; †",https://elifesciences.org/articles/104764
+SS69089,split-GAL4,FB5U,1,,,False,nan,Plus FB4Z best fits; some VNC exp,https://elifesciences.org/articles/104764
+SS88825,split-GAL4,FB5V,1,,,False,CRELALFB5,Minor non-CX exp; some VNC exp; †,https://elifesciences.org/articles/104764
+SS88827,split-GAL4,FB5V,1,,,False,nan,Some non-CX and VNC exp; †,https://elifesciences.org/articles/104764
+SS95617,split-GAL4,FB5W,1,,,False,SMPCREFB5_7,Morph variability in EM,https://elifesciences.org/articles/104764
+SS66653,split-GAL4,FB5W,1,,,False,nan,Plus non-CX ct; minor VNC exp; †,https://elifesciences.org/articles/104764
+SS69713,split-GAL4,FB5W,1,,,False,nan,"FB5M, 5N & 5W",https://elifesciences.org/articles/104764
+SS71706,split-GAL4,FB5X,1,,,False,SMPCREFB5_8,Possibly also FB5T; some non-CX ct; minor VNC exp,https://elifesciences.org/articles/104764
+SS66648,split-GAL4,FB5X,1,,,False,nan,"Plus 5D, CX, OL, VNC exp; †",https://elifesciences.org/articles/104764
+SS71787,split-GAL4,FB5Y,1,,,False,SMPSIPFB5d_2 ,Some VNC exp,https://elifesciences.org/articles/104764
+SS70732,split-GAL4,FB5Y,1,,,False,nan,Plus CX cts,https://elifesciences.org/articles/104764
+SS71809,split-GAL4,FB5Z,1,,,False,SMPCREFB5_9 ,"Some non-CX, OL, VNC exp; †",https://elifesciences.org/articles/104764
+SS71836,split-GAL4,FB5Z,1,,,False,nan,"Best fit; weak, some non-CX, OL, VNC exp; †",https://elifesciences.org/articles/104764
+SS57656,split-GAL4,FB6A,1,,,False,SMPSIPFB6_1 ,1 CB per hemis.,https://elifesciences.org/articles/104764
+SS95731,split-GAL4,FB6A,1,,,False,nan,2 CB per hemis.; †,https://elifesciences.org/articles/104764
+SS54343,split-GAL4,FB6A,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS56343,split-GAL4,FB6A,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS72415,split-GAL4,FB6B,1,,,False,SMPSIPFB6_2 ,,https://elifesciences.org/articles/104764
+SS72722,split-GAL4,FB6B,1,,,False,nan,Some OL exp,https://elifesciences.org/articles/104764
+SS71442,split-GAL4,FB6C_a,1,,,False,SIPSMPFB6_1 ,Plus FB6C_b; some VNC exp; †,https://elifesciences.org/articles/104764
+SS56046,split-GAL4,FB6C_b,1,,,False,SIPSMPFB6_1 ,Plus FB6D,https://elifesciences.org/articles/104764
+SS71442,split-GAL4,FB6C_b,1,,,False,nan,Plus FB6C_a; some VNC exp; †,https://elifesciences.org/articles/104764
+SS71508,split-GAL4,FB6C_b,1,,,False,nan,Plus CX cts;†,https://elifesciences.org/articles/104764
+SS56343,split-GAL4,FB6C_b,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS56046,split-GAL4,FB6D,1,,,False,SMPFB6 ,Plus FB6C_b,https://elifesciences.org/articles/104764
+SS76131,split-GAL4,FB6D,1,,,False,nan,Plus CX ct,https://elifesciences.org/articles/104764
+SS56343,split-GAL4,FB6D,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS70753,split-GAL4,FB6E,1,,,False,SIPSMPFB6_2 ,Some VNC exp; †,https://elifesciences.org/articles/104764
+SS72798,split-GAL4,FB6E,1,,,False,nan,Plus CX ct; minor VNC exp,https://elifesciences.org/articles/104764
+SS59390,split-GAL4,FB6F,1,,,False,SMPSIPFB6_3,Plus FB7B+ct; †,https://elifesciences.org/articles/104764
+SS72411,split-GAL4,FB6G,1,,,False,SIPSMPFB6_3,,https://elifesciences.org/articles/104764
+SS72730,split-GAL4,FB6G,1,,,False,nan,Minor VNC exp,https://elifesciences.org/articles/104764
+SS70710,split-GAL4,FB6G,1,,,False,nan,"Plus 6I, 7A; †",https://elifesciences.org/articles/104764
+SS95649,split-GAL4,FB6H,1,,,False,SMPSIPFB6_4,Plus weak CX ct,https://elifesciences.org/articles/104764
+SS95720,split-GAL4,FB6H,1,,,False,nan,Some VNC exp; †,https://elifesciences.org/articles/104764
+SS72834,split-GAL4,FB6H,1,,,False,nan,Minor VNC exp,https://elifesciences.org/articles/104764
+SS75992,split-GAL4,FB6I,1,,,False,SMPSIPFB6_5,Some VNC exp; †,https://elifesciences.org/articles/104764
+SS70710,split-GAL4,FB6I,1,,,False,nan,"Plus FB6G, 7A; †",https://elifesciences.org/articles/104764
+SS95642,split-GAL4,FB6J,1,,,False,FB6_1,"Plus non-CX, VNC exp; †",https://elifesciences.org/articles/104764
+SS101367,split-GAL4,FB6J,1,,,False,nan,"Plus FB, non-CX ct; some VNC exp; †",https://elifesciences.org/articles/104764
+SS72302,split-GAL4,FB6K,1,,,False,SMPSIPFB6_6,"Plus OL, VNC exp; †",https://elifesciences.org/articles/104764
+SS77073,split-GAL4,FB6K,1,,,False,nan,"Plus FB8C, non-CX, VNC exp; †",https://elifesciences.org/articles/104764
+SS95206,split-GAL4,FB6L,1,,,False,FB6_2,"Minor MB, VNC exp",https://elifesciences.org/articles/104764
+SS95750,split-GAL4,FB6L,1,,,False,nan,"Plus FB7J, Delta7; OL; non-CX, some VNC exp; †",https://elifesciences.org/articles/104764
+SS49931,split-GAL4,FB6M,1,,,False,WEDLALFB6,Minor VNC exp,https://elifesciences.org/articles/104764
+SS72731,split-GAL4,FB6M,1,,,False,nan,3 CB/hemisphere; should be 2,https://elifesciences.org/articles/104764
+SS102116,split-GAL4,FB6N,1,,,False,CRESMPFB6_1,"IS: FB6N, SS: FB6O. SS likely 6O&6N; †",https://elifesciences.org/articles/104764
+SS63520,split-GAL4,FB6N,1,,,False,nan,Plus 7H; †,https://elifesciences.org/articles/104764
+SS72398,split-GAL4,FB6N,1,,,False,nan,"Plus FB7H, non-CX ct; †",https://elifesciences.org/articles/104764
+SS63527,split-GAL4,FB6N,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS102116,split-GAL4,FB6O,1,,,False,SIPSMPFB6_4,"IS: FB6N, SS: FB6O. SS likely 6O&6N; †",https://elifesciences.org/articles/104764
+SS75848,split-GAL4,FB6O,1,,,False,nan,Also FB5K; FB5L in IS; minor VNC exp; †,https://elifesciences.org/articles/104764
+SS60140,split-GAL4,FB6P,1,,,False,SMPCREFB6_1,Minor VNC exp,https://elifesciences.org/articles/104764
+SS60161,split-GAL4,FB6P,1,,,False,nan,Some VNC exp; †,https://elifesciences.org/articles/104764
+SS67486,split-GAL4,FB6Q,1,,,False,SIPSMPFB6_5,See IS for VNC; minor VNC exp; †,https://elifesciences.org/articles/104764
+SS95274,split-GAL4,FB6Q,1,,,False,nan,Plus 5B; some VNC exp,https://elifesciences.org/articles/104764
+SS101453,split-GAL4,FB6Q,1,,,False,nan,Plus FB6S? VNC exp; †,https://elifesciences.org/articles/104764
+SS67498,split-GAL4,FB6R,1,,,False,SMPSIPFB6_7,"FB5B,6R,6Y; likely all expressed; diff. cell types in diff brains",https://elifesciences.org/articles/104764
+SS101453,split-GAL4,FB6S,1,,,False,SIPSMPFB6_6,Plus FB6Q; VNC exp; †,https://elifesciences.org/articles/104764
+SS92377,split-GAL4,FB6S,1,,,False,nan,Likely also FB7F; †,https://elifesciences.org/articles/104764
+SS92390,split-GAL4,FB6T,1,,,False,SIPSMPFB6_7,"IS strong, SS weak; †",https://elifesciences.org/articles/104764
+SS92409,split-GAL4,FB6T,1,,,False,nan,Minor VNC exp; †,https://elifesciences.org/articles/104764
+SS67611,split-GAL4,FB6T,1,,,False,nan,"6T weak, see in MCFO; plus ER3p_a,b; minor VNC exp; †",https://elifesciences.org/articles/104764
+SS95180,split-GAL4,FB6U,1,,,False,SMPCREFB6_2,Plus non-CX ct; minor VNC exp; †,https://elifesciences.org/articles/104764
+SS72743,split-GAL4,FB6U,1,,,False,nan, OL & minor VNC exp,https://elifesciences.org/articles/104764
+SS101418,split-GAL4,FB6V,1,,,False,SMPCREFB6_3 ,Plus FB8G; minor VNC exp; †,https://elifesciences.org/articles/104764
+SS72743,split-GAL4,FB6V,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS94527,split-GAL4,FB6V,1,,,False,nan,"Plus FB7A, 7G, maybe 7I",https://elifesciences.org/articles/104764
+SS73005,split-GAL4,FB6W,1,,,False,CRESMPFB6_2 ,Plus FB5O; +/or FB6X; some VNC exp; †,https://elifesciences.org/articles/104764
+SS95239,split-GAL4,FB6X,1,,,False,SMPCREFB6_4 ,Plus CX cell type; occasional minor VNC exp,https://elifesciences.org/articles/104764
+SS73005,split-GAL4,FB6X,1,,,False,nan,Plus FB5O; +/or FB6W; some VNC exp;†,https://elifesciences.org/articles/104764
+SS67498,split-GAL4,FB6Y,1,,,False,SMPSIPFB6_8 ,"FB5B,6R,6Y; likely all; diff. cell types in diff brains; †",https://elifesciences.org/articles/104764
+SS94578,split-GAL4,FB7A,1,,,False,SIPSLPFB7 ,†,https://elifesciences.org/articles/104764
+SS55876,split-GAL4,FB7A,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS94527,split-GAL4,FB7A,1,,,False,nan,"Plus FB7A, 7G, maybe 7I",https://elifesciences.org/articles/104764
+SS70710,split-GAL4,FB7A,1,,,False,nan,"Plus FB6G, 6I; †",https://elifesciences.org/articles/104764
+SS55888,split-GAL4,FB7A,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS55882,split-GAL4,FB7A,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS67858,split-GAL4,FB7B,1,,,False,SMPSLPFB7 ,Minor VNC exp,https://elifesciences.org/articles/104764
+SS62563,split-GAL4,FB7B,1,,,False,nan,Some VNC exp; plus weak cell - 7A?; †,https://elifesciences.org/articles/104764
+SS55882,split-GAL4,FB7B,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS67505,split-GAL4,FB7C,1,,,False,SMPSIPFB7_1 ,FB7C and/or FB7M +FB6ct+non-CX+OL+VNC exp.,https://elifesciences.org/articles/104764
+SS70837,split-GAL4,FB7D,1,,,False,"FB7,6 ","Plus CX ct; weak; CB# unknown, could include FB7J; minor VNC exp; †",https://elifesciences.org/articles/104764
+SS77099,split-GAL4,FB7D,1,,,False,nan,Plus FB7J; some VNC exp; †,https://elifesciences.org/articles/104764
+SS95241,split-GAL4,FB7E,1,,,False,SMPSIPFB7_2 ,"Minor OL, non-CX ct; VNC exp; †",https://elifesciences.org/articles/104764
+SS95240,split-GAL4,FB7E,1,,,False,nan,"Weak, plus non-CX cts; some VNC exp; †",https://elifesciences.org/articles/104764
+SS92377,split-GAL4,FB7F,1,,,False,SMPSIPFB7_3 ,Likely FB7F; also FB6S; †,https://elifesciences.org/articles/104764
+SS94527,split-GAL4,FB7G,1,,,False,"SMPFB7,8 ","Plus FB7A, 6V & maybe FB7I",https://elifesciences.org/articles/104764
+SS94781,split-GAL4,FB7G,1,,,False,nan,Minor non-CX and VNC exp; †,https://elifesciences.org/articles/104764
+SS63520,split-GAL4,FB7H,1,,,False,SMPFB7 ,Plus FB6N; †,https://elifesciences.org/articles/104764
+SS63542,split-GAL4,FB7H,1,,,False,nan,Not certain FB7H; +ct; minor VNC,https://elifesciences.org/articles/104764
+SS72398,split-GAL4,FB7H,1,,,False,nan,"Plus 6N, non-CX ct; †",https://elifesciences.org/articles/104764
+SS63527,split-GAL4,FB7H,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS94465,split-GAL4,FB7I,1,,,False,"SMPSIPFB7,6 ",Plus CX and non-CX ct; VNC exp,https://elifesciences.org/articles/104764
+SS94527,split-GAL4,FB7I,1,,,False,nan,"Maybe FB7I - MCFO to confirm; also FB7G,7A,6V",https://elifesciences.org/articles/104764
+SS77061,split-GAL4,FB7J,1,,,False,"FB7,8 ",Some non-CX exp; some VNC exp; †,https://elifesciences.org/articles/104764
+SS63411,split-GAL4,FB7J,1,,,False,nan,Must have occ. FB7D since occ. 3 CB per. hemis; some VNC exp; †,https://elifesciences.org/articles/104764
+SS77099,split-GAL4,FB7J,1,,,False,nan,Plus FB7D; some VNC exp; †,https://elifesciences.org/articles/104764
+SS95750,split-GAL4,FB7J,1,,,False,nan,"Plus FB6L, ∆7; OL; non-CX, some VNC exp; †",https://elifesciences.org/articles/104764
+SS63022,split-GAL4,FB7K,1,,,False,SLPSIPFB7 ,"1 brain wrong, weak ct; minor OL exp; †",https://elifesciences.org/articles/104764
+SS61682,split-GAL4,FB7L,1,,,False,SMPSIPFB7_4 ,One FB8H cell in 2 MCFOs; †,https://elifesciences.org/articles/104764
+SS75905,split-GAL4,FB7L,1,,,False,nan,Some VNC exp,https://elifesciences.org/articles/104764
+SS71787,split-GAL4,FB7L,1,,,False,nan,Some VNC exp,https://elifesciences.org/articles/104764
+SS67505,split-GAL4,FB7M,1,,,False,SMPSIPFB7_5 ,FB7C and/or FB7M +FB6ct+non-CX+OL+VNC exp,https://elifesciences.org/articles/104764
+SS94607,split-GAL4,FB7M,1,,,False,nan,Messy; best fits FB8D &FB7M; plus non-CX and VNC exp; †,https://elifesciences.org/articles/104764
+SS94504,split-GAL4,FB7M,1,,,False,nan,"Best fits: FB7M, FB8D; possibly also FB8F_b; plus non-CX cts",https://elifesciences.org/articles/104764
+SS68790,split-GAL4,FB8A,1,,,False,SLPSMPFB8_1 ,Non-CX ct; minor VNC exp; †,https://elifesciences.org/articles/104764
+SS68820,split-GAL4,FB8A,1,,,False,nan,Some VNC; †,https://elifesciences.org/articles/104764
+SS61503,split-GAL4,FB8B,1,,,False,PLPSLPFB8 ,Some non-CX and VNC exp,https://elifesciences.org/articles/104764
+SS61940,split-GAL4,FB8B,1,,,False,nan,Some non-CX and VNC exp; †,https://elifesciences.org/articles/104764
+SS61934,split-GAL4,FB8B,1,,,False,nan,"FB8B&C, 8C weak; some non-CX and VNC exp",https://elifesciences.org/articles/104764
+SS47633,split-GAL4,FB8B,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS47631,split-GAL4,FB8B,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS69117,split-GAL4,FB8C,1,,,False,SMPFB8 ,Some VNC exp,https://elifesciences.org/articles/104764
+SS92503,split-GAL4,FB8C,1,,,False,nan,Some VNC exp; †,https://elifesciences.org/articles/104764
+SS61934,split-GAL4,FB8C,1,,,False,nan,"FB8B&C, 8C weak; some non-CX and VNC exp",https://elifesciences.org/articles/104764
+SS47633,split-GAL4,FB8C,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS92555,split-GAL4,FB8D,1,,,False,SLPSMPFB8_2 ,†,https://elifesciences.org/articles/104764
+SS92547,split-GAL4,FB8D,1,,,False,nan,Weak; plus non-CX cts and VNC exp; †,https://elifesciences.org/articles/104764
+SS94607,split-GAL4,FB8D,1,,,False,nan,Messy; best fits FB8D &FB7M; plus non-CX and VNC exp; †,https://elifesciences.org/articles/104764
+SS94504,split-GAL4,FB8D,1,,,False,nan,"Best fits: FB7M, FB8D; possibly also FB8F_b; plus non-CX cts",https://elifesciences.org/articles/104764
+SS69062,split-GAL4,FB8E,1,,,False,SMPSIPFB8_1 ,Some VNC exp; †,https://elifesciences.org/articles/104764
+SS69068,split-GAL4,FB8E,1,,,False,nan,"Plus FB8G, CX, non-CX; †",https://elifesciences.org/articles/104764
+SS75533,split-GAL4,FB8F_a,1,,,False,SIPSLPFB8 ,Likely FB8F_a&_b,https://elifesciences.org/articles/104764
+SS69168,split-GAL4,FB8F_a,1,,,False,nan,FB8F_a&b,https://elifesciences.org/articles/104764
+SS75531,split-GAL4,FB8F_b,1,,,False,SIPSLPFB8 ,†,https://elifesciences.org/articles/104764
+SS92533,split-GAL4,FB8F_b,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS69168,split-GAL4,FB8F_b,1,,,False,nan,FB8F_a&b,https://elifesciences.org/articles/104764
+SS75533,split-GAL4,FB8F_b,1,,,False,nan,Likely FB8F_a&_b,https://elifesciences.org/articles/104764
+SS102104,split-GAL4,FB8G,1,,,False,SMPSIPFB8_2 ,Can't rule out possible weak FB8E; minor VNC exp; †,https://elifesciences.org/articles/104764
+SS101418,split-GAL4,FB8G,1,,,False,nan,Plus FB6V; minor VNC exp; †,https://elifesciences.org/articles/104764
+SS69068,split-GAL4,FB8G,1,,,False,nan,"Plus FB8E, CX, non-CX; †",https://elifesciences.org/articles/104764
+SS63928,split-GAL4,FB8H,1,,,False,SMPSLPFB8 ,†,https://elifesciences.org/articles/104764
+SS61947,split-GAL4,FB8H,1,,,False,nan,IS fits FB8A so poss. FB8A too; †,https://elifesciences.org/articles/104764
+SS75512,split-GAL4,FB8H,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS92397,split-GAL4,FB9A,1,,,False,SLPFB9_1,FB9A best guess; alt is FB9C_a but unlikely to separate 9C_a from _b. Some VNC exp; †,https://elifesciences.org/articles/104764
+SS68016,split-GAL4,FB9A,1,,,False,nan,Plus 9B or 9C; plus non_CX ct; some VNC exp; †,https://elifesciences.org/articles/104764
+SS59629,split-GAL4,FB9A,1,,,False,nan,Uncertain if FB9A; +FB9C_a&_b; †,https://elifesciences.org/articles/104764
+SS68061,split-GAL4,FB9B,1,,,False,SLPFB9_2,Subset of FB9B. Minor VNC exp; †,https://elifesciences.org/articles/104764
+SS68075,split-GAL4,FB9B,1,,,False,nan,Subset of FB9B. No to minimal VNC exp; †,https://elifesciences.org/articles/104764
+SS48756,split-GAL4,FB9B,1,,,False,nan,Mult subtypes; minor VNC exp; †,https://elifesciences.org/articles/104764
+SS68005,split-GAL4,FB9B,1,,,False,nan,Subset of FB9B; minor VNC exp,https://elifesciences.org/articles/104764
+SS68061,split-GAL4,FB9B,1,,,False,nan,Subset of FB9B; minor VNC exp,https://elifesciences.org/articles/104764
+SS68049,split-GAL4,FB9B,1,,,False,nan,Subset of FB9B; some VNC exp; †,https://elifesciences.org/articles/104764
+SS68028,split-GAL4,FB9B,1,,,False,nan,Subset of FB9B; some VNC exp; †,https://elifesciences.org/articles/104764
+SS68063,split-GAL4,FB9B,1,,,False,nan,Subset of FB9B; some VNC exp,https://elifesciences.org/articles/104764
+SS59629,split-GAL4,FB9C_a,1,,,False,SLPFB9_2,"FB9C_a,b; poss. also 9A; †",https://elifesciences.org/articles/104764
+SS59629,split-GAL4,FB9C_b,1,,,False,SLPFB9_2,"FB9C_a,b; poss. also 9A; †",https://elifesciences.org/articles/104764
+SS00091,split-GAL4,EL,1,,,False,EBGAs ,,https://elifesciences.org/articles/104764
+SS00026,split-GAL4,EL,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS53322,split-GAL4,EL,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS00027,split-GAL4,EL,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS60093,split-GAL4,EL,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS59436,split-GAL4,ExR1,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS04830,split-GAL4,ExR1,1,,,False,nan,Some VNC exp,https://elifesciences.org/articles/104764
+SS09135,split-GAL4,ExR1,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS56803,split-GAL4,ExR1,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS56684,split-GAL4,ExR1,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS59679,split-GAL4,ExR2,1,,,False,nan,Occ exp in non-CX cells; minimal VNC exp,https://elifesciences.org/articles/104764
+SS58826,split-GAL4,ExR2,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS82798,split-GAL4,ExR3,1,,,False,nan,Minimal VNC exp; †,https://elifesciences.org/articles/104764
+SS82773,split-GAL4,ExR3,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS61641,split-GAL4,ExR3,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS04919,split-GAL4,ExR3,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS58784,split-GAL4,ExR4,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS58788,split-GAL4,ExR4,1,,,False,nan,NO & non-CX exp; some VNC exp,https://elifesciences.org/articles/104764
+SS51128,split-GAL4,ExR5,1,,,False,nan,Minor VNC exp,https://elifesciences.org/articles/104764
+SS82294,split-GAL4,ExR5,1,,,False,nan,Minor VNC exp; †,https://elifesciences.org/articles/104764
+SS65188,split-GAL4,ExR5,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS65155,split-GAL4,ExR5,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS53617,split-GAL4,ExR6,1,,,False,nan,One brain has additional expression,https://elifesciences.org/articles/104764
+SS58754,split-GAL4,ExR6,1,,,False,nan,Some non-CX and VNC exp,https://elifesciences.org/articles/104764
+SS65157,split-GAL4,ExR7,1,,,False,nan,Some VNC exp,https://elifesciences.org/articles/104764
+SS82313,split-GAL4,ExR7,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS65849,split-GAL4,ExR8,1,,,False,nan,Minor VNC exp,https://elifesciences.org/articles/104764
+SS49695,split-GAL4,ExR8,1,,,False,nan,Minor non-CX and VNC exp,https://elifesciences.org/articles/104764
+SS65915,split-GAL4,ER1_a,1,,,False,nan,Minor non-CX exp; †,https://elifesciences.org/articles/104764
+SS00057,split-GAL4,ER1_a,1,,,False,nan,"Minor non-CX and VNC exp; a,b or both",https://elifesciences.org/articles/104764
+SS04764,split-GAL4,ER1_a,1,,,False,nan,"Plus non-CX, some VNC exp; a, b or both; †",https://elifesciences.org/articles/104764
+SS04804,split-GAL4,ER1_a,1,,,False,nan,"Plus FB, EB, some VNC exp; a,b or both",https://elifesciences.org/articles/104764
+SS65915,split-GAL4,ER1_b,1,,,False,nan,Minor non-CX exp; †,https://elifesciences.org/articles/104764
+SS00057,split-GAL4,ER1_b,1,,,False,nan,"Minor non-CX and VNC exp; a,b or both",https://elifesciences.org/articles/104764
+SS04764,split-GAL4,ER1_b,1,,,False,nan,"Plus non-CX, some VNC exp; a, b or both; †",https://elifesciences.org/articles/104764
+SS04804,split-GAL4,ER1_b,1,,,False,nan,"Plus FB, EB, some VNC exp; a,b or both",https://elifesciences.org/articles/104764
+SS04772,split-GAL4,ER2_a,1,,,False,nan,ER2_a +/or_b +/or_d; minor non-CX; some VNC exp,https://elifesciences.org/articles/104764
+SS04772,split-GAL4,ER2_b,1,,,False,nan,ER2_a +/or_b +/or_d; minor non-CX; some VNC exp,https://elifesciences.org/articles/104764
+SS62792,split-GAL4,ER2_c,1,,,False,nan,Some VNC exp,https://elifesciences.org/articles/104764
+SS62789,split-GAL4,ER2_c,1,,,False,nan,"Plus EB ring, probably ER4m; plus non-CX cells                                                                                                                                                                                                                        ",https://elifesciences.org/articles/104764
+SS04772,split-GAL4,ER2_d,1,,,False,nan,ER2_a +/or_b +/or_d; minor non-CX; some VNC exp,https://elifesciences.org/articles/104764
+SS59574,split-GAL4,ER3,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS59119,split-GAL4,ER3a_a,1,,,False,nan,Best guess ER3a_a&d; plus non-CX and VNC exp,https://elifesciences.org/articles/104764
+SS03944,split-GAL4,ER3a_b,1,,,False,nan,Some VNC exp,https://elifesciences.org/articles/104764
+SS59281,split-GAL4,ER3a_b,1,,,False,nan,Some VNC exp; †,https://elifesciences.org/articles/104764
+SS59555,split-GAL4,ER3a_b,1,,,False,nan,"ER3a_b&d, best guess",https://elifesciences.org/articles/104764
+SS79618,split-GAL4,ER3a_c,1,,,False,nan,Poss also ER3a_b; †,https://elifesciences.org/articles/104764
+SS04710,split-GAL4,ER3a_d,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS59119,split-GAL4,ER3a_d,1,,,False,nan,Best guess ER3a_a&d; plus non-CX and VNC exp,https://elifesciences.org/articles/104764
+SS59555,split-GAL4,ER3a_d,1,,,False,nan,"ER3a_b&d, best guess",https://elifesciences.org/articles/104764
+SS79782,split-GAL4,ER3d_a,1,,,False,nan,"ER3d_a fits IS well, less well for SS but still best fit; †",https://elifesciences.org/articles/104764
+SS79886,split-GAL4,ER3d_a,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS04815,split-GAL4,ER3d_a,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS79745,split-GAL4,ER3d_b,1,,,False,nan,"ER3d_b,c,d; minimal VNC exp; †",https://elifesciences.org/articles/104764
+SS79837,split-GAL4,ER3d_b,1,,,False,nan,ER3d_b +/- _c +/- _d; minimal VNC exp; †,https://elifesciences.org/articles/104764
+SS79884,split-GAL4,ER3d_c,1,,,False,nan,"Couple ER3d_b and _d coincide with microglomeruli in LT, most don't; weak, minimal VNC exp; †",https://elifesciences.org/articles/104764
+SS79676,split-GAL4,ER3d_c,1,,,False,nan,Plus non-CX; minor VNC exp; †,https://elifesciences.org/articles/104764
+SS79745,split-GAL4,ER3d_c,1,,,False,nan,ER3d_b +/- _c +/- _d; minimal VNC exp; †,https://elifesciences.org/articles/104764
+SS79837,split-GAL4,ER3d_c,1,,,False,nan,ER3d_b +/- _c +/- _d; minimal VNC exp; †,https://elifesciences.org/articles/104764
+SS79745,split-GAL4,ER3d_d,1,,,False,nan,ER3d_b +/- _c +/- _d; minimal VNC exp; †,https://elifesciences.org/articles/104764
+SS79886,split-GAL4,ER3d_d,1,,,False,nan,ER3d_b +/- _c +/- _d; minimal VNC exp,https://elifesciences.org/articles/104764
+SS79837,split-GAL4,ER3d_d,1,,,False,nan,ER3d_b +/- _c +/- _d; minimal VNC exp; †,https://elifesciences.org/articles/104764
+SS67611,split-GAL4,ER3p_a,1,,,False,nan,"Likely both ER3p_a & b to cover EB and glomeruli in all brains; weak FB6T, 6T in MCFO; minor VNC exp; †",https://elifesciences.org/articles/104764
+SS17020,split-GAL4,ER3p_a,1,,,False,nan,"ER3p_a, _b; plus EB, OL, VNC exp",https://elifesciences.org/articles/104764
+SS67611,split-GAL4,ER3p_b,1,,,False,nan,"Likely both ER3p_a & b to cover EB and glomeruli in all brains; weak FB6T, 6T in MCFO; minor VNC exp; †",https://elifesciences.org/articles/104764
+SS17020,split-GAL4,ER3p_b,1,,,False,nan,"ER3p_a, _b; plus EB, OL, VNC exp",https://elifesciences.org/articles/104764
+SS39836,split-GAL4,ER4d,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS39835,split-GAL4,ER4d,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS41209,split-GAL4,ER4m,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS78657,split-GAL4,ER4m,1,,,False,nan,†,https://elifesciences.org/articles/104764
+SS78687,split-GAL4,ER4m,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS41262,split-GAL4,ER5,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS56094,split-GAL4,ER5,1,,,False,nan,Some VNC exp,https://elifesciences.org/articles/104764
+SS53771,split-GAL4,ER5,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS00070,split-GAL4,ER5,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS58833,split-GAL4,ER6,1,,,False,nan,Minimal VNC exp,https://elifesciences.org/articles/104764
+SS58778,split-GAL4,ER6,1,,,False,nan,Minimal VNC exp; †,https://elifesciences.org/articles/104764
+SS53655,split-GAL4,dFB tangential,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS55832,split-GAL4,dFB tangential,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS55868,split-GAL4,dFB tangential,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS54320,split-GAL4,dFB tangential,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS55859,split-GAL4,dFB tangential,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS56338,split-GAL4,dFB tangential,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS93799,split-GAL4,SMP249,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS94414,split-GAL4,SMP249,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS74918,split-GAL4,SMP368,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS74944,split-GAL4,SMP368,1,,,False,nan,,https://elifesciences.org/articles/104764
+SS79089,split-GAL4,SMP531,1,,,False,nan,,https://elifesciences.org/articles/104764

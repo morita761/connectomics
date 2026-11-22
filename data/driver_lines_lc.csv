@@ -1,0 +1,55 @@
+line,system,em_types,n_types,n_cells_lm,specificity,primary,description,note,source
+SS00315,split-GAL4,LC4,1,,,True,LC4,AD R47H03 / DBD R72E01; 行動実験に使用,https://elifesciences.org/articles/21022
+OL0070B,split-GAL4,LC6,1,,,False,LC6,AD R91B01 / DBD R22A07,https://elifesciences.org/articles/21022
+OL0071B,split-GAL4,LC6,1,,,False,LC6,AD R91B01 / DBD R41C07,https://elifesciences.org/articles/21022
+OL0077B,split-GAL4,LC6,1,,,True,LC6,AD R92B02 / DBD R41C07; 行動実験に使用,https://elifesciences.org/articles/21022
+OL0081B,split-GAL4,LC6,1,,,False,LC6,AD R47E07 / DBD R41C07,https://elifesciences.org/articles/21022
+OL0087B,split-GAL4,LC6,1,,,False,LC6,AD R82D11 / DBD R41C07,https://elifesciences.org/articles/21022
+OL0202B,split-GAL4,LC6,1,,,False,LC6,AD R42E06 / DBD VT019053,https://elifesciences.org/articles/21022
+OL0203B,split-GAL4,LC6,1,,,False,LC6,AD R42E06 / DBD VT022290,https://elifesciences.org/articles/21022
+OL0218B,split-GAL4,LC6,1,,,False,LC6,AD R47E07 / DBD VT049344,https://elifesciences.org/articles/21022
+SS02645,split-GAL4,LC9,1,,,False,LC9,AD VT027704 / DBD VT040569,https://elifesciences.org/articles/21022
+SS02651,split-GAL4,LC9,1,,,True,LC9,AD VT032961 / DBD VT040569; 行動実験に使用,https://elifesciences.org/articles/21022
+SS02652,split-GAL4,LC9,1,,,False,LC9,AD VT032961 / DBD VT027704,https://elifesciences.org/articles/21022
+SS02662,split-GAL4,LC9,1,,,False,LC9,AD R28G03 / DBD VT027704,https://elifesciences.org/articles/21022
+OL0019B,split-GAL4,LC10a;LC10b;LC10c;LC10d,4,,,False,LC10-group,AD R35D04 / DBD R22D06,https://elifesciences.org/articles/21022
+OL0020B,split-GAL4,LC10a;LC10b;LC10c;LC10d,4,,,True,LC10-group,AD R35D04 / DBD R80E07; 行動実験に使用,https://elifesciences.org/articles/21022
+OL0021B,split-GAL4,LC10a;LC10b;LC10c;LC10d,4,,,False,LC10-group,AD R35D04 / DBD R82D11,https://elifesciences.org/articles/21022
+OL0022B,split-GAL4,LC10a;LC10b;LC10c;LC10d,4,,,False,LC10-group,AD R35D04 / DBD R91B01,https://elifesciences.org/articles/21022
+OL0023B,split-GAL4,LC10a;LC10b;LC10c;LC10d,4,,,True,LC10-group,AD R72C08 / DBD R50D07; 行動実験に使用,https://elifesciences.org/articles/21022
+SS00937,split-GAL4,LC10a;LC10b;LC10c;LC10d,4,,,False,LC10-group,AD R22A07 / DBD R35D04,https://elifesciences.org/articles/21022
+SS00938,split-GAL4,LC10a;LC10b;LC10c;LC10d,4,,,False,LC10-group,AD R35D04 / DBD R71E06,https://elifesciences.org/articles/21022
+SS00940,split-GAL4,LC10a;LC10b;LC10c;LC10d,4,,,False,LC10-group,AD R35D04 / DBD R22A07,https://elifesciences.org/articles/21022
+SS00941,split-GAL4,LC10a;LC10b;LC10c;LC10d,4,,,False,LC10-group,AD R47E07 (VK00027) / DBD R35D04,https://elifesciences.org/articles/21022
+SS00942,split-GAL4,LC10a;LC10b;LC10c;LC10d,4,,,False,LC10-group,AD R47E07 / DBD R35D04,https://elifesciences.org/articles/21022
+SS02663,split-GAL4,LC10a;LC10b;LC10c;LC10d,4,,,False,LC10-group,AD R35D04 / DBD VT040747,https://elifesciences.org/articles/21022
+SS02664,split-GAL4,LC10a;LC10b;LC10c;LC10d,4,,,False,LC10-group,AD R35D04 / DBD VT043656,https://elifesciences.org/articles/21022
+SS02665,split-GAL4,LC10a;LC10b;LC10c;LC10d,4,,,False,LC10-group,AD R35D04 / DBD VT058944,https://elifesciences.org/articles/21022
+SS02666,split-GAL4,LC10a;LC10b;LC10c;LC10d,4,,,False,LC10-group,AD R35D04 / DBD VT045997,https://elifesciences.org/articles/21022
+SS02669,split-GAL4,LC10a;LC10b;LC10c;LC10d,4,,,False,LC10-group,AD R72C08 / DBD VT040747,https://elifesciences.org/articles/21022
+SS02681,split-GAL4,LC10a;LC10b;LC10c;LC10d,4,,,False,LC10-group,AD VT040747 / DBD R72C08,https://elifesciences.org/articles/21022
+SS03822,split-GAL4,LC10a;LC10b;LC10c;LC10d,4,,,False,LC10-group,AD VT043920 / DBD R91B01,https://elifesciences.org/articles/21022
+OL0015B,split-GAL4,LC11,1,,,True,LC11,AD R22H02 / DBD R20G06; 行動実験に使用,https://elifesciences.org/articles/21022
+OL0007B,split-GAL4,LC12,1,,,False,LC12,AD R35D04 / DBD R65B05,https://elifesciences.org/articles/21022
+OL0008B,split-GAL4,LC12,1,,,True,LC12,AD R35D04 / DBD R55F01; 行動実験に使用,https://elifesciences.org/articles/21022
+OL0027B,split-GAL4,LC13,1,,,True,LC13,AD R14A11 / DBD R50C10; 行動実験に使用,https://elifesciences.org/articles/21022
+OL0003B,split-GAL4,LC15,1,,,False,LC15,AD R24A02 / DBD R26A03,https://elifesciences.org/articles/21022
+OL0004B,split-GAL4,LC15,1,,,False,LC15,AD R24A02 / DBD R91B01,https://elifesciences.org/articles/21022
+OL0042B,split-GAL4,LC15,1,,,True,LC15,AD R26A03 / DBD R24A02; 行動実験に使用,https://elifesciences.org/articles/21022
+OL0017B,split-GAL4,LC16,1,,,False,LC16,AD R82D11 / DBD R54A05,https://elifesciences.org/articles/21022
+OL0046B,split-GAL4,LC16,1,,,True,LC16,AD R26A03 / DBD R54A05; 行動実験に使用,https://elifesciences.org/articles/21022
+OL0092C,split-GAL4,LC16,1,,,False,LC16,AD R92B02 (VK00027) / DBD R38E08,https://elifesciences.org/articles/21022
+OL0005B,split-GAL4,LC17,1,,,True,LC17,AD R21D03 / DBD R65C12; 行動実験に使用,https://elifesciences.org/articles/21022
+OL0010B,split-GAL4,LC18,1,,,True,LC18,AD R92B11 / DBD R82D11; 行動実験に使用,https://elifesciences.org/articles/21022
+OL0011B,split-GAL4,LC18,1,,,False,LC18,AD R82D11 / DBD R92B11,https://elifesciences.org/articles/21022
+SS00343,split-GAL4,LC20,1,,,True,LC20,AD R17A04 (VK00027) / DBD R35B06; 行動実験に使用,https://elifesciences.org/articles/21022
+OL0009B,split-GAL4,LC20,1,,,False,LC20,AD R71F06 / DBD R35B06,https://elifesciences.org/articles/21022
+OL0044B,split-GAL4,LC21,1,,,True,LC21,AD R55C04 / DBD R85F11; 行動実験に使用,https://elifesciences.org/articles/21022
+OL0045B,split-GAL4,LC21,1,,,False,LC21,AD R55C04 / DBD R41C05,https://elifesciences.org/articles/21022
+SS17690,split-GAL4,LC21,1,,,False,LC21,AD R50C03 / DBD R85F11,https://elifesciences.org/articles/21022
+OL0001B,split-GAL4,LC22,1,,,True,LC22,AD R64G10 / DBD R35B06; 行動実験に使用,https://elifesciences.org/articles/21022
+SS02638,split-GAL4,LC24,1,,,True,LC24,AD VT038216 / DBD VT026477; 行動実験に使用,https://elifesciences.org/articles/21022
+SS02650,split-GAL4,LC25,1,,,True,LC25,AD VT009792 / DBD VT002021; 行動実験に使用,https://elifesciences.org/articles/21022
+SS02445,split-GAL4,LC26,1,,,True,LC26,AD VT007747 / DBD R85H06; 行動実験に使用,https://elifesciences.org/articles/21022
+OL0029B,split-GAL4,LPLC1,1,,,True,LPLC1,AD R64G09 / DBD R37H04; 行動実験に使用,https://elifesciences.org/articles/21022
+OL0048B,split-GAL4,LPLC2,1,,,True,LPLC2,AD R19G02 / DBD R75G12; 行動実験に使用,https://elifesciences.org/articles/21022

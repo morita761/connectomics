@@ -1,0 +1,587 @@
+line,system,em_types,n_types,n_cells_lm,specificity,primary,description,note,source
+SS00525,split-GAL4,ORN_V,1,-,2.0,True,ORN_V,,https://elifesciences.org/articles/94168
+SS00445,split-GAL4,ORN_VA7l,1,-,2.0,True,ORN_VA7l,,https://elifesciences.org/articles/94168
+MB563B,split-GAL4,ORN_VL1;ORN_VL2p,2,-,2.0,True,"ORN_VL1,VL2p,(VM1?)",,https://elifesciences.org/articles/94168
+MB410B,split-GAL4,HRN_VP1l,1,-,1.0,True,HRN_VP1l,,https://elifesciences.org/articles/94168
+SS00503,split-GAL4,HRN_VP1l;ORN_VC5,2,-,2.0,True,"HRN_VP1l, ORN_VC5",,https://elifesciences.org/articles/94168
+SS00560,split-GAL4,HRN_VP1l;HRN_VP4;ORN_VL2p;ORN_VC5,4,-,2.0,True,"HRN_VP1l,VP4, ORN_VL2p,VC5",,https://elifesciences.org/articles/94168
+MB408B,split-GAL4,HRN_VP1l;TRN_VP1m;ORN_VL1;ORN_VC5,4,-,2.0,True,"HRN_VP1l, TRN_VP1m, ORN_VL1,VC5",,https://elifesciences.org/articles/94168
+SS00501,split-GAL4,HRN_VP1l;TRN_VP1m;ORN_VL1;ORN_VC5,4,-,1.0,False,"HRN_VP1l, TRN_VP1m, ORN_VL1,VC5",,https://elifesciences.org/articles/94168
+SS00625,split-GAL4,HRN_VP1l;TRN_VP1m;ORN_VL1;ORN_VC5,4,-,1.0,False,"HRN_VP1l, TRN_VP1m, ORN_VL1,VC5,(VM1?)",,https://elifesciences.org/articles/94168
+SS00563,split-GAL4,HRN_VP1l;TRN_VP1m;ORN_VL1;ORN_VC5,4,-,0.0,False,"HRN_VP1l, (VP5?), TRN_VP1m, ORN_VL1,VC5, (VM1?), FB",,https://elifesciences.org/articles/94168
+SS00559,split-GAL4,HRN_VP1l;TRN_VP1m,2,-,0.0,False,"HRN_VP1l, TRN_VP1m, ORNs, FB",,https://elifesciences.org/articles/94168
+SS00561,split-GAL4,JO-A-B-C,1,nan,0.0,True,"JO-ABCDE, others",broad JO,https://elifesciences.org/articles/94168
+SS32196,split-GAL4,JO-A-B-C,1,nan,0.0,False,JO-ABCE?,weak expression,https://elifesciences.org/articles/94168
+SS88942,split-GAL4,JO-A-B-C,1,nan,1.0,True,"JO-AB, VNC",,https://elifesciences.org/articles/94168
+SS00451,split-GAL4,HRN_VP1l,1,nan,1.0,True,"JO-B, HRN_VP1l",,https://elifesciences.org/articles/94168
+MB120B,split-GAL4,l2LN22,1,2,2.0,True,l2LN22,,https://elifesciences.org/articles/94168
+SS33920,split-GAL4,l2LN23,1,2,2.0,True,l2LN23,,https://elifesciences.org/articles/94168
+SS49269,split-GAL4,vLN26,1,-,1.0,True,"vLN26, AN_TBD (5813047188), others",,https://elifesciences.org/articles/94168
+SS00459,split-GAL4,v2LN44,1,3-4,2.0,True,v2LN44,"other candidates: v2LN40, v2LN45",https://elifesciences.org/articles/94168
+SS00460,split-GAL4,v2LN44,1,3-4,1.0,False,v2LN44,"other candidates: v2LN40, v2LN45",https://elifesciences.org/articles/94168
+SS00634,split-GAL4,v2LN44,1,3-4,1.0,False,v2LN44,"other candidates: v2LN40, v2LN45",https://elifesciences.org/articles/94168
+SS01189,split-GAL4,DA1_lPN,1,5-7,2.0,True,DA1_lPN,,https://elifesciences.org/articles/94168
+SS01369,split-GAL4,DA1_lPN,1,4-6,2.0,False,DA1_lPN,,https://elifesciences.org/articles/94168
+MB484B,split-GAL4,DA1_lPN,1,5-7,0.0,False,"DA1_lPN, others",,https://elifesciences.org/articles/94168
+SS49296,split-GAL4,DA1_lPN;DL3_lPN,2,~10,2.0,True,"DA1,DL3_lPN",,https://elifesciences.org/articles/94168
+MB530B,split-GAL4,DA1_lPN;DL3_lPN,2,~10,2.0,False,"DA1,DL3_lPN",,https://elifesciences.org/articles/94168
+SS49292,split-GAL4,DA1_lPN;DL3_lPN,2,~10,2.0,False,"DA1,DL3_lPN, (VA1d_adPN)",,https://elifesciences.org/articles/94168
+SS01289,split-GAL4,DA1_lPN;DL3_lPN,2,>10,2.0,False,"DA1,DL3_lPN, (VA1d,VM5d_adPN)",,https://elifesciences.org/articles/94168
+SS01391,split-GAL4,DA1_lPN;DL3_lPN;VM4_lvPN,3,>10,2.0,True,"DA1,DL3_lPN, VM4_lvPN",,https://elifesciences.org/articles/94168
+SS01199,split-GAL4,DA1_lPN;DM2_lPN,2,7-9,2.0,True,"DA1,DM2_lPN",,https://elifesciences.org/articles/94168
+SS01165,split-GAL4,DC3_adPN,1,2-4,2.0,True,"DC3_adPN, (DA4l_adPN)",split#28 GAL4 in Xie 2021 Elife (correction),https://elifesciences.org/articles/94168
+SS01269,split-GAL4,DL1_adPN,1,2,2.0,True,DL1_adPN,,https://elifesciences.org/articles/94168
+SS32205,split-GAL4,DL1_adPN;D_adPN,2,~4,2.0,True,"DL1,D_adPN, (VA1v_adPN)",,https://elifesciences.org/articles/94168
+SS01129,split-GAL4,DL2d_vPN;DP1l_vPN,2,2-3,0.0,True,"DL2d,DP1l_vPN, (VNC)",,https://elifesciences.org/articles/94168
+SS01147,split-GAL4,DL3_lPN,1,~5,2.0,True,DL3_lPN,,https://elifesciences.org/articles/94168
+SS01306,split-GAL4,DL3_lPN,1,~7,2.0,False,DL3_lPN,,https://elifesciences.org/articles/94168
+MB510C,split-GAL4,DL3_lPN,1,~6,0.0,False,DL3_lPN,,https://elifesciences.org/articles/94168
+MB529B,split-GAL4,DL3_lPN,1,~7,1.0,False,"DL3_lPN, (DA1_lPN, DA3_adPN)",,https://elifesciences.org/articles/94168
+MB527B,split-GAL4,DL3_lPN,1,3-5,0.0,False,"DL3_lPN, ANs/DNs",,https://elifesciences.org/articles/94168
+MB483B,split-GAL4,DL3_lPN,1,~6,0.0,False,"DL3_lPN, others",,https://elifesciences.org/articles/94168
+MB485B,split-GAL4,DL3_lPN;VM4_lvPN,2,>8,2.0,True,"DL3_lPN, VM4_lvPN, (DA3,VM5d_adPN)",,https://elifesciences.org/articles/94168
+SS10228,split-GAL4,DL4_adPN;VA1d_adPN,2,4-5,1.0,True,"DL4,VA1d_adPN",other candidates: VA1v_adPN,https://elifesciences.org/articles/94168
+SS32214,split-GAL4,DL4_adPN;VA1d_adPN,2,2-3,0.0,False,"DL4,VA1d_adPN",,https://elifesciences.org/articles/94168
+SS49306,split-GAL4,DM5_lPN,1,>3,2.0,True,"DM5_lPN, (VM5v_adPN) ",,https://elifesciences.org/articles/94168
+SS01175,split-GAL4,DP1l_vPN;DP1m_vPN;VL2a_vPN;VL2p_vPN,4,~6,1.0,True,"DP1l,DP1m,VL2a,VL2p_vPN","other candidates: M_vPNml56,58",https://elifesciences.org/articles/94168
+SS01336,split-GAL4,V_l2PN,1,1,1.0,True,"V_l2PN, ANs/DNs",,https://elifesciences.org/articles/94168
+SS02076,split-GAL4,V_l2PN,1,1,1.0,False,"V_l2PN, ANs/DNs",,https://elifesciences.org/articles/94168
+SS01186,split-GAL4,V_l2PN,1,1,0.0,False,"V_l2PN, ANs/DNs",,https://elifesciences.org/articles/94168
+SS35235,split-GAL4,V_l2PN,1,1,0.0,False,"V_l2PN, ANs/DNs",,https://elifesciences.org/articles/94168
+SS32200,split-GAL4,V_l2PN,1,1,0.0,False,V_l2PN (stochastic),,https://elifesciences.org/articles/94168
+SS35094,split-GAL4,VA1d_adPN,1,3-4,2.0,True,VA1d_adPN,,https://elifesciences.org/articles/94168
+SS01390,split-GAL4,VA1d_adPN;VM4_lvPN,2,~6,2.0,True,"VA1d_adPN, VM4_lvPN",,https://elifesciences.org/articles/94168
+SS32274,split-GAL4,VA1d_adPN;DA3_adPN,2,3-4,1.0,True,"VA1d,DA3_adPN, (VA1v_adPN)",,https://elifesciences.org/articles/94168
+SS34963,split-GAL4,VA1d_vPN,1,1,1.0,True,VA1d_vPN,,https://elifesciences.org/articles/94168
+SS01114,split-GAL4,VA1d_vPN,1,1-4,1.0,False,"VA1d_vPN, (M_vPNml?)",,https://elifesciences.org/articles/94168
+SS01108,split-GAL4,VA1d_vPN;M_vPNml85;M_vPNml88;M_vPNml89,4,5-6,2.0,True,"VA1d_vPN, M_vPNml85,88,89 ",,https://elifesciences.org/articles/94168
+SS01119,split-GAL4,VC3l_adPN,1,~4,1.0,True,VC3l_adPN,,https://elifesciences.org/articles/94168
+SS34061,split-GAL4,VC3l_adPN,1,~3,1.0,False,VC3l_adPN,,https://elifesciences.org/articles/94168
+SS10326,split-GAL4,VC3l_adPN,1,2?,1.0,False,"VC3l_adPN, (DL2v_adPN)",,https://elifesciences.org/articles/94168
+SS49298,split-GAL4,VC3l_adPN;VM5d_adPN;VM5v_adPN;VM4_lvPN,4,15+,2.0,True,"VC3l,VM5d,VM5v_adPN, VM4_lvPN",,https://elifesciences.org/articles/94168
+SS32272,split-GAL4,VC3l_adPN;VM5d_adPN,2,~6,0.0,True,"VC3l,VM5d_adPN, (DL1_adPN)",,https://elifesciences.org/articles/94168
+SS35043,split-GAL4,VC3l_adPN;VC4_adPN;VM5d_adPN;VM5v_adPN;D_adPN,5,>10,2.0,True,"VC4,VC3l,VM5d,VM5v,D_adPN, (DL1_adPN)",,https://elifesciences.org/articles/94168
+SS34961,split-GAL4,VC4_adPN;VC3l_adPN,2,~7,1.0,True,"VC4,VC3l_adPN, (VM5d,VM5v_adPN)",,https://elifesciences.org/articles/94168
+MB546B,split-GAL4,VL1_ilPN,1,1,2.0,True,VL1_ilPN,,https://elifesciences.org/articles/94168
+MB546C,split-GAL4,VL1_ilPN,1,1,1.0,False,VL1_ilPN,,https://elifesciences.org/articles/94168
+MB567B,split-GAL4,VL1_ilPN,1,1,2.0,False,VL1_ilPN,,https://elifesciences.org/articles/94168
+MB545B,split-GAL4,VL1_ilPN,1,1,1.0,False,VL1_ilPN,"inconsistent across samples, VM4_lvPN",https://elifesciences.org/articles/94168
+MB545C,split-GAL4,VL1_ilPN,1,1,0.0,False,VL1_ilPN,,https://elifesciences.org/articles/94168
+MB531B,split-GAL4,VL1_ilPN,1,1,0.0,False,VL1_ilPN,,https://elifesciences.org/articles/94168
+SS86025,split-GAL4,VL1_vPN,1,1,2.0,True,VL1_vPN,,https://elifesciences.org/articles/94168
+SS34947,split-GAL4,VL1_vPN,1,1-2,2.0,False,VL1_vPN,,https://elifesciences.org/articles/94168
+SS01850,split-GAL4,VL2a_vPN,1,2-3,2.0,True,"VL2a_vPN, (M_vPNml67?)",,https://elifesciences.org/articles/94168
+SS01841,split-GAL4,VL2a_vPN,1,~3,2.0,False,"VL2a_vPN, (VL2p_vPN, M_vPNml67?)",,https://elifesciences.org/articles/94168
+SS01842,split-GAL4,VL2a_vPN,1,3-5,2.0,False,"VL2a_vPN, (VL2p_vPN, M_vPNml67?)",,https://elifesciences.org/articles/94168
+SS01843,split-GAL4,VL2a_vPN,1,4-5,2.0,False,"VL2a_vPN, (M_vPNml67?)",,https://elifesciences.org/articles/94168
+SS01177,split-GAL4,VL2a_vPN,1,~6,1.0,False,"VL2a_vPN, (M_vPNml67?)",,https://elifesciences.org/articles/94168
+SS01171,split-GAL4,VL2a_vPN;M_vPNml67,2,3-5,2.0,True,"VL2a_vPN, M_vPNml67",,https://elifesciences.org/articles/94168
+SS01851,split-GAL4,VL2a_vPN;M_vPNml67,2,3-5,1.0,False,"VL2a_vPN, M_vPNml67",,https://elifesciences.org/articles/94168
+SS00583,split-GAL4,VL2a_vPN;M_vPNml67,2,3-5,1.0,False,"VL2a_vPN, M_vPNml67",,https://elifesciences.org/articles/94168
+SS01113,split-GAL4,VL2a_vPN;M_vPNml67,2,3-5,2.0,False,"VL2a_vPN, M_vPNml67",,https://elifesciences.org/articles/94168
+SS01273,split-GAL4,VL2a_vPN;M_vPNml67,2,3-4,2.0,False,"VL2a_vPN, M_vPNml67",,https://elifesciences.org/articles/94168
+SS01274,split-GAL4,VL2a_vPN;M_vPNml67,2,3-4,2.0,False,"VL2a_vPN, M_vPNml67",,https://elifesciences.org/articles/94168
+SS01299,split-GAL4,VL2a_vPN;M_vPNml67,2,4-5,2.0,False,"VL2a_vPN, M_vPNml67",,https://elifesciences.org/articles/94168
+SS01300,split-GAL4,VL2a_vPN;M_vPNml67,2,~4,2.0,False,"VL2a_vPN, M_vPNml67",,https://elifesciences.org/articles/94168
+SS01170,split-GAL4,VL2a_vPN;M_vPNml67,2,~7,2.0,False,"VL2a_vPN, M_vPNml67",,https://elifesciences.org/articles/94168
+SS01854,split-GAL4,VL2a_vPN;VL2p_vPN,2,2,2.0,True,"VL2a,VL2p_vPN",,https://elifesciences.org/articles/94168
+SS01865,split-GAL4,VL2a_vPN;VL2p_vPN,2,5,1.0,False,"VL2a,VL2p_vPN, (MBON-ß'1, M_vPNml67?)",,https://elifesciences.org/articles/94168
+SS34975,split-GAL4,VL2a_vPN;VL2p_vPN,2,~5,2.0,False,"VL2a,VL2p_vPN, (M_vPNml56?)",,https://elifesciences.org/articles/94168
+SS01856,split-GAL4,VL2a_vPN;VL2p_vPN,2,7,2.0,False,"VL2a,VL2p_vPN, (M_vPNml60-62?)",,https://elifesciences.org/articles/94168
+SS01857,split-GAL4,VL2a_vPN;VL2p_vPN,2,~6,1.0,False,"VL2a,VL2p_vPN, (M_vPNml60-62?)",,https://elifesciences.org/articles/94168
+SS01831,split-GAL4,VL2a_vPN;VL2p_vPN,2,~7,2.0,False,"VL2a,VL2p_vPN, (M_vPNml67?)",,https://elifesciences.org/articles/94168
+SS01853,split-GAL4,VL2a_vPN;VL2p_vPN,2,~4,1.0,False,"VL2a,VL2p_vPN, (M_vPNml67-68?)",,https://elifesciences.org/articles/94168
+SS01174,split-GAL4,VL2a_vPN;VL2p_vPN,2,6-7,2.0,False,"VL2a,VL2p_vPN, (M_vPNml67-68,56?)",,https://elifesciences.org/articles/94168
+SS01176,split-GAL4,VL2a_vPN;VL2p_vPN,2,~7,2.0,False,"VL2a,VL2p_vPN, (M_vPNml?)",,https://elifesciences.org/articles/94168
+SS01107,split-GAL4,VL2a_vPN;VL2p_vPN;DP1m_vPN;VA1d_vPN,4,4-8,0.0,True,"VL2a,VL2p,DP1m,VA1d_vPN, FB",,https://elifesciences.org/articles/94168
+SS01196,split-GAL4,VL2a_vPN;VL2p_vPN;DP1m_vPN,3,>5,2.0,True,"VL2a,VL2p,DP1m_vPN, (M_vPNml58?)",,https://elifesciences.org/articles/94168
+SS01195,split-GAL4,VL2a_vPN;VL2p_vPN;DP1m_vPN,3,>10,1.0,False,"VL2a,VL2p,DP1m_vPN, (M_vPNml?)",,https://elifesciences.org/articles/94168
+SS01868,split-GAL4,VL2p_vPN,1,1,2.0,True,VL2p_vPN,weak expression,https://elifesciences.org/articles/94168
+SS01157,split-GAL4,VM4_adPN;VC3l_adPN,2,~7,1.0,True,"VM4,VC3l_adPN, (VM5d,VC4_adPN)",weak expression,https://elifesciences.org/articles/94168
+SS01318,split-GAL4,VM4_lvPN,1,3-4,2.0,True,VM4_lvPN,,https://elifesciences.org/articles/94168
+SS01347,split-GAL4,VM4_lvPN,1,2-3,2.0,False,VM4_lvPN,,https://elifesciences.org/articles/94168
+SS01395,split-GAL4,VM4_lvPN,1,2-3,2.0,False,VM4_lvPN,,https://elifesciences.org/articles/94168
+SS01423,split-GAL4,VM4_lvPN,1,4,0.0,False,"VM4_lvPN, VNC",,https://elifesciences.org/articles/94168
+MB388B,split-GAL4,VM4_lvPN,1,3,2.0,False,VM4_lvPN,,https://elifesciences.org/articles/94168
+MB388C,split-GAL4,VM4_lvPN,1,3-4,2.0,False,VM4_lvPN,,https://elifesciences.org/articles/94168
+MB511B,split-GAL4,VM4_lvPN,1,3-4,2.0,False,VM4_lvPN,,https://elifesciences.org/articles/94168
+MB511C,split-GAL4,VM4_lvPN,1,3-4,2.0,False,VM4_lvPN,,https://elifesciences.org/articles/94168
+MB489B,split-GAL4,VM4_lvPN,1,3-4,0.0,False,"VM4_lvPN, others",,https://elifesciences.org/articles/94168
+MB387B,split-GAL4,VM4_lvPN,1,6-7,0.0,False,"VM4_lvPN, (M_lvPNm27?)",,https://elifesciences.org/articles/94168
+MB490B,split-GAL4,VM5d_adPN;VM5v_adPN;VC3l_adPN;VC4_adPN,4,~10,1.0,True,"VM5d,VM5v,VC3l,VC4_adPN",,https://elifesciences.org/articles/94168
+SS01132,split-GAL4,VM7d_adPN;VM7v_adPN,2,2-8,2.0,True,"VM7d,VM7v_adPN",,https://elifesciences.org/articles/94168
+SS01265,split-GAL4,VM7d_adPN;VM7v_adPN,2,-,1.0,False,"VM7d,VM7v_adPN, (VM5v_adPN)",split#15 Gal4 in Xie 2021 Elfie (correction),https://elifesciences.org/articles/94168
+SS01104,split-GAL4,VP1d_il2PN,1,1,1.0,True,"VP1d_il2PN, AN_TBD",,https://elifesciences.org/articles/94168
+SS01103,split-GAL4,VP1d_il2PN,1,1,1.0,False,"VP1d_il2PN, others",,https://elifesciences.org/articles/94168
+SS01093,split-GAL4,VP1d_il2PN,1,1,0.0,False,"VP1d_il2PN, AN_TBD",,https://elifesciences.org/articles/94168
+SS01099,split-GAL4,VP1d_il2PN,1,1,0.0,False,"VP1d_il2PN, AN_TBD",,https://elifesciences.org/articles/94168
+SS32250,split-GAL4,VP1d_il2PN;SAD053,2,3,1.0,False,"VP1d_il2PN, SAD053",,https://elifesciences.org/articles/94168
+SS33915,split-GAL4,VP1m+_lvPN,1,2,2.0,True,VP1m+_lvPN,,https://elifesciences.org/articles/94168
+SS32190,split-GAL4,VP1m+VP5_ilPN,1,-,0.0,True,"VP1m+VP5_ilPN, ANs/DNs, (VL1_ilPN?)",,https://elifesciences.org/articles/94168
+SS00548,split-GAL4,VP1m+VP5_ilPN;M_vPNml67;M_vPNml68,3,6,1.0,False,"VP1m+VP5_ilPN, M_vPNml67-68, others",,https://elifesciences.org/articles/94168
+SS01100,split-GAL4,VP1m+VP5_ilPN;VP1d_il2PN,2,2,2.0,True,"VP1m+VP5_ilPN, VP1d_il2PN",,https://elifesciences.org/articles/94168
+MB048B,split-GAL4,VP3+_vPN,1,1,2.0,True,VP3+_vPN,,https://elifesciences.org/articles/94168
+MB049B,split-GAL4,VP3+_vPN,1,1,2.0,False,VP3+_vPN,,https://elifesciences.org/articles/94168
+SS01829,split-GAL4,VP3+_vPN,1,1,2.0,False,VP3+_vPN,,https://elifesciences.org/articles/94168
+SS01105,split-GAL4,VP3+_vPN,1,2,2.0,False,"VP3+_vPN, (M_vPNml?)",,https://elifesciences.org/articles/94168
+SS01838,split-GAL4,VP3+_vPN,1,-,1.0,False,"VP3+_vPN, M_vPNml?",,https://elifesciences.org/articles/94168
+SS01837,split-GAL4,VP3+_vPN;WEDPN12,2,2,2.0,False,"VP3+_vPN, WEDPN12",,https://elifesciences.org/articles/94168
+SS32275,split-GAL4,VP5+_l2PN,1,1-2,0.0,True,VP5+_l2PN,,https://elifesciences.org/articles/94168
+MB559C,split-GAL4,VP5+_l2PN;VP5+VP2_l2PN;VP5+VP3_l2PN,3,~6,0.0,True,"VP5+,VP5+VP2,VP5+VP3_l2PN",,https://elifesciences.org/articles/94168
+SS32229,split-GAL4,VP5+VP3_l2PN,1,1,2.0,True,VP5+VP3_l2PN,,https://elifesciences.org/articles/94168
+SS35020,split-GAL4,M_adPNm8,1,2-4,1.0,True,M_adPNm8,,https://elifesciences.org/articles/94168
+SS01097,split-GAL4,M_imPNl92,1,1,0.0,True,"M_imPNl92, KCs, others",,https://elifesciences.org/articles/94168
+SS01092,split-GAL4,M_imPNl92;SLP374,2,2,1.0,False,"M_imPNl92, SLP374",,https://elifesciences.org/articles/94168
+SS49361,split-GAL4,M_l2PN3t18,1,2,1.0,True,M_l2PN3t18,,https://elifesciences.org/articles/94168
+SS01331,split-GAL4,M_l2PNl20,1,1,1.0,True,M_l2PNl20,,https://elifesciences.org/articles/94168
+SS32193,split-GAL4,M_l2PNl22,1,1,2.0,True,M_l2PNl22,,https://elifesciences.org/articles/94168
+SS32191,split-GAL4,M_l2PNl22,1,1,2.0,False,M_l2PNl22,,https://elifesciences.org/articles/94168
+SS32240,split-GAL4,M_l2PNl22,1,1,0.0,False,M_l2PNl22,,https://elifesciences.org/articles/94168
+SS32192,split-GAL4,M_l2PNl21;M_l2PNl22,2,-,1.0,True,"M_l2PNl21-22, others",,https://elifesciences.org/articles/94168
+SS49304,split-GAL4,M_lPNm11A,1,2-4,2.0,True,M_lPNm11A,,https://elifesciences.org/articles/94168
+SS49308,split-GAL4,M_lPNm11A,1,3-4,2.0,False,"M_lPNm11A, (VM5v_adPN)",,https://elifesciences.org/articles/94168
+SS01262,split-GAL4,M_lvPNm25;M_lvPNm26;M_lvPNm27;M_lvPNm28;M_lvPNm29;M_lvPNm30;M_lvPNm32,7,7-8,2.0,True,"M_lvPNm25-30, (M_lvPNm32?)",,https://elifesciences.org/articles/94168
+SS01191,split-GAL4,M_lvPNm25;M_lvPNm26;M_lvPNm27;M_lvPNm28;M_lvPNm29;M_lvPNm30;M_lvPNm32,7,7-8,1.0,False,"M_lvPNm25-30, (M_lvPNm32?)",,https://elifesciences.org/articles/94168
+SS01319,split-GAL4,M_lvPNm27;M_lvPNm28;M_lvPNm30,3,3-5,1.0,True,"M_lvPNm27-28,30",,https://elifesciences.org/articles/94168
+SS00606,split-GAL4,M_lvPNm32;M_lvPNm33;M_lvPNm34,3,5-6,1.0,True,"M_lvPNm32-34, (M_lvPNm35-36?)",,https://elifesciences.org/articles/94168
+SS00486,split-GAL4,M_smPNm1,1,1,2.0,True,M_smPNm1,,https://elifesciences.org/articles/94168
+SS00487,split-GAL4,M_smPNm1;CL107,2,2,0.0,False,"M_smPNm1, CL107",,https://elifesciences.org/articles/94168
+SS45229,split-GAL4,M_spPN5t10;LAL183,2,-,2.0,True,"M_spPN5t10, LAL183",,https://elifesciences.org/articles/94168
+SS01202,split-GAL4,M_vPNml56;M_vPNml58,2,3-5,2.0,True,"M_vPNml56,58",,https://elifesciences.org/articles/94168
+SS01109,split-GAL4,M_vPNml56;M_vPNml58,2,~6,0.0,False,"M_vPNml56,58, FB","other candidates: VL2a,VL2p_vPN",https://elifesciences.org/articles/94168
+SS01833,split-GAL4,M_vPNml57;M_vPNml59,2,2-3,1.0,True,"M_vPNml57,59, FB",,https://elifesciences.org/articles/94168
+SS00580,split-GAL4,M_vPNml59,1,2-3,1.0,True,M_vPNml59,,https://elifesciences.org/articles/94168
+SS01845,split-GAL4,M_vPNml60;M_vPNml61;M_vPNml62,3,~4,2.0,True,M_vPNml60-62,,https://elifesciences.org/articles/94168
+SS01172,split-GAL4,M_vPNml61,1,2,1.0,True,M_vPNml61,other candidates: M_vPNml60,https://elifesciences.org/articles/94168
+SS01832,split-GAL4,M_vPNml63;M_vPNml64;M_vPNml65,3,2-3,1.0,True,M_vPNml63-65,other candidates: VA1v_vPN,https://elifesciences.org/articles/94168
+SS01848,split-GAL4,M_vPNml63;M_vPNml64;M_vPNml65,3,~4,1.0,False,M_vPNml63-65,,https://elifesciences.org/articles/94168
+SS01823,split-GAL4,M_vPNml64,1,~4,1.0,True,"M_vPNml64, (M_vPNml63)",,https://elifesciences.org/articles/94168
+SS01345,split-GAL4,M_vPNml64;M_vPNml65;M_vPNml68,3,~7,1.0,True,"M_vPNml64-65,68",,https://elifesciences.org/articles/94168
+SS01325,split-GAL4,M_vPNml64;M_vPNml65;M_vPNml68,3,~7,1.0,False,"M_vPNml64-65,68",,https://elifesciences.org/articles/94168
+SS10947,split-GAL4,M_vPNml64;M_vPNml65;M_vPNml68,3,~8,2.0,False,"M_vPNml64-65,68",,https://elifesciences.org/articles/94168
+SS01156,split-GAL4,M_vPNml67;M_vPNml68,2,1-3,0.0,True,"M_vPNml67-68, others",,https://elifesciences.org/articles/94168
+SS01820,split-GAL4,M_vPNml74,1,4,1.0,True,"M_vPNml74, (other M_vPNml?)",,https://elifesciences.org/articles/94168
+SS00517,split-GAL4,M_vPNml76,1,3,1.0,True,"M_vPNml76, others",,https://elifesciences.org/articles/94168
+SS34979,split-GAL4,M_vPNml76,1,2-3,2.0,False,"M_vPNml76, (M_vPNml64)",,https://elifesciences.org/articles/94168
+SS01168,split-GAL4,M_vPNml84,1,3-5,2.0,True,M_vPNml84,,https://elifesciences.org/articles/94168
+SS00587,split-GAL4,M_vPNml87,1,2-4,1.0,True,M_vPNml87,,https://elifesciences.org/articles/94168
+SS00586,split-GAL4,M_vPNml87,1,4,1.0,False,M_vPNml87,,https://elifesciences.org/articles/94168
+SS01197,split-GAL4,M_vPNml89,1,3,2.0,True,M_vPNml89,,https://elifesciences.org/articles/94168
+SS34976,split-GAL4,M_vPNml89,1,2-4,2.0,False,M_vPNml89,,https://elifesciences.org/articles/94168
+SS01388,split-GAL4,MBON22,1,1,2.0,True,MB-CP1,,https://elifesciences.org/articles/94168
+MB184B,split-GAL4,MBON22,1,1,1.0,False,MB-CP1,,https://elifesciences.org/articles/94168
+MB203B,split-GAL4,MBON16;MBON17;MBON17-like,3,~4,2.0,True,"MBON-α'3ap, α'3m, α'2α'3, (MBON-α'1α'2)",,https://elifesciences.org/articles/94168
+MB618B,split-GAL4,MBON15-like;MBON17;MBON17-like,3,3-5,2.0,True,"MBON-α'1α'2, α'3m, α'2α'3",,https://elifesciences.org/articles/94168
+MB566C,split-GAL4,MBON15-like;MBON17;MBON17-like,3,2-3,2.0,False,"MBON-α'1α'2, α'3m, α'2α'3",,https://elifesciences.org/articles/94168
+MB539B,split-GAL4,MBON15-like;MBON17;MBON17-like,3,~3,2.0,False,"MBON-α'1α'2, α'3m, α'2α'3",,https://elifesciences.org/articles/94168
+MB564C,split-GAL4,MBON15-like;MBON17;MBON17-like,3,~5,1.0,False,"MBON-α'1α'2, α'3m, α'2α'3, PLP159-160?",,https://elifesciences.org/articles/94168
+MB019B,split-GAL4,MBON13,1,1,2.0,False,MBON-α'2,,https://elifesciences.org/articles/94168
+MB037B,split-GAL4,MBON13,1,1,2.0,False,MBON-α'2,,https://elifesciences.org/articles/94168
+MB091C,split-GAL4,MBON13,1,1,1.0,False,MBON-α'2,,https://elifesciences.org/articles/94168
+MB081C,split-GAL4,MBON13,1,1,2.0,False,MBON-α'2,,https://elifesciences.org/articles/94168
+SS01268,split-GAL4,MBON13,1,1,0.0,False,"MBON-α'2, others",,https://elifesciences.org/articles/94168
+SS01298,split-GAL4,MBON16;MBON17,2,2,2.0,True,"MBON-α'3ap, α'3m",,https://elifesciences.org/articles/94168
+SS01397,split-GAL4,MBON16;MBON17,2,2,2.0,False,"MBON-α'3ap, α'3m",,https://elifesciences.org/articles/94168
+MB206B,split-GAL4,MBON16;MBON17;MBON17-like,3,~3,2.0,True,"MBON-α'3ap, α'3m, α'2α'3",,https://elifesciences.org/articles/94168
+MB158B,split-GAL4,MBON16;MBON17;MBON17-like,3,3-5,2.0,False,"MBON-α'3ap, α'3m, α'2α'3, (MBON-α2p3p)",,https://elifesciences.org/articles/94168
+MB319B,split-GAL4,MBON07,1,2,2.0,False,MBON-α1,,https://elifesciences.org/articles/94168
+MB319C,split-GAL4,MBON07,1,2,2.0,False,MBON-α1,,https://elifesciences.org/articles/94168
+MB323B,split-GAL4,MBON07,1,2,2.0,False,MBON-α1,,https://elifesciences.org/articles/94168
+SS01145,split-GAL4,MBON07,1,2,0.0,False,"MBON-α1, AN_TBD",,https://elifesciences.org/articles/94168
+SS01180,split-GAL4,MBON07;MBON09,2,4,2.0,False,"MBON-α1, γ3ß'1",,https://elifesciences.org/articles/94168
+SS01193,split-GAL4,MBON19,1,2,0.0,False,MBON-α2p3p,,https://elifesciences.org/articles/94168
+SS01198,split-GAL4,MBON19,1,2-3,1.0,False,MBON-α2p3p,,https://elifesciences.org/articles/94168
+MB257C,split-GAL4,MBON19;MBON15-like,2,2-4,1.0,True,"MBON-α2p3p, α'1α'2",stochastic expression,https://elifesciences.org/articles/94168
+SS01194,split-GAL4,MBON18,1,1,1.0,True,MBON-α2sc,,https://elifesciences.org/articles/94168
+SS01354,split-GAL4,MBON18,1,1,1.0,False,MBON-α2sc,,https://elifesciences.org/articles/94168
+MB540B,split-GAL4,MBON18;MBON15-like,2,3,1.0,True,"MBON-α2sc, α'1α'2",,https://elifesciences.org/articles/94168
+SS01396,split-GAL4,MBON18;MBON28,2,>4,2.0,False,"MBON-α2sc, α'3α, (LHPV5d1?)",,https://elifesciences.org/articles/94168
+MB430C,split-GAL4,MBON10,1,~6,2.0,False,MBON-ß'1,,https://elifesciences.org/articles/94168
+SS01127,split-GAL4,MBON03,1,1,2.0,True,MBON-ß'2mp,,https://elifesciences.org/articles/94168
+SS01143,split-GAL4,MBON03,1,1,2.0,False,MBON-ß'2mp,,https://elifesciences.org/articles/94168
+SS01232,split-GAL4,MBON03,1,1,2.0,False,MBON-ß'2mp,,https://elifesciences.org/articles/94168
+MB349B,split-GAL4,MBON06;SLP213;TBD (1469663014),3,-,0.0,False,"MBON-ß1>α, SLP213, TBD (1469663014)",other candidates: TBD (5813054604),https://elifesciences.org/articles/94168
+SS01224,split-GAL4,MBON06,1,1,1.0,False,"MBON-ß1>α, (MBON-γ4>γ1γ2), others",,https://elifesciences.org/articles/94168
+MB482C,split-GAL4,MBON06,1,1,1.0,False,MBON-ß1>α,,https://elifesciences.org/articles/94168
+SS01337,split-GAL4,MBON02,1,1,1.0,True,MBON-ß2ß'2α,,https://elifesciences.org/articles/94168
+SS01142,split-GAL4,MBON02,1,1,1.0,False,MBON-ß2ß'2α,,https://elifesciences.org/articles/94168
+MB517B,split-GAL4,MBON02,1,1,2.0,False,MBON-ß2ß'2α,weak expression,https://elifesciences.org/articles/94168
+SS00467,split-GAL4,MBON02,1,1,1.0,False,MBON-ß2ß'2α,,https://elifesciences.org/articles/94168
+SS01128,split-GAL4,MBON02,1,1,1.0,False,"MBON-ß2ß'2α, (CRE004)",,https://elifesciences.org/articles/94168
+SS01359,split-GAL4,MBON11,1,1,1.0,False,MBON-γ1pedc>α/ß,,https://elifesciences.org/articles/94168
+MB501B,split-GAL4,MBON11,1,1,1.0,False,"MBON-γ1pedc>α/ß, PI",,https://elifesciences.org/articles/94168
+MB498B,split-GAL4,MBON11,1,1,0.0,False,"MBON-γ1pedc>α/ß, others, VNC",,https://elifesciences.org/articles/94168
+MB262B,split-GAL4,MBON11,1,1,0.0,False,"MBON-γ1pedc>α/ß, others, VNC",,https://elifesciences.org/articles/94168
+MB358B,split-GAL4,MBON11,1,1,1.0,False,"MBON-γ1pedc>α/ß, VNC",,https://elifesciences.org/articles/94168
+SS01181,split-GAL4,MBON11;AVLP478,2,2,0.0,False,"MBON-γ1pedc>α/ß, AVLP478, (MBON31,32?)",,https://elifesciences.org/articles/94168
+MB124B,split-GAL4,MBON11;SMP320,2,>7,1.0,False,"MBON-γ1pedc>α/ß, SMP320, others",,https://elifesciences.org/articles/94168
+MB090C,split-GAL4,MBON12;MBON13,2,2-3,1.0,False,"MBON-γ2α'1, α'2",,https://elifesciences.org/articles/94168
+MB500C,split-GAL4,MBON09,1,2,2.0,False,MBON-γ3ß'1,other candidates: MBON-γ3,https://elifesciences.org/articles/94168
+SS01137,split-GAL4,MBON09,1,2,1.0,False,"MBON-γ3ß'1, VNC",other candidates: MBON-γ3,https://elifesciences.org/articles/94168
+SS01188,split-GAL4,MBON05,1,1,2.0,True,MBON-γ4>γ1γ2,,https://elifesciences.org/articles/94168
+SS01297,split-GAL4,MBON05,1,1,1.0,False,"MBON-γ4>γ1γ2, VNC",,https://elifesciences.org/articles/94168
+MB482B,split-GAL4,MBON05;MBON06,2,2,1.0,False,"MBON-γ4>γ1γ2, ß1>α, others",stochastic expression in MBON-γ4>γ1γ2,https://elifesciences.org/articles/94168
+SS01308,split-GAL4,MBON01,1,1,2.0,True,"MBON-γ5ß'2α, VNC",,https://elifesciences.org/articles/94168
+SS01141,split-GAL4,MBON01,1,1,0.0,False,"MBON-γ5ß'2α, others",,https://elifesciences.org/articles/94168
+SS01148,split-GAL4,MBON01;MBON03,2,2,2.0,False,"MBON-γ5ß'2α, ß'2mp",,https://elifesciences.org/articles/94168
+SS01125,split-GAL4,MBON01;MBON03;MBON04,3,3,2.0,False,"MBON-y5ß'2α, ß'2mp, ß'2mp_bilateral",,https://elifesciences.org/articles/94168
+SS01150,split-GAL4,MBON01;MBON03;MBON04,3,3,2.0,False,"MBON-y5ß'2α, ß'2mp, ß'2mp_bilateral",,https://elifesciences.org/articles/94168
+MB103B,split-GAL4,PAM05,1,3-6,1.0,True,PAM-ß'2p,,https://elifesciences.org/articles/94168
+MB325B,split-GAL4,PAM11,1,~6,1.0,True,"PAM-α1, VNC",expression in VNC,https://elifesciences.org/articles/94168
+MB023B,split-GAL4,PAM13,1,~8,1.0,True,"PAM-ß'1ap, (PAM-ß'1m)",poor registration for the only sample,https://elifesciences.org/articles/94168
+MB055B,split-GAL4,PAM13;PAM14,2,~7,2.0,False,"PAM-ß'1ap, ß'1m",,https://elifesciences.org/articles/94168
+MB031B,split-GAL4,PAM06;PAM14,2,nan,2.0,False,"PAM-ß'2m, ß'1m",,https://elifesciences.org/articles/94168
+MB170B,split-GAL4,PAM04;PAM10,2,nan,2.0,True,"PAM-ß2, ß1",,https://elifesciences.org/articles/94168
+MB211B,split-GAL4,PAM04;PAM10,2,nan,1.0,False,"PAM-ß2, ß1, (PAM-α1, ß'1ap)",stronger in ß1,https://elifesciences.org/articles/94168
+SS01866,split-GAL4,PAM03;PAM06,2,nan,2.0,False,"PAM-ß2ß'2a, ß'2m",,https://elifesciences.org/articles/94168
+MB106C,split-GAL4,PAM01;PAM02,2,nan,1.0,False,"PAM-y5, ß'2a",stronger in ß'2a,https://elifesciences.org/articles/94168
+MB191B,split-GAL4,PAM01;PAM02,2,nan,1.0,False,"PAM-y5, ß'2a",,https://elifesciences.org/articles/94168
+MB271C,split-GAL4,PAM01;PAM02,2,nan,1.0,False,"PAM-y5, ß'2a",,https://elifesciences.org/articles/94168
+MB197B,split-GAL4,PAM07,1,1-2,1.0,True,PAM-γ1γ2>γ4,sparse expression,https://elifesciences.org/articles/94168
+MB443B,split-GAL4,PAM12,1,-,2.0,False,PAM-γ3,,https://elifesciences.org/articles/94168
+MB029B,split-GAL4,PAM12,1,-,2.0,False,PAM-γ3,,https://elifesciences.org/articles/94168
+MB518C,split-GAL4,PAM08;PAM11,2,2-6,1.0,False,"PAM-γ4, α1, (PAM-γ1γ2>γ4)",weak expression,https://elifesciences.org/articles/94168
+MB313B,split-GAL4,PAM01,1,4-6,2.0,False,PAM-γ5,,https://elifesciences.org/articles/94168
+MB064B,split-GAL4,PAM01,1,~8,1.0,False,"PAM-γ5, others",,https://elifesciences.org/articles/94168
+MB059B,split-GAL4,PPL105,1,1-2,1.0,False,"PPL1-α'2α2, (PPL1-γ2α'1)",,https://elifesciences.org/articles/94168
+MB568B,split-GAL4,PPL104;PPL105,2,-,0.0,False,"PPL1-α'3, α'2α2, FB, others",,https://elifesciences.org/articles/94168
+MB287C,split-GAL4,PPL106;PAM10;PAM11;PAM13,4,nan,1.0,False,"PPL1-α3, PAM-ß1, α1, ß'1ap",,https://elifesciences.org/articles/94168
+MB503B,split-GAL4,PPL101,1,1,1.0,False,"PPL1-γ1pedc, OL",,https://elifesciences.org/articles/94168
+MB012B,split-GAL4,PPL101,1,1,1.0,False,"PPL1-γ1pedc, ANs/DNs",,https://elifesciences.org/articles/94168
+SS01248,split-GAL4,PPL101,1,1-2,1.0,False,"PPL1-γ1pedc, (PPL1-α'2α2)",stochastic expression in PPL1-α'2α2 (PPL105),https://elifesciences.org/articles/94168
+MB320B,split-GAL4,PPL101;PPL105,2,2-3,1.0,False,"PPL1-γ1pedc, α'2α2, (PPL1-α'3)",stochastic expression in PPL1-α'3 (PPL104),https://elifesciences.org/articles/94168
+SS01246,split-GAL4,PPL101;PPL106;ExR2,3,4,0.0,True,"PPL1-γ1pedc, α3, PPM3-EB",,https://elifesciences.org/articles/94168
+MB619B,split-GAL4,PPL101;ExR2;FB2A,3,5,0.0,True,"PPL1-γ1pedc, PPM3-EB, FB2-NO",,https://elifesciences.org/articles/94168
+SS01312,split-GAL4,PPL101;PPL103;FB4M,3,-,1.0,True,"PPL1-γ1pedc, γ2α'1, PPM3-FB3/4-NO, FB",,https://elifesciences.org/articles/94168
+MB302B,split-GAL4,PPL103,1,1,2.0,True,PPL1-γ2α'1,,https://elifesciences.org/articles/94168
+MB569B,split-GAL4,PPL103;PPL105,2,2-4,1.0,False,"PPL1-γ2α'1, α'2α2, (PPL1-α'3, PPL1-α3)",,https://elifesciences.org/articles/94168
+MB328B,split-GAL4,PPL103;PPL105;PPL106,3,3,0.0,False,"PPL1-γ2α'1, α'2α2, α3",,https://elifesciences.org/articles/94168
+MB099C,split-GAL4,PPL103;PPL104;PPL105;PPL106,4,4,2.0,False,"PPL1-γ2α'1, α'3, α'2α2, α3",,https://elifesciences.org/articles/94168
+SS01252,split-GAL4,PPL102;MBON03;MBON04,3,3,0.0,False,"PPL1-γ1, MBON-ß'2mp, ß'2mp_bilateral",,https://elifesciences.org/articles/94168
+SS01241,split-GAL4,DPM,1,1,2.0,True,DPM,,https://elifesciences.org/articles/94168
+SS01240,split-GAL4,DPM,1,1,2.0,False,DPM,,https://elifesciences.org/articles/94168
+MB496B,split-GAL4,DPM,1,1,2.0,False,DPM,,https://elifesciences.org/articles/94168
+MB034C,split-GAL4,DPM,1,1,0.0,False,"DPM, VNC",,https://elifesciences.org/articles/94168
+SS01238,split-GAL4,DPM,1,-,0.0,False,"DPM, AL LNs",,https://elifesciences.org/articles/94168
+MB015B,split-GAL4,SIFa,1,-,2.0,False,"SIFa, others",,https://elifesciences.org/articles/94168
+SS01357,split-GAL4,CSD,1,-,1.0,True,"CSD, others",,https://elifesciences.org/articles/94168
+SS01356,split-GAL4,CSD,1,nan,0.0,False,"CSD, OL",,https://elifesciences.org/articles/94168
+SS01358,split-GAL4,CSD,1,nan,1.0,False,"CSD, ANs/DNs",,https://elifesciences.org/articles/94168
+SS48835,split-GAL4,CSD,1,nan,1.0,False,"CSD, KCs",stochastic expression,https://elifesciences.org/articles/94168
+SS48794,split-GAL4,OA-VUMa2,1,1-2,2.0,True,OA-VUMa2,cell number from both hemispheres,https://elifesciences.org/articles/94168
+SS01871,split-GAL4,OA-VUMa2;FB1C,2,nan,0.0,False,"OA-VUMa2, FB1C",,https://elifesciences.org/articles/94168
+SS81068,split-GAL4,OA-VPM3,1,1,2.0,True,OA-VPM3,,https://elifesciences.org/articles/94168
+SS46618,split-GAL4,OA-VPM3,1,-,1.0,False,"OA-VPM3, others",,https://elifesciences.org/articles/94168
+SS01214,split-GAL4,OA-VPM3;OA-VPM4,2,2,2.0,False,"OA-VPM3,4, VNC",,https://elifesciences.org/articles/94168
+SS01429,split-GAL4,OA-VPM3;OA-VPM4,2,-,2.0,False,"OA-VPM3,4",,https://elifesciences.org/articles/94168
+MB245A,split-GAL4,OA-VPM3;OA-VPM4,2,-,1.0,False,"OA-VPM3,4, others",,https://elifesciences.org/articles/94168
+SS01217,split-GAL4,OA-VPM4;OA-VUMa2,2,~3,2.0,True,"OA-VPM4, VUMa2, (OA-VPM3)",,https://elifesciences.org/articles/94168
+SS01427,split-GAL4,OA-VPM4,1,1,2.0,False,OA-VPM4,,https://elifesciences.org/articles/94168
+SS01213,split-GAL4,OA-VPM4,1,1,2.0,False,OA-VPM4,,https://elifesciences.org/articles/94168
+SS01215,split-GAL4,OA-VPM4,1,1,0.0,False,"OA-VPM4, ANs/DNs",,https://elifesciences.org/articles/94168
+SS01204,split-GAL4,OA-VPM4,1,1,0.0,False,"OA-VPM4, ANs/DNs",,https://elifesciences.org/articles/94168
+SS01208,split-GAL4,OA-VPM4;MBDLaxon1_TBD (672598344),2,2,2.0,True,"OA-VPM4, MBDLaxon1_TBD (672598344)",,https://elifesciences.org/articles/94168
+SS01207,split-GAL4,OA-VPM4;MBDLaxon1_TBD (672598344),2,2,1.0,False,"OA-VPM4, MBDLaxon1_TBD (672598344)",,https://elifesciences.org/articles/94168
+SS01209,split-GAL4,OA-VPM4;MBDLaxon1_TBD (672598344),2,3,1.0,False,"OA-VPM4, MBDLaxon1_TBD (672598344)",,https://elifesciences.org/articles/94168
+SS01212,split-GAL4,OA-VPM4;MBDLaxon1_TBD (672598344),2,2,1.0,False,"OA-VPM4, MBDLaxon1_TBD (672598344)",,https://elifesciences.org/articles/94168
+SS01422,split-GAL4,OA-VPM4;MBDLaxon1_TBD (672598344),2,2,2.0,False,"OA-VPM4, MBDLaxon1_TBD (672598344)",,https://elifesciences.org/articles/94168
+SS01420,split-GAL4,OA-VPM4;MBDLaxon1_TBD (672598344);PLP244,3,3,1.0,True,"OA-VPM4, MBDLaxon1_TBD (672598344), PLP244",,https://elifesciences.org/articles/94168
+SS01419,split-GAL4,OA-VPM4;MBDLaxon1_TBD (672598344);PLP244,3,3,2.0,False,"OA-VPM4, MBDLaxon1_TBD (672598344), PLP244",,https://elifesciences.org/articles/94168
+MB113A,split-GAL4,OA-VPM4;MBDLaxon1_TBD (672598344);PLP244,3,-,1.0,False,"OA-VPM4, MBDLaxon1_TBD (672598344), PLP244",,https://elifesciences.org/articles/94168
+SS01210,split-GAL4,OA-VPM4;OA-VUMa2;PLP244,3,>3,2.0,True,"OA-VPM4,VUMa2, PLP244, others",,https://elifesciences.org/articles/94168
+MB380C,split-GAL4,MB-C1,1,1-2,2.0,False,MB-C1,,https://elifesciences.org/articles/94168
+SS85572,split-GAL4,LHMB1,1,1,2.0,True,LHMB1,,https://elifesciences.org/articles/94168
+SS82503,split-GAL4,LHAD1b3,1,~7,2.0,True,"LHAD1b3, others",,https://elifesciences.org/articles/94168
+SS16659,split-GAL4,LHAD1c2,1,1-5,2.0,True,LHAD1c2,,https://elifesciences.org/articles/94168
+SS32231,split-GAL4,LHAV2c1;CL167,2,-,1.0,True,"LHAV2c1, CL167",,https://elifesciences.org/articles/94168
+SS00602,split-GAL4,LHAV4e2_b;AVLP468,2,-,1.0,True,"LHAV4e2_b, AVLP468","other candidates: LHAV4e2_a, PLP087",https://elifesciences.org/articles/94168
+MB155B,split-GAL4,LHAV4e7_b,1,~8,2.0,True,"LHAV4e7_b, others",,https://elifesciences.org/articles/94168
+MB576B,split-GAL4,LHPV3a1;LHPV3a3_b,2,~7,0.0,True,"LHPV3a1, LHPV3a3_b, EB",,https://elifesciences.org/articles/94168
+SS35040,split-GAL4,LHPV4c1_c,1,-,1.0,True,"LHPV4c1_c, VNC",,https://elifesciences.org/articles/94168
+SS01372,split-GAL4,LHPV5a1_a;LHPV5a1_b;DNES1,3,-,1.0,True,"LHPV5a1_a,b, DNES1",,https://elifesciences.org/articles/94168
+SS00502,split-GAL4,LHPV5a2,1,4,2.0,True,LHPV5a2,,https://elifesciences.org/articles/94168
+SS00595,split-GAL4,LHPV5d1_a,1,1,1.0,True,"LHPV5d1_a, VNC",weak expression,https://elifesciences.org/articles/94168
+SS81027,split-GAL4,LHPV6a1,1,>6,2.0,True,LHPV6a1,,https://elifesciences.org/articles/94168
+SS01836,split-GAL4,LHAV4g8,1,-,1.0,True,"LHAV4g8, ANs/DNs, others",,https://elifesciences.org/articles/94168
+SS33917,split-GAL4,SMP348;SMP353;SMP354;SLP400,4,~10,2.0,True,"SMP348,353,354, SLP400, (SLP399)",other candidates: SMP350,https://elifesciences.org/articles/94168
+SS33918,split-GAL4,SMP334;SMP348;SMP353;SLP400,4,~10,2.0,False,"SMP334,348,353, SLP400",other candidates: SMP347,https://elifesciences.org/articles/94168
+SS67250,split-GAL4,SMP348;SMP353,2,2,1.0,True,"SMP348,353",other candidates: SMP350,https://elifesciences.org/articles/94168
+SS67240,split-GAL4,SMP348;SLP427,2,4-6,2.0,True,"SMP348, SLP427",other candidates: SMP353,https://elifesciences.org/articles/94168
+SS32262,split-GAL4,SMP348;SMP350;SLP400,3,6-10,0.0,True,"SMP348,350, SLP400, FB",other candidates: SMP353,https://elifesciences.org/articles/94168
+SS70184,split-GAL4,SMP348;SMP349;SLP394,3,5-6,2.0,False,"SMP348,349, SLP394",other candidates: SMP335,https://elifesciences.org/articles/94168
+SS70185,split-GAL4,SMP348;SLP394,2,>5,1.0,False,"SMP348, SLP394, others",,https://elifesciences.org/articles/94168
+SS81072,split-GAL4,SMP353,1,1,2.0,True,SMP353,,https://elifesciences.org/articles/94168
+SS81071,split-GAL4,SMP353,1,1,2.0,False,SMP353,,https://elifesciences.org/articles/94168
+SS82497,split-GAL4,SMP353,1,1-2,2.0,False,SMP353,,https://elifesciences.org/articles/94168
+SS67249,split-GAL4,SMP353,1,1,2.0,False,"SMP353, (DNES1)",,https://elifesciences.org/articles/94168
+SS67226,split-GAL4,SMP353;AVLP044_a,2,>3,0.0,False,"SMP353, AVLP044_a, (WED092-093?)",,https://elifesciences.org/articles/94168
+SS67218,split-GAL4,SMP353;WED016,2,2,0.0,False,"SMP353, WED016, (PVLP118)",,https://elifesciences.org/articles/94168
+SS67235,split-GAL4,SMP353,1,1-2,2.0,False,SMP353,weak expression,https://elifesciences.org/articles/94168
+SS67256,split-GAL4,SMP353;LHAD1b3;LHPD3c1,3,2-3,1.0,True,"SMP353, LHAD1b3, LHPD3c1",,https://elifesciences.org/articles/94168
+SS68135,split-GAL4,SMP353;SMP354,2,2-3,2.0,True,SMP353-354,,https://elifesciences.org/articles/94168
+SS25028,split-GAL4,SMP353;SMP354,2,1-2,2.0,False,SMP353-354,,https://elifesciences.org/articles/94168
+SS67255,split-GAL4,SMP354,1,2,1.0,True,SMP354,,https://elifesciences.org/articles/94168
+SS68152,split-GAL4,SMP350;SMP353;SMP366,3,7-8,2.0,False,"SMP350,353,366, (SMP354,365?)",,https://elifesciences.org/articles/94168
+SS82405,split-GAL4,SMP350,1,3-5,2.0,True,"SMP350, (SMP348)",,https://elifesciences.org/articles/94168
+SS68157,split-GAL4,SMP350;SLP400,2,~5,2.0,True,"SMP350, SLP400",other candidates: SMP353,https://elifesciences.org/articles/94168
+SS68158,split-GAL4,SMP348;SMP350;SMP353,3,~5,2.0,True,"SMP348,350,353",,https://elifesciences.org/articles/94168
+SS69398,split-GAL4,SMP346;SMP348;SMP350;SMP354;SLP400,5,-,2.0,False,"SMP346,348,350,354, SLP400",,https://elifesciences.org/articles/94168
+SS69402,split-GAL4,SMP339;SMP346;SMP350;SMP353;SMP354;SLP400,6,>10,2.0,True,"SMP339,346,350,353,354, SLP400",other candidates: SMP348,https://elifesciences.org/articles/94168
+SS69405,split-GAL4,SMP339;SMP346;SMP348,3,>10,2.0,False,"SMP339,346,348",other candidates: SLP400,https://elifesciences.org/articles/94168
+SS69406,split-GAL4,SMP339;SMP346;SMP348;SMP350,4,-,2.0,False,"SMP339,346,348,350, others",,https://elifesciences.org/articles/94168
+SS67254,split-GAL4,SLP399;SMP351,2,~4,2.0,True,"SLP399, SMP351",,https://elifesciences.org/articles/94168
+SS68128,split-GAL4,SLP399;SLP400,2,~4,2.0,True,SLP399-400,,https://elifesciences.org/articles/94168
+SS68127,split-GAL4,SLP399;SLP400,2,3-5,2.0,False,SLP399-400,,https://elifesciences.org/articles/94168
+SS67247,split-GAL4,SLP399;SLP400;SMP431,3,8-9,2.0,False,"SLP399-400, SMP431",,https://elifesciences.org/articles/94168
+SS67238,split-GAL4,SMP347;SLP420,2,~6,2.0,True,"SMP347, SLP420",,https://elifesciences.org/articles/94168
+SS67248,split-GAL4,SMP342;SMP347,2,~5,2.0,True,"SMP342,347",,https://elifesciences.org/articles/94168
+SS67237,split-GAL4,SLP390,1,4-6,1.0,False,"SLP390?, others",,https://elifesciences.org/articles/94168
+SS67221,split-GAL4,SMP108,1,1,2.0,True,SMP108,,https://elifesciences.org/articles/94168
+SS45234,split-GAL4,SMP108,1,1,2.0,False,SMP108,,https://elifesciences.org/articles/94168
+SS67229,split-GAL4,SMP108,1,1,2.0,False,SMP108,,https://elifesciences.org/articles/94168
+SS68156,split-GAL4,SMP108,1,1,2.0,False,SMP108,,https://elifesciences.org/articles/94168
+SS70237,split-GAL4,SMP108,1,1,2.0,False,SMP108,,https://elifesciences.org/articles/94168
+SS45245,split-GAL4,CRE011,1,1,2.0,True,CRE011,,https://elifesciences.org/articles/94168
+SS45222,split-GAL4,CRE011,1,1,2.0,False,CRE011,,https://elifesciences.org/articles/94168
+SS48792,split-GAL4,CRE011,1,1,1.0,False,CRE011,stochastic expression,https://elifesciences.org/articles/94168
+SS32242,split-GAL4,CRE034;CRE039,2,~6,1.0,True,"CRE034,039",,https://elifesciences.org/articles/94168
+SS48887,split-GAL4,CRE042;SAD092;AVLP493,3,~8,1.0,True,"CRE042, SAD092, AVLP493",,https://elifesciences.org/articles/94168
+SS01203,split-GAL4,CRE051;CRE052;CRE053;CRE054,4,7-12,2.0,True,CRE051-054,,https://elifesciences.org/articles/94168
+SS85521,split-GAL4,CRE051;CRE052;CRE053;CRE054,4,~6,2.0,False,CRE051-054,,https://elifesciences.org/articles/94168
+SS85348,split-GAL4,CRE055,1,~7,2.0,True,CRE055,,https://elifesciences.org/articles/94168
+SS85435,split-GAL4,CRE055,1,~7,1.0,False,CRE055,,https://elifesciences.org/articles/94168
+SS85368,split-GAL4,CRE055;PS072,2,-,1.0,False,"CRE055, PS072",,https://elifesciences.org/articles/94168
+SS48833,split-GAL4,CRE080;IB072,2,~5,1.0,True,"CRE080, IB072, ANs/DNs",,https://elifesciences.org/articles/94168
+SS48870,split-GAL4,CRE080;IB072,2,~4,1.0,False,"CRE080, IB072, ANs/DNs",,https://elifesciences.org/articles/94168
+SS54635,split-GAL4,PC1a;PC1b;PC1c;PC1d;PC1e,5,-,,False,"PC1a,1b,1c,1d,1e, others",flipout data only,https://elifesciences.org/articles/94168
+SS32264,split-GAL4,SLP374;SIP078;SIP079,3,~6,2.0,True,"SLP374, SIP078-079",,https://elifesciences.org/articles/94168
+SS82465,split-GAL4,SIP033,1,~3,1.0,True,SIP033,,https://elifesciences.org/articles/94168
+SS32226,split-GAL4,SIP041;SIP044;SIP050;SMP210,4,~10,2.0,True,"SIP041,044,050, SMP210",,https://elifesciences.org/articles/94168
+SS32232,split-GAL4,SIP041;SIP044;SIP050;SMP210,4,~10,2.0,False,"SIP041,044,050, SMP210",,https://elifesciences.org/articles/94168
+SS83861,split-GAL4,SIP049,1,~3,2.0,True,SIP049,,https://elifesciences.org/articles/94168
+SS83921,split-GAL4,SIP049,1,~3,2.0,False,SIP049,,https://elifesciences.org/articles/94168
+SS83894,split-GAL4,SIP065,1,1,2.0,True,SIP065,,https://elifesciences.org/articles/94168
+SS33909,split-GAL4,SLP217;SLP218;VES035,3,~7,1.0,True,"SLP217-218, VES035",,https://elifesciences.org/articles/94168
+SS02067,split-GAL4,SLP363;PVLP025;LAL090,3,~10,1.0,True,"SLP363, PVLP025, LAL090",,https://elifesciences.org/articles/94168
+SS69962,split-GAL4,SLP363,1,1,2.0,True,SLP363,,https://elifesciences.org/articles/94168
+SS32194,split-GAL4,SLP374,1,1,2.0,True,SLP374,,https://elifesciences.org/articles/94168
+SS00485,split-GAL4,SLP374,1,1,2.0,False,SLP374,,https://elifesciences.org/articles/94168
+SS32221,split-GAL4,SLP374,1,1,2.0,False,SLP374,,https://elifesciences.org/articles/94168
+SS01185,split-GAL4,SLP374,1,1,1.0,False,SLP374,,https://elifesciences.org/articles/94168
+SS01840,split-GAL4,SLP374,1,-,1.0,False,"SLP374, others",,https://elifesciences.org/articles/94168
+MB436B,split-GAL4,SLP374,1,-,1.0,False,"SLP374, FB, others",,https://elifesciences.org/articles/94168
+SS70178,split-GAL4,SLP388;SLP440,2,2,2.0,True,"SLP388,440",,https://elifesciences.org/articles/94168
+SS69929,split-GAL4,SLP388;SLP440,2,2-3,1.0,False,"SLP388,440",,https://elifesciences.org/articles/94168
+SS81122,split-GAL4,SLP391,1,1,2.0,True,SLP391,,https://elifesciences.org/articles/94168
+SS32263,split-GAL4,SLP405_a,1,2-5,0.0,True,"SLP405_a, others","other candidates: SLP405_b, 405_c;
+inconsistent expression across samples",https://elifesciences.org/articles/94168
+SS32998,split-GAL4,SLP438;SCL-AVLP_TBD (5813021922;5813070017);CL357;CL358,5,5-6,2.0,True,"SLP438, SCL-AVLP_TBD (5813021922, 5813070017), CL357-358",,https://elifesciences.org/articles/94168
+SS33007,split-GAL4,SLP438;SCL-AVLP_TBD (5813021922;5813070017);CL357;CL358,5,5-6,2.0,False,"SLP438, SCL-AVLP_TBD (5813021922, 5813070017), CL357-358",,https://elifesciences.org/articles/94168
+SS00438,split-GAL4,SLP438;SCL-AVLP_TBD (5813021922;5813070017);CL357;CL358;TBD (328075622),6,-,,False,"SLP438, SCL-AVLP_TBD (5813021922, 5813070017), CL357-358, TBD (328075622)",flipout data only,https://elifesciences.org/articles/94168
+SS00437,split-GAL4,SLP438;SCL-AVLP_TBD (5813021922;5813070017);CL357;CL358;SMP587;SMP588,7,-,0.0,True,"SLP438, SCL-AVLP_TBD (5813021922, 5813070017), CL357-358, SMP587-588",,https://elifesciences.org/articles/94168
+SS87416,split-GAL4,SLP457,1,1,2.0,True,SLP457,,https://elifesciences.org/articles/94168
+SS48916,split-GAL4,SMP011,1,1-2,1.0,True,"SMP011, AN_TBD (5813047188)",stochastic expression,https://elifesciences.org/articles/94168
+SS48799,split-GAL4,SMP026,1,1,1.0,True,SMP026,,https://elifesciences.org/articles/94168
+SS69991,split-GAL4,SMP052;SMP108,2,2-3,1.0,True,"SMP052,108",,https://elifesciences.org/articles/94168
+SS70236,split-GAL4,SMP052;SMP108,2,2,1.0,False,"SMP052,108",,https://elifesciences.org/articles/94168
+SS81054,split-GAL4,SMP084;SMP106,2,-,2.0,True,"SMP084, SMP106",,https://elifesciences.org/articles/94168
+SS01227,split-GAL4,SMP120;SMP124,2,4,1.0,True,"SMP120,124",,https://elifesciences.org/articles/94168
+SS00542,split-GAL4,SMP120;SMP124,2,4,1.0,False,"SMP120,124, VNC",,https://elifesciences.org/articles/94168
+SS00543,split-GAL4,SMP120;SMP124,2,4-5,1.0,False,"SMP120,124, VNC",,https://elifesciences.org/articles/94168
+SS32228,split-GAL4,SMP146,1,1,2.0,True,SMP146,,https://elifesciences.org/articles/94168
+MB207B,split-GAL4,SMP181,1,1,2.0,True,SMP181,weak expression,https://elifesciences.org/articles/94168
+SS00462,split-GAL4,SMP181;SMP011;SMP384,3,-,,False,"SMP181,011,384",flipout data only,https://elifesciences.org/articles/94168
+SS85535,split-GAL4,SMP212,1,~10,2.0,True,SMP212,,https://elifesciences.org/articles/94168
+SS70191,split-GAL4,SMP227;SMP230;SMP279_a;SLP427,4,-,1.0,True,"SMP227,230,279_a, SLP427",,https://elifesciences.org/articles/94168
+SS49896,split-GAL4,SMP319;SMP320,2,~8,2.0,True,"SMP319-320, VNC",,https://elifesciences.org/articles/94168
+SS49898,split-GAL4,SMP319;SMP320,2,~10,1.0,False,"SMP319-320, VNC",,https://elifesciences.org/articles/94168
+SS49755,split-GAL4,SMP357;SMP358;SMP359;SMP360;SMP361;SMP362,6,>10,2.0,True,SMP357-362,,https://elifesciences.org/articles/94168
+SS48894,split-GAL4,SMP357;SMP358;SMP359;SMP360;SMP361;SMP362,6,>10,1.0,False,SMP357-362,,https://elifesciences.org/articles/94168
+SS01384,split-GAL4,SMP359,1,2,0.0,True,"SMP359, ANs/DNs",,https://elifesciences.org/articles/94168
+SS00480,split-GAL4,SMP367;l2LN22;TuBu08,3,-,1.0,True,"SMP367, l2LN22, TuBu08",does not match with SMP367 in ventral branches,https://elifesciences.org/articles/94168
+SS35317,split-GAL4,SMP415,1,-,1.0,True,"SMP415, AL PNs, others",other candidates: LHPV10a1,https://elifesciences.org/articles/94168
+SS70173,split-GAL4,SMP424,1,2,2.0,True,SMP424,,https://elifesciences.org/articles/94168
+SS32246,split-GAL4,SMP503,1,1,1.0,True,SMP503,weak expression,https://elifesciences.org/articles/94168
+SS01239,split-GAL4,SMP503;MBON11,2,2,0.0,False,"SMP503, MBON-y1pedc>a/b",,https://elifesciences.org/articles/94168
+SS00477,split-GAL4,SMP537,1,2,1.0,True,"SMP537, ANs/DNs",,https://elifesciences.org/articles/94168
+SS69945,split-GAL4,SMP549,1,1,2.0,True,SMP549,,https://elifesciences.org/articles/94168
+SS32257,split-GAL4,SMP559,1,1-2,0.0,True,"SMP559, KCs",,https://elifesciences.org/articles/94168
+SS32236,split-GAL4,SMP587;SMP588,2,2-3,1.0,True,"SMP587-588, others",,https://elifesciences.org/articles/94168
+SS32235,split-GAL4,SMP591,1,5-10,2.0,True,"SMP591, (SMP590,592?)",,https://elifesciences.org/articles/94168
+SS01877,split-GAL4,SMP592,1,~4,0.0,False,"SMP592, (SMP590-591?), FB, others",weak expression,https://elifesciences.org/articles/94168
+SS81138,split-GAL4,SMP496,1,0-2,2.0,True,SMP496,weak and stochastic expression,https://elifesciences.org/articles/94168
+MB583B,split-GAL4,PPL203;PPL204,2,2,2.0,True,"PPL203-204, (AVLP555)",,https://elifesciences.org/articles/94168
+SS01323,split-GAL4,DGI;LHPV4c1_c;TBD (1780465838),3,-,1.0,True,"DGI, LHPV4c1_c, rocket, JOs",,https://elifesciences.org/articles/94168
+SS48815,split-GAL4,EL,1,-,2.0,True,"EL, others",,https://elifesciences.org/articles/94168
+SS49899,split-GAL4,hDeltaB;hDeltaD;hDeltaE,3,16-20,2.0,True,"hDeltaB, D, E",,https://elifesciences.org/articles/94168
+SS87474,split-GAL4,hDeltaF,1,8,2.0,True,hDeltaF,,https://elifesciences.org/articles/94168
+SS87520,split-GAL4,hDeltaF,1,8,2.0,False,hDeltaF,,https://elifesciences.org/articles/94168
+SS87481,split-GAL4,hDeltaF,1,8,2.0,False,hDeltaF,,https://elifesciences.org/articles/94168
+SS87475,split-GAL4,hDeltaF,1,~10,1.0,False,hDeltaF,,https://elifesciences.org/articles/94168
+SS87480,split-GAL4,hDeltaD;hDeltaF,2,16,2.0,True,"hDeltaD, F",,https://elifesciences.org/articles/94168
+SS87450,split-GAL4,hDeltaD;hDeltaF,2,~16,2.0,False,"hDeltaD, F",,https://elifesciences.org/articles/94168
+SS87451,split-GAL4,hDeltaD;hDeltaF,2,~16,2.0,False,"hDeltaD, F",,https://elifesciences.org/articles/94168
+SS87536,split-GAL4,FB1G,1,1,2.0,True,FB1G,,https://elifesciences.org/articles/94168
+SS87537,split-GAL4,FB1G,1,1,2.0,False,FB1G,,https://elifesciences.org/articles/94168
+SS00581,split-GAL4,FB2H_a;FB2H_b,2,~2,1.0,True,FB2H,,https://elifesciences.org/articles/94168
+SS87499,split-GAL4,FB5AB,1,1,2.0,True,FB5AB,,https://elifesciences.org/articles/94168
+SS01270,split-GAL4,FB1G;FB5AB,2,2,2.0,True,"FB1G, FB5AB",,https://elifesciences.org/articles/94168
+SS87498,split-GAL4,FB1G;FB5AB,2,2,2.0,False,"FB1G, FB5AB",,https://elifesciences.org/articles/94168
+SS87401,split-GAL4,FB6A;FB6I,2,1-3,2.0,True,"FB6A, FB6I",,https://elifesciences.org/articles/94168
+SS88997,split-GAL4,FB8G,1,~6,2.0,True,FB8G,,https://elifesciences.org/articles/94168
+SS88935,split-GAL4,FB8G,1,~4,2.0,False,FB8G,,https://elifesciences.org/articles/94168
+SS47413,split-GAL4,LCNOpm,1,1,2.0,True,LCNOpm,,https://elifesciences.org/articles/94168
+MB291C,split-GAL4,LPsP;SM181,2,-,1.0,True,"LPsP, SMP181",,https://elifesciences.org/articles/94168
+SS48817,split-GAL4,FB2A;PPL105,2,3,1.0,True,"FB2A (PPM3-FB2-NO), PPL1-α'2α2",,https://elifesciences.org/articles/94168
+SS48802,split-GAL4,FB4L,1,2,2.0,True,FB4L (PPM3-FB3/4),,https://elifesciences.org/articles/94168
+SS70424,split-GAL4,EXR2,1,2,1.0,True,EXR2 (PPM3-EB),,https://elifesciences.org/articles/94168
+MB233B,split-GAL4,EXR2,1,2,1.0,False,EXR2 (PPM3-EB),,https://elifesciences.org/articles/94168
+MB250C,split-GAL4,EXR2,1,2,1.0,False,EXR2 (PPM3-EB),,https://elifesciences.org/articles/94168
+SS32230,split-GAL4,LAL034,1,3-4,1.0,True,"LAL034, VNC",,https://elifesciences.org/articles/94168
+SS32220,split-GAL4,LAL034,1,~4,1.0,False,LAL034,,https://elifesciences.org/articles/94168
+SS32219,split-GAL4,LAL034;PVLP040,2,-,1.0,False,"LAL034, PVLP040",,https://elifesciences.org/articles/94168
+SS32256,split-GAL4,LAL034;PLP115_a;PVLP040,3,-,2.0,False,"LAL034, PLP115_a, PVLP040",other candidates: PLP115_b,https://elifesciences.org/articles/94168
+SS48924,split-GAL4,LAL050,1,2-3,2.0,True,LAL050,,https://elifesciences.org/articles/94168
+SS48932,split-GAL4,LAL050;AVLP145,2,~5,1.0,True,"LAL050, AVLP145",,https://elifesciences.org/articles/94168
+SS85451,split-GAL4,LAL133,1,~6,1.0,True,LAL133,,https://elifesciences.org/articles/94168
+SS49756,split-GAL4,LAL139,1,-,1.0,True,"LAL139, GNG, (MBON-γ3ß'1)",,https://elifesciences.org/articles/94168
+SS01825,split-GAL4,LAL188,1,3,1.0,True,LAL188,,https://elifesciences.org/articles/94168
+SS35008,split-GAL4,MBDLaxon1_TBD (519012059),1,1-2,1.0,True,MBDLaxon1_TBD (519012059),,https://elifesciences.org/articles/94168
+SS49300,split-GAL4,AN_TBD (5813047188),1,1,2.0,True,AN_TBD (5813047188),,https://elifesciences.org/articles/94168
+SS01146,split-GAL4,AN_TBD (5813047188),1,1,2.0,False,AN_TBD (5813047188),,https://elifesciences.org/articles/94168
+SS49873,split-GAL4,AN_TBD (5813047188),1,-,2.0,False,AN_TBD (5813047188),,https://elifesciences.org/articles/94168
+SS48930,split-GAL4,AN_TBD (5813047188),1,-,1.0,False,AN_TBD (5813047188),,https://elifesciences.org/articles/94168
+SS32273,split-GAL4,AN_TBD (5813047188),1,-,2.0,False,AN_TBD (5813047188),,https://elifesciences.org/articles/94168
+SS32224,split-GAL4,AN_TBD (5813047188),1,1-2,2.0,False,AN_TBD (5813047188),,https://elifesciences.org/articles/94168
+SS32222,split-GAL4,AN_TBD (5813047188);VP3+_vPN,2,2,1.0,False,"AN_TBD (5813047188), VP3+_vPN",,https://elifesciences.org/articles/94168
+SS35251,split-GAL4,AN_TBD (5813047188),1,-,1.0,False,"AN_TBD (5813047188), others",,https://elifesciences.org/articles/94168
+SS49267,split-GAL4,AN_TBD (1044330963),1,1-2,2.0,True,AN_TBD (1044330963),,https://elifesciences.org/articles/94168
+SS49357,split-GAL4,AN_TBD (1044330963),1,1,1.0,False,AN_TBD (1044330963),,https://elifesciences.org/articles/94168
+SS49890,split-GAL4,AN_TBD (1750733958);AN_TBD (1782447437),2,2,2.0,True,"AN_TBD (1750733958), AN_TBD (1782447437)",,https://elifesciences.org/articles/94168
+SS35256,split-GAL4,AN_TBD (1505123111),1,-,2.0,True,"AN_TBD (1505123111), others",,https://elifesciences.org/articles/94168
+SS35243,split-GAL4,AN_TBD (2253768870),1,-,2.0,False,"AN_TBD (2253768870), others",similar to SS51021 (Chen 2022 bioRxiv),https://elifesciences.org/articles/94168
+SS01161,split-GAL4,AN_TBD (2128981133),1,1,1.0,True,AN_TBD (2128981133),,https://elifesciences.org/articles/94168
+SS35224,split-GAL4,AN_TBD (2131597754);AN_TBD (2225755564);AN_TBD (1197455268),3,-,2.0,True,"AN_TBD (2131597754), AN_TBD (2225755564), AN_TBD (1197455268)","other candidates: 1290222901, 1197455013, 1414724312",https://elifesciences.org/articles/94168
+SS35225,split-GAL4,AN_TBD (2131597754);AN_TBD (2225755564);AN_TBD (1197455268),3,-,2.0,False,"AN_TBD (2131597754), AN_TBD (2225755564), AN_TBD (1197455268)",,https://elifesciences.org/articles/94168
+SS35231,split-GAL4,AN_TBD (573151229);HSN,2,-,0.0,False,"Likely LSANs, HSN, others",see LSAN-2 (Shao 2019 Neuron),https://elifesciences.org/articles/94168
+SS49276,split-GAL4,AN_TBD (422328492),1,>2,1.0,True,"AN_TBD (422328492), others",,https://elifesciences.org/articles/94168
+SS00532,split-GAL4,DNES1,1,~4,2.0,True,DNES1,,https://elifesciences.org/articles/94168
+MB157B,split-GAL4,DNES1,1,~5,1.0,False,DNES1,,https://elifesciences.org/articles/94168
+SS00528,split-GAL4,DNES1,1,3-4,2.0,False,DNES1,,https://elifesciences.org/articles/94168
+SS00529,split-GAL4,DNES1,1,3-4,2.0,False,DNES1,,https://elifesciences.org/articles/94168
+SS00533,split-GAL4,DNES1,1,~4,1.0,False,DNES1,,https://elifesciences.org/articles/94168
+SS00470,split-GAL4,DNES2;DNES3,2,3,2.0,True,DNES2-3,,https://elifesciences.org/articles/94168
+SS00589,split-GAL4,aSP28_TBD,1,3,2.0,True,aSP28_TBD,,https://elifesciences.org/articles/94168
+SS00474,split-GAL4,aSP28_TBD,1,3,1.0,False,aSP28_TBD,,https://elifesciences.org/articles/94168
+SS00472,split-GAL4,aSP28_TBD,1,2,0.0,False,"aSP28_TBD, others",,https://elifesciences.org/articles/94168
+SS00473,split-GAL4,aSP28_TBD,1,-,1.0,False,"aSP28_TBD, (DNES1)",,https://elifesciences.org/articles/94168
+SS01876,split-GAL4,DNp27,1,1,2.0,False,DNp27,,https://elifesciences.org/articles/94168
+MB114B,split-GAL4,DNp27,1,1,1.0,False,DNp27,,https://elifesciences.org/articles/94168
+MB202B,split-GAL4,DNp27,1,nan,2.0,False,"DNp27, others",,https://elifesciences.org/articles/94168
+MB001B,split-GAL4,CRZ01;CRZ02,2,2,1.0,True,"CRZ01,02",,https://elifesciences.org/articles/94168
+SS00508,split-GAL4,CRZ01;CRZ02;aSP28_TBD,3,-,,False,"CRZ01,02, aSP28_TBD",flipout data only,https://elifesciences.org/articles/94168
+SS33905,split-GAL4,DSKMP3,1,2,2.0,True,DSKMP3,,https://elifesciences.org/articles/94168
+SS32225,split-GAL4,DSKMP3,1,2,2.0,False,DSKMP3,,https://elifesciences.org/articles/94168
+SS32189,split-GAL4,DSKMP3,1,2,2.0,False,DSKMP3,,https://elifesciences.org/articles/94168
+SS33913,split-GAL4,DSKMP3,1,2,2.0,False,DSKMP3,,https://elifesciences.org/articles/94168
+SS48598,split-GAL4,PI1_c,1,~5,2.0,True,PI1_c,cell number from both hemispheres,https://elifesciences.org/articles/94168
+SS48831,split-GAL4,OA-VUMa1,1,-,0.0,True,"OA-VUMa1, EB",,https://elifesciences.org/articles/94168
+SS48816,split-GAL4,OA-VUMa1;OA-VUMa7,2,2-3,0.0,True,"OA-VUMa1,7, ANs/DNs",,https://elifesciences.org/articles/94168
+SS32259,split-GAL4,5-HTPMPD01,1,1,2.0,True,5-HTPMPD01,,https://elifesciences.org/articles/94168
+SS47477,split-GAL4,5-HTPMPD01,1,1,0.0,False,"5-HTPMPD01, JOs",weak and stochastic expression,https://elifesciences.org/articles/94168
+SS01178,split-GAL4,aDT4,1,1,0.0,True,"aDT4, ANs/DNs",,https://elifesciences.org/articles/94168
+SS36564,split-GAL4,aIPg1;aIPg2;aIPg3;aIPg4,4,~13,2.0,True,aIPg1-4,,https://elifesciences.org/articles/94168
+SS36551,split-GAL4,aIPg1;aIPg2;aIPg3;aIPg4,4,~10,2.0,False,aIPg1-4,,https://elifesciences.org/articles/94168
+SS48777,split-GAL4,aIPg1;aIPg2;aIPg3;aIPg4,4,~10,2.0,False,aIPg1-4,,https://elifesciences.org/articles/94168
+SS33907,split-GAL4,aIPg1;aIPg2;aIPg3;aIPg4,4,~8,2.0,False,aIPg1-4,,https://elifesciences.org/articles/94168
+MB381B,split-GAL4,l-LNv;s-LNv,2,-,0.0,True,"l-LNv, s-LNv ",,https://elifesciences.org/articles/94168
+SS00447,split-GAL4,l-LNv,1,~3,2.0,True,l-LNv,,https://elifesciences.org/articles/94168
+MB122B,split-GAL4,LNd,1,2-4,2.0,True,"LNd, (s-LNv subset)",,https://elifesciences.org/articles/94168
+MB403B,split-GAL4,DN1a,1,2,2.0,True,DN1a,,https://elifesciences.org/articles/94168
+MB404B,split-GAL4,DN1a,1,2,2.0,False,DN1a,,https://elifesciences.org/articles/94168
+MB403C,split-GAL4,DN1a,1,2,0.0,False,"DN1a, (KCs)",,https://elifesciences.org/articles/94168
+SS00449,split-GAL4,DN1a;SMP532,2,~8,1.0,True,"DN1a, SMP532",,https://elifesciences.org/articles/94168
+SS39539,split-GAL4,aMe8,1,~4,2.0,False,aMe8,,https://elifesciences.org/articles/94168
+SS39538,split-GAL4,aMe8,1,~4,2.0,False,aMe8,,https://elifesciences.org/articles/94168
+SS39540,split-GAL4,aMe8,1,~4,2.0,False,aMe8,,https://elifesciences.org/articles/94168
+SS45089,split-GAL4,aMe8,1,-,0.0,False,"aMe8, others",weak expression,https://elifesciences.org/articles/94168
+SS88901,split-GAL4,LHPV6q1,1,1,2.0,True,LHPV6q1,,https://elifesciences.org/articles/94168
+SS88964,split-GAL4,LHPV6q1,1,-,1.0,False,LHPV6q1,,https://elifesciences.org/articles/94168
+SS49891,split-GAL4,WEDPN3;SLP374,2,3-4,0.0,True,"WEDPN3, SLP374, others",,https://elifesciences.org/articles/94168
+SS00435,split-GAL4,WEDPN8D,1,4-7,1.0,True,WEDPN8D,other candidates: WEDPN8C,https://elifesciences.org/articles/94168
+SS01873,split-GAL4,WED168;WED169,2,2-5,1.0,True,WED168-169,,https://elifesciences.org/articles/94168
+SS32268,split-GAL4,AOTU011,1,-,1.0,True,"AOTU011, others",,https://elifesciences.org/articles/94168
+SS70247,split-GAL4,AOTU027;AOTU028,2,2,1.0,True,AOTU027-028,,https://elifesciences.org/articles/94168
+SS48795,split-GAL4,AVLP032,1,-,1.0,True,"AVLP032, others",,https://elifesciences.org/articles/94168
+SS01870,split-GAL4,AVLP333,1,3,1.0,True,AVLP333,,https://elifesciences.org/articles/94168
+SS49868,split-GAL4,AVLP462,1,3-6,2.0,True,"AVLP462, others",,https://elifesciences.org/articles/94168
+SS39617,split-GAL4,AVLP569;CL313,2,~7,2.0,True,"AVLP569, CL313 (pC2l candidates)",,https://elifesciences.org/articles/94168
+SS02079,split-GAL4,PLP159;PLP160;AVLP560;v2LN35,4,-,0.0,True,"PLP159-160, AVLP560, v2LN35",other candidates: v2LN3A,https://elifesciences.org/articles/94168
+SS48834,split-GAL4,PVLP004,1,2-3,2.0,True,PVLP004,,https://elifesciences.org/articles/94168
+SS48866,split-GAL4,PVLP004;PVLP006,2,3-4,2.0,True,"PVLP004,006",,https://elifesciences.org/articles/94168
+SS48859,split-GAL4,PVLP004;PVLP006,2,2-3,2.0,False,"PVLP004,006",,https://elifesciences.org/articles/94168
+SS12089,split-GAL4,PVLP004;PVLP007;PVLP008_a,3,>10,2.0,True,"PVLP004,007,008_a",other candidates: PVLP006,https://elifesciences.org/articles/94168
+SS02071,split-GAL4,PVLP004;PVLP007;PVLP008_a,3,~10,1.0,False,"PVLP004,007,008_a",other candidates: PVLP006,https://elifesciences.org/articles/94168
+SS02070,split-GAL4,PVLP004;PVLP007;PVLP008_a,3,>5,1.0,False,"PVLP004,007,008_a",other candidates: PVLP006,https://elifesciences.org/articles/94168
+SS49743,split-GAL4,PVLP004;PVLP007;PVLP008_a,3,-,2.0,False,"PVLP004,007,008_a",other candidates: PVLP006,https://elifesciences.org/articles/94168
+SS49744,split-GAL4,PVLP004;PVLP007;PVLP008_a,3,-,2.0,False,"PVLP004,007,008_a",other candidates: PVLP006,https://elifesciences.org/articles/94168
+SS11672,split-GAL4,PVLP004;PVLP007;PVLP008_a,3,-,1.0,False,"PVLP004,007,008_a",other candidates: PVLP006,https://elifesciences.org/articles/94168
+SS67241,split-GAL4,PVLP049;WED047,2,~5,2.0,True,"PVLP049, WED047",,https://elifesciences.org/articles/94168
+SS00538,split-GAL4,PVLP079;PVLP085,2,~5,1.0,True,"PVLP079,085",,https://elifesciences.org/articles/94168
+SS48341,split-GAL4,PVLP130,1,1,1.0,True,PVLP130,,https://elifesciences.org/articles/94168
+SS48855,split-GAL4,PVLP130,1,1,1.0,False,PVLP130,,https://elifesciences.org/articles/94168
+SS48603,split-GAL4,PVLP130,1,1,2.0,False,PVLP130,,https://elifesciences.org/articles/94168
+SS48339,split-GAL4,TBD (1416796844),1,1,2.0,True,TBD (1416796844),,https://elifesciences.org/articles/94168
+SS48818,split-GAL4,TBD (1416796844);AN_TBD (5813047188),2,>1,1.0,False,"TBD (1416796844), AN_TBD (5813047188)",,https://elifesciences.org/articles/94168
+SS48829,split-GAL4,TBD (1416796844),1,2,2.0,False,"TBD (1416796844), others",,https://elifesciences.org/articles/94168
+SS00527,split-GAL4,WED092,1,nan,,True,WED092,flipout data only,https://elifesciences.org/articles/94168
+SS48892,split-GAL4,CL003,1,1,2.0,True,CL003,,https://elifesciences.org/articles/94168
+SS48333,split-GAL4,CL003,1,1,2.0,False,CL003,,https://elifesciences.org/articles/94168
+SS48890,split-GAL4,CL003,1,1,1.0,False,CL003,,https://elifesciences.org/articles/94168
+SS48801,split-GAL4,CL022,1,3,1.0,True,CL022,weak expression,https://elifesciences.org/articles/94168
+SS48332,split-GAL4,CL029;CL035;TBD (1251443404),3,-,0.0,True,"CL029,035, TBD (1251443404), mn1?, others",,https://elifesciences.org/articles/94168
+SS32266,split-GAL4,CL041,1,2,1.0,True,CL041,,https://elifesciences.org/articles/94168
+SS85568,split-GAL4,CL193;CL194,2,~4,2.0,True,CL193-194,,https://elifesciences.org/articles/94168
+SS48900,split-GAL4,CL278;CL279;IB083;IB084,4,~5,1.0,True,"CL278-279, IB083-084, others",gender difference,https://elifesciences.org/articles/94168
+SS48596,split-GAL4,CL278;CL279;IB083;IB084,4,~8,0.0,False,"CL278-279, IB083-084",weaker in CL278-279,https://elifesciences.org/articles/94168
+SS48588,split-GAL4,CL280,1,~7,1.0,True,"CL280, others",,https://elifesciences.org/articles/94168
+SS25297,split-GAL4,CL357;CL358,2,4-5,2.0,True,"CL357,358, others",,https://elifesciences.org/articles/94168
+SS85569,split-GAL4,IB001;aSP10A,2,-,1.0,True,"IB001, aSP10A",,https://elifesciences.org/articles/94168
+SS01859,split-GAL4,TBD (1188824213;1189165413;880435454),3,-,1.0,True,"TBD (1188824213, 1189165413,880435454), JO-AB",ocelli neurons?,https://elifesciences.org/articles/94168
+SS11861,split-GAL4,TBD (1188824213;1189165413;880435454);AOTU045,4,-,0.0,True,"TBD (1188824213, 1189165413,880435454), AOTU045, AN_TBD",ocelli neurons?,https://elifesciences.org/articles/94168
+SS48348,split-GAL4,TBD (1353068831;1288957801),2,1-2,1.0,True,"TBD (1353068831, 1288957801)",,https://elifesciences.org/articles/94168
+SS49281,split-GAL4,TBD (1561351296),1,-,1.0,True,"TBD (1561351296), others",,https://elifesciences.org/articles/94168
+SS49882,split-GAL4,VES019;LAL098,2,~10,2.0,True,"VES019, LAL098, others",,https://elifesciences.org/articles/94168
+SS45231,split-GAL4,VES037;SMP108,2,3-6,2.0,True,"VES037, SMP108",,https://elifesciences.org/articles/94168
+SS01828,split-GAL4,PS104;VP3+_vPN,2,~5,2.0,True,"PS104, VP3+_vPN, (LHPV4c1a,b,c)",,https://elifesciences.org/articles/94168
+SS00455,split-GAL4,SAD058;SAD066,2,~4,2.0,True,"SAD058,066",,https://elifesciences.org/articles/94168
+SS02052,split-GAL4,SAD077;SAD078;TBD (1622191254),3,6-9,2.0,True,"SAD077-078, TBD (1622191254)",,https://elifesciences.org/articles/94168
+SS48788,split-GAL4,TBD (1253230158),1,1,2.0,True,TBD (1253230158),,https://elifesciences.org/articles/94168
+SS70217,split-GAL4,MBDLaxon2_TBD (516943720),1,2,2.0,True,aDT6,,https://elifesciences.org/articles/94168
+SS81024,split-GAL4,MBDLaxon1_TBD (482071823),1,1,2.0,True,"peafowl, VNC",,https://elifesciences.org/articles/94168
+SS35406,split-GAL4,TBD (420036032);TBD (1416796844),2,~4,1.0,True,"hydrangea, kelp, meteor",,https://elifesciences.org/articles/94168
+SS49352,split-GAL4,mAL3B,1,~5,2.0,True,mAL3B,"other candidates: mAL3A, mAL4",https://elifesciences.org/articles/94168
+SS49316,split-GAL4,mAL3B,1,~6,2.0,False,mAL3B,"other candidates: mAL3A, mAL4",https://elifesciences.org/articles/94168
+SS49345,split-GAL4,Z_vPNml1;AVLP447,2,2,2.0,True,tophat,similar morphology for z_vPNml1 and AVLP447,https://elifesciences.org/articles/94168
+SS00481,split-GAL4,TBD (1718610873;1967581085;2122121374);l2LN21,4,>10,1.0,True,"TBD (1718610873,1967581085,2122121374), l2LN21",,https://elifesciences.org/articles/94168
+SS68150,split-GAL4,SMP432_b;LC32,2,2,2.0,True,"VNC_TBD, (SMP432_b, LC32)","stochastic expression in SMP432_b, LC32 in the brain",https://elifesciences.org/articles/94168
+SL86047,split-LexA,MBON01,1,1,2.0,True,MBON-γ5ß'2a,,https://elifesciences.org/articles/94168
+SL86046,split-LexA,MBON01,1,1-2,2.0,False,"MBON-γ5ß'2a, (MBON-ß'2mp_bilateral)",,https://elifesciences.org/articles/94168
+SL86063,split-LexA,MBON01;MBON03;MBON04,3,3,2.0,True,"MBON-y5ß'2a, ß'2mp, ß'2mp_bilateral",,https://elifesciences.org/articles/94168
+SL86055,split-LexA,MBON07,1,1,1.0,True,MBON-α1,,https://elifesciences.org/articles/94168
+SL86058,split-LexA,MBON11,1,1,2.0,True,MBON-γ1pedc>α/ß,,https://elifesciences.org/articles/94168
+SL86045,split-LexA,MBON12,1,2,2.0,True,MBON-γ2α'1,,https://elifesciences.org/articles/94168
+SL86057,split-LexA,MBON12,1,1-2,2.0,False,MBON-γ2α'1,,https://elifesciences.org/articles/94168
+SL86056,split-LexA,MBON12,1,2,1.0,False,MBON-γ2α'1,,https://elifesciences.org/articles/94168
+SL86065,split-LexA,PAM11,1,2-3,1.0,True,PAM-α1,,https://elifesciences.org/articles/94168
+SL86059,split-LexA,PAM11,1,1-2,2.0,False,PAM-α1,,https://elifesciences.org/articles/94168
+SL86053,split-LexA,PAM11,1,1-2,2.0,False,PAM-α1,,https://elifesciences.org/articles/94168
+SL86060,split-LexA,PAM11,1,~6,2.0,False,"PAM-α1, (PAM-γ5)",,https://elifesciences.org/articles/94168
+SL86050,split-LexA,PPL106,1,1,2.0,True,PPL1-α3,,https://elifesciences.org/articles/94168
+SL86062,split-LexA,PPL106,1,1,2.0,False,PPL1-α3,weak expression,https://elifesciences.org/articles/94168
+SL86049,split-LexA,PPL106,1,1,1.0,False,PPL1-α3,weak expression,https://elifesciences.org/articles/94168
+SL86067,split-LexA,PPL101,1,1,2.0,True,PPL1-γ1pedc,weak expression,https://elifesciences.org/articles/94168
+SL69409,split-LexA,SMP348,1,~3,2.0,True,"SMP348, (SMP339)",,https://elifesciences.org/articles/94168
+SL69412,split-LexA,SMP348;SLP400,2,~3,2.0,True,"SMP348, SLP400",,https://elifesciences.org/articles/94168
+SL69411,split-LexA,SMP348;SLP400,2,~5,1.0,False,"SMP348, SLP400, FB",,https://elifesciences.org/articles/94168
+SL86069,split-LexA,SMP108,1,1,2.0,True,SMP108,,https://elifesciences.org/articles/94168
