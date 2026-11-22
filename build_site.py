@@ -325,6 +325,14 @@ def systems_of(r) -> str:
     return " ／ ".join(t for _, t in sorted(opts, key=lambda x: -x[0]))
 
 
+# 現在進めると決めた 3 組（results/plan_three_pairs.md）。一覧の先頭に出して印を付ける。
+PICKED = {
+    ("MBON07", "PPL106"): (1, "本命", "匂い駆動 86% ・ 膜 6,333", "docs/design_MBON07_PPL106.html"),
+    ("MBON02", "PPL106"): (2, "比較", "下流が本命と同じ細胞。系統を共有できる", "docs/plan_three_pairs.html"),
+    ("MBON04", "PPL105"): (3, "保険", "膜はいちばん確か。匂い駆動は 20%", "docs/candidate_MBON04_PPL105.html"),
+}
+
+
 def grade_of(r) -> tuple[str, str]:
     if r.cross_contact_min_um != r.cross_contact_min_um:  # NaN
         return "接触未確認", "別個体での接触をまだ計算していない"
@@ -397,7 +405,12 @@ def build_shortlist_page() -> dict | None:
             "links": links + ("  " if links and docs else "") + docs,
             "em": em_txt, "em_n": em_n,
         })
-    rows.sort(key=lambda x: (x["_g"], -x["contact"]))
+        pk = PICKED.get((r.t1, r.t2))
+        # 公開時に docs/ -> reports/ へ置換されるよう、find_docs と同じ形の HTML にしておく
+        pick_link = (f'<a class="rep" href="{pk[3]}">専用ページ →</a>') if pk else ""
+        rows[-1].update({"_pk": pk[0] if pk else 99, "pick": pk[1] if pk else "",
+                         "pick_why": pk[2] if pk else "", "pick_link": pick_link})
+    rows.sort(key=lambda x: (x["_pk"], x["_g"], -x["contact"]))
     legend = "".join(f'<li><b>{html.escape(g)}</b> … {t}</li>' for g, t in GRADES)
     page = (SHORTLIST_TEMPLATE
             .replace("__ROWS__", json.dumps(rows, ensure_ascii=False))
@@ -488,6 +501,13 @@ select,input{font:inherit;padding:4px 6px;border:1px solid var(--line);border-ra
 .drv{color:var(--good)}.drv.no{color:var(--muted)}.sub.okdrv{color:var(--good);font-weight:700}
 .lexa{color:var(--accent);font-weight:600}
 .g.none{background:var(--chip);color:var(--muted)}
+.pick{display:inline-block;background:#0b5fa5;color:#fff;border-radius:4px;padding:1px 8px;font-weight:800;font-size:.82rem;margin-bottom:3px}
+tr.picked td{background:rgba(11,95,165,.07)}
+tr.picked td:first-child{box-shadow:inset 4px 0 0 #0b5fa5}
+.banner{border:1px solid var(--accent);border-radius:8px;padding:14px 16px;margin:16px 0}
+.banner h2{margin:0 0 8px;font-size:1.05rem}
+.banner ol{margin:0;padding-left:1.4em}
+.banner li{margin:4px 0}
 </style></head><body><main>
 <p><a href="index.html">← 結果一覧</a></p>
 <h1>最終候補 — 3 個体で確かめた組（__N__ 組）</h1>
@@ -495,6 +515,23 @@ select,input{font:inherit;padding:4px 6px;border:1px solid var(--line);border-ra
 <b>3 個体すべてで両方向のシナプスが 0</b> だった組。人工分子でシナプスを作らせる実験を想定した並び。<br>
 別個体での接触と接触領域まで確認した組に判定を付けている（「接触未確認」はこれから調べる分）。
 <b>上流と下流に別の分子を入れるには 2 つの発現系（GAL4 と LexA）が要る</b>ので、そこを判定の軸にしている。</p>
+<div class="banner">
+<h2>いま進めると決めている 3 組</h2>
+<p class="sub" style="margin-top:0">「上流が匂いに応答し、人工シナプス経由で下流の DAN を駆動して、
+本来できないはずの記憶ができる」という基準で選んだ。表の先頭に並べてある。</p>
+<ol>
+<li><b>MBON07 → PPL106</b>〈本命〉 匂い駆動 86%・膜 6,333 voxel。
+  <a href="docs/design_MBON07_PPL106.html">設計ページ</a> ／
+  <a href="docs/candidate_MBON07_PPL106.html">候補の検討</a></li>
+<li><b>MBON02 → PPL106</b>〈比較〉 下流が本命と同じ細胞。LexA 系統を共有できる。
+  <a href="docs/plan_three_pairs.html">3 組の比較</a></li>
+<li><b>MBON04 → PPL105</b>〈保険〉 膜はいちばん確かだが匂い駆動は 20%。
+  <a href="docs/candidate_MBON04_PPL105.html">候補の検討</a> ／
+  <a href="docs/direction_MBON04_PPL105.html">どちら向きにするか</a></li>
+</ol>
+<p class="sub" style="margin-bottom:0">選んだ理由と 3 組の比較は
+<a href="docs/plan_three_pairs.html"><b>3 組を並行して準備する</b></a>にある。</p>
+</div>
 <div class="note">
 <b>判定の意味</b><ul>__LEGEND__</ul>
 <p class="sub" style="margin-top:8px">「上流出力 / 下流入力」は主な接触領域にある上流のシナプス前部位と下流のシナプス後部位の個数。
@@ -503,14 +540,15 @@ select,input{font:inherit;padding:4px 6px;border:1px solid var(--line);border-ra
 </div>
 <div class="controls">
   <label>判定 <select id="fg"><option value="">すべて</option><option value="◎">◎ のみ</option><option value="◎○">◎ と ○</option></select></label>
-  <label><input type="checkbox" id="fs"> <b>2 つの発現系がそろう組だけ</b>（上流 GAL4 + 下流 LexA）</label>
+  <label><input type="checkbox" id="fp"> <b>選んだ 3 組だけ</b></label>
+  <label><input type="checkbox" id="fs"> 2 つの発現系がそろう組だけ（上流 GAL4 + 下流 LexA）</label>
   <label><input type="checkbox" id="fd"> ドライバーが両側にある組だけ</label>
   <label><input type="checkbox" id="fr"> 行動の読み出しがある組だけ</label>
   <label>細胞名で絞り込み <input id="q" placeholder="例: LHPV6c1"></label>
   <span class="sub" id="cnt"></span>
 </div>
 <div class="tablewrap"><table id="t"><thead><tr>
-<th data-k="_g">判定</th><th data-k="t1">上流 → 下流</th><th data-k="region">主な接触領域</th>
+<th data-k="_pk">判定</th><th data-k="t1">上流 → 下流</th><th data-k="region">主な接触領域</th>
 <th data-k="contact" class="num">接触 元 → 別個体</th>
 <th data-k="syn" class="num">シナプス<br><span class="sub">3 個体合計</span></th>
 <th data-k="pre_out" class="num">上流出力 / 下流入力</th>
@@ -520,12 +558,14 @@ select,input{font:inherit;padding:4px 6px;border:1px solid var(--line);border-ra
 <script>
 const ROWS = __ROWS__;
 const GC = {"◎":"best","○":"ok","△":"maybe","要注意":"warn","接触未確認":"none"};
-let sortK = "_g", asc = true;
+let sortK = "_pk", asc = true;
 function view(){
   const g = document.getElementById('fg').value, dOnly = document.getElementById('fd').checked;
   const rOnly = document.getElementById('fr').checked, q = document.getElementById('q').value.trim().toLowerCase();
   const sOnly = document.getElementById('fs').checked;
+  const pOnly = document.getElementById('fp').checked;
   let rs = ROWS.filter(r => (!g || g.includes(r.grade))
+    && (!pOnly || r.pick)
     && (!sOnly || r.two)
     && (!dOnly || (r.up !== '—' && r.down !== '—'))
     && (!rOnly || r.readout)
@@ -535,9 +575,9 @@ function view(){
     const c = (typeof x === 'number' && typeof y === 'number') ? x - y : String(x).localeCompare(String(y), 'ja');
     return asc ? c : -c;
   });
-  document.querySelector('#t tbody').innerHTML = rs.map(r => `<tr>
-    <td><span class="g ${GC[r.grade] || ''}">${r.grade}</span><div class="sub">${r.why}</div></td>
-    <td>${r.pair}${r.readout ? `<div class="sub">読み出し: ${r.readout}</div>` : ''}</td>
+  document.querySelector('#t tbody').innerHTML = rs.map(r => `<tr class="${r.pick ? 'picked' : ''}">
+    <td>${r.pick ? `<div><span class="pick">${r.pick}</span></div>` : ''}<span class="g ${GC[r.grade] || ''}">${r.grade}</span><div class="sub">${r.why}</div></td>
+    <td>${r.pair}${r.pick ? `<div class="sub okdrv">${r.pick_why}</div><div>${r.pick_link}</div>` : ''}${r.readout ? `<div class="sub">読み出し: ${r.readout}</div>` : ''}</td>
     <td><div class="sub">${r.rois}</div></td>
     <td class="num">${r.contact_txt}<div class="sub">${r.cross_contact}</div></td>
     <td class="num">${r.syn}<div class="sub">${r.datasets}</div></td>

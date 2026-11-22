@@ -109,12 +109,34 @@ code{{background:var(--code);padding:.15em .4em;border-radius:4px}}
 <h1>近接するがシナプスを作らないニューロンの探索</h1>
 <p class="lead">ショウジョウバエのコネクトーム 3 個体（hemibrain・FlyWire・male-CNS）を突き合わせて、
 <b>膜は接しているのにシナプスが 1 つも無いニューロンのペア</b>を探す。
-人工接着分子で結合を強制的に作らせる実験の標的を選ぶのが目的。
-条件は 5 つ — 両方向でシナプス 0 ／ 複数個体で 0 ／ EM で膜が接している ／
-GAL4 と LexA の 2 系統が使える ／ 上流がその場所で出力している。</p>
+人工接着分子で結合を強制的に作らせる実験の標的を選ぶのが目的。</p>
+
+<h2>いま進めている方針</h2>
+<p class="lead"><b>匂いを嗅がせるだけで、本来できないはずの記憶を作る。</b>
+上流の MBON が匂いに応答し、その活動が人工シナプスを通って下流のドーパミンニューロンを駆動すれば、
+電気ショックも砂糖も与えずに連合記憶ができる。これが成立すれば、
+人工シナプスが<b>感覚入力を教師信号に変換した</b>ことになる。</p>
+<p class="lead">条件は 6 つ — 両方向でシナプス 0 ／ 3 個体で 0 ／ EM で膜が接している ／
+GAL4 と LexA の 2 系統が使える ／ 上流がその場所で出力している ／
+<b>上流が匂いで駆動される</b>（最後の 1 つが今回加わった軸）。</p>
+<p class="lead"><b>どれがうまくいくか分からないので、3 組を並行して準備する。</b></p>
+<div class="cards">
+<a class="card" href="reports/design_MBON07_PPL106.html"><b>① MBON07 → PPL106〈本命〉</b>
+<span>6 条件すべてを満たす唯一の組。匂い駆動 86%・膜 6,333 voxel。<br>
+専用の設計ページ（解剖 → 強制活性 → 生理 → 行動）</span></a>
+<a class="card" href="reports/plan_three_pairs.html"><b>② MBON02 → PPL106〈比較〉</b>
+<span>下流が本命と同じ細胞。LexA 系統を共有できる。<br>膜は本命の 1/22</span></a>
+<a class="card" href="reports/candidate_MBON04_PPL105.html"><b>③ MBON04 → PPL105〈保険〉</b>
+<span>膜はいちばん確かだが匂い駆動は 20%。<br>オーガナイザーの向きが逆になる</span></a>
+<a class="card hero" href="reports/plan_three_pairs.html"><b>▶ 3 組をどう比べて選んだか</b>
+<span>KC 入力率という新しい軸・EM の同一細胞比較・並行準備の実コスト</span></a>
+</div>
+
+<h2>全体</h2>
 <div class="cards">
 {cards}
 </div>
+
 <h2>公開していないもの</h2>
 <ul>
 <li>骨格・メッシュのデータ（<code>data/</code>、約 5.4 GB）</li>
@@ -146,7 +168,7 @@ def main():
     for d in ("zero_3d", "cross_3d"):
         if (RESULTS / d).exists():
             total += copy(RESULTS / d, SITE / d)
-    for f in ("shortlist.html", "slide_MBON04_refs.html", "slide_PPL105_refs.html",
+    for f in ("shortlist.html",
               "shortlist_final.csv", "mb_final19.csv",
               "gmr_lexa_match.csv", "hemidriver_lexa.csv", "em_gap/summary.csv"):
         src = RESULTS / f
@@ -169,32 +191,11 @@ def main():
     n_docs = len(list((SITE / "reports").glob("*.html"))) - 1
     n3d = len(list((SITE / "zero_3d").glob("*.html"))) + len(list((SITE / "cross_3d").glob("*.html")))
     cards = [
+        '<a class="card hero" href="shortlist.html"><b>★ 最終候補の一覧</b>'
+        '<span>3 個体でシナプス 0 を確かめた組。選んだ 3 組を先頭に印付きで出している</span></a>',
         f'<a class="card hero" href="reports/index.html"><b>◇ 報告書（{n_docs} 件）</b>'
-        f'<span>候補の検討・ドライバー・EM・文献のまとめ</span></a>',
-        '<a class="card" href="reports/candidate_MBON04_PPL105.html"><b>本命: MBON04 ↔ PPL105</b>'
-        '<span>キノコ体案の第一候補。両方向が候補になる</span></a>',
-        '<a class="card" href="reports/candidate_MBON04_FB4N.html"><b>本命: MBON04 → FB4N</b>'
-        '<span>全脳探索の第一候補</span></a>',
-        '<a class="card" href="reports/direction_MBON04_PPL105.html"><b>どちら向きにするか</b>'
-        '<span>伝達物質と放出部位から決める ／ 行動実験の設計</span></a>',
-        '<a class="card" href="reports/design_MBON07_PPL106.html"><b>本命の設計: MBON07 → PPL106</b>'
-        '<span>匂いだけで 24 時間の記憶を作る ／ 解剖→強制活性→生理→行動</span></a>',
-        '<a class="card" href="reports/plan_three_pairs.html"><b>3 組を並行して準備する</b>'
-        '<span>匂いだけで記憶を作る基準で選び直す ／ KC 入力率という新しい軸</span></a>',
-        '<a class="card" href="reports/techdemo_MBON31_PAM11.html"><b>技術実証: MBON31 → PAM11</b>'
-        '<span>行動で「働いた」と示すならこの組 ／ 解剖→生理→行動の 3 段階</span></a>',
-        '<a class="card" href="reports/receptor_check.html"><b>受容体と Kirre・Dsyd-1</b>'
-        '<span>受容体はコネクトームで片が付く ／ 残るのは Sns・Hbs</span></a>',
-        '<a class="card" href="slide_MBON04_refs.html"><b>発表用: MBON04 の先行研究</b>'
-        '<span>どの細胞を・どの課題で測ったか ／ 単独の前例は無い</span></a>',
-        '<a class="card" href="slide_PPL105_refs.html"><b>発表用: PPL105 の先行研究</b>'
-        '<span>MB058B で単独に狙える ／ 50 日の慢性イメージングの前例</span></a>',
-        '<a class="card" href="shortlist.html"><b>★ 最終候補の一覧</b>'
-        '<span>3 個体で確かめた組</span></a>',
-        f'<a class="card" href="reports/em_links_MBON04_PPL105.html"><b>EM と 3D のリンク</b>'
-        f'<span>neuroglancer で膜の接触を見る ／ 3D {n3d} 件</span></a>',
-        '<a class="card" href="reports/lexa_catalog.html"><b>LexA ドライバーの棚卸し</b>'
-        '<span>キノコ体以外・神経とグリア</span></a>',
+        f'<span>新しい順。候補の検討・ドライバー・EM・文献・実験設計のすべて。'
+        f'3D は {n3d} 件</span></a>',
     ]
     (SITE / ".nojekyll").write_text("", encoding="utf-8")  # Jekyll の処理を止める
     (SITE / "index.html").write_text(INDEX.format(cards="\n".join(cards)), encoding="utf-8")

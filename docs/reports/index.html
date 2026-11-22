@@ -35,64 +35,66 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 .card:hover{border-color:var(--acc)}
 .card b{color:var(--acc)}
 .card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+.card .date{display:inline-block;color:var(--acc);font-weight:700;margin-right:.5em;font-variant-numeric:tabular-nums}
 </style></head>
 <body><div class="wrap">
 <nav><a href="../index.html">結果一覧</a></nav>
 <h1>報告書の一覧</h1>
-<p>results/ の Markdown 報告書を HTML にしたもの。全 31 件。</p>
+<p>results/ の Markdown 報告書を HTML にしたもの。全 31 件。<b>新しい順に並べている</b>（下にいくほど古く、絞り込みの途中経過になる）。</p>
 <div class="cards">
-<a class="card" href="shortlist_final.html"><b>3 個体でシナプス 0・接触が再現する組（shortlist_final.csv）</b><span>条件: hemibrain・male-cns・FlyWire の 3 個体すべてで両方向のシナプスが 0、
-かつ別個体でも 10 µm 以上の接触がある組。「上流出力 / 下流入力」は主な接触領域での個数。</span></a>
-<a class="card" href="benchmark.html"><b>Benchmark</b><span>n_neurons=80, seeds=[0, 1, 2], compartments=navis, overrides=[]</span></a>
-<a class="card" href="gmr_lexa_report.html"><b>GMR-LexA を候補ペアに照合した結果</b><span>2026-11-10。再現は python gmr_lexa_match.py。
-一覧は results/gmr_lexa_vfb.csv（VFB の注釈）と results/gmr_lexa_match.csv（論文の</span></a>
-<a class="card" href="direction_MBON04_PPL105.html"><b>MBON04 と PPL105 のどちら向きを先にやるか — 伝達物質と放出部位から決める</b><span>2026-11-22。再現は</span></a>
-<a class="card" href="driver_overlap_PPL105_MBON04.html"><b>SL86063 が一緒に標識する MBON01・MBON03 は、PPL105 とどこまで近いか</b><span>2026-11-22。再現は
-python view_group.py --data data/hemibrain_mb_all.pkl --source PPL105 --others MBON04 MBON01 MB</span></a>
-<a class="card" href="plan_three_pairs.html"><b>「匂いだけで、本来できない記憶を作る」で 3 組を選び直す</b><span>2026-11-23。新しい基準での再評価。
-再現は python -c での neuPrint 問い合わせ（9 節）と results/em_gap/best_per_pair.csv。</span></a>
-<a class="card" href="coverage_report.html"><b>まだ探していない組はどこにあるか</b><span>2026-11-10。再現は python coverage.py。一覧は results/coverage.csv（型ごと）と
-results/coverage_roi.csv（領域ごと）。</span></a>
-<a class="card" href="remaining_candidates.html"><b>まだ詰めていない候補の一覧</b><span>2026-11-11。これまでに詳しく検討したのは 4 組
-（MBON04 ↔ PPL105、MBON04 → FB4N、ExR2 → LAL098、AVLP478 → DNp06）。
-残りを段階別に並べる。</span></a>
-<a class="card" href="plan_mushroom_body.html"><b>キノコ体の細胞どうしで強制シナプス形成を行う案</b><span>2026-11-10 の吟味。結論は 成立する。全脳を探すより候補が多く、質も上回る。
-19 組を 4 条件で判定して 4 組が残り、第一候補は MBON04 → PPL105。</span></a>
-<a class="card" href="lexa_catalog.html"><b>キノコ体以外の LexA ドライバー（神経とグリア）</b><span>2026-11-10 調査。構造化した一覧は data/lexa_lines_nonmb.csv（34 行）。</span></a>
-<a class="card" href="em_links_mushroom_body.html"><b>キノコ体案の 3D と EM（hemibrain v1.2, 8 nm 等方）</b><span>色は 赤 = 上流 / 水色 = 下流。3D はメッシュ（実際の膜の形）。</span></a>
-<a class="card" href="hemidriver_lexa_report.html"><b>ヘミドライバー断片の LexA 版を使って、落ちた組を救う</b><span>2026-11-10。再現は python hemidriver_lexa.py。一覧は results/hemidriver_lexa.csv。</span></a>
-<a class="card" href="refs_top_pairs.html"><b>上位候補ペアの細胞について、行動実験を行っている論文</b><span>2026-11-10 作成。lit_search.py で Europe PMC を検索し、
-オープンアクセス論文は本文全体、それ以外は要旨を対象に
-「細胞名・系統名」「操作（光遺伝学・活動阻害など）」「行動（学習・選好</span></a>
-<a class="card" href="gal4only_candidates.html"><b>両方 GAL4 しかない組のうち、行動・生理の意味があるもの</b><span>2026-11-10。対象は results/shortlist_final.csv で
-「上流にも下流にも split-GAL4 はあるが、どちらにも LexA が無い」32 組。
-そのうち別個体でも接触が再現し、上流</span></a>
-<a class="card" href="candidate_AVLP478_DNp06.html"><b>候補の検討: AVLP478 → DNp06</b><span>2026-11-10。「両方 GAL4 しかない」32 組のうち、行動の読み出しと膜の密着が
-いちばんそろっていた組（results/gal4only_candidates.md）を詰めた。</span></a>
-<a class="card" href="candidate_ExR2_LAL098.html"><b>候補の検討: ExR2 ↔ LAL098</b><span>2026-11-10。ヘミドライバーの照合で救えた 5 組のうち、別個体での接触が最も良かった組を詰めた。</span></a>
-<a class="card" href="candidate_MBON07_PPL106.html"><b>候補の検討: MBON07 → PPL106</b><span>2026-11-11。遺伝学がいちばんきれいな候補。 上流・下流とも単一タイプを
-特異性 2 で狙える系統があり、混同の組み合わせが 1 つしかない。
-並行して進める MBON31 → PAM11 は results/c</span></a>
-<a class="card" href="candidate_MBON31_PAM11.html"><b>候補の検討: MBON31 → PAM11</b><span>2026-11-11。膜の密着がプロジェクト全体で最高の候補。
-MBON07 → PPL106（results/candidate_MBON07_PPL106.md）と並行して進める想定。</span></a>
-<a class="card" href="design_MBON07_PPL106.html"><b>匂いだけで記憶を作る: MBON07 → PPL106 の設計</b><span>2026-11-23。results/plan_three_pairs.md で第一候補に決まった組の実験設計。
+<a class="card" href="design_MBON07_PPL106.html"><b>匂いだけで記憶を作る: MBON07 → PPL106 の設計</b><span><span class="date">2026-11-23</span>results/plan_three_pairs.md で第一候補に決まった組の実験設計。
 解剖・遺伝学・EM の根拠は candidate_MBON07_PPL106.md にある。
-ここは何をど</span></a>
-<a class="card" href="receptor_check.html"><b>受容体と Kirre・Dsyd-1 をどう確認するか</b><span>2026-11-22。direction_MBON04_PPL105.md 6 節で
-「先に片付けるべきこと」と書いた受容体チェックを実際にやった。</span></a>
-<a class="card" href="shortlist.html"><b>強制シナプス形成に向けた最終候補（shortlist.py）</b><span>条件: 合計シナプス 0 個以下。「接触の再現」は別個体の各半球で 10 µm 以上の接触があること。
-シナプス数は hemibrain の順/逆と、照合できた各個体の両方向の合計。</span></a>
-<a class="card" href="techdemo_MBON31_PAM11.html"><b>技術実証に MBON31 → PAM11 を選ぶ理由</b><span>2026-11-22。候補そのものの評価は candidate_MBON31_PAM11.md。
+ここは何をどう測るかだけを書く。</span></a>
+<a class="card" href="plan_three_pairs.html"><b>「匂いだけで、本来できない記憶を作る」で 3 組を選び直す</b><span><span class="date">2026-11-23</span>新しい基準での再評価。
+再現は python -c での neuPrint 問い合わせ（9 節）と results/em_gap/best_per_pair.csv。</span></a>
+<a class="card" href="techdemo_MBON31_PAM11.html"><b>技術実証に MBON31 → PAM11 を選ぶ理由</b><span><span class="date">2026-11-22</span>候補そのものの評価は candidate_MBON31_PAM11.md。
 このページは 「人工接着分子が働いたことを行動で示す」という目的に限って、
 なぜこの組が最適かと、どう測るか。</span></a>
-<a class="card" href="em_links_AVLP478_DNp06.html"><b>接触部位の 3D と EM（hemibrain v1.2, 8 nm 等方）</b><span>色は 赤 = 1 つ目のタイプ / 水色 = 2 つ目。3D はメッシュ（実際の膜の形）。</span></a>
-<a class="card" href="em_links_ExR2_LAL098.html"><b>接触部位の 3D と EM（hemibrain v1.2, 8 nm 等方）</b><span>色は 赤 = 1 つ目のタイプ / 水色 = 2 つ目。3D はメッシュ（実際の膜の形）。</span></a>
-<a class="card" href="em_links_gal4only.html"><b>接触部位の 3D と EM（hemibrain v1.2, 8 nm 等方）</b><span>色は 赤 = 1 つ目のタイプ / 水色 = 2 つ目。3D はメッシュ（実際の膜の形）。</span></a>
-<a class="card" href="em_links_MBON04_PPL105.html"><b>接触部位の 3D と EM（hemibrain v1.2, 8 nm 等方）</b><span>色は 赤 = 1 つ目のタイプ / 水色 = 2 つ目。3D はメッシュ（実際の膜の形）。</span></a>
-<a class="card" href="em_links_MBON07_PPL106.html"><b>接触部位の 3D と EM（hemibrain v1.2, 8 nm 等方）</b><span>色は 赤 = 1 つ目のタイプ / 水色 = 2 つ目。3D はメッシュ（実際の膜の形）。</span></a>
-<a class="card" href="em_links_MBON31_PAM11.html"><b>接触部位の 3D と EM（hemibrain v1.2, 8 nm 等方）</b><span>色は 赤 = 1 つ目のタイプ / 水色 = 2 つ目。3D はメッシュ（実際の膜の形）。</span></a>
-<a class="card" href="em_links_MBON04_FB4N.html"><b>接触部位の EM リンク（hemibrain v1.2 / 8 nm 等方）</b><span>体ID: MBON04_L 613079053 / MBON04_R 487925063 / FB4N_R 673746277 / MBON26_R 895441451</span></a>
-<a class="card" href="candidate_MBON04_FB4N.html"><b>本命候補: MBON04 → FB4N</b><span>人工分子でシナプスを強制形成させる実験の第一候補。2026-11-10 時点の調査をまとめる。</span></a>
-<a class="card" href="candidate_MBON04_PPL105.html"><b>本命候補: MBON04 ↔ PPL105（キノコ体案）</b><span>キノコ体の細胞どうしで人工分子によるシナプス強制形成を行うときの第一候補。2026-11-10 時点の調査をまとめる。</span></a>
+<a class="card" href="receptor_check.html"><b>受容体と Kirre・Dsyd-1 をどう確認するか</b><span><span class="date">2026-11-22</span>direction_MBON04_PPL105.md 6 節で
+「先に片付けるべきこと」と書いた受容体チェックを実際にやった。</span></a>
+<a class="card" href="driver_overlap_PPL105_MBON04.html"><b>SL86063 が一緒に標識する MBON01・MBON03 は、PPL105 とどこまで近いか</b><span><span class="date">2026-11-22</span>再現は
+python view_group.py --data data/hemibrain_mb_all.pkl --source PPL105 --others MBON04 MBON01 MBON03 --out </span></a>
+<a class="card" href="direction_MBON04_PPL105.html"><b>MBON04 と PPL105 のどちら向きを先にやるか — 伝達物質と放出部位から決める</b><span><span class="date">2026-11-22</span>再現は</span></a>
+<a class="card" href="em_links_MBON07_PPL106.html"><b>接触部位の 3D と EM（hemibrain v1.2, 8 nm 等方）</b><span><span class="date">2026-11-11</span>色は 赤 = 1 つ目のタイプ / 水色 = 2 つ目。3D はメッシュ（実際の膜の形）。</span></a>
+<a class="card" href="em_links_MBON31_PAM11.html"><b>接触部位の 3D と EM（hemibrain v1.2, 8 nm 等方）</b><span><span class="date">2026-11-11</span>色は 赤 = 1 つ目のタイプ / 水色 = 2 つ目。3D はメッシュ（実際の膜の形）。</span></a>
+<a class="card" href="candidate_MBON31_PAM11.html"><b>候補の検討: MBON31 → PAM11</b><span><span class="date">2026-11-11</span>膜の密着がプロジェクト全体で最高の候補。
+MBON07 → PPL106（results/candidate_MBON07_PPL106.md）と並行して進める想定。</span></a>
+<a class="card" href="candidate_MBON07_PPL106.html"><b>候補の検討: MBON07 → PPL106</b><span><span class="date">2026-11-11</span>遺伝学がいちばんきれいな候補。 上流・下流とも単一タイプを
+特異性 2 で狙える系統があり、混同の組み合わせが 1 つしかない。
+並行して進める MBON31 → PAM11 は results/candidate_MB</span></a>
+<a class="card" href="remaining_candidates.html"><b>まだ詰めていない候補の一覧</b><span><span class="date">2026-11-11</span>これまでに詳しく検討したのは 4 組
+（MBON04 ↔ PPL105、MBON04 → FB4N、ExR2 → LAL098、AVLP478 → DNp06）。
+残りを段階別に並べる。</span></a>
+<a class="card" href="candidate_MBON04_PPL105.html"><b>本命候補: MBON04 ↔ PPL105（キノコ体案）</b><span><span class="date">2026-11-10</span>キノコ体の細胞どうしで人工分子によるシナプス強制形成を行うときの第一候補。2026-11-10 時点の調査をまとめる。</span></a>
+<a class="card" href="candidate_MBON04_FB4N.html"><b>本命候補: MBON04 → FB4N</b><span><span class="date">2026-11-10</span>人工分子でシナプスを強制形成させる実験の第一候補。2026-11-10 時点の調査をまとめる。</span></a>
+<a class="card" href="em_links_MBON04_FB4N.html"><b>接触部位の EM リンク（hemibrain v1.2 / 8 nm 等方）</b><span><span class="date">2026-11-10</span>体ID: MBON04_L 613079053 / MBON04_R 487925063 / FB4N_R 673746277 / MBON26_R 895441451</span></a>
+<a class="card" href="em_links_AVLP478_DNp06.html"><b>接触部位の 3D と EM（hemibrain v1.2, 8 nm 等方）</b><span><span class="date">2026-11-10</span>色は 赤 = 1 つ目のタイプ / 水色 = 2 つ目。3D はメッシュ（実際の膜の形）。</span></a>
+<a class="card" href="em_links_ExR2_LAL098.html"><b>接触部位の 3D と EM（hemibrain v1.2, 8 nm 等方）</b><span><span class="date">2026-11-10</span>色は 赤 = 1 つ目のタイプ / 水色 = 2 つ目。3D はメッシュ（実際の膜の形）。</span></a>
+<a class="card" href="em_links_gal4only.html"><b>接触部位の 3D と EM（hemibrain v1.2, 8 nm 等方）</b><span><span class="date">2026-11-10</span>色は 赤 = 1 つ目のタイプ / 水色 = 2 つ目。3D はメッシュ（実際の膜の形）。</span></a>
+<a class="card" href="em_links_MBON04_PPL105.html"><b>接触部位の 3D と EM（hemibrain v1.2, 8 nm 等方）</b><span><span class="date">2026-11-10</span>色は 赤 = 1 つ目のタイプ / 水色 = 2 つ目。3D はメッシュ（実際の膜の形）。</span></a>
+<a class="card" href="shortlist.html"><b>強制シナプス形成に向けた最終候補（shortlist.py）</b><span><span class="date">2026-11-10</span>条件: 合計シナプス 0 個以下。「接触の再現」は別個体の各半球で 10 µm 以上の接触があること。
+シナプス数は hemibrain の順/逆と、照合できた各個体の両方向の合計。</span></a>
+<a class="card" href="candidate_ExR2_LAL098.html"><b>候補の検討: ExR2 ↔ LAL098</b><span><span class="date">2026-11-10</span>ヘミドライバーの照合で救えた 5 組のうち、別個体での接触が最も良かった組を詰めた。</span></a>
+<a class="card" href="candidate_AVLP478_DNp06.html"><b>候補の検討: AVLP478 → DNp06</b><span><span class="date">2026-11-10</span>「両方 GAL4 しかない」32 組のうち、行動の読み出しと膜の密着が
+いちばんそろっていた組（results/gal4only_candidates.md）を詰めた。</span></a>
+<a class="card" href="gal4only_candidates.html"><b>両方 GAL4 しかない組のうち、行動・生理の意味があるもの</b><span><span class="date">2026-11-10</span>対象は results/shortlist_final.csv で
+「上流にも下流にも split-GAL4 はあるが、どちらにも LexA が無い」32 組。
+そのうち別個体でも接触が再現し、上流もその領域で出力してい</span></a>
+<a class="card" href="refs_top_pairs.html"><b>上位候補ペアの細胞について、行動実験を行っている論文</b><span><span class="date">2026-11-10</span>作成。lit_search.py で Europe PMC を検索し、
+オープンアクセス論文は本文全体、それ以外は要旨を対象に
+「細胞名・系統名」「操作（光遺伝学・活動阻害など）」「行動（学習・選好など）」の
+3 つがそ</span></a>
+<a class="card" href="hemidriver_lexa_report.html"><b>ヘミドライバー断片の LexA 版を使って、落ちた組を救う</b><span><span class="date">2026-11-10</span>再現は python hemidriver_lexa.py。一覧は results/hemidriver_lexa.csv。</span></a>
+<a class="card" href="em_links_mushroom_body.html"><b>キノコ体案の 3D と EM（hemibrain v1.2, 8 nm 等方）</b><span><span class="date">2026-11-10</span>色は 赤 = 上流 / 水色 = 下流。3D はメッシュ（実際の膜の形）。</span></a>
+<a class="card" href="lexa_catalog.html"><b>キノコ体以外の LexA ドライバー（神経とグリア）</b><span><span class="date">2026-11-10</span>調査。構造化した一覧は data/lexa_lines_nonmb.csv（34 行）。</span></a>
+<a class="card" href="plan_mushroom_body.html"><b>キノコ体の細胞どうしで強制シナプス形成を行う案</b><span><span class="date">2026-11-10</span>の吟味。結論は 成立する。全脳を探すより候補が多く、質も上回る。
+19 組を 4 条件で判定して 4 組が残り、第一候補は MBON04 → PPL105。</span></a>
+<a class="card" href="coverage_report.html"><b>まだ探していない組はどこにあるか</b><span><span class="date">2026-11-10</span>再現は python coverage.py。一覧は results/coverage.csv（型ごと）と
+results/coverage_roi.csv（領域ごと）。</span></a>
+<a class="card" href="gmr_lexa_report.html"><b>GMR-LexA を候補ペアに照合した結果</b><span><span class="date">2026-11-10</span>再現は python gmr_lexa_match.py。
+一覧は results/gmr_lexa_vfb.csv（VFB の注釈）と results/gmr_lexa_match.csv（論文の共起）。</span></a>
+<a class="card" href="benchmark.html"><b>Benchmark</b><span><span class="date">2026-11-10</span>n_neurons=80, seeds=[0, 1, 2], compartments=navis, overrides=[]</span></a>
+<a class="card" href="shortlist_final.html"><b>3 個体でシナプス 0・接触が再現する組（shortlist_final.csv）</b><span><span class="date">2026-11-10</span>条件: hemibrain・male-cns・FlyWire の 3 個体すべてで両方向のシナプスが 0、
+かつ別個体でも 10 µm 以上の接触がある組。「上流出力 / 下流入力」は主な接触領域での個数。</span></a>
 </div>
 </div></body></html>

@@ -17,6 +17,7 @@ from __future__ import annotations
 import argparse
 import html
 import re
+import subprocess
 from pathlib import Path
 
 from common.runner import ROOT
@@ -50,6 +51,7 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 .card:hover{border-color:var(--acc)}
 .card b{color:var(--acc)}
 .card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+.card .date{display:inline-block;color:var(--acc);font-weight:700;margin-right:.5em;font-variant-numeric:tabular-nums}
 """
 
 PAGE = """<!doctype html>
@@ -82,7 +84,28 @@ def rewrite_links(md: str, md_names: set[str]) -> str:
     return re.sub(r"\[([^\]]*)\]\(([^)\s]+)\)", fix, md)
 
 
-def convert(files: list[Path]) -> list[tuple[Path, str, str]]:
+def report_date(f: Path) -> str:
+    """報告書の日付。本文の冒頭に書いてあればそれ、無ければ git に最初に入った日。
+
+    一覧を時系列に並べるために使う。新しいものほど選定が進んでいる。
+    本文の日付を優先するのは、あとから誤りを直しても順番が動かないようにするため。
+    """
+    head = "".join(f.read_text(encoding="utf-8").splitlines(keepends=True)[:8])
+    m = re.search(r"20\d{2}-\d{2}-\d{2}", head)
+    if m:
+        return m.group(0)
+    try:
+        out = subprocess.run(
+            ["git", "log", "--diff-filter=A", "--format=%ad", "--date=short", "-1", "--", str(f)],
+            cwd=ROOT, capture_output=True, text=True, timeout=20)
+        if out.stdout.strip():
+            return out.stdout.strip().splitlines()[0]
+    except Exception:
+        pass
+    return "0000-00-00"
+
+
+def convert(files: list[Path]) -> list[tuple[Path, str, str, str]]:
     import markdown as md_lib
     DOCS.mkdir(parents=True, exist_ok=True)
     names = {f.stem for f in files}
@@ -94,20 +117,26 @@ def convert(files: list[Path]) -> list[tuple[Path, str, str]]:
         title = re.sub(r"<[^>]+>", "", m.group(1)).strip() if m else f.stem
         # 概要として最初の段落を取る（一覧カードの説明に使う）
         p = re.search(r"<p>(.*?)</p>", body, re.S)
-        lead = re.sub(r"<[^>]+>", "", p.group(1)).strip()[:110] if p else ""
+        lead = re.sub(r"<[^>]+>", "", p.group(1)).strip() if p else ""
+        # 日付はカードの先頭に別に出すので、概要の頭から取り除く
+        lead = re.sub(r"^20\d{2}-\d{2}-\d{2}[。、.]?\s*", "", lead)[:110]
         out = DOCS / f"{f.stem}.html"
         out.write_text(PAGE.format(title=html.escape(title), css=CSS, body=body), encoding="utf-8")
-        made.append((out, title, lead))
+        made.append((out, title, lead, report_date(f)))
     return made
 
 
-def index(made: list[tuple[Path, str, str]]) -> Path:
+def index(made: list[tuple[Path, str, str, str]]) -> Path:
+    # 新しい順。最新のものほど選定が進んでいるので上に来る
+    order = sorted(made, key=lambda x: (x[3], x[1]), reverse=True)
     cards = "\n".join(
-        f'<a class="card" href="{p.name}"><b>{html.escape(t)}</b>'
-        f'<span>{html.escape(lead)}</span></a>'
-        for p, t, lead in sorted(made, key=lambda x: x[1]))
+        f'<a class="card" href="{p.name}"><b>{html.escape(ttl)}</b>'
+        f'<span><span class="date">{html.escape(d)}</span>{html.escape(lead)}</span></a>'
+        for p, ttl, lead, d in order)
     body = ("<h1>報告書の一覧</h1>\n<p>results/ の Markdown 報告書を HTML にしたもの。"
-            f"全 {len(made)} 件。</p>\n<div class=\"cards\">\n{cards}\n</div>")
+            f"全 {len(made)} 件。<b>新しい順に並べている</b>"
+            "（下にいくほど古く、絞り込みの途中経過になる）。</p>\n"
+            f'<div class="cards">\n{cards}\n</div>')
     f = DOCS / "index.html"
     f.write_text(PAGE.format(title="報告書の一覧", css=CSS, body=body)
                  .replace('<nav><a href="index.html">← 報告書の一覧</a> ／ ', "<nav>"), encoding="utf-8")
@@ -124,7 +153,7 @@ def main():
         print("results/*.md が無い")
         return
     made = convert(files)
-    for p, t, _ in made:
+    for p, t, _, _d in made:
         print(f"  {t} -> {p.relative_to(ROOT)}")
     f = index(made)
     print(f"\n{len(made)} 件 -> {f.relative_to(ROOT)}")
