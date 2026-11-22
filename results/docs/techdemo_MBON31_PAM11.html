@@ -97,53 +97,222 @@ GABA-B（代謝型、抑制）でも<strong>抑制</strong>。
 <strong>差がそのまま新生シナプスの効果</strong>になる。</p>
 <p>「近接しているがシナプスが無い組」を探してきたのは、
 強制形成しやすいからだけでなく、<strong>対照が自動的に手に入るから</strong>でもある。</p>
-<h2 id="2">2. 設計 — 常時ある配線に、光で時間解像度を与える</h2>
-<h3 id="_1">問題</h3>
-<p>強制シナプスは<strong>常時ある</strong>。発生期から PAM-α1 が抑えられていると、
-行動の差が「記憶の障害」なのか「発生の異常」なのか分からない。</p>
-<h3 id="_2">解決</h3>
-<p><strong>配線は常時、駆動は光で。</strong></p>
+<h2 id="2-3">2. 設計 — 3 段階に分け、片側だけの対照を最初に置く</h2>
+<p>二つの問題を同時に解く必要がある。</p>
+<table>
+<thead>
+<tr>
+<th>問題</th>
+<th>解決</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>強制シナプスは<strong>常時ある</strong>。発生期から PAM-α1 が抑えられていると、行動の差が「記憶の障害」なのか「発生の異常」なのか分からない</td>
+<td><strong>配線は常時、駆動は光で。</strong> 時間解像度を光で与える</td>
+</tr>
+<tr>
+<td><strong>内在 Kirre が成虫ニューロンの 55% にある。</strong> Sns/Hbs を載せた下流が周囲に掴まれうる（<a href="receptor_check.html">receptor_check.md</a> 2.5 節）</td>
+<td><strong>片側だけの対照を最初に置き、行動に入る前に片付ける</strong></td>
+</tr>
+</tbody>
+</table>
+<p>だから <strong>A 解剖 → B 生理 → C 行動</strong> の 3 段階にして、
+内在 Kirre の問題を <strong>段階 A（いちばん安い段階）で決着させる。</strong></p>
+<h3 id="20-5">2.0 遺伝子型 — 5 群</h3>
+<p>オーガナイザーの極性は <strong>上流に Kirre、下流に Sns/Hbs</strong> とする。
+内在 Kirre には相手（Sns/Hbs）がいないので、<strong>外来 Kirre を載せる側が安全な側</strong>。
+Sns/Hbs 側は避けられない弱点なので、そこに対照を当てる。</p>
+<table>
+<thead>
+<tr>
+<th>群</th>
+<th>上流 SS52050〈GAL4〉</th>
+<th>下流 SL86059〈LexA〉</th>
+<th>役割</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>①完全</strong></td>
+<td>Kirre ＋ CsChrimson</td>
+<td>Sns/Hbs ＋ GCaMP</td>
+<td><strong>本番</strong></td>
+</tr>
+<tr>
+<td><strong>②変異</strong></td>
+<td><strong>結合しない変異 Kirre</strong> ＋ CsChrimson</td>
+<td>Sns/Hbs ＋ GCaMP</td>
+<td><strong>オーガナイザーの陰性対照。</strong> 系統構成が①と同一なので発現量も挿入位置も揃う</td>
+</tr>
+<tr>
+<td><strong>③下流のみ</strong></td>
+<td>CsChrimson だけ</td>
+<td>Sns/Hbs ＋ GCaMP</td>
+<td><strong>内在 Kirre が Sns/Hbs を掴むかを直接測る。今回の発見への対照</strong></td>
+</tr>
+<tr>
+<td><strong>④上流のみ</strong></td>
+<td>Kirre ＋ CsChrimson</td>
+<td>GCaMP だけ</td>
+<td>外来 Kirre が内在 Sns/Hbs に貼るか。<strong>陰性が予測</strong>（Sns 8% / Hbs 3%）。予測の検算</td>
+</tr>
+<tr>
+<td><strong>⑤効果器のみ</strong></td>
+<td>CsChrimson だけ</td>
+<td>GCaMP だけ</td>
+<td><strong>光刺激そのものの効果。</strong> MBON31 の既存出力（3 節）の分</td>
+</tr>
+</tbody>
+</table>
+<h3 id="21-a-kirre">2.1 段階 A: 解剖 — 内在 Kirre をここで片付ける</h3>
+<p><strong>光は使わない。①〜⑤を並べて形だけを見る。</strong></p>
+<table>
+<thead>
+<tr>
+<th>測るもの</th>
+<th>方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON31–PAM11 間に活性帯ができたか</td>
+<td><strong>syb-GRASP</strong>（活性帯依存）＋ Brp（nc82）</td>
+</tr>
+<tr>
+<td>PAM11 が余計な入力を得ていないか</td>
+<td>PAM11 の<strong>後シナプス部位の総数</strong>と樹状突起の形</td>
+</tr>
+</tbody>
+</table>
+<p>判定:</p>
+<table>
+<thead>
+<tr>
+<th>比較</th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① &gt; ②</strong></td>
+<td>オーガナイザーが MBON31–PAM11 の接着を作った。<strong>本題の成立</strong></td>
+</tr>
+<tr>
+<td><strong>③ ≒ ⑤</strong></td>
+<td><strong>内在 Kirre は効いていない。先へ進んでよい</strong></td>
+</tr>
+<tr>
+<td><strong>③ &gt; ⑤</strong></td>
+<td><strong>内在 Kirre が Sns/Hbs を掴んでいる。</strong> 段階 B に進む前に直交化する（NEPH1–nephrin などに置換）</td>
+</tr>
+<tr>
+<td>④ ≒ ⑤</td>
+<td>予測どおり。外来 Kirre 側は安全</td>
+</tr>
+</tbody>
+</table>
+<p><strong>③ の判定が出るまで段階 C に進まない。</strong> ここが黒なら行動の結果はすべて解釈不能になる。
+逆に白なら、以降の対照は②と⑤だけで足りる。</p>
+<h3 id="22-b-123">2.2 段階 B: 生理 — ①②③に光を当てる</h3>
+<ul>
+<li>MBON31 を光刺激 → PAM11 の GCaMP が <strong>下がる</strong>（GABA 抑制）</li>
+<li><strong>②では動かない</strong>（オーガナイザーが結合しない）</li>
+<li><strong>③でも動かない</strong>（MBON31 側に外来 Kirre が無いので MBON31–PAM11 の接着が無い）</li>
+</ul>
+<p><strong>①だけが応答する。これが取れた時点で「できた」。</strong> 行動はその上の話。</p>
+<h3 id="23-c-23">2.3 段階 C: 行動 — 2×3</h3>
 <p>Ichinose 2015 は <strong>訓練直後 1 時間</strong>を PAM-α1 が必要な窓として同定している
 （22 時間後の阻害は効かない）。そこに光刺激を合わせる。</p>
 <ol>
 <li>糖報酬で <strong>spaced training</strong>（間隔をおいた反復訓練。報酬性 LTM の標準手順）</li>
 <li><strong>訓練直後 1 時間だけ</strong> MBON31 を CsChrimson で駆動</li>
 <li><strong>24 時間後</strong>に記憶を測る</li>
-<li>同じ個体群で <strong>3 分後の短期記憶</strong>も測る（3 節で効く）</li>
+<li>同じ設計で <strong>3 分後の短期記憶</strong>も測る（3 節で効く）</li>
 </ol>
-<h3 id="_3">予測</h3>
+<p><strong>光の対照は遺伝子型を増やさずに作れる。</strong>
+CsChrimson は餌の retinal（全トランスレチナール）が無いと働かない。
+だから <strong>同腹の retinal 給餌あり／なし</strong>で比べれば、遺伝子型は完全に同一になる。
+遺伝的背景の差が原理的に入らないので、群を増やすより強い。</p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th>光なし</th>
-<th><strong>訓練後 1 時間だけ光</strong></th>
+<th>群</th>
+<th>retinal なし（光が効かない）</th>
+<th><strong>retinal あり ＋ 訓練後 1 時間だけ光</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>オーガナイザーなし</td>
-<td>正常 LTM</td>
-<td>基準</td>
+<td>⑤効果器のみ</td>
+<td>正常 STM / 正常 LTM</td>
+<td>MBON31 の<strong>既存</strong>出力の分だけ動く（STM が動きうる）</td>
 </tr>
 <tr>
-<td><strong>オーガナイザーあり</strong></td>
-<td>正常 LTM</td>
-<td><strong>LTM が落ちる</strong></td>
+<td>②変異</td>
+<td>正常 STM / 正常 LTM</td>
+<td><strong>⑤と同じであるべき</strong></td>
+</tr>
+<tr>
+<td><strong>①完全</strong></td>
+<td><strong>正常 STM / 正常 LTM</strong></td>
+<td><strong>STM は変わらず、LTM だけ落ちる</strong></td>
 </tr>
 </tbody>
 </table>
-<p>左の列が両方正常であることが重要。
-<strong>配線を作っただけでは行動は変わらず、駆動したときだけ変わる</strong> —
-これが「新生シナプスが機能している」の意味。</p>
+<p>読み方は 2 本立て。</p>
+<ul>
+<li><strong>左の列が 3 群すべて正常</strong>であること — <strong>配線を作っただけでは行動は変わらない。</strong></li>
+<li><strong>右の列で①だけが②・⑤から外れる</strong>こと — しかも <strong>LTM 選択的</strong>に（3 節）。</li>
+</ul>
+<p>この二つが揃って初めて「新生シナプスが機能している」と言える。</p>
+<h3 id="24">2.4 どの段階で何が否定されるか</h3>
+<table>
+<thead>
+<tr>
+<th>段階</th>
+<th>黒が出たときの意味</th>
+<th>次の手</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A: ① ≒ ②</td>
+<td>接着そのものが作れていない</td>
+<td>接触 25 µm では足りない。接触の長い組（MBON04 ↔ PPL105、162 µm）へ</td>
+</tr>
+<tr>
+<td>A: ③ &gt; ⑤</td>
+<td>内在 Kirre が交絡する</td>
+<td>直交化してから A をやり直す</td>
+</tr>
+<tr>
+<td>B: ①が応答しない</td>
+<td>接着はできたが放出部位になっていない</td>
+<td>Dsyd-1 の補強、または Rdl の局在を確認</td>
+</tr>
+<tr>
+<td>C: 左の列が動く</td>
+<td>配線を作っただけで行動が変わった（発生の影響）</td>
+<td>成虫期に限った発現（GAL80ts など）に切り替える</td>
+</tr>
+<tr>
+<td>C: 右の列で STM も落ちる</td>
+<td>MBON31 の既存出力による交絡</td>
+<td>3 節。②との差分で切り分ける</td>
+</tr>
+</tbody>
+</table>
+<p><strong>A と B はどちらも行動より安く、しかも否定されたときの次の手が決まっている。</strong></p>
 <h2 id="3-mbon31-pam">3. 唯一の交絡 — MBON31 は他の PAM にも出力している</h2>
 <p>MBON31 → DAN は <strong>17 タイプ・271 シナプス</strong>。PAM06 96、PAM05 69、PAM08 36、PAM02 21…
 <strong>PAM11 だけが 0</strong>（だから候補になった）。</p>
 <p>つまり MBON31 を光で叩くと、<strong>既存の PAM05/06/08 への抑制も起きる。</strong>
 オーガナイザー無し + 光の対照でも行動が動く可能性がある。</p>
-<h3 id="1-22">対策 1: 比較は 2×2 の差分</h3>
-<p>同じ光条件でオーガナイザーの有無を比べる。既存の出力は両群に共通なので打ち消える。</p>
-<h3 id="2_1">対策 2: 短期記憶と長期記憶を両方測る — これが効く</h3>
+<h3 id="1-12">対策 1: 比較は①と②の差分</h3>
+<p>同じ光条件でオーガナイザーの有無（①と②）を比べる。
+既存の出力は両群に共通なので打ち消える。⑤はその既存の出力の分を直接測る群。</p>
+<h3 id="2">対策 2: 短期記憶と長期記憶を両方測る — これが効く</h3>
 <p><strong>PAM-α1 は長期記憶に必須で、短期記憶には不要</strong>（Ichinose 2015）。
 一方 MBON31 の既存の相手である PAM05・PAM06 は β'2・γ4 区画で、<strong>短期記憶の側</strong>。</p>
 <table>
@@ -165,8 +334,10 @@ GABA-B（代謝型、抑制）でも<strong>抑制</strong>。
 </tbody>
 </table>
 <p><strong>「どの記憶が落ちるか」まで予測が決まる。</strong> 交絡では説明できない。
-これが ④ の中身で、この組を推すいちばんの理由。</p>
-<h2 id="4">4. 行動の前に取る生理</h2>
+これが 0 節の条件④の中身で、この組を推すいちばんの理由。</p>
+<h2 id="4">4. 発現系と、生理で気をつけること</h2>
+<p>効果器をオーガナイザーと<strong>同じドライバーに相乗りさせれば 2 系統で足りる</strong>。
+QF2/QUAS の第 3 系は不要（2.0 節の表がその構成）。</p>
 <table>
 <thead>
 <tr>
@@ -177,21 +348,15 @@ GABA-B（代謝型、抑制）でも<strong>抑制</strong>。
 <tbody>
 <tr>
 <td>上流</td>
-<td><strong>GAL4 ＞ UAS-オーガナイザー前側 ＋ UAS-CsChrimson</strong></td>
+<td><strong>GAL4 ＞ UAS-Kirre ＋ UAS-CsChrimson</strong></td>
 </tr>
 <tr>
 <td>下流</td>
-<td><strong>LexA ＞ LexAop-オーガナイザー後側 ＋ LexAop-GCaMP6f</strong></td>
+<td><strong>LexA ＞ LexAop-Sns/Hbs ＋ LexAop-GCaMP6f</strong></td>
 </tr>
 </tbody>
 </table>
-<p>効果器をオーガナイザーと同じドライバーに相乗りさせれば <strong>2 系統で足りる</strong>。
-QF2/QUAS の第 3 系は不要。</p>
-<ul>
-<li>MBON31 を光刺激 → PAM11 の GCaMP が <strong>下がる</strong>（GABA 抑制）</li>
-<li>オーガナイザー無しでは <strong>動かない</strong></li>
-</ul>
-<p><strong>これが取れた時点で「できた」。</strong> 行動はその上の話。</p>
+<p>段階 B の判定は 2.2 節。ここでは記録のときの注意だけ。</p>
 <p>注: PAM11 は左右 7 個ずつの集団で、hemibrain で MBON31 と接しているのは一部
 （482762280 ほか）。<strong>どの PAM11 細胞が応答するかを個別に記録すべき。</strong>
 接していない PAM11 細胞が<strong>同じ視野の中の内部対照</strong>になる。これは集団であることの利点。</p>
@@ -271,22 +436,39 @@ QF2/QUAS の第 3 系は不要。</p>
 </tr>
 <tr>
 <td>効果器（上流）</td>
-<td>UAS-オーガナイザー前側 ＋ UAS-CsChrimson</td>
+<td>UAS-Kirre ＋ UAS-CsChrimson</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>効果器（下流）</td>
-<td>LexAop-オーガナイザー後側 ＋ LexAop-GCaMP6f</td>
+<td>LexAop-Sns/Hbs ＋ LexAop-GCaMP6f</td>
 <td></td>
 <td></td>
+</tr>
+<tr>
+<td>対照（上流）</td>
+<td><strong>UAS-Kirre(結合しない変異) ＋ UAS-CsChrimson</strong></td>
+<td></td>
+<td>群②</td>
 </tr>
 </tbody>
 </table>
 <p><strong>U = {MBON31}、D = {PAM11}。U × D は 1 組だけ。</strong> 混同が原理的に存在しない。
 これは MBON04 ↔ PPL105（MBON01・MBON03 が乗る）に対する明確な優位点。</p>
-<p>対照は <strong>オーガナイザー前側を結合しない変異体に差し替える</strong>のが最も強い。
-系統構成が同一なので、発現量も挿入位置も揃う。</p>
+<p>群①〜⑤（2.0 節）は、この 2 つのドライバーと
+<strong>UAS / LexAop 側の 3 通りの組み合わせ</strong>で全部作れる。
+ドライバーは増えないので、交配の系統数は実質 1 本（変異 Kirre）増えるだけ。</p>
+<p>対照のとり方で強い順:</p>
+<ol>
+<li><strong>オーガナイザーを結合しない変異体に差し替える</strong>（群②）。
+   系統構成が同一なので、発現量も挿入位置も揃う</li>
+<li><strong>retinal の給餌あり／なし</strong>（2.3 節）。<strong>遺伝子型が完全に同一</strong>になるので、
+   光の対照としてはこれが最強。群を増やさずに作れる</li>
+<li>片側だけ（群③④）。オーガナイザー自体の副作用を測る</li>
+<li>効果器だけ（群⑤）。既存の出力の分を測る</li>
+</ol>
+<p><strong>1 と 2 を組み合わせると、遺伝的背景の差が入る余地がほぼ無くなる。</strong></p>
 <h2 id="7-mbon04-ppl105">7. MBON04 → PPL105 との役割分担</h2>
 <table>
 <thead>
@@ -361,14 +543,18 @@ QF2/QUAS の第 3 系は不要。</p>
 <ol>
 <li>~~Sns / Hbs が近傍に無いか~~ → <strong>済み。ニューロンで 3〜8% しかなく、無い。</strong>
    ただし <strong>内在 Kirre はニューロンの 55% にあった</strong>ので、
-   <strong>Sns/Hbs を載せた細胞が周囲の内在 Kirre に掴まれる危険</strong>が残る。
-   対策は直交化か、片側だけの対照（<a href="receptor_check.html">receptor_check.md</a> 2.5 節）。
+   <strong>Sns/Hbs を載せた細胞が周囲の内在 Kirre に掴まれる危険</strong>が残る
+   （<a href="receptor_check.html">receptor_check.md</a> 2.5 節）。
+   → <strong>群③として段階 A に組み込んだ</strong>（2.0〜2.1 節）。
    <strong>構築の設計段階の判断で、この組に固有の問題ではない。</strong></li>
-<li>接触部位が両者にとって主戦場でない（上流 244 / 下流 248 部位）</li>
-<li>SS52050 × CsChrimson のベースライン行動</li>
-<li>どの PAM11 細胞が接しているかを標本で確認</li>
-<li><strong>片側だけの対照</strong>（下流に Sns/Hbs のみ、Kirre はどこにも入れない）を
-   2 節の 2×2 に 1 群足す。内在 Kirre による余計な接着を直接測れる</li>
+<li>接触部位が両者にとって主戦場でない（上流 244 / 下流 248 部位）。
+   → 段階 A で ① ≒ ② なら、ここが原因（2.4 節）</li>
+<li><strong>SS52050 × CsChrimson のベースライン行動。</strong> 群⑤がこれに当たるので、
+   段階 C と同じ個体群で取れる</li>
+<li>どの PAM11 細胞が接しているかを標本で確認（4 節）</li>
+<li><strong>Kirre のタンパクが本当に神経の表面に出ているか。</strong>
+   転写産物が 55% でも、細胞外ドメインが表面に無ければ群③は陰性になる。
+   抗体かタグ付きノックインで見ておくと、群③の結果を解釈しやすい</li>
 </ol>
 <h2 id="3d-em">3D と EM</h2>
 <table>
