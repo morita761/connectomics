@@ -60,8 +60,8 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <tbody>
 <tr>
 <td>① 下流に受容体が確実にある</td>
-<td>○ GABA 入力 659 シナプス。<strong>Rdl はハエ脳で最も普遍的</strong></td>
-<td>◎ グルタミン酸入力 1,770</td>
+<td><strong>◎ GABA 入力 659 シナプス。Rdl は成虫ニューロンの 83% が出している</strong></td>
+<td>○ グルタミン酸入力 1,770。GluClα は 40%</td>
 </tr>
 <tr>
 <td>② 上流を混同なく光で駆動できる</td>
@@ -367,11 +367,16 @@ QF2/QUAS の第 3 系は不要。</p>
 <p>関連論文の全体は <a href="refs_top_pairs.html">refs_top_pairs.md</a>。</p>
 <h2 id="9">9. 残っている確認事項</h2>
 <ol>
-<li><strong>Sns / Hbs が近傍に無いか</strong>（<a href="receptor_check.html">receptor_check.md</a> 2 節）。
-   外来 Kirre の結合相手なので、あると意図しない接着が起きる。<strong>唯一残った計算課題。</strong></li>
+<li>~~Sns / Hbs が近傍に無いか~~ → <strong>済み。ニューロンで 3〜8% しかなく、無い。</strong>
+   ただし <strong>内在 Kirre はニューロンの 55% にあった</strong>ので、
+   <strong>Sns/Hbs を載せた細胞が周囲の内在 Kirre に掴まれる危険</strong>が残る。
+   対策は直交化か、片側だけの対照（<a href="receptor_check.html">receptor_check.md</a> 2.5 節）。
+   <strong>構築の設計段階の判断で、この組に固有の問題ではない。</strong></li>
 <li>接触部位が両者にとって主戦場でない（上流 244 / 下流 248 部位）</li>
 <li>SS52050 × CsChrimson のベースライン行動</li>
 <li>どの PAM11 細胞が接しているかを標本で確認</li>
+<li><strong>片側だけの対照</strong>（下流に Sns/Hbs のみ、Kirre はどこにも入れない）を
+   2 節の 2×2 に 1 群足す。内在 Kirre による余計な接着を直接測れる</li>
 </ol>
 <h2 id="3d-em">3D と EM</h2>
 <table>
