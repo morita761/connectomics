@@ -77,13 +77,19 @@ def best(d: pd.DataFrame, t: str, k: int = 2, want_lexa: bool | None = None) -> 
         h = h[h.system.apply(is_lexa) == want_lexa]
     if h.empty:
         return "-"
-    h = h.assign(_s=h.specificity.fillna(-1)).sort_values(["n_types", "_s"], ascending=[True, False])
+    # 出典に「weak expression」と注記のある系統は後ろへ。
+    # 特異性（= 3 - Quality）は発現の強さを見ていないので、評点が最良でも
+    # オーガナイザーや効果器を十分に出せないことがある。表示にも〈弱〉を付ける。
+    weak = h.note.astype(str).str.contains("weak", case=False, na=False)
+    h = h.assign(_s=h.specificity.fillna(-1), weak_flag=weak.astype(int))
+    h = h.sort_values(["n_types", "weak_flag", "_s"], ascending=[True, True, False])
     out = []
     for r in h.head(k).itertuples(index=False):
         extra = [x for x in str(r.em_types).split(";") if x != t]
         sysname = "LexA" if is_lexa(r.system) else "GAL4"
         out.append(f"{r.line}〈{sysname}〉" + (f"(+{','.join(extra)})" if extra else "")
-                   + ("" if pd.isna(r.specificity) else f"[特異性{int(r.specificity)}]"))
+                   + ("" if pd.isna(r.specificity) else f"[特異性{int(r.specificity)}]")
+                   + ("〈弱〉" if r.weak_flag else ""))
     return " / ".join(out)
 
 

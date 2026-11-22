@@ -546,6 +546,164 @@ MBON02 を落とす理由にはならないが（接触はゼロではない）�
 </tr>
 </tbody>
 </table>
+<h2 id="85">8.5 近傍チェック — ドライバーが巻き込む型は、相手のそばを通っていないか</h2>
+<p>2026-11-23 追加。<strong>ドライバーが目標以外の型も標識する場合、その型が相手のすぐ近くを
+通っていれば、そこにもシナプスができてしまう。</strong> MBON07 → PPL106 と
+MBON02 → PPL106 の両方で測った。</p>
+<h3 id="_4">先に「特異性」の読み方</h3>
+<p><strong>特異性 = max(0, 3 − Quality)。Quality は 1 が最良</strong>なので、<strong>特異性 2 が最良、0 が最悪</strong>。
+<strong>「特異性2」は余計な型を 2 つ標識するという意味ではない。</strong>
+余計な型は <code>(+PPL101,ExR2)</code> のように括弧で書いてある（<code>match_drivers.py</code>）。</p>
+<h3 id="_5">上流側 — どちらの組も清潔</h3>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>上流の系統</th>
+<th>標識する型</th>
+<th>特異性</th>
+<th>注記</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON07 → PPL106</td>
+<td><strong>MB319B</strong></td>
+<td><strong>MBON07 のみ</strong>（2 細胞）</td>
+<td><strong>2</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td></td>
+<td>MB319C / MB323B</td>
+<td>MBON07 のみ</td>
+<td>2</td>
+<td>—</td>
+</tr>
+<tr>
+<td>MBON02 → PPL106</td>
+<td>MB517B</td>
+<td><strong>MBON02 のみ</strong>（1 細胞）</td>
+<td>2</td>
+<td><strong>「発現が弱い」</strong></td>
+</tr>
+<tr>
+<td></td>
+<td><strong>SS01337</strong></td>
+<td><strong>MBON02 のみ</strong>（1 細胞）</td>
+<td>1</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>上流が余計な型を巻き込む心配は、どちらの組にも無い。</strong></p>
+<p>ただし <strong>MBON02 側は系統の選び方を変えたほうがいい。</strong>
+評点がいちばん良い MB517B には<strong>「weak expression」の注記</strong>がある。
+オーガナイザーを十分に出せないと話にならないので、<strong>SS01337 を使う。</strong>
+下流の SL86062 もまったく同じ事情なので、<strong>SL86050 を使う。</strong></p>
+<blockquote>
+<p><strong>解析側の穴だった。</strong> <code>shortlist.py</code> は特異性だけで系統を並べていて、
+<strong>発現の強さの注記を見ていなかった。</strong> 本計画で使う候補のうち
+<strong>2 つの枠（MBON02 の上流と PPL106 の下流）で、推奨が「弱い」系統になっていた。</strong>
+注記のある系統を後ろに回し、表示に <strong>〈弱〉</strong> を付けるよう直した（586 系統中 11 本が該当）。</p>
+</blockquote>
+<h3 id="gal4">下流を GAL4 にする構成は、どちらの組でも採れない</h3>
+<p>PPL106 側に GAL4 を置くと、選べる系統は <strong>SS01246（PPL101 ＋ PPL106 ＋ ExR2、特異性 0）</strong>か
+<strong>MB328B（PPL103 ＋ PPL105 ＋ PPL106、特異性 0）</strong>しかない。
+<strong>巻き込まれる DAN が、上流のすぐ近くを通っている。</strong></p>
+<p>hemibrain の中心線で測った（0.5 µm 間隔、1 µm 以内のケーブル長、両側平均）。</p>
+<table>
+<thead>
+<tr>
+<th>上流との接触</th>
+<th><strong>MBON07</strong></th>
+<th><strong>MBON02</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PPL106（目標）</strong></td>
+<td><strong>44 µm</strong>（最短 0.10）</td>
+<td><strong>36 µm</strong>（最短 0.21）</td>
+</tr>
+<tr>
+<td>PPL101（SS01246 が巻き込む）</td>
+<td>26 µm（0.16）</td>
+<td><strong>27 µm</strong>（0.23）</td>
+</tr>
+<tr>
+<td>PPL103（MB328B が巻き込む）</td>
+<td><strong>62 µm</strong>（0.05）</td>
+<td>16 µm（0.23）</td>
+</tr>
+<tr>
+<td>PPL105（MB328B が巻き込む）</td>
+<td><strong>255 µm</strong>（0.06）</td>
+<td><strong>43 µm</strong>（0.07）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>どちらの上流でも、PPL105 は目標と同等かそれ以上に接している。</strong>
+MBON07 では PPL103 も目標より長い。</p>
+<p>既存のシナプスも見ておく。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>hemibrain</th>
+<th>male-CNS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON07 → PPL105</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>PPL105 → MBON07</strong></td>
+<td><strong>14</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>MBON02 → PPL105</strong></td>
+<td>0</td>
+<td><strong>4</strong></td>
+</tr>
+<tr>
+<td>上記以外（PPL101・PPL103 との全組み合わせ）</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>PPL105 は MBON07 と既に結合している</strong>ので、MB328B を使った時点で「0 の組」ですらなくなる。</p>
+<p>破綻の中身は同じである。<strong>PPL101 = PPL1-γ1pedc（MB-MP1）は嫌悪記憶の教師信号そのもの</strong>なので、
+ここに配線ができれば、<strong>記憶が α3 由来か γ1 由来か区別できない。</strong></p>
+<p><strong>結論: 両方の組とも、上流 GAL4 ＋ 下流 LexA（SL86050）で固定する。</strong></p>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>上流</th>
+<th>下流</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON07 → PPL106</td>
+<td><strong>MB319B</strong>〈GAL4〉</td>
+<td><strong>SL86050</strong>〈LexA〉</td>
+</tr>
+<tr>
+<td>MBON02 → PPL106</td>
+<td><strong>SS01337</strong>〈GAL4〉</td>
+<td><strong>SL86050</strong>〈LexA〉</td>
+</tr>
+</tbody>
+</table>
+<p><strong>下流の系統が同じなので、やはり 2 組目の追加コストは上流 1 本である。</strong></p>
+<p>ExR2 はこのデータセットに入っていないので未測定。SS01246 を使わない以上、測る必要も無い。</p>
 <h2 id="9">9. 使ったデータ</h2>
 <ul>
 <li><strong>KC 入力率</strong>: hemibrain:v1.2.1。<code>neuprint.fetch_simple_connections(None, ids)</code> で
