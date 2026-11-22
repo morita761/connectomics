@@ -177,6 +177,8 @@ def main():
         '<span>全脳探索の第一候補</span></a>',
         '<a class="card" href="reports/direction_MBON04_PPL105.html"><b>どちら向きにするか</b>'
         '<span>伝達物質と放出部位から決める ／ 行動実験の設計</span></a>',
+        '<a class="card" href="reports/design_MBON07_PPL106.html"><b>本命の設計: MBON07 → PPL106</b>'
+        '<span>匂いだけで 24 時間の記憶を作る ／ 解剖→強制活性→生理→行動</span></a>',
         '<a class="card" href="reports/plan_three_pairs.html"><b>3 組を並行して準備する</b>'
         '<span>匂いだけで記憶を作る基準で選び直す ／ KC 入力率という新しい軸</span></a>',
         '<a class="card" href="reports/techdemo_MBON31_PAM11.html"><b>技術実証: MBON31 → PAM11</b>'

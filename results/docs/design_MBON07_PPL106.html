@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>匂いだけで記憶を作る: MBON07 → PPL106 の設計</title><style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px}
+nav{font-size:.9rem;color:var(--sub);margin-bottom:18px}
+nav a{color:var(--acc);text-decoration:none}nav a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.35;border-bottom:2px solid var(--line);padding-bottom:.4em;margin-top:1.2em}
+h2{font-size:1.25rem;margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.05rem;margin-top:1.6em}
+a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600;white-space:nowrap}
+code{background:var(--code);padding:.15em .4em;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--code);color:var(--fg)}
+ul,ol{padding-left:1.4em}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:20px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--bg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc)}
+.card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+</style></head>
+<body><div class="wrap">
+<nav><a href="index.html">← 報告書の一覧</a> ／ <a href="../index.html">結果一覧</a></nav>
+<h1 id="mbon07-ppl106">匂いだけで記憶を作る: MBON07 → PPL106 の設計</h1>
+<p>2026-11-23。<code>results/plan_three_pairs.md</code> で第一候補に決まった組の実験設計。
+解剖・遺伝学・EM の根拠は <a href="candidate_MBON07_PPL106.html">candidate_MBON07_PPL106.md</a> にある。
+ここは<strong>何をどう測るか</strong>だけを書く。</p>
+<h2 id="0">0. この組で何を主張するか</h2>
+<blockquote>
+<p><strong>匂いを嗅がせるだけで、電気ショックも砂糖も与えずに、24 時間残る記憶を作る。</strong></p>
+</blockquote>
+<p>これが成立すれば、人工シナプスが<strong>感覚入力を教師信号に変換した</strong>ことになる。
+強制活性ではなく自然な刺激で動くので、「配線を足したら脳が新しい計算をした」と言える。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>上流</strong></td>
+<td>MBON07 = MBON-α1。グルタミン酸。<strong>入力の 86% が KC</strong></td>
+</tr>
+<tr>
+<td><strong>下流</strong></td>
+<td>PPL106 = PPL1-α3。ドーパミン。α3 区画に 1,955 の出力</td>
+</tr>
+<tr>
+<td><strong>接触</strong></td>
+<td>SLP(R) 70%、SIP(R) 30%。37 µm（hemibrain）、左右とも 19 µm（male-CNS）</td>
+</tr>
+<tr>
+<td><strong>シナプス</strong></td>
+<td><strong>3 個体で両方向 0</strong></td>
+</tr>
+<tr>
+<td><strong>膜</strong></td>
+<td><strong>6,333 voxel / 72%。結合している対照の 2.44 倍</strong></td>
+</tr>
+<tr>
+<td><strong>系統</strong></td>
+<td><strong>MB319B〈GAL4〉× SL86062〈LexA〉。U × D = 1 組</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="1">1. なぜこの組か — 鎖の最初の環が他より強い</h2>
+<p>新しい基準は、<strong>匂い → 上流 → 人工シナプス → 下流 → 記憶</strong>という鎖を要求する。
+鎖の最初の環（匂いが上流を駆動するか）は、<strong>上流の入力のうち KC が占める割合</strong>で見られる。</p>
+<table>
+<thead>
+<tr>
+<th>上流</th>
+<th>KC 入力 / 全入力</th>
+<th>KC 率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBON07</strong></td>
+<td>25,650 / 29,682</td>
+<td><strong>86%</strong></td>
+</tr>
+<tr>
+<td>MBON02</td>
+<td>16,964 / 36,085</td>
+<td>47%</td>
+</tr>
+<tr>
+<td>MBON04</td>
+<td>6,649 / 33,084</td>
+<td>20%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>MBON07 の発火は、ほぼそのまま「いま何の匂いがしているか」である。</strong>
+しかも入力は α1(R) に 28,927 と、ほぼ 1 区画に集中している。
+ノイズの少ない匂い信号を人工シナプスに乗せられる。</p>
+<h2 id="2">2. 回路としての意味 — 区画をまたぐフィードバックを作る</h2>
+<p>キノコ体の区画には、<strong>その区画の MBON が、その区画の DAN に返す</strong>ループがある。</p>
+<table>
+<thead>
+<tr>
+<th>既存のループ</th>
+<th>シナプス</th>
+<th>働き</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON07(α1) → <strong>PAM11(α1)</strong></td>
+<td><strong>75</strong>（male-CNS 74）</td>
+<td>報酬性 LTM の固定化（Ichinose 2015）</td>
+</tr>
+<tr>
+<td>MBON14(α3) → <strong>PPL106(α3)</strong></td>
+<td>47</td>
+<td>α3 区画内のフィードバック</td>
+</tr>
+<tr>
+<td>MBON07(α1) → <strong>PPL106(α3)</strong></td>
+<td><strong>0</strong></td>
+<td><strong>無い。これを作る</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>区画内のフィードバックは普通にあるのに、区画をまたぐものは無い。</strong>
+作ろうとしているのは、<strong>α1 の読み出しが α3 の教師に口を出す経路</strong>である。</p>
+<p>意味が通る。α1 は報酬性 LTM の区画、α3 は長期記憶そのものに関わる区画なので、
+<strong>「報酬記憶の読み出しが、別の長期記憶系に書き込む」</strong>ことになる。</p>
+<p><strong>MBON07 が DAN を駆動できること自体は既に分かっている。</strong> PAM11 に 75 シナプス作っている。
+「この細胞は DAN とシナプスを作れないから 0 なのだ」という逃げ道は無い。</p>
+<h2 id="3">3. 符号は読めない。読めなくても実験は立つ</h2>
+<p><strong>不確実性が 2 つ重なっている。正直に書く。</strong></p>
+<h3 id="1_1">不確実性 1 — グルタミン酸の符号</h3>
+<p>PPL106 は既に 1,960 シナプス（11.6%）のグルタミン酸入力を受けているので<strong>受容体はある</strong>。
+だが GluClα（抑制性）か Nmdar・KaiR1D（興奮性）かは分からない。</p>
+<h3 id="2-ppl1-3">不確実性 2 — PPL1-α3 自体の価数が単純でない</h3>
+<table>
+<thead>
+<tr>
+<th>報告</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Takemura 2017</td>
+<td><strong>PPL1-α3 単独の光活性化が、匂い提示なしで接近反応を生じる</strong></td>
+</tr>
+<tr>
+<td>Tsao 2018</td>
+<td>PPL1-α3 の活性化が酵母探索を<strong>促進</strong></td>
+</tr>
+<tr>
+<td>Jacob 2021</td>
+<td>PPL1-α3 の阻害が pre-exposure 由来の<strong>忌避を接近に反転</strong>させる</td>
+</tr>
+</tbody>
+</table>
+<p><strong>「PPL1 だから罰」ではない。</strong> α3 は γ1pedc や α'2α2 とは違う。
+長期記憶が残るかどうかの<strong>ゲート</strong>に近い働きをしている可能性がある。</p>
+<h3 id="_1">だから主張を「記憶ができる」に置く</h3>
+<table>
+<thead>
+<tr>
+<th>人工シナプスが</th>
+<th>匂い提示中の PPL106</th>
+<th>予想される結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>興奮性</td>
+<td>発火が増える</td>
+<td>提示した匂いに 24 時間の記憶がつく</td>
+</tr>
+<tr>
+<td>抑制性</td>
+<td>発火が減る</td>
+<td>同じく記憶がつく（符号は逆）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>どちらでも「本来つかないはずの記憶がつく」。符号が変わるだけである。</strong>
+PPL1-DAN は自発発火しているので（Huang 2018 が PPL105 で 6〜10 Hz を実測）、
+<strong>発火が下がること自体が信号になる。</strong></p>
+<p><strong>予測を「嫌悪記憶ができる」と書いてはいけない。</strong>
+<strong>「提示した匂いへの選好が、対照の匂いに対して動く」</strong>と書く。
+動く向きは結果である。</p>
+<h2 id="4">4. 構成 — 系統とコンストラクト</h2>
+<h3 id="_2">系統（この組の最大の長所）</h3>
+<table>
+<thead>
+<tr>
+<th>役割</th>
+<th>系統</th>
+<th>発現系</th>
+<th>標識する型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上流 MBON07</td>
+<td><strong>MB319B</strong></td>
+<td>split-GAL4</td>
+<td><strong>MBON07 のみ</strong></td>
+</tr>
+<tr>
+<td>上流（代替）</td>
+<td>MB319C / MB323B</td>
+<td>split-GAL4</td>
+<td>MBON07 のみ</td>
+</tr>
+<tr>
+<td>下流 PPL106</td>
+<td><strong>SL86062</strong></td>
+<td>split-LexA</td>
+<td><strong>PPL106 のみ</strong></td>
+</tr>
+<tr>
+<td>下流（代替）</td>
+<td><strong>SL86050</strong></td>
+<td>split-LexA</td>
+<td>PPL106 のみ</td>
+</tr>
+</tbody>
+</table>
+<p><strong>U × D = 1 組。混同が原理的に存在しない。</strong> 本計画の候補でここまで清潔なのは
+この組と MBON31 → PAM11 だけ。GAL4 は 3 本、LexA は 2 本から選べる。</p>
+<p><strong>下流に SL86050 を選んでおくと、MBON02 → PPL106 と系統を共有できる</strong>
+（<code>results/plan_three_pairs.md</code> 6 節）。上流の GAL4 を差し替えるだけで 2 組目が走る。</p>
+<h3 id="_3">コンストラクト</h3>
+<p>上流が GAL4 なので、オーガナイザーの向きは素直。</p>
+<ul>
+<li><strong>UAS-Kirre</strong>（上流 MBON07）</li>
+<li><strong>LexAop-Hbs</strong>（下流 PPL106）。Sns より Hbs を選ぶ
+  — 全 22 クラスで最大 5% と背景がいちばん低い（<a href="receptor_check.html">receptor_check.md</a> 2.5 節）</li>
+<li>読み出し用に <strong>LexAop-GCaMP</strong>（段階 B）</li>
+<li>存在証明用に <strong>UAS-CsChrimson</strong>（段階 B'）</li>
+</ul>
+<p><strong>内在の Sns/Hbs は周囲のニューロンに無い</strong>ので、外来 Kirre が横取りされる心配は無い。
+留保は「外来 Kirre の過剰発現が内在 sns/hbs を誘導しないか」だけなので、
+<strong>過剰に強いドライバーは避ける。</strong></p>
+<h2 id="5">5. 段階</h2>
+<h3 id="a">段階 A — 解剖。シナプスができたか</h3>
+<p>光も匂いも使わない。syb-GRASP ＋ Brp で、PPL106 の SLP(R)・SIP(R) 側の後シナプス部位を数える。</p>
+<table>
+<thead>
+<tr>
+<th>群</th>
+<th>上流 MB319B〈GAL4〉</th>
+<th>下流 SL86062〈LexA〉</th>
+<th>役割</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>①完全</strong></td>
+<td>Kirre</td>
+<td>Hbs ＋ GCaMP</td>
+<td>本番</td>
+</tr>
+<tr>
+<td><strong>②変異</strong></td>
+<td>結合しない変異 Kirre</td>
+<td>Hbs ＋ GCaMP</td>
+<td>オーガナイザーの陰性対照</td>
+</tr>
+<tr>
+<td><strong>③下流のみ</strong></td>
+<td>なし</td>
+<td>Hbs ＋ GCaMP</td>
+<td>内在 Kirre の確認（陰性が予想）</td>
+</tr>
+<tr>
+<td><strong>④効果器のみ</strong></td>
+<td>なし</td>
+<td>GCaMP だけ</td>
+<td>背景</td>
+</tr>
+</tbody>
+</table>
+<p><strong>① &gt; ② が出れば成立。</strong> ③ は念のための確認で、関門ではない。</p>
+<h3 id="b-cschrimson">段階 B' — CsChrimson。先にやる存在証明</h3>
+<p><strong>匂いの実験より先に、強制活性で記憶ができることを示す。</strong></p>
+<p>理由は単純で、<strong>匂いの実験が陰性だったとき、原因が区別できなくなるから</strong>である。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>シナプスができなかった／下流を駆動できなかった</td>
+<td>B' で分かる</td>
+</tr>
+<tr>
+<td>シナプスはできたが匂いによる発火が弱かった</td>
+<td>B' が陽性なら、こちら</td>
+</tr>
+</tbody>
+</table>
+<p>手順は、<strong>赤色光で MBON07 を活性化しながら匂い A を提示 → 24 時間後に A と B の選択</strong>。
+retinal 給餌あり／なしの同腹で、遺伝子型を揃えた光対照が作れる。</p>
+<h3 id="b">段階 B — 生理。匂いで下流が動くか</h3>
+<p>下流に GCaMP。<strong>匂い A を提示して PPL106 の応答を見る。</strong></p>
+<table>
+<thead>
+<tr>
+<th>群</th>
+<th>予想</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①完全</td>
+<td><strong>応答が変わる</strong>（増えるか減るかは 3 節のとおり未定）</td>
+</tr>
+<tr>
+<td>②変異</td>
+<td>変わらない</td>
+</tr>
+<tr>
+<td>④効果器のみ</td>
+<td>変わらない</td>
+</tr>
+</tbody>
+</table>
+<p>ここが陽性なら、鎖の <strong>匂い → 上流 → シナプス → 下流</strong> まで繋がったことになる。
+残るのは記憶だけ。</p>
+<h3 id="c">段階 C — 行動。匂いだけで記憶ができるか</h3>
+<p><strong>これが本番。</strong></p>
+<p><strong>訓練: 匂い A を一定時間嗅がせる。それだけ。</strong>
+<strong>試験: 24 時間後に A と B の二択。</strong></p>
+<table>
+<thead>
+<tr>
+<th>群</th>
+<th>予想</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>①完全</strong></td>
+<td><strong>A への選好が B に対して動く</strong></td>
+</tr>
+<tr>
+<td>②変異</td>
+<td>動かない</td>
+</tr>
+<tr>
+<td>④効果器のみ</td>
+<td>動かない</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-c">6. 段階 C の設計で、いちばん気をつけること</h2>
+<p><strong>人工シナプスは常にある。</strong> つまり <strong>ハエが嗅いだすべての匂いが訓練になる。</strong>
+これは普通の条件づけと根本的に違う点で、設計に跳ね返る。</p>
+<table>
+<thead>
+<tr>
+<th>問題</th>
+<th>対処</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>飼育環境の匂いで既に記憶ができている</td>
+<td><strong>匂いの無い環境で飼育する。</strong> 餌の匂いも管理する</td>
+</tr>
+<tr>
+<td>「訓練していない」対照が作れない</td>
+<td><strong>匂い A を嗅がせた群と、匂い B を嗅がせた群</strong>を比べる。どちらも訓練されているが、互いの対照になる</td>
+</tr>
+<tr>
+<td>発生期から配線があると回路が作り変わる</td>
+<td><strong>GAL80ts で成虫期に限定する</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>逆に、これは強い予測を生む。</strong>
+<strong>特定の匂いの中で飼ったハエは、実験者が訓練しなくてもその匂いへの選好が変わっているはずである。</strong>
+これが出れば、人工シナプスが日常的に働いている証拠になる。狙って測る価値がある。</p>
+<h3 id="_4">必要な対照</h3>
+<table>
+<thead>
+<tr>
+<th>対照</th>
+<th>何を否定するか</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>②変異 Kirre</td>
+<td>オーガナイザー以外の要因</td>
+</tr>
+<tr>
+<td>匂い A 群 対 匂い B 群</td>
+<td>匂いそのものの性質</td>
+</tr>
+<tr>
+<td>3 分後・30 分後の試験</td>
+<td><strong>短期記憶が動いていないこと</strong>（α3 は長期側）</td>
+</tr>
+<tr>
+<td>GAL80ts で成虫期限定</td>
+<td>発生期の配線変化</td>
+</tr>
+<tr>
+<td>上流を MBON07 以外に替える</td>
+<td>MBON07 であることの必要性</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-mbon02-ppl106">7. 比較の相手 — MBON02 → PPL106</h2>
+<p>下流が同じ細胞（bodyId 331662710）で、<strong>LexA 系統も共有できる</strong>。
+上流の性格が逆なので、並べると意味が出る。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MBON07 → PPL106</th>
+<th>MBON02 → PPL106</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上流の区画</td>
+<td>α1（報酬性 LTM の読み出し）</td>
+<td>β2β'2a</td>
+</tr>
+<tr>
+<td>KC 率</td>
+<td><strong>86%</strong></td>
+<td>47%</td>
+</tr>
+<tr>
+<td>膜（同じ PPL106 に対して）</td>
+<td><strong>6,333 voxel / 72%</strong></td>
+<td><strong>289 voxel / 18%</strong></td>
+</tr>
+<tr>
+<td>立ち位置</td>
+<td>本命</td>
+<td>同じ下流に別の匂い情報を入れたらどうなるか</td>
+</tr>
+</tbody>
+</table>
+<p><strong>膜で 22 倍の差があるので、MBON02 は成功率が低い。</strong>
+だが系統の追加コストが上流 1 本だけなので、走らせる価値はある。</p>
+<h2 id="8">8. 否定されたときに何が言えるか</h2>
+<table>
+<thead>
+<tr>
+<th>段階</th>
+<th>陰性の意味</th>
+<th>次の手</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A: ① ≒ ②</td>
+<td>接着が作れていない</td>
+<td>接触 37 µm では足りない。MBON04 → PPL105（93 µm）へ</td>
+</tr>
+<tr>
+<td>B': 強制活性でも記憶が出ない</td>
+<td>シナプスはできたが放出部位になっていない</td>
+<td>Dsyd-1 の補強。PPL106 の受容体を確認</td>
+</tr>
+<tr>
+<td>B: 匂いで下流が動かない</td>
+<td>匂いによる MBON07 の発火が弱い</td>
+<td>上流を MBON01（KC 46%）に替える。または強い匂いで再試</td>
+</tr>
+<tr>
+<td>C: 生理は動くが記憶が出ない</td>
+<td><strong>PPL1-α3 の発火だけでは記憶が書けない</strong></td>
+<td><strong>これは陰性ではなく発見。</strong> KC 活動との時間的一致が要ることの証拠になる</td>
+</tr>
+<tr>
+<td>C: 短期記憶も動く</td>
+<td>α3 以外の経路が動いている</td>
+<td>②との差分で切り分け</td>
+</tr>
+</tbody>
+</table>
+<p><strong>段階 C の最後の行が重要</strong>で、ここが陰性でも「DAN を駆動するだけでは記憶にならない」
+という結論が残る。<strong>どちらに転んでも言えることがある設計になっている。</strong></p>
+<h2 id="9">9. 先に確かめること（安い順）</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>確認</th>
+<th>方法</th>
+<th>黒だったら</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>MBON07 の匂い応答</td>
+<td>GCaMP、MB319B。<strong>Ichinose 2015 の枠組みがそのまま使える</strong></td>
+<td>上流を替える</td>
+</tr>
+<tr>
+<td>2</td>
+<td>PPL106 のグルタミン酸受容体の符号</td>
+<td>既に PPL106 を駆動しているグルタミン酸入力源の符号から推定するのが早い。scRNA-seq は脱落が多い</td>
+<td>符号の予測を捨てる（3 節のとおり、捨てても実験は立つ）</td>
+</tr>
+<tr>
+<td>3</td>
+<td>SL86062 と SL86050 の発現範囲</td>
+<td>既知</td>
+<td>片方を使う</td>
+</tr>
+<tr>
+<td>4</td>
+<td>MB319B の発現強度</td>
+<td>既知</td>
+<td>MB319C / MB323B に替える</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_5">使ったデータ</h2>
+<ul>
+<li><strong>KC 入力率</strong>: hemibrain:v1.2.1。<code>fetch_simple_connections(None, ids)</code> の全入力から
+  <code>type_pre</code> が <code>KC</code> で始まるものの重みを合計（MBON07 は n=4）。</li>
+<li><strong>区画・ROI</strong>: hemibrain:v1.2.1 の <code>roiInfo</code>。MBON07 入力 α1(R) 28,927 /
+  出力 SLP(R) 818、PPL106 出力 α3(R) 1,955。</li>
+<li><strong>伝達物質</strong>: male-cns:v1.0 の <code>consensusNt</code>。</li>
+<li><strong>EM</strong>: <code>results/em_gap/best_per_pair.csv</code>。hemibrain v1.2 セグメンテーション、8 nm 等方。</li>
+<li><strong>系統・0 判定・接触</strong>: <code>results/shortlist_final.csv</code>、
+  <a href="candidate_MBON07_PPL106.html">candidate_MBON07_PPL106.md</a>。</li>
+<li>MBON07 = MBON-α1、PPL106 = PPL1-α3、MBON14 = MBON-α3、MBON02 = MBON-β2β'2a。</li>
+</ul>
+</div></body></html>
