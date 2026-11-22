@@ -79,7 +79,7 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 </tr>
 <tr>
 <td><strong>系統</strong></td>
-<td><strong>MB319B〈GAL4〉× SL86062〈LexA〉。U × D = 1 組</strong></td>
+<td><strong>MB319B〈GAL4〉× SL86050〈LexA〉。U × D = 1 組</strong></td>
 </tr>
 </tbody>
 </table>
@@ -233,23 +233,152 @@ PPL1-DAN は自発発火しているので（Huang 2018 が PPL105 で 6〜10 Hz
 </tr>
 <tr>
 <td>下流 PPL106</td>
-<td><strong>SL86062</strong></td>
+<td><strong>SL86050</strong></td>
 <td>split-LexA</td>
-<td><strong>PPL106 のみ</strong></td>
+<td><strong>PPL106 のみ</strong>（1 細胞、特異性 2）</td>
 </tr>
 <tr>
 <td>下流（代替）</td>
-<td><strong>SL86050</strong></td>
+<td>SL86062</td>
 <td>split-LexA</td>
-<td>PPL106 のみ</td>
+<td>PPL106 のみ。<strong>ただし「発現が弱い」と注記あり</strong></td>
 </tr>
 </tbody>
 </table>
 <p><strong>U × D = 1 組。混同が原理的に存在しない。</strong> 本計画の候補でここまで清潔なのは
 この組と MBON31 → PAM11 だけ。GAL4 は 3 本、LexA は 2 本から選べる。</p>
+<h3 id="_3">「特異性」の読み方 — 数が大きいほど良い</h3>
+<p><strong>特異性 = max(0, 3 − Quality)。</strong> Quality は Shuai 2024 / Meissner 2024 が各系統に付けた
+品質の評点で、<strong>1 が最良</strong>。これを「大きいほど良い」向きに直したのが特異性である
+（<code>match_drivers.py</code>）。</p>
+<table>
+<thead>
+<tr>
+<th>特異性</th>
+<th>元の Quality</th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>2</strong></td>
+<td>1</td>
+<td><strong>最良。これ以上は無い</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>中</td>
+</tr>
+<tr>
+<td><strong>0</strong></td>
+<td>3 以上</td>
+<td><strong>いちばん悪い</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>「特異性2」は「余計な型を 2 つ標識する」という意味ではない。</strong>
+余計に標識する型は <code>(+MBON01,MBON03)</code> のように括弧で書いてある。
+<strong>MB319B にはそれが無い。つまり MBON07 だけを標識する、最良評点の系統である。</strong></p>
+<table>
+<thead>
+<tr>
+<th>系統</th>
+<th>標識する型</th>
+<th>細胞数</th>
+<th>特異性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MB319B</strong>〈GAL4〉</td>
+<td><strong>MBON07 のみ</strong></td>
+<td>2</td>
+<td><strong>2（最良）</strong></td>
+</tr>
+<tr>
+<td><strong>SL86050</strong>〈LexA〉</td>
+<td><strong>PPL106 のみ</strong></td>
+<td>1</td>
+<td><strong>2（最良）</strong></td>
+</tr>
+<tr>
+<td>SL86062〈LexA〉</td>
+<td>PPL106 のみ</td>
+<td>1</td>
+<td>2。ただし<strong>「発現が弱い」と注記</strong></td>
+</tr>
+<tr>
+<td>SS01246〈GAL4〉</td>
+<td>PPL101 ＋ PPL106 ＋ ExR2</td>
+<td>4</td>
+<td><strong>0（最悪）</strong></td>
+</tr>
+<tr>
+<td>MB328B〈GAL4〉</td>
+<td>PPL103 ＋ PPL105 ＋ PPL106</td>
+<td>3</td>
+<td><strong>0（最悪）</strong></td>
+</tr>
+</tbody>
+</table>
+<p>ただし<strong>この評点と型の一覧は、注釈されている中枢神経系の細胞型についてのもの</strong>で、
+まばらな系統外発現がゼロであることまでは保証しない。</p>
+<h3 id="ss01246-mb328b">SS01246 / MB328B を使っていたら、論理は破綻していた</h3>
+<p><strong>使わないので杞憂ではある。だが「使えない」ことは確かめておく価値があった。</strong>
+これらは<strong>下流を GAL4 にする逆向きの構成</strong>でしか出てこない系統で、
+余計に標識する型が <strong>MBON07 のすぐ近くを通っている。</strong></p>
+<p>hemibrain の中心線で測った（0.5 µm 間隔、1 µm 以内のケーブル長、両側平均）。</p>
+<table>
+<thead>
+<tr>
+<th>MBON07 との関係</th>
+<th>接触 1 µm</th>
+<th>最短距離</th>
+<th>既存シナプス</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PPL106（目標）</strong></td>
+<td>44 µm</td>
+<td>0.10 µm</td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td><strong>PPL101</strong>（SS01246 が巻き込む）</td>
+<td><strong>26 µm</strong></td>
+<td><strong>0.16 µm</strong></td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>PPL103</strong>（MB328B が巻き込む）</td>
+<td><strong>62 µm</strong></td>
+<td><strong>0.05 µm</strong></td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>PPL105</strong>（MB328B が巻き込む）</td>
+<td><strong>255 µm</strong></td>
+<td><strong>0.06 µm</strong></td>
+<td><strong>14（結合している）</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>PPL103 は目標より接触が長く、PPL105 は 6 倍近い。</strong>
+オーガナイザーを載せれば、<strong>目標より先にそちらにシナプスができてもおかしくない。</strong></p>
+<p>破綻の中身は深刻である。</p>
+<ul>
+<li><strong>PPL101 = PPL1-γ1pedc（MB-MP1）</strong> は嫌悪記憶の教師信号そのもの。
+  ここに配線ができたら、記憶が α3 由来なのか γ1 由来なのか<strong>区別できない。</strong></li>
+<li><strong>PPL105 は MBON07 と既に 14 シナプスある</strong>ので、そもそも「0 の組」ですらない。</li>
+<li>ExR2 は hemibrain のこのデータセットに入っていないので<strong>未測定</strong>。</li>
+</ul>
+<p><strong>つまり下流に GAL4 を置く構成は、この組では採れない。</strong>
+<strong>MB319B〈GAL4〉＋ SL86050〈LexA〉で正しい。</strong> 心配したこと自体が、その選択の裏付けになる。</p>
 <p><strong>下流に SL86050 を選んでおくと、MBON02 → PPL106 と系統を共有できる</strong>
 （<code>results/plan_three_pairs.md</code> 6 節）。上流の GAL4 を差し替えるだけで 2 組目が走る。</p>
-<h3 id="_3">コンストラクト</h3>
+<h3 id="_4">コンストラクト</h3>
 <p>上流が GAL4 なので、オーガナイザーの向きは素直。</p>
 <ul>
 <li><strong>UAS-Kirre</strong>（上流 MBON07）</li>
@@ -281,38 +410,45 @@ PPL1-DAN は自発発火しているので（Huang 2018 が PPL105 で 6〜10 Hz
 <tr>
 <th>群</th>
 <th>上流 MB319B〈GAL4〉</th>
-<th>下流 SL86062〈LexA〉</th>
+<th>下流 SL86050〈LexA〉</th>
 <th>役割</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>①完全</strong></td>
-<td>Kirre</td>
-<td>Hbs ＋ GCaMP</td>
+<td>接着分子 ＋ Kirre</td>
+<td>接着分子の相方 ＋ GCaMP</td>
 <td>本番</td>
 </tr>
 <tr>
-<td><strong>②変異</strong></td>
-<td>結合しない変異 Kirre</td>
-<td>Hbs ＋ GCaMP</td>
-<td>オーガナイザーの陰性対照</td>
-</tr>
-<tr>
-<td><strong>③下流のみ</strong></td>
+<td><strong>②下流のみ</strong></td>
 <td>なし</td>
-<td>Hbs ＋ GCaMP</td>
-<td>内在 Kirre の確認（陰性が予想）</td>
+<td>接着分子の相方 ＋ GCaMP</td>
+<td>片側だけ。内在 Kirre の確認（陰性が予想）</td>
 </tr>
 <tr>
-<td><strong>④効果器のみ</strong></td>
+<td><strong>③効果器のみ</strong></td>
 <td>なし</td>
 <td>GCaMP だけ</td>
 <td>背景</td>
 </tr>
+<tr>
+<td><strong>①の 18°C 同腹</strong></td>
+<td>同じ遺伝子型。発現しない</td>
+<td>同じ</td>
+<td><strong>遺伝子型が同一の陰性対照</strong></td>
+</tr>
 </tbody>
 </table>
-<p><strong>① &gt; ② が出れば成立。</strong> ③ は念のための確認で、関門ではない。</p>
+<p><strong>① &gt; ①の 18°C 同腹</strong> が出れば成立。②は念のための確認で、関門ではない。</p>
+<blockquote>
+<p><strong>結合しない変異体の群は置かない。</strong> 陰性対照は
+<strong>トラック 1 では GAL80ts の 18°C 同腹、トラック 2 では光を当てない同腹</strong>で作れる。
+どちらも遺伝子型が完全に同一なので、変異体を作るより強い
+（<a href="optical_organizer.html">optical_organizer.md</a>）。
+なお <strong>Kirre は接着の本体ではなく、前側に共発現してシナプス形成の効率を上げるための補助</strong>である。</p>
+</blockquote>
 <h3 id="b-cschrimson">段階 B' — CsChrimson。先にやる存在証明</h3>
 <p><strong>匂いの実験より先に、強制活性で記憶ができることを示す。</strong></p>
 <p>理由は単純で、<strong>匂いの実験が陰性だったとき、原因が区別できなくなるから</strong>である。</p>
@@ -347,15 +483,15 @@ retinal 給餌あり／なしの同腹で、遺伝子型を揃えた光対照が
 </thead>
 <tbody>
 <tr>
-<td>①完全</td>
+<td>①完全（31°C）</td>
 <td><strong>応答が変わる</strong>（増えるか減るかは 3 節のとおり未定）</td>
 </tr>
 <tr>
-<td>②変異</td>
+<td>①の 18°C 同腹</td>
 <td>変わらない</td>
 </tr>
 <tr>
-<td>④効果器のみ</td>
+<td>③効果器のみ</td>
 <td>変わらない</td>
 </tr>
 </tbody>
@@ -459,7 +595,7 @@ retinal 給餌あり／なしの同腹で、遺伝子型を揃えた光対照が
 <li><strong>飼育環境の匂いによる飽和</strong>。配線がある期間を数日に限れば、
   その間の曝露だけが効く。</li>
 </ul>
-<p><strong>誘導にかける日数は段階 A で決める。</strong> 解剖で ① &gt; ② が出る最短の日数をそのまま使う。</p>
+<p><strong>誘導にかける日数は段階 A で決める。</strong> 解剖で ① &gt; 18°C 同腹 が出る最短の日数をそのまま使う。</p>
 <h3 id="63">6.3 曝露と試験のタイミング</h3>
 <p><strong>α3 は蛋白合成依存の長期記憶の区画である。</strong> だから設計を LTM 側に寄せる。</p>
 <table>
@@ -504,7 +640,7 @@ retinal 給餌あり／なしの同腹で、遺伝子型を揃えた光対照が
 これが α3 を経由した証拠になる。
 <strong>3 分後にも差が出たら、α3 以外の経路が動いている</strong>ので、解釈をやり直す。</p>
 <h3 id="64">6.4 群の構成</h3>
-<p><strong>遺伝子型は 3 つ、温度は 2 つ。6 群。</strong></p>
+<p><strong>遺伝子型は 2 つ、温度は 2 つ。4 群。</strong></p>
 <table>
 <thead>
 <tr>
@@ -517,27 +653,23 @@ retinal 給餌あり／なしの同腹で、遺伝子型を揃えた光対照が
 <tbody>
 <tr>
 <td><strong>①完全</strong></td>
-<td>MB319B&gt;Kirre ／ SL86062&gt;Hbs ／ tub-GAL80ts</td>
-<td>対照</td>
+<td>MB319B&gt;接着分子+Kirre ／ SL86050&gt;相方 ／ tub-GAL80ts</td>
+<td><strong>主要な対照</strong>（遺伝子型が同一）</td>
 <td><strong>本番</strong></td>
 </tr>
 <tr>
-<td><strong>②変異</strong></td>
-<td>結合しない変異 Kirre に差し替え</td>
-<td>対照</td>
-<td>オーガナイザーの陰性対照</td>
-</tr>
-<tr>
-<td><strong>④効果器のみ</strong></td>
-<td>Kirre も Hbs も無し</td>
+<td><strong>③効果器のみ</strong></td>
+<td>接着分子なし</td>
 <td>対照</td>
 <td>温度そのものの対照</td>
 </tr>
 </tbody>
 </table>
 <p>それぞれに相反設計（OCT 曝露 / MCH 曝露）が付くので、
-<strong>1 つの試験時点あたり 12 条件。</strong> 試験時点が 3 つなので 36 条件になる。</p>
-<p><strong>多い。だから単回曝露・24 時間だけで予備を回し、差が出てから全部に広げる。</strong></p>
+<strong>1 つの試験時点あたり 8 条件。</strong> 試験時点が 3 つなので 24 条件。</p>
+<p><strong>主要な比較は「①の 31°C 対 ①の 18°C」の 1 本。</strong> 遺伝子型が同一なので、ここが本体。
+③は温度そのものの影響を見るためだけに置く。</p>
+<p><strong>それでも多いので、単回曝露・24 時間だけで予備を回し、差が出てから広げる。</strong></p>
 <h3 id="65">6.5 対照が否定するもの</h3>
 <table>
 <thead>
@@ -552,11 +684,11 @@ retinal 給餌あり／なしの同腹で、遺伝子型を揃えた光対照が
 <td><strong>遺伝的背景、温度以外のすべて</strong>（いちばん強い）</td>
 </tr>
 <tr>
-<td>②変異 Kirre</td>
-<td>接着以外の要因（Kirre の発現そのものの影響）</td>
+<td>②下流のみ（片側だけ）</td>
+<td>内在 Kirre が相方を掴んでいないこと</td>
 </tr>
 <tr>
-<td>④効果器のみ</td>
+<td>③効果器のみ</td>
 <td>31°C そのものの影響</td>
 </tr>
 <tr>
@@ -623,7 +755,7 @@ MBON14 には別の系統が要るので後回しでよいが、
 予備実験（単回曝露・24 時間・3 遺伝子型 × 2 温度）で <strong>PI 約 60 個、ハエ約 5,000 匹</strong>。</p>
 <p>検定は、<strong>まず「①の 31°C」の PI が 0 と違うか</strong>（一標本）、
 次に <strong>①の 31°C 対 ①の 18°C</strong>（これが主要な比較）、
-そのうえで ②・④ との比較。多重比較の補正を入れる。</p>
+そのうえで ③ との比較。多重比較の補正を入れる。</p>
 <h3 id="68">6.8 つまずきそうなところ</h3>
 <table>
 <thead>
@@ -650,9 +782,9 @@ MBON14 には別の系統が要るので後回しでよいが、
 <td>単回曝露の結果と比べる。段階 B で応答の持続を見ておく</td>
 </tr>
 <tr>
-<td>Kirre の発現が MBON07 本来の出力を乱す</td>
+<td>接着分子・Kirre の発現が MBON07 本来の出力を乱す</td>
 <td>①の基礎行動が変わる</td>
-<td>18°C の同腹と②で切り分け。素朴な匂い選好を先に測る</td>
+<td>18°C の同腹で切り分け。素朴な匂い選好を先に測る</td>
 </tr>
 <tr>
 <td>効果が小さい</td>
@@ -714,7 +846,7 @@ T-maze の訓練より自然な条件なので、出たときの主張は強い�
 </thead>
 <tbody>
 <tr>
-<td>A: ① ≒ ②</td>
+<td>A: ① ≒ 18°C 同腹</td>
 <td>接着が作れていない</td>
 <td>接触 37 µm では足りない。MBON04 → PPL105（93 µm）へ</td>
 </tr>
@@ -746,7 +878,7 @@ T-maze の訓練より自然な条件なので、出たときの主張は強い�
 <tr>
 <td>C: 3 分後にも差が出る</td>
 <td>α3 以外の経路が動いている</td>
-<td>②と 18°C の同腹で切り分け</td>
+<td>18°C の同腹と③で切り分け</td>
 </tr>
 <tr>
 <td>C: 18°C の同腹でも差が出る</td>
@@ -782,9 +914,9 @@ T-maze の訓練より自然な条件なので、出たときの主張は強い�
 </tr>
 <tr>
 <td>3</td>
-<td>SL86062 と SL86050 の発現範囲</td>
-<td>既知</td>
-<td>片方を使う</td>
+<td>SL86050 の発現範囲</td>
+<td>既知（PPL106 のみ、特異性 2）。SL86062 は発現が弱いと注記あり</td>
+<td>代替に切り替える</td>
 </tr>
 <tr>
 <td>4</td>
@@ -794,7 +926,7 @@ T-maze の訓練より自然な条件なので、出たときの主張は強い�
 </tr>
 </tbody>
 </table>
-<h2 id="_4">使ったデータ</h2>
+<h2 id="_5">使ったデータ</h2>
 <ul>
 <li><strong>KC 入力率</strong>: hemibrain:v1.2.1。<code>fetch_simple_connections(None, ids)</code> の全入力から
   <code>type_pre</code> が <code>KC</code> で始まるものの重みを合計（MBON07 は n=4）。</li>

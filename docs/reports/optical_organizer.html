@@ -56,6 +56,9 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
    ここが黒なら光スイッチ版も黒なので、<strong>順序としてはこれが最初</strong>。</li>
 </ol>
 <p><strong>axon guidance への影響は「仕方ない」で済ませず、測っておく。</strong> 安い。</p>
+<p><strong>陰性対照に結合しない変異体は要らない。</strong> トラック 1 は <strong>GAL80ts の 18°C 同腹</strong>、
+トラック 2 は<strong>赤色光を当てない同腹</strong>で、どちらも遺伝子型が同一の対照になる（5 節）。
+発色団はビリベルジンなので、こちらも対照には使わない。</p>
 <h2 id="1">1. 波長が衝突する</h2>
 <table>
 <thead>
@@ -241,53 +244,46 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 ①が黒なら②の設計をやり直す（発現を長く・強くする、若い成虫で試す、など）。</p>
 <p>なお①は、トラック 1 の行動実験に<strong>遺伝子型が同一の対照</strong>を与えるので
 （<a href="design_MBON07_PPL106.html">design_MBON07_PPL106.md</a> 6.2 節）、どのみち作る価値がある。</p>
-<h2 id="5">5. 発色団 — どの光スイッチかで対照の作り方が変わる</h2>
-<p>赤（660 nm 前後）と遠赤（730 nm）で切り替わるのは<strong>フィトクロム系</strong>である。
-フィトクロムは<strong>ビリン色素を結合しないと光に応答しない。</strong> 2 系統ある。</p>
+<h2 id="5-bphp">5. 発色団 — BphP 系なので問題にならない</h2>
+<p><strong>細菌型フィトクロム（BphP）系を使う。発色団はビリベルジンで、動物はヘムから自前で作る。</strong>
+ハエの神経でも足りている傍証がある。<strong>Toshima ほかがハエの神経で <code>UAS-mIFP</code> を使っていて、
+ビリベルジンを補給した記載が無い</strong>（<code>results/literature/PPL105.csv</code>）。
+mIFP は BphP 由来でビリベルジンを発色団にするので、内在量で機能していることになる。</p>
+<p>植物型 PhyB なら PCB が要り、動物は作らないので給餌か SynPCB が必要になるが、
+<strong>その道は取らないので考えなくてよい。</strong></p>
+<p><strong>発色団で対照を作る必要も無い。</strong> <strong>赤色光を当てるか当てないかが、そのまま対照になる。</strong>
+同じ個体・同じ遺伝子型で、照射の有無だけが違う。retinal の給餌対照と同じ強さのものが、
+余計な操作なしに手に入る。</p>
 <table>
 <thead>
 <tr>
-<th>系統</th>
-<th>必要な発色団</th>
-<th>動物が自前で作れるか</th>
-<th>対照</th>
+<th>トラック</th>
+<th>陰性対照</th>
+<th>遺伝子型</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>植物型 PhyB</strong>（PhyB–PIF など）</td>
-<td><strong>PCB</strong>（フィコシアノビリン）</td>
-<td><strong>作れない</strong></td>
-<td><strong>給餌あり／なしで遺伝子型同一の対照が作れる</strong></td>
+<td><strong>1（常時接着型）</strong></td>
+<td><strong>GAL80ts の 18°C 同腹</strong></td>
+<td><strong>同一</strong></td>
 </tr>
 <tr>
-<td><strong>細菌型 BphP</strong>（BphP1 など）</td>
-<td><strong>ビリベルジン</strong></td>
-<td><strong>ヘムから作る</strong></td>
-<td>発色団による対照は作れない</td>
+<td><strong>2（光スイッチ型）</strong></td>
+<td><strong>赤色光を当てない同腹</strong></td>
+<td><strong>同一</strong></td>
 </tr>
 </tbody>
 </table>
-<p><strong>どちらを使うかで、実験の作りがかなり変わる。</strong></p>
-<ul>
-<li><strong>PCB 系なら</strong>、CsChrimson の retinal とまったく同じ構図になる。
-  <strong>同腹の給餌あり／なし</strong>で、遺伝子型が完全に同一の「スイッチが働く／働かない」対照が作れる。
-  これは強い。ただし <strong>PCB をハエに行き渡らせられるか</strong>は自明でない。
-  細胞培養や魚では外から足している
-  （<a href="https://www.pnas.org/doi/10.1073/pnas.1707190114">PNAS 2017</a>、
-  <a href="https://link.springer.com/protocol/10.1007/978-1-4939-9009-2_10">Springer protocol</a>）。
-  <strong>SynPCB</strong>（PCB を細胞内で合成させる遺伝子セット）という手もあり、
-  神経・筋・腸で PhyB–PIF3 を光スイッチするのに十分な量ができたという報告がある
-  （<a href="https://www.biorxiv.org/content/10.1101/2020.01.15.908343v1.full">bioRxiv 2020</a>）。</li>
-<li><strong>ビリベルジン系なら</strong>発色団の心配は小さい。
-  <strong>ハエの神経でビリベルジン依存の mIFP が実際に光っている</strong>
-  （Toshima ほかが <code>UAS-mIFP</code> を使っていて、ビリベルジン補給の記載が無い —
-  <code>results/literature/PPL105.csv</code>）。
-  内在のビリベルジンで足りている傍証になる。
-  そのかわり<strong>発色団を使った対照は作れない</strong>ので、
-  対照は「光を当てない」「結合しない変異体」で作ることになる。</li>
-</ul>
-<p><strong>ここは構築に入る前に決める項目。</strong> 決まれば対照の設計が決まる。</p>
+<p><strong>どちらのトラックも、遺伝子型が完全に同一の陰性対照を持てる。</strong>
+<strong>結合しない変異体を作る必要は無い。</strong></p>
+<blockquote>
+<p><strong>Kirre の位置づけ</strong>: Kirre は接着の本体ではなく、<strong>前側に共発現してシナプス形成の効率を
+上げるための補助</strong>である。内在の Kirre があれば足りるかもしれず、
+無くても Dsyd-1 があれば働くと考えられる。
+したがって <strong>Kirre の変異体を陰性対照に使う設計は要らない。</strong>
+陰性対照は上の表のとおり、光と温度で作る。</p>
+</blockquote>
 <h2 id="6-axon-guidance">6. axon guidance は「許容」ではなく「測る」</h2>
 <p>トラック 1 では発生期から接着分子が乗るので、影響は避けられない。
 <strong>避けられないからこそ、どう変わったかを記録しておく。</strong> 後から効いてくる。</p>
@@ -452,10 +448,10 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <ul>
 <li>CsChrimson の波長はこの計画で既に使っている前提（行動では 617〜660 nm）。
   730 nm では実質的に駆動されない。</li>
-<li>フィトクロムの発色団:
-  <a href="https://www.pnas.org/doi/10.1073/pnas.1707190114">Efficient synthesis of phycocyanobilin in mammalian cells (PNAS 2017)</a>、
-  <a href="https://www.biorxiv.org/content/10.1101/2020.01.15.908343v1.full">SynPCB (bioRxiv 2020)</a>、
-  <a href="https://link.springer.com/protocol/10.1007/978-1-4939-9009-2_10">Optogenetic control in vertebrate embryos (protocol)</a>。</li>
+<li>発色団: BphP 系はビリベルジン（動物がヘムから作る）。
+  植物型 PhyB は PCB が要るが、今回は使わない
+  （参考: <a href="https://www.pnas.org/doi/10.1073/pnas.1707190114">PNAS 2017</a>、
+  <a href="https://www.biorxiv.org/content/10.1101/2020.01.15.908343v1.full">SynPCB (bioRxiv 2020)</a>）。</li>
 <li>ハエ神経での <code>UAS-mIFP</code> の使用例: <code>results/literature/PPL105.csv</code>（Toshima ほか、PMC13675010）。</li>
 <li>対象ペアと系統: <a href="plan_three_pairs.html">plan_three_pairs.md</a>、
   <a href="design_MBON07_PPL106.html">design_MBON07_PPL106.md</a>。</li>
