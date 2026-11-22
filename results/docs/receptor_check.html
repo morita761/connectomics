@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>受容体と Kirre・Dsyd-1 をどう確認するか</title><style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px}
+nav{font-size:.9rem;color:var(--sub);margin-bottom:18px}
+nav a{color:var(--acc);text-decoration:none}nav a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.35;border-bottom:2px solid var(--line);padding-bottom:.4em;margin-top:1.2em}
+h2{font-size:1.25rem;margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.05rem;margin-top:1.6em}
+a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600;white-space:nowrap}
+code{background:var(--code);padding:.15em .4em;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--code);color:var(--fg)}
+ul,ol{padding-left:1.4em}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:20px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--bg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc)}
+.card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+</style></head>
+<body><div class="wrap">
+<nav><a href="index.html">← 報告書の一覧</a> ／ <a href="../index.html">結果一覧</a></nav>
+<h1 id="kirredsyd-1">受容体と Kirre・Dsyd-1 をどう確認するか</h1>
+<p>2026-11-22。<a href="direction_MBON04_PPL105.html">direction_MBON04_PPL105.md</a> 6 節で
+「先に片付けるべきこと」と書いた受容体チェックを実際にやった。</p>
+<p><strong>結論から言うと、問いと道具が逆だった。</strong></p>
+<table>
+<thead>
+<tr>
+<th>問い</th>
+<th>性質</th>
+<th>解ける道具</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>下流に受容体があるか</td>
+<td><strong>サブタイプ別</strong>の問い</td>
+<td>scRNA-seq では解けない。<strong>コネクトームで解ける</strong></td>
+</tr>
+<tr>
+<td>Kirre・Sns・Hbs・Dsyd-1 があるか</td>
+<td><strong>クラス単位</strong>の問い</td>
+<td><strong>scRNA-seq で解ける</strong></td>
+</tr>
+</tbody>
+</table>
+<p>そして受容体は <strong>全候補すでに合格していた。</strong></p>
+<h2 id="1">1. 受容体 — コネクトームが答えになっている</h2>
+<p>下流の細胞が「その伝達物質のシナプスをすでに何百本も受けている」なら、
+<strong>受容体は必ずある。</strong> 新しく作る入力と同じ種類の入力を、その細胞はもう使っている。</p>
+<p>male-cns:v1.0 で、各下流細胞の入力を上流の伝達物質別に数えた。</p>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>上流の伝達物質</th>
+<th>必要な受容体</th>
+<th>下流がすでに受けている同種の入力</th>
+<th>判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBON31 → PAM11</strong></td>
+<td>GABA</td>
+<td>GABA-A (Rdl) / GABA-B</td>
+<td><strong>659 シナプス（4.2%）</strong></td>
+<td>○</td>
+</tr>
+<tr>
+<td><strong>MBON04 → PPL105</strong></td>
+<td>グルタミン酸</td>
+<td>GluClα / DmGluRA</td>
+<td><strong>1,770（10.2%）</strong></td>
+<td>◎</td>
+</tr>
+<tr>
+<td>MBON07 → PPL106</td>
+<td>グルタミン酸</td>
+<td>同</td>
+<td>1,970（11.5%）</td>
+<td>◎</td>
+</tr>
+<tr>
+<td>PPL105 → MBON04</td>
+<td>ドーパミン</td>
+<td>Dop1R1 / Dop1R2 / Dop2R</td>
+<td><strong>2,055（9.8%）</strong></td>
+<td>◎</td>
+</tr>
+<tr>
+<td>AVLP478 → DNp06</td>
+<td>GABA</td>
+<td>Rdl</td>
+<td>8,883（21.3%）</td>
+<td>◎</td>
+</tr>
+<tr>
+<td>MBON04 → FB4N</td>
+<td>グルタミン酸</td>
+<td>GluClα</td>
+<td>2,849（23.8%）</td>
+<td>◎</td>
+</tr>
+</tbody>
+</table>
+<p>内訳の全体（参考）:</p>
+<table>
+<thead>
+<tr>
+<th>下流</th>
+<th>入力合計</th>
+<th>ACh</th>
+<th>グルタミン酸</th>
+<th>GABA</th>
+<th>ドーパミン</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PAM11</td>
+<td>15,876</td>
+<td>82.2%</td>
+<td>7.3%</td>
+<td><strong>4.2%</strong></td>
+<td>4.6%</td>
+</tr>
+<tr>
+<td>PPL105</td>
+<td>17,272</td>
+<td>83.4%</td>
+<td><strong>10.2%</strong></td>
+<td>2.8%</td>
+<td>3.0%</td>
+</tr>
+<tr>
+<td>PPL106</td>
+<td>17,120</td>
+<td>83.4%</td>
+<td><strong>11.5%</strong></td>
+<td>2.1%</td>
+<td>1.3%</td>
+</tr>
+<tr>
+<td>MBON04</td>
+<td>20,894</td>
+<td>57.9%</td>
+<td>19.6%</td>
+<td>10.4%</td>
+<td><strong>9.8%</strong></td>
+</tr>
+<tr>
+<td>DNp06</td>
+<td>41,753</td>
+<td>72.4%</td>
+<td>5.8%</td>
+<td><strong>21.3%</strong></td>
+<td>0.1%</td>
+</tr>
+<tr>
+<td>FB4N</td>
+<td>11,963</td>
+<td>56.5%</td>
+<td><strong>23.8%</strong></td>
+<td>13.7%</td>
+<td>2.4%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>受容体はどの候補でも障害にならない。</strong>
+scRNA-seq より確実でもある。受容体の転写産物は発現量が低くて dropout しやすく、
+「検出されなかった」が「無い」を意味しない。
+コネクトームの入力内訳は<strong>機能しているシナプスを数えている</strong>ので、この弱点が無い。</p>
+<h3 id="_1">ただし残る問い</h3>
+<p>コネクトームでは<strong>受容体の種類</strong>が分からない。符号と時間スケールが変わる。</p>
+<table>
+<thead>
+<tr>
+<th>伝達物質</th>
+<th>速い（イオン型）</th>
+<th>遅い（代謝型）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GABA</td>
+<td><strong>Rdl</strong>（GABA-A、抑制）</td>
+<td>GABA-B-R1/R2/R3（抑制）</td>
+</tr>
+<tr>
+<td>グルタミン酸</td>
+<td><strong>GluClα</strong>（抑制）／ Nmdar1・KaiR1D（興奮）</td>
+<td>DmGluRA（抑制）</td>
+</tr>
+<tr>
+<td>ドーパミン</td>
+<td>—</td>
+<td>Dop1R1・Dop1R2（興奮寄り）／ Dop2R（抑制）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>グルタミン酸は符号が決まらない</strong>のが問題。GluClα なら抑制、Nmdar なら興奮。
+GABA は Rdl でも GABA-B でも<strong>抑制</strong>なので、<strong>MBON31 → PAM11 は符号が一つに決まる</strong>。
+これが技術実証にこの組を推す理由のひとつ
+（<a href="techdemo_MBON31_PAM11.html">techdemo_MBON31_PAM11.md</a> 0 節）。</p>
+<h2 id="2-kirre-dsyd-1-flybase">2. Kirre と Dsyd-1 — FlyBase で分かったこと</h2>
+<h3 id="kirre">Kirre</h3>
+<p><strong>FBgn0028369 / CG3653 / kin of irre。別名 duf, dumbfounded。</strong>
+遺伝子グループは <strong>HBS-KIRRE 接着複合体</strong>と <strong>SNS-KIRRE 接着複合体</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>証拠</th>
+<th>中身</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>成虫頭部</td>
+<td>質量分析でタンパク検出（Aradska 2015）</td>
+</tr>
+<tr>
+<td>成虫視葉</td>
+<td>レポーター P{GawB}kirre-rP298 がメデュラ M2–M4 層。蛹後期から成虫まで</td>
+</tr>
+<tr>
+<td>成虫中枢脳</td>
+<td><strong>記載が無い</strong></td>
+</tr>
+<tr>
+<td>単一細胞 RNA-seq</td>
+<td><strong>三齢幼虫の飛翔筋前駆細胞だけ</strong>（Zappia 2020）。成虫脳ニューロンは無し</td>
+</tr>
+<tr>
+<td>Fly Cell Atlas</td>
+<td>FlyBase の遺伝子ページには出てこない</td>
+</tr>
+</tbody>
+</table>
+<p>→ <strong>中枢脳ニューロンではほぼ発現していないと見てよい。</strong>
+外来 Kirre の背景が低いので、接着の特異性という点では<strong>好都合</strong>。</p>
+<p><strong>ただし確認すべきは Kirre だけではない。Kirre の結合相手は Sns と Hbs。</strong>
+近傍の細胞が Sns か Hbs を出していれば、
+<strong>外来 Kirre が意図しない相手に貼り付く。</strong>
+<code>sns</code> と <code>hbs</code> も一緒に引くべき。これが抜けると、
+<a href="driver_overlap_PPL105_MBON04.html">driver_overlap_PPL105_MBON04.md</a> で調べた
+「ドライバーの標識範囲による混同」とは別種の交絡が残る。</p>
+<h3 id="dsyd-1">Dsyd-1</h3>
+<p><strong>FBgn0039883 / CG1976 / Rho GTPase activating protein at 100F。
+別名 Syd-1, DSyd-1, RhoGAP100F, synapse defective-1。</strong></p>
+<table>
+<thead>
+<tr>
+<th>証拠</th>
+<th>中身</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>成虫脳 in situ</td>
+<td><strong>キノコ体に限局して発現</strong>。前シナプスマーカー brp と共局在（Owald 2010）</td>
+</tr>
+<tr>
+<td>免疫染色</td>
+<td>成虫キノコ体 calyx の Kenyon 細胞に、活性帯の点状シグナル（Christiansen 2011）</td>
+</tr>
+<tr>
+<td>成虫頭部</td>
+<td>ウエスタンで 195 kDa のタンパク</td>
+</tr>
+<tr>
+<td>その他</td>
+<td>胚 CNS、幼虫 NMJ、前蛹の足関節</td>
+</tr>
+<tr>
+<td>単一細胞 RNA-seq</td>
+<td><strong>記載が無い</strong></td>
+</tr>
+</tbody>
+</table>
+<p>→ <strong>キノコ体系の細胞には native にある見込み。</strong>
+Dsyd-1 は前シナプスの活性帯を組み立てる因子なので、
+<strong>上流に「ある」方が都合が良い</strong>（無いと接着しても放出部位が熟さない）。
+MBON31・PAM11・MBON04・PPL105 はいずれも MB 系なので有利。</p>
+<p>ただし Owald 2010 / Christiansen 2011 の記載は <strong>Kenyon 細胞と calyx</strong> についてで、
+MBON や DAN で確認されたわけではない。</p>
+<h3 id="_2">どちらが「無い」と都合が良いか</h3>
+<table>
+<thead>
+<tr>
+<th>分子</th>
+<th>望ましい状態</th>
+<th>理由</th>
+<th>現状の見込み</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kirre</strong></td>
+<td><strong>両方の細胞に無い</strong></td>
+<td>外来 Kirre だけが接着を作る。背景があると特異性が落ちる</td>
+<td>○ 中枢脳で未検出</td>
+</tr>
+<tr>
+<td><strong>Sns / Hbs</strong></td>
+<td><strong>近傍の細胞に無い</strong></td>
+<td>あると外来 Kirre が余計な相手に貼る</td>
+<td><strong>未確認。ここを引くべき</strong></td>
+</tr>
+<tr>
+<td><strong>Dsyd-1</strong></td>
+<td><strong>上流にある</strong></td>
+<td>活性帯を組めないと放出部位にならない</td>
+<td>○ 成虫 MB に発現</td>
+</tr>
+</tbody>
+</table>
+<p><strong>つまり理想的な組み合わせ</strong> — 接着分子は背景が無く、活性帯の因子は native にある。
+ただし FlyBase の根拠は in situ とレポーターで、
+MBON/DAN サブタイプ別には決まっていない。</p>
+<h2 id="3-scrna-seq">3. scRNA-seq の引き方（クラス単位なら解ける）</h2>
+<h3 id="_3">使えるデータ</h3>
+<table>
+<thead>
+<tr>
+<th>データ</th>
+<th>中身</th>
+<th>解像度</th>
+<th>入口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fly Cell Atlas（head）</td>
+<td>成虫頭部 snRNA-seq、580k 核 / 15 組織</td>
+<td>&gt;250 細胞型だが脳は広いクラス</td>
+<td>SCope ／ flycellatlas.org</td>
+</tr>
+<tr>
+<td>Davie 2018 <em>Cell</em></td>
+<td>成虫脳 約 157,000 細胞</td>
+<td>クラスタ単位</td>
+<td>SCope</td>
+</tr>
+<tr>
+<td>Croset 2018 <em>eLife</em> 34550</td>
+<td>成虫中脳</td>
+<td><strong>KC・MBON・DAN のクラスタ注釈あり</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Ma 2023 <em>Sci Adv</em> 9:eade8500</strong></td>
+<td>TH-GAL4 で分取した DAN の scRNA-seq、9,025 細胞 / <strong>24 の DAN クラスタ</strong></td>
+<td><strong>DAN サブタイプに最も近い</strong></td>
+<td>本文の図 + Table S2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ma-2023">Ma 2023 の限界（重要）</h3>
+<ul>
+<li><strong>TH-GAL4 は PAM を 1 半球あたり 13 個しか標識しない。PAM の大半が入っていない。</strong>
+  → <strong>PAM11 は引けない可能性が高い。</strong></li>
+<li>名前つきサブタイプの割り当ては暫定。クラスタ 28 が
+  「PPL1-α3 と PPL1-γ2α'2 に対応」とされる → <strong>PPL106（α3）はここに入る見込み</strong>。
+  Nos を出すクラスタ 19・26 が PPL1-γ1pedc と PAM-γ5 とされる。</li>
+<li>扱っている細胞表面分子は <strong>dpr / DIP 族が中心</strong>。
+  <strong>kirre・rst・sns・hbs は本文に出てこない。</strong></li>
+<li>受容体も Rdl・GluCl・Dop1R1 等は本文に名前が出ない（GPCR 全般の議論のみ）。</li>
+</ul>
+<h3 id="_4">引く遺伝子</h3>
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>遺伝子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>接着（オーガナイザー）</td>
+<td><strong>kirre, rst, sns, hbs</strong></td>
+</tr>
+<tr>
+<td>活性帯</td>
+<td><strong>RhoGAP100F (Syd-1)</strong>, liprin-alpha, brp, Unc-13, Rim</td>
+</tr>
+<tr>
+<td>GABA 受容体</td>
+<td><strong>Rdl</strong>, Lcch3, Grd, GABA-B-R1, GABA-B-R2, GABA-B-R3</td>
+</tr>
+<tr>
+<td>グルタミン酸受容体</td>
+<td><strong>GluClalpha</strong>, mGluR (DmGluRA), Nmdar1, Nmdar2, KaiR1D, clumsy</td>
+</tr>
+<tr>
+<td>ドーパミン受容体</td>
+<td><strong>Dop1R1, Dop1R2, Dop2R</strong>, DopEcR</td>
+</tr>
+</tbody>
+</table>
+<h3 id="api">公開 API は無い</h3>
+<ul>
+<li><strong>atlasapprox</strong>（api.atlasapprox.org）は <code>d_melanogaster</code> を持つが、
+  臓器が antenna・gut・leg などで <strong>brain / head が無い</strong>。使えない。</li>
+<li><strong>FlyBase は scRNA-seq の値を自前で持たない。</strong>
+  EMBL-EBI の Single Cell Expression Atlas と DRscDB にリンクするだけで、
+  遺伝子ページには値が出ない。</li>
+<li>→ <strong>SCope を手で引くのが現実的。</strong> 自動化はできない。</li>
+</ul>
+<h2 id="4-scrna-seq">4. scRNA-seq で決まらないときの代替 — こちらが本線</h2>
+<p>受容体も Kirre も、最終的には <strong>in vivo のレポーターと機能</strong>で決める方が速い。</p>
+<ol>
+<li><strong>T2A-GAL4 / MiMIC-GFP ノックイン系統</strong> — Rdl・Dop1R1・GluClα には既存の系統がある。
+   ドライバーと掛けて共局在を見る。発現量ではなく「その細胞にあるか」が直接分かる。</li>
+<li><strong>抗体染色</strong> — Brp（nc82）は必須。新生シナプスの活性帯を見る標準。</li>
+<li><strong>RNAi ノックダウン + 行動</strong> — 「受容体があるか」ではなく
+   「その受容体が効いているか」を直接問える。最終的な証明はこれ。</li>
+<li><strong>そもそも生理の実験が答えになる</strong> —
+   上流 CsChrimson → 下流 GCaMP で応答が出れば、受容体は「ある」。</li>
+</ol>
+<p>→ <strong>受容体チェックは候補の順位づけに使うもので、プロジェクトを止める関門ではない。</strong>
+<a href="direction_MBON04_PPL105.html">direction_MBON04_PPL105.md</a> 7 節の順番のうち、
+1（受容体）は 1 節で済み、<strong>残るのは Sns / Hbs の確認だけ</strong>。</p>
+<h2 id="_5">使ったデータ</h2>
+<ul>
+<li>入力の伝達物質内訳: male-cns:v1.0 の <code>consensusNt</code> と <code>ConnectsTo</code> の <code>weight</code></li>
+<li>Kirre: FlyBase <a href="https://flybase.org/reports/FBgn0028369">FBgn0028369</a></li>
+<li>Dsyd-1: FlyBase <a href="https://flybase.org/reports/FBgn0039883">FBgn0039883</a></li>
+<li>Ma H, et al. (2023) <em>Sci Adv</em> 9:eade8500
+  — 時計ニューロンと DAN の細胞型は接着分子でいちばんよく分かれる</li>
+<li>Owald D, et al. (2010) <em>J Cell Biol</em>; Christiansen F, et al. (2011) <em>J Neurosci</em>
+  — Dsyd-1 の成虫キノコ体での発現</li>
+</ul>
+</div></body></html>

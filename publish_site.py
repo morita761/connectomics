@@ -176,6 +176,10 @@ def main():
         '<span>全脳探索の第一候補</span></a>',
         '<a class="card" href="reports/direction_MBON04_PPL105.html"><b>どちら向きにするか</b>'
         '<span>伝達物質と放出部位から決める ／ 行動実験の設計</span></a>',
+        '<a class="card" href="reports/techdemo_MBON31_PAM11.html"><b>技術実証: MBON31 → PAM11</b>'
+        '<span>行動で「働いた」と示すならこの組 ／ 2×2 の設計</span></a>',
+        '<a class="card" href="reports/receptor_check.html"><b>受容体と Kirre・Dsyd-1</b>'
+        '<span>受容体はコネクトームで片が付く ／ 残るのは Sns・Hbs</span></a>',
         '<a class="card" href="shortlist.html"><b>★ 最終候補の一覧</b>'
         '<span>3 個体で確かめた組</span></a>',
         f'<a class="card" href="reports/em_links_MBON04_PPL105.html"><b>EM と 3D のリンク</b>'
