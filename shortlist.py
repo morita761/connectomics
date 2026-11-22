@@ -22,6 +22,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from common import driver_names
 from common.runner import ROOT
 
 REGIONS = {"mb_all": "キノコ体", "lh": "外側角", "cx": "中心複合体", "vis": "視覚", "al": "触角葉",
@@ -62,6 +63,10 @@ def drivers() -> pd.DataFrame:
     d = pd.concat([pd.read_csv(f) for f in sorted((ROOT / "data").glob("driver_lines*.csv"))], ignore_index=True)
     d["type"] = d.em_types.astype(str).str.split(";")
     d = d.explode("type")
+    # 出典によって細胞の呼び方が違う（Aso 2014 は `MBON-α1`、Shuai 2024 は `MBON07`）。
+    # hemibrain の型名に揃えないと、区画名で書かれた系統が候補から漏れる。
+    cmap = driver_names.load()
+    d["type"] = [driver_names.to_type(x, cmap) for x in d["type"]]
     d["n_types"] = pd.to_numeric(d.n_types, errors="coerce").fillna(1)
     return d
 
@@ -70,7 +75,19 @@ def is_lexa(system) -> bool:
     return "lexa" in str(system).lower()
 
 
-def best(d: pd.DataFrame, t: str, k: int = 2, want_lexa: bool | None = None) -> str:
+def bdsc() -> dict[str, str]:
+    """BDSC の在庫番号。data/bdsc_stocks.csv に手で調べた分だけ入っている。
+
+    空欄 = 調べて 0 件だった。表に無い系統 = まだ調べていない（results/stocks_bdsc.md）。
+    """
+    f = ROOT / "data" / "bdsc_stocks.csv"
+    if not f.exists():
+        return {}
+    d = pd.read_csv(f, dtype=str).fillna("")
+    return {r.line: r.bdsc for r in d.itertuples(index=False)}
+
+
+def best(d: pd.DataFrame, t: str, k: int = 3, want_lexa: bool | None = None) -> str:
     """そのタイプの系統を、標識タイプ数が少なく特異性が高い順に。want_lexa で LexA 系 / GAL4 系を絞る。"""
     h = d[d.type == t]
     if want_lexa is not None:
@@ -81,15 +98,24 @@ def best(d: pd.DataFrame, t: str, k: int = 2, want_lexa: bool | None = None) -> 
     # 特異性（= 3 - Quality）は発現の強さを見ていないので、評点が最良でも
     # オーガナイザーや効果器を十分に出せないことがある。表示にも〈弱〉を付ける。
     weak = h.note.astype(str).str.contains("weak", case=False, na=False)
-    h = h.assign(_s=h.specificity.fillna(-1), weak_flag=weak.astype(int))
-    h = h.sort_values(["n_types", "weak_flag", "_s"], ascending=[True, True, False])
+    # BDSC にあるものを、同点なら先に出す。注文できるかどうかは実務で効く
+    stock = bdsc()
+    h = h.assign(_s=h.specificity.fillna(-1), weak_flag=weak.astype(int),
+                 _nostock=[0 if stock.get(l) else 1 for l in h.line])
+    h = h.sort_values(["n_types", "weak_flag", "_s", "_nostock"],
+                      ascending=[True, True, False, True])
+    h = h.drop_duplicates("line")  # 同じ系統が複数の出典ファイルに載っていることがある
+    cmap = driver_names.load()
     out = []
     for r in h.head(k).itertuples(index=False):
-        extra = [x for x in str(r.em_types).split(";") if x != t]
+        # 余計に標識する型。出典が区画名で書いていても hemibrain の型名に直してから比べる
+        extra = [driver_names.to_type(x, cmap) for x in str(r.em_types).split(";")]
+        extra = [x for x in extra if x != t]
         sysname = "LexA" if is_lexa(r.system) else "GAL4"
         out.append(f"{r.line}〈{sysname}〉" + (f"(+{','.join(extra)})" if extra else "")
                    + ("" if pd.isna(r.specificity) else f"[特異性{int(r.specificity)}]")
-                   + ("〈弱〉" if r.weak_flag else ""))
+                   + ("〈弱〉" if r.weak_flag else "")
+                   + (f"〈BDSC {stock[r.line]}〉" if stock.get(r.line) else ""))
     return " / ".join(out)
 
 

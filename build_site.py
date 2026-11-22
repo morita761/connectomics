@@ -25,6 +25,7 @@ import pandas as pd
 
 from common.config import Thresholds
 from common.model import Dataset
+from common import driver_names
 from common.runner import ROOT
 from compare_methods import SHORT, load_pairs
 
@@ -88,6 +89,9 @@ def make_3d(ds: Dataset, pairs: list[tuple[int, int]], out_dir: Path, th: Thresh
             render(ds, a, b, th, f)
 
 
+_CMAP = driver_names.load()
+
+
 def driver_rows(types: set[str]) -> list[dict]:
     parts = []
     f = ROOT / "drivers.csv"  # 手で調べた分
@@ -98,7 +102,10 @@ def driver_rows(types: set[str]) -> list[dict]:
         d = pd.read_csv(g)
         d["type"] = d.em_types.astype(str).str.split(";")
         d = d.explode("type")
-        others = d.apply(lambda r: [t for t in str(r.em_types).split(";") if t != r.type], axis=1)
+        # 区画名（Aso 2014 の `MBON-α1` など）を hemibrain の型名に揃える
+        d["type"] = [driver_names.to_type(x, _CMAP) for x in d["type"]]
+        others = d.apply(lambda r: [t for t in str(r.em_types).split(";")
+                                    if driver_names.to_type(t, _CMAP) != r.type], axis=1)
         d["expression"] = [
             (f"{desc}" + (f"（ほかに {', '.join(o)} も標識）" if o else "（このタイプのみ）")
              + (f"、LM {n} 個" if str(n) not in ("nan", "", "-") else "")

@@ -500,10 +500,50 @@ MBON01・MBON03 を含まない「きれいな MBON04 split-LexA」が作れる�
    68369（MB399B）と 88330/88263（SS67728/SS67755）も要るなら一緒に。</li>
 <li><strong>MBON04 split-LexA の自作を検討する。</strong> SS67728 から DBD を差し替える。
    入手の保険であると同時に、混同がひとつ消える。</li>
-<li><strong>解析側を直す。</strong> 区画名で書かれた 50 本が照合から漏れている。
-   <code>match_drivers.py</code> に区画名と hemibrain 型名の対応表を足せば、
-   今回のような見落としは無くなる。</li>
+<li>~~<strong>解析側を直す。</strong>~~ <strong>2026-11-23 対応済み。</strong>
+   <code>common/driver_names.py</code> を足して、区画名と hemibrain 型名を突き合わせるようにした。
+   対応表は hemibrain の instance 名（<code>MBON07(a1)_R</code> のように両方を持っている）から
+   自動で作り、<code>data/compartment_to_type.csv</code> に置いてある。<strong>47 件</strong>。
+   区画名 40 種のうち <strong>35 種</strong>に対応が付いた。
+   残り 5 種（<code>PAM-γ4</code> など）は hemibrain 側が 1 区画を複数の型に分けていて
+   <strong>一対一に決まらないので、取り違えるより拾わないほうを選んだ。</strong></li>
 </ol>
+<p>あわせて、調べた <strong>BDSC の在庫番号を <code>data/bdsc_stocks.csv</code> に入れ、
+   同点なら在庫のあるほうを先に出す</strong>ようにした。一覧の表示にも <code>〈BDSC 68313〉</code> が出る。</p>
+<p>直した結果、推奨が変わった枠:</p>
+<table>
+<thead>
+<tr>
+<th>目標</th>
+<th>直す前</th>
+<th>直した後</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBON07</strong>〈GAL4〉</td>
+<td>MB319B</td>
+<td><strong>MB310C〈BDSC 68313〉</strong></td>
+</tr>
+<tr>
+<td><strong>MBON02</strong>〈GAL4〉</td>
+<td>SS01337</td>
+<td><strong>MB399B〈BDSC 68369〉</strong></td>
+</tr>
+<tr>
+<td><strong>PPL105</strong>〈GAL4〉</td>
+<td>MB059B</td>
+<td><strong>MB058B〈BDSC 68278〉</strong></td>
+</tr>
+<tr>
+<td><strong>PAM11</strong>〈GAL4〉</td>
+<td>MB325B</td>
+<td><strong>MB043C〈BDSC 68363〉</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>4 枠すべてで、BDSC にある系統が先頭に来るようになった。</strong>
+   PPL106 と MBON04 の LexA 側は変わらない（代わりが無い）。</p>
 <h2 id="_3">使ったデータ</h2>
 <ul>
 <li>在庫: <a href="https://bdsc.indiana.edu/Home/Search">BDSC Stock Search</a>。系統名そのもので検索した。
