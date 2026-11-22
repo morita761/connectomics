@@ -128,6 +128,8 @@ GAL4 と LexA の 2 系統が使える ／ 上流がその場所で出力して�
 <span>下流が本命と同じ細胞。LexA 系統を共有できる。<br>膜は本命の 1/22</span></a>
 <a class="card" href="reports/candidate_MBON04_PPL105.html"><b>③ MBON04 → PPL105〈保険〉</b>
 <span>膜はいちばん確かだが匂い駆動は 20%。<br>オーガナイザーの向きが逆になる</span></a>
+<a class="card" href="reports/stocks_bdsc.html"><b>系統の入手</b>
+<span>BDSC にあるか 1 本ずつ確認。split-LexA は Aso 研に依頼が要る</span></a>
 <a class="card hero" href="reports/plan_three_pairs.html"><b>▶ 3 組をどう比べて選んだか</b>
 <span>KC 入力率という新しい軸・EM の同一細胞比較・並行準備の実コスト</span></a>
 </div>

@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-TV3RKNL4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>使う予定の系統は BDSC にあるか</title><style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px}
+nav{font-size:.9rem;color:var(--sub);margin-bottom:18px}
+nav a{color:var(--acc);text-decoration:none}nav a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.35;border-bottom:2px solid var(--line);padding-bottom:.4em;margin-top:1.2em}
+h2{font-size:1.25rem;margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.05rem;margin-top:1.6em}
+a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600;white-space:nowrap}
+code{background:var(--code);padding:.15em .4em;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--code);color:var(--fg)}
+ul,ol{padding-left:1.4em}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:20px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--bg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc)}
+.card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+.card .date{display:inline-block;color:var(--acc);font-weight:700;margin-right:.5em;font-variant-numeric:tabular-nums}
+</style></head>
+<body><div class="wrap">
+<nav><a href="index.html">← 報告書の一覧</a> ／ <a href="../index.html">結果一覧</a></nav>
+<h1 id="bdsc">使う予定の系統は BDSC にあるか</h1>
+<p>2026-11-23。<a href="https://bdsc.indiana.edu/">bdsc.indiana.edu</a> の在庫検索で 1 本ずつ引いた。
+対象は <a href="plan_three_pairs.html">plan_three_pairs.md</a> の 3 組と、
+<a href="candidate_MBON04_FB4N.html">candidate_MBON04_FB4N.md</a>・
+<a href="techdemo_MBON31_PAM11.html">techdemo_MBON31_PAM11.md</a> で使う系統。</p>
+<h2 id="0">0. 結論</h2>
+<p><strong>どの組も、いま決めている構成のままでは BDSC だけでは揃わない。</strong>
+<strong>足りないのは必ず split-LexA の側である。</strong></p>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>上流</th>
+<th>下流</th>
+<th>BDSC だけで揃うか</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBON07 → PPL106</strong>（本命）</td>
+<td>MB319B <strong>✕</strong></td>
+<td>SL86050 <strong>✕</strong></td>
+<td><strong>揃わない</strong></td>
+</tr>
+<tr>
+<td>MBON02 → PPL106</td>
+<td>SS01337 <strong>✕</strong></td>
+<td>SL86050 <strong>✕</strong></td>
+<td><strong>揃わない</strong></td>
+</tr>
+<tr>
+<td>MBON04 → PPL105</td>
+<td>SL86063 <strong>✕</strong></td>
+<td><strong>MB058B ◎ 68278</strong></td>
+<td><strong>揃わない</strong></td>
+</tr>
+<tr>
+<td>MBON04 → FB4N</td>
+<td>SL86063 <strong>✕</strong></td>
+<td><strong>SS66004 ◎ 89507</strong></td>
+<td><strong>揃わない</strong></td>
+</tr>
+<tr>
+<td>MBON31 → PAM11</td>
+<td><strong>SS52050 ◎ 89438</strong></td>
+<td>SL86059 <strong>✕</strong></td>
+<td><strong>揃わない</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>split-LexA は BDSC に 1 本も無い。</strong> 検索語 <code>split-LexA</code> でも 0 件。
+出典の Shuai 2024 本文に、どこから入手するかが書いてある。</p>
+<blockquote>
+<p>Fly strains can be requested from Janelia or the Bloomington stock center.
+<strong>Split-LexA expression data and fly strains are also available upon request from Aso lab.</strong>
+— <a href="https://elifesciences.org/articles/94168">eLife 94168</a></p>
+</blockquote>
+<p><strong>→ split-LexA は Aso 研（Janelia）に直接依頼する。</strong> これが最初にやることになる。</p>
+<p><strong>ただし朗報がある。</strong> 名前の不一致で見落としていた <strong>BDSC 在庫の代替系統</strong>が見つかった（4 節）。
+<strong>本命の上流 MB319B は、BDSC にある MB310C で置き換えられる。</strong></p>
+<h2 id="1">1. 在庫表</h2>
+<p>◎ = BDSC にあり（番号）、✕ = 検索して 0 件。</p>
+<h3 id="_1">使う予定のもの</h3>
+<table>
+<thead>
+<tr>
+<th>系統</th>
+<th>発現系</th>
+<th>標識</th>
+<th>出典</th>
+<th>BDSC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MB319B</strong></td>
+<td>split-GAL4</td>
+<td>MBON07</td>
+<td>94168</td>
+<td><strong>✕</strong></td>
+</tr>
+<tr>
+<td>MB319C / MB323B</td>
+<td>split-GAL4</td>
+<td>MBON07</td>
+<td>94168</td>
+<td>✕ / ✕</td>
+</tr>
+<tr>
+<td><strong>SL86050</strong></td>
+<td><strong>split-LexA</strong></td>
+<td>PPL106</td>
+<td>94168</td>
+<td><strong>✕</strong></td>
+</tr>
+<tr>
+<td>SL86062</td>
+<td>split-LexA</td>
+<td>PPL106</td>
+<td>94168</td>
+<td>✕</td>
+</tr>
+<tr>
+<td><strong>SS01337</strong></td>
+<td>split-GAL4</td>
+<td>MBON02</td>
+<td>94168</td>
+<td><strong>✕</strong></td>
+</tr>
+<tr>
+<td>SS01142 / MB517B</td>
+<td>split-GAL4</td>
+<td>MBON02</td>
+<td>94168</td>
+<td>✕ / ✕</td>
+</tr>
+<tr>
+<td><strong>SL86063</strong></td>
+<td><strong>split-LexA</strong></td>
+<td>MBON01+03+04</td>
+<td>94168</td>
+<td><strong>✕</strong></td>
+</tr>
+<tr>
+<td><strong>MB058B</strong></td>
+<td>split-GAL4</td>
+<td>PPL1-α'2α2（=PPL105）</td>
+<td>Aso 2014</td>
+<td><strong>◎ 68278</strong></td>
+</tr>
+<tr>
+<td>MB059B / MB320B / SS48817</td>
+<td>split-GAL4</td>
+<td>PPL105 ほか</td>
+<td>94168</td>
+<td>✕ / ✕ / ✕</td>
+</tr>
+<tr>
+<td><strong>SS66004</strong></td>
+<td>split-GAL4</td>
+<td>FB4N</td>
+<td>98405</td>
+<td><strong>◎ 89507</strong></td>
+</tr>
+<tr>
+<td>SS95185</td>
+<td>split-GAL4</td>
+<td>FB4N</td>
+<td>104764</td>
+<td>✕</td>
+</tr>
+<tr>
+<td><strong>SS52050</strong></td>
+<td>split-GAL4</td>
+<td>MBON31</td>
+<td>98405</td>
+<td><strong>◎ 89438</strong></td>
+</tr>
+<tr>
+<td>SS80896</td>
+<td>split-GAL4</td>
+<td>MBON31</td>
+<td>98405</td>
+<td>◎ 88662</td>
+</tr>
+<tr>
+<td><strong>SL86059</strong></td>
+<td><strong>split-LexA</strong></td>
+<td>PAM11</td>
+<td>94168</td>
+<td><strong>✕</strong></td>
+</tr>
+<tr>
+<td>SS67728 / SS67755</td>
+<td>split-GAL4</td>
+<td>MBON04</td>
+<td>98405</td>
+<td>◎ 88330 / ◎ 88263</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">参照用・対照用</h3>
+<table>
+<thead>
+<tr>
+<th>系統</th>
+<th>標識</th>
+<th>BDSC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MB011B</td>
+<td>γ5β'2a + β'2mp + β'2mp_bilateral</td>
+<td>◎ 68294</td>
+</tr>
+<tr>
+<td>MB099C</td>
+<td>PPL103 + PPL105</td>
+<td>◎ 68290</td>
+</tr>
+<tr>
+<td>MB320C</td>
+<td>PPL101（γ1pedc）</td>
+<td>◎ 68253</td>
+</tr>
+<tr>
+<td>MB060B</td>
+<td>α'2α2 + α'3 + α3 + γ2α'1</td>
+<td>◎ 68279</td>
+</tr>
+<tr>
+<td>MB310C</td>
+<td><strong>MBON-α1（= MBON07）</strong></td>
+<td><strong>◎ 68313</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="2">2. 規則性 — 出典で決まる</h2>
+<p>調べていて気づいたが、<strong>在庫の有無は系統の名前ではなく出典で決まる。</strong></p>
+<table>
+<thead>
+<tr>
+<th>出典</th>
+<th>BDSC</th>
+<th>番号帯</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aso 2014</strong>（キノコ体 split-GAL4 コレクション）</td>
+<td><strong>ある</strong></td>
+<td>682xx〜683xx</td>
+</tr>
+<tr>
+<td><strong>Meissner 2024</strong>（eLife 98405、中枢神経系コレクション）</td>
+<td><strong>ある</strong></td>
+<td>882xx〜895xx</td>
+</tr>
+<tr>
+<td><strong>Shuai 2024/2025</strong>（eLife 94168、連合学習コレクション）</td>
+<td><strong>無い</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>Wolff 2024（eLife 104764）</td>
+<td><strong>部分的</strong></td>
+<td>SS66004 はあり、SS95185 は無し</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本計画がいちばん頼っているのが Shuai 2024 のコレクションで、そこが丸ごと BDSC に無い。</strong>
+MBON・DAN を 1 細胞型で狙える系統が多いのはこのコレクションなので、仕方のない面はある。</p>
+<h2 id="3-split-lexa">3. split-LexA をどう手に入れるか</h2>
+<p><strong>3 組すべてで split-LexA が要る。</strong> どの組も「上流と下流に別の分子を入れる」ので、
+GAL4 と LexA の両方が必要で、LexA 側はこのコレクションにしかない。</p>
+<table>
+<thead>
+<tr>
+<th>要る split-LexA</th>
+<th>どの組で</th>
+<th>代替</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SL86050</strong>（PPL106）</td>
+<td>MBON07 →・MBON02 → の両方</td>
+<td><strong>無い</strong>（5 節）</td>
+</tr>
+<tr>
+<td><strong>SL86063</strong>（MBON04+01+03）</td>
+<td>MBON04 → PPL105・MBON04 → FB4N</td>
+<td>自作なら改善の余地あり（5 節）</td>
+</tr>
+<tr>
+<td>SL86059（PAM11）</td>
+<td>MBON31 → PAM11</td>
+<td>無い</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Aso 研への依頼が最初の一歩になる。</strong>
+同じ依頼で 3 本まとめて頼めるので、手間は 1 回分で済む。</p>
+<h2 id="4-bdsc">4. 名前の不一致で見落としていた BDSC 在庫</h2>
+<p><strong><code>data/driver_lines*.csv</code> には、区画名で書かれた系統が 50 本ある</strong>
+（<code>MBON-α1</code>、<code>PPL1-α'2α2</code> のように）。<strong>照合は hemibrain の型名（<code>MBON07</code>、<code>PPL105</code>）で
+走っているので、この 50 本は一度も候補に出てこなかった。</strong>
+<code>candidate_MBON04_PPL105.md</code> で MB058B が漏れていたのと同じ原因である。</p>
+<p><strong>しかもこの 50 本はすべて Aso 2014 のコレクション — つまり BDSC にある側である。</strong>
+見えていなかったのが、よりによって注文できる系統だった。</p>
+<p>拾い直すと、こうなる。</p>
+<table>
+<thead>
+<tr>
+<th>目標</th>
+<th>見落としていた系統</th>
+<th>標識</th>
+<th>特異性</th>
+<th>BDSC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBON07</strong></td>
+<td><strong>MB310C</strong></td>
+<td><strong>MBON-α1 のみ</strong></td>
+<td><strong>2</strong></td>
+<td><strong>◎ 68313</strong></td>
+</tr>
+<tr>
+<td>MBON02</td>
+<td><strong>MB399B</strong></td>
+<td><strong>MBON-β2β'2a のみ</strong></td>
+<td>1</td>
+<td><strong>◎ 68369</strong></td>
+</tr>
+<tr>
+<td>PPL105</td>
+<td>MB058B</td>
+<td>PPL1-α'2α2 のみ</td>
+<td>2</td>
+<td>◎ 68278（既出）</td>
+</tr>
+<tr>
+<td>PAM11</td>
+<td><strong>MB043C</strong></td>
+<td><strong>PAM-α1 のみ</strong></td>
+<td><strong>2</strong></td>
+<td><strong>◎ 68363</strong></td>
+</tr>
+<tr>
+<td>MBON31</td>
+<td>MB050B</td>
+<td>MBON-α'1 ＋ MBON-α2sc</td>
+<td>2</td>
+<td>◎ 68365</td>
+</tr>
+<tr>
+<td><strong>PPL106</strong></td>
+<td><strong>MB060B</strong></td>
+<td>α'2α2 ＋ α'3 ＋ <strong>α3</strong> ＋ γ2α'1（4 型）</td>
+<td>2</td>
+<td>◎ 68279</td>
+</tr>
+</tbody>
+</table>
+<p><strong>MB310C は本命の上流をそのまま置き換えられる。</strong>
+MBON-α1 だけを標識する quality 1 の系統で、<strong>Tsao 2018 が MBON-α1 特異的として使った実績</strong>もある
+（<code>results/candidate_MBON07_PPL106.md</code> 6 節）。</p>
+<p><strong>MB399B も MBON02 の上流に使える</strong>（特異性 1 なので SS01337 と同格）。</p>
+<p><strong>PPL106 だけは代わりが無い。</strong> MB060B は 4 型を標識し、
+そのうち PPL1-γ2α'1 と PPL1-α'2α2 は MBON07 のすぐ近くを通っている
+（それぞれ 62 µm、255 µm — <code>plan_three_pairs.md</code> 8.5 節）。<strong>使えない。</strong></p>
+<h2 id="5">5. 組ごとの入手計画</h2>
+<h3 id="mbon07-ppl106">MBON07 → PPL106（本命）</h3>
+<table>
+<thead>
+<tr>
+<th>役割</th>
+<th>第一希望</th>
+<th>BDSC で代替</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上流 MBON07〈GAL4〉</td>
+<td>MB319B</td>
+<td><strong>MB310C ◎ 68313</strong></td>
+</tr>
+<tr>
+<td>下流 PPL106〈LexA〉</td>
+<td><strong>SL86050</strong></td>
+<td><strong>無い。Aso 研に依頼</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>上流は BDSC で足りる。下流の split-LexA だけが律速。</strong></p>
+<h3 id="mbon02-ppl106">MBON02 → PPL106</h3>
+<table>
+<thead>
+<tr>
+<th>役割</th>
+<th>第一希望</th>
+<th>BDSC で代替</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上流 MBON02〈GAL4〉</td>
+<td>SS01337</td>
+<td><strong>MB399B ◎ 68369</strong></td>
+</tr>
+<tr>
+<td>下流 PPL106〈LexA〉</td>
+<td>SL86050</td>
+<td>無い（本命と共用）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本命と同じ SL86050 を使うので、依頼は 1 本で 2 組ぶん。</strong></p>
+<h3 id="mbon04-ppl105-mbon04-fb4n">MBON04 → PPL105 ／ MBON04 → FB4N</h3>
+<table>
+<thead>
+<tr>
+<th>役割</th>
+<th>第一希望</th>
+<th>BDSC で代替</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上流 MBON04〈LexA〉</td>
+<td><strong>SL86063</strong>（+MBON01,03）</td>
+<td>無い。Aso 研に依頼</td>
+</tr>
+<tr>
+<td>下流 PPL105〈GAL4〉</td>
+<td><strong>MB058B ◎ 68278</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>下流 FB4N〈GAL4〉</td>
+<td><strong>SS66004 ◎ 89507</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>下流は両方 BDSC にある。上流の split-LexA だけが足りない。</strong></p>
+<blockquote>
+<p><strong>自作する手もある。</strong> Shuai 2024 は
+「split-GAL4 の DBD を LexA の DBD に置き換えれば split-LexA になる」と書いている。
+<strong>MBON04 だけを標識する split-GAL4（SS67728 ◎ 88330 / SS67755 ◎ 88263）を変換すれば、
+MBON01・MBON03 を含まない「きれいな MBON04 split-LexA」が作れる。</strong>
+これは入手の回避策であると同時に、<strong>MBON04 → FB4N で見つかった
+「MBON01 が FB4N と 4.3 µm 接している」問題をまるごと消す</strong>
+（<code>candidate_MBON04_FB4N.md</code> 4 節）。やる価値はある。</p>
+</blockquote>
+<h3 id="mbon31-pam11">MBON31 → PAM11</h3>
+<table>
+<thead>
+<tr>
+<th>役割</th>
+<th>第一希望</th>
+<th>BDSC で代替</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上流 MBON31〈GAL4〉</td>
+<td><strong>SS52050 ◎ 89438</strong></td>
+<td>SS80896 ◎ 88662</td>
+</tr>
+<tr>
+<td>下流 PAM11〈LexA〉</td>
+<td><strong>SL86059</strong></td>
+<td>無い。Aso 研に依頼</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6">6. まとめ — 次にやること</h2>
+<ol>
+<li><strong>Aso 研（Janelia）に split-LexA を依頼する。</strong> <code>SL86050</code>・<code>SL86063</code>・<code>SL86059</code> の 3 本。
+   論文の記載どおり「upon request」なので、まとめて 1 通で足りる。</li>
+<li><strong>並行して BDSC に注文できるものを出す。</strong>
+   <strong>68313（MB310C、本命の上流）</strong>・68278（MB058B）・89507（SS66004）・89438（SS52050）。
+   68369（MB399B）と 88330/88263（SS67728/SS67755）も要るなら一緒に。</li>
+<li><strong>MBON04 split-LexA の自作を検討する。</strong> SS67728 から DBD を差し替える。
+   入手の保険であると同時に、混同がひとつ消える。</li>
+<li><strong>解析側を直す。</strong> 区画名で書かれた 50 本が照合から漏れている。
+   <code>match_drivers.py</code> に区画名と hemibrain 型名の対応表を足せば、
+   今回のような見落としは無くなる。</li>
+</ol>
+<h2 id="_3">使ったデータ</h2>
+<ul>
+<li>在庫: <a href="https://bdsc.indiana.edu/Home/Search">BDSC Stock Search</a>。系統名そのもので検索した。
+  見つからなかったものは「0 件」と表示されたことを確認している。
+  <strong>BDSC が別名で持っている可能性までは排除できない。</strong></li>
+<li>split-LexA の入手先: <a href="https://elifesciences.org/articles/94168">Shuai et al., eLife 94168</a> 本文。</li>
+<li>系統の中身・出典: <code>data/driver_lines.csv</code>、<code>data/driver_lines_cns.csv</code>。</li>
+<li>近傍の接触: <a href="plan_three_pairs.html">plan_three_pairs.md</a> 8.5 節。</li>
+</ul>
+</div></body></html>
