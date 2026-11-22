@@ -174,6 +174,8 @@ def main():
         '<span>キノコ体案の第一候補。両方向が候補になる</span></a>',
         '<a class="card" href="reports/candidate_MBON04_FB4N.html"><b>本命: MBON04 → FB4N</b>'
         '<span>全脳探索の第一候補</span></a>',
+        '<a class="card" href="reports/direction_MBON04_PPL105.html"><b>どちら向きにするか</b>'
+        '<span>伝達物質と放出部位から決める ／ 行動実験の設計</span></a>',
         '<a class="card" href="shortlist.html"><b>★ 最終候補の一覧</b>'
         '<span>3 個体で確かめた組</span></a>',
         f'<a class="card" href="reports/em_links_MBON04_PPL105.html"><b>EM と 3D のリンク</b>'

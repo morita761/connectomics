@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-TV3RKNL4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MBON04 と PPL105 のどちら向きを先にやるか — 伝達物質と放出部位から決める</title><style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px}
+nav{font-size:.9rem;color:var(--sub);margin-bottom:18px}
+nav a{color:var(--acc);text-decoration:none}nav a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.35;border-bottom:2px solid var(--line);padding-bottom:.4em;margin-top:1.2em}
+h2{font-size:1.25rem;margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.05rem;margin-top:1.6em}
+a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600;white-space:nowrap}
+code{background:var(--code);padding:.15em .4em;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--code);color:var(--fg)}
+ul,ol{padding-left:1.4em}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:20px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--bg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc)}
+.card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+</style></head>
+<body><div class="wrap">
+<nav><a href="index.html">← 報告書の一覧</a> ／ <a href="../index.html">結果一覧</a></nav>
+<h1 id="mbon04-ppl105">MBON04 と PPL105 のどちら向きを先にやるか — 伝達物質と放出部位から決める</h1>
+<p>2026-11-22。再現は</p>
+<pre><code>python - &lt;&lt;'PY'   # neuprint の属性を見るだけ（scratchpad の nt3.py / nt4.py と同じ）
+from neuprint import Client; import os
+c = Client(&quot;neuprint.janelia.org&quot;, dataset=&quot;male-cns:v1.0&quot;,
+           token=os.environ[&quot;NEUPRINT_APPLICATION_CREDENTIALS&quot;])
+print(c.fetch_custom(&quot;MATCH (n:Neuron) WHERE n.type IN ['MBON04','PPL105'] &quot;
+                     &quot;RETURN n.type, n.consensusNt&quot;))
+PY
+</code></pre>
+<p>当初の見立ては「<strong>PPL105 → MBON04</strong> は嫌悪刺激が直接行動に出るので T-maze で測れて単純、
+<strong>MBON04 → PPL105</strong> はフィードバックで記憶形成に効くので複雑」だった。
+伝達物質と領域別のシナプス数を調べると、<strong>実現可能性の順番が逆</strong>だった。</p>
+<h2 id="0">0. 結論</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>MBON04 → PPL105</th>
+<th>PPL105 → MBON04</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>接触領域での<strong>上流の放出</strong></td>
+<td><strong>1,118</strong>（SIP 538 + SMP 580）</td>
+<td><strong>221</strong>（SIP 169 + SMP 52）＝ 全出力の 8%</td>
+</tr>
+<tr>
+<td>接触領域での<strong>下流の受け</strong></td>
+<td>2,390（SIP 1,443 + SMP 947）</td>
+<td>4,947（SIP 1,189 + SMP 3,758）</td>
+</tr>
+<tr>
+<td>基準⑤（上流が接触領域で出力）</td>
+<td><strong>満たす</strong></td>
+<td>5 分の 1 しかない</td>
+</tr>
+<tr>
+<td>伝達物質</td>
+<td>グルタミン酸（おそらく抑制性）</td>
+<td>ドーパミン（volume transmission）</td>
+</tr>
+<tr>
+<td>判定</td>
+<td><strong>本命。配線として素直</strong></td>
+<td>作れはするが上流側に無理がある</td>
+</tr>
+</tbody>
+</table>
+<p><strong>行動実験で測るなら MBON04 → PPL105。</strong> しかも測る課題は「記憶の獲得」ではなく
+<strong>消去・長期記憶・二次条件づけ</strong>に絞られる。</p>
+<h2 id="1">1. 伝達物質</h2>
+<p>male-cns:v1.0 の <code>consensusNt</code>（hemibrain:v1.2.1 には属性が無い）。</p>
+<table>
+<thead>
+<tr>
+<th>細胞型</th>
+<th>伝達物質</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBON04</strong></td>
+<td><strong>グルタミン酸</strong></td>
+<td>MBON01・MBON03 も同じ（β'2/γ5 系の MBON）</td>
+</tr>
+<tr>
+<td><strong>PPL105</strong></td>
+<td><strong>ドーパミン</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>PPL106</td>
+<td>ドーパミン</td>
+<td></td>
+</tr>
+<tr>
+<td>PAM11</td>
+<td>ドーパミン</td>
+<td></td>
+</tr>
+<tr>
+<td>MBON07</td>
+<td>グルタミン酸</td>
+<td></td>
+</tr>
+<tr>
+<td>MBON31</td>
+<td><strong>GABA</strong></td>
+<td>4 節で使う</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-ppl105-22">2. PPL105 の正体 — α2・α'2 の教師信号</h2>
+<p>hemibrain の領域別シナプス数（出力）。</p>
+<table>
+<thead>
+<tr>
+<th>細胞型</th>
+<th>主な出力先</th>
+<th>読み</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PPL105</strong></td>
+<td><strong>α2(R) 1,486 ／ α'2(R) 827</strong></td>
+<td>キノコ体 <strong>垂直ローブ α2・α'2</strong> の PPL1。古典名では PPL1-α'2α2（MB-V1）に相当するはず（照合は必要）</td>
+</tr>
+<tr>
+<td>PPL106</td>
+<td><strong>α3(R) 1,955</strong></td>
+<td><strong>タンパク合成依存の嫌悪 LTM</strong> の区画</td>
+</tr>
+<tr>
+<td>PAM11</td>
+<td>α1(R) 2,389</td>
+<td>= PAM-α1。接近記憶の LTM</td>
+</tr>
+</tbody>
+</table>
+<p>α'2α2 は<strong>嫌悪記憶の想起と長期記憶</strong>の区画で、短期記憶の γ1pedc（PPL101）とは役割が違う。
+つまり「PPL105 を叩けば嫌悪になる」は半分しか正しくない。
+<strong>PPL105 の役割は US そのものより記憶の保持・想起の側に寄っている。</strong>
+T-maze の 3 分後記憶では差が出にくく、<strong>24 時間後の LTM</strong> で見るべき。</p>
+<h2 id="3">3. 接触領域で、どちら向きに放出装置があるか</h2>
+<p>接触の位置は SIP(R) 41% ／ SMP(R) 31% ／ CRE(R) 10%
+（<a href="driver_overlap_PPL105_MBON04.html">driver_overlap_PPL105_MBON04.md</a> 3 節）。その 3 領域の内訳。</p>
+<table>
+<thead>
+<tr>
+<th>領域</th>
+<th>PPL105 出力</th>
+<th>PPL105 入力</th>
+<th>MBON04 出力</th>
+<th>MBON04 入力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SIP(R)</td>
+<td>169</td>
+<td>1,443</td>
+<td><strong>538</strong></td>
+<td>1,189</td>
+</tr>
+<tr>
+<td>SMP(R)</td>
+<td>52</td>
+<td>947</td>
+<td><strong>580</strong></td>
+<td>3,758</td>
+</tr>
+<tr>
+<td>CRE(R)</td>
+<td><strong>0</strong></td>
+<td>18</td>
+<td>677</td>
+<td>4,222</td>
+</tr>
+<tr>
+<td>（参考）α2(R)</td>
+<td>1,486</td>
+<td>4,825</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>（参考）β'2(R)</td>
+<td>0</td>
+<td>0</td>
+<td>6</td>
+<td>7,099</td>
+</tr>
+</tbody>
+</table>
+<p>読み方:</p>
+<ol>
+<li><strong>MBON04 → PPL105</strong>: 上流の放出 1,118、下流の受け 2,390。
+   MBON04 の軸索終末（β'2 に樹状突起、SIP/SMP/CRE に出力）と
+   PPL105 の樹状突起（SIP/SMP で入力 2,390）が向き合う、<strong>教科書どおりの配置</strong>。</li>
+<li><strong>PPL105 → MBON04</strong>: 下流の受けは 4,947 で十分だが、
+   <strong>上流の放出が 221 しかない</strong>。PPL105 の全出力 2,475 のうち 8%。
+   本体は α2・α'2 にある。<strong>PPL105 の樹状突起に放出装置を作らせる</strong>話になる。</li>
+<li><strong>CRE の接触は捨てて良い。</strong> PPL105 は CRE に出力 0・入力 18 でほぼ存在しない。
+   実質は <strong>SIP と SMP だけ</strong>。</li>
+</ol>
+<p>さらにドーパミンは volume transmission で、PPL105 が撒いたドーパミンは
+すでに近傍に広がっている。<strong>シナプスを 1 本足した効果が出にくい</strong>ので、
+PPL105 を上流にするのは「技術が働いたことを示す読み出し」としては不向き。</p>
+<h2 id="4">4. 行動実験の設計</h2>
+<h3 id="mbon04-ppl105_1">本命: MBON04 → PPL105</h3>
+<p>これは <strong>MBON → DAN フィードバック</strong>そのもの。既知の役割は 3 つに絞られる。
+<strong>獲得（acquisition）では差が出ないと予想する。</strong></p>
+<table>
+<thead>
+<tr>
+<th>課題</th>
+<th>内容</th>
+<th>予想</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>消去（extinction）</strong></td>
+<td>嫌悪条件づけ → CS 単独で再曝露 → 消去の速さ</td>
+<td><strong>速くなる</strong></td>
+</tr>
+<tr>
+<td><strong>長期記憶</strong></td>
+<td>spaced training → <strong>24 時間後</strong></td>
+<td><strong>弱くなる</strong></td>
+</tr>
+<tr>
+<td>二次条件づけ</td>
+<td>MBON→DAN が必須とされる課題</td>
+<td>変化する</td>
+</tr>
+<tr>
+<td>（対照）3 分後の STM</td>
+<td>標準の T-maze</td>
+<td><strong>差が出ない</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>符号の予測</strong>: MBON04 はグルタミン酸で、ハエ中枢では GluClα 経由の<strong>抑制性</strong>になることが多い。
+嫌悪の教師信号（PPL105）に抑制を足すので、<strong>嫌悪 LTM が弱くなる／消去が速くなる</strong>。</p>
+<p>意味づけも素直。MBON04（β'2mp、接近・摂食系の出力）→ PPL105（嫌悪 LTM の教師信号）は、
+<strong>「接近側の出力が嫌悪の記憶を書き換える」ループを人工的に作る</strong>ことになる。
+これは消去の回路そのもの。</p>
+<h3 id="ppl105-mbon04-t-maze-us">PPL105 → MBON04 をやるなら、T-maze ではなく光 US で</h3>
+<p>強制シナプスは<strong>常にある配線</strong>なので、作っただけでは嫌悪刺激が自動的に効くようにはならない。
+PPL105 を能動的に駆動する必要がある。</p>
+<ul>
+<li><strong>匂い + PPL105 の CsChrimson 光刺激を US にして条件づけ</strong> → T-maze。
+  電気ショックより制御が効き、上流ドライバーにそのまま効果器を乗せられる（5 節）。</li>
+<li>「直接の行動」を見たいなら T-maze（学習課題）ではなく、
+  <strong>光刺激そのものの価値を問う二択チャンバー</strong>の方が素直。</li>
+</ul>
+<h3 id="mbon31-pam11">もうひとつの選択肢: MBON31 → PAM11</h3>
+<p>行動の切れ味だけなら、こちらが上かもしれない（<a href="candidate_MBON31_PAM11.html">candidate_MBON31_PAM11.md</a>）。</p>
+<ul>
+<li><strong>MBON31 は GABA、PAM11 は PAM-α1。GABA → Rdl は受容体の存在がほぼ確実</strong>（6 節のリスクが無い）</li>
+<li><strong>PAM-α1 は MBON-α1 との再帰ループが接近記憶の LTM に必須</strong>（Ichinose 2015）。
+  そこに GABA 抑制を足せば <strong>接近 LTM が壊れる</strong>、という向きの揃った大きな予測が立つ</li>
+<li>確立した行動課題（spaced appetitive training → 24h memory）がそのまま使える</li>
+<li>EM の密着比 2.08 で合格済み</li>
+</ul>
+<p><strong>「技術が働くことを行動で示す」なら MBON31 → PAM11、
+「回路として面白い」なら MBON04 → PPL105</strong> という棚分けが素直。</p>
+<h2 id="5-2">5. ドライバーは 2 系統で足りる</h2>
+<p>オーガナイザー 2 つで GAL4 と LexA を使い切ると CsChrimson/GCaMP の系統が無い、
+と思いがちだが、<strong>効果器を同じドライバーに相乗りさせれば足りる</strong>。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>構成</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上流</td>
+<td><strong>GAL4 ＞ UAS-オーガナイザー前側 ＋ UAS-CsChrimson</strong></td>
+</tr>
+<tr>
+<td>下流</td>
+<td><strong>LexA ＞ LexAop-オーガナイザー後側 ＋ LexAop-GCaMP6f</strong></td>
+</tr>
+</tbody>
+</table>
+<p>QF2/QUAS の第 3 系は不要。</p>
+<h3 id="2">両方向が同じ 2 系統で作れる</h3>
+<ul>
+<li>PPL105 = <strong>SS48817〈GAL4〉</strong>（+FB2A）</li>
+<li>MBON04 = <strong>SL86063〈split-LexA〉</strong>（+MBON01, MBON03）</li>
+</ul>
+<p><strong>どちらの向きもこの 2 系統で、オーガナイザーの前後を入れ替えるだけ。</strong>
+だから「どちらを選ぶか」ではなく、<strong>両方作って比べるのが最強の対照</strong>。
+同じ細胞・同じ接触面で、強制シナプスの極性だけが違う。
+片方で行動が変わり片方で変わらなければ、効果が配線由来だと言い切れる。</p>
+<h2 id="6">6. 先に片付けるべきこと — 受容体</h2>
+<p><strong>接着分子はシナプスの骨組みを作るが、後シナプス側に受容体がなければ
+電気的には何も起きない。</strong>「配線は増えたのに行動は変わらない」は解釈不能な結果になる。</p>
+<table>
+<thead>
+<tr>
+<th>向き</th>
+<th>確認するもの</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON04 → PPL105</td>
+<td>PPL105 に <strong>GluClα</strong>（抑制性）か <strong>DmGluRA</strong> があるか</td>
+</tr>
+<tr>
+<td>PPL105 → MBON04</td>
+<td>MBON04 に <strong>Dop1R1 / Dop1R2 / Dop2R</strong> があるか</td>
+</tr>
+</tbody>
+</table>
+<p>Fly Cell Atlas（Li 2022）と Davie 2018 の scRNA-seq で引ける。計算だけで済むので、
+<strong>ここを飛ばさない。</strong></p>
+<h2 id="7">7. 進める順番</h2>
+<ol>
+<li><strong>受容体チェック</strong>（計算、1 日）</li>
+<li><strong>syb-GRASP</strong> で新しい活性帯ができたか（解剖）</li>
+<li><strong>生理</strong>: 上流 CsChrimson → 下流 GCaMP、オーガナイザー有／無。
+   <strong>ここが「できた」の最小証明</strong>で、行動より先に取るべき</li>
+<li><strong>行動</strong>: 消去 → 24h LTM → 二次条件づけ</li>
+<li><strong>対照</strong>: naive odor avoidance、ショック反応性、走性。
+   配線を変えた影響が入口の感覚や運動に出ていないか</li>
+</ol>
+<h2 id="8-mbon0103">8. MBON01/03 の件が行動の解釈に直結する</h2>
+<p>SL86063 は MBON01・MBON03 も標識する（<a href="driver_overlap_PPL105_MBON04.html">driver_overlap_PPL105_MBON04.md</a>）。
+<strong>MBON01（γ5β'2a）は接近記憶と消去の中核</strong>なので、
+行動が変わったときに「MBON04 のせい」と言えなくなる。</p>
+<p>いちばん強い対照は、<strong>MBON01/03 を標識するが MBON04 を標識しないドライバー ＋ 同じオーガナイザー</strong>。
+空間的に MBON01/03 は PPL105 と 1 µm 以内の接触が 0 なので、
+この対照は<strong>何も起きないはず</strong>。それが示せれば MBON04 単独の効果が確定する。</p>
+<h2 id="_1">使ったデータ</h2>
+<ul>
+<li>伝達物質: male-cns:v1.0 の <code>consensusNt</code>（hemibrain:v1.2.1 には属性が無い）</li>
+<li>領域別シナプス数: hemibrain:v1.2.1 の <code>roiInfo</code></li>
+<li>接触の位置: <a href="driver_overlap_PPL105_MBON04.html">driver_overlap_PPL105_MBON04.md</a></li>
+<li>膜の密着（EM）: <a href="candidate_MBON04_PPL105.html">candidate_MBON04_PPL105.md</a></li>
+<li>行動実験の関連論文: <a href="refs_top_pairs.html">refs_top_pairs.md</a></li>
+</ul>
+</div></body></html>

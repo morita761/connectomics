@@ -39,13 +39,14 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <body><div class="wrap">
 <nav><a href="../index.html">結果一覧</a></nav>
 <h1>報告書の一覧</h1>
-<p>results/ の Markdown 報告書を HTML にしたもの。全 26 件。</p>
+<p>results/ の Markdown 報告書を HTML にしたもの。全 27 件。</p>
 <div class="cards">
 <a class="card" href="shortlist_final.html"><b>3 個体でシナプス 0・接触が再現する組（shortlist_final.csv）</b><span>条件: hemibrain・male-cns・FlyWire の 3 個体すべてで両方向のシナプスが 0、
 かつ別個体でも 10 µm 以上の接触がある組。「上流出力 / 下流入力」は主な接触領域での個数。</span></a>
 <a class="card" href="benchmark.html"><b>Benchmark</b><span>n_neurons=80, seeds=[0, 1, 2], compartments=navis, overrides=[]</span></a>
 <a class="card" href="gmr_lexa_report.html"><b>GMR-LexA を候補ペアに照合した結果</b><span>2026-11-10。再現は python gmr_lexa_match.py。
 一覧は results/gmr_lexa_vfb.csv（VFB の注釈）と results/gmr_lexa_match.csv（論文の</span></a>
+<a class="card" href="direction_MBON04_PPL105.html"><b>MBON04 と PPL105 のどちら向きを先にやるか — 伝達物質と放出部位から決める</b><span>2026-11-22。再現は</span></a>
 <a class="card" href="driver_overlap_PPL105_MBON04.html"><b>SL86063 が一緒に標識する MBON01・MBON03 は、PPL105 とどこまで近いか</b><span>2026-11-22。再現は
 python view_group.py --data data/hemibrain_mb_all.pkl --source PPL105 --others MBON04 MBON01 MB</span></a>
 <a class="card" href="coverage_report.html"><b>まだ探していない組はどこにあるか</b><span>2026-11-10。再現は python coverage.py。一覧は results/coverage.csv（型ごと）と
