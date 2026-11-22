@@ -294,6 +294,37 @@ def _i(v) -> int:
     return 0 if v != v else int(v)  # NaN は 0 扱い
 
 
+def first_line(cell) -> str:
+    """「SL86063〈LexA〉(+MBON01,MBON03)[特異性2] / SL86046〈LexA〉[特異性2]」→「SL86063」。"""
+    if not isinstance(cell, str) or cell == "-":
+        return ""
+    head = cell.split(" / ")[0]
+    return head.split("〈")[0].strip()
+
+
+def systems_of(r) -> str:
+    """その組で実際に成り立つ発現系の組み合わせを、系統名つきで返す。
+
+    two_systems は「上流 GAL4 + 下流 LexA」と「上流 LexA + 下流 GAL4」の
+    どちらかが成り立てば真になる。どちらなのかは組ごとに違うので、
+    決め打ちで書かずにここで判定する。
+    """
+    def spec(cell) -> int:
+        """先頭の系統の特異性（[特異性N]）。読めなければ 0。"""
+        m = re.search(r"特異性(\d)", str(cell).split(" / ")[0])
+        return int(m.group(1)) if m else 0
+
+    opts = []
+    if first_line(getattr(r, "up_lexa", "-")) and first_line(getattr(r, "down_gal4", "-")):
+        opts.append((spec(r.up_lexa) + spec(r.down_gal4),
+                     f"上流 {first_line(r.up_lexa)}〈LexA〉+ 下流 {first_line(r.down_gal4)}〈GAL4〉"))
+    if first_line(getattr(r, "up_gal4", "-")) and first_line(getattr(r, "down_lexa", "-")):
+        opts.append((spec(r.up_gal4) + spec(r.down_lexa),
+                     f"上流 {first_line(r.up_gal4)}〈GAL4〉+ 下流 {first_line(r.down_lexa)}〈LexA〉"))
+    # 特異性の合計が高い組み合わせを先に出す
+    return " ／ ".join(t for _, t in sorted(opts, key=lambda x: -x[0]))
+
+
 def grade_of(r) -> tuple[str, str]:
     if r.cross_contact_min_um != r.cross_contact_min_um:  # NaN
         return "接触未確認", "別個体での接触をまだ計算していない"
@@ -305,7 +336,7 @@ def grade_of(r) -> tuple[str, str]:
     if _i(r.pre_out_in_main) < 300:
         note = f"（上流の出力は {_i(r.pre_out_in_main)} 個とやや少ない）"
     if getattr(r, "two_systems", False):
-        return "◎", "上流 GAL4 + 下流 LexA がそろう" + note
+        return "◎", (systems_of(r) or "発現系が 2 つそろう") + note
     if r.both_drivers:
         return "○", "両側にドライバーあり。ただし<b>どちらも GAL4</b>" + note
     if r.up_driver != "-" or r.down_driver != "-":
@@ -361,8 +392,7 @@ def build_shortlist_page() -> dict | None:
                        if r.pre_out_in_main == r.pre_out_in_main else "未確認"),
             "comp": f"{r.comp_type} {float(r.comp_rate):.2f}" if isinstance(r.comp_type, str) else "",
             "up": drv_up, "down": drv_dn, "two": bool(getattr(r, "two_systems", False)),
-            "sysnote": ("上流 GAL4 + 下流 LexA" if getattr(r, "two_systems", False)
-                        else ("両方 GAL4 のみ" if r.both_drivers else "ドライバー不足")),
+            "sysnote": (systems_of(r) or "発現系が 2 つそろう") if getattr(r, "two_systems", False)                        else ("両方 GAL4 のみ" if r.both_drivers else "ドライバー不足"),
             "readout": r.readout if isinstance(r.readout, str) and r.readout != "-" else "",
             "links": links + ("  " if links and docs else "") + docs,
             "em": em_txt, "em_n": em_n,
