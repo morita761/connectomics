@@ -548,8 +548,9 @@ MBON02 を落とす理由にはならないが（接触はゼロではない）�
 </table>
 <h2 id="85">8.5 近傍チェック — ドライバーが巻き込む型は、相手のそばを通っていないか</h2>
 <p>2026-11-23 追加。<strong>ドライバーが目標以外の型も標識する場合、その型が相手のすぐ近くを
-通っていれば、そこにもシナプスができてしまう。</strong> MBON07 → PPL106 と
-MBON02 → PPL106 の両方で測った。</p>
+通っていれば、そこにもシナプスができてしまう。</strong> 3 組すべてで測った。</p>
+<p><strong>結果の要約: 3 組とも、使う予定の系統なら問題ない。
+ただし MBON04 → PPL105 は、これまで推奨していた系統だと破綻していた。</strong></p>
 <h3 id="_4">先に「特異性」の読み方</h3>
 <p><strong>特異性 = max(0, 3 − Quality)。Quality は 1 が最良</strong>なので、<strong>特異性 2 が最良、0 が最悪</strong>。
 <strong>「特異性2」は余計な型を 2 つ標識するという意味ではない。</strong>
@@ -704,6 +705,153 @@ MBON07 では PPL103 も目標より長い。</p>
 </table>
 <p><strong>下流の系統が同じなので、やはり 2 組目の追加コストは上流 1 本である。</strong></p>
 <p>ExR2 はこのデータセットに入っていないので未測定。SS01246 を使わない以上、測る必要も無い。</p>
+<h3 id="mbon04-ppl105">MBON04 → PPL105 — ここだけ、推奨系統を変えていなければ破綻していた</h3>
+<p>この組は<strong>上流が LexA、下流が GAL4</strong> という逆の構成になる。両側を見る。</p>
+<h4 id="sl86063-mbon01mbon03-ppl105">上流 SL86063 が連れてくる MBON01・MBON03 は、PPL105 から離れている</h4>
+<table>
+<thead>
+<tr>
+<th>上流</th>
+<th>PPL105 との接触（1 µm）</th>
+<th>最短距離</th>
+<th>3 µm まで広げると</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBON04（目標）</strong></td>
+<td><strong>162.4 µm</strong></td>
+<td><strong>0.08 µm</strong></td>
+<td>1,204 µm</td>
+</tr>
+<tr>
+<td>MBON01</td>
+<td><strong>0 µm</strong></td>
+<td>1.36 µm</td>
+<td>9.1 µm（目標の 0.8%）</td>
+</tr>
+<tr>
+<td>MBON03</td>
+<td><strong>0 µm</strong></td>
+<td>1.69 µm</td>
+<td>28.4 µm（目標の 2.4%）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>1 µm 以内で PPL105 に接しているのは MBON04 だけ。</strong>
+シナプス間隙は 20 nm なので、1.4 µm 離れていれば人工分子でも届かない。
+<strong>上流側は、3 型を標識しても問題にならない</strong>（<code>driver_overlap_PPL105_MBON04.md</code> と一致）。</p>
+<h4 id="_6">下流の系統選びが、この組では決定的だった</h4>
+<p>PPL105 側の GAL4 は 4 本ある。<strong>巻き込む型と MBON04 の接触を測ると、差が極端。</strong></p>
+<table>
+<thead>
+<tr>
+<th>系統</th>
+<th>標識する型</th>
+<th>特異性</th>
+<th>巻き込む型と MBON04 の接触</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MB058B</strong></td>
+<td><strong>PPL1-α'2α2 のみ</strong></td>
+<td><strong>2</strong></td>
+<td><strong>無し</strong></td>
+</tr>
+<tr>
+<td>MB059B</td>
+<td>PPL105（<strong>PPL103 が確率的</strong>）</td>
+<td>1</td>
+<td><strong>PPL103 と 2,019 µm</strong></td>
+</tr>
+<tr>
+<td>MB320B</td>
+<td>PPL101 ＋ PPL105</td>
+<td>1</td>
+<td><strong>PPL101 と 1,761 µm</strong></td>
+</tr>
+<tr>
+<td>SS48817</td>
+<td>FB2A ＋ PPL105</td>
+<td>1</td>
+<td>FB2A はこのデータに無く未測定。シナプスは 3 個体で 0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>目標の接触が 162 µm なのに、PPL103 は 2,019 µm、PPL101 は 1,761 µm。
+10 倍以上である。</strong></p>
+<p>しかも<strong>既にシナプスがある。</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>hemibrain</th>
+<th>male-CNS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON04 ↔ <strong>PPL105</strong>（目標）</td>
+<td><strong>0 / 0</strong></td>
+<td><strong>0 / 0</strong></td>
+</tr>
+<tr>
+<td>MBON04 ↔ PPL103</td>
+<td>0 / <strong>3</strong></td>
+<td>0 / 0</td>
+</tr>
+<tr>
+<td>MBON04 ↔ <strong>PPL101</strong></td>
+<td><strong>1 / 4</strong></td>
+<td><strong>3 / 3</strong></td>
+</tr>
+<tr>
+<td>MBON01 → PPL103</td>
+<td>2</td>
+<td><strong>17</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>MB059B か MB320B を使っていたら、目標の 10 倍以上の面積で接していて、
+しかも既に弱く繋がっている相手に、先にシナプスができていた可能性が高い。</strong>
+行動の変化が PPL105 経由か PPL101/PPL103 経由か、区別できない。</p>
+<p><strong>この組でいちばん効いたのは MB058B を見つけたことだった。</strong>
+清潔さの改善ではなく、<strong>破綻の回避</strong>である。
+（MB058B が候補から漏れていた理由は 8.5 節冒頭の「解析側の穴」と同根で、
+こちらは区画名と hemibrain 型名の不一致 — <code>candidate_MBON04_PPL105.md</code> 4 節）</p>
+<h3 id="3_2">3 組まとめ</h3>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>上流</th>
+<th>下流</th>
+<th>近傍チェックの結果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON07 → PPL106</td>
+<td><strong>MB319B</strong>〈GAL4〉</td>
+<td><strong>SL86050</strong>〈LexA〉</td>
+<td><strong>問題なし。</strong>下流 GAL4 構成は不可</td>
+</tr>
+<tr>
+<td>MBON02 → PPL106</td>
+<td><strong>SS01337</strong>〈GAL4〉</td>
+<td><strong>SL86050</strong>〈LexA〉</td>
+<td><strong>問題なし。</strong>同上。MB517B は発現が弱い</td>
+</tr>
+<tr>
+<td>MBON04 → PPL105</td>
+<td><strong>SL86063</strong>〈LexA〉(+MBON01,03)</td>
+<td><strong>MB058B</strong>〈GAL4〉</td>
+<td><strong>上流の 2 型は 1 µm 以内に無い。下流は MB058B 以外だと破綻</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>3 組とも、上の系統なら近傍の巻き込みは起きない。</strong></p>
 <h2 id="9">9. 使ったデータ</h2>
 <ul>
 <li><strong>KC 入力率</strong>: hemibrain:v1.2.1。<code>neuprint.fetch_simple_connections(None, ids)</code> で
