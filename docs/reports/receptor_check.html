@@ -469,69 +469,113 @@ nephrocyte は腎の足細胞に相当）と合う。<strong>データ自体は�
 <p>前節で「Kirre は中枢脳ではほぼ発現していない」と書いたのは誤り。
 FlyBase の curated な記載が無かっただけで、
 実データでは<strong>成虫ニューロンの過半が出している。</strong></p>
-<h3 id="_5">設計に与える影響 — 危険な側が逆だった</h3>
-<p>IRM 族は <strong>Kirre・Rst（片側）× Sns・Hbs（反対側）</strong> で噛み合う。成虫脳では:</p>
+<h3 id="hbssns-kirre">設問 — 内在の Hbs・Sns は、外来 Kirre の邪魔をするか</h3>
+<p><strong>しない。内在の相手がいない。</strong></p>
+<p>IRM 族は <strong>Kirre・Rst（Neph1 群）× Sns・Hbs（nephrin 群）</strong> で噛み合う。
+外来 Kirre を上流に載せたとき、それが<strong>本来の相手以外に掴まれる</strong>には、
+周囲の細胞が Sns か Hbs を出している必要がある。出していない。</p>
+<table>
+<thead>
+<tr>
+<th>遺伝子</th>
+<th>ニューロン</th>
+<th>介在</th>
+<th>運動</th>
+<th>感覚</th>
+<th>グリア</th>
+<th>全 22 クラスの最大</th>
+<th>判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>sns</strong></td>
+<td><strong>8%</strong></td>
+<td>13%</td>
+<td>20%</td>
+<td>3%</td>
+<td>8%</td>
+<td>nephrocyte 71%</td>
+<td><strong>神経系には無い</strong></td>
+</tr>
+<tr>
+<td><strong>hbs</strong></td>
+<td><strong>3%</strong></td>
+<td>4%</td>
+<td>5%</td>
+<td>1%</td>
+<td>4%</td>
+<td><strong>どこにも無い（最大 5%）</strong></td>
+<td><strong>無い</strong></td>
+</tr>
+</tbody>
+</table>
+<p>較正の床は Act88F 1%・twi 0%・Hml 1%、漏れこみの天井はニューロンで Mhc 16%・Yp1 20%。
+<strong>hbs の 3% は床そのもの。sns の 8% も床寄りで、天井の半分以下。</strong></p>
+<p>したがって:</p>
 <ul>
-<li><strong>Kirre の側は載っているが、相手の Sns・Hbs が無い。</strong>
-  内在の Kirre は<strong>相手がいなくて遊んでいる</strong>。接着系として休眠している。</li>
-<li>つまり <strong>外来 Kirre を載せる側は比較的安全。</strong> 内在の相手がいないので余計に貼らない。</li>
-<li>逆に <strong>Sns か Hbs を載せた細胞は、内在 Kirre を持つ周囲のニューロン（55%）に
-  掴まれる危険がある。</strong> しかも Dsyd-1 が 56% のニューロンにあるので、
-  掴まれた接触が放出部位に熟す材料もそろっている。</li>
-<li><strong>この危険は向きに依らない。</strong> どちらの向きでも Sns/Hbs を載せた側が弱点。</li>
+<li><strong>外来 Kirre が、意図しない細胞の内在 Sns/Hbs に横取りされることはない。</strong> 競合する相手がいない。</li>
+<li><strong>滴定（外来 Kirre が周囲に吸われて濃度が下がる）も起きない。</strong> 同じ理由。</li>
+<li><strong>忌避・非パートナー排除も起きない。</strong> ここが重要で、IRM の「排除」は
+  受容体としての反発ではなく、<strong>相手を持つ細胞どうしが優先的にくっつくことで
+  相手を持たない細胞が押し出される</strong>という差次的接着である
+  （<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2921583/">Preferential adhesion maintains separation of ommatidia</a>）。
+  <strong>排除が起きるには、排除する側に相手が載っていなければならない。</strong>
+  周囲に Sns/Hbs が無いので、この機構は起動しない。</li>
 </ul>
-<h3 id="_6">対策</h3>
+<p>グリアも sns 8%・hbs 4% で同じく無い。接触部を包むグリアが横取りする筋も無い。</p>
+<p><strong>Kirre のホモフィリック結合についても同じ結論になる。</strong> 内在 Kirre は
+ニューロンの 55% にあるが、<strong>外来 Kirre どうしが噛むぶんには、上流と下流を
+近づける向きにしか働かない。</strong> シナプス形成の妨げにはならない。</p>
+<h3 id="2">残る留保は 2 つだけ</h3>
 <ol>
-<li><strong>直交化する（本筋）。</strong> 内在 Kirre に噛まない対を使う。
-   哺乳類のオルソログ（NEPH1–nephrin）に替えるか、結合面を変異させて
-   外来の対どうしだけが噛むようにする。
-   <strong>構築の設計段階の判断なので、ハエの作業に入る前に決める。</strong></li>
-<li><strong>片側だけの対照を必ず置く（安くて決定的）。</strong>
-   下流に <strong>Sns/Hbs だけ</strong>を発現させ、Kirre 側はどこにも入れない個体を作る。
-   内在 Kirre が効いているなら、<strong>この個体だけで余計な接触やシナプスが出る。</strong>
-   出なければ心配は要らない。<strong>実験セットに入れるべき。</strong></li>
-<li><strong>転写産物とタンパクは別。</strong> FlyBase の curated なタンパクのデータには
-   中枢脳ニューロンの Kirre が無い。細胞外ドメインが表面に出ていなければ関係ない。
-   <strong>抗体かタグ付きノックインで表面のタンパクを見てから 1 を判断する。</strong></li>
-<li>Hbs は全 22 クラスで最大 5% で、成虫ではほぼ検出されない。
-   Sns（nephrocyte 71%）より背景が低いので <strong>Sns より Hbs を選ぶ</strong>のは小さな改善になる。
-   ただし 2 の危険は内在 Kirre 側の話なので、これでは消えない。</li>
+<li><strong>転写の相互制御。</strong> 蛹の網膜では、IRM のどれかを落とすと他の発現が変わる
+   （<a href="https://www.sciencedirect.com/science/article/pii/S0925477318300649">Transcriptional cross-regulation of IRM members</a>）。
+   <strong>外来 Kirre を強く出すこと自体が、内在の sns/hbs を誘導する可能性</strong>は消せない。
+   ベースラインが 3〜8% でも、誘導後はそうとは限らない。
+   これは発現量の問題なので、<strong>強いドライバーを避ける</strong>のが実際的な対処になる。</li>
+<li><strong>視葉。</strong> 「視覚神経節のすべてが 4 つの IRM を出す」という記載がある
+   （<a href="https://www.bcp.fu-berlin.de/en/biologie/arbeitsgruppen/neurobiologie/ag_linneweber/publications/2009_Fischbach/index.html">IRM proteins</a>）。
+   FCA の <code>neuron</code> クラスは視葉も込みなので、<strong>8% / 3% の実体が視葉に偏っている</strong>可能性がある。
+   <strong>本計画の接触部位は SIP・SLP・SMP で視葉ではない</strong>ので、
+   偏っているならむしろ好都合（接触部位の背景はさらに低い）。
+   クラス単位の集計ではこれ以上は分けられない。</li>
 </ol>
-<h3 id="_7">まとめ</h3>
+<h3 id="_5">まとめ</h3>
 <table>
 <thead>
 <tr>
 <th>分子</th>
-<th>望ましい状態</th>
+<th>設問にとっての望ましい状態</th>
 <th>実際</th>
 <th>判定</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Kirre</strong></td>
-<td>両方の細胞に無い</td>
-<td><strong>ニューロンの 55% にある</strong></td>
-<td><strong>× 想定と逆</strong></td>
+<td><strong>Sns / Hbs</strong></td>
+<td>周囲の細胞に無い</td>
+<td><strong>ほぼ無い</strong>（3〜8%、床寄り）</td>
+<td><strong>◎ 邪魔しない</strong></td>
 </tr>
 <tr>
-<td><strong>Sns / Hbs</strong></td>
-<td>近傍の細胞に無い</td>
-<td><strong>ほぼ無い</strong>（3〜8%）</td>
-<td><strong>◎ 想定どおり</strong></td>
+<td><strong>Kirre</strong></td>
+<td>（内在があってもよい）</td>
+<td>ニューロンの 55%</td>
+<td><strong>— 問題にしない</strong></td>
 </tr>
 <tr>
 <td><strong>Dsyd-1</strong></td>
 <td>上流にある</td>
-<td><strong>ニューロンの 56% にある</strong></td>
-<td><strong>◎ 想定どおり</strong></td>
+<td>ニューロンの 56%</td>
+<td><strong>◎ 放出部位に熟す材料はある</strong></td>
 </tr>
 </tbody>
 </table>
-<p>3 つのうち 2 つは好都合で、1 つは逆。
-<strong>結論は「Sns/Hbs 側を直交化するか、片側だけの対照で確かめる」。</strong></p>
+<p><strong>Sns より Hbs を選ぶのは小さな改善になる。</strong> hbs は全 22 クラスで最大 5%、
+sns は nephrocyte で 71% ある。神経系の外まで含めた背景が低いぶん Hbs が安全側。</p>
 <h2 id="3-scrna-seq">3. scRNA-seq の引き方（クラス単位なら解ける）</h2>
-<h3 id="_8">使えるデータ</h3>
+<h3 id="_6">使えるデータ</h3>
 <table>
 <thead>
 <tr>
@@ -579,7 +623,7 @@ FlyBase の curated な記載が無かっただけで、
   <strong>kirre・rst・sns・hbs は本文に出てこない。</strong></li>
 <li>受容体も Rdl・GluCl・Dop1R1 等は本文に名前が出ない（GPCR 全般の議論のみ）。</li>
 </ul>
-<h3 id="_9">引く遺伝子</h3>
+<h3 id="_7">引く遺伝子</h3>
 <table>
 <thead>
 <tr>
@@ -610,7 +654,7 @@ FlyBase の curated な記載が無かっただけで、
 </tr>
 </tbody>
 </table>
-<h3 id="_10">自動化できる経路</h3>
+<h3 id="_8">自動化できる経路</h3>
 <ul>
 <li><strong>FlyBase の precomputed ファイル</strong>を使う。
   <code>https://s3ftp.flybase.org/releases/current/precomputed_files/genes/</code> の
@@ -642,9 +686,10 @@ FlyBase の curated な記載が無かっただけで、
 <p>→ <strong>受容体チェックは候補の順位づけに使うもので、プロジェクトを止める関門ではない。</strong>
 <a href="direction_MBON04_PPL105.html">direction_MBON04_PPL105.md</a> 7 節の順番のうち
 1（受容体）は 1 節で、Sns / Hbs は 2.5 節で済んだ。</p>
-<p><strong>残っているのは計算ではなく構築の判断</strong> — 2.5 節の対策 1（直交化するか）と
-対策 3（Kirre のタンパクが本当に神経の表面に出ているか）。</p>
-<h2 id="_11">使ったデータ</h2>
+<p><strong>残っているのは計算ではなく構築の判断</strong> — 2.5 節の留保 1（外来 Kirre の過剰発現が
+内在 sns/hbs を誘導しないか。強いドライバーを避ける）と、
+Sns と Hbs のどちらを使うか（背景の低い Hbs が安全側）。</p>
+<h2 id="_9">使ったデータ</h2>
 <ul>
 <li>入力の伝達物質内訳: male-cns:v1.0 の <code>consensusNt</code> と <code>ConnectsTo</code> の <code>weight</code></li>
 <li>クラス単位の発現: FlyBase <code>FlyCellAtlas_slimmed_gene_expression_fb_2026_03.tsv.gz</code>
