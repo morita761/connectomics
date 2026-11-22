@@ -90,7 +90,11 @@ def report_date(f: Path) -> str:
     一覧を時系列に並べるために使う。新しいものほど選定が進んでいる。
     本文の日付を優先するのは、あとから誤りを直しても順番が動かないようにするため。
     """
-    head = "".join(f.read_text(encoding="utf-8").splitlines(keepends=True)[:8])
+    # 引用（> で始まる行）は後から足した追記なので、日付を取るときは見ない。
+    # そうしないと古い報告書を訂正しただけで一覧の先頭に来てしまう。
+    lines = [l for l in f.read_text(encoding="utf-8").splitlines()[:12]
+             if not l.lstrip().startswith(">")]
+    head = chr(10).join(lines[:8])
     m = re.search(r"20\d{2}-\d{2}-\d{2}", head)
     if m:
         return m.group(0)
@@ -115,8 +119,9 @@ def convert(files: list[Path]) -> list[tuple[Path, str, str, str]]:
         body = md_lib.markdown(text, extensions=["tables", "fenced_code", "toc", "sane_lists"])
         m = re.search(r"<h1[^>]*>(.*?)</h1>", body, re.S)
         title = re.sub(r"<[^>]+>", "", m.group(1)).strip() if m else f.stem
-        # 概要として最初の段落を取る（一覧カードの説明に使う）
-        p = re.search(r"<p>(.*?)</p>", body, re.S)
+        # 概要として最初の段落を取る（一覧カードの説明に使う）。
+        # 引用（あとから足した追記）は飛ばして、報告書そのものの書き出しを拾う。
+        p = re.search(r"<p>(.*?)</p>", re.sub(r"<blockquote>.*?</blockquote>", "", body, flags=re.S), re.S)
         lead = re.sub(r"<[^>]+>", "", p.group(1)).strip() if p else ""
         # 日付はカードの先頭に別に出すので、概要の頭から取り除く
         lead = re.sub(r"^20\d{2}-\d{2}-\d{2}[。、.]?\s*", "", lead)[:110]
