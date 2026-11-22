@@ -249,6 +249,9 @@ PPL1-DAN は自発発火しているので（Huang 2018 が PPL105 で 6〜10 Hz
   — 全 22 クラスで最大 5% と背景がいちばん低い（<a href="receptor_check.html">receptor_check.md</a> 2.5 節）</li>
 <li>読み出し用に <strong>LexAop-GCaMP</strong>（段階 B）</li>
 <li>存在証明用に <strong>UAS-CsChrimson</strong>（段階 B'）</li>
+<li><strong><code>tub-GAL80ts</code></strong>。<strong>段階 C で必須</strong>。温度でオーガナイザーの発現を切れるので、
+  <strong>遺伝子型が同じきょうだいを「配線あり／なし」に分けられる</strong>（6.2 節）。
+  発生期の配線変化も、飼育環境の匂いによる飽和も、これで同時に片付く</li>
 </ul>
 <p><strong>内在の Sns/Hbs は周囲のニューロンに無い</strong>ので、外来 Kirre が横取りされる心配は無い。
 留保は「外来 Kirre の過剰発現が内在 sns/hbs を誘導しないか」だけなので、
@@ -343,83 +346,221 @@ retinal 給餌あり／なしの同腹で、遺伝子型を揃えた光対照が
 <p>ここが陽性なら、鎖の <strong>匂い → 上流 → シナプス → 下流</strong> まで繋がったことになる。
 残るのは記憶だけ。</p>
 <h3 id="c">段階 C — 行動。匂いだけで記憶ができるか</h3>
-<p><strong>これが本番。</strong></p>
-<p><strong>訓練: 匂い A を一定時間嗅がせる。それだけ。</strong>
-<strong>試験: 24 時間後に A と B の二択。</strong></p>
+<p><strong>これが本番。訓練は「匂い A を嗅がせる」だけ。試験は 24 時間後の A と B の二択。</strong>
+手順は 6 節に分けて書いた。</p>
+<h2 id="6-c">6. 段階 C の手順</h2>
+<h3 id="60">6.0 普通の条件づけと、どこが違うか</h3>
+<p>普通の嗅覚条件づけは <strong>CS（匂い）と US（電気ショック）を実験者が対提示する</strong>。
+ここでは <strong>US にあたるものが配線である。</strong> 違いはこの一点から全部出てくる。</p>
 <table>
 <thead>
 <tr>
-<th>群</th>
-<th>予想</th>
+<th></th>
+<th>普通の条件づけ</th>
+<th>この実験</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>US</td>
+<td>実験者が与える電気ショック</td>
+<td><strong>人工シナプス経由の PPL106 駆動</strong></td>
+</tr>
+<tr>
+<td>対提示</td>
+<td>実験者がタイミングを決める</td>
+<td><strong>匂いが来れば自動的に起きる</strong></td>
+</tr>
+<tr>
+<td>訓練していない個体</td>
+<td>作れる（US を与えない）</td>
+<td><strong>作れない。嗅げば訓練になる</strong></td>
+</tr>
+<tr>
+<td>US の強さ</td>
+<td>電圧で調節できる</td>
+<td><strong>調節できない</strong>（上流の発火しだい）</td>
+</tr>
+</tbody>
+</table>
+<p>ここから 3 つの帰結が出る。<strong>6.1〜6.3 はその対処</strong>である。</p>
+<h3 id="61">6.1 「訓練していない対照」は、匂いを入れ替えて作る</h3>
+<p>嗅がせないわけにいかないので、<strong>同じ匂い対の、どちらを嗅がせたかで 2 群に分ける。</strong>
+これは嗅覚条件づけで<strong>相反設計（reciprocal design）</strong>として確立した手法で、
+匂いそのものの好き嫌い（naive bias）が相殺される。</p>
+<ul>
+<li><strong>群 A</strong>: OCT を 曝露 → OCT 対 MCH の二択</li>
+<li><strong>群 B</strong>: MCH を 曝露 → OCT 対 MCH の二択</li>
+</ul>
+<p><strong>記憶指数 PI = (曝露した匂いを避けた個体数 − 避けなかった個体数) / 全個体数</strong> を
+群 A と群 B で求めて平均する。
+<strong>曝露が選好を動かしていなければ PI は 0 になる。</strong> 符号は 3 節のとおり未定なので、
+<strong>0 から有意に離れるかどうかを見る。</strong></p>
+<p>匂いは <strong>OCT（3-オクタノール）と MCH（4-メチルシクロヘキサノール）</strong>を使う。
+標準的な対であり、<strong>餌にも飼育環境にも含まれない</strong>ので、
+「飼育中に既に訓練されている」心配が無い。</p>
+<blockquote>
+<p><strong>「匂いの無い環境で飼育する」は現実には無理</strong>（餌の酵母とプロピオン酸が強く匂う）。
+必要なのは <strong>試験に使う匂いに対して素朴であること</strong>だけなので、OCT / MCH を使えば足りる。
+飼育環境の匂いが常時 PPL106 を駆動して α3 を飽和させる問題は、次の 6.2 で切る。</p>
+</blockquote>
+<h3 id="62-gal80ts">6.2 GAL80ts — 遺伝子型が同じ対照が作れる</h3>
+<p><strong>これが段階 C でいちばん効く仕掛け。</strong></p>
+<p><code>tub-GAL80ts</code> を入れておくと、<strong>18°C ではオーガナイザーが出ず、31°C で出る。</strong>
+つまり <strong>同じ遺伝子型のきょうだいを、温度だけで「配線あり／なし」に分けられる。</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>18°C のまま</th>
+<th>31°C に移した</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kirre / Hbs</td>
+<td>出ない</td>
+<td>出る</td>
+</tr>
+<tr>
+<td>人工シナプス</td>
+<td><strong>無い</strong></td>
+<td><strong>ある</strong></td>
+</tr>
+<tr>
+<td>遺伝子型</td>
+<td><strong>同一</strong></td>
+<td><strong>同一</strong></td>
+</tr>
+</tbody>
+</table>
+<p>遺伝的背景の差が原理的に入らないので、<strong>別系統を対照に立てるより強い。</strong>
+段階 B' の retinal 給餌あり／なしと同じ考え方で、こちらは<strong>オーガナイザー側</strong>に効く。</p>
+<p>同時に 2 つの問題も片付く。</p>
+<ul>
+<li><strong>発生期の配線変化</strong>。羽化後に温度を上げれば、成虫になってからシナプスができる。</li>
+<li><strong>飼育環境の匂いによる飽和</strong>。配線がある期間を数日に限れば、
+  その間の曝露だけが効く。</li>
+</ul>
+<p><strong>誘導にかける日数は段階 A で決める。</strong> 解剖で ① &gt; ② が出る最短の日数をそのまま使う。</p>
+<h3 id="63">6.3 曝露と試験のタイミング</h3>
+<p><strong>α3 は蛋白合成依存の長期記憶の区画である。</strong> だから設計を LTM 側に寄せる。</p>
+<table>
+<thead>
+<tr>
+<th>段取り</th>
+<th>内容</th>
+<th>ねらい</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>飼育</td>
+<td>18°C（GAL80ts でオフ）</td>
+<td>発生期に配線を作らない</td>
+</tr>
+<tr>
+<td>羽化後</td>
+<td>31°C に移して N 日（N は段階 A の最短）</td>
+<td>成虫期に配線を作る</td>
+</tr>
+<tr>
+<td>馴化</td>
+<td>清浄空気の中で 1 時間</td>
+<td>直前の匂い履歴を消す</td>
+</tr>
+<tr>
+<td><strong>曝露</strong></td>
+<td><strong>1 分の匂い提示</strong>。① 単回 ② <strong>15 分間隔で 5 回</strong></td>
+<td>LTM には間隔訓練が要る可能性</td>
+</tr>
+<tr>
+<td>試験</td>
+<td><strong>3 分後 / 3 時間後 / 24 時間後</strong>（別個体）</td>
+<td>STM / MTM / <strong>LTM</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>間隔訓練を入れるのは、Aso &amp; Rubin 2016 が 4 日記憶に 10 回の間隔訓練を要したから。</strong>
+単回で出なくても、間隔訓練で出る可能性がある。逆に単回で出たら、それ自体が強い結果になる。</p>
+<p><strong>予想: 24 時間後にだけ差が出る。3 分後には出ない。</strong>
+これが α3 を経由した証拠になる。
+<strong>3 分後にも差が出たら、α3 以外の経路が動いている</strong>ので、解釈をやり直す。</p>
+<h3 id="64">6.4 群の構成</h3>
+<p><strong>遺伝子型は 3 つ、温度は 2 つ。6 群。</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>遺伝子型</th>
+<th>18°C</th>
+<th>31°C</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>①完全</strong></td>
-<td><strong>A への選好が B に対して動く</strong></td>
+<td>MB319B&gt;Kirre ／ SL86062&gt;Hbs ／ tub-GAL80ts</td>
+<td>対照</td>
+<td><strong>本番</strong></td>
 </tr>
 <tr>
-<td>②変異</td>
-<td>動かない</td>
+<td><strong>②変異</strong></td>
+<td>結合しない変異 Kirre に差し替え</td>
+<td>対照</td>
+<td>オーガナイザーの陰性対照</td>
 </tr>
 <tr>
-<td>④効果器のみ</td>
-<td>動かない</td>
+<td><strong>④効果器のみ</strong></td>
+<td>Kirre も Hbs も無し</td>
+<td>対照</td>
+<td>温度そのものの対照</td>
 </tr>
 </tbody>
 </table>
-<h2 id="6-c">6. 段階 C の設計で、いちばん気をつけること</h2>
-<p><strong>人工シナプスは常にある。</strong> つまり <strong>ハエが嗅いだすべての匂いが訓練になる。</strong>
-これは普通の条件づけと根本的に違う点で、設計に跳ね返る。</p>
-<table>
-<thead>
-<tr>
-<th>問題</th>
-<th>対処</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>飼育環境の匂いで既に記憶ができている</td>
-<td><strong>匂いの無い環境で飼育する。</strong> 餌の匂いも管理する</td>
-</tr>
-<tr>
-<td>「訓練していない」対照が作れない</td>
-<td><strong>匂い A を嗅がせた群と、匂い B を嗅がせた群</strong>を比べる。どちらも訓練されているが、互いの対照になる</td>
-</tr>
-<tr>
-<td>発生期から配線があると回路が作り変わる</td>
-<td><strong>GAL80ts で成虫期に限定する</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>逆に、これは強い予測を生む。</strong>
-<strong>特定の匂いの中で飼ったハエは、実験者が訓練しなくてもその匂いへの選好が変わっているはずである。</strong>
-これが出れば、人工シナプスが日常的に働いている証拠になる。狙って測る価値がある。</p>
-<h3 id="_4">必要な対照</h3>
+<p>それぞれに相反設計（OCT 曝露 / MCH 曝露）が付くので、
+<strong>1 つの試験時点あたり 12 条件。</strong> 試験時点が 3 つなので 36 条件になる。</p>
+<p><strong>多い。だから単回曝露・24 時間だけで予備を回し、差が出てから全部に広げる。</strong></p>
+<h3 id="65">6.5 対照が否定するもの</h3>
 <table>
 <thead>
 <tr>
 <th>対照</th>
-<th>何を否定するか</th>
+<th>否定できるもの</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td><strong>18°C の同腹</strong></td>
+<td><strong>遺伝的背景、温度以外のすべて</strong>（いちばん強い）</td>
+</tr>
+<tr>
 <td>②変異 Kirre</td>
-<td>オーガナイザー以外の要因</td>
+<td>接着以外の要因（Kirre の発現そのものの影響）</td>
 </tr>
 <tr>
-<td>匂い A 群 対 匂い B 群</td>
-<td>匂いそのものの性質</td>
+<td>④効果器のみ</td>
+<td>31°C そのものの影響</td>
 </tr>
 <tr>
-<td>3 分後・30 分後の試験</td>
-<td><strong>短期記憶が動いていないこと</strong>（α3 は長期側）</td>
+<td>相反設計（OCT / MCH 入れ替え）</td>
+<td>匂いの好き嫌い</td>
 </tr>
 <tr>
-<td>GAL80ts で成虫期限定</td>
-<td>発生期の配線変化</td>
+<td>無曝露（清浄空気だけ）</td>
+<td>配線があるだけで選好が動かないこと</td>
+</tr>
+<tr>
+<td><strong>別の匂い対で試験</strong>（曝露は OCT、試験は別の 2 つ）</td>
+<td><strong>記憶が匂い特異的であること</strong></td>
+</tr>
+<tr>
+<td><strong>シクロヘキシミド</strong>（蛋白合成阻害）</td>
+<td><strong>24 時間の差が本当に LTM であること</strong></td>
+</tr>
+<tr>
+<td>3 分後の試験</td>
+<td>短期記憶が動いていないこと</td>
 </tr>
 <tr>
 <td>上流を MBON07 以外に替える</td>
@@ -427,6 +568,88 @@ retinal 給餌あり／なしの同腹で、遺伝子型を揃えた光対照が
 </tr>
 </tbody>
 </table>
+<p><strong>シクロヘキシミドは安くて決定的。</strong> α3 の記憶は蛋白合成依存なので、
+24 時間の差が消えれば本物の LTM、消えなければ別の何かである。</p>
+<h3 id="66-1-mbon14">6.6 もう 1 つの読み出し — MBON14 の匂い応答</h3>
+<p>行動だけだと「記憶ができた」の証拠が間接的になる。<strong>痕跡を直接見る手がある。</strong></p>
+<p><strong>α3 区画の読み出しニューロンは MBON14（MBON-α3）</strong>で、
+PPL106 が α3 に 1,955 の出力を持っている。記憶が書かれたなら、
+<strong>曝露した匂いに対する MBON14 の応答が抑圧されるはず</strong>である。</p>
+<table>
+<thead>
+<tr>
+<th>測るもの</th>
+<th>予想</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON14 の OCT 応答（OCT を曝露した個体）</td>
+<td><strong>下がる</strong></td>
+</tr>
+<tr>
+<td>MBON14 の MCH 応答（同じ個体）</td>
+<td>変わらない</td>
+</tr>
+<tr>
+<td>18°C の同腹</td>
+<td>どちらも変わらない</td>
+</tr>
+</tbody>
+</table>
+<p><strong>行動と生理が同じ向きを指せば、主張がはるかに強くなる。</strong>
+MBON14 には別の系統が要るので後回しでよいが、
+<strong>行動で差が出た直後にこれを取るのが、いちばん費用対効果が高い。</strong></p>
+<h3 id="67">6.7 匹数</h3>
+<p>標準的な T-maze に合わせる。<strong>1 つの PI は 50〜100 匹の相反する 2 群から 1 つ出る。</strong>
+<strong>1 条件あたり PI を 8〜12 個</strong>取れば、通常の効果量なら検出できる。
+予備実験（単回曝露・24 時間・3 遺伝子型 × 2 温度）で <strong>PI 約 60 個、ハエ約 5,000 匹</strong>。</p>
+<p>検定は、<strong>まず「①の 31°C」の PI が 0 と違うか</strong>（一標本）、
+次に <strong>①の 31°C 対 ①の 18°C</strong>（これが主要な比較）、
+そのうえで ②・④ との比較。多重比較の補正を入れる。</p>
+<h3 id="68">6.8 つまずきそうなところ</h3>
+<table>
+<thead>
+<tr>
+<th>懸念</th>
+<th>どうなるか</th>
+<th>手当て</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>31°C がハエに負担</td>
+<td>全体の成績が落ちる</td>
+<td>29°C に下げる。日数を延ばして補う</td>
+</tr>
+<tr>
+<td>誘導中の飼育環境の匂いで飽和</td>
+<td>本番の曝露が効かない</td>
+<td>誘導期間を短くする。誘導中は清浄空気で飼う</td>
+</tr>
+<tr>
+<td>MBON-α1 の応答が曝露のたびに弱まる</td>
+<td>間隔訓練が効かない</td>
+<td>単回曝露の結果と比べる。段階 B で応答の持続を見ておく</td>
+</tr>
+<tr>
+<td>Kirre の発現が MBON07 本来の出力を乱す</td>
+<td>①の基礎行動が変わる</td>
+<td>18°C の同腹と②で切り分け。素朴な匂い選好を先に測る</td>
+</tr>
+<tr>
+<td>効果が小さい</td>
+<td>差が出ない</td>
+<td>段階 B' の強制活性でどれだけ出たかを目安に、曝露回数を増やす</td>
+</tr>
+</tbody>
+</table>
+<h3 id="69">6.9 ついでに測ると面白いこと</h3>
+<p><strong>配線が常時あることは、裏返せば予測になる。</strong>
+<strong>特定の匂いの中で数日飼ったハエは、実験者が訓練しなくてもその匂いへの選好が変わっているはずである。</strong></p>
+<p>誘導中（31°C の N 日間）に OCT を薄く流した群と、清浄空気で飼った群を比べればよい。
+<strong>ここで差が出れば、人工シナプスが日常的に働いている証拠になる。</strong>
+T-maze の訓練より自然な条件なので、出たときの主張は強い。</p>
 <h2 id="7-mbon02-ppl106">7. 比較の相手 — MBON02 → PPL106</h2>
 <p>下流が同じ細胞（bodyId 331662710）で、<strong>LexA 系統も共有できる</strong>。
 上流の性格が逆なので、並べると意味が出る。</p>
@@ -489,14 +712,29 @@ retinal 給餌あり／なしの同腹で、遺伝子型を揃えた光対照が
 <td>上流を MBON01（KC 46%）に替える。または強い匂いで再試</td>
 </tr>
 <tr>
-<td>C: 生理は動くが記憶が出ない</td>
+<td>C: 単回曝露で差が出ない</td>
+<td>1 回では足りない</td>
+<td><strong>間隔訓練（15 分間隔で 5 回）に切り替える</strong>（6.3 節）</td>
+</tr>
+<tr>
+<td>C: 生理は動くが、間隔訓練でも記憶が出ない</td>
 <td><strong>PPL1-α3 の発火だけでは記憶が書けない</strong></td>
 <td><strong>これは陰性ではなく発見。</strong> KC 活動との時間的一致が要ることの証拠になる</td>
 </tr>
 <tr>
-<td>C: 短期記憶も動く</td>
+<td>C: 24 時間の差がシクロヘキシミドで消えない</td>
+<td>蛋白合成依存の LTM ではない</td>
+<td>別の機構。3 時間後の値と合わせて読み直す</td>
+</tr>
+<tr>
+<td>C: 3 分後にも差が出る</td>
 <td>α3 以外の経路が動いている</td>
-<td>②との差分で切り分け</td>
+<td>②と 18°C の同腹で切り分け</td>
+</tr>
+<tr>
+<td>C: 18°C の同腹でも差が出る</td>
+<td>配線と無関係な要因</td>
+<td><strong>設計の前提が崩れる。</strong> GAL80ts の漏れを疑う</td>
 </tr>
 </tbody>
 </table>
@@ -539,7 +777,7 @@ retinal 給餌あり／なしの同腹で、遺伝子型を揃えた光対照が
 </tr>
 </tbody>
 </table>
-<h2 id="_5">使ったデータ</h2>
+<h2 id="_4">使ったデータ</h2>
 <ul>
 <li><strong>KC 入力率</strong>: hemibrain:v1.2.1。<code>fetch_simple_connections(None, ids)</code> の全入力から
   <code>type_pre</code> が <code>KC</code> で始まるものの重みを合計（MBON07 は n=4）。</li>
