@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<title>MBON04 の先行研究（訂正版）</title>
+<style>
+:root{
+  --navy:#17305c; --navy2:#1f3f73; --acc:#2f9fe0; --line:#d7dde8;
+  --z0:#fff; --z1:#f3f6fb; --ink:#14233d; --sub:#5a6b85;
+  --ok:#1f7a4d; --ng:#b3261e;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#8e97a6;font-family:"Yu Gothic UI","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;color:var(--ink);padding:24px}
+.slide{width:1280px;min-height:720px;margin:0 auto 28px;background:#fff;padding:34px 40px 28px;
+  display:flex;flex-direction:column;box-shadow:0 4px 18px rgba(0,0,0,.28)}
+h1{font-size:30px;margin:0 0 22px;padding-left:16px;border-left:9px solid var(--acc);
+  color:var(--navy);line-height:1.25;font-weight:800}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.5}
+thead th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-weight:700;font-size:14px}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:nth-child(even){background:var(--z1)}
+.yr{font-weight:800;color:var(--navy);white-space:nowrap}
+.doi{color:var(--sub);font-size:12.5px;display:block;margin-top:2px}
+.ok{color:var(--ok);font-weight:800}
+.ng{color:var(--ng);font-weight:800}
+.tm{background:#e8f4fd !important}
+.band{margin-top:auto;background:var(--navy);color:#fff;padding:16px 20px;font-size:16px;line-height:1.65;font-weight:700}
+.band em{font-style:normal;color:#8fd0ff}
+.note{font-size:13px;color:var(--sub);margin:10px 2px 16px;line-height:1.6}
+.small{font-size:13px;color:var(--sub)}
+h2{font-size:19px;color:var(--navy);margin:22px 0 8px}
+.two{display:grid;grid-template-columns:0.9fr 1.1fr;gap:26px}
+.two table{table-layout:fixed;font-size:13.5px}
+.two td,.two th{word-break:break-word;padding:8px 10px}
+@media print{body{background:#fff;padding:0}.slide{box-shadow:none;margin:0;page-break-after:always}}
+</style></head><body>
+
+<!-- スライド 1 -->
+<div class="slide">
+<h1>MBON04 の先行研究：どの細胞を・どの課題で測ったか</h1>
+<p class="note">「MBON04 に関する研究」として集めた 7 報を、<b>実際に操作した細胞</b>と<b>行動課題</b>で整理したもの。
+<b>MBON04 = MBON-β'2mp_bilateral</b>。文献中の「MBON-β'2mp」は <b>MBON03</b> であって MBON04ではない。</p>
+<table>
+<thead><tr>
+  <th style="width:52px">年</th>
+  <th style="width:300px">論文（著者・誌・DOI）</th>
+  <th style="width:230px">操作した細胞（ドライバー）</th>
+  <th>行動課題と結果</th>
+</tr></thead>
+<tbody>
+<tr class="tm">
+  <td class="yr">2014</td>
+  <td>Aso Y ほか　eLife<span class="doi">10.7554/eLife.04580</span></td>
+  <td>MB011B ＋ MB434B<br><span class="ok">○ MBON04 を含む</span><br><span class="small">ただし γ5β'2a・β'2mp と 3 型まとめて</span></td>
+  <td><b>2 つの別々の実験</b>。① <b>4 フィールド光遺伝学アリーナ</b>で CsChrimson 活性化 → 生来の忌避を定量。
+      ② <b>T-maze のにおい条件づけ</b>で 30 分・24 時間記憶が低下（MB011B・MB210B 阻害）</td>
+</tr>
+<tr>
+  <td class="yr">2015</td>
+  <td>Owald D ほか　Neuron<span class="doi">10.1016/j.neuron.2015.03.025</span></td>
+  <td>VT1211 / R21D02<br><span class="ng">✕ MBON04 を含まない</span><br><span class="small">γ5β'2a ＋ β'2mp のみ</span></td>
+  <td><b>T-maze のにおい条件づけ</b>（報酬＝ショ糖／忌避＝電気ショック）。両方で成績低下。
+      <b>これは MBON03 の結果</b></td>
+</tr>
+<tr>
+  <td class="yr">2015</td>
+  <td>Sitaraman D ほか　Front Neural Circuits<span class="doi">10.3389/fncir.2015.00073</span></td>
+  <td>γ5β'2a/β'2mp/β'2mp_bilateral<br><span class="ok">○ 含む</span>（3 型まとめて）</td>
+  <td><b>睡眠（DAM）</b>。この 3 型が覚醒を促す。生来の忌避については Aso 2014 の引用</td>
+</tr>
+<tr>
+  <td class="yr">2018</td>
+  <td>Tsao CH ほか　eLife<span class="doi">10.7554/eLife.35264</span></td>
+  <td>VT1211（MBON 側）<br><span class="ng">✕ MBON04 を含まない</span><br><span class="small">PPL1-α'2α2＝PPL105 は扱う</span></td>
+  <td><b>酵母の探索行動</b>（アリーナ）。Rdl ノックダウンで空腹時の探索が障害。
+      <b>MBON04 と PPL105 の両方を扱った論文ではない</b></td>
+</tr>
+<tr>
+  <td class="yr">2018</td>
+  <td>Al-Anzi B, Zinn K　Neural Dev<span class="doi">10.1186/s13064-018-0116-7</span></td>
+  <td>MB011B ほか<br><span class="ok">○ 含む</span>（3 型まとめて）</td>
+  <td><b>脂肪蓄積（TAG）と摂食行動</b>。MBON の阻害・過活性化で測定</td>
+</tr>
+<tr>
+  <td class="yr">2022</td>
+  <td>Hobin M ほか　iScience<span class="doi">10.1016/j.isci.2022.104874</span></td>
+  <td>MB011B<br><span class="ok">○ 含む</span>（3 型まとめて）</td>
+  <td><b>睡眠（DAM）</b>。bantam で興奮性を操作し前半夜の睡眠が変化。根拠文 12 本で最多</td>
+</tr>
+<tr>
+  <td class="yr">2023</td>
+  <td>Zhou F ほか　Nat Commun<span class="doi">10.1038/s41467-023-43970-0</span></td>
+  <td>MB011B<br><span class="ok">○ 含む</span>（3 型まとめて）</td>
+  <td><b>摂食（sip 数、optoPAD）</b>。optoDop1R2 を発現させ光で駆動。
+      <b>この MBON に外来のドーパミン受容体を入れた前例</b></td>
+</tr>
+</tbody></table>
+<div class="band">
+T-maze を使ったのは <em>Aso 2014 の記憶部分と Owald 2015 の 2 報だけ</em>。T-maze は<em>におい</em>の課題で、
+2 つのにおい（標準は OCT と MCH）の一方を電気ショックまたはショ糖と対にして訓練し、分岐点での選択を見る。
+残り 5 報はアリーナ・睡眠（DAM）・摂食で、記憶課題ではない。
+</div>
+</div>
+
+<!-- スライド 2 -->
+<div class="slide">
+<h1>MBON04 単独を操作した研究は、まだ無い</h1>
+
+<div class="two">
+<div>
+<h2>型名の対応 — β'2mp は MBON04 ではない</h2>
+<table>
+<thead><tr><th>hemibrain</th><th>区画名</th><th>細胞数</th></tr></thead>
+<tbody>
+<tr><td class="yr">MBON01</td><td>γ5β'2a</td><td>1</td></tr>
+<tr><td class="yr">MBON03</td><td><b>β'2mp</b></td><td>2</td></tr>
+<tr style="background:#e8f4fd"><td class="yr">MBON04</td><td><b>β'2mp_bilateral</b></td><td>2</td></tr>
+</tbody></table>
+<p class="note">hemibrain:v1.2.1 の instance 名で確認（<code>MBON04(B'2mp_bilateral)_R / _L</code>）。
+文献に「MBON-β'2mp」とあれば、それは <b>MBON03</b> の話である。</p>
+</div>
+
+<div>
+<h2>ドライバーの中身</h2>
+<table>
+<colgroup><col style="width:96px"><col><col style="width:88px"></colgroup>
+<thead><tr><th>ドライバー</th><th>含む型</th><th>MBON04</th></tr></thead>
+<tbody>
+<tr><td class="yr">MB011B<br><span class="small">split-GAL4</span></td>
+    <td>γ5β'2a ＋ β'2mp ＋ <b>β'2mp_bilateral</b></td><td class="ok">○<br><span class="small" style="font-weight:400">3 型まとめて</span></td></tr>
+<tr><td class="yr">VT1211<br><span class="small">GAL4</span></td>
+    <td>γ5β'2a ＋ β'2mp</td><td class="ng">✕</td></tr>
+<tr><td class="yr">R21D02<br><span class="small">GAL4</span></td>
+    <td>M4/M6 クラスタ（β2β'2a・β'2mp・γ5β'2a）</td><td class="ng">✕<br><span class="small" style="font-weight:400">記載なし</span></td></tr>
+</tbody></table>
+<p class="note">VT1211 の中身は Tsao 2018 本文の記載による。</p>
+</div>
+</div>
+
+<h2>したがって、まとめ文はこう直す</h2>
+<table>
+<colgroup><col style="width:70px"><col></colgroup>
+<tbody>
+<tr><td class="yr" style="color:var(--ng)">誤</td>
+    <td style="text-decoration:line-through;color:var(--sub)">MBON04 はキノコ体の出力ニューロンで、忌避・記憶・摂食・睡眠に関与する</td></tr>
+<tr style="background:#e8f4fd"><td class="yr" style="color:var(--ok)">正</td>
+    <td><b>MBON04 を含む β'2/γ5 の MBON 群（MB011B）は、忌避・記憶・摂食・睡眠に関与する。
+    ただし MBON04 単独を操作した研究は無く、その寄与分は切り出されていない。</b></td></tr>
+<tr><td class="yr" style="color:var(--ng)">誤</td>
+    <td style="text-decoration:line-through;color:var(--sub)">MBON04（β'2mp、接近・摂食系の出力）</td></tr>
+<tr style="background:#e8f4fd"><td class="yr" style="color:var(--ok)">正</td>
+    <td><b>β'2 区画の MBON は活性化すると忌避を示す（＝忌避側の読み出し）。</b>
+    報酬学習ではこの出力が抑えられることで接近が生じる</td></tr>
+</tbody></table>
+
+<div class="band">
+<em>前例が無いことは、裏返せば売りになる。</em> 行動の読み出しを MB011B の先行研究から借りられない代わりに、
+<em>MBON04 単独を狙う操作そのものが新しい。</em>
+ドーパミン受容体を外から入れた前例（Zhou 2023）は MB011B で既にあるので、手法の実現性は担保されている。
+</div>
+</div>
+
+</body></html>

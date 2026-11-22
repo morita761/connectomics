@@ -146,7 +146,8 @@ def main():
     for d in ("zero_3d", "cross_3d"):
         if (RESULTS / d).exists():
             total += copy(RESULTS / d, SITE / d)
-    for f in ("shortlist.html", "shortlist_final.csv", "mb_final19.csv",
+    for f in ("shortlist.html", "slide_MBON04_refs.html",
+              "shortlist_final.csv", "mb_final19.csv",
               "gmr_lexa_match.csv", "hemidriver_lexa.csv", "em_gap/summary.csv"):
         src = RESULTS / f
         if src.exists():
@@ -180,6 +181,8 @@ def main():
         '<span>行動で「働いた」と示すならこの組 ／ 解剖→生理→行動の 3 段階</span></a>',
         '<a class="card" href="reports/receptor_check.html"><b>受容体と Kirre・Dsyd-1</b>'
         '<span>受容体はコネクトームで片が付く ／ 残るのは Sns・Hbs</span></a>',
+        '<a class="card" href="slide_MBON04_refs.html"><b>発表用: MBON04 の先行研究</b>'
+        '<span>どの細胞を・どの課題で測ったか ／ 単独の前例は無い</span></a>',
         '<a class="card" href="shortlist.html"><b>★ 最終候補の一覧</b>'
         '<span>3 個体で確かめた組</span></a>',
         f'<a class="card" href="reports/em_links_MBON04_PPL105.html"><b>EM と 3D のリンク</b>'
