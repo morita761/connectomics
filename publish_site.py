@@ -177,6 +177,8 @@ def main():
         '<span>全脳探索の第一候補</span></a>',
         '<a class="card" href="reports/direction_MBON04_PPL105.html"><b>どちら向きにするか</b>'
         '<span>伝達物質と放出部位から決める ／ 行動実験の設計</span></a>',
+        '<a class="card" href="reports/plan_three_pairs.html"><b>3 組を並行して準備する</b>'
+        '<span>匂いだけで記憶を作る基準で選び直す ／ KC 入力率という新しい軸</span></a>',
         '<a class="card" href="reports/techdemo_MBON31_PAM11.html"><b>技術実証: MBON31 → PAM11</b>'
         '<span>行動で「働いた」と示すならこの組 ／ 解剖→生理→行動の 3 段階</span></a>',
         '<a class="card" href="reports/receptor_check.html"><b>受容体と Kirre・Dsyd-1</b>'
