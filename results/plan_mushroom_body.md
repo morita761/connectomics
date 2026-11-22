@@ -82,7 +82,7 @@ Glu = グルタミン酸（抑制性）、GABA = 抑制性、ACh = 興奮性、D
 |---|---|---|---|---|---|---|
 | MBON01 | γ5β'2a | Glu | | MBON31 | α'1a | GABA |
 | MBON02 | β2β'2a | Glu | | MBON33 | γ2γ3 | ACh |
-| MBON04 | β'2mp | Glu | | PPL101 | γ1pedc | DA |
+| MBON04 | β'2mp_bilateral | Glu | | PPL101 | γ1pedc | DA |
 | MBON07 | α1 | Glu | | PPL103 | γ2α'1 | DA |
 | MBON11 | γ1pedc>α/β | GABA | | PPL105 | — | DA |
 | MBON21 | γ4γ5 | ACh | | PPL106 | α3 | DA |

@@ -116,6 +116,134 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <hr />
 <h2 id="1-mbon04-ppl105">1. MBON04 ↔ PPL105（第一候補）</h2>
 <h3 id="mbon04-mbon-2mp_bilateral">MBON04 = MBON-β'2mp_bilateral</h3>
+<p><strong>先に注意 — 下の論文はどれも MBON04 を単独では扱っていない。</strong></p>
+<p>hemibrain の型名と古い呼び名の対応は次のとおり。</p>
+<table>
+<thead>
+<tr>
+<th>hemibrain</th>
+<th>区画名</th>
+<th>細胞数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON01</td>
+<td>γ5β'2a</td>
+<td>1（hemibrain 右）</td>
+</tr>
+<tr>
+<td>MBON03</td>
+<td><strong>β'2mp</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>MBON04</strong></td>
+<td><strong>β'2mp_bilateral</strong></td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>「MBON-β'2mp」と書かれていたら、それは MBON03 であって MBON04 ではない。</strong>
+ドライバーの中身は次のようになっている。</p>
+<table>
+<thead>
+<tr>
+<th>ドライバー</th>
+<th>含む型</th>
+<th>MBON04 を含むか</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MB011B</strong>〈split-GAL4〉</td>
+<td>γ5β'2a ＋ β'2mp ＋ <strong>β'2mp_bilateral</strong></td>
+<td><strong>含む</strong>（ただし 3 型まとめて）</td>
+</tr>
+<tr>
+<td><strong>VT1211</strong>〈GAL4〉</td>
+<td>γ5β'2a ＋ β'2mp</td>
+<td><strong>含まない</strong>（Tsao 2018 本文の記載）</td>
+</tr>
+<tr>
+<td>R21D02〈GAL4〉</td>
+<td>M4/M6 クラスタ（β2β'2a・β'2mp・γ5β'2a）</td>
+<td>記載なし。β'2mp 中心</td>
+</tr>
+</tbody>
+</table>
+<p>したがって <strong>MBON04 の機能を単離した研究は存在しない。</strong>
+忌避・記憶・摂食・睡眠はすべて 3 型（または 2 型）をまとめて操作した結果であり、
+<strong>MBON04 の寄与分は切り出されていない。</strong>
+これは本計画にとって両面がある — 単独操作の前例が無い（読み出しを自分で立てる必要がある）一方で、
+<strong>MBON04 単独を狙う操作自体が新しい。</strong></p>
+<h3 id="_2">行動課題は何だったか</h3>
+<table>
+<thead>
+<tr>
+<th>論文</th>
+<th>ドライバー</th>
+<th>行動課題</th>
+<th>T-maze か</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aso 2014（価数）</td>
+<td>MB011B ＋ MB434B</td>
+<td><strong>4 フィールド光遺伝学アリーナ</strong>（光の当たる側を避けるか）</td>
+<td><strong>違う</strong></td>
+</tr>
+<tr>
+<td>Aso 2014（記憶）</td>
+<td>MB011B・MB210B</td>
+<td><strong>T-maze のにおい条件づけ</strong>（30 分・24 時間記憶）</td>
+<td><strong>そう</strong></td>
+</tr>
+<tr>
+<td>Owald 2015</td>
+<td>VT1211 / R21D02</td>
+<td><strong>T-maze のにおい条件づけ</strong>（報酬＝ショ糖／忌避＝電気ショック）</td>
+<td><strong>そう。ただし MBON04 は入らない</strong></td>
+</tr>
+<tr>
+<td>Sitaraman 2015</td>
+<td>—</td>
+<td>睡眠（DAM）。価数は Aso 2014b の引用</td>
+<td>違う</td>
+</tr>
+<tr>
+<td>Tsao 2018</td>
+<td>VT1211 ほか</td>
+<td><strong>酵母の探索行動</strong>（アリーナ）</td>
+<td><strong>違う。MBON04 は入らない</strong></td>
+</tr>
+<tr>
+<td>Al-Anzi 2018</td>
+<td>MB011B ほか</td>
+<td>脂肪蓄積（TAG）と摂食</td>
+<td>違う</td>
+</tr>
+<tr>
+<td>Hobin 2022</td>
+<td>MB011B</td>
+<td>睡眠（DAM）</td>
+<td>違う</td>
+</tr>
+<tr>
+<td>Zhou 2023</td>
+<td>MB011B</td>
+<td><strong>摂食（sip 数、optoPAD）</strong></td>
+<td>違う</td>
+</tr>
+</tbody>
+</table>
+<p><strong>T-maze を使ったのは Aso 2014 の記憶の部分と Owald 2015 だけ。</strong>
+そして <strong>T-maze は「におい」の課題</strong>である — 2 つのにおい（OCT と MCH が標準）のうち一方を
+電気ショック（忌避）またはショ糖（報酬）と対にして訓練し、
+あとで 2 つのにおいの分岐点に置いてどちらを選ぶかを見る。
+におい以外（色・温度）の T-maze もあるが、ここで出てくるのはすべてにおいである。</p>
+<h3 id="_3">文献一覧</h3>
 <table>
 <thead>
 <tr>
@@ -142,7 +270,7 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <td>Activity of defined mushroom body output neurons underlies learned olfactory behavior in Drosophila</td>
 <td>Neuron</td>
 <td><a href="https://doi.org/10.1016/j.neuron.2015.03.025">10.1016/j.neuron.2015.03.025</a></td>
-<td>MBON-β'2mp を VT1211 / R21D02 で阻害し、報酬・忌避記憶の両方で成績低下を示した</td>
+<td>MBON-β'2mp（＝<strong>MBON03</strong>）を VT1211 / R21D02 で阻害し、T-maze のにおい条件づけで報酬・忌避記憶の両方の成績低下を示した。<strong>MBON04 は含まれない</strong></td>
 </tr>
 <tr>
 <td>2015</td>
@@ -158,7 +286,7 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <td>Drosophila mushroom bodies integrate hunger and satiety signals to control innate food-seeking behavior</td>
 <td>eLife</td>
 <td><a href="https://doi.org/10.7554/eLife.35264">10.7554/eLife.35264</a></td>
-<td><strong>MBON04 と PPL105 の両方を扱う</strong>。β'2 の MBON と PPL1-α'2α2 を操作して酵母の探索行動を測定</td>
+<td>PPL1-α'2α2（＝PPL105）と β'2 の MBON を操作して酵母の探索行動を測定。ただし MBON の側は <strong>VT1211 なので MBON04 は入らない</strong></td>
 </tr>
 <tr>
 <td>2018</td>
@@ -166,7 +294,7 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <td>Identification and characterization of mushroom body neurons that regulate fat storage in Drosophila</td>
 <td>Neural Dev</td>
 <td><a href="https://doi.org/10.1186/s13064-018-0116-7">10.1186/s13064-018-0116-7</a></td>
-<td>MBON-β'2mp を含む MBON の阻害・過活性化で脂肪蓄積と摂食行動を測定</td>
+<td>MBON-β'2mp を含む MBON の阻害・過活性化で脂肪蓄積と摂食行動を測定（MB011B を使用）</td>
 </tr>
 <tr>
 <td>2022</td>
@@ -186,7 +314,7 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 </tr>
 </tbody>
 </table>
-<p><strong>Zhou 2023 は特に重要</strong>: MBON04 を含む MBON に光操作できるドーパミン受容体を導入し、
+<p><strong>Zhou 2023 は特に重要</strong>: MBON04 <strong>を含む 3 型</strong>に光操作できるドーパミン受容体を導入し、
 行動（摂食）で読み出した例である。PPL105 → MBON04 の向きで新しいドーパミンシナプスを作る本実験と、
 操作の対象と読み出しがそのまま重なる。</p>
 <h3 id="ppl105-ppl1-22-mb-v1">PPL105 = PPL1-α'2α2（= MB-V1）</h3>
@@ -351,7 +479,7 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <p><strong>MBON07 → PPL106 の読み出しは明快</strong>: Ichinose 2015 の報酬性長期記憶（α1 区画のループ）と
 Jacob 2021 の pre-exposure 学習の反転が、どちらも 1 細胞型の操作で出ている。
 さらにこの組はドライバーが最もきれい（下記）。</p>
-<h3 id="_2">この組のドライバーは候補中で最良</h3>
+<h3 id="_4">この組のドライバーは候補中で最良</h3>
 <table>
 <thead>
 <tr>

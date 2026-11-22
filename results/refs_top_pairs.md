@@ -42,17 +42,63 @@ python lit_search.py PPL105 PPL106 MBON07 PAM11 MBON33 MBON04 MBON11 MBON31 FB4N
 
 ### MBON04 = MBON-β'2mp_bilateral
 
+**先に注意 — 下の論文はどれも MBON04 を単独では扱っていない。**
+
+hemibrain の型名と古い呼び名の対応は次のとおり。
+
+| hemibrain | 区画名 | 細胞数 |
+|---|---|---|
+| MBON01 | γ5β'2a | 1（hemibrain 右） |
+| MBON03 | **β'2mp** | 2 |
+| **MBON04** | **β'2mp_bilateral** | 2 |
+
+**「MBON-β'2mp」と書かれていたら、それは MBON03 であって MBON04 ではない。**
+ドライバーの中身は次のようになっている。
+
+| ドライバー | 含む型 | MBON04 を含むか |
+|---|---|---|
+| **MB011B**〈split-GAL4〉 | γ5β'2a ＋ β'2mp ＋ **β'2mp_bilateral** | **含む**（ただし 3 型まとめて） |
+| **VT1211**〈GAL4〉 | γ5β'2a ＋ β'2mp | **含まない**（Tsao 2018 本文の記載） |
+| R21D02〈GAL4〉 | M4/M6 クラスタ（β2β'2a・β'2mp・γ5β'2a） | 記載なし。β'2mp 中心 |
+
+したがって **MBON04 の機能を単離した研究は存在しない。**
+忌避・記憶・摂食・睡眠はすべて 3 型（または 2 型）をまとめて操作した結果であり、
+**MBON04 の寄与分は切り出されていない。**
+これは本計画にとって両面がある — 単独操作の前例が無い（読み出しを自分で立てる必要がある）一方で、
+**MBON04 単独を狙う操作自体が新しい。**
+
+### 行動課題は何だったか
+
+| 論文 | ドライバー | 行動課題 | T-maze か |
+|---|---|---|---|
+| Aso 2014（価数） | MB011B ＋ MB434B | **4 フィールド光遺伝学アリーナ**（光の当たる側を避けるか） | **違う** |
+| Aso 2014（記憶） | MB011B・MB210B | **T-maze のにおい条件づけ**（30 分・24 時間記憶） | **そう** |
+| Owald 2015 | VT1211 / R21D02 | **T-maze のにおい条件づけ**（報酬＝ショ糖／忌避＝電気ショック） | **そう。ただし MBON04 は入らない** |
+| Sitaraman 2015 | — | 睡眠（DAM）。価数は Aso 2014b の引用 | 違う |
+| Tsao 2018 | VT1211 ほか | **酵母の探索行動**（アリーナ） | **違う。MBON04 は入らない** |
+| Al-Anzi 2018 | MB011B ほか | 脂肪蓄積（TAG）と摂食 | 違う |
+| Hobin 2022 | MB011B | 睡眠（DAM） | 違う |
+| Zhou 2023 | MB011B | **摂食（sip 数、optoPAD）** | 違う |
+
+**T-maze を使ったのは Aso 2014 の記憶の部分と Owald 2015 だけ。**
+そして **T-maze は「におい」の課題**である — 2 つのにおい（OCT と MCH が標準）のうち一方を
+電気ショック（忌避）またはショ糖（報酬）と対にして訓練し、
+あとで 2 つのにおいの分岐点に置いてどちらを選ぶかを見る。
+におい以外（色・温度）の T-maze もあるが、ここで出てくるのはすべてにおいである。
+
+### 文献一覧
+
 | 年 | 著者 | 論文 | 誌 | DOI | 何をしたか |
 |---|---|---|---|---|---|
 | 2014 | Aso Y, et al. | Mushroom body output neurons encode valence and guide memory-based action selection in Drosophila | eLife | [10.7554/eLife.04580](https://doi.org/10.7554/eLife.04580) | **MB011B** で MBON-β'2mp_bilateral を含む 5 つのグルタミン酸作動性 MBON を CsChrimson で活性化し、忌避反応を定量。価数のマッピングの基礎論文 |
-| 2015 | Owald D, Felsenberg J, Talbot CB, Das G, Perisse E, Huetteroth W, Waddell S | Activity of defined mushroom body output neurons underlies learned olfactory behavior in Drosophila | Neuron | [10.1016/j.neuron.2015.03.025](https://doi.org/10.1016/j.neuron.2015.03.025) | MBON-β'2mp を VT1211 / R21D02 で阻害し、報酬・忌避記憶の両方で成績低下を示した |
+| 2015 | Owald D, Felsenberg J, Talbot CB, Das G, Perisse E, Huetteroth W, Waddell S | Activity of defined mushroom body output neurons underlies learned olfactory behavior in Drosophila | Neuron | [10.1016/j.neuron.2015.03.025](https://doi.org/10.1016/j.neuron.2015.03.025) | MBON-β'2mp（＝**MBON03**）を VT1211 / R21D02 で阻害し、T-maze のにおい条件づけで報酬・忌避記憶の両方の成績低下を示した。**MBON04 は含まれない** |
 | 2015 | Sitaraman D, Aso Y, Rubin GM, Nitabach MN | Control of sleep by dopaminergic inputs to the Drosophila mushroom body | Front Neural Circuits | [10.3389/fncir.2015.00073](https://doi.org/10.3389/fncir.2015.00073) | MBON-γ5β'2a/β'2mp/β'2mp_bilateral が覚醒を促し、生来の忌避を媒介することを光遺伝学で示した |
-| 2018 | Tsao CH, Chen CC, Lin CH, Yang HY, Lin S | Drosophila mushroom bodies integrate hunger and satiety signals to control innate food-seeking behavior | eLife | [10.7554/eLife.35264](https://doi.org/10.7554/eLife.35264) | **MBON04 と PPL105 の両方を扱う**。β'2 の MBON と PPL1-α'2α2 を操作して酵母の探索行動を測定 |
-| 2018 | Al-Anzi B, Zinn K | Identification and characterization of mushroom body neurons that regulate fat storage in Drosophila | Neural Dev | [10.1186/s13064-018-0116-7](https://doi.org/10.1186/s13064-018-0116-7) | MBON-β'2mp を含む MBON の阻害・過活性化で脂肪蓄積と摂食行動を測定 |
+| 2018 | Tsao CH, Chen CC, Lin CH, Yang HY, Lin S | Drosophila mushroom bodies integrate hunger and satiety signals to control innate food-seeking behavior | eLife | [10.7554/eLife.35264](https://doi.org/10.7554/eLife.35264) | PPL1-α'2α2（＝PPL105）と β'2 の MBON を操作して酵母の探索行動を測定。ただし MBON の側は **VT1211 なので MBON04 は入らない** |
+| 2018 | Al-Anzi B, Zinn K | Identification and characterization of mushroom body neurons that regulate fat storage in Drosophila | Neural Dev | [10.1186/s13064-018-0116-7](https://doi.org/10.1186/s13064-018-0116-7) | MBON-β'2mp を含む MBON の阻害・過活性化で脂肪蓄積と摂食行動を測定（MB011B を使用） |
 | 2022 | Hobin M, Dorfman K, Adel M, Rivera-Rodriguez EJ, Kuklin EA, Ma D, Griffith LC | The Drosophila microRNA bantam regulates excitability in adult mushroom body output neurons to promote early night sleep | iScience | [10.1016/j.isci.2022.104874](https://doi.org/10.1016/j.isci.2022.104874) | **MB011B** で γ5β'2a/β'2mp/β'2mp_bilateral の興奮性を操作し睡眠を測定。根拠文 12 本で最多 |
 | 2023 | Zhou F, et al. | Optimized design and in vivo application of optogenetically functionalized Drosophila dopamine receptors | Nat Commun | [10.1038/s41467-023-43970-0](https://doi.org/10.1038/s41467-023-43970-0) | **MB011B で optoDop1R2 を発現**させ、摂食行動（sip 数）を測定。**MBON04 にドーパミン受容体を導入した前例** |
 
-**Zhou 2023 は特に重要**: MBON04 を含む MBON に光操作できるドーパミン受容体を導入し、
+**Zhou 2023 は特に重要**: MBON04 **を含む 3 型**に光操作できるドーパミン受容体を導入し、
 行動（摂食）で読み出した例である。PPL105 → MBON04 の向きで新しいドーパミンシナプスを作る本実験と、
 操作の対象と読み出しがそのまま重なる。
 
