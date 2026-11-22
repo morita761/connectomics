@@ -326,6 +326,54 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 行動（摂食）で読み出した例である。PPL105 → MBON04 の向きで新しいドーパミンシナプスを作る本実験と、
 操作の対象と読み出しがそのまま重なる。</p>
 <h3 id="ppl105-ppl1-22-mb-v1">PPL105 = PPL1-α'2α2（= MB-V1）</h3>
+<p><strong>MBON04 と違い、PPL105 には単独で狙えるドライバーがある。</strong></p>
+<table>
+<thead>
+<tr>
+<th>ドライバー</th>
+<th>含む型</th>
+<th>PPL105 を単離できるか</th>
+<th>出典</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MB058B</strong>〈split-GAL4〉</td>
+<td><strong>PPL1-α'2α2 のみ（1 型）</strong></td>
+<td><strong>できる</strong></td>
+<td>Aso 2014（<code>data/driver_lines_cns.csv</code>）。Aso 2016 の記載は「α'2 と α2 だけに発現」</td>
+</tr>
+<tr>
+<td>MB099C〈split-GAL4〉</td>
+<td>PPL1-γ2α'1 ＋ PPL1-α'2α2（2 型）</td>
+<td>できない</td>
+<td>Aso 2016 本文</td>
+</tr>
+<tr>
+<td>MB060B〈split-GAL4〉</td>
+<td>α'2α2 ＋ α'3 ＋ α3 ＋ γ2α'1（4 型）</td>
+<td>できない</td>
+<td>Aso 2014</td>
+</tr>
+<tr>
+<td>5htr1b / NP7187 / MZ840 / NP0047〈GAL4〉</td>
+<td>MB-V1 ほか（旧世代、広い）</td>
+<td>できない</td>
+<td>Aso 2012</td>
+</tr>
+</tbody>
+</table>
+<p><strong>訂正</strong>: 以前この表で MB099C を「PPL103+104+105+106」と書いていたのは誤り。
+Aso &amp; Rubin 2016 の本文には
+"MB099C, MB060B and MB065B that express in the combination of the γ2, α'1, α'2 and α2
+compartments (PPL1-γ2α'1 and PPL1-α'2α2)" とあり、<strong>2 型</strong>である。
+リポジトリ内の <code>data/driver_lines_cns.csv</code> も <code>PPL1-γ2α′1;PPL1-α′2α2</code> で一致している。</p>
+<p><strong>パイプラインの穴</strong>: <code>data/driver_lines_cns.csv</code> は MB 系統を区画名（<code>PPL1-α'2α2</code>）で、
+ドライバー照合は hemibrain の型名（<code>PPL105</code>）で持っている。<strong>名前が繋がっていないので
+MB058B は候補として一度も出てこなかった</strong>。現在 PPL105 側に勧めている SS48817 は
+FB2A を巻き込む（余分な型 1）が、<strong>MB058B は余分な型 0</strong> である。
+→ <code>results/candidate_MBON04_PPL105.md</code> 4 節に追記した。</p>
+<h3 id="_4">文献一覧</h3>
 <table>
 <thead>
 <tr>
@@ -334,6 +382,7 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <th>論文</th>
 <th>誌</th>
 <th>DOI</th>
+<th>操作した細胞</th>
 <th>何をしたか</th>
 </tr>
 </thead>
@@ -344,7 +393,8 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <td>Three dopamine pathways induce aversive odor memories with different stability</td>
 <td>PLoS Genet</td>
 <td><a href="https://doi.org/10.1371/journal.pgen.1002768">10.1371/journal.pgen.1002768</a></td>
-<td><strong>MB-V1（= PPL1-α'2α2）を含む 3 経路を切り分け</strong>、安定性の異なる嫌悪記憶を誘導することを示した。根拠文 9 本</td>
+<td>5htr1b・NP7187・MZ840・NP0047（旧 GAL4）</td>
+<td>dTrpA1 活性化で嫌悪記憶を誘導。<strong>ただし MB-V1 単独を標識する NP7187・MZ840 では有意な記憶が出ていない</strong>（"activation did not induce significant memory"）。決め手になったのは MB-MV1（= PPL103）。本文も「MB-MV1 は電気ショックに応答し、MB-V1 はむしろ匂いに応答する」としている</td>
 </tr>
 <tr>
 <td>2016</td>
@@ -352,15 +402,26 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <td>Dopaminergic neurons write and update memories with cell-type-specific rules</td>
 <td>eLife</td>
 <td><a href="https://doi.org/10.7554/eLife.16135">10.7554/eLife.16135</a></td>
-<td><strong>MB099C</strong>（PPL103+104+105+106）で CsChrimson 駆動し、嫌悪記憶の形成を区画ごとに比較。<strong>PPL105 と PPL106 の両方を扱う</strong></td>
+<td><strong>MB099C</strong>（PPL103＋PPL105）と <strong>MB058B</strong>（PPL105 単独）</td>
+<td>CsChrimson または電気ショックを US として嫌悪記憶を形成。10 回の間隔訓練で 4 日記憶が出たのは MB099C。<strong>「α'2 と α2 だけ」の MB058B は 4 日記憶を誘導できなかった</strong></td>
 </tr>
 <tr>
 <td>2018</td>
-<td>Tsao CH, et al.</td>
-<td>（上記）</td>
+<td>Tsao CH, Chen CC, Lin CH, Yang HY, Lin S</td>
+<td>Drosophila mushroom bodies integrate hunger and satiety signals to control innate food-seeking behavior</td>
 <td>eLife</td>
 <td><a href="https://doi.org/10.7554/eLife.35264">10.7554/eLife.35264</a></td>
-<td>PPL1-α'2α2 の人工活性化が酵母匂いの探索を促進。Aso 2016 の嫌悪記憶とは逆向きの効果</td>
+<td><strong>MB058B</strong>（PPL105 単独）</td>
+<td>人工活性化が酵母匂いの探索を<strong>促進</strong>。shibire 阻害では空腹時の探索が障害。Aso 2016 の嫌悪記憶とは逆向きの効果</td>
+</tr>
+<tr>
+<td>2018</td>
+<td>Huang C, Maxey JR, Sinha S, Savall J, Gong Y, Schnitzer MJ</td>
+<td>Long-term optical brain imaging in live adult fruit flies</td>
+<td>Nat Commun</td>
+<td><a href="https://doi.org/10.1038/s41467-018-02873-1">10.1038/s41467-018-02873-1</a></td>
+<td><strong>MB058B</strong>（PPL105 単独）</td>
+<td>電位センサ Ace2N-2AA-mNeon で <strong>PPL105 の自発発火を同一個体で最長 50 日追跡</strong>。自発発火は約 6〜10 Hz、10 日間安定</td>
 </tr>
 <tr>
 <td>2021</td>
@@ -368,17 +429,20 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <td>Prior experience conditionally inhibits the expression of new learning in Drosophila</td>
 <td>Curr Biol</td>
 <td><a href="https://doi.org/10.1016/j.cub.2021.05.056">10.1016/j.cub.2021.05.056</a></td>
-<td>PPL1-α'2α2 の阻害は pre-exposure 学習には不要と判定（除外の根拠として有用）</td>
+<td><strong>MB058B</strong>（PPL105 単独）</td>
+<td>shibire 阻害。PPL105 は pre-exposure 学習には<strong>不要</strong>と判定（除外の根拠として有用）</td>
 </tr>
 </tbody>
 </table>
-<h3 id="ppl105">関連（PPL105 の光遺伝学・イメージング）</h3>
+<h3 id="ppl105">関連だが、PPL105 の話ではないもの</h3>
 <ul>
-<li>Toshima N, et al. Individual dopaminergic neurons induce unique, yet overlapping combinations
-  of memory components. <em>eLife</em> — 個々の DAN が誘導する記憶成分の分解。</li>
-<li>Huang C, et al. (2018) Long-term optical brain imaging in live adult fruit flies.
-  <em>Nat Commun</em> <a href="https://doi.org/10.1038/s41467-018-02873-1">10.1038/s41467-018-02873-1</a>
-  — PPL1 を長期イメージングした例。新生シナプスの経時観察に使える手法。</li>
+<li><strong>Toshima N, et al. (2026) <em>eLife</em></strong> <a href="https://europepmc.org/article/PMC/PMC13675010">PMC13675010</a>
+  — 個々の DAN が誘導する記憶成分の分解。ただし <strong>幼虫</strong>の研究で、使っている系統は
+  MB328B・SS02180・SS01716・MB054B（幼虫 DL1 クラスタ）。<strong>PPL105 を扱っていない。</strong>
+  成虫の PPL1 は「幼虫 DL1-DAN が成虫で PPL1 になる」という文脈で言及されているだけ。</li>
+<li>Huang C, et al. (2024) Dopamine-mediated interactions between short- and long-term memory
+  dynamics. <em>Nature</em> <a href="https://doi.org/10.1038/s41586-024-07819-w">10.1038/s41586-024-07819-w</a>
+  — Huang 2018 と同じ研究室の続編。本文は未入手なので PPL105 を含むかは未確認。</li>
 </ul>
 <hr />
 <h2 id="2-mbon07-ppl1062">2. MBON07 → PPL106（第2候補）</h2>
@@ -487,7 +551,7 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <p><strong>MBON07 → PPL106 の読み出しは明快</strong>: Ichinose 2015 の報酬性長期記憶（α1 区画のループ）と
 Jacob 2021 の pre-exposure 学習の反転が、どちらも 1 細胞型の操作で出ている。
 さらにこの組はドライバーが最もきれい（下記）。</p>
-<h3 id="_4">この組のドライバーは候補中で最良</h3>
+<h3 id="_5">この組のドライバーは候補中で最良</h3>
 <table>
 <thead>
 <tr>

@@ -104,20 +104,46 @@ hemibrain の型名と古い呼び名の対応は次のとおり。
 
 ### PPL105 = PPL1-α'2α2（= MB-V1）
 
-| 年 | 著者 | 論文 | 誌 | DOI | 何をしたか |
-|---|---|---|---|---|---|
-| 2012 | Aso Y, Herb A, Ogueta M, Siwanowicz I, Templier T, Friedrich AB, Ito K, Scholz H | Three dopamine pathways induce aversive odor memories with different stability | PLoS Genet | [10.1371/journal.pgen.1002768](https://doi.org/10.1371/journal.pgen.1002768) | **MB-V1（= PPL1-α'2α2）を含む 3 経路を切り分け**、安定性の異なる嫌悪記憶を誘導することを示した。根拠文 9 本 |
-| 2016 | Aso Y, Rubin GM | Dopaminergic neurons write and update memories with cell-type-specific rules | eLife | [10.7554/eLife.16135](https://doi.org/10.7554/eLife.16135) | **MB099C**（PPL103+104+105+106）で CsChrimson 駆動し、嫌悪記憶の形成を区画ごとに比較。**PPL105 と PPL106 の両方を扱う** |
-| 2018 | Tsao CH, et al. | （上記） | eLife | [10.7554/eLife.35264](https://doi.org/10.7554/eLife.35264) | PPL1-α'2α2 の人工活性化が酵母匂いの探索を促進。Aso 2016 の嫌悪記憶とは逆向きの効果 |
-| 2021 | Jacob PF, Vargas-Gutierrez P, Okray Z, Vietti-Michelina S, Felsenberg J, Waddell S | Prior experience conditionally inhibits the expression of new learning in Drosophila | Curr Biol | [10.1016/j.cub.2021.05.056](https://doi.org/10.1016/j.cub.2021.05.056) | PPL1-α'2α2 の阻害は pre-exposure 学習には不要と判定（除外の根拠として有用） |
+**MBON04 と違い、PPL105 には単独で狙えるドライバーがある。**
 
-### 関連（PPL105 の光遺伝学・イメージング）
+| ドライバー | 含む型 | PPL105 を単離できるか | 出典 |
+|---|---|---|---|
+| **MB058B**〈split-GAL4〉 | **PPL1-α'2α2 のみ（1 型）** | **できる** | Aso 2014（`data/driver_lines_cns.csv`）。Aso 2016 の記載は「α'2 と α2 だけに発現」 |
+| MB099C〈split-GAL4〉 | PPL1-γ2α'1 ＋ PPL1-α'2α2（2 型） | できない | Aso 2016 本文 |
+| MB060B〈split-GAL4〉 | α'2α2 ＋ α'3 ＋ α3 ＋ γ2α'1（4 型） | できない | Aso 2014 |
+| 5htr1b / NP7187 / MZ840 / NP0047〈GAL4〉 | MB-V1 ほか（旧世代、広い） | できない | Aso 2012 |
 
-- Toshima N, et al. Individual dopaminergic neurons induce unique, yet overlapping combinations
-  of memory components. *eLife* — 個々の DAN が誘導する記憶成分の分解。
-- Huang C, et al. (2018) Long-term optical brain imaging in live adult fruit flies.
-  *Nat Commun* [10.1038/s41467-018-02873-1](https://doi.org/10.1038/s41467-018-02873-1)
-  — PPL1 を長期イメージングした例。新生シナプスの経時観察に使える手法。
+**訂正**: 以前この表で MB099C を「PPL103+104+105+106」と書いていたのは誤り。
+Aso & Rubin 2016 の本文には
+"MB099C, MB060B and MB065B that express in the combination of the γ2, α'1, α'2 and α2
+compartments (PPL1-γ2α'1 and PPL1-α'2α2)" とあり、**2 型**である。
+リポジトリ内の `data/driver_lines_cns.csv` も `PPL1-γ2α′1;PPL1-α′2α2` で一致している。
+
+**パイプラインの穴**: `data/driver_lines_cns.csv` は MB 系統を区画名（`PPL1-α'2α2`）で、
+ドライバー照合は hemibrain の型名（`PPL105`）で持っている。**名前が繋がっていないので
+MB058B は候補として一度も出てこなかった**。現在 PPL105 側に勧めている SS48817 は
+FB2A を巻き込む（余分な型 1）が、**MB058B は余分な型 0** である。
+→ `results/candidate_MBON04_PPL105.md` 4 節に追記した。
+
+### 文献一覧
+
+| 年 | 著者 | 論文 | 誌 | DOI | 操作した細胞 | 何をしたか |
+|---|---|---|---|---|---|---|
+| 2012 | Aso Y, Herb A, Ogueta M, Siwanowicz I, Templier T, Friedrich AB, Ito K, Scholz H | Three dopamine pathways induce aversive odor memories with different stability | PLoS Genet | [10.1371/journal.pgen.1002768](https://doi.org/10.1371/journal.pgen.1002768) | 5htr1b・NP7187・MZ840・NP0047（旧 GAL4） | dTrpA1 活性化で嫌悪記憶を誘導。**ただし MB-V1 単独を標識する NP7187・MZ840 では有意な記憶が出ていない**（"activation did not induce significant memory"）。決め手になったのは MB-MV1（= PPL103）。本文も「MB-MV1 は電気ショックに応答し、MB-V1 はむしろ匂いに応答する」としている |
+| 2016 | Aso Y, Rubin GM | Dopaminergic neurons write and update memories with cell-type-specific rules | eLife | [10.7554/eLife.16135](https://doi.org/10.7554/eLife.16135) | **MB099C**（PPL103＋PPL105）と **MB058B**（PPL105 単独） | CsChrimson または電気ショックを US として嫌悪記憶を形成。10 回の間隔訓練で 4 日記憶が出たのは MB099C。**「α'2 と α2 だけ」の MB058B は 4 日記憶を誘導できなかった** |
+| 2018 | Tsao CH, Chen CC, Lin CH, Yang HY, Lin S | Drosophila mushroom bodies integrate hunger and satiety signals to control innate food-seeking behavior | eLife | [10.7554/eLife.35264](https://doi.org/10.7554/eLife.35264) | **MB058B**（PPL105 単独） | 人工活性化が酵母匂いの探索を**促進**。shibire 阻害では空腹時の探索が障害。Aso 2016 の嫌悪記憶とは逆向きの効果 |
+| 2018 | Huang C, Maxey JR, Sinha S, Savall J, Gong Y, Schnitzer MJ | Long-term optical brain imaging in live adult fruit flies | Nat Commun | [10.1038/s41467-018-02873-1](https://doi.org/10.1038/s41467-018-02873-1) | **MB058B**（PPL105 単独） | 電位センサ Ace2N-2AA-mNeon で **PPL105 の自発発火を同一個体で最長 50 日追跡**。自発発火は約 6〜10 Hz、10 日間安定 |
+| 2021 | Jacob PF, Vargas-Gutierrez P, Okray Z, Vietti-Michelina S, Felsenberg J, Waddell S | Prior experience conditionally inhibits the expression of new learning in Drosophila | Curr Biol | [10.1016/j.cub.2021.05.056](https://doi.org/10.1016/j.cub.2021.05.056) | **MB058B**（PPL105 単独） | shibire 阻害。PPL105 は pre-exposure 学習には**不要**と判定（除外の根拠として有用） |
+
+### 関連だが、PPL105 の話ではないもの
+
+- **Toshima N, et al. (2026) *eLife*** [PMC13675010](https://europepmc.org/article/PMC/PMC13675010)
+  — 個々の DAN が誘導する記憶成分の分解。ただし **幼虫**の研究で、使っている系統は
+  MB328B・SS02180・SS01716・MB054B（幼虫 DL1 クラスタ）。**PPL105 を扱っていない。**
+  成虫の PPL1 は「幼虫 DL1-DAN が成虫で PPL1 になる」という文脈で言及されているだけ。
+- Huang C, et al. (2024) Dopamine-mediated interactions between short- and long-term memory
+  dynamics. *Nature* [10.1038/s41586-024-07819-w](https://doi.org/10.1038/s41586-024-07819-w)
+  — Huang 2018 と同じ研究室の続編。本文は未入手なので PPL105 を含むかは未確認。
 
 ---
 

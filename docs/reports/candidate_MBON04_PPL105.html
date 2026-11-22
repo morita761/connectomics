@@ -309,8 +309,31 @@ PPL105 が樹状突起入力を受ける 3 番目の領域（20%、1,380 の後�
 <td>1</td>
 <td>同上</td>
 </tr>
+<tr>
+<td><strong>PPL105 側（推奨に変更）</strong></td>
+<td><strong>MB058B</strong></td>
+<td><strong>split-GAL4</strong></td>
+<td><strong>PPL1-α'2α2 のみ</strong></td>
+<td><strong>0</strong></td>
+<td>Aso 2014、<code>data/driver_lines_cns.csv</code></td>
+</tr>
 </tbody>
 </table>
+<h3 id="mb058b-2026-11-22">MB058B のほうが清潔（2026-11-22 追記）</h3>
+<p><strong><code>MB058B</code> は PPL1-α'2α2（= PPL105）1 型だけを標識する split-GAL4</strong> で、
+<code>data/driver_lines_cns.csv</code> に quality=1 で入っている。
+SS48817 が巻き込む FB2A が不要になるので、<strong>余分な型が 0 になる。</strong></p>
+<p>これまで候補に挙がらなかったのは解析の穴による。
+<strong>この表は MB 系統を区画名（<code>PPL1-α'2α2</code>）で持っているのに、ドライバー照合は
+hemibrain の型名（<code>PPL105</code>）で走っていた</strong>ので、名前が一致せず落ちていた。</p>
+<p>実績も十分で、<strong>PPL105 を単独で扱った論文 3 報がすべて MB058B を使っている</strong>
+（Tsao 2018、Huang 2018、Jacob 2021 — <code>results/refs_top_pairs.md</code>）。
+とくに <strong>Huang 2018 は MB058B で PPL105 の自発発火を同一個体で 50 日追跡</strong>しており、
+強制シナプスができたあとの経時観察にそのまま使える。</p>
+<p>確認すべきこと: ① MB 区画の外（キノコ体以外）に発現が無いか。
+Aso 2016 の記載は MB 区画についてのもので、脳全体の特異性ではない。
+② FB2A を巻き込まないことで <code>candidate_MBON04_PPL105.md</code> 4 節の混同チェックが
+どう変わるか（FB2A はもともと全個体で 0 なので、判定は緩む方向にしか動かない）。</p>
 <p>MBON04 を単独で標識する split-GAL4（SS67728 / SS67755）はいちばんきれいだが、
 それを使うと PPL105 側に GAL4 を回せない。PPL105 に LexA が無いので、<strong>MBON04 側を LexA にする</strong>構成しかない。
 上流を MBON04、下流を PPL105 にする場合も逆向きの場合も、系統の組み合わせは同じ。</p>
