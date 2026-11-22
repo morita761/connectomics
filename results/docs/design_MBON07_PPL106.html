@@ -372,19 +372,57 @@ PPL1-DAN は自発発火しているので（Huang 2018 が PPL105 で 6〜10 Hz
 （<code>results/plan_three_pairs.md</code> 6 節）。上流の GAL4 を差し替えるだけで 2 組目が走る。</p>
 <h3 id="_4">コンストラクト</h3>
 <p>上流が GAL4 なので、オーガナイザーの向きは素直。</p>
-<ul>
-<li><strong>UAS-Kirre</strong>（上流 MBON07）</li>
-<li><strong>LexAop-Hbs</strong>（下流 PPL106）。Sns より Hbs を選ぶ
-  — 全 22 クラスで最大 5% と背景がいちばん低い（<a href="receptor_check.html">receptor_check.md</a> 2.5 節）</li>
-<li>読み出し用に <strong>LexAop-GCaMP</strong>（段階 B）</li>
-<li>存在証明用に <strong>UAS-CsChrimson</strong>（段階 B'）</li>
-<li><strong><code>tub-GAL80ts</code></strong>。<strong>段階 C で必須</strong>。温度でオーガナイザーの発現を切れるので、
-  <strong>遺伝子型が同じきょうだいを「配線あり／なし」に分けられる</strong>（6.2 節）。
-  発生期の配線変化も、飼育環境の匂いによる飽和も、これで同時に片付く</li>
-</ul>
-<p><strong>内在の Sns/Hbs は周囲のニューロンに無い</strong>ので、外来 Kirre が横取りされる心配は無い。
-留保は「外来 Kirre の過剰発現が内在 sns/hbs を誘導しないか」だけなので、
-<strong>過剰に強いドライバーは避ける。</strong></p>
+<table>
+<thead>
+<tr>
+<th>側</th>
+<th>入れるもの</th>
+<th>役割</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>上流 MBON07</strong>〈GAL4〉</td>
+<td><strong>UAS-オーガナイザーの前側</strong></td>
+<td>接着の本体</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>UAS-Kirre</strong></td>
+<td><strong>シナプス形成の効率を上げる補助</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>UAS-CsChrimson</td>
+<td>段階 B' の存在証明（トラック 1 のみ）</td>
+</tr>
+<tr>
+<td><strong>下流 PPL106</strong>〈LexA〉</td>
+<td><strong>LexAop-オーガナイザーの後側</strong></td>
+<td>接着の本体</td>
+</tr>
+<tr>
+<td></td>
+<td>LexAop-GCaMP</td>
+<td>段階 B の読み出し</td>
+</tr>
+<tr>
+<td>全体</td>
+<td><strong><code>tub-GAL80ts</code></strong></td>
+<td><strong>段階 C で必須</strong>（6.2 節）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sns も Hbs も入れない（2026-11-23 訂正）。</strong>
+<strong>外来の Kirre はそれ自体が導入するシナプスオーガナイザーと働いてシナプス形成に関与する</strong>ので、
+IRM の相手役を下流に乗せる必要は無い。Kirre は<strong>前側に足す補助</strong>であって、
+接着の本体はオーガナイザーのほうである。
+（周囲のニューロンに内在の Sns/Hbs がほとんど無いことは
+<a href="receptor_check.html">receptor_check.md</a> 2.5 節で確かめたが、<strong>これは
+「外来 Kirre が横取りされないか」への答えであって、構成要素の話ではない。</strong>）</p>
+<p><code>tub-GAL80ts</code> は温度でオーガナイザーの発現を切れるので、
+<strong>遺伝子型が同じきょうだいを「配線あり／なし」に分けられる。</strong>
+発生期の配線変化も、飼育環境の匂いによる飽和も、これで同時に片付く。</p>
 <h2 id="5">5. 段階</h2>
 <blockquote>
 <p><strong>2026-11-23 追記。オーガナイザーが光スイッチ型である場合、下の段階 B' は使えない。</strong>
@@ -409,15 +447,15 @@ PPL1-DAN は自発発火しているので（Huang 2018 が PPL105 で 6〜10 Hz
 <tbody>
 <tr>
 <td><strong>①完全</strong></td>
-<td>接着分子 ＋ Kirre</td>
-<td>接着分子の相方 ＋ GCaMP</td>
+<td>オーガナイザーの前側 ＋ Kirre</td>
+<td>オーガナイザーの後側 ＋ GCaMP</td>
 <td>本番</td>
 </tr>
 <tr>
 <td><strong>②下流のみ</strong></td>
 <td>なし</td>
-<td>接着分子の相方 ＋ GCaMP</td>
-<td>片側だけ。内在 Kirre の確認（陰性が予想）</td>
+<td>オーガナイザーの後側 ＋ GCaMP</td>
+<td>片側だけ。陰性が予想</td>
 </tr>
 <tr>
 <td><strong>③効果器のみ</strong></td>
@@ -563,7 +601,7 @@ retinal 給餌あり／なしの同腹で、遺伝子型を揃えた光対照が
 </thead>
 <tbody>
 <tr>
-<td>Kirre / Hbs</td>
+<td>オーガナイザー / Kirre</td>
 <td>出ない</td>
 <td>出る</td>
 </tr>
@@ -645,13 +683,13 @@ retinal 給餌あり／なしの同腹で、遺伝子型を揃えた光対照が
 <tbody>
 <tr>
 <td><strong>①完全</strong></td>
-<td>MB319B&gt;接着分子+Kirre ／ SL86050&gt;相方 ／ tub-GAL80ts</td>
+<td>MB319B&gt;前側+Kirre ／ SL86050&gt;後側 ／ tub-GAL80ts</td>
 <td><strong>主要な対照</strong>（遺伝子型が同一）</td>
 <td><strong>本番</strong></td>
 </tr>
 <tr>
 <td><strong>③効果器のみ</strong></td>
-<td>接着分子なし</td>
+<td>オーガナイザーなし</td>
 <td>対照</td>
 <td>温度そのものの対照</td>
 </tr>
@@ -677,7 +715,7 @@ retinal 給餌あり／なしの同腹で、遺伝子型を揃えた光対照が
 </tr>
 <tr>
 <td>②下流のみ（片側だけ）</td>
-<td>内在 Kirre が相方を掴んでいないこと</td>
+<td>下流側だけで勝手に接着が起きていないこと</td>
 </tr>
 <tr>
 <td>③効果器のみ</td>
@@ -774,7 +812,7 @@ MBON14 には別の系統が要るので後回しでよいが、
 <td>単回曝露の結果と比べる。段階 B で応答の持続を見ておく</td>
 </tr>
 <tr>
-<td>接着分子・Kirre の発現が MBON07 本来の出力を乱す</td>
+<td>オーガナイザー・Kirre の発現が MBON07 本来の出力を乱す</td>
 <td>①の基礎行動が変わる</td>
 <td>18°C の同腹で切り分け。素朴な匂い選好を先に測る</td>
 </tr>

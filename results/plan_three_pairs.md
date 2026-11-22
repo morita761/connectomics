@@ -183,9 +183,12 @@ male-cns:v1.0 の `consensusNt` で確認した。
 
 | 組 | 上流の発現系 | 必要なコンストラクト |
 |---|---|---|
-| MBON07 → PPL106 | **GAL4** | **UAS-Kirre** ＋ LexAop-Sns/Hbs |
-| MBON02 → PPL106 | **GAL4** | **UAS-Kirre** ＋ LexAop-Sns/Hbs（上と同じ） |
-| MBON04 → PPL105 | **LexA** | **LexAop-Kirre** ＋ **UAS-Sns/Hbs**（**逆向き。別に作る**） |
+| MBON07 → PPL106 | **GAL4** | **UAS-オーガナイザー前側 ＋ UAS-Kirre** ／ LexAop-後側 |
+| MBON02 → PPL106 | **GAL4** | **上とまったく同じ** |
+| MBON04 → PPL105 | **LexA** | **LexAop-前側 ＋ LexAop-Kirre** ／ **UAS-後側**（**逆向き。別に作る**） |
+
+**Sns / Hbs は入れない。** 外来の Kirre はそれ自体がオーガナイザーと働くので、
+IRM の相手役を下流に乗せる必要は無い（[receptor_check.md](receptor_check.md) 2.5 節の追記）。
 
 **前 2 組は UAS/LexAop のコンストラクトを完全に共有できる。3 組目だけ両方を作り直す必要がある。**
 3 組を並行させるときの実コストは「3 倍」ではなく、**「2 組分 ＋ コンストラクト一式の作り直し」**である。

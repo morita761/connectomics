@@ -207,9 +207,63 @@ FB4N_R    出力 FBl4 429, FBl3 266（扇状体の中だけ）
 </table>
 <p>MBON04 だけを標識する split-GAL4（<strong>SS67728</strong> / <strong>SS67755</strong>、特異性 2・quality 1）は最もきれいだが、
 それを使うと FB4N 側に GAL4 を回せないので、この実験では上流 LexA の構成を採る。</p>
-<p><strong>SL86063 の混同は無害</strong>: この系統は MBON01・MBON03・MBON04 を 3 つまとめて標識するが、
-3 つすべてが FB4N と<strong>両方向 0</strong>（hemibrain で確認）。基準値は 0 のままなので、
-どの細胞から新しいシナプスができても陽性信号として数えられる。</p>
+<h3 id="sl86063-2026-11-23">SL86063 の混同（2026-11-23 追記 — 近傍を測った）</h3>
+<p>この系統は MBON01・MBON03・MBON04 を 3 つまとめて標識する。
+<strong>3 つとも FB4N と両方向 0</strong>（hemibrain・male-CNS の両方で確認）なので基準値は 0 のままだが、
+<strong>シナプスが 0 でも、膜が近ければ人工シナプスはできてしまう。</strong> 接触を測った。</p>
+<p>中心線を 0.5 µm 間隔に分け、1 µm 以内のケーブル長（両側平均）を型ごとに合計した。</p>
+<table>
+<thead>
+<tr>
+<th>上流</th>
+<th>FB4N との接触（1 µm）</th>
+<th>最短距離</th>
+<th>3 µm まで広げると</th>
+<th>既存シナプス</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBON04（目標）</strong></td>
+<td><strong>415.7 µm</strong></td>
+<td><strong>0.02 µm</strong></td>
+<td>1,768 µm</td>
+<td>0 / 0</td>
+</tr>
+<tr>
+<td><strong>MBON01</strong></td>
+<td><strong>4.3 µm</strong></td>
+<td><strong>0.28 µm</strong></td>
+<td>88.8 µm</td>
+<td>0 / 0</td>
+</tr>
+<tr>
+<td>MBON03</td>
+<td><strong>0 µm</strong></td>
+<td>1.66 µm</td>
+<td>25.3 µm</td>
+<td>0 / 0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>MBON03 は安全</strong>（1.66 µm 離れていて、人工分子の届く距離ではない）。</p>
+<p><strong>MBON01 は完全な 0 ではない。</strong> 0.28 µm まで近づき、<strong>4.3 µm 分の接触がある。</strong>
+MBON04 の <strong>1.0%</strong> なので主たる信号にはならないが、
+<strong>MBON04 ↔ PPL105 のとき（MBON01 も MBON03 も 1 µm 以内の接触がちょうど 0）とは違う。</strong></p>
+<p>対処は 2 つしかない。</p>
+<ol>
+<li><strong>実験後に、MBON01 と FB4N の間に新しいシナプスができていないか確かめる。</strong>
+   GRASP の標本で一緒に見られる。</li>
+<li>きれいな代替は無い。<strong>MBON04 だけを標識する系統は GAL4（SS67728 / SS67755）しかなく、
+   FB4N に LexA が無い</strong>ので、上流を LexA にする構成から逃げられない。</li>
+</ol>
+<p>FB4N 側の系統はどちらも <strong>FB4N のみ</strong>を標識するので、下流からの巻き込みは無い
+（SS66004 は腹髄に、SS95185 は視葉に軽微な発現があるが、接触部位の SMP(R) には関係しない）。</p>
+<blockquote>
+<p>接触の数値はこの追記のために測り直したもので、型ごとの合計である。
+表の上の <code>contact_src_um</code>（108.9 µm）とは定義が違うので直接は比べられない。
+<strong>同じ方法で測った 3 行どうしの比較には使える。</strong></p>
+</blockquote>
 <h2 id="5">5. 読み出し</h2>
 <ul>
 <li>FB4N 自体の行動実験は文献に無い（Europe PMC で 3 本ヒット、すべて形態の記載）。</li>
