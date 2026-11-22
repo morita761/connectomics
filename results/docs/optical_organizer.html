@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>光でオン・オフする人工シナプス — 波長の衝突と、進め方</title><style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px}
+nav{font-size:.9rem;color:var(--sub);margin-bottom:18px}
+nav a{color:var(--acc);text-decoration:none}nav a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.35;border-bottom:2px solid var(--line);padding-bottom:.4em;margin-top:1.2em}
+h2{font-size:1.25rem;margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.05rem;margin-top:1.6em}
+a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600;white-space:nowrap}
+code{background:var(--code);padding:.15em .4em;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--code);color:var(--fg)}
+ul,ol{padding-left:1.4em}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:20px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--bg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc)}
+.card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+.card .date{display:inline-block;color:var(--acc);font-weight:700;margin-right:.5em;font-variant-numeric:tabular-nums}
+</style></head>
+<body><div class="wrap">
+<nav><a href="index.html">← 報告書の一覧</a> ／ <a href="../index.html">結果一覧</a></nav>
+<h1 id="_1">光でオン・オフする人工シナプス — 波長の衝突と、進め方</h1>
+<p>2026-11-23。オーガナイザーが<strong>赤色光で接着をオンにし、730 nm で接着を失う</strong>こと、
+および発生期の照射が axon guidance に影響しうることを踏まえた計画。
+対象ペアは <code>results/plan_three_pairs.md</code> の 3 組（本命は
+<a href="design_MBON07_PPL106.html">MBON07 → PPL106</a>）。</p>
+<h2 id="0">0. 結論</h2>
+<p><strong>2 本立てにするという判断に賛成する。</strong> CsChrimson と光スイッチは同じ赤色帯を使うので、
+<strong>同じ個体で独立に制御できない。</strong> 分けるしかない。</p>
+<p>そのうえで 2 つ付け加えたい。</p>
+<ol>
+<li><strong>トラック 2 の「成虫で作れるか」は、CsChrimson を使わないので今すぐ並行して始められる。</strong>
+   しかもここが最大の未知なので、後ろに置くと計画全体が遅れる。</li>
+<li><strong>その前に、光を使わずに同じ問いを試せる。</strong> <code>GAL80ts</code> ＋ 常時接着型なら
+   「成虫になってからシナプスを作れるか」を<strong>光スイッチ無しで</strong>確かめられる。
+   ここが黒なら光スイッチ版も黒なので、<strong>順序としてはこれが最初</strong>。</li>
+</ol>
+<p><strong>axon guidance への影響は「仕方ない」で済ませず、測っておく。</strong> 安い。</p>
+<h2 id="1">1. 波長が衝突する</h2>
+<table>
+<thead>
+<tr>
+<th>道具</th>
+<th>使う光</th>
+<th>効果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CsChrimson</strong></td>
+<td>590 nm 付近が極大。行動では 617〜660 nm</td>
+<td>神経を<strong>発火</strong>させる</td>
+</tr>
+<tr>
+<td><strong>オーガナイザー ON</strong></td>
+<td><strong>赤（660 nm 前後）</strong></td>
+<td>接着<strong>する</strong></td>
+</tr>
+<tr>
+<td><strong>オーガナイザー OFF</strong></td>
+<td><strong>遠赤（730 nm）</strong></td>
+<td>接着<strong>しなくなる</strong></td>
+</tr>
+<tr>
+<td>GCaMP</td>
+<td>470 nm で励起</td>
+<td>蛍光。CsChrimson をわずかに叩く</td>
+</tr>
+</tbody>
+</table>
+<p><strong>赤色光は CsChrimson と接着スイッチの両方に当たる。</strong>
+だから次の 4 つのうち、<strong>作れない状態がある。</strong></p>
+<table>
+<thead>
+<tr>
+<th>作りたい状態</th>
+<th>作れるか</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>接着あり・神経を発火させない</td>
+<td>○ 赤を当てて放置</td>
+</tr>
+<tr>
+<td>接着あり・神経を発火させる</td>
+<td>○ 赤</td>
+</tr>
+<tr>
+<td>接着なし・神経を発火させない</td>
+<td>○ 730 nm</td>
+</tr>
+<tr>
+<td><strong>接着なし・神経を発火させる</strong></td>
+<td><strong>✕ 作れない</strong></td>
+</tr>
+</tbody>
+</table>
+<p>いちばん欲しい陰性対照（<strong>配線を切った状態で上流を叩く</strong>）が、まさに作れない組み合わせである。
+これは設計の工夫で回避できる種類の問題ではないので、<strong>トラックを分けるのが正しい。</strong></p>
+<blockquote>
+<p><strong>将来の解法</strong>: 神経側を<strong>青シフト型オプシン</strong>（Chronos、CheRiff など 470〜500 nm）に替えれば、
+赤／遠赤を接着スイッチ専用にできる。青はフィトクロムをほとんど動かさない。
+ただし GCaMP と波長が当たるので、<strong>行動実験専用</strong>になる（生理は別個体で取る）。
+トラック 1 と 2 を統合したくなったときの手段として置いておく。</p>
+</blockquote>
+<h2 id="2-2">2. 2 本立て — それぞれ何が言えるか</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>トラック 1</strong></th>
+<th><strong>トラック 2</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>オーガナイザー</td>
+<td><strong>常時接着型</strong>（光ドメイン無し）</td>
+<td><strong>光スイッチ型</strong></td>
+</tr>
+<tr>
+<td>シナプスができる時期</td>
+<td><strong>発生期から</strong>（遺伝学で決まる）</td>
+<td><strong>成虫期</strong>（光を当てた時）</td>
+</tr>
+<tr>
+<td>上流の駆動</td>
+<td><strong>CsChrimson（赤）</strong> ＋ 匂い</td>
+<td><strong>匂いのみ</strong></td>
+</tr>
+<tr>
+<td>axon guidance への影響</td>
+<td><strong>ある。許容する</strong></td>
+<td><strong>無い（はず）。それが売り</strong></td>
+</tr>
+<tr>
+<td>言えること</td>
+<td><strong>この配線があると行動がどう変わるか</strong></td>
+<td><strong>成虫でシナプスを作れること／壊せること</strong></td>
+</tr>
+<tr>
+<td>言えないこと</td>
+<td>効果が発生期の配線変化によるものでないこと</td>
+<td>強制活性した時に何が起きるか</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2 つは別の問いに答えている。</strong> どちらが先かではなく、<strong>両方要る。</strong></p>
+<ul>
+<li>トラック 1 は<strong>回路としての効果</strong>を見る。ここで何も起きなければ、
+  きれいに作れても意味が無い。</li>
+<li>トラック 2 は<strong>技術としての主張</strong>を作る。成虫で作れて壊せるなら、
+  それ自体が独立した結果になる。</li>
+</ul>
+<h2 id="3-2-cschrimson">3. 並行して始められる — トラック 2 の解剖は CsChrimson を使わない</h2>
+<p>トラック 2 で最初にやることは「<strong>成虫に赤色光を当てたら、本当にシナプスができるか</strong>」である。
+これは <strong>GRASP と Brp を見るだけで、CsChrimson も行動実験も要らない。</strong></p>
+<p><strong>つまりトラック 1 の裏で、今すぐ走らせられる。</strong></p>
+<p>しかも<strong>ここが計画全体で最大の未知</strong>である。</p>
+<ul>
+<li>成虫の脳で、既に分化しきった 2 本の突起の間に新しいシナプスを作れるのか</li>
+<li>接着を作ってから、放出部位（Brp）が集まるまでどれくらいかかるのか</li>
+<li>接触 37 µm のうち、どれだけが実際にシナプスになるのか</li>
+</ul>
+<p><strong>これを後ろに置くと、トラック 1 が終わってから半年遅れる。</strong> 並行させる価値が高い。</p>
+<h2 id="4">4. その前に — 光を使わずに同じ問いを試す</h2>
+<p><strong>「成虫になってからシナプスを作れるか」は、光スイッチが無くても確かめられる。</strong></p>
+<p><code>tub-GAL80ts</code> ＋ <strong>常時接着型</strong>オーガナイザーで、</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>18°C のまま</th>
+<th>羽化後に 31°C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>オーガナイザーのタンパク</td>
+<td>出ない</td>
+<td><strong>成虫期に出る</strong></td>
+</tr>
+<tr>
+<td>シナプス</td>
+<td>無い</td>
+<td><strong>できるか？</strong></td>
+</tr>
+<tr>
+<td>遺伝子型</td>
+<td>同一</td>
+<td>同一</td>
+</tr>
+</tbody>
+</table>
+<p><strong>これが黒（成虫期の発現ではシナプスができない）なら、光スイッチ版も黒である。</strong>
+原因は光ではなく「成虫の脳では作れない」ことになるので、
+<strong>光スイッチの構築に入る前に知っておきたい。</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>要るもの</th>
+<th>答えられる問い</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① GAL80ts ＋ 常時接着型</strong></td>
+<td>系統 1 本</td>
+<td><strong>成虫期にシナプスを作れるか</strong></td>
+</tr>
+<tr>
+<td>② 光スイッチ型</td>
+<td>新しいコンストラクト</td>
+<td>同じ問い ＋ <strong>時刻を秒単位で決められる</strong> ＋ <strong>壊せる</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>①は②の前哨戦として安い。</strong> ①が白なら②に自信を持って進めるし、
+①が黒なら②の設計をやり直す（発現を長く・強くする、若い成虫で試す、など）。</p>
+<p>なお①は、トラック 1 の行動実験に<strong>遺伝子型が同一の対照</strong>を与えるので
+（<a href="design_MBON07_PPL106.html">design_MBON07_PPL106.md</a> 6.2 節）、どのみち作る価値がある。</p>
+<h2 id="5">5. 発色団 — どの光スイッチかで対照の作り方が変わる</h2>
+<p>赤（660 nm 前後）と遠赤（730 nm）で切り替わるのは<strong>フィトクロム系</strong>である。
+フィトクロムは<strong>ビリン色素を結合しないと光に応答しない。</strong> 2 系統ある。</p>
+<table>
+<thead>
+<tr>
+<th>系統</th>
+<th>必要な発色団</th>
+<th>動物が自前で作れるか</th>
+<th>対照</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>植物型 PhyB</strong>（PhyB–PIF など）</td>
+<td><strong>PCB</strong>（フィコシアノビリン）</td>
+<td><strong>作れない</strong></td>
+<td><strong>給餌あり／なしで遺伝子型同一の対照が作れる</strong></td>
+</tr>
+<tr>
+<td><strong>細菌型 BphP</strong>（BphP1 など）</td>
+<td><strong>ビリベルジン</strong></td>
+<td><strong>ヘムから作る</strong></td>
+<td>発色団による対照は作れない</td>
+</tr>
+</tbody>
+</table>
+<p><strong>どちらを使うかで、実験の作りがかなり変わる。</strong></p>
+<ul>
+<li><strong>PCB 系なら</strong>、CsChrimson の retinal とまったく同じ構図になる。
+  <strong>同腹の給餌あり／なし</strong>で、遺伝子型が完全に同一の「スイッチが働く／働かない」対照が作れる。
+  これは強い。ただし <strong>PCB をハエに行き渡らせられるか</strong>は自明でない。
+  細胞培養や魚では外から足している
+  （<a href="https://www.pnas.org/doi/10.1073/pnas.1707190114">PNAS 2017</a>、
+  <a href="https://link.springer.com/protocol/10.1007/978-1-4939-9009-2_10">Springer protocol</a>）。
+  <strong>SynPCB</strong>（PCB を細胞内で合成させる遺伝子セット）という手もあり、
+  神経・筋・腸で PhyB–PIF3 を光スイッチするのに十分な量ができたという報告がある
+  （<a href="https://www.biorxiv.org/content/10.1101/2020.01.15.908343v1.full">bioRxiv 2020</a>）。</li>
+<li><strong>ビリベルジン系なら</strong>発色団の心配は小さい。
+  <strong>ハエの神経でビリベルジン依存の mIFP が実際に光っている</strong>
+  （Toshima ほかが <code>UAS-mIFP</code> を使っていて、ビリベルジン補給の記載が無い —
+  <code>results/literature/PPL105.csv</code>）。
+  内在のビリベルジンで足りている傍証になる。
+  そのかわり<strong>発色団を使った対照は作れない</strong>ので、
+  対照は「光を当てない」「結合しない変異体」で作ることになる。</li>
+</ul>
+<p><strong>ここは構築に入る前に決める項目。</strong> 決まれば対照の設計が決まる。</p>
+<h2 id="6-axon-guidance">6. axon guidance は「許容」ではなく「測る」</h2>
+<p>トラック 1 では発生期から接着分子が乗るので、影響は避けられない。
+<strong>避けられないからこそ、どう変わったかを記録しておく。</strong> 後から効いてくる。</p>
+<table>
+<thead>
+<tr>
+<th>測るもの</th>
+<th>なぜ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MBON07 の軸索・樹状突起の形</td>
+<td>投射先が変わっていないか</td>
+</tr>
+<tr>
+<td><strong>α1 区画への入力</strong>（KC からの入力が保たれているか）</td>
+<td>ここが崩れると「匂いに応答する上流」でなくなる</td>
+</tr>
+<tr>
+<td>PPL106 の α3 への投射</td>
+<td>教師信号の出口が保たれているか</td>
+</tr>
+<tr>
+<td><strong>既存の MBON07 → PAM11 のシナプス数（75）</strong></td>
+<td><strong>ここが変わっていたら、行動の解釈が全部変わる</strong></td>
+</tr>
+<tr>
+<td>2 細胞が異常に束化していないか</td>
+<td>接着分子の直接の副作用</td>
+</tr>
+</tbody>
+</table>
+<p><strong>どれも段階 A の GRASP と同じ標本から取れる。</strong> 追加コストはほぼ無い。</p>
+<p><strong>とくに MBON07 → PAM11 が重要。</strong> これは報酬性 LTM のフィードバックループなので、
+ここが太ったり細ったりしていれば、行動の変化を「新しい PPL106 への配線のせい」とは言えなくなる。
+<strong>数えておけば、トラック 2 の結果と突き合わせたときに切り分けられる。</strong></p>
+<h2 id="7-730-nm">7. 730 nm で壊す実験 — ここがいちばん面白い</h2>
+<p><strong>どうなるか分からない、というのはそのとおりである。</strong> だから測る価値がある。
+<strong>結末は 2 つで、どちらでも大きい。</strong></p>
+<table>
+<thead>
+<tr>
+<th>730 nm のあと</th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>シナプスが消える</strong></td>
+<td>強制シナプスは<strong>接着に依存し続けている</strong>。自立していない</td>
+</tr>
+<tr>
+<td><strong>シナプスが残る</strong></td>
+<td><strong>接着をきっかけに内在の機構が引き継いだ。</strong> こちらのほうが大きい結果</td>
+</tr>
+</tbody>
+</table>
+<p>「刈り取りでもなんでもない」というのはそのとおりで、だからこそ
+<strong>既知の現象に当てはめず、起きたことをそのまま記述する</strong>のが正しい。</p>
+<h3 id="_2">手順</h3>
+<ol>
+<li>赤色光で接着をオンにし、シナプスができたことを確認（GRASP ＋ Brp）</li>
+<li><strong>730 nm を当てる</strong></li>
+<li><strong>1 時間・6 時間・24 時間・3 日後</strong>に同じ指標で測る</li>
+</ol>
+<p><strong>時間経過を取るのが肝。</strong> 一点だけだと「消えた／残った」しか言えないが、
+<strong>どれくらいの速さで消えるかが、何が起きているかを示す。</strong>
+数分で消えるなら接着が外れただけ、数日かけて消えるなら積極的な分解である。</p>
+<h3 id="_3">対照</h3>
+<table>
+<thead>
+<tr>
+<th>対照</th>
+<th>否定するもの</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>オーガナイザー非発現に 730 nm</td>
+<td>遠赤そのものの影響</td>
+</tr>
+<tr>
+<td>赤のまま放置（730 nm 無し）</td>
+<td>時間経過そのもの</td>
+</tr>
+<tr>
+<td><strong>730 nm のあと、もう一度赤を当てる</strong></td>
+<td><strong>元に戻るか。戻れば制御の証明として最強</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>再点灯で戻るかどうかは、ぜひ見ておきたい。</strong>
+「作れる・壊せる・また作れる」まで示せれば、これは技術の主張としてそれだけで独立する。</p>
+<h3 id="_4">行動と組む</h3>
+<p><strong>記憶を書ける能力が、730 nm で消えるか。</strong></p>
+<ol>
+<li>赤でシナプスを作る → 匂い曝露 → 24 時間後に記憶を確認</li>
+<li><strong>730 nm を当ててから</strong>、同じ手順をもう一度</li>
+<li>2 回目で記憶ができなければ、<strong>行動が配線に依存していたことの直接の証明</strong>になる</li>
+</ol>
+<p><strong>同じ個体の中で配線を付けたり外したりできる</strong>ので、
+これは遺伝学では作れない対照である。トラック 2 のいちばんの強みはここだと思う。</p>
+<h2 id="8">8. 進め方</h2>
+<table>
+<thead>
+<tr>
+<th>順</th>
+<th>やること</th>
+<th>トラック</th>
+<th>要るもの</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>GAL80ts ＋ 常時接着型で、成虫期にシナプスができるか</strong>（4 節）</td>
+<td>前哨戦</td>
+<td>系統 1 本</td>
+</tr>
+<tr>
+<td><strong>1'</strong></td>
+<td>トラック 1 の段階 A（解剖）＋ axon guidance の記録（6 節）</td>
+<td>1</td>
+<td>既存の計画どおり</td>
+</tr>
+<tr>
+<td>2</td>
+<td>トラック 1 の段階 B'（CsChrimson で強制活性 → 記憶）</td>
+<td>1</td>
+<td>既存の計画どおり</td>
+</tr>
+<tr>
+<td>2'</td>
+<td><strong>光スイッチ型で、成虫に赤を当ててシナプスができるか</strong>（3 節）</td>
+<td>2</td>
+<td>新しいコンストラクト</td>
+</tr>
+<tr>
+<td>3</td>
+<td>トラック 1 の段階 B・C（匂いで生理・行動）</td>
+<td>1</td>
+<td>既存の計画どおり</td>
+</tr>
+<tr>
+<td>3'</td>
+<td><strong>730 nm で壊れるか</strong>（7 節）</td>
+<td>2</td>
+<td>—</td>
+</tr>
+<tr>
+<td>4</td>
+<td>光スイッチ型で、匂いだけの記憶 ＋ 730 nm での消失</td>
+<td>2</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>1 と 1' は同時に走る。2 と 2' も同時に走る。</strong>
+トラック 2 を後ろにまとめて置かないことだけ、気をつけたい。</p>
+<h2 id="_5">使ったデータ・出典</h2>
+<ul>
+<li>CsChrimson の波長はこの計画で既に使っている前提（行動では 617〜660 nm）。
+  730 nm では実質的に駆動されない。</li>
+<li>フィトクロムの発色団:
+  <a href="https://www.pnas.org/doi/10.1073/pnas.1707190114">Efficient synthesis of phycocyanobilin in mammalian cells (PNAS 2017)</a>、
+  <a href="https://www.biorxiv.org/content/10.1101/2020.01.15.908343v1.full">SynPCB (bioRxiv 2020)</a>、
+  <a href="https://link.springer.com/protocol/10.1007/978-1-4939-9009-2_10">Optogenetic control in vertebrate embryos (protocol)</a>。</li>
+<li>ハエ神経での <code>UAS-mIFP</code> の使用例: <code>results/literature/PPL105.csv</code>（Toshima ほか、PMC13675010）。</li>
+<li>対象ペアと系統: <a href="plan_three_pairs.html">plan_three_pairs.md</a>、
+  <a href="design_MBON07_PPL106.html">design_MBON07_PPL106.md</a>。</li>
+</ul>
+</div></body></html>
