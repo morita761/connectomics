@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SL86063 が一緒に標識する MBON01・MBON03 は、PPL105 とどこまで近いか</title><style>
+:root{--bg:#fff;--fg:#1a1a1a;--sub:#666;--line:#e3e3e3;--acc:#0b5fa5;--code:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#15171a;--fg:#e8e8e8;--sub:#9aa0a6;--line:#2c2f33;--acc:#6cb4ff;--code:#1e2227}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px}
+nav{font-size:.9rem;color:var(--sub);margin-bottom:18px}
+nav a{color:var(--acc);text-decoration:none}nav a:hover{text-decoration:underline}
+h1{font-size:1.6rem;line-height:1.35;border-bottom:2px solid var(--line);padding-bottom:.4em;margin-top:1.2em}
+h2{font-size:1.25rem;margin-top:2em;border-bottom:1px solid var(--line);padding-bottom:.3em}
+h3{font-size:1.05rem;margin-top:1.6em}
+a{color:var(--acc)}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;font-size:.92rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+th{background:var(--code);font-weight:600;white-space:nowrap}
+code{background:var(--code);padding:.15em .4em;border-radius:4px;font-size:.9em}
+pre{background:var(--code);padding:12px 14px;border-radius:6px;overflow-x:auto}
+pre code{background:none;padding:0}
+blockquote{margin:1.2em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--code);color:var(--fg)}
+ul,ol{padding-left:1.4em}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:20px}
+.card{display:block;border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--bg)}
+.card:hover{border-color:var(--acc)}
+.card b{color:var(--acc)}
+.card span{display:block;color:var(--sub);font-size:.85rem;margin-top:4px}
+</style></head>
+<body><div class="wrap">
+<nav><a href="index.html">← 報告書の一覧</a> ／ <a href="../index.html">結果一覧</a></nav>
+<h1 id="sl86063-mbon01mbon03-ppl105">SL86063 が一緒に標識する MBON01・MBON03 は、PPL105 とどこまで近いか</h1>
+<p>2026-11-22。再現は
+<code>python view_group.py --data data/hemibrain_mb_all.pkl --source PPL105 --others MBON04 MBON01 MBON03 --out ...</code></p>
+<p>PPL105 → MBON04 の下流ドライバー <strong>SL86063〈split-LexA〉は MBON01・MBON03・MBON04 の
+3 型を標識する</strong>。つまり後側のシナプスオーガナイザーは 3 型すべてに乗る。
+<strong>MBON01・MBON03 が PPL105 の近くを通っていれば、そこにも意図しないシナプスができる。</strong>
+その危険がどれだけあるかを調べた。</p>
+<h2 id="0">0. 結論</h2>
+<p><strong>危険は小さい。ただしゼロではない。</strong></p>
+<table>
+<thead>
+<tr>
+<th>問い</th>
+<th>答え</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>もともと PPL105 と MBON01・MBON03 はつながっているか</td>
+<td><strong>ほぼつながっていない</strong>（3 個体で最大 3 シナプス）</td>
+</tr>
+<tr>
+<td>1 µm 以内まで近づくか</td>
+<td><strong>MBON04 だけ。MBON01・MBON03 は 0 µm</strong></td>
+</tr>
+<tr>
+<td>3 µm まで広げると</td>
+<td>MBON01 が 9 µm、MBON03 が 28 µm。<strong>MBON04（1,204 µm）の 3% 以下</strong></td>
+</tr>
+<tr>
+<td>近づく場所は同じか</td>
+<td><strong>違う。</strong> MBON04 との接触は SIP(R) が中心、MBON01・MBON03 は SMP(R)・CRE(R)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>1 µm（この解析で「接触」としている基準）では、PPL105 に接しているのは MBON04 だけ。</strong>
+MBON01 と MBON03 は 1 本も接していない。</p>
+<h2 id="1">1. もともとつながっているか — ほぼつながっていない</h2>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>hemibrain</th>
+<th>male-CNS</th>
+<th>FlyWire 783</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PPL105 → MBON01</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>MBON01 → PPL105</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>PPL105 → MBON03</td>
+<td>0</td>
+<td><strong>1</strong></td>
+<td>0</td>
+</tr>
+<tr>
+<td>MBON03 → PPL105</td>
+<td>0</td>
+<td><strong>3</strong></td>
+<td>0</td>
+</tr>
+<tr>
+<td>PPL105 → MBON04（目標）</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>MBON04 → PPL105</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>6 通り × 3 個体で、0 でないのは male-CNS の MBON03 ↔ PPL105 だけ</strong>（計 4 シナプス）。
+この 2 型はコネクトームの基準（5 シナプス以上を「結合」とする）では未結合である。</p>
+<p><strong>基準値は 0 のまま使える。</strong> 強制形成でできたシナプスは、どの型からでも
+「増えた分」としてそのまま数えられる。</p>
+<h2 id="2">2. 空間的な近さ — 細胞ごと</h2>
+<p>hemibrain の中心線どうしの距離で測った。<strong>最短距離</strong>は 2 細胞がいちばん近づくところ、
+<strong>接触</strong>はその距離以内にある中心線の長さ（両側の平均）。</p>
+<table>
+<thead>
+<tr>
+<th>PPL105</th>
+<th>相手</th>
+<th>最短距離</th>
+<th>接触 1 µm</th>
+<th>接触 3 µm</th>
+<th>接触 5 µm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PPL105_R</td>
+<td><strong>MBON04_R</strong></td>
+<td><strong>0.12 µm</strong></td>
+<td><strong>84.8 µm</strong></td>
+<td>631.2 µm</td>
+<td>1,217.9 µm</td>
+</tr>
+<tr>
+<td>PPL105_R</td>
+<td><strong>MBON04_L</strong></td>
+<td><strong>0.08 µm</strong></td>
+<td><strong>46.2 µm</strong></td>
+<td>284.4 µm</td>
+<td>661.8 µm</td>
+</tr>
+<tr>
+<td>PPL105_L</td>
+<td><strong>MBON04_L</strong></td>
+<td><strong>0.12 µm</strong></td>
+<td><strong>29.5 µm</strong></td>
+<td>252.7 µm</td>
+<td>518.0 µm</td>
+</tr>
+<tr>
+<td>PPL105_L</td>
+<td><strong>MBON04_R</strong></td>
+<td>0.79 µm</td>
+<td>1.9 µm</td>
+<td>35.8 µm</td>
+<td>154.2 µm</td>
+</tr>
+<tr>
+<td>PPL105_R</td>
+<td>MBON01_R</td>
+<td>1.36 µm</td>
+<td><strong>0</strong></td>
+<td>9.1 µm</td>
+<td>35.6 µm</td>
+</tr>
+<tr>
+<td>PPL105_R</td>
+<td>MBON03_L</td>
+<td>1.69 µm</td>
+<td><strong>0</strong></td>
+<td>28.4 µm</td>
+<td>125.7 µm</td>
+</tr>
+<tr>
+<td>PPL105_R</td>
+<td>MBON03_R</td>
+<td>4.52 µm</td>
+<td><strong>0</strong></td>
+<td>0</td>
+<td>7.0 µm</td>
+</tr>
+<tr>
+<td>PPL105_L</td>
+<td>MBON03_R</td>
+<td>5.54 µm</td>
+<td><strong>0</strong></td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>PPL105_L</td>
+<td>MBON01_R</td>
+<td>6.43 µm</td>
+<td><strong>0</strong></td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>PPL105_L</td>
+<td>MBON03_L</td>
+<td>9.72 µm</td>
+<td><strong>0</strong></td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>型でまとめると:</p>
+<table>
+<thead>
+<tr>
+<th>相手</th>
+<th>接触 1 µm</th>
+<th>接触 3 µm</th>
+<th>MBON04 に対する比（3 µm）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MBON04</strong>（目標）</td>
+<td><strong>162.4 µm</strong></td>
+<td><strong>1,204.2 µm</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>MBON01</td>
+<td><strong>0 µm</strong></td>
+<td>9.1 µm</td>
+<td><strong>0.8%</strong></td>
+</tr>
+<tr>
+<td>MBON03</td>
+<td><strong>0 µm</strong></td>
+<td>28.4 µm</td>
+<td><strong>2.4%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>MBON04 は PPL105 と 0.08〜0.12 µm まで接するのに対し、MBON01・MBON03 は
+いちばん近いところでも 1.4〜1.7 µm 離れている。</strong> 桁が違う。</p>
+<p>シナプス間隙は約 20 nm（0.02 µm）なので、<strong>1.4 µm は「シナプスができる距離」ではない</strong>。
+人工分子は膜どうしを架橋するもので、1 µm 以上の隙間を埋めることはできない。</p>
+<h2 id="3">3. 近づく場所も違う</h2>
+<p>接触点がどの脳領域にあるかを数えた。</p>
+<table>
+<thead>
+<tr>
+<th>組</th>
+<th>1 µm 以内の点の場所</th>
+<th>3 µm 以内の点の場所</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PPL105 × MBON04</td>
+<td>SIP(R) 41%, SMP(R) 31%, CRE(R) 10%</td>
+<td>SIP(R) 47%, SMP(R) 25%, CRE(R) 5%</td>
+</tr>
+<tr>
+<td>PPL105 × MBON01</td>
+<td>（接触なし）</td>
+<td><strong>SMP(R) 100%</strong></td>
+</tr>
+<tr>
+<td>PPL105 × MBON03</td>
+<td>（接触なし）</td>
+<td><strong>SMP(R) 54%, CRE(R) 45%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>狙っている接触の主戦場は SIP(R)</strong>（MBON04 の軸索終末と PPL105 の樹状突起が重なる場所）。
+MBON01・MBON03 が PPL105 に近づくのは SMP(R) と CRE(R) で、<strong>別の場所</strong>である。</p>
+<p>ただし MBON04 との接触も SMP(R) に 25〜31% あるので、
+<strong>SMP(R) では 3 つの MBON がいずれも PPL105 の数 µm 以内を通っている</strong>ことになる。
+ここが唯一の注意点。</p>
+<h2 id="4-3d">4. 3D で見る</h2>
+<p><strong><code>results/zero_3d/hemibrain_PPL105_vs_SL86063.html</code></strong>（回転・拡大できる）</p>
+<p>色は 赤 = PPL105（上流）、青 = MBON04（目標）、緑 = MBON01、紫 = MBON03。
+× 印が接触箇所。<strong>開いた状態では 1 µm 以内の接触だけが出ていて、
+× が MBON04（青）の上にしか乗っていないことが一目で分かる。</strong></p>
+<p>3 µm 以内の接触は凡例に畳んであるので、クリックすると出る。
+MBON01（緑）と MBON03（紫）の × はそこで初めて現れ、数も少ない。</p>
+<h2 id="5">5. どう読むか</h2>
+<h3 id="_1">使ってよい理由</h3>
+<ol>
+<li><strong>1 µm 以内で接しているのは MBON04 だけ。</strong> 人工分子が働く距離（シナプス間隙 20 nm 程度）で
+   考えれば、MBON01・MBON03 は候補にすら入らない。</li>
+<li><strong>もともとの結合がほぼ 0</strong> なので、基準値が汚れない。増えた分がそのまま効果になる。</li>
+<li>近づく場所が違う（SIP 対 SMP・CRE）。</li>
+</ol>
+<h3 id="_2">それでも残る注意点</h3>
+<ol>
+<li><strong>SMP(R) では 3 型とも PPL105 の数 µm 以内を通る。</strong> 1 µm 以内ではないが、
+   突起は個体ごとに少しずつ違うので、個体によっては接触する可能性がある。
+   <strong>実験後に SMP(R) で MBON01・MBON03 と PPL105 のシナプスが増えていないかを確認すべき。</strong></li>
+<li>hemibrain は右半球だけで、MBON01 は 1 細胞しか入っていない。
+   左側の MBON01 は測れていない。male-CNS で測り直すと確度が上がる。</li>
+<li>これは<strong>中心線（骨格）どうしの距離</strong>で、膜どうしではない。
+   MBON04 については EM で膜の密着を確かめた（6,180 voxel / 68%）が、
+   MBON01・MBON03 については測っていない。1 µm 以内の接触が無いので
+   測る意味は薄いが、SMP(R) の近接部を 1 点だけ測れば完全に片が付く。</li>
+</ol>
+<h3 id="mbon04-ppl105">逆向き（MBON04 → PPL105）でも同じ</h3>
+<p>接触は向きを持たないので、この表はそのまま逆向きにも使える。
+逆向きでは SL86063 が<strong>上流</strong>に来るので、前側のオーガナイザーが MBON01・MBON03 に乗る。
+やはり 1 µm 以内で PPL105 に接しているのは MBON04 だけなので、結論は変わらない。</p>
+<p>なお逆向きの下流ドライバーは SS48817〈GAL4〉（FB2A + PPL105）を勧めている。
+FB2A は MBON01・MBON03・MBON04 のいずれとも 2 個体で完全に 0 なので、
+こちらの混同も無い（<code>results/candidate_MBON04_PPL105.md</code> 4 節）。</p>
+<h2 id="_3">使ったデータ</h2>
+<ul>
+<li>hemibrain:v1.2.1（接触の測定）/ male-cns:v1.0 / FlyWire 783（既存の結合）</li>
+<li>PPL105: bodyId 5813019513 (R), 642516892 (L)</li>
+<li>MBON04: bodyId 487925063 (R), 613079053 (L)</li>
+<li>MBON01: bodyId 612371421 (R)</li>
+<li>MBON03: bodyId 487925037 (R), 612738462 (L)</li>
+<li>接触の定義: 中心線を 0.5 µm 間隔で点に分け、相手の点との距離がしきい値以内にある
+  ケーブル長（両側の平均）。既定のしきい値は 1 µm</li>
+</ul>
+</div></body></html>
