@@ -1,0 +1,8 @@
+# このサイトは検索対象にしない。
+# 注意: GitHub Pages のプロジェクトページでは、このファイルは
+# morita761.github.io/connectomics/robots.txt に置かれる。クローラーが読むのは
+# morita761.github.io/robots.txt だけなので、これだけでは効かない。
+# 実際に効いているのは各ページの <meta name="robots" content="noindex"> のほう。
+# 独自ドメインに移したときはこのファイルがそのまま効く。
+User-agent: *
+Disallow: /

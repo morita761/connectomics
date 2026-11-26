@@ -47,6 +47,53 @@ GTAG = """
 """
 
 
+# 検索避け。公開する HTML すべての <head> に入れる。
+# robots.txt ではなく meta を使うのは、プロジェクトページ（morita761.github.io/connectomics/）
+# では robots.txt が読まれないため。クローラーが見るのは
+# morita761.github.io/robots.txt だけで、サブディレクトリのものは無視される。
+# noindex なら 1 ページずつ効くので、こちらが本体になる。
+NOINDEX_MARK = 'name="robots"'
+NOINDEX = (chr(10) + '<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">'
+           + chr(10))
+
+
+def inject_head(site: Path, snippet: str, mark: str) -> int:
+    """公開する HTML すべての <head> の先頭に snippet を入れる（二重に入れない）。"""
+    n = 0
+    for f in sorted(site.rglob("*.html")):
+        t = f.read_text(encoding="utf-8", errors="ignore")
+        if mark in t:
+            continue
+        m = re.search(r"<meta[^>]*charset[^>]*>", t, re.I)
+        if m:
+            t = t[:m.end()] + snippet + t[m.end():]
+        else:
+            i = t.lower().find("<head>")
+            if i < 0:
+                j = t.lower().find("<html")
+                if j < 0:
+                    continue
+                k = t.find(">", j) + 1
+                t = t[:k] + "<head>" + snippet + "</head>" + t[k:]
+            else:
+                k = i + len("<head>")
+                t = t[:k] + snippet + t[k:]
+        f.write_text(t, encoding="utf-8")
+        n += 1
+    return n
+
+
+ROBOTS = """# このサイトは検索対象にしない。
+# 注意: GitHub Pages のプロジェクトページでは、このファイルは
+# morita761.github.io/connectomics/robots.txt に置かれる。クローラーが読むのは
+# morita761.github.io/robots.txt だけなので、これだけでは効かない。
+# 実際に効いているのは各ページの <meta name="robots" content="noindex"> のほう。
+# 独自ドメインに移したときはこのファイルがそのまま効く。
+User-agent: *
+Disallow: /
+"""
+
+
 def inject_gtag(site: Path) -> int:
     """公開する HTML すべてに Google タグを入れる（二重に入れない）。"""
     n = 0
@@ -204,6 +251,10 @@ def main():
 
     n_tag = inject_gtag(SITE)
     print(f"Google タグ（{GTAG_ID}）を {n_tag} ページに入れた")
+
+    n_no = inject_head(SITE, NOINDEX, NOINDEX_MARK)
+    (SITE / "robots.txt").write_text(ROBOTS, encoding="utf-8")
+    print(f"検索避け（noindex）を {n_no} ページに入れた / robots.txt を置いた")
 
     big = [f for f in SITE.rglob("*") if f.is_file() and f.stat().st_size > LIMIT_MB * 1e6]
     print(f"docs/ に {sum(1 for f in SITE.rglob('*') if f.is_file())} ファイル / "
